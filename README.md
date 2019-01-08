@@ -6,7 +6,7 @@ Lin UI 是基于 **微信小程序原生语法** 实现的组件库。遵循简�
 
 ## 文档地址
 
-[http://doc.mini.7yue.pro/ ][4]
+http://doc.mini.7yue.pro/ 
 
 
 ## 微信扫码体验
