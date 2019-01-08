@@ -1,0 +1,81 @@
+.buttun-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.button {
+  background: rgba(223, 237, 255, 1) !important;
+  box-shadow: 6rpx 6rpx 16rpx 0px rgba(229, 233, 239, 0.5) !important;
+  color: rgba(45, 97, 179, 1) !important;
+}
+
+.content {
+  margin-bottom: 20rpx;
+}
+
+.mask-content {
+  width: 520rpx;
+  height: 400rpx;
+  background: rgba(255, 255, 255, 1);
+  border-radius: 12rpx;
+  overflow: hidden;
+}
+
+.mask-content2{
+  width: 500rpx;
+  height: 100rpx;
+  background: #fff;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  border: 1rpx solid #f3f3f3;
+}
+
+.mask-close {
+  width: 180rpx;
+  height: 72rpx;
+  border-radius: 4rpx;
+  border: 1px solid rgba(54, 131, 214, 1);
+  margin: 164rpx auto;
+  color: rgba(54, 131, 214, 1);
+  font-size: 28rpx;
+  line-height: 72rpx;
+  text-align: center;
+}
+.mask-text{
+  color: rgba(54, 131, 214, 1)
+}
+
+.mask-class {
+  /* margin-top: 100rpx; */
+  background: red;
+  overflow: hidden;
+}
+
+.mask-a {
+  background: #ccc;
+  position: fixed;
+  bottom: 20rpx;
+}
+
+.mask-b {
+  background: #fff;
+  position: fixed;
+  bottom: 20rpx;
+}
+
+.mask-c {
+  background: #ccc;
+  position: fixed;
+  bottom: 500rpx;
+  
+}
+
+.mask-text2{
+  position: absolute;
+  top: 300rpx;
+  left: 0;
+}

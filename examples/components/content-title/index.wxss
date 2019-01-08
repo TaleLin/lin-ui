@@ -1,0 +1,35 @@
+page{
+  background-color: #f3f3f3
+}
+
+.content-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.content-name {
+  font-size: 36rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(69, 82, 107, 1);
+  line-height: 50rpx;
+  margin-top: 22rpx;
+}
+
+.content-line {
+  width: 28rpx;
+  height: 6rpx;
+  background: rgba(69, 82, 107, 1);
+  border-radius: 2px;
+}
+
+.content-describe {
+  font-size: 24rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(140, 152, 174, 1);
+  line-height: 24rpx;
+  margin-top: 6rpx;
+  margin-bottom: 22rpx
+}

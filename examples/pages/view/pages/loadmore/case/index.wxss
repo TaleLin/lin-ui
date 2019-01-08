@@ -1,0 +1,44 @@
+/* pages/view/pages/loadmore/case/index.wxss */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.content {
+  width: 750rpx;
+  height: 220rpx;
+  padding: 20rpx 20rpx;
+  box-sizing: border-box;
+  border-bottom: 2rpx solid #f3f3f3;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.img {
+  width: 220rpx;
+  height: 160rpx;
+  margin-left: 60rpx;
+  border-radius: 4rpx;
+}
+
+.des {
+  width: 420rpx;
+  height: 160rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.des-txt {
+  font-size: 28rpx;
+  color: #333;
+  flex-wrap: wrap;
+}
+
+.time {
+  font-size: 24rpx;
+  color: #bbb;
+}

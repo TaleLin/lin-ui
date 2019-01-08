@@ -1,0 +1,23 @@
+<content-title name="NoticeBar" describe="通告栏">
+
+  <content-card name="通告栏类型（still）" cardPadding="{{false}}">
+    <l-notice-bar front-icon-name="notification">我是通告栏</l-notice-bar>
+  </content-card>
+
+  <content-card name="通告栏类型（roll）" cardPadding="{{false}}">
+    <l-notice-bar style="margin-bottom:20rpx" type="roll" front-icon-name="notification">我是通告栏我是通告栏我是通告栏我是通告栏我是通告栏我是通告栏</l-notice-bar>
+  </content-card>
+
+  <content-card name="通告栏类型（swip）" cardPadding="{{false}}">
+    <l-notice-bar style="margin-bottom:20rpx" type="swip" swip-arr="{{arr}}" front-icon-name="notification"></l-notice-bar>
+  </content-card>
+
+  <content-card name="滚动速度" cardPadding="{{false}}">
+    <l-notice-bar style="margin-bottom:20rpx" type="roll" front-icon-name="notification" speed="750">我是通告栏我是通告栏我是通告栏我是通告栏我是通告栏我是通告栏</l-notice-bar>
+  </content-card>
+
+  <content-card name="通告栏图标" cardPadding="{{false}}">
+    <l-notice-bar style="margin-bottom:20rpx" show="{{showIcon}}" bind:lintap="handleIcon" type="roll" front-icon-name="notification" end-icon-name="close">我是通告栏我是通告栏我是通告栏我是通告栏我是通告栏我是通告栏</l-notice-bar>
+  </content-card>
+
+</content-title>

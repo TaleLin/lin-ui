@@ -1,0 +1,150 @@
+<!--pages/view/pages/dialog/index.wxml-->
+<view class='container'>
+  <content-title name="Radio" describe="单选框">
+    <content-card
+      class="content"
+      name="基本案例"
+    >
+      <view class='buttun-wrapper'>
+        <view class='title'>1. 下面选项中，什么瓜不能吃？</view>
+        <l-radio-group l-class="l-radio-group" >
+          <l-radio
+            l-class="l-radio"
+            l-title-class="l-title-class"
+            wx:for="{{items1}}"
+            wx:key="{{item.id}}" 
+            placement="{{position}}"
+            shape="circle"
+            value="{{item.name}}">
+          </l-radio>
+        </l-radio-group>
+      </view>
+    </content-card>
+    <!-- 更改布局 -->
+    <content-card
+      class="content"
+      name="更改布局方式"
+    >
+      <view class='buttun-wrapper'>
+        <view class='title'>2.考试时候用什么铅笔？</view>
+        <l-radio-group placement="row" l-class="l-radio-group" >
+          <l-radio
+            l-title-class="l-title-class"
+            l-class="l-radio"
+            wx:for="{{items2}}"
+            wx:key="{{item.id}}" 
+            placement="{{position}}"
+            shape="circle"
+            value="{{item.name}}">
+          </l-radio>
+        </l-radio-group>
+      </view>
+    </content-card>
+
+    <!--  -->
+    <content-card
+      class="content"
+      name="自定义颜色"
+    >
+      <view class='buttun-wrapper'>
+        <view class='title'>3. 在《魔兽世界》这款游戏里，巫妖王是谁？</view>
+        <l-radio-group l-class="l-radio-group" >
+          <l-radio
+            l-title-class="l-title-class"
+            l-class="l-radio"
+            wx:for="{{items3}}"
+            wx:key="{{item.id}}" 
+            placement="{{position}}"
+            shape="circle"
+            color='#FFE57F'
+            value="{{item.name}}">
+          </l-radio>
+        </l-radio-group>
+      </view>
+    </content-card>
+
+    <content-card
+      class="content"
+      name="更改尺寸"
+    >
+      <view class='buttun-wrapper'>
+        <view class='title'>4.自带消音器和4倍镜的狙击枪是？</view>
+        <l-radio-group l-class="l-radio-group" >
+          <l-radio
+            l-class="l-radio"
+            l-title-class="l-title-class"
+            wx:for="{{items4}}"
+            wx:key="{{item.id}}" 
+            placement="{{position}}"
+            shape="circle"
+            size="36"
+            value="{{item.name}}">
+          </l-radio>
+        </l-radio-group>
+      </view>
+    </content-card>
+
+    
+
+    <content-card
+      class="content"
+      name="更改Radio的位置"
+    >
+      <view class='buttun-wrapper'>
+        <view class='title'>5.盖伦的武器叫什么？</view>
+        <l-radio-group l-class="l-radio-gr oup" >
+          <l-radio
+            l-title-class="l-title-class"
+            l-class="l-radio"
+            wx:for="{{items5}}"
+            wx:key="{{item.id}}" 
+            placement="right"
+            shape="circle"
+            value="{{item.name}}">
+          </l-radio>
+        </l-radio-group>
+      </view>
+    </content-card>
+
+    <content-card
+      class="content"
+      name="更改样式"
+    >
+      <view class='buttun-wrapper'>
+        <view class='title'>6.马可波罗‘激情绿茵’皮肤上的号码？</view>
+        <l-radio-group l-class="l-radio-group">
+          <l-radio
+            l-class="l-radio"
+            l-title-class="l-title-class"
+            wx:for="{{items6}}"
+            wx:key="{{item.id}}" 
+            shape="right"
+            disabled='{{item.disabled}}'
+            value="{{item.name}}">
+          </l-radio>
+        </l-radio-group>
+      </view>
+    </content-card>
+
+    <!-- 设置禁用 -->
+    <content-card
+      class="content"
+      name="设置禁用"
+    >
+      <view class='buttun-wrapper'>
+        <view class='title'>7.程序猿最渴望拥有？</view>
+        <l-radio-group l-class="l-radio-group" >
+          <l-radio
+            l-class="l-radio"
+            l-title-class="l-title-class"
+            wx:for="{{items7}}"
+            wx:key="{{item.id}}" 
+            shape="right"
+            disabled='{{item.disabled}}'
+            value="{{item.name}}">
+          </l-radio>
+        </l-radio-group>
+      </view>
+    </content-card>
+  </content-title>
+</view>

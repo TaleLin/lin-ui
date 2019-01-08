@@ -1,0 +1,16 @@
+var parseCSSText= require('../wxs/parseCssText.wxs');
+
+var isHaveUserAvatarUrl = function (openData) {
+    return openData.indexOf('userAvatarUrl') !== -1;
+};
+
+var isHaveUserNickName = function (openData) {
+    return openData.indexOf('userNickName') != -1;
+};
+
+
+module.exports = {
+    isHaveUserAvatarUrl: isHaveUserAvatarUrl,
+    isHaveUserNickName: isHaveUserNickName,
+    parseCSSText: parseCSSText
+};

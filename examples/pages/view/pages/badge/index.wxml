@@ -1,0 +1,17 @@
+<content-title name="Badge" describe="徽标">
+
+  <content-card name="{{item.title}}" wx:for="{{badgeNaviConfigs}}" wx:key="item">
+    <view class="container">
+      <l-badge count="{{item.count}}" max-count="{{item.maxCount}}" dot="{{item.dot}}" content="{{item.content}}" count-type="{{item.countType}}">
+        <image class="img" src="/images/view/default-image.jpg" />
+      </l-badge>
+      <l-badge count="{{item.count}}" max-count="{{item.maxCount}}" dot="{{item.dot}}" content="{{item.content}}" count-type="{{item.countTypeT}}">
+        <l-icon name="notification" size="40" color="#3683d6" />
+      </l-badge>
+      <l-badge  count="{{item.count}}" max-count="{{item.maxCount}}" dot="{{item.dot}}" content="{{item.content}}" count-type="{{item.countTypeP}}">
+        <l-icon name="picture" size="40" color="#3683d6" />
+      </l-badge>
+    </view>
+  </content-card>
+
+</content-title>

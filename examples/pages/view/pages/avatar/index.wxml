@@ -1,0 +1,67 @@
+<!--pages/view/pages/avatar/index.wxml-->
+<view class='container'>
+  <content-title name="Avatar" describe="头像">
+    <content-card l-content="content" name="头像形状">
+      <view class="content-item" bindtap="clickview">
+        <l-avatar shape="circle" src="/images/view/default-image.jpg" bind:lintapcatch="test" />
+      </view>
+      <view class="content-item">
+        <l-avatar shape="square" src="/images/view/default-image.jpg" />
+      </view>
+    </content-card>
+    <content-card l-content="content" name="头像尺寸">
+      <view class="content-item">
+        <l-avatar size="80" src="/images/view/default-image.jpg" />
+      </view>
+      <view class="content-item">
+        <l-avatar size="120" src="/images/view/default-image.jpg" />
+      </view>
+      <view class="content-item">
+        <l-avatar size="160" src="/images/view/default-image.jpg" />
+      </view>
+    </content-card>
+
+    <content-card l-content="content" name="图标头像">
+      <view class="content-item">
+        <l-avatar size="80" icon="user" />
+      </view>
+      <view class="content-item">
+        <l-avatar l-class="avatar-bg" icon-style="color:#f56a00;size:{{size}}" size="80" icon="user" />
+      </view>
+      <view class="content-item">
+        <l-avatar l-class="avatar-bg" size="80" icon="user" icon-style="color:#f56a00;size:40" />
+      </view>
+    </content-card>
+    <content-card l-content="content" name="图片头像">
+      <view class="content-item">
+        <l-avatar src="/images/view/default-image.jpg" />
+      </view>
+      <view class="content-item">
+        <l-avatar src="http://img3.a0bi.com/upload/ttq/20161015/1476518118768.png" />
+      </view>
+    </content-card>
+
+    <content-card l-content="content" name="微信开放能力">
+      <view class="content-item">
+        <l-avatar open-data="{{['userAvatarUrl','userNickName']}}" />
+      </view>
+    </content-card>
+
+    <content-card l-content="content" name="昵称头像">
+      <view class="content-nicks">
+        <view class="content-item-nick-row content-item-nick">
+          <l-avatar text="月野君" placement="bottom" src="/images/view/default-image.jpg" />
+        </view>
+        <view class="content-item-nick-column content-item-nick">
+          <l-avatar text="月野君" placement="right" src="/images/view/default-image.jpg" />
+        </view>
+        <view class="content-item-nick-row content-item-nick">
+          <l-avatar text="月野君" placement="top" src="/images/view/default-image.jpg" />
+        </view>
+        <view class="content-item-nick-column content-item-nick">
+          <l-avatar text="月野君" placement="left" src="/images/view/default-image.jpg" />
+        </view>
+      </view>
+    </content-card>
+  </content-title>
+</view>

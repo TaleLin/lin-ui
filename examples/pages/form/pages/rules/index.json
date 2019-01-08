@@ -1,0 +1,15 @@
+{
+  "usingComponents": {
+    "content-title": "/components/content-title/index",
+    "content-card": "/components/content-card/index",
+    "l-toast": "/dist/toast/index",
+    "l-message": "/dist/message/index",
+    "l-button": "/dist/button/index",
+    "l-input": "/dist/input/index",
+    "l-radio-group": "/dist/radio-group/index",
+    "l-radio": "/dist/radio/index",
+    "l-checkbox-group": "/dist/checkbox-group/index",
+    "l-checkbox": "/dist/checkbox/index",
+    "l-textarea": "/dist/textarea/index"
+  }
+}
