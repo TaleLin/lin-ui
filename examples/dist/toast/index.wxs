@@ -1,0 +1,35 @@
+var parseCSSText = require('../wxs/parseCssText.wxs');
+
+function elip(text, length) {
+  var textLen = text ? strlen(text) : 0
+  if( textLen ) {
+    text = text.substring(0, length)
+  } else {
+    text = ''
+  }
+  return text
+}
+
+function strlen(str) {
+  var len = 0;
+  for (var i = 0; i < str.length; i++) {
+    var c = str.charCodeAt(i);
+    if ((c >= '0x0001' && c <= '0x007e') || ('0xff60' <= c && c <= '0xff9f')) {
+      len++;
+    } else {
+      len += 2;
+    }
+  }
+  return len;
+}
+
+function parseImageStyle (str) {
+  var arr = str? str.split("*") : [str,str]
+  return arr
+}
+
+module.exports = {
+  parseCSSText: parseCSSText,
+  parseImageStyle: parseImageStyle,
+  elip: elip
+};

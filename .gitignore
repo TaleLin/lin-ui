@@ -15,6 +15,6 @@ npm-debug.log
 *.swp
 *.swo
 *.log
-dist/
+/dist/
 yarn-error.log
 .vscode

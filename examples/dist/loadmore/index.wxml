@@ -1,0 +1,18 @@
+<view class="loadmore-container">
+  <!-- 内容插槽 -->
+  <slot name="content" />
+  <view bindtap="onLoadmore" wx:if="{{show}}">
+    <view wx:if="{{custom}}">
+      <slot name="custom" />
+    </view>
+    <view class="loading" wx:else>
+      <view class="line" 
+            style="{{'background-color:'+color}}" 
+            wx:if="{{line}}"></view>
+      <view class="rotate" style="border-color: {{color}};" wx:if="{{type=='loading'}}"></view>
+      <view class="loading-text" style="{{'color:'+color}}" wx:if="{{type=='loading'}}">{{loadingText}}</view>
+      <view class="loading-text" style="{{'color:'+color}}" wx:if="{{type=='end'}}">{{endText}}</view>
+      <view class="line" style="{{'background-color:'+color}}" wx:if="{{line}}"></view>
+    </view>
+  </view>
+</view>

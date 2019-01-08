@@ -1,0 +1,3 @@
+<view class="l-class  checkbox-group-{{placement}}">
+    <slot></slot>
+</view>
