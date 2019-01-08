@@ -1,0 +1,8 @@
+{
+  "navigationBarBackgroundColor": "#3963BC",
+  "navigationBarTextStyle": "white",
+  "disableScroll":true,
+  "usingComponents": {
+    "navi-card": "/components/navi-card/index"
+  }
+}

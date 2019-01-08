@@ -1,0 +1,11 @@
+<l-loadmore show="{{show}}" type="{{type}}">
+  <view class="container" slot="content">
+    <view class="content" wx:for="{{caseData}}" wx:key="{{item.title}}">
+      <view class="des">
+        <text class='des-txt'>{{item.title}}</text>
+        <text class='time'>{{item.time}}</text>
+      </view>
+      <image src="{{item.image}}" class="img"></image>
+    </view>
+  </view>
+</l-loadmore>

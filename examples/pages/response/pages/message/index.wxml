@@ -1,0 +1,16 @@
+<view class='container'>
+  <content-title name="Message" describe="消息提示">
+    <content-card class="content" name="{{item.title}}" wx:for="{{navConfig}}" wx:key="{{item.type}}">
+      <view class='buttun-wrapper'>
+        <l-button l-class="button" data-type='{{item.type}}' size="large" bind:lintap="onMessage">
+          显示消息
+        </l-button>
+      </view>
+    </content-card>
+  </content-title>
+
+  <l-message  content="{{content}}" 
+              type="{{type}}" 
+              duration="{{ duration}}" 
+              show="{{show}}" />
+</view>

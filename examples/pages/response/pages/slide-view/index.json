@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "content-title": "/components/content-title/index",
+    "content-card": "/components/content-card/index",
+    "l-slide-view": "/dist/slide-view/index",
+    "l-button": "/dist/button/index"
+  }
+}

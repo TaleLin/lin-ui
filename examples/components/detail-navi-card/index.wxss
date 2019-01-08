@@ -1,0 +1,50 @@
+/* components/detail-navi-card/index.wxss */
+
+.detail-navi {
+  width: 690rpx;
+  height: 120rpx;
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0px 4rpx 16rpx 0px rgba(140, 160, 181, 0.2);
+  border-radius: 12rpx;
+  display: flex;
+  align-items: center;
+  padding:0 40rpx;
+  justify-content: space-between;
+  box-sizing: border-box;
+  margin-bottom: 30rpx;
+}
+
+.detail-left {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.detail-icon {
+  width: 48rpx;
+  height: 48rpx;
+}
+
+.detail-content {
+  display: flex;
+  flex-direction: column;
+  margin-left: 38rpx;
+}
+
+.detail-navi-name {
+  font-size:32rpx;
+font-weight:600;
+color:rgba(69,82,107,1);
+line-height:44rpx;
+}
+
+.detail-navi-desc {
+  font-size:24rpx;
+  color:rgba(140,152,174,1);
+  line-height:34rpx;
+}
+
+.navi-button {
+  width:32rpx;
+  height:24rpx;
+}

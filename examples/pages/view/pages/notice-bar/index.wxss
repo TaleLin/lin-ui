@@ -1,0 +1,5 @@
+/* pages/view/pages/notice-bar/index.wxss */
+.container{
+  display: flex;
+  flex-direction: column
+}

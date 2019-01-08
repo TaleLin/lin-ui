@@ -115,10 +115,3 @@ npm run build
 
 根目录下的 `dist` 文件夹即是编译后的自定义组件。
 
-
-
-
-  [1]: https://developers.weixin.qq.com/miniprogram/dev/index.html?t=18101612
-  [2]: http://es6.ruanyifeng.com/
-  [3]: https://developers.weixin.qq.com/miniprogram/dev/framework/custom-component/
-  [4]: http://doc.mini.7yue.pro/

@@ -1,0 +1,13 @@
+<!--components/detail-navi-card/index.wxml-->
+<navigator url="{{componentsPath}}">
+  <view class="detail-navi">
+    <view class="detail-left">
+      <image src="{{icon}}" class="detail-icon" />
+      <view class="detail-content">
+        <text class="detail-navi-name"> {{title}}</text>
+        <text class="detail-navi-desc"> {{desc}}</text>
+      </view>
+    </view>
+    <image class="navi-button" src="/images/right-arrow.png" />
+  </view>
+</navigator>

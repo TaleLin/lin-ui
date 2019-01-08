@@ -1,0 +1,70 @@
+{
+  "pages": [
+    "pages/navigator/index/index",
+    "pages/navigator/basic/index",
+    "pages/navigator/view/index",
+    "pages/navigator/form/index",
+    "pages/navigator/response/index",
+    "pages/navigator/nav/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "Lin UI",
+    "navigationBarTextStyle": "black"
+  },
+  "subPackages": [
+    {
+      "root": "pages/basic",
+      "pages": [
+        "pages/button/index",
+        "pages/icon/index"
+      ]
+    },
+    {
+      "root": "pages/view",
+      "pages": [
+        "pages/mask/index",
+        "pages/spin/index",
+        "pages/popup/index",
+        "pages/badge/index",
+        "pages/avatar/index",
+        "pages/countdown/index",
+        "pages/tag/index",
+        "pages/loading/index",
+        "pages/notice-bar/index",
+        "pages/status-show/index",
+        "pages/status-show/show/show",
+        "pages/loadmore/index",
+        "pages/loadmore/case/index"
+      ]
+    },
+    {
+      "root": "pages/response",
+      "pages": [
+        "pages/message/index",
+        "pages/toast/index",
+        "pages/dialog/index",
+        "pages/slide-view/index",
+        "pages/action-sheet/index"
+      ]
+    },
+    {
+      "root": "pages/nav",
+      "pages": [
+        "pages/tabs/index",
+        "pages/combined-tabs/index"
+      ]
+    },
+    {
+      "root": "pages/form",
+      "pages": [
+        "pages/input/index",
+        "pages/radio/index",
+        "pages/checkbox/index",
+        "pages/textarea/index",
+        "pages/rules/index"
+      ]
+    }
+  ]
+}

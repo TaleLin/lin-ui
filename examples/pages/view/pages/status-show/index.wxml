@@ -1,0 +1,14 @@
+<!--pages/view/items/mask/index.wxml-->
+<view class='container'>
+  <content-title name="StatusShow" describe="状态展示">
+    <content-card class="content" name="{{item.title}}" wx:for="{{navConfig}}" wx:key="{{item.title}}">
+      <view style="margin-bottom:20rpx" class='buttun-wrapper' wx:for="{{item.config}}" wx:for-item="status" wx:key="item">
+        <l-button l-class="button" size="large" data-id="{{status.id}}" bind:lintap="onShowTap">
+          {{status.title}}
+        </l-button>
+      </view>
+
+    </content-card>
+  </content-title>
+
+</view>

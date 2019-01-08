@@ -1,0 +1,20 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="header">
+    <image class='header-bg' src='/images/static/index_bg.png'></image>
+    <text class='header-desc'><text class='header-name'>Lin UI </text>原生小程序组件库</text>
+  </view>
+
+  <view class="main">
+    <navi-card
+      wx:for="{{naviConfigs}}"
+      wx:for-item="naviConfig"
+      wx:key="index"
+      data-idx="{{index}}"
+      title="{{naviConfig.title}}"
+      icon="{{naviConfig.icon}}"
+      navigatePath="{{naviConfig.navigatePath}}"
+      bindtap="errorTap"
+    />
+  </view>
+</view>
