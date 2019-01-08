@@ -1,0 +1,29 @@
+<!-- popup.wxml -->
+<l-pupop
+    show="{{show}}"
+    animation="show"
+    contentAlign="center"
+    locked="{{true}}" 
+    bind:lintap="onDialogTap"
+>
+    <view class="dialog-container">
+        <view class="dialog-title" wx:if="{{showTitle}}">{{title}}</view>
+        <view class="dialog-content">
+            <slot />
+            {{content}}
+        </view>
+        <view class="dialog-btn-group">
+            <view
+                class="dialog-btn-cancel "
+                style="color: {{cancelColor}}"
+                catchtap="onCancelTap"
+                wx:if="{{type=='confirm'}}"
+                >{{cancelText}}</view>
+            <view
+                class="dialog-btn-confirm "
+                style="color: {{confirmColor}}"
+                catchtap="onConfirmTap"
+            >{{confirmText}}</view>
+        </view>
+    </view>
+</l-pupop>

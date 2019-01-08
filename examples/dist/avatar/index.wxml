@@ -1,0 +1,12 @@
+<wxs src="./index.wxs" module="avatar" />
+<view class="l-avatar {{text||avatar.isHaveUserNickName(openData)?'l-placement-'+placement:''}}" bindtap="tapAvatar">
+    <view class="l-avatar-image {{shape?'l-'+shape:''}} l-class" wx:if="{{avatar.isHaveUserAvatarUrl(openData)||icon||src}}" style="width:{{size}}rpx;height:{{size}}rpx">
+        <open-data wx:if="{{avatar.isHaveUserAvatarUrl(openData)}}" type="userAvatarUrl"/>
+        <l-icon wx:elif="{{icon}}" size="{{avatar.parseCSSText(iconStyle).size?avatar.parseCSSText(iconStyle).size:size*0.5}}" color="{{avatar.parseCSSText(iconStyle).color?avatar.parseCSSText(iconStyle).color:'#ffffff'}}" name="{{icon}}"/>
+        <image wx:elif="{{src}}" src="{{src}}" mode="{{mode}}" style="width:{{size}}rpx;height:{{size}}rpx"/>
+    </view>
+    <view class="l-avatar-text l-class-text" wx:if="{{text||avatar.isHaveUserNickName(openData)}}">
+        <open-data wx:if="{{avatar.isHaveUserNickName(openData)}}" type="userNickName"/>
+        <text wx:elif="{{text}}">{{text}}</text>
+    </view>
+</view>
