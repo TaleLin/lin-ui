@@ -18,7 +18,7 @@ http://doc.mini.7yue.pro/
 ## 快速上手
 
 Lin UI 致力于给小程序开发者提供愉悦的开发体验。
-> 在开始之前，推荐先学习微信官方的[小程序开发文档][1]，并正确安装和配置了 Node.js v8或以上。 同时，我们假设你已了解关于 HTML、CSS 和 JavaScript 的初级知识，并且已经熟悉并阅读了[小程序自定义组件][3]。
+> 在开始之前，推荐先学习微信官方的[小程序开发文档](https://developers.weixin.qq.com/miniprogram/dev/index.html?t=18101612)，并正确安装和配置了 Node.js v8或以上。 同时，我们假设你已了解关于 HTML、CSS 和 JavaScript 的初级知识，并且已经熟悉并阅读了[小程序自定义组件](https://developers.weixin.qq.com/miniprogram/dev/framework/custom-component/)。
 
 ## 安装
 
