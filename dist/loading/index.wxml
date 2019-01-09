@@ -1,0 +1,11 @@
+<view class="{{sort=='flash'?'v-class':''}} {{customize? 'container':'v-'+sort+'-spinner'}} {{'v-spinner-' + location}} {{sort=='change'?'':'v-spinner-' + size}}">
+  <view wx:if="{{customize}}">
+    <image class='v-img' src='{{img}}'></image>
+  </view>
+  <view wx:else>
+    <view class="v-class {{'v-'+sort+'-bounce1'}}   {{sort=='change'?'v-spinner-' + size:''}}"></view>
+    <view class="v-class {{'v-'+sort+'-bounce2'}}   {{sort=='change'?'v-spinner-' + size:''}}"></view>
+    <view class="v-class {{'v-'+sort+'-bounce3'}}   {{sort=='change'?'v-spinner-' + size:''}}"></view>
+  </view>
+  <slot />
+</view>

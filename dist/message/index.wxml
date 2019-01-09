@@ -1,0 +1,7 @@
+<view class="l-message {{'l-message-'+type}} {{visible?'l-message-show':''}}">
+  <view wx:if="{{icon}}" style="margin-right:15rpx">
+    <l-icon name="{{name?name:type}}" size="28" color="{{type=='warning'?'#333':'#fff'}}" />
+  </view>
+  {{content}}
+  <slot /> 
+</view>

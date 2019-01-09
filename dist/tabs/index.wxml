@@ -1,0 +1,4 @@
+<!--components/tab/index.wxml-->
+<view class="v-tab tab-default {{isCurrent?'v-tab-active':''}}" data-key="{{key}}" bind:tap="changeActiveTab">
+    <text>{{title}}</text>
+</view>

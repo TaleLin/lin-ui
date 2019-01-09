@@ -1,0 +1,7 @@
+<view class="l-tag {{'l-tag-'+ size}} {{select?'l-select-class':''}} {{plain?'l-tag-plain':''}}  {{'l-tag-'+ shape}} l-class" style="{{plain?'color:'+color+';border-color:'+color:'background-color:'+color}}" bindtap="handleTap" catchtap="handleCatch">
+  <view class="{{location=='left'?'content':'content-l'}}">
+    <l-icon wx:if="{{iconName}}" style="{{location=='left'?'margin-right:5rpx':'margin-left:5rpx'}}" name="{{iconName}}" size="{{iconSize}}" color="{{iconColor}}" />
+    <image style="{{location=='left'?'margin-right:5rpx':'margin-left:5rpx'}}" wx:if="{{image}}" src="{{image}}" class="{{'tag-image-'+size}} l-image-class"></image>
+    <slot/>
+  </view>
+</view>

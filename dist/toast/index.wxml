@@ -1,0 +1,9 @@
+
+<!-- toast.wxml -->
+<view class="container">
+  <view class="toast">
+    <!-- <view wx:if="{{image||}}"></view> -->
+    <l-icon name="loading" color="#f60" size="40"/>
+    <text class="toast-text">{{type === "success"? "成功" : type === "error" ? "失败" : type === "loading" }}</text>
+  </view>
+</view>

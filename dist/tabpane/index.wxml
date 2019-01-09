@@ -1,0 +1,4 @@
+<!--components/tabs/index.wxml-->
+<view class="v-tabs v-class">
+    <slot></slot>
+</view>
