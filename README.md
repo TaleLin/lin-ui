@@ -43,7 +43,7 @@ npm install lin-ui --production
 直接通过git下载  `Lin UI`  源代码，并将 `dist` 目录（Lin-UI 组件库）拷贝到自己的项目中。
 
 ```base
-git clone https://github.com/TaleLin/linui.git
+git clone https://github.com/TaleLin/lin-ui.git
 ```
 
 ## 使用组件
@@ -77,7 +77,7 @@ git clone https://github.com/TaleLin/linui.git
 为满足自定义的需求，首先我们要去下载 `Lin UI` 源码。
 
 ```base
-git clone https://github.com/Lin/lin-mini.git
+git clone https://github.com/TaleLin/lin-ui.git
 ```
 安装相关依赖
 
@@ -107,7 +107,7 @@ npm install
 ```
 
 其他
-更改完成后，在Lin UI下的根目录里打开终端执行如下所示命令
+更改完成后，在 `Lin UI` 下的根目录里打开终端执行如下所示命令
 
 ```bash
 npm run build
