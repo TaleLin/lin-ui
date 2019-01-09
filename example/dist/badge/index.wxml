@@ -1,0 +1,9 @@
+<wxs src="./index.wxs" module="count" />
+
+<view class="l-badge" bindtap="handleTap">
+  <slot/>
+  <view class="l-badge-content l-class" wx:if="{{finalCount && countType!=='limit'}}">{{finalCount}}</view>
+  <view wx:if="{{count && countType=='limit'}}" class="l-badge-content">{{count.countFlow(finalCount)}}</view>
+  <view wx:if="{{content}}" class="l-badge-content">{{content}}</view>
+  <view wx:if="{{dot}}" class="l-badge-dot  l-class"></view>
+</view>  
