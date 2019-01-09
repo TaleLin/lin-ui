@@ -1,0 +1,3 @@
+<view class="l-class radio-group-{{placement}}">
+    <slot></slot>
+</view>

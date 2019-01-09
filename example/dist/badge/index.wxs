@@ -1,0 +1,16 @@
+var countFlow = function(count) {
+  if (count > 9999) {
+    var final = Math.floor(count / 10000 * 100) / 100
+    var finalCount = final.toString() + 'w'
+  } else if (count > 999) {
+    var final = Math.floor(count / 1000 * 100) / 100
+    var finalCount = final.toString() + 'k'
+  } else {
+    var finalCount = count
+  }
+  return finalCount
+}
+
+module.exports = {
+  countFlow: countFlow
+};
