@@ -1,8 +1,0 @@
-var customCount = function(count) {
-  
-}
-
-
-module.exports = {
-  customCount: customCount
-};

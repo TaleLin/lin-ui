@@ -1,8 +1,0 @@
-{
-    "component": true,
-    "usingComponents": {
-        "l-icon":"../icon/index",
-        "l-popup":"../popup/index",
-        "l-button":"../button/index"
-    }
-  }
