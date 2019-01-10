@@ -1,0 +1,30 @@
+<!--  input/input.wxml -->
+<label class='form-item {{disabled? "disabled": ""}} l-class form-item-{{labelLayout}}'>
+  <view class='mask' wx:if="{{disabled}}"></view>
+  <view class='row'></view>
+  <view wx:if="{{label}}" class='form-label form-label-{{labelLayout}}' style='{{labelLayout !== "top" ? "width:"+ labelWidth+ "rpx;" : "" }} height:{{labelLayout== "top" ? labelWidth + "rpx" : "" }}'>
+    <text><text class='text-require' wx:if="{{required}}">* </text>{{label}}<text wx:if="{{colon}}">：</text>
+    </text>
+  </view>
+  <!-- 小程序表单组件 -->
+  <input
+    class="input"
+    value="{{ value }}"
+    type="{{type}}"
+    password="{{type==='password'}}"
+    placeholder="{{placeholder}}"
+    maxlength="{{maxlength}}"
+    placeholder-class="l-placeholder-class pls-class"
+    disabled="{{disabled}}"
+    focus="{{focus}}"
+    bindinput="handleInputChange"
+    bindfocus="handleInputFocus"
+    bindblur="handleInputBlur"
+    bindconfirm="handleInputConfirm"/>
+    <view class="close" wx:if="{{clear&&value}}" bindtap="onClearTap">
+      <view  class="cloase-icon">
+        <l-icon  name="close" color="#fff" size="15" />
+      </view>
+    </view>
+  <slot />
+</label>

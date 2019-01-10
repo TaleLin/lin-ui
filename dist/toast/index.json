@@ -2,6 +2,6 @@
   "component": true,
   "usingComponents": {
     "l-icon": "../icon/index",
-    "l-mask": "../icon/mask"
+    "l-mask": "../mask/index"
   }
 }

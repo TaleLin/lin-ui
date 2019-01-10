@@ -38,6 +38,10 @@ Component({
       },
       icon: String,
       image: String,
+      iconStyle: {
+        type: String,
+        value: 'size:20;color:#3683D6'
+      },
       iconColor: String,
       iconSize: String,
       openType: String,
@@ -67,10 +71,7 @@ Component({
       handleTap() {
         if (this.data.disabled) return false;
         this.triggerEvent('lintap');
-      },
-      handleCatch() {
-        if (this.data.disabled) return false;
-        this.triggerEvent('lincatch',{},{ bubbles: true });
+        this.triggerEvent('lintapcatch',{},{ bubbles: true });
       },
       // 开放能力事件回调
       openTypeEvent(data) {

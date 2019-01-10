@@ -1,44 +1,169 @@
-// components/tab/index.js
+// components/tabs/index.js
 Component({
-  externalClasses: ['v-tab-active', 'tab-default'],
+  externalClasses: ['l-class-header', 'l-class-active', 'l-class-inactive','l-class-line','l-class-tabimage'],
   relations: {
-    '../tabs/index': {
-      type: 'parent'
+    '../tabpanel/index': {
+      type: 'child',
     }
+  },
+  options: {
+    multipleSlots: true // 在组件定义时的选项中启用多slot支持
   },
   /**
    * 组件的属性列表
    */
   properties: {
-    title: String,
-    key: String
+    activeKey: {
+      type: String,
+      value: '',
+      observer: 'changeCurrent'
+    },
+    placement: {
+      type: String,
+      value: 'top',
+    },
+    picPlacement:{
+      type: String,
+      value: 'left',
+    },
+    aminmated: Boolean,
+    swipeable: Boolean,
+    scrollable: Boolean,
+    hasLine:{
+      type:Boolean,
+      value:true
+    },
+    activeColor:{
+      type:String,
+      value:'#333333'
+    },
+    inactiveColor:{
+      type:String,
+      value:'#bbbbbb'
+    },
+    
   },
 
-  /**
-   * 组件的初始数据
-   */
   data: {
-    isCurrent: false,
+    tabList: [],
+    currentIndex: 0,
+    transformX: 0,
+    transformY: 0,
   },
+
+  ready() {
+    this.initTabs();
+  },
+
 
   /**
    * 组件的方法列表
    */
   methods: {
-    changeCurrent(isCurrent) {
-      if (isCurrent===this.data.isCurrent) return;
-      this.setData({
-        isCurrent
-      })
+    initTabs(val = this.data.activeKey) {
+      let items = this.getRelationNodes('../tabpanel/index');
+      if (items.length > 0) {
+        let activeKey = val,
+          currentIndex = this.data.currentIndex;
+        const tab = items.map((item, index) => {
+          
+          activeKey = !val && index == 0 ? item.data.key : activeKey;
+          currentIndex = item.data.key === activeKey ? index : currentIndex;
+          return {
+            tab: item.data.tab,
+            key: item.data.key,
+            icon:item.data.icon,
+            iconStyle:item.data.iconStyle,
+            image:item.data.image,
+            picPlacement:item.data.picPlacement,
+          }
+        });
+        this.setData({
+          tabList: tab,
+          activeKey,
+          currentIndex,
+        }, () => {
+          if (this.data.scrollable) {
+            this.queryMultipleNodes();
+          }
+        });
+      }
+    },
+    swiperChange(e) {
+      const {
+        source,
+        current
+      } = e.detail;
+      if (source == 'touch') {
+        const currentIndex = current;
+        const activeKey = this.data.tabList[current].key;
+        this._setChangeData({
+          activeKey,
+          currentIndex
+        });
+      }
+    },
+    handleChange(e) {
+      const activeKey = e.currentTarget.dataset.key;
+      const currentIndex = e.currentTarget.dataset.index;
+      this._setChangeData({
+        activeKey,
+        currentIndex
+      });
     },
 
-    changeActiveTab(e) {
-      const {
-        dataset: {
-          key
+    _setChangeData({
+      activeKey,
+      currentIndex
+    }) {
+      this.setData({
+        activeKey,
+        currentIndex
+      }, () => {
+        if (this.data.scrollable) {
+          this.queryMultipleNodes();
         }
-      } = e.currentTarget;
-      this.getRelationNodes('../tabs/index')[0].handleChange(key);
+      });
+      this.triggerEvent('linchange', {
+        activeKey,
+        currentIndex
+      });
+    },
+
+    queryMultipleNodes() {
+      const {
+        placement,
+        activeKey,
+        tabList
+      } = this.data;
+      this._getRect('#' + activeKey)
+        .then((res) => {
+          if (['top', 'bottom'].indexOf(placement) !== -1) {
+            this.setData({
+              transformX: res.left - tabList.length / 2 * res.width,
+              transformY: 0
+            });
+          } else {
+            this._getRect('.l-tabs-header')
+              .then((navRect) => {
+                const transformY = res.top - navRect.top - navRect.height / 2;
+                this.setData({
+                  transformX: 0,
+                  transformY: transformY
+                });
+              });
+          }
+        });
+    },
+
+    _getRect(selector) {
+      return new Promise((resolve, reject) => {
+        const query = wx.createSelectorQuery().in(this);
+        query.select(selector).boundingClientRect((res) => {
+          if (!res) return reject('找不到元素');
+          resolve(res)
+        }).exec();
+      });
     }
   }
-})
+});

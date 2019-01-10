@@ -1,68 +1,73 @@
-// mask
+// toast
 Component({
   /**
    * 组件的属性列表
    */
-  externalClasses: ['mask-class'],
+  externalClasses: [''],
   properties: {
     // 显示与隐藏
-    status: {
-      type: String,
-      value: 'hide',
-      observer: function () {
-
-        if (this.properties.fullScreen === 'show' ) {
-          wx.setNavigationBarColor({
-            frontColor: '#ffffff',
-            backgroundColor: '#999',
-            animation: {
-              duration: 0,
-              timingFunc: 'easeIn'
-            }
-          })
-        } else if(this.properties.fullScreen === 'hide' ) {
-
-          wx.setNavigationBarColor({
-            frontColor: '#000000',
-            backgroundColor: '#fff',
-            animation: {
-              duration: 0,
-              timingFunc: 'easeIn'
-            }
-          })
+    show: {
+      type: Boolean,
+      value: false,
+      observer: function (newVal, oldVal) {
+        if (newVal) {
+          setTimeout(() => {
+            this.setData({
+              show: false
+            })
+          }, this.properties.duration)
         }
       }
     },
-    // 不透明度
-    opacity: {
-      type: [String, Number],
-      value: .4
+    // 提示框的文本内容
+    title: {
+      type: String,
+      value: ''
     },
-    // mask的z-index值
-    zIndex: {
-      type: Number,
-      value: 99,
+    // icon
+    icon: {
+      type: String,
+      value: '',
 
     },
-    // slot是否居中
-    center: {
-      type: Boolean,
-      value: false,
+    // icon-style
+    iconStyle: {
+      type: String,
+      value: 'size:60; color:#fff',
     },
-    // 锁定
-    locked: {
+    // image
+    image: {
+      type: String,
+      value: '',
+    },
+    // icon-style
+    imageStyle: {
+      type: String,
+      value: '60*60',
+    },
+    // 文字的显示方位
+    placement: {
+      type: String,
+      value: 'bottom'
+    },
+    // 提示框显示的时长
+    duration: {
+      type: Number,
+      value: 1500
+    },
+    // 设置提示框是否为垂直居中
+    center: {
       type: Boolean,
       value: true
     },
-    // 全屏幕模式
-    fullScreen: {
-      type: String,
-      value: ''
+    // 是否显示透明蒙层，防止触摸穿透
+    mask: {
+      type: Boolean,
+      value: false
     },
-    // 导航栏颜色
-    NavColor: {
-      type: String,
-      value: ''
+    openApi: {
+      type: Boolean,
+      value: true,
     },
 
   },
@@ -71,13 +76,54 @@ Component({
    * 组件的初始数据
    */
   data: {
-
   },
+  attached() {
+    if (this.data.openApi) {
+      this.initToast();
+    }
+  },
+
+  lifetimes: {
+    show() {
+        if (this.data.openApi) {
+            this.initToast();
+        }
+    },
+},
 
   /**
    * 组件的方法列表
    */
   methods: {
+    initToast() {
+      wx.lin = wx.lin || {};
+      wx.lin.showToast = (options) => {
+        const {
+          title = this.data.title,
+            icon = this.data.icon,
+            iconStyle = this.data.iconStyle,
+            image = this.data.image,
+            imageStyle = this.data.imageStyle,
+            placement = this.data.placement,
+            duration = this.data.duration,
+            center = this.data.center,
+            mask = this.data.mask,
+        } = options;
+        this.setData({
+          title,
+          icon,
+          iconStyle,
+          image,
+          imageStyle,
+          placement,
+          duration,
+          center,
+          mask,
+          show: true,
+        });
+        return this;
+      };
+    },
     // 阻止滑动
     doNothingMove(e) {
       // do nothing……
@@ -99,10 +145,5 @@ Component({
       this.triggerEvent('linTap', detail, option);
     }
   },
-
-  attached: function () {
-    console.log(this.properties)
-  },
-
-
+    
 })

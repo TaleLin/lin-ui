@@ -6,9 +6,9 @@ Component({
   externalClasses: [],
   properties: {
     // 显示与隐藏
-    status: {
-      type: String,
-      value: 'hide'
+    show: {
+      type: Boolean,
+      value: false
     },
     // 类型 【 alert: 提示框， confrim: 确认框 】
     type: {
@@ -87,7 +87,6 @@ Component({
     onDialogTap(e) {
       let detail = true;
       let option = {};
-      console.log('dialog tap')
 
       if (this.data.locked !== true) {
         this.setData({

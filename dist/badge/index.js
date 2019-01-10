@@ -35,11 +35,20 @@ Component({
         this.setData({
           finalCount: parseInt(this.data.count) >= parseInt(this.data.maxCount) ? `${this.data.maxCount}+` : this.data.count
         });
+      } else if (this.data.properties == 'ellipsis') {
+        this.setData({
+          finalCount: parseInt(this.data.count) >= parseInt(this.data.maxCount) ? `...` : this.data.count
+        });
       } else {
         this.setData({
-          finalCount: this.data.count
+          finalCount: parseInt(this.data.count)
         })
       }
+    },
+    // 点击事件
+    handleTap() {
+      this.triggerEvent('lintap');
+      this.triggerEvent('lintapcatch', {}, { bubbles: true });
     },
   }
 });

@@ -1,6 +1,6 @@
 <!-- popup.wxml -->
 <l-pupop
-    status="{{status}}"
+    show="{{show}}"
     animation="show"
     contentAlign="center"
     locked="{{true}}" 

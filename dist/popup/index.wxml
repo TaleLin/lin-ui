@@ -2,7 +2,7 @@
 <view
   class='container-popup'
   style="z-index:{{zIndex}}; "
-  hidden="{{ status =='show'? '' :  'hidden'}}"
+  hidden="{{ show ? '' :  'hidden'}}"
   catchtouchmove="doNothingMove"
 >
  

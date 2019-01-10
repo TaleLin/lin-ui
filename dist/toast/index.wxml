@@ -1,9 +1,20 @@
 
 <!-- toast.wxml -->
-<view class="container">
-  <view class="toast">
-    <!-- <view wx:if="{{image||}}"></view> -->
-    <l-icon name="loading" color="#f60" size="40"/>
-    <text class="toast-text">{{type === "success"? "成功" : type === "error" ? "失败" : type === "loading" }}</text>
+<wxs src="./index.wxs" module="toast" />
+<view class="container" hidden="{{!show}}">
+  <view class="toast-bg" wx:if="{{mask}}"></view>
+  <view class="toast toast-{{placement || 'bottom'}}" style="{{placement  || 'bottom' === 'bottom' ?  image || icon ? 'padding-top: 25rpx': '': ''}}" >
+    <image class="toast-icon"
+      wx:if="{{image}}"
+      src="{{image}}"
+      style="width:{{toast.parseImageStyle(imageStyle)[0]?toast.parseImageStyle(imageStyle)[0]: '60'}}rpx;height:{{toast.parseImageStyle(imageStyle)[1]?toast.parseImageStyle(imageStyle)[1]: '60'}}rpx" />
+    <l-icon
+      class="toast-icon toast-icon-{{icon === 'loading'?'loading':''}}"
+      wx:elif="{{icon && !image}}"
+      size="{{toast.parseCSSText(iconStyle).size?toast.parseCSSText(iconStyle).size: '60'}}"
+      color="{{toast.parseCSSText(iconStyle).color?toast.parseCSSText(iconStyle).color: icon === 'success'? '#00C292' :  icon === 'error' ? '#F4516C' : '#ffffff'}}"
+      name="{{icon}}"
+    />
+    <text class="toast-text  toast-text-{{placement}}" style="{{placement || 'bottom' === 'bottom' ? icon || image? 'margin-top:10rpx; width:180rpx' : '': '' }}">{{toast.elip(title,20)}}</text>
   </view>
 </view>
