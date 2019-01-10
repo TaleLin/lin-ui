@@ -6,9 +6,9 @@ Component({
   externalClasses: ['popup-class'],
   properties: {
     // 显示与隐藏
-    status: {
-      type: String,
-      value: 'hide'
+    show: {
+      type: Boolean,
+      value: false
     },
     // z-index值
     zIndex: {
@@ -59,7 +59,7 @@ Component({
       if (this.data.locked !== true) {
         console.log('可以更改')
         this.setData({
-          status: !this.data.status
+          show: !this.data.show
         })
       }
 
@@ -67,3 +67,5 @@ Component({
     }
   }
 })
+
+

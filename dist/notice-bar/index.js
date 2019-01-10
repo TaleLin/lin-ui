@@ -1,109 +1,141 @@
 Component({
-    externalClasses: ['l-class'],
+  externalClasses: ['l-class'],
 
-    properties: {
-        iconName: String,
-        loop: {
-            type: Boolean,
-            value: false
-        },
-        // 背景颜色
-        backgroundcolor: {
-            type: String,
-            value: '#DFEDFF'
-        },
-        // 字体及图标颜色
-        color: {
-            type: String,
-            value: '#3683D6'
-        },
-        show: {
-            type: Boolean,
-            value: true
-        },
-        // 滚动速度
-        speed: {
-            type: Number,
-            value: 1000
-        },
-        content: Array
+  properties: {
+    type: {
+      type: String,
+      value: 'still'
     },
-
-    data: {
-        wrapWidth: 0,
-        width: 0,
-        duration: 0,
-        animation: null,
-        timer: null,
+    // 轮播数组
+    swipArr: Array,
+    // 前置图标
+    frontIconName: {
+      type: String,
+      value: ''
     },
-
-    detached() {
-        this.destroyTimer();
+    frontIconStyle: {
+      type: String,
+      value: 'size:20;color:#3683D6'
     },
-
-    ready() {
-        if (this.data.loop) {
-            this.initAnimation();
-        }
+    endIconName: {
+      type: String,
+      value: ''
     },
-
-    methods: {
-        initAnimation() {
-            wx.createSelectorQuery().in(this).select('.i-noticebar-content-wrap').boundingClientRect((wrapRect) => {
-                wx.createSelectorQuery().in(this).select('.i-noticebar-content').boundingClientRect((rect) => {
-                    const duration = rect.width / 40 * this.data.speed;
-                    const animation = wx.createAnimation({
-                        duration: duration,
-                        timingFunction: "linear"
-                    });
-                    this.setData({
-                        wrapWidth: wrapRect.width,
-                        width: rect.width,
-                        duration: duration,
-                        animation: animation
-                    }, () => {
-                        this.startAnimation();
-                    });
-                }).exec();
-            }).exec();
-        },
-
-        startAnimation() {
-            //reset
-            if (this.data.animation.option.transition.duration !== 0) {
-                this.data.animation.option.transition.duration = 0;
-                const resetAnimation = this.data.animation.translateX(this.data.wrapWidth).step();
-                this.setData({
-                    animationData: resetAnimation.export()
-                });
-            }
-            this.data.animation.option.transition.duration = this.data.duration;
-            const animationData = this.data.animation.translateX(-this.data.width).step();
-            setTimeout(() => {
-                this.setData({
-                    animationData: animationData.export()
-                });
-            }, 100);
-            const timer = setTimeout(() => {
-                this.startAnimation();
-            }, this.data.duration);
-            this.setData({
-                timer,
-            });
-        },
-
-        destroyTimer() {
-            if (this.data.timer) {
-                clearTimeout(this.data.timer);
-            }
-        },
-
-        handleClose() {
-            this.destroyTimer();
-            this.setData({
-                show: false,
-                timer: null
-            });
-        }
+    endIconStyle: {
+      type: String,
+      value: 'size:20;color:#3683D6'
+    },
+    // 背景颜色
+    backgroundcolor: {
+      type: String,
+      value: '#DFEDFF'
+    },
+    // 字体及图标颜色
+    color: {
+      type: String,
+      value: '#3683D6'
+    },
+    // 滚动速度
+    speed: {
+      type: Number,
+      value: 1500
+    },
+    show: {
+      type: Boolean,
+      value: true
+    },
+    close: {
+      type: Boolean,
+      value: false
     }
+  },
+
+  data: {
+    wrapWidth: 0,
+    width: 0,
+    duration: 0,
+    animation: null,
+    timer: null,
+  },
+
+  detached() {
+    this.destroyTimer();
+  },
+
+  ready() {
+    if (this.properties.type == 'roll') {
+      this.initAnimation();
+    }
+  },
+
+  methods: {
+    initAnimation() {
+      wx.createSelectorQuery().in(this).select('.l-noticebar-content-wrap').boundingClientRect((wrapRect) => {
+        wx.createSelectorQuery().in(this).select('.l-noticebar-content').boundingClientRect((rect) => {
+          const duration = rect.width / 40 * this.data.speed;
+          const animation = wx.createAnimation({
+            duration: duration,
+            timingFunction: "linear",
+          });
+          this.setData({
+            wrapWidth: wrapRect.width,
+            width: rect.width,
+            duration: duration,
+            animation: animation
+          }, () => {
+            this.startAnimation();
+          });
+        }).exec();
+
+      }).exec();
+    },
+    startAnimation() {
+      //reset
+      if (this.data.animation.option.transition.duration !== 0) {
+        this.data.animation.option.transition.duration = 0;
+        const resetAnimation = this.data.animation.translateX(this.data.wrapWidth).step();
+        this.setData({
+          animationData: resetAnimation.export()
+        });
+      }
+      this.data.animation.option.transition.duration = this.data.duration;
+      const animationData = this.data.animation.translateX(-this.data.width).step();
+      setTimeout(() => {
+        this.setData({
+          animationData: animationData.export()
+        });
+      }, 100);
+      const timer = setTimeout(() => {
+        this.startAnimation();
+      }, this.data.duration);
+      this.setData({
+        timer,
+      });
+    },
+    destroyTimer() {
+      if (this.data.timer) {
+        clearTimeout(this.data.timer);
+      }
+    },
+    handleTap() {
+      this.triggerEvent('lintap');
+      this.triggerEvent('lincatchtap', {}, { bubbles: true });
+      this.setData({
+        timer: null
+      });
+    },
+    onIconTap(){
+      this.triggerEvent('linicontap');
+      this.triggerEvent('liniconcatchtap', {}, { bubbles: true });
+      this.setData({
+        timer: null
+      });
+    },
+    onClose() {
+      this.setData({
+        timer: null,
+        show: false
+      });
+    },
+  }
 });

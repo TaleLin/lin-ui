@@ -1,4 +1,4 @@
-<label for="{{name}}" bindtap="handleTap" catchtap="handleCatch">
+<label for="{{name}}" bindtap="handleTap">
   <block wx:if="{{special}}">
     <slot/>
   </block>

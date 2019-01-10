@@ -4,7 +4,8 @@ Component({
     // 标签名称
     name: String,
     // 标签颜色
-    color: String,
+    bgColor: String,
+    fontColor:String,
     // 标签形状
     shape: {
       type: String,
@@ -29,7 +30,11 @@ Component({
       value:'20'
     },
     iconColor: String,
-    image: String
+    image: String,
+    iconStyle: {
+      type: String,
+      value: 'size:20;color:#3683D6'
+    },
   },
   methods: {
     handleTap() {
@@ -38,13 +43,7 @@ Component({
         select: this.properties.select
       }
       this.triggerEvent('lintap', options, {});
-    },
-    handleCatch() {
-      const options = {
-        name: this.properties.name,
-        select: this.properties.select
-      }
-      this.triggerEvent('lintap', options, {
+      this.triggerEvent('lintapcatch', options, {
         bubbles: true
       });
     }
