@@ -1,6 +1,6 @@
 // components/tabs/index.js
 Component({
-  externalClasses: ['l-class-header', 'l-class-active', 'l-class-inactive','l-class-line','l-class-tabimage'],
+  externalClasses: ['l-class-header', 'l-class-active', 'l-class-content', 'l-class-inactive', 'l-class-line', 'l-class-tabimage'],
   relations: {
     '../tabpanel/index': {
       type: 'child',
@@ -22,26 +22,26 @@ Component({
       type: String,
       value: 'top',
     },
-    picPlacement:{
+    picPlacement: {
       type: String,
       value: 'left',
     },
     aminmated: Boolean,
     swipeable: Boolean,
     scrollable: Boolean,
-    hasLine:{
-      type:Boolean,
-      value:true
+    hasLine: {
+      type: Boolean,
+      value: true
     },
-    activeColor:{
-      type:String,
-      value:'#333333'
+    activeColor: {
+      type: String,
+      value: '#333333'
     },
-    inactiveColor:{
-      type:String,
-      value:'#bbbbbb'
+    inactiveColor: {
+      type: String,
+      value: '#bbbbbb'
     },
-    
+
   },
 
   data: {
@@ -66,16 +66,16 @@ Component({
         let activeKey = val,
           currentIndex = this.data.currentIndex;
         const tab = items.map((item, index) => {
-          
+
           activeKey = !val && index == 0 ? item.data.key : activeKey;
           currentIndex = item.data.key === activeKey ? index : currentIndex;
           return {
             tab: item.data.tab,
             key: item.data.key,
-            icon:item.data.icon,
-            iconStyle:item.data.iconStyle,
-            image:item.data.image,
-            picPlacement:item.data.picPlacement,
+            icon: item.data.icon,
+            iconStyle: item.data.iconStyle,
+            image: item.data.image,
+            picPlacement: item.data.picPlacement,
           }
         });
         this.setData({
