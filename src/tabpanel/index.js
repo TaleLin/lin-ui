@@ -20,7 +20,10 @@ Component({
     icon:String,
     iconStyle:String,
     image:Object,
-    picPlacement:String,
+    picPlacement:{
+      type:String,
+      value:'top'
+    },
   },
 
   /**

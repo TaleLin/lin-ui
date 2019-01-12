@@ -18,18 +18,18 @@
                 data-index="{{index}}" 
                 bind:tap="handleChange">
                 <image wx:if="{{ item.image.activeImage || item.image.defaultImage }}" src="{{item.key===activeKey? item.image.activeImage:item.image.defaultImage}}" class="l-tab-image l-class-tabimage"/>
-                <l-icon wx:if="{{item.icon}}" l-class="{{item.key===activeKey ? 'l-icon-active':'l-icon-inactive'}}" name="{{item.icon}}" size="28" color="{{item.key===activeKey?activeColor:inactiveColor}}"/>
+                <l-icon wx:if="{{item.icon}}" l-class="{{item.key===activeKey ? 'l-icon-active':'l-icon-inactive'}}" name="{{item.icon}}" size="iconStyle?tabs.parseCSSText(iconStyle).size:28" color="{{item.key===activeKey?activeColor:inactiveColor}}"/>
                     {{item.tab}}
                <view class="l-tab-line l-class-line" wx:if="{{hasLine && item.key===activeKey}}" style="background:{{item.key===activeKey?activeColor:inactiveColor}}"></view>
             </view>
         </view>
     </scroll-view>
-    <view wx:if="{{!swipeable}}" class="l-tabpanel-content" style="{{placement=='top'||placement=='bottom' ? 'margin-left:'+ -100 *currentIndex +'%;':'transform:translate(0,'+ -100 * currentIndex +'%) translateZ(0px);'}}">
+    <view wx:if="{{!swipeable}}" class="l-tabpanel-content l-class-content" style="{{placement=='top'||placement=='bottom' ? 'margin-left:'+ -100 *currentIndex +'%;':'transform:translate(0,'+ -100 * currentIndex +'%) translateZ(0px);'}}">
         <view class="l-tabpanel {{item.key===activeKey?'l-tabpanel-active':'l-tabpanel-inactive'}}" wx:for="{{tabList}}" wx:key="{{item.key}}" style="{{placement=='left'||placement=='right' ? 'position:absolute;width:100%;height:100%;transform:translate(0,'+ 100 * index +'%) translateZ(0px);':''}}">
             <slot name="{{item.key}}"></slot>
         </view>
     </view>
-    <swiper wx:else class="l-tabpanel-content" bindchange="swiperChange" current="{{currentIndex}}" vertical="{{placement=='left'||placement=='right'}}">
+    <swiper wx:else class="l-tabpanel-content l-tabpanel-swiper l-class-content" bindchange="swiperChange" current="{{currentIndex}}" vertical="{{placement=='left'||placement=='right'}}">
         <swiper-item class="l-tabpanel {{item.key===activeKey?'l-tabpanel-active':''}}" wx:for="{{tabList}}" wx:key="{{item.key}}">
             <slot name="{{item.key}}"></slot>
         </swiper-item>
