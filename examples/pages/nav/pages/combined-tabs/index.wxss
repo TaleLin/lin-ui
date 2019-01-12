@@ -1,8 +1,8 @@
 /* pages/nav/pages/tabs/index.wxss */
 
 .content {
-  height: 400rpx;
-  position: relative;
+  /* height: 400rpx; */
+  /* position: relative; */
 }
 
 .tab-content {
