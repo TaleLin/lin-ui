@@ -36,6 +36,11 @@ Component({
       type: String,
       value: '#3963BC'
     },
+    //  是否自定义内容
+    custom: {
+      type: Boolean,
+      value: false
+    },
     // radio的布局
     placement: {
       type: String,
