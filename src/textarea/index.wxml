@@ -6,6 +6,7 @@
     <textarea
       class=" textarea"
       type="{{type}}"
+      value="{{ value }}"
       password="{{type==='password'}}"
       placeholder="{{placeholder}}"
       maxlength="{{maxlength}}"
