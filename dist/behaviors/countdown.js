@@ -22,6 +22,10 @@ module.exports = Behavior({
             type: String,
             value: '{%d}天{%h}时{%m}分{%s}秒'
         },
+        isZeroPadd: {
+            type: Boolean,
+            value: true,
+        }
     },
     data: {
         initAddTime: 0,
@@ -62,7 +66,7 @@ module.exports = Behavior({
                 this.CountdownEnd();
                 return
             }
-                
+
             if (countDownTime - initAddTime > 0) {
                 this.getLatestForCountDown(countDownTime);
             } else if (countDownTime - initAddTime < 0) {
@@ -129,8 +133,11 @@ module.exports = Behavior({
                 const formatItem = {
                     type: format.type,
                     name,
-                    value: this.zeroPadding(parseInt(diffSecond / format.count))
+                    value: parseInt(diffSecond / format.count)
                 };
+                if (this.data.isZeroPadd) {
+                    formatItem.value = this.zeroPadding(formatItem.value);
+                }
                 diffSecond %= format.count;
                 date.push(formatItem);
             });

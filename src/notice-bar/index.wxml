@@ -13,5 +13,5 @@
     </view>
   </view>
   <l-icon wx:if="{{ endIconName && !close }}" size="24" color="#3683D6" class="l-noticebar-operation" name="{{ endIconName }}" icon-style="{{ endIconStyle }}" bindtap="onIconTap"  />
-  <l-icon wx:if="{{close}}" class="l-noticebar-operation" name="close" size="24" color="#3683D6" bindtap="onClsoe"/>
+  <l-icon wx:if="{{close}}" class="l-noticebar-operation" name="close" size="24" color="#3683D6" bindtap="onClose"/>
 </view>
