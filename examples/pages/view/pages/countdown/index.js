@@ -9,7 +9,6 @@ Page({
   },
 
   toggleStatus(){
-    console.log('toggleStatus')
     this.setData({
       status: !this.data.status,
     })

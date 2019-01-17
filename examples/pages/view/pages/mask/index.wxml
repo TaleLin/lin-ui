@@ -18,7 +18,7 @@
   </content-title>
 
     <l-mask
-    status="{{currentConf.status}}"
+    show="{{currentConf.show}}"
     opacity="{{currentConf.opacity}}"
     z-index="{{currentConf.zIndex}}"
     center="{{currentConf.center}}"

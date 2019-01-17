@@ -71,10 +71,8 @@ Component({
    */
   methods: {
     handleInputChange(event) {
-      console.log(event)
       const { detail = {} } = event;
       const { value = '' } = detail;
-      console.log(value)
  
       this.setData({ value });
 

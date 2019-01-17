@@ -44,7 +44,6 @@ Page({
 
   // 隐藏Pupop
   onHidePupopTap() {
-    console.log('quxiao')
     const type = this.data.type
     this.data.currentConf.show = false
     this.setData({

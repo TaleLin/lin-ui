@@ -43,7 +43,6 @@ Component({
       type: Boolean,
       value: false,
       observer: function (newVal, oldVal) {
-        console.log(newVal, oldVal)
         if (newVal) {
           this.setData({
             popup: false,
@@ -80,7 +79,6 @@ Component({
       const query = wx.createSelectorQuery().in(this)
       query.select('.right').boundingClientRect(function (res) {
         that._slideWidth = res.width
-        console.log('宽度' + res.width)
         let width = res.width <=50 ? res.width : 50
         that._threshold = that.properties.threshold ? that.properties.threshold : width
         that._viewWidth = that.data.width + res.width * (750 / _windowWidth)
@@ -144,7 +142,6 @@ Component({
     },
     //  根据滑动的范围设定是否允许movable-view出界
     onChange(e) {
-      // console.log(e)
       if (!this.data.out && e.detail.x < -this._threshold) {
         this.setData({
           out: true
@@ -160,7 +157,6 @@ Component({
     onRightTap(e) {
       let detail = 'click right';
       let option = {};
-      console.log(this.properties.height)
       if (this.properties.autoClose) {
         this.setData({
           popup: false,

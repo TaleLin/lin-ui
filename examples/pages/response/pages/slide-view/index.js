@@ -45,7 +45,6 @@ Page({
   // 打开购物车菜单栏
   onSlideOpenTap(e) {
     const id = e.currentTarget.dataset.id
-    console.log(id)
     if(id == 1) {
       this.setData({
         close2: true,
