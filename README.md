@@ -36,18 +36,18 @@ Lin UI提供两种安装方法，满足不同开发者的需求。如果您需�
 打开小程序的项目根目录，执行下面的命令。
 
 ```base
-npm install linui --production
+npm install lin-ui-test --production
 ```
 
-执行成功后，会在根目录里生成项目依赖文件夹 `node_modules/linui` （小程序IDE的目录结构里不会显示此文件夹）。
+执行成功后，会在根目录里生成项目依赖文件夹 `node_modules/lin-ui` （小程序IDE的目录结构里不会显示此文件夹）。
 <br/>
 然后用小程序官方IDE打开我们的小程序项目，找到 `工具` 选项，点击下拉选中 `构建npm` ，等待构建完成即可。
 
-出现上图所示的结果后，可以看到小程序IDE工具的目录结构里多出了一个文件夹 `miniprogram_npm`（之后所有通过 `npm ` 引入的组件和 `js` 库都会出现在这里），打开后可以看到 `linui` 文件夹，也就是我们所需要的组件。
+出现上图所示的结果后，可以看到小程序IDE工具的目录结构里多出了一个文件夹 `miniprogram_npm`（之后所有通过 `npm ` 引入的组件和 `js` 库都会出现在这里），打开后可以看到 `lin-ui` 文件夹，也就是我们所需要的组件。
 
 ### 方式二：下载代码
 
-直接通过git下载  `Lin UI`  源代码，并将 `dist` 目录（LinUI 组件库）拷贝到自己的项目中。
+直接通过git下载  `Lin UI`  源代码，并将 `dist` 目录（Lin UI 组件库）拷贝到自己的项目中。
 
 ```base
 git clone https://github.com/TaleLin/lin-ui.git
