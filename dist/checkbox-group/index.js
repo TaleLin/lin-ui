@@ -35,8 +35,6 @@ Component({
   methods: {
     // checkbox change
     onChangeHandle(val = this.data.current) {
-      // console.log('checkbox change', val)
-      console.log('onChangeHandle')
     },
     onEmitEventHandle(current) {
       const index = this.data.current.indexOf(current.value);
@@ -47,7 +45,6 @@ Component({
       },()=>{
         this.validatorData({value:this.data.value});
       });  
-      console.log('onEmitEventHandle')
       this.triggerEvent('linchange', current);
     }
   }

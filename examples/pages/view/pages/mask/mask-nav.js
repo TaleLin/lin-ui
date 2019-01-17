@@ -2,7 +2,7 @@ const maskNaviConfigs = [{
     title: "基本案例",
     type: 0,
     config: {
-      status: "show",
+      show: true,
       opacity: .4,      
       zIndex: 99,
       center: true,
@@ -14,7 +14,7 @@ const maskNaviConfigs = [{
     title: "自定义透明度",
     type: 1,
     config: {
-      status: "show",
+      show: true,
       opacity: .7,
       zIndex: 99,
       center: true,
@@ -25,7 +25,7 @@ const maskNaviConfigs = [{
     title: "子节点设置",
     type: 2,
     config: {
-      status: "show",
+      show: true,
       opacity: .5,
       zIndex: 99,
       center: false,
@@ -36,7 +36,7 @@ const maskNaviConfigs = [{
     title: "垂直居中",
     type: 3,
     config: {
-      status: "show",
+      show: true,
       opacity: .5,
       zIndex: 99,
       center: true,
@@ -47,7 +47,7 @@ const maskNaviConfigs = [{
     title: "锁定",
     type: 4,
     config: {
-      status: "show",
+      show: true,
       opacity: .5,
       zIndex: 99,
       center: true,

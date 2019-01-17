@@ -6,32 +6,9 @@ Component({
   externalClasses: ['mask-class'],
   properties: {
     // 显示与隐藏
-    status: {
-      type: String,
-      value: 'hide',
-      observer: function () {
-
-        if (this.properties.fullScreen === 'show' ) {
-          wx.setNavigationBarColor({
-            frontColor: '#ffffff',
-            backgroundColor: '#999',
-            animation: {
-              duration: 0,
-              timingFunc: 'easeIn'
-            }
-          })
-        } else if(this.properties.fullScreen === 'hide' ) {
-
-          wx.setNavigationBarColor({
-            frontColor: '#000000',
-            backgroundColor: '#fff',
-            animation: {
-              duration: 0,
-              timingFunc: 'easeIn'
-            }
-          })
-        }
-      }
+    show: {
+      type: Boolean,
+      value: false
     },
     // 不透明度
     opacity: {
@@ -41,7 +18,7 @@ Component({
     // mask的z-index值
     zIndex: {
       type: Number,
-      value: 99,
+      value: -99,
 
     },
     // slot是否居中
@@ -54,7 +31,7 @@ Component({
       type: Boolean,
       value: true
     },
-    // 全屏幕模式
+    // 全屏幕模式 暂不可用
     fullScreen: {
       type: String,
       value: ''
@@ -91,9 +68,8 @@ Component({
 
       if (this.data.locked !== true) {
         this.setData({
-          fullScreen: 'hide',
-
-          status: 'hide',
+          // fullScreen: 'hide',
+          show: false,
         })
       }
       this.triggerEvent('linTap', detail, option);
@@ -101,7 +77,6 @@ Component({
   },
 
   attached: function () {
-    console.log(this.properties)
   },
 
 

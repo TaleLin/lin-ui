@@ -55,9 +55,7 @@ Component({
     onPupopTap(e) {
       let detail = true;
       let option = {};
-      console.log(this.data.locked)
       if (this.data.locked !== true) {
-        console.log('可以更改')
         this.setData({
           show: !this.data.show
         })

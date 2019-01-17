@@ -93,7 +93,6 @@ Component({
       const {
         value = ''
       } = detail;
-      console.log(value)
 
       this.setData({
         value

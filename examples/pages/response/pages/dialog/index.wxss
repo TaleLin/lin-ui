@@ -15,5 +15,5 @@
 
 .dio-img{
   width: 220rpx;
-  height: 180rpx;
+  height: 165rpx;
 }

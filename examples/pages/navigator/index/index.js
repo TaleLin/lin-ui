@@ -9,7 +9,6 @@ Page({
     
   },
   errorTap(e){
-    console.log(e)
     const idx = e.currentTarget.dataset.idx
     if(idx == 1) {
       wx.showToast({
