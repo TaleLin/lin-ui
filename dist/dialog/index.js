@@ -23,7 +23,7 @@ Component({
     // 是否显示标题
     showTitle: {
       type: Boolean,
-      value: true  
+      value: true
     },
     // 内容
     content: {
@@ -72,6 +72,9 @@ Component({
     onConfirmTap(e) {
       let detail = 'confirm';
       let option = {};
+      this.setData({
+        show: !this.data.show
+      })
       this.triggerEvent('confirm', detail, option);
 
     },
@@ -80,6 +83,9 @@ Component({
     onCancelTap(e) {
       let detail = 'cancel';
       let option = {};
+      this.setData({
+        show: !this.data.show
+      })
       this.triggerEvent('cancel', detail, option);
     },
 
@@ -90,7 +96,7 @@ Component({
 
       if (this.data.locked !== true) {
         this.setData({
-          status: !this.data.status
+          show: !this.data.show
         })
       }
 

@@ -32,10 +32,8 @@ Page({
 
   // 显示mask
   onShowMaskTap(e) {
-    console.log(e)
     const type = e.currentTarget.dataset.type
     const config = JSON.parse(JSON.stringify(this.data.navConfig[type].config))
-    console.log(type)
     this.setData({
       currentConf: config,
       type
@@ -45,7 +43,7 @@ Page({
   // 隐藏mask
   onHideMaskTap() {
     const type = this.data.type
-    this.data.currentConf.status = false
+    this.data.currentConf.show = false
     this.setData({
       currentConf: this.data.currentConf
     })

@@ -30,7 +30,6 @@ Page({
       })
     }, 100)
 
-    this.onHideDioTap()    
   },
 
   // 取消按钮
@@ -41,8 +40,6 @@ Page({
         icon: 'none'
       })
     },100)
-
-    this.onHideDioTap()
   },
 
   // dio 点击事件
@@ -68,21 +65,6 @@ Page({
     })
   },
 
-  // 隐藏 dio
-  onHideDioTap() {
-    const type = this.data.type
-    this.data.currentConf.show = false
-    this.setData({
-      currentConf: this.data.currentConf
-    })
-
-    // if (type === 3) {
-    //   wx.showToast({
-    //     title: '已取消~',
-    //     icon: 'none'
-    //   })
-    // }
-  },
 
   /**
    * 生命周期函数--监听页面初次渲染完成

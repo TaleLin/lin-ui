@@ -7,6 +7,7 @@ const dialogNaviConfigs = [
       type: "alert",
       title: "标题",
       showTitle: true,
+      locked: false,
       content: "这个是提示框",
       confirmText: '确定',
       cancelText: '取消',
