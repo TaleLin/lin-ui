@@ -6,6 +6,7 @@ Component({
     // 标签颜色
     bgColor: String,
     fontColor:String,
+    disable:Boolean,
     // 标签形状
     shape: {
       type: String,
