@@ -1,12 +1,12 @@
 Component({
-  externalClasses: ['l-class', 'l-select-class','l-image-class'],
+  externalClasses: ['l-class', 'l-select-class', 'l-image-class'],
   properties: {
     // 标签名称
     name: String,
     // 标签颜色
     bgColor: String,
-    fontColor:String,
-    disable:Boolean,
+    fontColor: String,
+    disable: Boolean,
     // 标签形状
     shape: {
       type: String,
@@ -27,8 +27,8 @@ Component({
     },
     iconName: String,
     iconSize: {
-      type:String,
-      value:'20'
+      type: String,
+      value: '20'
     },
     iconColor: String,
     image: String,
@@ -39,6 +39,7 @@ Component({
   },
   methods: {
     handleTap() {
+      if (this.properties.disabled) return false;
       const options = {
         name: this.properties.name,
         select: this.properties.select
