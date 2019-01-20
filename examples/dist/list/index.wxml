@@ -1,0 +1,1 @@
+<view class="l-list" style="{{gap?'padding:0 '+gap+'rpx;':''}} {{leftGap?'padding-left:'+leftGap+'rpx':''}} {{rightGap?'padding-right:'+rightGap+'rpx':''}}"></view>

@@ -1,0 +1,5 @@
+/* pages/layout/pages/list/index.wxss */
+.container {
+  max-width: 100vw;
+  overflow-x: hidden;
+}

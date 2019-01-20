@@ -1,0 +1,16 @@
+<!--pages/navigator/layout/index.wxml-->
+<view class="container">
+  <view class="section">
+    <navi-title title="基础组件" count="{{layoutNaviConfigs.length}}"/>
+    <view class="section-content">
+      <detail-navi-card
+        wx:for="{{layoutNaviConfigs}}"
+        wx:for-item="layoutNaviConfig"
+        wx:key="{{index}}"
+        icon="{{layoutNaviConfig.icon}}"
+        title="{{layoutNaviConfig.title}}"
+        componentsPath="{{layoutNaviConfig.componentsPath}}"
+        desc="{{layoutNaviConfig.desc}}"/>
+    </view>
+  </view>
+</view>

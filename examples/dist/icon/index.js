@@ -1,5 +1,5 @@
 Component({
-    externalClasses: ['l-class'],
+    externalClasses: ['l-class','l-class-self'],
     properties: {
         name: {
             type: String,
