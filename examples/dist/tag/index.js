@@ -11,6 +11,7 @@ Component({
       type: String,
       value: 'square'
     },
+    disable:Boolean,
     // 是否为选中态
     select: Boolean,
     // 是否镂空
