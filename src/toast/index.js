@@ -55,6 +55,11 @@ Component({
       type: Number,
       value: 1500
     },
+    // 提示框的层级
+    zIndex: {
+      type: Number,
+      value: 999
+    },
     // 设置提示框是否为垂直居中
     center: {
       type: Boolean,
