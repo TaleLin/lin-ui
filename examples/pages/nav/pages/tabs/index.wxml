@@ -1,5 +1,4 @@
 <!--pages/nav/pages/tabs/index.wxml-->
-
 <view class='container'>
   <content-title name="Tabs" describe="标签页">
     <content-card l-content="content" name="等宽标签">
@@ -69,7 +68,7 @@
 
 
     <content-card l-content="content" name="滚动标签">
-      <l-tabs bind:linchange="changeTabs" l-class-header="l-class-header" l-class-active="l-class-active" placement="top" scrollable >
+      <l-tabs bind:linchange="changeTabs" l-class-header="l-class-header" l-class-active="l-class-active" placement="top" scrollable>
         <l-tabpanel wx:for="{{scrollAbleTabs}}" tab="{{item.tab}}" key="{{item.key}}" slot="{{item.key}}" wx:key="{{item.key}}">
           <view class="tab-content">{{item.tab}}</view>
         </l-tabpanel>
