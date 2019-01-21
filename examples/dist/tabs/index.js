@@ -1,10 +1,22 @@
 // components/tabs/index.js
 Component({
-  externalClasses: ['l-class-header', 'l-class-active', 'l-class-content', 'l-class-inactive', 'l-class-line', 'l-class-tabimage','l-class-header-line'],
+  externalClasses: ['l-class-header', 'l-class-active', 'l-class-content', 'l-class-inactive', 'l-class-line', 'l-class-tabimage', 'l-class-header-line'],
   relations: {
     '../tabpanel/index': {
       type: 'child',
-    }
+      linked(target) {
+        console.log(target)
+        // 每次有子节点被插入时执行，target是该节点实例对象，触发在该节点attached生命周期之后
+        this.initTabs();
+      },
+      linkChanged(target) {
+
+      },
+      unlinked(target) {
+
+      }
+    },
+
   },
   options: {
     multipleSlots: true // 在组件定义时的选项中启用多slot支持
