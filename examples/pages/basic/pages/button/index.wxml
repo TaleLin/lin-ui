@@ -3,23 +3,23 @@
   <content-card name="按钮类型">
 
     <view class="style-content">
-      <l-button>
+      <l-button style="margin-right:30rpx">
         默认</l-button>
-      <l-button type="success">
+      <l-button type="success" style="margin-right:30rpx">
         成功</l-button>
-      <l-button type="error">
+      <l-button type="error" style="margin-right:30rpx">
         错误</l-button>
-      <l-button type="warning">
+      <l-button type="warning" style="margin-right:30rpx">
         警告</l-button>
     </view>
     <view class="style-content">
-      <l-button plain>
+      <l-button plain style="margin-right:30rpx">
         默认</l-button>
-      <l-button plain type="success">
+      <l-button plain type="success" style="margin-right:30rpx">
         成功</l-button>
-      <l-button plain type="error">
+      <l-button plain type="error" style="margin-right:30rpx">
         错误</l-button>
-      <l-button plain type="warning">
+      <l-button plain type="warning" style="margin-right:30rpx">
         警告</l-button>
     </view>
   </content-card>
