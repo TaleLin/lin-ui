@@ -2,7 +2,7 @@
   "usingComponents": {
     "content-title": "/components/content-title/index",
     "content-card": "/components/content-card/index",
-    "l-list-cell": "/dist/list-cell/index",
+    "l-list": "/dist/list/index",
     "l-radio":"/dist/radio/index"
   }
 }

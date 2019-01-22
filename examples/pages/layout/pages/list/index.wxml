@@ -1,44 +1,35 @@
-<!--pages/layout/pages/list/index.wxml-->
-<!--pages/form/pages/rules/index.wxml-->
+<!-- pages/layout/pages/list/index.wxml -->
 <view class='container'>
   <content-title name="List" describe="列表">
     <content-card class="content" name="基本案例">
-      <l-list-cell title="购物车" />
-      <l-list-cell title="购物车" desc="查看我的购物车"/>
+      <l-list title="购物车" />
+      <l-list title="购物车" desc="查看我的购物车" />
     </content-card>
-
-    <content-card class="content" name="图标图片">
-      <l-list-cell title="购物车" icon="cart" />
-      <l-list-cell title="消息" icon="notification" />
-      <l-list-cell title="客厅" image="/pages/layout/images/badroom-active.png" is-link="{{false}}" />
+    <content-card class="content" name="有图标图片的列表">
+      <l-list title="消息" icon="notification" />
+      <l-list title="客厅" image="/pages/layout/images/badroom-active.png" />
     </content-card>
-
-    <content-card class="content" name="tag">
-      <l-list-cell title="购物车" icon="cart" tag-content="购物车" />
-      <l-list-cell title="购物车" icon="cart" tag-content="购物车" tag-color="#F4516c"/>
-      <l-list-cell title="消息" icon="notification" tag-content="消息" tag-position="right"/>
-      <l-list-cell title="消息" icon="notification" tag-content="消息" tagShape="circle" tag-position="right"/>
+    <content-card class="content" name="有标签元素的列表">
+      <l-list title="购物车" icon="cart" tag-content="购物车" />
+      <l-list title="购物车" icon="cart" tag-content="购物车" tag-color="#F4516c" />
+      <l-list title="消息" icon="notification" tag-content="消息" tag-position="right" />
+      <l-list title="消息" icon="notification" tag-content="消息" tagShape="circle" tag-position="right" />
     </content-card>
-
-     <content-card class="content" name="badge">
-      <l-list-cell title="生成我的海报" dot-badge="{{true}}" />
-      <l-list-cell title="消息" icon="notification" right-desc="新消息" badge-count="999" badge-position="right" />
-
-      <l-list-cell title="客厅" image="/pages/layout/images/badroom-active.png" badge-count="999" badge-position="right" />
+    <content-card class="content" name="有徽标元素的列表">
+      <l-list title="生成我的海报" dot-badge="{{true}}" />
+      <l-list title="消息" icon="notification" badge-count="9" badge-position="right" />
     </content-card>
-
-    <content-card class="content" name="slot">
-      <l-list-cell right-desc="生成我的海报">
+    <content-card class="content" name="自定义内容的列表">
+      <l-list right-desc="生成我的海报">
         <view slot="left-section">
-          <l-radio value="看一看"/>
+          <l-radio value="看一看" />
         </view>
-      </l-list-cell>
-
-    <l-list-cell title="允许陌生人查看十条朋友圈">
+      </l-list>
+      <l-list title="允许陌生人查看十条朋友圈">
         <view slot="right-section">
-          <switch/>
+          <switch />
         </view>
-      </l-list-cell>
+      </l-list>
     </content-card>
   </content-title>
 </view>

@@ -17,7 +17,7 @@ Component({
     options: {
         multipleSlots: true
     },
-    externalClasses: ['l-class', 'l-class-text'],
+    externalClasses: ['l-class', 'l-class-icon', 'l-class-image'],
     properties: {
         icon: String,
         image: String,
@@ -33,12 +33,21 @@ Component({
             value: 'square'
         },
         tagColor: String,
+        tagPlain: Boolean,
         badgePosition: {
             type: String,
             value: 'left'
         },
         dotBadge: Boolean,
         badgeCount: Number,
+        badgeMaxCount: {
+            type: Number,
+            value: 99
+        },
+        badgeCountType: {
+            type: String,
+            value: 'overflow'
+        },
         rightDesc: String,
         gap: Number,
         leftGap: Number,
@@ -54,20 +63,21 @@ Component({
         url: String
 
     },
-    attached() {
-        console.log(this.data)
-    },
 
     methods: {
         tapcell: function (e) {
-            console.log(e)
-            const { linkType, url } = e.currentTarget.dataset;
+            const {
+                linkType,
+                url
+            } = e.currentTarget.dataset;
             if (url) {
                 wx[linkType]({
                     url
-                })
+                });
             }
-            this.triggerEvent('lintap', { e }, {})
+            this.triggerEvent('lintap', {
+                e
+            }, {})
         }
     }
 });
