@@ -7,22 +7,7 @@ Page({
   data: {
     placement: 'left',
     placementArr: ['top', 'left', 'right', 'bottom'],
-    scrollAbleTabs: [{
-      tab: '精选',
-      key: 'treasure'
-    }, {
-      tab: '居家生活',
-      key: 'life'
-    }, {
-      tab: '美食厨房',
-      key: 'food'
-    }, {
-      tab: '服饰珠宝',
-      key: 'cloth'
-    }, {
-      tab: '美妆洗护',
-      key: 'cosmetics'
-    }],
+    scrollAbleTabs: [],
     iconTabs: [{
       tab: '购物车',
       key: 'cart',
@@ -100,11 +85,32 @@ Page({
     })
   },
 
+  _asyncData() {
+    this.setData({
+      scrollAbleTabs: [{
+        tab: '精选',
+        key: 'treasure'
+      }, {
+        tab: '居家生活',
+        key: 'life'
+      }, {
+        tab: '美食厨房',
+        key: 'food'
+      }, {
+        tab: '服饰珠宝',
+        key: 'cloth'
+      }, {
+        tab: '美妆洗护',
+        key: 'cosmetics'
+      }],
+    })
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-
+    setTimeout(this._asyncData, 5000)
   },
 
   /**

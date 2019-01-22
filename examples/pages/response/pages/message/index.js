@@ -34,7 +34,8 @@ Page({
         this.setData({
           show: true,
           type: 'error',
-          duration: 1500
+          duration: 1500,
+          content: '错误提示'
         })
         break
       case 3:
