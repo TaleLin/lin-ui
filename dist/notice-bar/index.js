@@ -13,17 +13,25 @@ Component({
       type: String,
       value: ''
     },
-    frontIconStyle: {
-      type: String,
-      value: 'size:20;color:#3683D6'
+    frontIconSize: {
+      type: Number,
+      value: 20
+    },
+    frontIconColor:{
+      type:String,
+      value:'#3683D6'
     },
     endIconName: {
       type: String,
       value: ''
     },
-    endIconStyle: {
-      type: String,
-      value: 'size:20;color:#3683D6'
+    endIconSize: {
+      type: Number,
+      value: 20
+    },
+    endIconColor:{
+      type:String,
+      value:'#3683D6'
     },
     // 背景颜色
     backgroundcolor: {

@@ -1,5 +1,5 @@
 <view bindtap="handleTap" wx:if="{{ show }}" class="l-class l-noticebar" style="color: {{ color }}; background-color: {{ backgroundcolor }}">
-  <l-icon wx:if="{{ frontIconName }}" size="24" color="#3683D6" name="{{ frontIconName }}" icon-style="{{ frontIconStyle }}" class="l-noticebar-icon" />
+  <l-icon wx:if="{{ frontIconName }}" size="{{frontIconSize}}" color="{{frontIconColor}}" name="{{ frontIconName }}" class="l-noticebar-icon" />
   <swiper autoplay vertical interval="{{4*speed}}" class="l-noticebar-content-wrap" wx:if="{{type=='swip'}}">
     <block wx:for="{{swipArr}}" wx:key="swip">
       <swiper-item>
@@ -12,6 +12,6 @@
       <slot></slot>
     </view>
   </view>
-  <l-icon wx:if="{{ endIconName && !close }}" size="24" color="#3683D6" class="l-noticebar-operation" name="{{ endIconName }}" icon-style="{{ endIconStyle }}" bindtap="onIconTap"  />
-  <l-icon wx:if="{{close}}" class="l-noticebar-operation" name="close" size="24" color="#3683D6" bindtap="onClose"/>
+  <l-icon wx:if="{{ endIconName && !close }}" size="{{endIconSize}}" color="{{endIconColor}}" class="l-noticebar-operation" name="{{ endIconName }}" bindtap="onIconTap"  />
+  <l-icon wx:if="{{close}}" class="l-noticebar-operation" name="close" size="{{endIconSize}}" color="{{endIconColor}}" bindtap="onClose"/>
 </view>
