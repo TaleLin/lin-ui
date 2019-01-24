@@ -32,10 +32,8 @@ Component({
         value: false,
       },
       // 微信原生接口
-      long: {
-        type: Boolean,
-        value: false
-      },
+      width:Number,
+      height:Number,
       icon: String,
       image: String,
       iconStyle: {

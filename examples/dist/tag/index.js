@@ -30,7 +30,10 @@ Component({
       type: String,
       value: '20'
     },
-    iconColor: String,
+    iconColor: {
+      type:String,
+      value:'#3683D6'
+    },
     image: String,
     iconStyle: {
       type: String,
