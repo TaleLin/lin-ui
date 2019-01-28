@@ -1,0 +1,5 @@
+<view class="l-grid l-class" bindtap="tapGrid">
+    <view bindtap="tapGridItem" class="l-grid-item l-class-grid {{index%rowNum !== rowNum-1 &&(showBorder||showColBorder) ? 'side-grid':''}} {{gridItems.length%rowNum!==0 && (index-gridItems.length+gridItems.length%rowNum) < 0 &&(showBorder||showRowBorder)? 'center-grid':''}} {{gridItems.length%rowNum===0 && (index-gridItems.length+3) &&(showBorder||showRowBorder) < 0? 'center-grid':''}}" wx:for="{{gridItems}}" wx:key="{{item.key}}" style="min-width:{{100/rowNum}}%;" data-index="{{index}}">
+        <slot name="{{item.key}}"></slot>
+    </view>
+</view>
