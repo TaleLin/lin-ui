@@ -70,7 +70,8 @@
     {
       "root": "pages/layout",
       "pages": [
-        "pages/list/index"
+        "pages/list/index",
+        "pages/grid/index"
       ]
     }
   ]

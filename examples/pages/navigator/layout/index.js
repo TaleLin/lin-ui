@@ -1,6 +1,6 @@
 // pages/navigator/ layout/index.js
 import layoutNaviConfigs from './layout-navi.js';
-console.log(layoutNaviConfigs)
+
 Page({
 
   /**

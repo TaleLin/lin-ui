@@ -1,0 +1,25 @@
+/* pages/layout/pages/grid/index.wxss */
+
+/* .view-container  {
+  width: 280rpx;
+} */
+
+.num {
+  color: #fc6517;
+  font-size: 42rpx;
+  font-style: italic;
+}
+
+.text {
+  height: 30rpx;
+  font-size: 22rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(102, 102, 102, 1);
+  line-height: 30rpx;
+  margin-top: 9rpx;
+}
+
+.grid-item {
+  height: 200rpx;
+}
