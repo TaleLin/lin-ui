@@ -1,7 +1,6 @@
 <!--pages/layout/pages/grid/index.wxml-->
 <view class='container'>
   <content-title name="Grid" describe="宫格">
-
     <content-card class="content" name="基本案例">
       <view class="view-container">
         <l-grid>

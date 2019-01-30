@@ -55,7 +55,6 @@ Page({
   },
 
   clickGrid(e) {
-    console.log('clickGrid',e)
     wx.showToast({
       title: e.currentTarget.dataset.text,
       icon: 'none'
@@ -63,7 +62,6 @@ Page({
   },
 
   clickGrids(e) {
-    console.log('clickGrids',e)
     wx.showToast({
       title: `点击的Grid的索引是${e.detail.index}`,
       icon: 'none'
