@@ -8,6 +8,13 @@ Page({
 
   },
 
+  clickListItem(e){
+    wx.showToast({
+      title: `点击了${e.currentTarget.dataset.key}`,
+      icon:'none'
+    })
+  },
+
   /**
    * Lifecycle function--Called when page load
    */
