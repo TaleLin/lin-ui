@@ -7,7 +7,7 @@ const naviConfigs=[
   {
     icon: "/images/navigator/icon-flex.png",
     title: "布局组件",
-    navigatePath: ""
+    navigatePath: "/pages/navigator/layout/index"
   },
   {
     icon: "/images/navigator/icon-navigator.png",

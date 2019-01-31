@@ -14,7 +14,6 @@
       title="{{naviConfig.title}}"
       icon="{{naviConfig.icon}}"
       navigatePath="{{naviConfig.navigatePath}}"
-      bindtap="errorTap"
     />
   </view>
 </view>
