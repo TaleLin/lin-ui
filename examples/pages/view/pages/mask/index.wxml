@@ -24,7 +24,7 @@
     center="{{currentConf.center}}"
     locked="{{currentConf.locked}}"
     full-screen="{{currentConf.fullScreen}}"
-    bind:linTap="onMaskTap"
+    bind:lintap="onMaskTap"
   >
    <view class='mask-content' wx:if="{{type === 2 || type === 3 || type === 4}}">
     <view class='mask-close' bindtap='onHideMaskTap'>隐藏遮罩</view>
