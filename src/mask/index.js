@@ -72,7 +72,7 @@ Component({
           show: false,
         })
       }
-      this.triggerEvent('linTap', detail, option);
+      this.triggerEvent('lintap', detail, option);
     }
   },
 

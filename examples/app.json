@@ -5,7 +5,8 @@
     "pages/navigator/view/index",
     "pages/navigator/form/index",
     "pages/navigator/response/index",
-    "pages/navigator/nav/index"
+    "pages/navigator/nav/index",
+    "pages/navigator/layout/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -53,6 +54,7 @@
       "root": "pages/nav",
       "pages": [
         "pages/tabs/index",
+        "pages/tabbar/index",
         "pages/combined-tabs/index"
       ]
     },
@@ -64,6 +66,13 @@
         "pages/checkbox/index",
         "pages/textarea/index",
         "pages/rules/index"
+      ]
+    },
+    {
+      "root": "pages/layout",
+      "pages": [
+        "pages/list/index",
+        "pages/grid/index"
       ]
     }
   ]

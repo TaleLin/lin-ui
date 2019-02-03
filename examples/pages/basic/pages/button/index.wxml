@@ -104,7 +104,7 @@
 
   <content-card name="长按钮" cardPadding="{{false}}">
     <view class="content">
-      <l-button long="true" bind:button="onlong">
+      <l-button size="long" bind:button="onlong">
         长按钮</l-button>
     </view>
   </content-card>
