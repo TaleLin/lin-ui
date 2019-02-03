@@ -9,6 +9,12 @@ const NaviConfigs = [{
     title: "CombinedTabs",
     desc: "混合标签",
     componentsPath: "/pages/nav/pages/combined-tabs/index"
+  },
+  {
+    icon: "/images/component/tabbar.png",
+    title: "TabBar",
+    desc: "自定义选项卡",
+    componentsPath: "/pages/nav/pages/tabbar/index"
   }
 ]
 
