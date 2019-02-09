@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "content-title": "/components/content-title/index",
+    "l-card":"/dist/card/index",
+    "l-icon": "/dist/icon/index"
+  }
+}

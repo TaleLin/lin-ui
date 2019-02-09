@@ -9,6 +9,12 @@ const layoutNaviConfigs = [{
     desc: "宫格",
     componentsPath: "/pages/layout/pages/grid/index"
   }, 
+  {
+    icon: "/images/component/grid.jpg",
+    title: "Card",
+    desc: "卡片",
+    componentsPath: "/pages/layout/pages/card/index"
+  }, 
 ]
 
 export default layoutNaviConfigs;

@@ -72,7 +72,8 @@
       "root": "pages/layout",
       "pages": [
         "pages/list/index",
-        "pages/grid/index"
+        "pages/grid/index",
+        "pages/card/index"
       ]
     }
   ]

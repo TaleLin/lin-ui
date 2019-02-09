@@ -1,0 +1,19 @@
+<view class="l-class card-container {{'card-container-' + type + '-' + position}} {{full?'card-container-full':'card-container-unfull'}}">
+  <block wx:if="{{type ==='primary'}}">
+    <image wx:if="{{!plaintext}}" class="l-img-class card-img-primary {{ 'card-img-' + type + '-' + position }}" mode="aspectFill" lazy-load="{{true}}" src="{{image}}"></image>
+    <view class='card-content'>
+      <text class="card-title {{'card-title-' + type}}">{{title}}</text>
+      <slot />
+    </view>
+  </block>
+  <block wx:else>
+    <view class="card-avatar-top">
+      <image mode="aspectFill" class="l-img-class {{ 'card-img-' + type }}" src='{{image}}'></image>
+      <view class="card-avatar">
+        <text class="card-title {{'card-title-' + type}}">{{title}}</text>
+        <text class="describe">{{describe}}</text>
+      </view>
+    </view>
+    <slot />
+  </block>
+</view>
