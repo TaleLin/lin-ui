@@ -12,6 +12,18 @@
     </view>
   </l-card>
 
+    <view class="card-top">
+    <view class="card-dot"></view>
+    <view class="content-name">卡片类型（cover）</view>
+  </view>
+
+  <l-card type="cover" l-class="card" image="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1549736747027&di=8e75e11a150193e0f8a555e107f921eb&imgtype=0&src=http%3A%2F%2Fwww.lanxu.net%2Fuploads%2Fallimg%2F20190201%2F201902010602093105.jpg"
+    title="年味儿的科技大升级">
+    <view class="content">
+      一部分人回乡，一部分人把父母接到了身边,还有一部分人，干脆把假期变成了真正属于自己的时间。总有- -些科技，升级了生活方式，延展了过年形式的体验，还有一些欲...
+    </view>
+  </l-card>
+
   <view class="card-top">
     <view class="card-dot"></view>
     <view class="content-name">卡片类型（avter）</view>
@@ -32,6 +44,11 @@
         <view class="number">10评论</view>
       </view>
     </view>
+    <l-tag  shape="circle" 
+            bg-color="#f3f3f3" 
+            font-color="#3963BC" 
+            slot="more"
+            size="large">+ 关注</l-tag>
   </l-card>
 
   <view class="card-top">

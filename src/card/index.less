@@ -23,12 +23,24 @@
     flex-direction: row-reverse;
   }
   
-  &-avatar-left {
+  &-avatar {
     flex-direction: column;
   }
 
-  &-avatar-right{
+  &-cover {
     flex-direction: column;
+  }
+}
+
+.cover-img{
+  &-full{
+    width: 690rpx;
+    height: 260rpx;
+  }
+
+  &-unfull{
+    width: 630rpx;
+    height: 260rpx;
   }
 }
 
@@ -63,10 +75,10 @@
 }
 
 .card-content {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  flex: 1;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
 }
 
 .card-title {
@@ -84,6 +96,11 @@
   &-avatar{
     font-size: 28rpx;
   }
+
+  &-cover{
+    font-size: 30rpx;
+    margin-top: 10rpx;
+  }
 }
 
 .card-title-avatar {
@@ -94,6 +111,13 @@
   display: flex;
   flex-direction: row;
   height: 100rpx;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card-avatar-left {
+  display: flex;
+  flex-direction: row;
   align-items: center;
 }
 
