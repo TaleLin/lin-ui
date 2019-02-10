@@ -26,7 +26,7 @@
 
   <view class="card-top">
     <view class="card-dot"></view>
-    <view class="content-name">卡片类型（avter）</view>
+    <view class="content-name">卡片类型（avatar）</view>
   </view>
 
   <l-card type="avatar" l-class="card" image="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1549711852726&di=6b454cec0b57f62d46089487454fa56f&imgtype=0&src=http%3A%2F%2Fimg3.duitang.com%2Fuploads%2Fitem%2F201609%2F14%2F20160914062816_SC8KU.jpeg"
