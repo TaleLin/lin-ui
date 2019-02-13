@@ -39,7 +39,7 @@ Lin UI 是基于 **微信小程序原生语法** 实现的组件库。遵循简�
 
 ## 最新版本
 
-核心库：0.0.1-alpha.11
+核心库：0.0.1-alpha.12
 
 示例工程：0.0.1-alpha.1
 
@@ -47,12 +47,6 @@ Lin UI 是基于 **微信小程序原生语法** 实现的组件库。遵循简�
 ## 文档地址
 
 http://doc.mini.7yue.pro/ 
-
-
-## 微信扫码体验
-  <div class="QR-wrapper">
-    <img class="QR-img" src="http://imglf3.nosdn0.126.net/img/YUdIR2E3ME5weEZWVFhTU3I2YnRTVnB6VHZsbHR0SzJtMHNCK28rUE41QzljaFBmdmc2ZUFBPT0.jpg?imageView&thumbnail=500x0&quality=96&stripmeta=0&type=jpg">
-  </div>
 
 
 ## 快速上手
@@ -154,68 +148,3 @@ npm run build
 ```
 
 根目录下的 `dist` 文件夹即是编译后的自定义组件。
-
-<style>
-
-.center {
-  text-align:center;
-  display:flex;
-  width: 100%;
-  font-size: 36px;
-  flex-direction: row;
-  align-items: center;
-  justify-content:center;  
-  margin-bottom: 20px;
-  margin-top: 20px;
-}
-
-.logo {
-  font-size: 32px;
-  font-weight: bold;
-  color: #333;
-}
-
-.desc {
-  font-size: 20px;
-}
-
-.row {
-  height: 1px;
-  width: 95%;
-  background: #eee;
-  margin: 5px auto 20px;
-}
-
-.action {
-  text-align:center;
-  margin-top: 50px;
-}
-
-.action-button {
-  display: inline-block;
-  font-size: 16px;
-  color: #fff;
-  padding: 5px 15px;
-  line-hight: 45px;
-  background-color: #3683d6;
-  border-radius: 4px;
-  transition: background-color .1s ease;
-  box-sizing: border-box;
-  border-bottom: 1px solid #389d70;
-}
-
-.QR-wrapper{
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content:center;  
-  margin-bottom: 50px;
-  margin-top: 50px;
-}
-
-.QR-img{
-  height: 200px;
-  width:200px;
-}
-</style>
