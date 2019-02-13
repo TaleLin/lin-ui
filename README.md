@@ -1,4 +1,37 @@
 
+<p align="center">
+  <!-- <a href="http://doc.mini.7yue.pro/"> -->
+    <img
+      class="QR-img" src="http://imglf3.nosdn0.126.net/img/YUdIR2E3ME5weEZWVFhTU3I2YnRTVnB6VHZsbHR0SzJtMHNCK28rUE41QzljaFBmdmc2ZUFBPT0.jpg?imageView&thumbnail=500x0&quality=96&stripmeta=0&type=jpg">
+  <!-- </a> -->
+</p>
+
+<div align="center"> <span class="logo" > Lin UI </span> </div>
+
+<div class="row" />
+
+<div align="center">
+  <span class="desc" >Fantastic native based Mini-Programe components</span> 
+</div>
+
+<div align="center">
+
+![](https://img.shields.io/badge/build-passing-00d508.svg)
+![](https://img.shields.io/badge/version-0.0.1.alpha.11-3963bc.svg)
+![](https://img.shields.io/badge/license-MIT-3963bc.svg)
+
+</div>
+
+<div align="center">
+
+![](https://img.shields.io/badge/less-^2.7.3-00d508.svg)
+![](https://img.shields.io/badge/eslint-^5.0.1-00d508.svg)
+![](https://img.shields.io/badge/cli-0.0.1.alpha.1-3963bc.svg)
+![](https://img.shields.io/badge/npm-v3.0.0+-00d508.svg)
+![](https://img.shields.io/badge/gulp-v3.9.1-00d508.svg)
+![](https://img.shields.io/badge/node-v8.11.0+-00d508.svg)
+
+</div>
 
 # 简介
 
@@ -36,7 +69,7 @@ Lin UI提供两种安装方法，满足不同开发者的需求。如果您需�
 打开小程序的项目根目录，执行下面的命令。
 
 ```base
-npm install lin-ui-test --production
+npm install lin-ui --production
 ```
 
 执行成功后，会在根目录里生成项目依赖文件夹 `node_modules/lin-ui` （小程序IDE的目录结构里不会显示此文件夹）。
@@ -122,3 +155,67 @@ npm run build
 
 根目录下的 `dist` 文件夹即是编译后的自定义组件。
 
+<style>
+
+.center {
+  text-align:center;
+  display:flex;
+  width: 100%;
+  font-size: 36px;
+  flex-direction: row;
+  align-items: center;
+  justify-content:center;  
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.logo {
+  font-size: 32px;
+  font-weight: bold;
+  color: #333;
+}
+
+.desc {
+  font-size: 20px;
+}
+
+.row {
+  height: 1px;
+  width: 95%;
+  background: #eee;
+  margin: 5px auto 20px;
+}
+
+.action {
+  text-align:center;
+  margin-top: 50px;
+}
+
+.action-button {
+  display: inline-block;
+  font-size: 16px;
+  color: #fff;
+  padding: 5px 15px;
+  line-hight: 45px;
+  background-color: #3683d6;
+  border-radius: 4px;
+  transition: background-color .1s ease;
+  box-sizing: border-box;
+  border-bottom: 1px solid #389d70;
+}
+
+.QR-wrapper{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content:center;  
+  margin-bottom: 50px;
+  margin-top: 50px;
+}
+
+.QR-img{
+  height: 200px;
+  width:200px;
+}
+</style>
