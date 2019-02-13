@@ -1,6 +1,6 @@
 <!--pages/view/pages/dialog/index.wxml-->
 <view class='container'>
-  <content-title name="Input" describe="输入框">
+  <content-title name="Textarea" describe="文本域">
     <content-card
       class="content"
       name="基本案例"
@@ -18,7 +18,6 @@
         <l-textarea  placeholder="说说你的想法吧..."/>
       </view>
     </content-card>
-
 
     <content-card
       class="content"

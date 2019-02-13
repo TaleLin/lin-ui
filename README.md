@@ -1,4 +1,37 @@
 
+<p align="center">
+  <!-- <a href="http://doc.mini.7yue.pro/"> -->
+    <img
+      class="QR-img" src="http://imglf3.nosdn0.126.net/img/YUdIR2E3ME5weEZWVFhTU3I2YnRTVnB6VHZsbHR0SzJtMHNCK28rUE41QzljaFBmdmc2ZUFBPT0.jpg?imageView&thumbnail=500x0&quality=96&stripmeta=0&type=jpg">
+  <!-- </a> -->
+</p>
+
+<div align="center"> <span class="logo" > Lin UI </span> </div>
+
+<div class="row" />
+
+<div align="center">
+  <span class="desc" >Fantastic native based Mini-Programe components</span> 
+</div>
+
+<div align="center">
+
+![](https://img.shields.io/badge/build-passing-00d508.svg)
+![](https://img.shields.io/badge/version-0.0.1.alpha.11-3963bc.svg)
+![](https://img.shields.io/badge/license-MIT-3963bc.svg)
+
+</div>
+
+<div align="center">
+
+![](https://img.shields.io/badge/less-^2.7.3-00d508.svg)
+![](https://img.shields.io/badge/eslint-^5.0.1-00d508.svg)
+![](https://img.shields.io/badge/cli-0.0.1.alpha.1-3963bc.svg)
+![](https://img.shields.io/badge/npm-v3.0.0+-00d508.svg)
+![](https://img.shields.io/badge/gulp-v3.9.1-00d508.svg)
+![](https://img.shields.io/badge/node-v8.11.0+-00d508.svg)
+
+</div>
 
 # 简介
 
@@ -6,7 +39,7 @@ Lin UI 是基于 **微信小程序原生语法** 实现的组件库。遵循简�
 
 ## 最新版本
 
-核心库：0.0.1-alpha.11
+核心库：0.0.1-alpha.12
 
 示例工程：0.0.1-alpha.1
 
@@ -14,12 +47,6 @@ Lin UI 是基于 **微信小程序原生语法** 实现的组件库。遵循简�
 ## 文档地址
 
 http://doc.mini.7yue.pro/ 
-
-
-## 微信扫码体验
-  <div class="QR-wrapper">
-    <img class="QR-img" src="http://imglf3.nosdn0.126.net/img/YUdIR2E3ME5weEZWVFhTU3I2YnRTVnB6VHZsbHR0SzJtMHNCK28rUE41QzljaFBmdmc2ZUFBPT0.jpg?imageView&thumbnail=500x0&quality=96&stripmeta=0&type=jpg">
-  </div>
 
 
 ## 快速上手
@@ -36,7 +63,7 @@ Lin UI提供两种安装方法，满足不同开发者的需求。如果您需�
 打开小程序的项目根目录，执行下面的命令。
 
 ```base
-npm install lin-ui-test --production
+npm install lin-ui --production
 ```
 
 执行成功后，会在根目录里生成项目依赖文件夹 `node_modules/lin-ui` （小程序IDE的目录结构里不会显示此文件夹）。
@@ -121,4 +148,3 @@ npm run build
 ```
 
 根目录下的 `dist` 文件夹即是编译后的自定义组件。
-

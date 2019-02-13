@@ -1,0 +1,96 @@
+<content-title name="Card" describe="卡片">
+
+  <view class="card-top">
+    <view class="card-dot"></view>
+    <view class="content-name">卡片类型（primary）</view>
+  </view>
+
+  <l-card type="primary" l-class="card" image="https://timgsa.baidu.com/timg?image&quality=80&size=b10000_10000&sec=1549701108&di=d141540da70a7f92abd6f90ffef7460c&src=http://ztd00.photos.bdimg.com/ztd/w=700;q=50/sign=0b1f180b5a43fbf2c52ca4238045bbbd/b7fd5266d0160924665b9f18dd0735fae6cd34b2.jpg"
+    title="新疆精选苹果">
+    <view class="content">
+      新疆苹果,又名塞威氏苹果,蔷微科,落叶乔木。原产新疆西部天山北山麓,主要集中分布于伊犁河谷果子沟,新源县境内的那拉提野果林,巩留的莫合林场,垂直分布区域海拔在1000～1300m的山顶、山坡、河谷区域。
+    </view>
+  </l-card>
+
+    <view class="card-top">
+    <view class="card-dot"></view>
+    <view class="content-name">卡片类型（cover）</view>
+  </view>
+
+  <l-card type="cover" l-class="card" image="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1549736747027&di=8e75e11a150193e0f8a555e107f921eb&imgtype=0&src=http%3A%2F%2Fwww.lanxu.net%2Fuploads%2Fallimg%2F20190201%2F201902010602093105.jpg"
+    title="年味儿的科技大升级">
+    <view class="content">
+      一部分人回乡，一部分人把父母接到了身边,还有一部分人，干脆把假期变成了真正属于自己的时间。总有- -些科技，升级了生活方式，延展了过年形式的体验，还有一些欲...
+    </view>
+  </l-card>
+
+  <view class="card-top">
+    <view class="card-dot"></view>
+    <view class="content-name">卡片类型（avatar）</view>
+  </view>
+
+  <l-card type="avatar" l-class="card" image="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1549711852726&di=6b454cec0b57f62d46089487454fa56f&imgtype=0&src=http%3A%2F%2Fimg3.duitang.com%2Fuploads%2Fitem%2F201609%2F14%2F20160914062816_SC8KU.jpeg"
+    title="七月在夏天" describe="18个小时前">
+    <view class="avter-content">
+      很简单，豆瓣现在这样就给大家指了一条明路:以后凡是这种国产的风口浪尖的的片子，会涉及到各方背后利益关系的片子...
+    </view>
+    <view class="avter-share-container">
+      <view class="like-container">
+        <l-icon name="like" color="#666" size="28" />
+        <view class="number">160喜欢</view>
+      </view>
+      <view class="like-container">
+        <l-icon name="default" color="#666" size="28" />
+        <view class="number">10评论</view>
+      </view>
+    </view>
+    <l-tag  shape="circle" 
+            bg-color="#f3f3f3" 
+            font-color="#3963BC" 
+            slot="more"
+            size="large">+ 关注</l-tag>
+  </l-card>
+
+  <view class="card-top">
+    <view class="card-dot"></view>
+    <view class="content-name">图片位置</view>
+  </view>
+
+  <l-card type="primary" l-class="card" l-img-class="right-card" position="right" image="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1549711458710&di=e4af10c03585ed60f2b51bc61393cef8&imgtype=0&src=http%3A%2F%2Fimg0.pconline.com.cn%2Fpconline%2Fbizi%2Fdesktop%2F1410%2FA2_1.jpg"
+    title="做一个热爱生活的人！">
+    <view class="content">
+      很简单，豆瓣现在这样就给大家指了一条明路:以后凡是这种国产的风口浪尖的的片子...
+    </view>
+  </l-card>
+
+  <l-card type="primary" l-class="card" l-img-class="right-card" image="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1549711458710&di=e4af10c03585ed60f2b51bc61393cef8&imgtype=0&src=http%3A%2F%2Fimg0.pconline.com.cn%2Fpconline%2Fbizi%2Fdesktop%2F1410%2FA2_1.jpg"
+    title="做一个热爱生活的人！">
+    <view class="content">
+      很简单，豆瓣现在这样就给大家指了一条明路:以后凡是这种国产的风口浪尖的的片子...
+    </view>
+  </l-card>
+
+  <view class="card-top">
+    <view class="card-dot"></view>
+    <view class="content-name">纯文字卡片</view>
+  </view>
+
+  <l-card type="primary" plaintext l-class="card" title="有什么笑话可以笑一辈子?">
+    <view class="content">
+      大雄要死掉了,他对妻子说:我死之后你找一个男人我就在地下打一一个滚。说完就咽气了。某天妻子有事要找大雄，就去了地府问阎王找人，但是地府人那么多...
+    </view>
+  </l-card>
+
+  <view class="card-top">
+    <view class="card-dot"></view>
+    <view class="content-name">通栏卡片</view>
+  </view>
+
+  <l-card type="primary" full l-class="card" l-img-class="right-card"image="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1549721538811&di=cf9f89bac33be78e9c1eacfad00c4c2d&imgtype=0&src=http%3A%2F%2Fp2.gexing.com%2FG1%2FM00%2F07%2F4B%2FrBACFFNu-XPgEVX7AAG69r794d8992.jpg"
+    title="做一个热爱生活的人！">
+     <view class="content">
+      大雄要死掉了,他对妻子说:我死之后你找一个男人我就在地下打一一个滚。说完就咽气了。某天...
+    </view>
+  </l-card>
+
+</content-title>
