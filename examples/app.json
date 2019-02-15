@@ -7,9 +7,10 @@
     "pages/navigator/response/index",
     "pages/navigator/nav/index",
     "pages/navigator/layout/index",
+    "pages/navigator/filter/index",
     "pages/navigator/shopping/index",
-    "pages/about/index",
-    "pages/filter/index"
+    "pages/about/index"
+   
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -20,8 +21,8 @@
   "tabBar": {
     "color": "#bbbbbb",
     "selectedColor": "#3963BC",
-    "backgroundColor":"#ffffff",
-    "borderStyle":"white",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "white",
     "list": [
       {
         "pagePath": "pages/navigator/index/index",
@@ -30,7 +31,7 @@
         "selectedIconPath": "/images/tabbar/base-select.png"
       },
       {
-        "pagePath": "pages/filter/index",
+        "pagePath": "pages/navigator/filter/index",
         "text": "过滤器",
         "iconPath": "/images/tabbar/filter.png",
         "selectedIconPath": "/images/tabbar/filter-select.png"
@@ -111,10 +112,20 @@
       "pages": [
         "pages/price/index"
       ]
+    },
+    {
+      "root": "pages/filter",
+      "pages": [
+        "pages/base/index",
+        "pages/classnames/index",
+        "pages/zero-padding/index"
+      ]
     }
   ],
   "usingComponents": {
     "l-toast": "/dist/toast/index",
-    "l-message": "/dist/message/index"
+    "l-message": "/dist/message/index",
+    "content-title": "/components/content-title/index",
+    "content-card": "/components/content-card/index"
   }
 }

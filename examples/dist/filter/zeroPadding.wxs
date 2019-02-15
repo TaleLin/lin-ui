@@ -1,0 +1,6 @@
+function zeroPadding(num) {
+    var digitValue = -2;
+    var targetValue = '0' + num;
+    return targetValue.slice(digitValue);
+}
+module.exports = zeroPadding;

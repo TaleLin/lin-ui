@@ -1,0 +1,37 @@
+/* pages/filter/pages/classnames/index.wxss */
+view {
+  font-size: 28rpx;
+  line-height: 52rpx;
+}
+.code {
+    color: #3683d6;
+    background-color: #e4f1ff;
+    padding: 0 10rpx;
+    border-radius: 4rpx;
+    margin: 0 8rpx;
+}
+
+.content {
+  word-break: break-all;
+  word-wrap: break-word;
+  display: -webkit-box;
+  width: 100%;
+  font-size: 32rpx;
+  color: #333;
+  line-height: 50rpx;
+}
+
+.show {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #6197CE;
+  line-height: 50rpx;
+  margin-top: 6rpx;
+}
+
+.unextend {
+  max-height: 250rpx;
+  overflow: hidden;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+}

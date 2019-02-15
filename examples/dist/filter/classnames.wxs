@@ -1,0 +1,33 @@
+var is = require('./is.wxs');
+var object = require('./object.wxs');
+
+function apply(fun, args) {
+  return args.map(function (item) {
+    return fun(item)
+  })
+}
+
+function classnames() {
+  var classes = [];
+  for (var i = 0; i < arguments.length; i++) {
+    var arg = arguments[i];
+    if (!arg) continue;
+    if (is.isString(arg) || is.isNumber(arg)) {
+      classes.push(arg);
+    } else if (is.isArray(arg) && arg.length) {
+      var inner = apply(classnames, arg);
+      if (inner) {
+        classes.push(inner);
+      }
+    } else if (is.isObject(arg)) {
+      object.keys(arg).forEach(function (key) {
+        if (arg[key]) {
+          classes.push(key);
+        }
+      })
+    }
+  }
+  return classes.join(' ');
+}
+
+module.exports = classnames;

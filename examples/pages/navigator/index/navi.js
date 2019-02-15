@@ -1,3 +1,4 @@
+
 const naviConfigs = {
   baseConfig: [{
       icon: "/images/navigator/icon-basic.png",
@@ -36,6 +37,7 @@ const naviConfigs = {
     navigatePath: "/pages/navigator/shopping/index"
   }]
 }
+
 
 
 export default naviConfigs;
