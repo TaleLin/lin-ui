@@ -1,0 +1,3 @@
+<!--pages/navigator/filter/index.wxml-->
+<wxs src="../../../dist/filter/string.wxs" module="string"/>
+<text>{{string.match(str,re)}}</text>
