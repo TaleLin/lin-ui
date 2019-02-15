@@ -28,6 +28,11 @@ const naviConfigs=[
     icon: "/images/navigator/icon-form.png",
     title: "表单组件",
     navigatePath: "/pages/navigator/form/index"
+  }, 
+  {
+    icon: "/images/navigator/icon-form.png",
+    title: "过滤器",
+    navigatePath: "/pages/navigator/filter/index"
   },
 
 ]

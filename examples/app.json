@@ -6,7 +6,8 @@
     "pages/navigator/form/index",
     "pages/navigator/response/index",
     "pages/navigator/nav/index",
-    "pages/navigator/layout/index"
+    "pages/navigator/layout/index",
+    "pages/navigator/filter/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

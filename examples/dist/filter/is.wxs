@@ -1,0 +1,70 @@
+var TYPE = {
+    NULL: 'null',
+    UNDEFINED: 'undefined',
+    NUMBER: 'Number',
+    STRING: 'String',
+    BOOLEAN: 'Boolean',
+    OBJECT: 'Object',
+    FUNCTION: 'Function',
+    ARRAY: 'Array',
+    DATE: 'Date',
+    REGEXP: 'RegExp',
+}
+
+function isUndefined(val) {
+    return TYPE.UNDEFINED === typeof val;
+}
+
+function isNull(val) {
+    return val === TYPE.NULL;
+}
+
+function _jadgeFun(val, type) {
+    if (isUndefined(val) || isNull(val)) return false;
+    return TYPE[type] === val.constructor;
+}
+
+function isNumber(val) {
+    return _jadgeFun(val, 'NUMBER');
+}
+
+function isString(val) {
+    return _jadgeFun(val, 'STRING');
+}
+
+function isBoolean(val) {
+    return _jadgeFun(val, 'BOOLEAN');
+}
+
+function isObject(val) {
+    return _jadgeFun(val, 'OBJECT');
+}
+
+function isFunction(val) {
+    return _jadgeFun(val, 'FUNCTION');
+}
+
+function isArray(val) {
+    return _jadgeFun(val, 'ARRAY');
+}
+
+function isDate(val) {
+    return _jadgeFun(val, 'DATE');
+}
+
+function isRegExp(val) {
+    return _jadgeFun(val, 'REGEXP');
+}
+
+module.exports = {
+    isNull: isNull,
+    isUndefined: isUndefined,
+    isNumber: isNumber,
+    isString: isString,
+    isBoolean: isBoolean,
+    isObject: isObject,
+    isFunction: isFunction,
+    isArray: isArray,
+    isDate: isDate,
+    isRegExp: isRegExp
+}
