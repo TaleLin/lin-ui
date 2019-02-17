@@ -1,0 +1,76 @@
+<!--pages/form/pages/image-picker/index.wxml-->
+  <content-title name="ImagePicker" describe="图片选择器">
+    <content-card
+      class="content"
+      name="基本案例"
+    >
+    <l-image-picker temp-file-paths="{{arr}}" />
+    </content-card>
+
+    <content-card
+      class="content"
+      name="自定义选取图片的数量（count=2）"
+    >
+    <l-image-picker temp-file-paths="{{arr1}}" count="2" />
+    </content-card>
+
+    <content-card
+      class="content"
+      name="自定义每行数量 (size=4)"
+    >
+    <l-image-picker
+      temp-file-paths="{{arr2}}"
+      count="9"
+      size="4"/>
+    </content-card>
+
+    <content-card
+      class="content"
+      name="预览所选图片"
+    >
+    <l-image-picker
+      l-item-class="item"
+      temp-file-paths="{{arr3}}"
+      count="9"
+      size="4"  />
+    </content-card>
+
+    <content-card
+      class="content"
+      name="自定义增加图片的按钮"
+    >
+    <l-image-picker 
+      temp-file-paths="{{arr4}}"
+      count="9"
+      size="4"
+      custom="{{true}}" >
+      <view class='add'>
+        <image class='add-icon' src='/images/static/camera_add.png'></image>
+        <text class='add-text'>选择图片</text>
+      </view>
+    </l-image-picker>
+    </content-card>
+
+    <content-card
+      class="content"
+      name="事件监听"
+    >
+    <l-image-picker 
+      temp-file-paths="{{arr5}}"
+      count="9"
+      custom="{{true}}"
+      bind:linchange="onChangeTap"
+      bind:linpreview="onPreviewTap"
+      bind:linremove="onRemoveTap">
+      <view class='add'>
+        <image class='add-icon' src='/images/static/camera_add.png'></image>
+        <text class='add-text'>选择图片</text>
+      </view>
+    </l-image-picker>
+    </content-card>
+
+   
+  </content-title>
+
+  <l-toast />
+  <l-message />

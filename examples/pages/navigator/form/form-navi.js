@@ -24,6 +24,12 @@ const formNaviConfigs = [
     componentsPath: "/pages/form/pages/checkbox/index"
   },
   {
+    icon: "/images/component/imagepicker.png",
+    title: "ImagePicker",
+    desc: "图片选择器",
+    componentsPath: "/pages/form/pages/image-picker/index"
+  },
+  {
     icon: "/images/component/rules.png",
     title: "Rules",
     desc: "校验",
