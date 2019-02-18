@@ -10,7 +10,7 @@ const layoutNaviConfigs = [{
     componentsPath: "/pages/layout/pages/grid/index"
   }, 
   {
-    icon: "/images/component/grid.jpg",
+    icon: "/images/component/card.png",
     title: "Card",
     desc: "卡片",
     componentsPath: "/pages/layout/pages/card/index"

@@ -65,6 +65,7 @@
         "pages/radio/index",
         "pages/checkbox/index",
         "pages/textarea/index",
+        "pages/image-picker/index",
         "pages/rules/index"
       ]
     },
@@ -76,5 +77,9 @@
         "pages/card/index"
       ]
     }
-  ]
+  ],
+  "usingComponents": {
+    "l-toast": "/dist/toast/index",
+    "l-message": "/dist/message/index"
+  }
 }

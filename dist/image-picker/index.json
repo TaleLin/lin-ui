@@ -1,0 +1,8 @@
+{
+  "component": true,
+  "usingComponents": {
+    "l-icon": "../icon/index",
+    "l-grid-item": "../grid-item/index",
+    "l-grid": "../grid/index"
+  }
+}
