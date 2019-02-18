@@ -7,5 +7,16 @@ Page({
   
   onLoad: function () {
     
+  },
+
+  onShareAppMessage(){
+
+  },
+
+  onCard(e){
+    const path = e.target.dataset.path
+    wx.navigateTo({
+      url: path
+    })
   }
 })

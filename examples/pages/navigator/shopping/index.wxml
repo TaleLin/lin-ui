@@ -1,0 +1,15 @@
+<view class="container">
+  <view class="section">
+    <navi-title title="电商专题" count="{{shopNaviConfigs.length}}"/>
+    <view class="section-content">
+      <detail-navi-card
+        wx:for="{{shopNaviConfigs}}"
+        wx:for-item="shopNaviConfigs"
+        wx:key="{{index}}"
+        icon="{{shopNaviConfigs.icon}}"
+        title="{{shopNaviConfigs.title}}"
+        componentsPath="{{shopNaviConfigs.componentsPath}}"
+        desc="{{shopNaviConfigs.desc}}"/>
+    </view>
+  </view>
+</view>
