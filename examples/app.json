@@ -6,7 +6,8 @@
     "pages/navigator/form/index",
     "pages/navigator/response/index",
     "pages/navigator/nav/index",
-    "pages/navigator/layout/index"
+    "pages/navigator/layout/index",
+    "pages/navigator/shopping/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -65,6 +66,7 @@
         "pages/radio/index",
         "pages/checkbox/index",
         "pages/textarea/index",
+        "pages/image-picker/index",
         "pages/rules/index"
       ]
     },
@@ -75,6 +77,16 @@
         "pages/grid/index",
         "pages/card/index"
       ]
+    },
+    {
+      "root": "pages/shopping",
+      "pages": [
+        "pages/price/index"
+      ]
     }
-  ]
+  ],
+  "usingComponents": {
+    "l-toast": "/dist/toast/index",
+    "l-message": "/dist/message/index"
+  }
 }

@@ -1,0 +1,21 @@
+.price-container{
+  display: flex;
+  flex-direction: row;
+  margin-left: 30rpx;
+}
+
+.price{
+  margin-right: 120rpx !important;
+}
+
+.tag-l{
+  margin-right: 6rpx !important;
+  height: 30rpx !important;
+  line-height: 30rpx !important;
+}
+
+.tag-r{
+  margin-left: 6rpx !important;
+  height: 30rpx !important;
+  line-height: 30rpx !important;
+}

@@ -67,6 +67,12 @@ gulp.task('compile-wxml', () => {
     })
 });
 
+// copy
+gulp.task('copy', () => {
+    return gulp.src('../src/**/image/**')
+      .pipe(gulp.dest('../dist/'))
+  });
+
 // get usingComponents
 const getComponent = (arr) => {
     let newArr = []
@@ -94,7 +100,7 @@ const isEmptyObj = (obj) => {
     return result
 }
 
-gulp.task('default', ['compile-js', 'compile-json', 'compile-wxml', 'compile-wxss','compile-wxs']);
+gulp.task('default', ['compile-js', 'compile-json', 'compile-wxml', 'compile-wxss','compile-wxs','copy']);
 
 
 

@@ -19,7 +19,7 @@
   box-sizing: border-box;
 }
 
-.header-bg{
+.header-bg {
   position: absolute;
   top: 0;
   left: 0;
@@ -28,7 +28,7 @@
   z-index: 1;
 }
 
-.header-desc{
+.header-desc {
   position: absolute;
   z-index: 2;
   font-size: 28rpx;
@@ -36,7 +36,7 @@
   line-height: 48rpx;
 }
 
-.header-name{
+.header-name {
   font-size: 32rpx;
 }
 
@@ -47,4 +47,25 @@
   margin: 0 auto;
   flex-direction: row;
   justify-content: space-between;
+}
+
+.shop-card {
+  padding: 30rpx 40rpx !important;
+  margin-top: 30rpx !important;
+  margin-bottom: 30rpx !important;
+}
+
+.card-img {
+  width: 100rpx !important;
+  height: 100rpx !important;
+}
+
+.card-title {
+  color: #3963bc !important;
+}
+
+.shop-dec{
+  font-size: 28rpx;
+  color: #8C98AE;
+  margin-top: 15rpx;
 }
