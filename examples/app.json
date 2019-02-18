@@ -6,7 +6,8 @@
     "pages/navigator/form/index",
     "pages/navigator/response/index",
     "pages/navigator/nav/index",
-    "pages/navigator/layout/index"
+    "pages/navigator/layout/index",
+    "pages/navigator/shopping/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -74,6 +75,12 @@
         "pages/list/index",
         "pages/grid/index",
         "pages/card/index"
+      ]
+    },
+    {
+      "root": "pages/shopping",
+      "pages": [
+        "pages/price/index"
       ]
     }
   ]

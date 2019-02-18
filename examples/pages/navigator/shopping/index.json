@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "detail-navi-card": "/components/detail-navi-card/index",
+    "navi-title": "/components/navi-title/index"
+  }
+}
