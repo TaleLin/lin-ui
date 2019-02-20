@@ -1,3 +1,17 @@
 <!--pages/navigator/filter/index.wxml-->
-<wxs src="../../../dist/filter/string.wxs" module="string"/>
-<text>{{string.match(str,re)}}</text>
+<wxs src="../../../dist/filter/string.wxs" module="string" />
+<wxs src="../../../dist/filter/array.wxs" module="array" />
+
+<wxs src="../../../dist/filter/classnames.wxs" module="classnames" />
+
+<view class="ahaha {{classnames({foo: scrollable })}}">123</view>
+
+<!-- <view class="l-tabs {{'l-placement-'+placement}} {{aminmated ? 'l-aminmated' :''}} {{placement=='left'||placement=='right'?'l-tabs-vertical':'l-tabs-horizontal'}} {{scrollable ? 'l-tabs-scroll':''}}">
+</view> -->
+
+
+<!-- <view class="l-tabs {{classnames({'l-aminmated':true})}}">
+222
+</view> -->
+
+<!-- <view wx:for="{{array.unshift(arr)}}">{{item.a}}</view> -->

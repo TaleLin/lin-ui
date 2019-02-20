@@ -1,1 +1,8 @@
 /* pages/navigator/filter/index.wxss */
+.red {
+  color: red
+}
+
+.bg {
+  background: aquamarine
+}
