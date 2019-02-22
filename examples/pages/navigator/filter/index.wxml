@@ -1,17 +1,30 @@
 <!--pages/navigator/filter/index.wxml-->
 <wxs src="../../../dist/filter/string.wxs" module="string" />
 <wxs src="../../../dist/filter/array.wxs" module="array" />
+<view class="container">
+  <view class="section">
+    <navi-title title="基础过滤器" count="{{baseNaviConfigs.length}}"/>
+    <view class="section-content">
+      <detail-navi-card
+        wx:for="{{baseNaviConfigs}}"
+        wx:for-item="baseNaviConfigs"
+        wx:key="{{index}}"
+        icon="{{baseNaviConfigs.icon}}"
+        title="{{baseNaviConfigs.title}}"
+        componentsPath="{{baseNaviConfigs.componentsPath}}"
+        desc="{{baseNaviConfigs.desc}}"/>
+    </view>
 
-<wxs src="../../../dist/filter/classnames.wxs" module="classnames" />
-
-<view class="ahaha {{classnames({foo: scrollable })}}">123</view>
-
-<!-- <view class="l-tabs {{'l-placement-'+placement}} {{aminmated ? 'l-aminmated' :''}} {{placement=='left'||placement=='right'?'l-tabs-vertical':'l-tabs-horizontal'}} {{scrollable ? 'l-tabs-scroll':''}}">
-</view> -->
-
-
-<!-- <view class="l-tabs {{classnames({'l-aminmated':true})}}">
-222
-</view> -->
-
-<!-- <view wx:for="{{array.unshift(arr)}}">{{item.a}}</view> -->
+    <navi-title title="业务型过滤器" count="{{filterNaviConfigs.length}}"/>
+    <view class="section-content">
+      <detail-navi-card
+        wx:for="{{filterNaviConfigs}}"
+        wx:for-item="filterNaviConfigs"
+        wx:key="{{index}}"
+        icon="{{filterNaviConfigs.icon}}"
+        title="{{filterNaviConfigs.title}}"
+        componentsPath="{{filterNaviConfigs.componentsPath}}"
+        desc="{{filterNaviConfigs.desc}}"/>
+    </view>
+  </view>
+</view>

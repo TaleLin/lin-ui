@@ -7,7 +7,9 @@
     "pages/navigator/response/index",
     "pages/navigator/nav/index",
     "pages/navigator/layout/index",
-    "pages/navigator/shopping/index"
+    "pages/navigator/filter/index",
+    "pages/navigator/shopping/index",
+    "pages/filter/pages/string/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
