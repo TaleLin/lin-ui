@@ -18,7 +18,7 @@ Page({
   copyLink(e){
     wx.setClipboardData({
       data: e.currentTarget.dataset.link,
-      success: res => {
+      success: () => {
         wx.showToast({
           title: '已复制',
           duration: 1000,

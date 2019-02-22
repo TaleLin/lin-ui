@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "content-title": "/components/content-title/index"
+  }
+}
