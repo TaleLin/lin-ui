@@ -1,4 +1,5 @@
 <!--pages/navigator/filter/index.wxml-->
+<<<<<<< HEAD
 <wxs src="../../../dist/filter/string.wxs" module="string" />
 <wxs src="../../../dist/filter/array.wxs" module="array" />
 <view class="container">
@@ -28,3 +29,7 @@
     </view>
   </view>
 </view>
+=======
+<wxs src="../../../dist/filter/string.wxs" module="string"/>
+<text>{{string.match(str,re)}}</text>
+>>>>>>> 82ba1188381b28344134e511be461dc02c0a608b

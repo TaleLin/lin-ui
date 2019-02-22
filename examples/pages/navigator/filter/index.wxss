@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* pages/navigator/filter/index.wxss */
 .red {
   color: red
@@ -6,3 +7,6 @@
 .bg {
   background: aquamarine
 }
+=======
+/* pages/navigator/filter/index.wxss */
+>>>>>>> 82ba1188381b28344134e511be461dc02c0a608b

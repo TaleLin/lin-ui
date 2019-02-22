@@ -47,6 +47,13 @@ function charCodeAt(targetString, index = 0) {
     if (validatorString) return targetString.charCodeAt(index);
 }
 
+<<<<<<< HEAD
+=======
+function concat() {
+
+}
+
+>>>>>>> 82ba1188381b28344134e511be461dc02c0a608b
 /**
  * indexOf 查找字符串
  * @param {String} targetString 目标字符串
@@ -72,6 +79,7 @@ function lastIndexOf(targetString, searchValue, fromIndex = 0) {
 }
 
 /**
+<<<<<<< HEAD
  * slice 取一个字符串的一部分，并返回一新的字符串
  * @param {String} targetString 目标字符串
  * @param {Number} beginSlice 从该索引（以 0 为基数）处开始提取原字符串中的字符
@@ -155,6 +163,28 @@ function toLocaleUpperCase(targetString) {
 function trim(targetString) {
     var validatorString = _isString(targetString, 'trim');
     if (validatorString) return targetString.trim();
+=======
+ * endsWith 查找字符串
+ * @param {String} targetString 目标字符串
+ * @param {String} searchValue 被查找的值
+ * @param {Number} position 作为targetString的长度，默认为targetString的长度
+ * 
+ */
+function endsWith(targetString, searchValue, position) {
+    var validatorString = _isString(targetString, 'endsWith');
+    if (validatorString) return targetString.endsWith(searchValue, position || targetString.length);
+}
+
+function match(targetString,regExp) {
+    var validatorString = _isString(targetString, 'match');
+    if(!regExp) return console.log('[WXS:String]match,regExp must be exit');
+    // var REGEXP = getRegExp(regExp,'i');
+    var found = targetString.match(regExp);
+    var REGEXP1 =  getRegExp('see (chapter \d+(\.\d)*)','i');
+    var test =targetString.match(REGEXP1);
+    console.log(found,'reg',is.isRegExp(regExp),'test',test,'REGEXP1',REGEXP1)
+    if (validatorString) return targetString.match(regExp);
+>>>>>>> 82ba1188381b28344134e511be461dc02c0a608b
 }
 
 module.exports = {
@@ -163,6 +193,7 @@ module.exports = {
     charCodeAt: charCodeAt,
     toString: toString,
     valueOf: valueOf,
+<<<<<<< HEAD
     lastIndexOf: lastIndexOf,
     slice: slice,
     split: split,
@@ -172,4 +203,10 @@ module.exports = {
     toUpperCase: toUpperCase,
     toLocaleUpperCase: toLocaleUpperCase,
     trim: trim
+=======
+    concat: concat,
+    endsWith: endsWith,
+    lastIndexOf: lastIndexOf,
+    match: match
+>>>>>>> 82ba1188381b28344134e511be461dc02c0a608b
 }

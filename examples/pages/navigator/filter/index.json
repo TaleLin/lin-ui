@@ -1,6 +1,10 @@
 {
+<<<<<<< HEAD
   "usingComponents": {
     "detail-navi-card": "/components/detail-navi-card/index",
     "navi-title": "/components/navi-title/index"
   }
+=======
+  "usingComponents": {}
+>>>>>>> 82ba1188381b28344134e511be461dc02c0a608b
 }
