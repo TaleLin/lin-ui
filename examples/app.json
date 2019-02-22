@@ -7,13 +7,41 @@
     "pages/navigator/response/index",
     "pages/navigator/nav/index",
     "pages/navigator/layout/index",
-    "pages/navigator/shopping/index"
+    "pages/navigator/shopping/index",
+    "pages/about/index",
+    "pages/filter/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "Lin UI",
     "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#bbbbbb",
+    "selectedColor": "#3963BC",
+    "backgroundColor":"#ffffff",
+    "borderStyle":"white",
+    "list": [
+      {
+        "pagePath": "pages/navigator/index/index",
+        "text": "基础",
+        "iconPath": "/images/tabbar/base.png",
+        "selectedIconPath": "/images/tabbar/base-select.png"
+      },
+      {
+        "pagePath": "pages/filter/index",
+        "text": "过滤器",
+        "iconPath": "/images/tabbar/filter.png",
+        "selectedIconPath": "/images/tabbar/filter-select.png"
+      },
+      {
+        "pagePath": "pages/about/index",
+        "text": "关于",
+        "iconPath": "/images/tabbar/team.png",
+        "selectedIconPath": "/images/tabbar/team-select.png"
+      }
+    ]
   },
   "subPackages": [
     {
