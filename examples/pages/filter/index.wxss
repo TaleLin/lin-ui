@@ -1,0 +1,21 @@
+page{
+  background-color: #f7f7f7;
+}
+
+.logo-container {
+  width: 690rpx;
+  margin: 30rpx auto;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40rpx 0;
+  box-sizing: border-box;
+  margin-bottom: 30rpx;
+}
+
+
+.logo-txt {
+  color: #596c8e;
+  font-size: 28rpx;
+}
