@@ -1,6 +1,4 @@
 <!--pages/navigator/filter/index.wxml-->
-<wxs src="../../../dist/filter/string.wxs" module="string" />
-<wxs src="../../../dist/filter/array.wxs" module="array" />
 <view class="container">
   <view class="section">
     <navi-title title="基础过滤器" count="{{baseNaviConfigs.length}}"/>
