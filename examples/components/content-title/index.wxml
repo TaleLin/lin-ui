@@ -3,7 +3,7 @@
   <view class="content-line"></view>
   <view class="content-describe">{{describe}}</view>
   <slot />
-  <view class="doc-container">
+  <view class="doc-container" bindtap="onDoc">
     <image src='/images/static/doc.png' class='doc-img'></image>
   </view>
 </view>
