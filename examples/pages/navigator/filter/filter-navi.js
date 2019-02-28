@@ -20,12 +20,12 @@ export const baseNaviConfigs = [{
 
 export const filterNaviConfigs = [{
   icon: "/images/component/input.png",
-  title: "classnames",
+  title: "ClassNames",
   desc: "类",
   componentsPath: "/pages/filter/pages/classnames/index"
 }, {
   icon: "/images/component/radio.png",
-  title: "zeroPadding",
+  title: "ZeroPadding",
   desc: "补零",
   componentsPath: "/pages/filter/pages/zero-padding/index"
 }, ]

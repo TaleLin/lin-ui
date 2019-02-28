@@ -1,11 +1,12 @@
 <!--pages/filter/pages/zero-padding/index.wxml-->
-<wxs src='../../../../dist/filter/zeroPadding.wxs' module='zeroPadding' />
-<content-title name="zeroPadding" describe="补零">
+<wxs src='../../../../dist/filter/zero-padding.wxs' module='zeroPadding' />
+
+<content-title name="ZeroPadding" describe="补零">
   <content-card name="用法">
     <view>1 在
       <text class="code">wxml</text>文件中使用
       <text class="code">wxs</text>：</view>
-    <l-wemark md="```html\n<wxs src='../../../dist/filter/zeroPadding.wxs' module='zeroPadding'/>\n```" highlight="{{true}}" />
+    <l-wemark md="```html\n<wxs src='../../../dist/filter/zero-padding.wxs' module='zeroPadding'/>\n```" highlight="{{true}}" />
     <view>注意事项:</view>
     <view>1
       <text class="code">src</text>是相对路径</view>
