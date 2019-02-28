@@ -1,11 +1,16 @@
-<view class="l-class container-count">
-  <view class="l-symbol-class symbol {{count<=min|| disabled?'disabled':'abled'}}" 
-        catchtap="{{count<=min|| disabled?'doNothing':'reduceTap'}}">
-    <text>-</text>
-  </view>
-  <view class="l-count-class count">{{count}}</view>
-  <view class="l-symbol-class symbol {{count>=max|| disabled?'disabled':'abled'}}" 
-        catchtap="{{count>=max|| disabled?'doNothing':'addTap'}}">
-       <text>+</text>
-  </view>
-</view>
+<content-title name="CountSelector" describe="数量选择器">
+
+  <content-card  name="{{item.title}}" wx:for="{{countConfig}}" wx:key="item">
+    <l-count-selector
+        l-class="count"
+        wx:for="{{item.config}}" 
+        wx:for-item="count"
+        wx:key="count"
+        min="{{count.min}}"
+        count="{{count.count}}"
+        max="{{count.max}}"
+        step="{{count.step}}"
+        disabled="{{count.disabled}}"
+    />
+  </content-card>
+</content-title>

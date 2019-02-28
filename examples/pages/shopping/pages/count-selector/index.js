@@ -1,72 +1,68 @@
-Component({
-  externalClasses: ['l-class', 'l-symbol-class', 'l-count-class'],
-  properties: {
-    count: {
-      type: Number,
-      value: 1
-    },
-    max: {
-      type: Number,
-      value: 10
-    },
-    min: {
-      type: Number,
-      value: 1
-    },
-    step: {
-      type: Number,
-      value: 1
-    },
-    disabled: Boolean
-  },
+// pages/shopping/pages/count/index.js
+import countConfig from '../count-selector/count-nav.js'
+
+Page({
 
   /**
-   * 组件的初始数据
+   * 页面的初始数据
    */
   data: {
+    countConfig
+  },
+
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function (options) {
 
   },
 
   /**
-   * 组件的方法列表
+   * 生命周期函数--监听页面初次渲染完成
    */
-  methods: {
-    doNothing() {
+  onReady: function () {
 
-    },
+  },
 
-    reduceTap() {
-      let distance = this.data.count - this.properties.step
-      if (distance <= this.properties.min) {
-        this.data.count = this.properties.min
-      } else {
-        this.data.count -= this.properties.step
-      }
-      this.setData({
-        count: this.data.count
-      })
-      let detail = {
-        count: this.data.count,
-        type: 'reduce'
-      }
-      this.triggerEvent('lintap', detail)
-    },
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {
 
-    addTap() {
-      let distance = this.data.count + this.properties.step;
-      if (distance >= this.properties.max) {
-        this.data.count = this.properties.max
-      } else {
-        this.data.count += this.properties.step;
-      }
-      this.setData({
-        count: this.data.count
-      })
-      let detail = {
-        count: this.data.count,
-        type: 'add'
-      }
-      this.triggerEvent('lintap', detail)
-    },
+  },
+
+  /**
+   * 生命周期函数--监听页面隐藏
+   */
+  onHide: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面卸载
+   */
+  onUnload: function () {
+
+  },
+
+  /**
+   * 页面相关事件处理函数--监听用户下拉动作
+   */
+  onPullDownRefresh: function () {
+
+  },
+
+  /**
+   * 页面上拉触底事件的处理函数
+   */
+  onReachBottom: function () {
+
+  },
+
+  /**
+   * 用户点击右上角分享
+   */
+  onShareAppMessage: function () {
+
   }
 })
