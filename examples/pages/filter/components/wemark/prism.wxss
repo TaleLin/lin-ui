@@ -28,7 +28,7 @@ https://prismjs.com/download.html#themes=prism&languages=markup+css+clike+javasc
  .wemark_inline_code_constant,
  .wemark_inline_code_symbol,
  .wemark_inline_code_deleted {
-	 color: #905;
+	 color: #6a46d1;
  }
 
  .wemark_inline_code_selector,
@@ -52,7 +52,7 @@ https://prismjs.com/download.html#themes=prism&languages=markup+css+clike+javasc
  .wemark_inline_code_atrule,
  .wemark_inline_code_attr-value,
  .wemark_inline_code_keyword {
-	 color: #07a;
+	 color: #3683d6;
  }
 
  .wemark_inline_code_function,

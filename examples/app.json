@@ -110,7 +110,8 @@
     {
       "root": "pages/shopping",
       "pages": [
-        "pages/price/index"
+        "pages/price/index",
+        "pages/count-selector/index"
       ]
     },
     {

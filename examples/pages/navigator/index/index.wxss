@@ -57,6 +57,7 @@ page {
 .shop-card {
   padding: 30rpx 40rpx !important;
   margin-top: 30rpx !important;
+  margin-bottom: 200rpx !important;
 }
 
 .card-img {
