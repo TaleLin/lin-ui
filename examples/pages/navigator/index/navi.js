@@ -1,3 +1,4 @@
+
 const naviConfigs = {
   baseConfig: [{
       icon: "/images/navigator/icon-basic.png",
@@ -31,11 +32,12 @@ const naviConfigs = {
     }
   ],
   shopConfig: [{
-    icon: "/images/navigator/icon-form.png",
+    icon: "/images/navigator/icon-shop.png",
     title: "电商专题",
     navigatePath: "/pages/navigator/shopping/index"
   }]
 }
+
 
 
 export default naviConfigs;
