@@ -29,7 +29,7 @@
     "list": [
       {
         "pagePath": "pages/navigator/index/index",
-        "text": "基础",
+        "text": "组件",
         "iconPath": "/images/tabbar/base.png",
         "selectedIconPath": "/images/tabbar/base-select.png"
       },
