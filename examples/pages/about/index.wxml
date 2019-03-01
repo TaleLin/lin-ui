@@ -7,7 +7,7 @@
   <view class='address-container'>
     <view class='dot' />
     <view class='doc-container' bindtap='copyLink' data-link="http://doc.mini.7yue.pro">
-      <text class='doc-txt'>文档</text>
+      <text class='doc-txt'>Web端文档</text>
       <text class='address'>http://doc.mini.7yue.pro</text>
     </view>
   </view>

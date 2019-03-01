@@ -18,6 +18,9 @@
     "navigationBarTitleText": "Lin UI",
     "navigationBarTextStyle": "black"
   },
+  "navigateToMiniProgramAppIdList": [
+    "wxb05fa7b69aa7e5b7"
+  ],
   "tabBar": {
     "color": "#bbbbbb",
     "selectedColor": "#3963BC",
@@ -26,7 +29,7 @@
     "list": [
       {
         "pagePath": "pages/navigator/index/index",
-        "text": "基础",
+        "text": "组件",
         "iconPath": "/images/tabbar/base.png",
         "selectedIconPath": "/images/tabbar/base-select.png"
       },
@@ -110,7 +113,8 @@
     {
       "root": "pages/shopping",
       "pages": [
-        "pages/price/index"
+        "pages/price/index",
+        "pages/count-selector/index"
       ]
     },
     {

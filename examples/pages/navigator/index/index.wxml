@@ -22,7 +22,6 @@
           wx:key="index"
           title="{{naviConfig.title}}"
           image="{{naviConfig.icon}}"
-          data-path="{{naviConfig.navigatePath}}"
           bindtap="onCard"
           position="right" 
           l-class="shop-card"
