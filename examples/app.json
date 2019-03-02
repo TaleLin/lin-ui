@@ -10,7 +10,6 @@
     "pages/navigator/filter/index",
     "pages/navigator/shopping/index",
     "pages/about/index"
-   
   ],
   "window": {
     "backgroundTextStyle": "light",
