@@ -1,0 +1,28 @@
+<!--pages/navigator/filter/index.wxml-->
+<view class="container">
+  <view class="section">
+    <navi-title title="基础过滤器" count="{{baseNaviConfigs.length}}"/>
+    <view class="section-content">
+      <detail-navi-card
+        wx:for="{{baseNaviConfigs}}"
+        wx:for-item="baseNaviConfigs"
+        wx:key="{{index}}"
+        icon="{{baseNaviConfigs.icon}}"
+        title="{{baseNaviConfigs.title}}"
+        componentsPath="{{baseNaviConfigs.componentsPath}}"
+        desc="{{baseNaviConfigs.desc}}"/>
+    </view>
+
+    <navi-title title="业务型过滤器" count="{{filterNaviConfigs.length}}"/>
+    <view class="section-content">
+      <detail-navi-card
+        wx:for="{{filterNaviConfigs}}"
+        wx:for-item="filterNaviConfigs"
+        wx:key="{{index}}"
+        icon="{{filterNaviConfigs.icon}}"
+        title="{{filterNaviConfigs.title}}"
+        componentsPath="{{filterNaviConfigs.componentsPath}}"
+        desc="{{filterNaviConfigs.desc}}"/>
+    </view>
+  </view>
+</view>

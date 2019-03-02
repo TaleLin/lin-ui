@@ -1,0 +1,12 @@
+/* pages/filter/pages/is/index.wxss */
+view {
+  font-size: 28rpx;
+  line-height: 52rpx;
+}
+.code {
+    color: #3683d6;
+    background-color: #e4f1ff;
+    padding: 0 10rpx;
+    border-radius: 4rpx;
+    margin: 0 8rpx;
+}

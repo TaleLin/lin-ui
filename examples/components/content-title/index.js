@@ -4,11 +4,11 @@ Component({
    * 组件的属性列表
    */
   properties: {
-    name:{
-      type:String
+    name: {
+      type: String
     },
-    describe:{
-      type:String
+    describe: {
+      type: String
     }
   },
 
@@ -23,6 +23,11 @@ Component({
    * 组件的方法列表
    */
   methods: {
-
+    onDoc() {
+      wx.navigateToMiniProgram({
+        appId: 'wxb05fa7b69aa7e5b7',
+        path: '/pages/md/index?title=' + this.properties.name + '&desc=' + this.properties.describe
+      })
+    }
   }
 })

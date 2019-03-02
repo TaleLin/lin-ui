@@ -6,14 +6,14 @@
   </view>
   <view class='address-container'>
     <view class='dot' />
-    <view class='doc-container'>
-      <text class='doc-txt'>文档</text>
+    <view class='doc-container' bindtap='copyLink' data-link="http://doc.mini.7yue.pro">
+      <text class='doc-txt'>Web端文档</text>
       <text class='address'>http://doc.mini.7yue.pro</text>
     </view>
   </view>
   <view class='address-container'>
     <view class='dot' />
-    <view class='doc-container'>
+    <view class='doc-container' bindtap='copyLink' data-link="https://github.com/Talelin/lin-ui">
       <text class='doc-txt'>Github</text>
       <text class='address'>https://github.com/Talelin/lin-ui</text>
     </view>

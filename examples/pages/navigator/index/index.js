@@ -14,9 +14,9 @@ Page({
   },
 
   onCard(e){
-    const path = e.target.dataset.path
+    // const path = e.target.dataset.path
     wx.navigateTo({
-      url: path
+      url: '/pages/navigator/shopping/index'
     })
   }
 })

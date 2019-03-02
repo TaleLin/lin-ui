@@ -1,11 +1,14 @@
-page{
+/* page{
   background-color: #f3f3f3
-}
+} */
 
 .content-title {
   display: flex;
   flex-direction: column;
   align-items: center;
+  background: #f7f7f7;
+  padding-bottom:160rpx;
+  box-sizing: border-box; 
 }
 
 .content-name {
@@ -32,4 +35,22 @@ page{
   line-height: 24rpx;
   margin-top: 6rpx;
   margin-bottom: 22rpx
+}
+
+.doc-container{
+  position: fixed;
+  right: 40rpx;
+  bottom: 60rpx;
+  z-index: 2;
+}
+
+.doc-img{
+  width: 100rpx;
+  height: 100rpx;
+}
+
+.doc-txt{
+  font-size: 28rpx;
+  color: #3963BC;
+  margin-top: 15rpx;
 }
