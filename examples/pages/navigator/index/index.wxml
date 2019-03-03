@@ -13,7 +13,9 @@
       data-idx="{{index}}"
       title="{{naviConfig.title}}"
       icon="{{naviConfig.icon}}"
-      navigatePath="{{naviConfig.navigatePath}}"
+      data-title="{{naviConfig.title}}"
+      data-navigateMark="{{naviConfig.navigateMark}}"
+      bindtap="onNaviCard"
     />
   </view>
 

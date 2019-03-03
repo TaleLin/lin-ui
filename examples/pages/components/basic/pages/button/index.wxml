@@ -38,18 +38,22 @@
   </content-card>
 
 
-  <content-card name="按钮大小">
+  <content-card name="按钮大小" cardPadding="{{false}}">
     <view class="content">
-      <l-button size="mini" >
+      <l-button size="mini" style='margin-left:10rpx'>
         小按钮</l-button>
     </view>
     <view class="content">
-      <l-button size="medium">
+      <l-button size="medium" style='margin-left:10rpx'>
         中按钮</l-button>
     </view>
-    <view class="content">
-      <l-button size="large">
+    <view class="content" >
+      <l-button size="large" style='margin-left:10rpx'>
         大按钮</l-button>
+    </view>
+    <view class="content">
+      <l-button size="long">
+        通栏按钮</l-button>
     </view>
   </content-card>
 
@@ -97,14 +101,6 @@
         加载中</l-button>
     </view>
   </content-card>
-
-  <content-card name="长按钮" cardPadding="{{false}}">
-    <view class="content">
-      <l-button size="long" bind:button="onlong">
-        长按钮</l-button>
-    </view>
-  </content-card>
-
 
   <content-card name="特殊用法">
     <view class="content-con">
