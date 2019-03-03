@@ -1,7 +1,7 @@
 <!--pages/filter/pages/zero-padding/index.wxml-->
 <wxs src='../../../../dist/filter/zero-padding.wxs' module='zeroPadding' />
 
-<content-title name="ZeroPadding" describe="补零">
+<content-title name="ZeroPadding" describe="补零" doc="{{false}}">
   <content-card name="用法">
     <view>1 在
       <text class="code">wxml</text>文件中使用
