@@ -3,7 +3,7 @@
   <view class="content-line"></view>
   <view class="content-describe">{{describe}}</view>
   <slot />
-  <view class="doc-container" bindtap="onDoc">
+  <view wx:if="{{doc}}" class="doc-container" bindtap="onDoc">
     <image src='/images/doc.png' class='doc-img'></image>
   </view>
 </view>

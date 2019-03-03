@@ -1,5 +1,5 @@
 <!--pages/filter/pages/is/index.wxml-->
-<content-title name="{{detail.name}}" describe="{{detail.describe}}">
+<content-title name="{{detail.name}}" describe="{{detail.describe}}" doc="{{false}}">
   <content-card name="用法">
     <view>
       <text class="code">wxs</text>既可以在
