@@ -1,12 +1,6 @@
 {
   "pages": [
     "pages/navigator/index/index",
-    "pages/navigator/basic/index",
-    "pages/navigator/view/index",
-    "pages/navigator/form/index",
-    "pages/navigator/response/index",
-    "pages/navigator/nav/index",
-    "pages/navigator/layout/index",
     "pages/navigator/filter/index",
     "pages/navigator/shopping/index",
     "pages/about/index"
@@ -49,14 +43,14 @@
   },
   "subPackages": [
     {
-      "root": "pages/basic",
+      "root": "pages/components/basic",
       "pages": [
         "pages/button/index",
         "pages/icon/index"
       ]
     },
     {
-      "root": "pages/view",
+      "root": "pages/components/view",
       "pages": [
         "pages/mask/index",
         "pages/spin/index",
@@ -74,7 +68,7 @@
       ]
     },
     {
-      "root": "pages/response",
+      "root": "pages/components/response",
       "pages": [
         "pages/message/index",
         "pages/toast/index",
@@ -84,7 +78,7 @@
       ]
     },
     {
-      "root": "pages/nav",
+      "root": "pages/components/nav",
       "pages": [
         "pages/tabs/index",
         "pages/tabbar/index",
@@ -92,7 +86,7 @@
       ]
     },
     {
-      "root": "pages/form",
+      "root": "pages/components/form",
       "pages": [
         "pages/input/index",
         "pages/radio/index",
@@ -103,7 +97,7 @@
       ]
     },
     {
-      "root": "pages/layout",
+      "root": "pages/components/layout",
       "pages": [
         "pages/list/index",
         "pages/grid/index",
@@ -111,7 +105,7 @@
       ]
     },
     {
-      "root": "pages/shopping",
+      "root": "pages/components/shopping",
       "pages": [
         "pages/price/index",
         "pages/count-selector/index"

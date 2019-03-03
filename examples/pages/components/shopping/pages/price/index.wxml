@@ -35,6 +35,7 @@
                font-color="rgb(175,141,80)">
           VIP
         </l-tag>
+        <l-icon name="default"/>
       </l-price>
       <l-price 
         l-class="price" 
