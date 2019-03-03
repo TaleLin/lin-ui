@@ -28,6 +28,7 @@ Page({
   },
 
 
+
   onImage(){
     wx.previewImage({
       urls: ['https://pic1.zhimg.com/80/v2-efda715dcd7e93325b213400b67c1e80_hd.png']

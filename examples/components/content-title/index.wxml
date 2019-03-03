@@ -4,6 +4,6 @@
   <view class="content-describe">{{describe}}</view>
   <slot />
   <view class="doc-container" bindtap="onDoc">
-    <image src='/images/static/doc.png' class='doc-img'></image>
+    <image src='/images/doc.png' class='doc-img'></image>
   </view>
 </view>

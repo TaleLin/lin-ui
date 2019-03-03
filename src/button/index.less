@@ -5,9 +5,9 @@
 }
 
 .l-btn{
-    display: inline-block;
-    text-align: center;
-    vertical-align: middle;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     white-space: nowrap;
     font-size: 28rpx;
     position: relative;
@@ -35,23 +35,19 @@
     &-long{
         border-radius: 0;
         margin: 0;
-        line-height: 88rpx;
         height: 88rpx;
         width: 750rpx;
     }
     &-medium{
         height: @btn-height;
-        line-height: @btn-height;
         min-width: @btn-width;
     }
     &-large {
         height: @btn-height-large;
-        line-height: @btn-height-large;
         min-width: @btn-width-large;
     }
     &-mini { 
         height: @btn-height-mini;
-        line-height: @btn-height-mini;
         min-width: @btn-width-mini;
         font-size: @size-font-mini;
     }
