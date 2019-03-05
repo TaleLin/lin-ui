@@ -18,7 +18,7 @@ const naviConfigs = {
     {
       icon: "/images/navigator/icon-view.png",
       title: "视图组件",
-      navigateMark: "/pages/navigator/view/index"
+      navigateMark: "view"
     },
     {
       icon: "/images/navigator/icon-action.png",

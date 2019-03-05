@@ -9,7 +9,7 @@
     </content-card>
     <content-card class="content" name="有图标图片的列表">
       <l-list title="消息" icon="notification" />
-      <l-list title="客厅" image="/pages/layout/images/badroom-active.png" />
+      <l-list title="客厅" image="/pages/components/layout/images/badroom-active.png" />
     </content-card>
     <content-card class="content" name="有标签元素的列表">
       <l-list title="购物车" icon="cart" tag-content="购物车" bind:lintap="clickListItem" data-key="cart"/>

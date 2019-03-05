@@ -18,7 +18,7 @@ Page({
   copyLink(e){
     wx.setClipboardData({
       data: e.currentTarget.dataset.link,
-      success: res => {
+      success: () => {
         wx.showToast({
           title: '已复制',
           duration: 1000,
@@ -32,7 +32,7 @@ Page({
   onImage(){
     wx.previewImage({
       urls: ['https://pic1.zhimg.com/80/v2-efda715dcd7e93325b213400b67c1e80_hd.png']
-    })
+    });
   },
 
   /**

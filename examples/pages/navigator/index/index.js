@@ -26,7 +26,7 @@ Page({
   onCard(e) {
     // const path = e.target.dataset.path
     wx.navigateTo({
-      url: '/pages/navigator/shopping/index'
+      url: '/pages/navigator/content/index?title=电商专题&navigatemark=shopping'
     })
   }
 })

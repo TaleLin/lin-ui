@@ -9,6 +9,10 @@ Component({
     },
     describe: {
       type: String
+    },
+    doc: {
+      type: Boolean,
+      value: true
     }
   },
 

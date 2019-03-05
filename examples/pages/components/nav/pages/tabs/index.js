@@ -30,8 +30,8 @@ Page({
         key: 'dining',
         picPlacement: 'top',
         image: {
-          activeImage: '/pages/nav/images/tab-icon/dining-active.png',
-          defaultImage: '/pages/nav/images/tab-icon/dining.png',
+          activeImage: '/pages/components/nav/images/tab-icon/dining-active.png',
+          defaultImage: '/pages/components/nav/images/tab-icon/dining.png',
         }
       },
       {
@@ -39,16 +39,16 @@ Page({
         key: 'badroom',
         picPlacement: 'top',
         image: {
-          activeImage: '/pages/nav/images/tab-icon/badroom-active.png',
-          defaultImage: '/pages/nav/images/tab-icon/badroom.png',
+          activeImage: '/pages/components/nav/images/tab-icon/badroom-active.png',
+          defaultImage: '/pages/components/nav/images/tab-icon/badroom.png',
         }
       }, {
         tab: '厨房',
         key: 'kichten',
         picPlacement: 'top',
         image: {
-          activeImage: '/pages/nav/images/tab-icon/kichten-active.png',
-          defaultImage: '/pages/nav/images/tab-icon/kichten.png',
+          activeImage: '/pages/components/nav/images/tab-icon/kichten-active.png',
+          defaultImage: '/pages/components/nav/images/tab-icon/kichten.png',
         }
       },
       {
@@ -56,8 +56,8 @@ Page({
         key: 'bathroom',
         picPlacement: 'top',
         image: {
-          activeImage: '/pages/nav/images/tab-icon/bathroom-active.png',
-          defaultImage: '/pages/nav/images/tab-icon/bathroom.png',
+          activeImage: '/pages/components/nav/images/tab-icon/bathroom-active.png',
+          defaultImage: '/pages/components/nav/images/tab-icon/bathroom.png',
           style: 'width:44rpx;height:44rpx;'
         }
       }
