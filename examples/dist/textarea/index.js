@@ -76,25 +76,19 @@ Component({
  
       this.setData({ value });
 
-      this.triggerEvent('linchange', event);
+      this.triggerEvent('change', event);
     },
 
     handleInputFocus(event) {
-      this.triggerEvent('linfocus', event);
+      this.triggerEvent('focus', event);
     },
 
     handleInputBlur(event) {
       this.validatorData({value:event.detail.value});
-      this.triggerEvent('linblur', event);
+      this.triggerEvent('blur', event);
     },
-    handleInputConfirm(event) {
-      const { detail = {} } = event;
-      const { value = '' } = detail;
-
-      this.triggerEvent('linconfirm', event);
-    },
-    // onClearTap(e) {
-    //   this.setData({ value: '' })
-    // },
+    onClearTap(e) {
+      this.setData({ value: '' })
+    }
   }
 })

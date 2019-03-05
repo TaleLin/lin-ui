@@ -1,7 +1,5 @@
 <!--components/navi-card/index.wxml-->
-<navigator url="{{navigatePath}}" open-type="navigate" hover-class="none">
-  <view class="navi-card">
-    <image class="navi-icon" src="{{icon}}" />
-    <text>{{title}}</text>
-  </view>
-</navigator>
+<view class="navi-card">
+  <image class="navi-icon" src="{{icon}}" />
+  <text>{{title}}</text>
+</view>

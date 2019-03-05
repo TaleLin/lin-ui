@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "content-title": "/components/content-title/index",
+    "content-card": "/components/content-card/index",
+    "l-price": "/dist/price/index",
+    "l-tag":"/dist/tag/index",
+    "l-icon":"/dist/icon/index"
+  }
+}

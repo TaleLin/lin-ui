@@ -1,0 +1,57 @@
+<content-title name="Price" describe="价格">
+
+  <content-card name="{{item.title}}" wx:for="{{priceConfig}}" wx:key="item">
+    <view class='price-container'>
+      <l-price 
+        wx:for="{{item.config}}" 
+        wx:for-item="price"
+        wx:key="price"
+        l-class="price" 
+        unit="{{price.unit}}"
+        count="{{price.count}}"
+        unit-color="{{price.unitColor}}"
+        count-color="{{price.countColor}}"
+        unit-size="{{price.unitSize}}"
+        count-size="{{price.countSize}}"
+        count-blod="{{price.countBlod}}"
+        unit-blod="{{price.unitBlod}}"
+        delete="{{price.delete}}"
+        del-color="{{price.delColor}}"  />
+    </view>
+  </content-card>
+
+  <content-card name="设置价格前后内容">
+    <view class='price-container'>
+      <l-price 
+        l-class="price" 
+        count="666"
+        unit-size="28"
+        count-size="28"
+        unit-color="rgb(175,141,80)"
+        count-color="rgb(175,141,80)">
+        <l-tag slot="before"
+               l-class="tag-l"
+               bg-color="rgb(242,235,209)"
+               font-color="rgb(175,141,80)">
+          VIP
+        </l-tag>
+        <l-icon name="default"/>
+      </l-price>
+      <l-price 
+        l-class="price" 
+        count="666"
+        unit-size="28"
+        count-size="28"
+        unit-color="rgb(175,141,80)"
+        count-color="rgb(175,141,80)">
+        <l-tag slot="after"
+               l-class="tag-r"
+               bg-color="rgb(242,235,209)"
+               font-color="rgb(175,141,80)">
+          VIP
+        </l-tag>
+      </l-price>
+    </view>
+  </content-card>
+
+</content-title>

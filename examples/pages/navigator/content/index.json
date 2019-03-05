@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "navi-content":"/components/navi-content/index"
+  }
+}

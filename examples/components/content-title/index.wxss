@@ -1,14 +1,14 @@
-/* page{
-  background-color: #f3f3f3
-} */
+page{
+  background-color: #f3f3f3;
+}
 
 .content-title {
   display: flex;
   flex-direction: column;
   align-items: center;
   background: #f7f7f7;
-  padding-bottom:160rpx;
   box-sizing: border-box; 
+  padding-bottom: 160rpx;
 }
 
 .content-name {
@@ -42,11 +42,19 @@
   right: 40rpx;
   bottom: 60rpx;
   z-index: 2;
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  box-shadow:0px 3px 8px 0px rgba(155,193,185,0.5);
+  display: flex;
+  justify-content: center;
+  background-color: #fff;
+  align-items: center;
 }
 
 .doc-img{
-  width: 100rpx;
-  height: 100rpx;
+  width: 50rpx;
+  height:50rpx;
 }
 
 .doc-txt{
