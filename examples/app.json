@@ -2,9 +2,8 @@
   "pages": [
     "pages/navigator/index/index",
     "pages/navigator/filter/index",
-    "pages/navigator/shopping/index",
-    "pages/about/index"
-   
+    "pages/about/index",
+    "pages/navigator/content/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
