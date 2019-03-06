@@ -111,7 +111,7 @@ Component({
       })
       let detail = idx;
       let option = {};
-      this.triggerEvent('lintab', detail, option);
+      this.triggerEvent('lintap', detail, option);
     },
     showRedDot(idx) {
       const redDot = `list[${idx}].redDot`
