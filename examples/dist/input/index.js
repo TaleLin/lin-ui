@@ -53,6 +53,11 @@ Component({
       type: Number,
       value: 140
     },
+    // 表单项的宽度，单位rpx
+    width: {
+      type: Number,
+      value: 750
+    },
     // 表单项标题部分的宽度，单位rpx
     labelWidth: {
       type: Number,
@@ -68,8 +73,11 @@ Component({
       type: Boolean,
       value: false
     },
-
-
+    // 占位文字的样式  
+    placeholderStyle: {
+      type: String,
+      value: ''
+    }
   },
 
   /**
