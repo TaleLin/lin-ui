@@ -4,7 +4,7 @@
   style="width:{{width}}rpx">
   <view class='mask' wx:if="{{disabled}}"></view>
   <view class='row'></view>
-  <view wx:if="{{label}}" class='form-label form-label-{{labelLayout}}' style='{{labelLayout !== "top" ? "width:"+ labelWidth+ "rpx;" : "" }} height:{{labelLayout== "top" ? labelWidth + "rpx" : "" }}'>
+  <view wx:if="{{label}}" class='form-label l-label-class form-label-{{labelLayout}}' style='{{labelLayout !== "top" ? "width:"+ labelWidth+ "rpx;" : "" }} height:{{labelLayout== "top" ? labelWidth + "rpx" : "" }}'>
     <text><text class='text-require' wx:if="{{required}}">* </text>{{label}}<text wx:if="{{colon}}">：</text>
     </text>
   </view>
