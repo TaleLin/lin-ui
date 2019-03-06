@@ -21,7 +21,7 @@ export const baseNaviConfigs = [{
 export const filterNaviConfigs = [{
   icon: "/images/filter/classnames.png",
   title: "ClassNames",
-  desc: "类",
+  desc: "动态设置class",
   componentsPath: "/pages/filter/pages/classnames/index"
 }, {
     icon: "/images/filter/zeroPadding.png",
