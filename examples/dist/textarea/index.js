@@ -10,9 +10,9 @@ Component({
   properties: {
     // 占位文本
     placeholder: {
-       type: String,
-       value: ''
-     },
+      type: String,
+      value: ''
+    },
     // 输入框的值
     value: {
       type: String,
@@ -52,7 +52,11 @@ Component({
     rules: {
       type: Object,
     },
-
+    // 占位文字的样式  
+    placeholderStyle: {
+      type: String,
+      value: ''
+    }
   },
 
   /**
@@ -76,19 +80,25 @@ Component({
  
       this.setData({ value });
 
-      this.triggerEvent('change', event);
+      this.triggerEvent('linchange', event);
     },
 
     handleInputFocus(event) {
-      this.triggerEvent('focus', event);
+      this.triggerEvent('linfocus', event);
     },
 
     handleInputBlur(event) {
       this.validatorData({value:event.detail.value});
-      this.triggerEvent('blur', event);
+      this.triggerEvent('linblur', event);
     },
-    onClearTap(e) {
-      this.setData({ value: '' })
-    }
+    handleInputConfirm(event) {
+      const { detail = {} } = event;
+      const { value = '' } = detail;
+
+      this.triggerEvent('linconfirm', event);
+    },
+    // onClearTap(e) {
+    //   this.setData({ value: '' })
+    // },
   }
 })

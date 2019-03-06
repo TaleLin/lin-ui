@@ -9,6 +9,7 @@
         <l-input
           value='{{value1}}'
           label="用户名" 
+          clear="{{true}}"
           placeholder="请输入用户名"          
           label-width="170"/>
         <l-input
