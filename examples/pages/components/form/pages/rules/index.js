@@ -1,6 +1,4 @@
 // pages/form/pages/rules/index.js
-import Schema from '../../../../dist/common/async-validator/index.js';
-
 Component({
 
   /**
