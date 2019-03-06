@@ -25,12 +25,6 @@ Page({
           selectedIconPath: '/pages/components/nav/images/tab-icon/cart_fill.png',
           text: "购物车"
         },
-        // {
-        //   pagePath: "/index2/index",
-        //   iconPath: '/pages/nav/images/tab-icon/discover.png',
-        //   selectedIconPath: '/pages/nav/images/tab-icon/discover_fill.png',
-        //   text: "发现"
-        // },
         {
           pagePath: "/index2/index",
           iconPath: '/pages/components/nav/images/tab-icon/my.png',
@@ -112,7 +106,7 @@ Page({
         }, {
           pagePath: "/index2/index",
           iconPath: '/pages/components/nav/images/tab-icon/my.png',
-          redDot: true,
+          redDot: false,
           selectedIconPath: '/pages/components/nav/images/tab-icon/my_fill2.png',
           text: "个人中心"
         },
@@ -228,7 +222,6 @@ Page({
   onLoad: function(options) {
 
   },
-
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
