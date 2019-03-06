@@ -10,9 +10,9 @@ Component({
   properties: {
     // 占位文本
     placeholder: {
-       type: String,
-       value: ''
-     },
+      type: String,
+      value: ''
+    },
     // 输入框的值
     value: {
       type: String,
@@ -52,7 +52,11 @@ Component({
     rules: {
       type: Object,
     },
-
+    // 占位文字的样式  
+    placeholderStyle: {
+      type: String,
+      value: ''
+    }
   },
 
   /**
