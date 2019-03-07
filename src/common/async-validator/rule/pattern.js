@@ -23,7 +23,8 @@ function pattern(rule, value, source, errors, options) {
           rule.fullField, value, rule.pattern));
       }
     } else if (typeof rule.pattern === 'string') {
-      const _pattern = new RegExp(rule.pattern);
+      
+      const _pattern = new RegExp(rule.pattern.replace(/^\/|\/$/g,''));
       if (!_pattern.test(value)) {
         errors.push(util.format(options.messages.pattern.mismatch,
           rule.fullField, value, rule.pattern));

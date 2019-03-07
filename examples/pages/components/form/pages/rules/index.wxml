@@ -7,7 +7,7 @@
           <l-input label="邮箱" placeholder="请输入邮箱" label-width="170" name="email" rules="{{emailRules}}" tipType="message" bind:linvalidate="linvalidate" />
           <l-input label="用户名" placeholder="长度需要在12个字以内" label-width="170" name="user" rules="{{userRules}}" tipType="toast" />
           <l-input label="密码" label-width="170" placeholder="请输入密码" name="password" />
-
+          <l-input label="手机号" label-width="170" placeholder="请输入密码" name="phone" rules="{{phoneRules}}" tipType="toast"/>
           <view class="group-label">
             <text>爱好</text>
             <l-checkbox-group l-class="l-radio-group" rules="{{sexRules}}" name="habbit" tipType="message">
