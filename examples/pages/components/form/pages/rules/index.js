@@ -1,4 +1,5 @@
 // pages/form/pages/rules/index.js
+const pattern = /^1(3|4|5|7|8)\d{9}$/;
 Component({
 
   /**
@@ -8,7 +9,7 @@ Component({
     detailRules: {
       required: true,
       whitespace: true,
-      len: 140, 
+      len: 140,
       message: '长度需要在140个字符之间'
     },
     userRules: [{
@@ -27,7 +28,16 @@ Component({
     sexRules: {
       type: 'array',
       required: true
-    }
+    },
+    phoneRules: [{
+      type: "string",
+      required: true,    
+    },{
+        pattern: "^1(3|4|5|7|8)\\d{9}$",
+        message: '手机号不正确，请重新输入'
+    }],
+
+   
   },
   methods: {
     formSubmit(e) {
