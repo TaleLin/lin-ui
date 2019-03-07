@@ -1,9 +1,9 @@
-// mask
+// dialog
 Component({
   /**
    * 组件的属性列表
    */
-  externalClasses: [],
+  externalClasses: ['l-class','l-class-title', 'l-class-content', 'l-class-confirm','l-class-cancel'],
   properties: {
     // 显示与隐藏
     show: {
@@ -75,7 +75,7 @@ Component({
       this.setData({
         show: !this.data.show
       })
-      this.triggerEvent('confirm', detail, option);
+      this.triggerEvent('linconfirm', detail, option);
 
     },
 
@@ -86,7 +86,7 @@ Component({
       this.setData({
         show: !this.data.show
       })
-      this.triggerEvent('cancel', detail, option);
+      this.triggerEvent('lincancel', detail, option);
     },
 
     // 背景点击事件

@@ -17,7 +17,7 @@ Component({
     options: {
         multipleSlots: true
     },
-    externalClasses: ['l-class', 'l-class-icon', 'l-class-image'],
+    externalClasses: ['l-class', 'l-class-icon', 'l-class-image','l-class-right','l-class-content','l-class-desc'],
     properties: {
         icon: String,
         image: String,

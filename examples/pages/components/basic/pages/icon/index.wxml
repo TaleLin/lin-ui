@@ -52,4 +52,22 @@
       </view>
     </view>
   </content-card>
+
+<content-card name="扩展图标库">
+    <view class="content">
+      <view class="icon-item">
+        <l-icon name="shouye" color="#34BFA3" l-class="iconfont"/>
+        <text>color="#34BFA3"</text>
+      </view>
+      <view class="icon-item">
+        <l-icon name="yaopin" color="#F4516C" l-class="iconfont"/>
+        <text>color="#F4516C"</text>
+      </view>
+      <view class="icon-item">
+        <l-icon name="yongyao" color="#FFE57F" l-class="iconfont"/>
+        <text>color="#FFE57F"</text>
+      </view>
+    </view>
+  </content-card>
+
 </content-title>
