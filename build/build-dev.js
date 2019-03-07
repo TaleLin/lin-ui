@@ -3,12 +3,12 @@ const less = require('gulp-less');
 const cssmin = require('gulp-clean-css');
 const rename = require('gulp-rename');
 
-gulp.task('compile-wxs', () => {
+gulp.task('dispose-wxs', () => {
     return gulp.src(['../src/**/*.wxs'])
         .pipe(gulp.dest('../examples/dist/'));
 });
 
-gulp.task('compile-css', () => {
+gulp.task('dispose-css', () => {
     return gulp.src(['../src/**/*.less', '!../src/**/_*.less'])
         .pipe(less())
         .pipe(cssmin())
@@ -18,17 +18,17 @@ gulp.task('compile-css', () => {
         .pipe(gulp.dest('../examples/dist/'));
 });
 
-gulp.task('compile-js', () => {
+gulp.task('dispose-js', () => {
     return gulp.src(['../src/**/*.js'])
         .pipe(gulp.dest('../examples/dist/'));
 });
 
-gulp.task('compile-json', () => {
+gulp.task('dispose-json', () => {
     return gulp.src(['../src/**/*.json'])
         .pipe(gulp.dest('../examples/dist/'));
 });
 
-gulp.task('compile-wxml', () => {
+gulp.task('dispose-wxml', () => {
     return gulp.src(['../src/**/*.wxml'])
         .pipe(gulp.dest('../examples/dist/'));
 });
@@ -39,14 +39,14 @@ gulp.task('copy', () => {
       .pipe(gulp.dest('../examples/dist/'))
   });
 
-gulp.task('auto', () => {
-    gulp.watch('../src/**/*.less', ['compile-css']);
-    gulp.watch('../src/**/*.js', ['compile-js']);
-    gulp.watch('../src/**/*.wxs', ['compile-wxs']);
-    gulp.watch('../src/**/*.json', ['compile-json']);
-    gulp.watch('../src/**/*.wxml', ['compile-wxml']);
+gulp.task('watch', () => {
+    gulp.watch('../src/**/*.less', ['dispose-css']);
+    gulp.watch('../src/**/*.js', ['dispose-js']);
+    gulp.watch('../src/**/*.wxs', ['dispose-wxs']);
+    gulp.watch('../src/**/*.json', ['dispose-json']);
+    gulp.watch('../src/**/*.wxml', ['dispose-wxml']);
     gulp.watch('../src/**/image/*', ['copy']);
 });
 
 gulp.task('default',
-    ['compile-css', 'compile-js', 'compile-wxs','compile-json', 'compile-wxml', 'copy', 'auto']);
+    ['dispose-css', 'dispose-js', 'dispose-wxs','dispose-json', 'dispose-wxml', 'copy', 'watch']);

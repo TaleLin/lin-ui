@@ -10,7 +10,7 @@ const rename = require('gulp-rename');
 // }
 
 // less => wxss
-gulp.task('compile-wxss', () => {
+gulp.task('dispose-wxss', () => {
     fs.readFile('../config/component.json', (err, data) => {
         const params = JSON.parse(data)
         const path = params.extends.length ? '../src/{' + getComponent(params.extends).join() + '}/*.less' : '../src/**/*.less',
@@ -26,7 +26,7 @@ gulp.task('compile-wxss', () => {
 });
 
 // js => js
-gulp.task('compile-js', () => {
+gulp.task('dispose-js', () => {
     fs.readFile('../config/component.json', (err, data) => {
         const params = JSON.parse(data)
         const path = params.extends.length ? '../src/{' + getComponent(params.extends).join() + '}/*.js' : '../src/**/*.js'
@@ -37,7 +37,7 @@ gulp.task('compile-js', () => {
 });
 
 // wxs => wxs
-gulp.task('compile-wxs', () => {
+gulp.task('dispose-wxs', () => {
     fs.readFile('../config/component.json', (err, data) => {
         const params = JSON.parse(data)
         const path = params.extends.length ? '../src/{' + getComponent(params.extends).join() + '}/*.wxs' : '../src/**/*.wxs'
@@ -48,7 +48,7 @@ gulp.task('compile-wxs', () => {
 });
 
 // json => json
-gulp.task('compile-json', () => {
+gulp.task('dispose-json', () => {
     fs.readFile('../config/component.json', (err, data) => {
         const params = JSON.parse(data)
         const path = params.extends.length ? '../src/{' + getComponent(params.extends).join() + '}/*.json' : '../src/**/*.json'
@@ -58,7 +58,7 @@ gulp.task('compile-json', () => {
 });
 
 // wxml => wxml
-gulp.task('compile-wxml', () => {
+gulp.task('dispose-wxml', () => {
     fs.readFile('../config/component.json', (err, data) => {
         const params = JSON.parse(data)
         const path = params.extends.length ? '../src/{' + getComponent(params.extends).join() + '}/*.wxml' : '../src/**/*.wxml'
@@ -70,8 +70,8 @@ gulp.task('compile-wxml', () => {
 // copy
 gulp.task('copy', () => {
     return gulp.src('../src/**/image/**')
-      .pipe(gulp.dest('../dist/'))
-  });
+        .pipe(gulp.dest('../dist/'))
+});
 
 // get usingComponents
 const getComponent = (arr) => {
@@ -100,7 +100,4 @@ const isEmptyObj = (obj) => {
     return result
 }
 
-gulp.task('default', ['compile-js', 'compile-json', 'compile-wxml', 'compile-wxss','compile-wxs','copy']);
-
-
-
+gulp.task('default', ['dispose-js', 'dispose-json', 'dispose-wxml', 'dispose-wxss', 'dispose-wxs', 'copy']);
