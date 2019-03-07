@@ -11,12 +11,12 @@
     <template is="cell-right-main" data="{{rightDesc,tagContent,tagPosition,isLink,tagColor,tagShape,tagPlain}}" wx:else />
 </view>
 <template name="cell-left-main">
-    <view class="left-section">
+    <view class="left-section ">
         <image wx:if="{{image}}" class="l-image l-class-image" src="{{image}}" mode="aspectFit|aspectFill|widthFix" />
         <l-icon wx:elif="{{icon}}" l-class-self="l-icon" l-class="l-class-icon" name="{{icon}}" />
         <view class="l-text">
-            <view class="l-content">{{title}}</view>
-            <view class="l-desc">{{desc}}</view>
+            <view class="l-content l-class-content">{{title}}</view>
+            <view class="l-desc l-class-desc">{{desc}}</view>
         </view>
         <l-tag size="mini"  shape="{{tagShape}}" bg-color="{{tagColor}}" l-class="cell-tag" wx:if="{{tagContent && tagPosition ==='left' && !tagPlain}}">
             {{tagContent}}
@@ -28,7 +28,7 @@
     </view>
 </template>
 <template name="cell-right-main">
-    <view class="right-section">
+    <view class="right-section l-class-right">
         <slot name="right-section"></slot>
         <l-tag size="mini" shape="{{tagShape}}" bg-color="{{tagColor}}" l-class="cell-tag" wx:if="{{tagContent && tagPosition ==='right' && !tagPlain }}">
             {{tagContent}}

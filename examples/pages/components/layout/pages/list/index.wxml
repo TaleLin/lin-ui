@@ -11,22 +11,30 @@
       <l-list title="消息" icon="notification" />
       <l-list title="客厅" image="/pages/components/layout/images/badroom-active.png" />
     </content-card>
+
+    <content-card class="content" name="自定义图标的列表">
+      <l-list title="药品" icon="yaopin" l-class-icon="iconfont" />
+      <l-list title="用药" icon="yongyao" l-class-icon="iconfont" />
+      <l-list title="首页" icon="shouye" l-class-icon="iconfont" />
+    </content-card>
+
     <content-card class="content" name="有标签元素的列表">
-      <l-list title="购物车" icon="cart" tag-content="购物车" bind:lintap="clickListItem" data-key="cart"/>
+      <l-list title="购物车" icon="cart" tag-content="购物车" bind:lintap="clickListItem" data-key="cart" />
       <l-list title="设置" icon="setting" tag-content="我的" tag-color="#F4516c" />
       <l-list title="消息" icon="notification" tag-content="消息" tag-position="right" />
       <l-list title="帮助中心" icon="help" tag-content="帮助" tagShape="circle" tag-position="right" />
     </content-card>
+
     <content-card class="content" name="有徽标元素的列表">
       <l-list title="生成我的海报" dot-badge="{{true}}" />
       <l-list title="消息" icon="notification" badge-count="9" badge-position="right" />
     </content-card>
 
     <content-card class="content" name="监听点击事件">
-      <l-list title="购物车" icon="cart" tag-content="购物车" bind:lintap="clickListItem" data-key="cart"/>
-      <l-list title="设置" icon="setting" tag-content="我的" tag-color="#F4516c" bind:lintap="clickListItem" data-key="setting"/>
-      <l-list title="消息" icon="notification" tag-content="消息" tag-position="right" bind:lintap="clickListItem" data-key="notification"/>
-      <l-list title="帮助中心" icon="help" tag-content="帮助" tagShape="circle" tag-position="right" bind:lintap="clickListItem" data-key="help"/>
+      <l-list title="购物车" icon="cart" tag-content="购物车" bind:lintap="clickListItem" data-key="cart" />
+      <l-list title="设置" icon="setting" tag-content="我的" tag-color="#F4516c" bind:lintap="clickListItem" data-key="setting" />
+      <l-list title="消息" icon="notification" tag-content="消息" tag-position="right" bind:lintap="clickListItem" data-key="notification" />
+      <l-list title="帮助中心" icon="help" tag-content="帮助" tagShape="circle" tag-position="right" bind:lintap="clickListItem" data-key="help" />
     </content-card>
 
     <content-card class="content" name="自定义内容的列表">
