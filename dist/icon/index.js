@@ -1,5 +1,8 @@
 Component({
-    externalClasses: ['l-class','l-class-self'],
+    externalClasses: ['l-class','l-class-self',],
+    options: {
+        addGlobalClass: true,
+    },
     properties: {
         name: {
             type: String,
