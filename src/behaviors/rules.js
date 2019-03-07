@@ -39,7 +39,9 @@ module.exports = Behavior({
         schema,
       });
     },
-    validatorData({value}) {
+    validatorData({
+      value
+    }) {
       const {
         rules,
         tipType,
@@ -53,18 +55,30 @@ module.exports = Behavior({
         [this.data.name]: value
       };
       this.data.schema.validate(validateValue, (errors, fields) => {
-        errors && wx.lin[funName] && wx.lin[funName]({
-          [contentName]: errors[0].message,
-          duration: 1500,
-          mask: false,
-        });
-
+        
         console.log(errors)
 
         this.triggerEvent('linvalidate', {
           errors,
           isError: !!errors
         });
+        
+        if (errors && tipType) {
+          if (!wx.lin || !wx.lin[funName]) {
+            wx.showToast({
+              icon: 'none',
+              title: `请在页面内引入${tipType}组件`
+            })
+            return;
+          }
+
+          wx.lin[funName] && wx.lin[funName]({
+            [contentName]: errors[0].message,
+            duration: 1500,
+            mask: false,
+          });
+        }
+
       });
 
     }
