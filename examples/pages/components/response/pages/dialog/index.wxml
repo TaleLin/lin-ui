@@ -33,8 +33,8 @@
     confirm-text="{{currentConf.confirmText}}"  
     confirm-color="{{currentConf.confirmColor}}"  
     bind:lintap="onDialogTap"
-    bind:cancel="onCancelTap"
-    bind:confirm="onConfirmTap"
+    bind:lincancel="onCancelTap"
+    bind:linconfirm="onConfirmTap"
   >
     <image class='dio-img' wx:if="{{type===5}}" src='/images/static/loading.gif'></image>
   </l-dialog>
