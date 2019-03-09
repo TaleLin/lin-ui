@@ -35,7 +35,7 @@ Component({
         this.setData({
           finalCount: parseInt(this.data.count) >= parseInt(this.data.maxCount) ? `${this.data.maxCount}+` : this.data.count
         });
-      } else if (this.data.properties == 'ellipsis') {
+      } else if (this.data.countType == 'ellipsis') {
         this.setData({
           finalCount: parseInt(this.data.count) >= parseInt(this.data.maxCount) ? `...` : this.data.count
         });
