@@ -36,7 +36,11 @@ Component({
         pattern: "^1(3|4|5|7|8)\\d{9}$",
         message: '手机号不正确，请重新输入'
     }],
-
+    passwordRules:{
+      type: "number",
+      required: true,
+      message: '请重新输入数字'
+    }
    
   },
   methods: {
