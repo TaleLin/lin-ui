@@ -39,7 +39,7 @@ const types = {
     if (isNaN(value)) {
       return false;
     }
-    return typeof (value) === 'number';
+    return true;
   },
   object(value) {
     return typeof (value) === 'object' && !types.array(value);
