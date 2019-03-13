@@ -3,7 +3,7 @@ Component({
   /**
    * 组件的属性列表
    */
-  externalClasses: ['l-class','l-class-title', 'l-class-content', 'l-class-confirm','l-class-cancel'],
+  externalClasses: ['l-class', 'l-class-title', 'l-class-content', 'l-class-confirm', 'l-class-cancel'],
   properties: {
     // 显示与隐藏
     show: {
@@ -53,23 +53,69 @@ Component({
     cancelColor: {
       type: String,
       value: '#45526b'
+    },
+    openApi: {
+      type: Boolean,
+      value: true
     }
   },
 
   /**
    * 组件的初始数据
    */
-  data: {
+  attached() {
+    if (this.data.openApi) {
+      this.initDialog();
+    }
+  },
 
+  lifetimes: {
+    show() {
+      if (this.data.openApi) {
+        this.initDialog();
+      }
+    },
   },
 
   /**
    * 组件的方法列表
    */
   methods: {
+    initDialog() {
+      wx.lin = wx.lin || {};
+      wx.lin.showDialog = (options) => {
+        const {
+          type = this.data.type,
+            title = this.data.title,
+            showTitle = this.data.showTitle,
+            content = this.data.content,
+            locked = this.data.locked,
+            confirmText = this.data.confirmText,
+            cancelColor = this.data.cancelColor,
+            cancelText = this.data.cancelText,
+            confirmColor = this.data.confirmColor,
+        } = options;
+        this.data.confirm = options.confirm
+        this.data.cancle = options.cancle
+        this.setData({
+          type,
+          title,
+          showTitle,
+          content,
+          locked,
+          confirmText,
+          cancelColor,
+          cancelText,
+          confirmColor,
+          show: true,
+        });
+        return this;
+      };
+    },
 
     // 确定按钮
     onConfirmTap(e) {
+      if (this.data.confirm) this.data.confirm()
       let detail = 'confirm';
       let option = {};
       this.setData({
@@ -81,6 +127,7 @@ Component({
 
     // 取消按钮
     onCancelTap(e) {
+      if (this.data.cancle) this.data.cancle()
       let detail = 'cancel';
       let option = {};
       this.setData({
