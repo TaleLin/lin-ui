@@ -59,7 +59,10 @@ Component({
       value: true
     }
   },
-
+  data: {
+    confirm: null,
+    cancel: null,
+  },
   /**
    * 组件的初始数据
    */
@@ -82,21 +85,32 @@ Component({
    */
   methods: {
     initDialog() {
+      const config = {
+        type: 'alert',
+        title: '提示',
+        showTitle: true,
+        content: '',
+        locked: true,
+        confirmText: '确定',
+        cancelColor: '#3683d6',
+        cancelText: '取消',
+        confirmColor: '#45526b',
+      }
       wx.lin = wx.lin || {};
       wx.lin.showDialog = (options) => {
         const {
-          type = this.data.type,
-            title = this.data.title,
-            showTitle = this.data.showTitle,
-            content = this.data.content,
-            locked = this.data.locked,
-            confirmText = this.data.confirmText,
-            cancelColor = this.data.cancelColor,
-            cancelText = this.data.cancelText,
-            confirmColor = this.data.confirmColor,
+          type = config.type,
+          title = config.title,
+          showTitle = config.showTitle,
+          content = config.content,
+          locked = config.locked,
+          confirmText = config.confirmText,
+          cancelColor = config.cancelColor,
+          cancelText = config.cancelText,
+          confirmColor = config.confirmColor,
         } = options;
         this.data.confirm = options.confirm
-        this.data.cancle = options.cancle
+        this.data.cancel = options.cancel
         this.setData({
           type,
           title,
@@ -127,7 +141,7 @@ Component({
 
     // 取消按钮
     onCancelTap(e) {
-      if (this.data.cancle) this.data.cancle()
+      if (this.data.cancel) this.data.cancel()
       let detail = 'cancel';
       let option = {};
       this.setData({
