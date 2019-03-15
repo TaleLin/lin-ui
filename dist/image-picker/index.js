@@ -26,10 +26,10 @@ Component({
       value: 'original',
     },
     // 选择图片的来源
-    sourceType: {
-      type: Boolean,
-      value: false,
-    },
+    // sourceType: {
+    //   type: String,
+    //   value: '',
+    // },
     // 图片裁剪、缩放的模式
     mode: {
       type: String,
@@ -87,7 +87,7 @@ Component({
       wx.chooseImage({
         count,
         sizeType: this.data.sizeType,
-        sourceType: this.data.sourceType,
+        sourceType: ['album', 'camera'],
         success(res) {
           // tempFilePath可以作为img标签的src属性显示图片
           const tempFilePath = res.tempFilePaths

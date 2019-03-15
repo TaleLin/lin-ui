@@ -101,18 +101,29 @@ Component({
    */
   methods: {
     initToast() {
+      const config = {
+        title: '',
+        icon: '',
+        iconStyle: 'size:60; color:#fff',
+        image: '',
+        imageStyle: '60*60',
+        placement: 'bottom',
+        duration: 1500,
+        center: true,
+        mask: false,
+      }
       wx.lin = wx.lin || {};
       wx.lin.showToast = (options) => {
         const {
-          title = this.data.title,
-            icon = this.data.icon,
-            iconStyle = this.data.iconStyle,
-            image = this.data.image,
-            imageStyle = this.data.imageStyle,
-            placement = this.data.placement,
-            duration = this.data.duration,
-            center = this.data.center,
-            mask = this.data.mask,
+          title = config.title,
+          icon = config.icon,
+          iconStyle = config.iconStyle,
+          image = config.image,
+          imageStyle = config.imageStyle,
+          placement = config.placement,
+          duration = config.duration,
+          center = config.center,
+          mask = config.mask,
         } = options;
         this.setData({
           title,
@@ -150,5 +161,5 @@ Component({
       this.triggerEvent('linTap', detail, option);
     }
   },
-    
+
 })
