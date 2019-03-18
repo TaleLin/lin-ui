@@ -1,6 +1,6 @@
 {
   "component": true,
   "usingComponents": {
-    "l-icon":"../../icon/index"
+    "l-icon":"../icon/index"
   }
 }

@@ -57,14 +57,21 @@ Component({
 
   methods: {
     initMessage() {
+      const config = {
+        content: '',
+        icon: '',
+        image: '',
+        type: 'primary',
+        duration: 1500,
+      }
       wx.lin = wx.lin || {};
       wx.lin.showMessage = (options) => {
         const {
-            content = this.data.content,
-            icon = this.data.icon,
-            image = this.data.image,
-            type = this.data.type,
-            duration = this.data.duration,
+          content = config.content,
+          icon = config.icon,
+          image = config.image,
+          type = config.type,
+          duration = config.duration,
         } = options;
         this.setData({
           content,

@@ -34,16 +34,25 @@ Component({
     },
     methods: {
         initActionSheet() {
+            const config = {
+                itemList: [],
+                success: null,
+                fail: null,
+                title: '',
+                locked: true,
+                cancelText: '取消',
+                showCancel: false
+            }
             wx.lin = wx.lin || {};
             wx.lin.showActionSheet = (options) => {
                 const {
-                    itemList = this.data.itemList,
-                    success = this.data.success,
-                    fail = this.data.fail,
-                    title = this.data.title,
-                    locked = this.data.locked,
-                    cancelText = this.data.cancelText,
-                    showCancel = this.data.showCancel,
+                    itemList = config.itemList,
+                    success = config.success,
+                    fail = config.fail,
+                    title = config.title,
+                    locked = config.locked,
+                    cancelText = config.cancelText,
+                    showCancel = config.showCancel,
                 } = options;
                 this.setData({
                     itemList: itemList.slice(0, 10),
