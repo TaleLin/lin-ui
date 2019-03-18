@@ -5,6 +5,9 @@ Component({
   /**
    * 组件的属性列表
    */
+  options: {
+    multipleSlots: true,
+  },
   behaviors: ['wx://form-field', rules],
   externalClasses: ['l-class', 'l-label-class '],
   properties: {
@@ -12,6 +15,11 @@ Component({
     label: {
       type: String,
       value: ''
+    },
+    // 是否自定义label部分
+    labelCustom: {
+      type: Boolean,
+      value: false
     },
     // 是否必选
     required: {
