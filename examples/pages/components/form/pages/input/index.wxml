@@ -105,7 +105,7 @@
           placeholder="请输入验证码"     
           label-width="170"
         >
-          <image class='img' bindtap='onYzmTap' src="/images/static/yzm.png" />
+          <image slot="right"  class='img' bindtap='onYzmTap' src="/images/static/yzm.png" />
         </l-input>
       </view>
     </content-card>

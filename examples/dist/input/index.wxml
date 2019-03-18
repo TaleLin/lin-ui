@@ -4,9 +4,12 @@
   style="width:{{width}}rpx">
   <view class='mask' wx:if="{{disabled}}"></view>
   <view class='row'></view>
-  <view wx:if="{{label}}" class='form-label l-label-class form-label-{{labelLayout}}' style='{{labelLayout !== "top" ? "width:"+ labelWidth+ "rpx;" : "" }} height:{{labelLayout== "top" ? labelWidth + "rpx" : "" }}'>
+  <view wx:if="{{label && !labelCustom}}" class='form-label l-label-class form-label-{{labelLayout}}' style='{{labelLayout !== "top" ? "width:"+ labelWidth+ "rpx;" : "" }} height:{{labelLayout== "top" ? labelWidth + "rpx" : "" }}'>
     <text><text class='text-require' wx:if="{{required}}">* </text>{{label}}<text wx:if="{{colon}}">：</text>
     </text>
+  </view>
+  <view wx:else class='form-label l-label-class form-label-{{labelLayout}}' style='{{labelLayout !== "top" ? "width:"+ labelWidth+ "rpx;" : "" }} height:{{labelLayout== "top" ? labelWidth + "rpx" : "" }}'>
+    <slot name="left" />
   </view>
   <!-- 小程序表单组件 -->
   <input
@@ -23,11 +26,11 @@
     bindinput="handleInputChange"
     bindfocus="handleInputFocus"
     bindblur="handleInputBlur"
-    bindconfirm="handleInputConfirm"/>
-    <view class="close" wx:if="{{clear&&value}}" bindtap="onClearTap">
-      <view  class="cloase-icon">
-        <l-icon  name="close" color="#fff" size="15" />
-      </view>
+    bindconfirm="handleInputConfirm" />
+  <view class="close" wx:if="{{clear&&value}}" bindtap="onClearTap">
+    <view  class="close-icon">
+      <l-icon  name="close" color="#fff" size="16" />
     </view>
-  <slot />
+  </view>
+  <slot name="right"/>
 </label>
