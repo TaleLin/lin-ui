@@ -36,7 +36,7 @@ const types = {
       typeof value.getYear === 'function';
   },
   number(value) {
-    if (isNaN(value)) {
+    if (isNaN(value) || value === '') {
       return false;
     }
     return true;
@@ -75,7 +75,8 @@ function type(rule, value, source, errors, options) {
     return;
   }
   const custom = ['integer', 'float', 'array', 'regexp', 'object',
-    'method', 'email', 'number', 'date', 'url', 'hex'];
+    'method', 'email', 'number', 'date', 'url', 'hex'
+  ];
   const ruleType = rule.type;
   if (custom.indexOf(ruleType) > -1) {
     if (!types[ruleType](value)) {
