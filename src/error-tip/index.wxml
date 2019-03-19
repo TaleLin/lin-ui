@@ -1,0 +1,1 @@
+<view class="error-text l-error-text" wx:if="{{errorText}}">{{errorText}}</view>

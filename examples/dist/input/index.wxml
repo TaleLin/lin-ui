@@ -30,4 +30,5 @@
       </view>
     </view>
   <slot />
+  <l-error-tip l-error-text="l-error-text" errorText="{{errorText}}" wx:if="{{errorText}}"/>
 </label>

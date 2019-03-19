@@ -6,7 +6,7 @@ Component({
    * 组件的属性列表
    */
   behaviors: ['wx://form-field', rules],
-  externalClasses: ['l-class', 'l-label-class '],
+  externalClasses: ['l-class', 'l-label-class','l-error-text'],
   properties: {
     // 表单标题（label）的文本
     label: {
@@ -77,7 +77,7 @@ Component({
     placeholderStyle: {
       type: String,
       value: ''
-    }
+    },
   },
 
   /**

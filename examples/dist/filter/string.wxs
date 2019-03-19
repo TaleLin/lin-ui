@@ -157,6 +157,9 @@ function trim(targetString) {
     if (validatorString) return targetString.trim();
 }
 
+
+
+
 module.exports = {
     indexOf: indexOf,
     charAt: charAt,
