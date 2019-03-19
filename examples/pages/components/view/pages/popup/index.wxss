@@ -80,7 +80,7 @@
   border-top-right-radius: 12rpx;
 }
 
-.pupop-mask {
+.popup-mask {
   width: 180rpx;
   height: 72rpx;
   border-radius: 4rpx;
