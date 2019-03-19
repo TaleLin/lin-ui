@@ -12,7 +12,7 @@
           l-class="button"
           size="large"
           data-type="{{item.type}}"
-          bind:lintap="onShowPupopTap"
+          bind:lintap="onShowPopupTap"
         >
           显示弹出层
         </l-button>
@@ -20,14 +20,14 @@
     </content-card>
   </content-title>
 
-  <!-- pupop -->
-  <l-pupop
+  <!-- popup -->
+  <l-popup
     show="{{currentConf.show}}"
     showMask="{{currentConf.showMask}}"
     animation="{{currentConf.animation}}"
     contentAlign="{{currentConf.contentAlign}}"
     locked="{{currentConf.locked}}" 
-    bind:lintap="onPupopTap"
+    bind:lintap="onPopupTap"
   >
     <view class='center' wx:if="{{type == 0 ||type ==1  }}">
       从中间弹出
@@ -39,10 +39,10 @@
       从下方弹出
     </view>
     <view class='bottom' wx:if="{{type == 6}}">
-      <view class='pupop-mask' catchtap='onHidePupopTap'>
+      <view class='popup-mask' catchtap='onHidePopupTap'>
         关闭弹出层
       </view>
     </view>
-  </l-pupop>
+  </l-popup>
 
 </view>

@@ -21,7 +21,7 @@ Page({
   },
   
 
-  onPupopTap() {
+  onPopupTap() {
     const type = this.data.type
     if (type === 6) {
       wx.showToast({
@@ -32,8 +32,8 @@ Page({
 
   },
 
-  // 显示Pupop
-  onShowPupopTap(e) {
+  // 显示Popup
+  onShowPopupTap(e) {
     const type = e.currentTarget.dataset.type
     const config = JSON.parse(JSON.stringify(this.data.navConfig[type].config))
     this.setData({
@@ -42,8 +42,8 @@ Page({
     })
   },
 
-  // 隐藏Pupop
-  onHidePupopTap() {
+  // 隐藏Popup
+  onHidePopupTap() {
     const type = this.data.type
     this.data.currentConf.show = false
     this.setData({
