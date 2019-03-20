@@ -49,6 +49,10 @@ Component({
       type: String,
       value: '#bbbbbb'
     },
+    equalWidth:{
+      type:Boolean,
+      value:true
+    }
 
   },
 
