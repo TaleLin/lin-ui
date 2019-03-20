@@ -1,5 +1,5 @@
 Component({
-  externalClasses: ['l-class'],
+  externalClasses: ['l-class','l-error-text'],
   behaviors: ['wx://form-field'],
   relations: {
     '../radio/index': {
