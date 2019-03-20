@@ -15,7 +15,7 @@ Component({
     },
     frontIconSize: {
       type: Number,
-      value: 20
+      value: 28
     },
     frontIconColor:{
       type:String,
@@ -27,7 +27,7 @@ Component({
     },
     endIconSize: {
       type: Number,
-      value: 20
+      value: 28
     },
     endIconColor:{
       type:String,
@@ -130,6 +130,11 @@ Component({
       this.triggerEvent('lincatchtap', {}, { bubbles: true });
       this.setData({
         timer: null
+      });
+    },
+    onSwip(e){
+      this.triggerEvent('lintap', {
+        ...e.currentTarget.dataset
       });
     },
     onIconTap(){

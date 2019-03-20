@@ -12,7 +12,7 @@
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: flex-start;
-  height: 200rpx
+  height: 200rpx;
 }
 
 .txt {
@@ -49,5 +49,27 @@
   justify-content: center;
   align-items: center;
   border-radius: 50%;
-  box-shadow:0px 1px 8px 0px rgba(220,220,220,0.5);
+  box-shadow: 0px 1px 8px 0px rgba(220, 220, 220, 0.5);
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 12rpx;
+  box-sizing: border-box;
+  height: 72rpx;
+  width: 180rpx;
+  font-size: 28rpx;
+  background-color: #fff;
+  color: #34bfa3;
+  border: 2rpx solid #34bfa3;
+  border-radius: 9.6rpx;
+  margin-bottom: 20rpx;
+}
+
+.con{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

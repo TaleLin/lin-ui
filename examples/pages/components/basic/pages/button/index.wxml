@@ -47,7 +47,7 @@
       <l-button size="medium" style='margin-left:10rpx'>
         中按钮</l-button>
     </view>
-    <view class="content" >
+    <view class="content">
       <l-button size="large" style='margin-left:10rpx'>
         大按钮</l-button>
     </view>
