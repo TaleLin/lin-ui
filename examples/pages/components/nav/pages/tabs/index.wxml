@@ -15,6 +15,20 @@
       </l-tabs>
     </content-card>
 
+    <content-card l-content="content" name="非等宽标签">
+      <l-tabs bind:linchange="changeTabs" l-class-header-line="header-line" equal-width="{{false}}">
+        <l-tabpanel tab="精选" key="one" slot="one">
+          <view class="tab-content">精选</view>
+        </l-tabpanel>
+        <l-tabpanel tab="居家生活" key="two" slot="two">
+          <view class="tab-content">居家生活</view>
+        </l-tabpanel>
+        <l-tabpanel tab="美食厨房" key="three" slot="three">
+          <view class="tab-content">美食厨房</view>
+        </l-tabpanel>
+      </l-tabs>
+    </content-card>
+
     <content-card l-content="content" name="左侧标签">
 
       <l-tabs active-key="two" bind:linchange="changeTabs" placement="left" aminmated l-class-line="line-tabs">
@@ -90,8 +104,6 @@
         </l-tabpanel>
       </l-tabs>
     </content-card>
-
-
 
   </content-title>
 </view>
