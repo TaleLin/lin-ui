@@ -9,7 +9,7 @@
   </content-card>
 
   <content-card name="通告栏类型（swip）" cardPadding="{{false}}">
-    <l-notice-bar style="margin-bottom:20rpx" type="swip" swip-arr="{{arr}}" front-icon-name="notification"></l-notice-bar>
+    <l-notice-bar style="margin-bottom:20rpx" type="swip" swip-arr="{{arr}}" front-icon-name="notification" bind:lintap="onSwip"></l-notice-bar>
   </content-card>
 
   <content-card name="滚动速度" cardPadding="{{false}}">

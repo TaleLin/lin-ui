@@ -16,6 +16,10 @@ Page({
 
   },
 
+  onSwip(e){
+    console.log(e)
+  },
+
   tap() {
     this.setData({
       show: true

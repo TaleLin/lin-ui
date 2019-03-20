@@ -1,7 +1,7 @@
 const tagNaviConfigs = [{
   title: "标签大小",
   config: [{
-    content: '这是一条内容',
+    content: '标签',
     size: 'mini',
     bgColor: '',
     fontColor: '',
@@ -14,7 +14,8 @@ const tagNaviConfigs = [{
     location: 'r'
   },
   {
-    content: '这是一条内容',
+    // content: '内容',
+    text:"标签",
     size: 'large',
     bgColor: '',
     fontColor: '',
@@ -30,7 +31,7 @@ const tagNaviConfigs = [{
 {
   title: "标签形状",
   config: [{
-    content: '这是一条内容',
+    content: '标签',
     size: 'large',
     bgColor: '',
     fontColor: '',
@@ -42,7 +43,7 @@ const tagNaviConfigs = [{
     iconColor: ''
   },
   {
-    content: '这是一条内容',
+    content: '标签',
     size: 'large',
     bgColor: '',
     fontColor: '',
@@ -58,7 +59,7 @@ const tagNaviConfigs = [{
 {
   title: "镂空标签",
   config: [{
-    content: '这是一条内容',
+    content: '标签',
     size: 'large',
     bgColor: '',
     fontColor: '',
@@ -70,7 +71,7 @@ const tagNaviConfigs = [{
     iconColor: ''
   },
   {
-    content: '这是一条内容',
+    content: '标签',
     size: 'large',
     bgColor: '',
     fontColor: '',
@@ -86,7 +87,7 @@ const tagNaviConfigs = [{
 {
   title: "自定义颜色",
   config: [{
-    content: '这是一条内容',
+    content: '标签',
     size: 'large',
     bgColor: '#333',
     fontColor: '#fff',
@@ -101,7 +102,7 @@ const tagNaviConfigs = [{
 {
   title: "禁用标签",
   config: [{
-    content: '这是一条内容',
+    content: '标签',
     size: 'large',
     bgColor: '',
     disable:true,
@@ -118,7 +119,7 @@ const tagNaviConfigs = [{
 {
   title: "图标标签",
   config: [{
-    content: '这是一条内容',
+    content: '标签',
     size: 'large',
     bgColor: '',
     fontColor: '',
@@ -131,7 +132,7 @@ const tagNaviConfigs = [{
     location: 'left'
   },
   {
-    content: '这是一条内容',
+    content: '标签',
     size: 'large',
     bgColor: '',
     fontColor: '',
