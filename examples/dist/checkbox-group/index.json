@@ -1,4 +1,6 @@
 {
     "component": true,
-    "usingComponents": {}
+    "usingComponents": {
+        "l-error-tip":"../error-tip/index"
+    }
 }

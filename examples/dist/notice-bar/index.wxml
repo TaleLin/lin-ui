@@ -1,14 +1,14 @@
-<view bindtap="handleTap" wx:if="{{ show }}" class="l-class l-noticebar" style="color: {{ color }}; background-color: {{ backgroundcolor }}">
+<view wx:if="{{ show }}" class="l-class l-noticebar" style="color: {{ color }}; background-color: {{ backgroundcolor }}">
   <l-icon wx:if="{{ frontIconName }}" size="{{frontIconSize}}" color="{{frontIconColor}}" name="{{ frontIconName }}" class="l-noticebar-icon" />
   <swiper autoplay vertical interval="{{4*speed}}" class="l-noticebar-content-wrap" wx:if="{{type=='swip'}}">
     <block wx:for="{{swipArr}}" wx:key="swip">
-      <swiper-item>
+      <swiper-item data-index="{{index}}" bindtap="onSwip">
         {{item}}
       </swiper-item>
     </block>
   </swiper>
   <view class="l-noticebar-content-wrap" wx:else>
-    <view class="l-noticebar-content" animation="{{ animationData }}">
+    <view  bindtap="handleTap" class="l-noticebar-content" animation="{{ animationData }}">
       <slot></slot>
     </view>
   </view>

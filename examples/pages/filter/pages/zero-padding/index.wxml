@@ -18,6 +18,7 @@
   <content-card name="示例">
     <view class="text-view">
       {{zeroPadding(3)}}
+      {{zeroPadding(3,4)}}
     </view>
 
     <l-wemark md="{{code}}" highlight="{{true}}" />

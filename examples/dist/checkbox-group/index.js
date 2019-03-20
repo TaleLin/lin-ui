@@ -2,7 +2,7 @@ import rules from '../behaviors/rules';
 
 Component({
   behaviors: ['wx://form-field',rules],
-  externalClasses: ['l-class'],
+  externalClasses: ['l-class','l-error-text'],
   relations: {
     '../checkbox/index': {
       type: 'child',
