@@ -38,7 +38,8 @@ module.exports = Behavior({
     methods: {
         // 自动补零
         zeroPadding(num) {
-            return ("0" + num).slice(-2);
+            num = num.toString()
+            return num[1] ? num : '0' + num
         },
 
         init() {

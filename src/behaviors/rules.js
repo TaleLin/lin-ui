@@ -1,5 +1,7 @@
 import Schema from '../common/async-validator/index';
-
+/**
+ * @param tipType String [toast , message , text]
+ */
 module.exports = Behavior({
   behaviors: [],
   properties: {
@@ -21,8 +23,8 @@ module.exports = Behavior({
     tipContent: {
       'message': 'content',
       'toast': 'title',
-    }
-
+    },
+    errorText: '',
   },
 
   methods: {
@@ -48,22 +50,30 @@ module.exports = Behavior({
         tipFun,
         tipContent
       } = this.data;
-      const funName = tipFun[tipType];
-      const contentName = tipContent[tipType];
+
       if (!rules) return;
       const validateValue = {
         [this.data.name]: value
       };
       this.data.schema.validate(validateValue, (errors, fields) => {
-        
+
         console.log(errors)
 
         this.triggerEvent('linvalidate', {
           errors,
           isError: !!errors
         });
-        
+
         if (errors && tipType) {
+          const funName = tipFun[tipType];
+          const contentName = tipContent[tipType];
+          if (tipType === 'text') {
+            this.setData({
+              errorText: errors[0].message
+            });
+            return;
+          }
+
           if (!wx.lin || !wx.lin[funName]) {
             wx.showToast({
               icon: 'none',
@@ -76,6 +86,10 @@ module.exports = Behavior({
             [contentName]: errors[0].message,
             duration: 1500,
             mask: false,
+          });
+        } else if (!errors && tipType) {
+          this.setData({
+            errorText: ''
           });
         }
 

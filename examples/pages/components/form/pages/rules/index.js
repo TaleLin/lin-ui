@@ -13,7 +13,8 @@ Component({
       message: '长度需要在140个字符之间'
     },
     userRules: [{
-        required: true
+        required: true,
+        message: '请输入用户名'
       },
       {
         max: 12,
@@ -31,17 +32,17 @@ Component({
     },
     phoneRules: [{
       type: "string",
-      required: true,    
-    },{
-        pattern: "^1(3|4|5|7|8)\\d{9}$",
-        message: '手机号不正确，请重新输入'
+      required: true,
+    }, {
+      pattern: "^1(3|4|5|7|8)\\d{9}$",
+      message: '手机号不正确，请重新输入'
     }],
-    passwordRules:{
+    passwordRules: {
       type: "number",
       required: true,
       message: '请重新输入数字'
     }
-   
+
   },
   methods: {
     formSubmit(e) {
