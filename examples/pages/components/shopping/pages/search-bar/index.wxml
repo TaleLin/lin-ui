@@ -1,0 +1,28 @@
+<content-title name="SearchBar" describe="搜索栏">
+  <view class="card-top">
+    <view class="card-dot"></view>
+    <view class="content-name">基本用法</view>
+  </view>
+
+  <l-search-bar placeholder="搜索" />
+
+  <view class="card-top">
+    <view class="card-dot"></view>
+    <view class="content-name">是否显示搜索后文字</view>
+  </view>
+
+  <l-search-bar placeholder="搜索" show-cancel="{{false}}" />
+
+  <view class="card-top">
+    <view class="card-dot"></view>
+    <view class="content-name">设置插槽内容</view>
+  </view>
+
+  <l-search-bar placeholder="搜索">
+    <view class="icon-container">
+      <text class="city">北京</text>
+      <l-icon name="down" color="#333" size="22" />
+    </view>
+  </l-search-bar>
+
+</content-title>

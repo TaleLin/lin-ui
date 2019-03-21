@@ -1,0 +1,29 @@
+<view class="search-bar l-class">
+  <slot />
+  <view class="search-input l-input-container">
+    <l-icon name="research" size="{{iconSize}}" color="{{iconColor}}" />
+  <input
+        class="input l-input-class"
+        value="{{ value }}"
+        type="{{type}}"
+        password="{{type==='password'}}"
+        placeholder="{{placeholder}}"
+        maxlength="{{maxlength}}"
+        placeholder-class="pls-class l-placeholder-class"
+        placeholder-style="{{placeholderStyle}}"
+        disabled="{{disabled}}"
+        focus="{{focus}}"
+        bindinput="handleInputChange"
+        bindfocus="handleInputFocus"
+        bindblur="handleInputBlur"
+        bindconfirm="handleInputConfirm"/>
+    <view class="close" wx:if="{{clear&&value}}" bindtap="onClearTap">
+        <l-icon  name="close" color="#fff" size="15" />
+    </view>
+  </view>
+  <view wx:if="{{showCancel}}" 
+        class="cancle l-cancel-class" 
+        bindtap="onCancel">
+        {{cancelText}}
+  </view>
+</view>
