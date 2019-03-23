@@ -6,37 +6,37 @@ Page({
    */
   data: {
     arr: [
-      '/images/static/tx4.jpg',
-      '/images/static/tx2.jpg',
-      '/images/static/tx3.jpg',
-      '/images/static/tx1.jpg',
+      'https://656e-env-9eb476-1258886794.tcb.qcloud.la/images/tx4.jpg?sign=9817258738b68c534b35fbfc04bde928&t=1553372736',
+      'https://656e-env-9eb476-1258886794.tcb.qcloud.la/images/tx2.jpg?sign=6e1e8eec2c2fc497e3b2ac03b367e770&t=1553372700',
+      'https://656e-env-9eb476-1258886794.tcb.qcloud.la/images/tx3.jpg?sign=32821196ccfd12115af3d64dc7d67132&t=1553372724',
+      'https://656e-env-9eb476-1258886794.tcb.qcloud.la/images/tx1.jpg?sign=ed14431dbf86a4d143841e695deaa9b2&t=1553372672',
 
     ],
     arr1: [
-      '/images/static/tx4.jpg',
+      'https://656e-env-9eb476-1258886794.tcb.qcloud.la/images/tx4.jpg?sign=9817258738b68c534b35fbfc04bde928&t=1553372736',
     ],
     arr2: [
-      '/images/static/tx2.jpg',
-      '/images/static/tx3.jpg',
-      '/images/static/tx1.jpg',
-      '/images/static/tx4.jpg',
+      'https://656e-env-9eb476-1258886794.tcb.qcloud.la/images/tx2.jpg?sign=9817258738b68c534b35fbfc04bde928&t=1553372736',
+      'https://656e-env-9eb476-1258886794.tcb.qcloud.la/images/tx3.jpg?sign=6e1e8eec2c2fc497e3b2ac03b367e770&t=1553372700',
+      'https://656e-env-9eb476-1258886794.tcb.qcloud.la/images/tx1.jpg?sign=32821196ccfd12115af3d64dc7d67132&t=1553372724',
+      'https://656e-env-9eb476-1258886794.tcb.qcloud.la/images/tx4.jpg?sign=ed14431dbf86a4d143841e695deaa9b2&t=1553372672',
     ],
     arr3: [
-      '/images/static/tx2.jpg',
-      '/images/static/tx4.jpg',
+      'https://656e-env-9eb476-1258886794.tcb.qcloud.la/images/tx2.jpg?sign=6e1e8eec2c2fc497e3b2ac03b367e770&t=1553372700',
+      'https://656e-env-9eb476-1258886794.tcb.qcloud.la/images/tx4.jpg?sign=9817258738b68c534b35fbfc04bde928&t=1553372736',
     ],
     arr4: [
-      '/images/static/tx1.jpg',
-      '/images/static/tx3.jpg',
+      'https://656e-env-9eb476-1258886794.tcb.qcloud.la/images/tx1.jpg?sign=6e1e8eec2c2fc497e3b2ac03b367e770&t=1553372700',
+      'https://656e-env-9eb476-1258886794.tcb.qcloud.la/images/tx3.jpg?sign=32821196ccfd12115af3d64dc7d67132&t=1553372724',
     ],
     arr5: [
-      '/images/static/tx2.jpg',
-      '/images/static/tx4.jpg',
+      'https://656e-env-9eb476-1258886794.tcb.qcloud.la/images/tx2.jpg?sign=6e1e8eec2c2fc497e3b2ac03b367e770&t=1553372700',
+      'https://656e-env-9eb476-1258886794.tcb.qcloud.la/images/tx4.jpg?sign=9817258738b68c534b35fbfc04bde928&t=1553372736',
     ],
     arr6: [
-      '/images/static/tx1.jpg',
-      '/images/static/tx3.jpg',
-      '/images/static/tx4.jpg',
+      'https://656e-env-9eb476-1258886794.tcb.qcloud.la/images/tx1.jpg?sign=6e1e8eec2c2fc497e3b2ac03b367e770&t=1553372700',
+      'https://656e-env-9eb476-1258886794.tcb.qcloud.la/images/tx3.jpg?sign=9817258738b68c534b35fbfc04bde928&t=1553372736',
+      'https://656e-env-9eb476-1258886794.tcb.qcloud.la/images/tx4.jpg?sign=9817258738b68c534b35fbfc04bde928&t=1553372736',
     ],
 
   },
@@ -77,7 +77,7 @@ Page({
     })
   },
   onPreviewTap(e) {
-    console.log(e.detail.value)
+    console.log(e.detail)
   },
 
   /**

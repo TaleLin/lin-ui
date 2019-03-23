@@ -85,7 +85,11 @@ Component({
       const that = this
       const index = e.currentTarget.dataset.index
       const tempFilePath = this.data.urls[index]
-      let detail = true;
+      let detail = {
+        index, // 下标
+        current: tempFilePath, // 当前显示图片的http链接
+        all: that.data.urls // 需要预览的图片http链接列表
+      };
       let option = {};
       if (this.data.isPreview === true) {
         wx.previewImage({
@@ -95,6 +99,7 @@ Component({
       }
       this.triggerEvent('linpreview', detail, option);
     },
+
 
     // 增加 add
     onAddTap(e) {
