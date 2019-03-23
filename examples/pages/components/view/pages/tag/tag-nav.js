@@ -14,7 +14,7 @@ const tagNaviConfigs = [{
     location: 'r'
   },
   {
-    // content: '内容',
+    content: '内容',
     text:"标签",
     size: 'large',
     bgColor: '',

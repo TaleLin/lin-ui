@@ -16,6 +16,7 @@ Component({
       type: String,
       value: '取消'
     },
+    address:String,
     iconColor: {
       type: String,
       value: '#333'
@@ -24,10 +25,23 @@ Component({
       type: String,
       value: '28'
     },
+    bgColor:{
+      type:String,
+      value:'#f3f3f3'
+    },
     showCancel: {
       type: Boolean,
       value: true
     },
+    shape:{
+      type:String,
+      value:'primary'
+    },
+    TextAlign:{
+      type:String,
+      value:'left'
+    },
+    adress:String,
     // 获取焦点
     focus: {
       type: Boolean,

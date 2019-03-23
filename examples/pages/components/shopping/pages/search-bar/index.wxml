@@ -15,14 +15,22 @@
 
   <view class="card-top">
     <view class="card-dot"></view>
-    <view class="content-name">设置插槽内容</view>
+    <view class="content-name">设置搜索框背景颜色及形状</view>
   </view>
 
-  <l-search-bar placeholder="搜索">
-    <view class="icon-container">
-      <text class="city">北京</text>
-      <l-icon name="down" color="#333" size="22" />
-    </view>
+
+  <l-search-bar shape="circle" placeholder="搜索">
   </l-search-bar>
+
+  <l-search-bar bg-color="#bbb" placeholder="搜索" />
+
+  <view class="card-top">
+    <view class="card-dot"></view>
+    <view class="content-name">设置搜索框前的地址</view>
+  </view>
+
+  <l-search-bar placeholder="搜索" address="北京">
+  </l-search-bar>
+
 
 </content-title>
