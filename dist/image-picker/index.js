@@ -6,7 +6,7 @@ Component({
   externalClasses: ['l-class', 'l-item-class'],
   behaviors: ['wx://form-field'],
   properties: {
-    tempFilePaths: {
+    urls: {
       type: Array,
       value: []
     },
@@ -14,6 +14,16 @@ Component({
     count: {
       type: [String, Number],
       value: 9
+    },
+    // 清除urls
+    clear: {
+      type: Boolean,
+      value: false,
+      observer: function (newVal, oldVal, changedPath) {
+        if (newVal) {
+          this.handleClear();
+        }
+      }
     },
     // 每行可显示的个数
     size: {
@@ -53,25 +63,34 @@ Component({
   data: {
     showBtn: true,
     tempFilePath: '',
-    // tempFilePaths: []
   },
 
   /**
    * 组件的方法列表
    */
   methods: {
+    handleClear() {
+      this.setData({
+        urls: [],
+        clear: false,
+        showBtn: true
+      })
+      let detail = true;
+      let option = {};
+      this.triggerEvent('linclear', detail, option);
+    },
 
     // 预览 preview
     onPreviewTap(e) {
       const that = this
       const index = e.currentTarget.dataset.index
-      const tempFilePath = this.data.tempFilePaths[index]
+      const tempFilePath = this.data.urls[index]
       let detail = true;
       let option = {};
       if (this.data.isPreview === true) {
         wx.previewImage({
           current: tempFilePath, // 当前显示图片的http链接
-          urls: that.data.tempFilePaths // 需要预览的图片http链接列表
+          urls: that.data.urls // 需要预览的图片http链接列表
         })
       }
       this.triggerEvent('linpreview', detail, option);
@@ -80,7 +99,7 @@ Component({
     // 增加 add
     onAddTap(e) {
       const that = this
-      const count = this.data.count - this.data.tempFilePaths.length
+      const count = this.data.count - this.data.urls.length
       if (count === 0 ) {
         return
       }
@@ -91,7 +110,7 @@ Component({
         success(res) {
           // tempFilePath可以作为img标签的src属性显示图片
           const tempFilePath = res.tempFilePaths
-          const newtempFilePaths = that.data.tempFilePaths.concat(tempFilePath)
+          const newtempFilePaths = that.data.urls.concat(tempFilePath)
           // 判断是否还能继续添加图片 
           if (newtempFilePaths.length === parseInt(that.data.count)) {
             that.setData({
@@ -99,13 +118,13 @@ Component({
             })
           }
           that.setData({
-            tempFilePaths: newtempFilePaths,
+            urls: newtempFilePaths,
             value: newtempFilePaths,
             tempFilePath
           })
           let detail = {
             current: tempFilePath,
-            default: newtempFilePaths
+            all: newtempFilePaths
           }
           let option = {};
     
@@ -118,9 +137,9 @@ Component({
     // 删除 remove
     onDelTap(e) {
       const index = e.currentTarget.dataset.index
-      const tempFilePaths = this.data.tempFilePaths
-      const tempFilePath = tempFilePaths[index]
-      tempFilePaths.splice(index, 1);
+      const urls = this.data.urls
+      const tempFilePath = urls[index]
+      const tempFilePaths = this.handleSplice(urls, tempFilePath)
       // 判断是否还能继续添加图片 
       if (tempFilePaths.length < parseInt(this.data.count)) {
         this.setData({
@@ -129,17 +148,22 @@ Component({
       }
       this.setData({
         tempFilePath,
-        tempFilePaths,
+        urls: tempFilePaths,
         value: tempFilePaths,
       })
       let detail = {
         index,
         current: tempFilePath,
-        default: tempFilePaths
+        all: tempFilePaths
       } 
       let option = {};
 
       this.triggerEvent('linremove', detail, option);
+
+    },
+    handleSplice(arr, current) {
+      const newArr = arr.filter(item => item!== current)
+      return newArr
     },
     
   },

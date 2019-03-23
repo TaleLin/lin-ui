@@ -25,3 +25,7 @@
   font-weight: bold;
   color: #bfbfbf;
 }
+
+.top{
+  margin-top: 20rpx;
+}

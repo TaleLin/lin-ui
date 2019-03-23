@@ -33,7 +33,28 @@ Page({
       '/images/static/tx2.jpg',
       '/images/static/tx4.jpg',
     ],
+    arr6: [
+      '/images/static/tx1.jpg',
+      '/images/static/tx3.jpg',
+      '/images/static/tx4.jpg',
+    ],
 
+  },
+  clear() {
+    this.setData({
+      clear: true
+    })
+  },
+  onClearTap(e) {
+    console.log(e)
+    if(e.detail) {
+      wx.lin.showToast({
+        title: `清除图片成功`,
+        icon: 'success',
+        duration: 2000,
+        iconStyle: 'color:#7ec699; size: 60'
+      })
+    }
   },
   onChangeTap(e) {
     console.log(e)
