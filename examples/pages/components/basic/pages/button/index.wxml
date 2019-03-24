@@ -1,25 +1,24 @@
 <content-title name="Button" describe="按钮">
 
   <content-card name="按钮类型">
-
     <view class="style-content">
-      <l-button style="margin-right:30rpx">
+      <l-button style='margin-right:50rpx'>
         默认</l-button>
-      <l-button type="success" style="margin-right:30rpx">
+      <l-button type="success" style='margin-right:50rpx'>
         成功</l-button>
-      <l-button type="error" style="margin-right:30rpx">
+      <l-button type="error">
         错误</l-button>
-      <l-button type="warning" style="margin-right:30rpx">
+      <l-button type="warning">
         警告</l-button>
     </view>
     <view class="style-content">
-      <l-button plain style="margin-right:30rpx">
+      <l-button plain style='margin-right:50rpx'>
         默认</l-button>
-      <l-button plain type="success" style="margin-right:30rpx">
+      <l-button plain type="success" style='margin-right:50rpx'> 
         成功</l-button>
-      <l-button plain type="error" style="margin-right:30rpx">
+      <l-button plain type="error">
         错误</l-button>
-      <l-button plain type="warning" style="margin-right:30rpx">
+      <l-button plain type="warning">
         警告</l-button>
     </view>
   </content-card>

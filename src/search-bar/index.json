@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "l-input": "../input/index",
+    "l-icon": "../icon/index"
+  }
+}
