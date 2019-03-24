@@ -3,7 +3,11 @@
         catchtap="{{count<=min|| disabled?'doNothing':'reduceTap'}}">
     <text>-</text>
   </view>
-  <view class="l-count-class count">{{count}}</view>
+  <input  class="l-count-class count" 
+          disabled="{{disabled}}" 
+          type="number" 
+          value="{{count}}"
+          bindblur="onBlur"></input>
   <view class="l-symbol-class symbol {{count>=max|| disabled?'disabled':'abled'}}" 
         catchtap="{{count>=max|| disabled?'doNothing':'addTap'}}">
        <text>+</text>
