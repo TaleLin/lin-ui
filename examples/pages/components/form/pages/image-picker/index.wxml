@@ -4,14 +4,14 @@
       class="content"
       name="基本案例"
     >
-    <l-image-picker temp-file-paths="{{arr}}" />
+    <l-image-picker urls="{{arr}}" />
     </content-card>
 
     <content-card
       class="content"
       name="自定义选取图片的数量（count=2）"
     >
-    <l-image-picker temp-file-paths="{{arr1}}" count="2" />
+    <l-image-picker urls="{{arr1}}" count="2" />
     </content-card>
 
     <content-card
@@ -19,7 +19,7 @@
       name="自定义每行数量 (size=4)"
     >
     <l-image-picker
-      temp-file-paths="{{arr2}}"
+      urls="{{arr2}}"
       count="9"
       size="4"/>
     </content-card>
@@ -30,7 +30,7 @@
     >
     <l-image-picker
       l-item-class="item"
-      temp-file-paths="{{arr3}}"
+      urls="{{arr3}}"
       count="9"
       size="4"  />
     </content-card>
@@ -40,7 +40,7 @@
       name="自定义增加图片的按钮"
     >
     <l-image-picker 
-      temp-file-paths="{{arr4}}"
+      urls="{{arr4}}"
       count="9"
       size="4"
       custom="{{true}}" >
@@ -56,7 +56,7 @@
       name="事件监听"
     >
     <l-image-picker 
-      temp-file-paths="{{arr5}}"
+      urls="{{arr5}}"
       count="9"
       custom="{{true}}"
       bind:linchange="onChangeTap"
@@ -70,6 +70,34 @@
     </content-card>
 
    
+    <content-card
+      class="content"
+      name="清除图片"
+    >
+    <l-image-picker 
+      urls="{{arr6}}"
+      count="9"
+      custom="{{true}}"
+      clear="{{clear}}"
+      size="4"
+      bind:linclear="onClearTap">
+      <view class='add'>
+        <image class='add-icon' src='/images/static/camera_add.png'></image>
+        <text class='add-text'>选择图片</text>
+      </view>
+    </l-image-picker>
+    <l-button
+      icon="warning"
+      size="large"
+      icon-color="#fff"
+      icon-size="32"
+      bindlintap="clear"
+      l-class="top"
+    >
+      清除图片
+    </l-button>
+    </content-card>
+
   </content-title>
 
   <l-toast />
