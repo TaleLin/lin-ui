@@ -17,7 +17,7 @@
                 </view>
             </l-button>
         </view>
-        <view class="l-cancel l-class-cancel" wx:if="{{ showCancel }}">
+        <view class="l-cancel l-class-cancel {{isIphoneX ? 'l-cancel-x':''}}" wx:if="{{ showCancel }}">
             <l-button type="ghost" size="large" long="true" bind:lintap="handleClickCancel" special="{{true}}">
                 <view class="l-item-button l-cancel-button">{{ cancelText }}</view>
             </l-button>
