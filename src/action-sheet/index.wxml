@@ -1,4 +1,3 @@
-<wxs src="../wxs/parseCssText.wxs" module="actionSheet" />
 <l-popup show="{{show}}" showMask="{{true}}" contentAlign="bottom" locked="{{locked}}" bind:lintap="handleClickPopUp">
     <view class='l-action-sheet'>
         <view  class="l-item-button l-class-title" wx:if="{{title}}">
