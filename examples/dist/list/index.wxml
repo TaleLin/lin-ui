@@ -18,24 +18,16 @@
             <view class="l-content l-class-content">{{title}}</view>
             <view class="l-desc l-class-desc">{{desc}}</view>
         </view>
-        <l-tag size="mini"  shape="{{tagShape}}" bg-color="{{tagColor}}" l-class="cell-tag" wx:if="{{tagContent && tagPosition ==='left' && !tagPlain}}">
-            {{tagContent}}
-        </l-tag>
-        <l-tag size="mini" shape="{{tagShape}}" plain="{{tagPlain}}" font-color="{{tagColor}}" l-class="cell-tag" wx:elif="{{tagContent && tagPosition ==='left' && tagPlain}}">
-            {{tagContent}}
-        </l-tag>
+        <l-tag size="mini"  shape="{{tagShape}}" bg-color="{{tagColor}}" l-class="cell-tag" wx:if="{{tagContent && tagPosition ==='left' && !tagPlain}}">{{tagContent}}</l-tag>
+        <l-tag size="mini" shape="{{tagShape}}" plain="{{tagPlain}}" font-color="{{tagColor}}" l-class="cell-tag" wx:elif="{{tagContent && tagPosition ==='left' && tagPlain}}">{{tagContent}}</l-tag>
         <slot name="left-section"></slot>
     </view>
 </template>
 <template name="cell-right-main">
     <view class="right-section l-class-right">
         <slot name="right-section"></slot>
-        <l-tag size="mini" shape="{{tagShape}}" bg-color="{{tagColor}}" l-class="cell-tag" wx:if="{{tagContent && tagPosition ==='right' && !tagPlain }}">
-            {{tagContent}}
-        </l-tag>
-        <l-tag size="mini" shape="{{tagShape}}" plain="{{tagPlain}}" font-color="{{tagColor}}" l-class="cell-tag" wx:if="{{tagContent && tagPosition ==='right' && tagPlain }}">
-            {{tagContent}}
-        </l-tag>
+        <l-tag size="mini" shape="{{tagShape}}" bg-color="{{tagColor}}" l-class="cell-tag" wx:if="{{tagContent && tagPosition ==='right' && !tagPlain }}">{{tagContent}}</l-tag>
+        <l-tag size="mini" shape="{{tagShape}}" plain="{{tagPlain}}" font-color="{{tagColor}}" l-class="cell-tag" wx:if="{{tagContent && tagPosition ==='right' && tagPlain }}">{{tagContent}}</l-tag>
         <view class="l-text" wx:if="{{rightDesc}}">{{rightDesc}}</view>
         <l-icon l-class-self="l-arrow" name="right" wx:if="{{isLink}}" />
     </view>

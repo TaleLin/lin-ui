@@ -31,19 +31,20 @@ Component({
       value: '20'
     },
     iconColor: {
-      type:String,
-      value:'#3683D6'
+      type: String,
+      value: '#3683D6'
     },
     image: String,
     iconStyle: {
       type: String,
       value: 'size:20;color:#3683D6'
     },
+    height: Number
   },
   methods: {
     handleTap() {
       if (this.properties.disabled) return false;
-      const options = {
+      let options = {
         name: this.properties.name,
         select: this.properties.select
       }
