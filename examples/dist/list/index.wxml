@@ -16,7 +16,7 @@
         <l-icon wx:elif="{{icon}}" l-class-self="l-icon" l-class="l-class-icon" name="{{icon}}" />
         <view class="l-text">
             <view class="l-content l-class-content">{{title}}</view>
-            <view class="l-desc l-class-desc">{{desc}}</view>
+            <view class="l-desc l-class-desc" wx:if="{{desc}}">{{desc}}</view>
         </view>
         <l-tag size="mini"  shape="{{tagShape}}" bg-color="{{tagColor}}" l-class="cell-tag" wx:if="{{tagContent && tagPosition ==='left' && !tagPlain}}">
             {{tagContent}}
