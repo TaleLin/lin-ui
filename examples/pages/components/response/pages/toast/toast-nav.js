@@ -58,7 +58,7 @@ const toastNaviConfigs = [
       icon: "",
       iconStyle: '',
       image: "/images/static/tlbd.jpg",
-      imageStyle: "80*80",
+      imageStyle: "80",
       placement: 'right',
       duration: 2000,
       center: false,
