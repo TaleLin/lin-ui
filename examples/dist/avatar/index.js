@@ -32,7 +32,7 @@ Component({
     data: {
         _isHaveUserNickName: false,
         _isHaveUserAvatarUrl: false,
-        _iconSize: 72,
+        _iconSize: '',
         _iconColor: '#ffffff'
     },
     methods: {
