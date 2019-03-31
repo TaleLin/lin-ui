@@ -18,11 +18,13 @@ Component({
     data: {
         success: '',
         fail: '',
+        isIphoneX: false
     },
     attached() {
         if (this.data.openApi) {
             this.initActionSheet();
         }
+        this.initUIAdapter();
     },
 
     lifetimes: {
@@ -30,9 +32,22 @@ Component({
             if (this.data.openApi) {
                 this.initActionSheet();
             }
+
         },
     },
     methods: {
+        /**
+   * 区分UI尺寸
+   */
+        initUIAdapter() {
+            wx.getSystemInfo({
+                success: (res) => {
+                    this.setData({
+                        isIphoneX: res.model == "iPhone X" ? true : false,
+                    })
+                }
+            })
+        },
         initActionSheet() {
             const config = {
                 itemList: [],

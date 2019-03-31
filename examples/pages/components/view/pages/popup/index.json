@@ -2,7 +2,7 @@
   "usingComponents": {
     "content-title": "/components/content-title/index",
     "content-card": "/components/content-card/index",
-    "l-pupop": "/dist/popup/index",
+    "l-popup": "/dist/popup/index",
     "l-button":"/dist/button/index"
   }
 }

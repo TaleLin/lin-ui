@@ -73,7 +73,7 @@ Component({
       },
       // 开放能力事件回调
       openTypeEvent(data) {
-        this.triggerEvent(data.type, data, {});
+        this.triggerEvent(data.type, data.detail, {});
       }
     }
   });

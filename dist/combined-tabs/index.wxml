@@ -1,5 +1,4 @@
 <!-- components/tabs/index.wxml -->
-<wxs src="../wxs/parseCssText.wxs" module="tabs" />
 <view class="l-tabs l-placement-top l-tabs-horizontal {{aminmated ? 'l-aminmated' :''}} {{scrollable ? 'l-tabs-scroll':''}}">
     <template is="tab-header" data="{{tab:tabList,placemanet,scrollable,transformY,transformX,activeKey,hasLine,activeColor,inactiveColor,headerType:'tab'}}"></template>
     <view class="l-tabs l-sub-placement-left l-tabs-vertical {{aminmated ? 'l-aminmated' :''}}  {{scrollable ? 'l-tabs-scroll':''}}">

@@ -1,4 +1,3 @@
-<wxs src="../wxs/parseCssText.wxs" module="actionSheet" />
 <l-popup show="{{show}}" showMask="{{true}}" contentAlign="bottom" locked="{{locked}}" bind:lintap="handleClickPopUp">
     <view class='l-action-sheet'>
         <view  class="l-item-button l-class-title" wx:if="{{title}}">
@@ -17,7 +16,7 @@
                 </view>
             </l-button>
         </view>
-        <view class="l-cancel l-class-cancel" wx:if="{{ showCancel }}">
+        <view class="l-cancel l-class-cancel {{isIphoneX ? 'l-cancel-x':''}}" wx:if="{{ showCancel }}">
             <l-button type="ghost" size="large" long="true" bind:lintap="handleClickCancel" special="{{true}}">
                 <view class="l-item-button l-cancel-button">{{ cancelText }}</view>
             </l-button>

@@ -2,7 +2,7 @@
 <!-- image-picker.wxml -->
 <l-grid row-num="{{ size }}" l-class="l-class">
   <l-grid-item
-    wx:for="{{ tempFilePaths }}" 
+    wx:for="{{ urls }}" 
     wx:key="{{ index }}"
     key="{{ index }}"
     slot="{{ index }}">

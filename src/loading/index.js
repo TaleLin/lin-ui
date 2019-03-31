@@ -21,7 +21,6 @@ Component({
       type: String,
       value: 'default',
     },
-
     // 自定义
     custom: {
       type: Boolean,

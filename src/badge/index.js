@@ -31,18 +31,27 @@ Component({
   methods: {
     // 最终数字
     finalCount() {
-      if (this.data.countType == 'overflow') {
-        this.setData({
-          finalCount: parseInt(this.data.count) >= parseInt(this.data.maxCount) ? `${this.data.maxCount}+` : this.data.count
-        });
-      } else if (this.data.countType == 'ellipsis') {
-        this.setData({
-          finalCount: parseInt(this.data.count) >= parseInt(this.data.maxCount) ? `...` : this.data.count
-        });
-      } else {
-        this.setData({
-          finalCount: parseInt(this.data.count)
-        })
+      switch (this.data.countType) {
+        case 'overflow':
+          this.setData({
+            finalCount: parseInt(this.data.count) >= parseInt(this.data.maxCount) ? `${this.data.maxCount}+` : this.data.count
+          });
+          break;
+        case 'ellipsis':
+          this.setData({
+            finalCount: parseInt(this.data.count) >= parseInt(this.data.maxCount) ? `...` : this.data.count
+          });
+          break;
+        case 'limit':
+          this.setData({
+            finalCount: parseInt(this.data.count) >= 999 ? (parseInt(this.data.count) >= 9999 ? Math.floor(this.data.count / 10000 * 100) / 100 + `w` : Math.floor(this.data.count / 1000 * 100) / 100 + `k`) : this.data.count
+          })
+          break;
+        default:
+          this.setData({
+            finalCount: parseInt(this.data.count)
+          })
+          break;
       }
     },
     // 点击事件

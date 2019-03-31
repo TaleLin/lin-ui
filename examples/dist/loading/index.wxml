@@ -1,4 +1,4 @@
-<view class="container-loading l-container-class" wx:if="{{show && fullScreen}}" style="background:{{bgColor}}"  catchtouchmove="doNothingMove">
+<view class="container-loading l-container-class {{fullScreen ? 'content': ''}}" wx:if="{{show && fullScreen}}" style="background:{{bgColor}}"  catchtouchmove="doNothingMove">
   <view wx:if="{{show}}" class=" {{type=='flash'?'l-class':''}} {{type + '-spinner'}} {{type=='change'||custom?'':'spinner-' + type + '-' + size}}">
     <block wx:if="{{custom}}">
       <slot />

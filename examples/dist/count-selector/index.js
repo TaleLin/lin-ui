@@ -31,8 +31,35 @@ Component({
    * 组件的方法列表
    */
   methods: {
-    doNothing() {
+    doNothing() {},
 
+    onBlur(e) {
+      let {
+        value
+      } = e.detail
+      setTimeout(() => {
+        this.blurCount(value)
+      }, 50)
+      let detail = {
+        count: this.data.count,
+        type: 'blur'
+      }
+      this.triggerEvent('lintap', detail)
+    },
+
+    blurCount(value) {
+      if (value) {
+        if (value > this.properties.max) this.setData({
+          count: this.properties.max
+        })
+        if (value < this.properties.min) this.setData({
+          count: this.properties.min
+        })
+      } else {
+        this.setData({
+          count: this.properties.count
+        })
+      }
     },
 
     reduceTap() {

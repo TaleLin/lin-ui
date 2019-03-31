@@ -17,7 +17,7 @@
 <div align="center">
 
 ![](https://img.shields.io/badge/build-passing-00d508.svg)
-![](https://img.shields.io/badge/version-0.0.1.alpha.17-3963bc.svg)
+![](https://img.shields.io/badge/version-0.0.1.alpha.19-3963bc.svg)
 ![](https://img.shields.io/badge/license-MIT-3963bc.svg)
 
 </div>
@@ -39,7 +39,7 @@ Lin UI 是基于 **微信小程序原生语法** 实现的组件库。遵循简�
 
 ## 最新版本
 
-核心库：0.0.1-alpha.18
+核心库：0.0.1-alpha.19
 
 示例工程：0.0.1-alpha.1
 
@@ -51,11 +51,11 @@ http://doc.mini.7yue.pro/
 ## 讨论交流
 QQ群号：699501172 <br/>
 
-<img class="QR-img" style="height: 100px; width:100px" src="http://imglf4.nosdn0.126.net/img/YUdIR2E3ME5weEdlNThuRmI4TFh3YVczZzB1N3BrbithelM1OFZMb09SSDNuQSs5V0RhM2lBPT0.jpg?imageView&thumbnail=500x0&quality=96&stripmeta=0&type=jpg">
+<img class="QR-img" style="height: 100px; width:100px" src="http://imglf4.nosdn0.126.net/img/YUdIR2E3ME5weEdlNThuRmI4TFh3YVczZzB1N3BrbithelM1OFZMb09SSDNuQSs5V0RhM2lBPT0.jpg?imageView&thumbnail=250x0&quality=96&stripmeta=0&type=jpg">
 
 
 ## 微信公众号
-微信搜索：七月有风 <br/>
+微信搜索：林间有风 <br/>
 
 <img class="QR-img" style="height: 100px; width:100px"  src="http://imglf6.nosdn0.126.net/img/YUdIR2E3ME5weEdlNThuRmI4TFh3UWhiNmladWVoaTlXUXpicEFPa1F6czFNYkdmcWRIbGRRPT0.jpg?imageView&thumbnail=500x0&quality=96&stripmeta=0&type=jpg">
 
