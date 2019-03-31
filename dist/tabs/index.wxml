@@ -1,5 +1,4 @@
 <!-- components/tabs/index.wxml -->
-<wxs src="../wxs/parseCssText.wxs" module="tabs" />
 <view class="l-tabs {{'l-placement-'+placement}} {{aminmated ? 'l-aminmated' :''}} {{placement=='left'||placement=='right'?'l-tabs-vertical':'l-tabs-horizontal'}} {{scrollable ? 'l-tabs-scroll':''}}">
     <scroll-view 
         scroll-x="{{placement=='top'||placement=='bottom' && scrollable}}" 

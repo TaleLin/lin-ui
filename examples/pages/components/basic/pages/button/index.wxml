@@ -96,7 +96,7 @@
         </l-button>
       </view>
       <view class="content">
-        <l-button special="true" openType="openSetting">
+        <l-button special="true" openType="getUserInfo" bind:getuserinfo="getUserInfo">
           <view class="box">
             <text class="txt">设置</text>
           </view>
@@ -104,5 +104,7 @@
       </view>
     </view>
   </content-card>
+
+  <button openType="openSetting" bindopensetting="getUserInfo">按钮</button>
 
 </content-title>
