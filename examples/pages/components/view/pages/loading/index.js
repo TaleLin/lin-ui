@@ -23,7 +23,7 @@ Page({
     this.showLoading(type)
     setTimeout(() => {
       this.hideLoading(type)
-    }, 2000)
+    }, 100000)
   },
 
   // show loading
