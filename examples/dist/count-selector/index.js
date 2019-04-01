@@ -31,7 +31,7 @@ Component({
    * 组件的方法列表
    */
   methods: {
-    doNothing() {},
+    doNothing() { },
 
     onBlur(e) {
       let {
@@ -40,11 +40,6 @@ Component({
       setTimeout(() => {
         this.blurCount(value)
       }, 50)
-      let detail = {
-        count: this.data.count,
-        type: 'blur'
-      }
-      this.triggerEvent('lintap', detail)
     },
 
     blurCount(value) {
@@ -52,14 +47,22 @@ Component({
         if (value > this.properties.max) this.setData({
           count: this.properties.max
         })
-        if (value < this.properties.min) this.setData({
+        else if (value < this.properties.min) this.setData({
           count: this.properties.min
+        })
+        else this.setData({
+          count: value
         })
       } else {
         this.setData({
           count: this.properties.count
         })
       }
+      let detail = {
+        count: this.data.count,
+        type: 'blur'
+      }
+      this.triggerEvent('lintap', detail)
     },
 
     reduceTap() {

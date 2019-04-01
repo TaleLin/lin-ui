@@ -13,6 +13,7 @@ Component({
             status: false
           })
           this.properties.show = false
+          if (this.data.success) this.data.success()
         }, this.properties.duration)
       }
     },
@@ -34,7 +35,8 @@ Component({
       type: Boolean,
       value: true,
     },
-    image:String
+    image: String,
+    success: Function
   },
 
   data: {
@@ -53,7 +55,7 @@ Component({
         this.initMessage();
       }
     },
-},
+  },
 
   methods: {
     initMessage() {
@@ -62,7 +64,7 @@ Component({
         icon: '',
         image: '',
         type: 'primary',
-        duration: 1500,
+        duration: 1500
       }
       wx.lin = wx.lin || {};
       wx.lin.showMessage = (options) => {
@@ -72,7 +74,9 @@ Component({
           image = config.image,
           type = config.type,
           duration = config.duration,
+          success
         } = options;
+        this.data.success = success
         this.setData({
           content,
           icon,
