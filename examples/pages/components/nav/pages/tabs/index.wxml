@@ -16,7 +16,7 @@
     </content-card>
 
     <content-card l-content="content" name="非等宽标签">
-      <l-tabs bind:linchange="changeTabs" l-class-header-line="header-line" equal-width="{{false}}">
+      <l-tabs bind:linchange="changeTabs" l-class-header-line="header-line" equal-width="{{false}}" scrollable>
         <l-tabpanel tab="精选" key="one" slot="one">
           <view class="tab-content">精选</view>
         </l-tabpanel>
@@ -25,6 +25,21 @@
         </l-tabpanel>
         <l-tabpanel tab="美食厨房" key="three" slot="three">
           <view class="tab-content">美食厨房</view>
+        </l-tabpanel>
+        <l-tabpanel tab="美妆护肤" key="four" slot="four">
+          <view class="tab-content">美妆</view>
+        </l-tabpanel>
+        <l-tabpanel tab="运动女装" key="five" slot="five">
+          <view class="tab-content">运动女装</view>
+        </l-tabpanel>
+        <l-tabpanel tab="家用电器" key="six" slot="six">
+          <view class="tab-content">家用电器</view>
+        </l-tabpanel>
+        <l-tabpanel tab="厨房用品" key="seven" slot="seven">
+          <view class="tab-content">厨房用品</view>
+        </l-tabpanel>
+        <l-tabpanel tab="卫生清洁" key="eight" slot="eight">
+          <view class="tab-content">卫生清洁</view>
         </l-tabpanel>
       </l-tabs>
     </content-card>
