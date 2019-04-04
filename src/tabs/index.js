@@ -150,9 +150,10 @@ Component({
       } = this.data;
       this._getRect('#' + activeKey)
         .then((res) => {
+          console.log(res)
           if (['top', 'bottom'].indexOf(placement) !== -1) {
             this.setData({
-              transformX: res.left - tabList.length / 2 * res.width,
+              transformX: res.left>0 ? res.left : 'auto',
               transformY: 0
             });
           } else {
