@@ -35,8 +35,7 @@ Component({
       type: Boolean,
       value: true,
     },
-    image: String,
-    success: Function
+    image: String
   },
 
   data: {
