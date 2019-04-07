@@ -97,7 +97,7 @@
 
 
     <content-card l-content="content" name="滚动标签">
-      <l-tabs bind:linchange="changeTabs" l-class-header="l-class-header" l-class-active="l-class-active" placement="top" scrollable>
+      <l-tabs bind:linchange="changeTabs" l-class-header="l-class-header" l-class-active="l-class-active" placement="top" scrollable equal-width="{{false}}">
         <l-tabpanel wx:for="{{scrollAbleTabs}}" tab="{{item.tab}}" key="{{item.key}}" slot="{{item.key}}" wx:key="{{item.key}}">
           <view class="tab-content">{{item.tab}}</view>
         </l-tabpanel>
