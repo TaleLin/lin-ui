@@ -82,7 +82,7 @@
     </content-card>
 
     <content-card l-content="content" name="滑动切换">
-      <l-tabs l-class-header="swipeable-header" l-class-inactive="swipeable-class-inactive" l-class-active="swipeable-class-active" active-key="two" bind:linchange="changeTabs" swipeable has-line="{{false}}">
+      <l-tabs l-class-header="swipeable-header" l-class-inactive="swipeable-class-inactive" l-class-line="line-class" l-class-active="swipeable-class-active" active-key="two" bind:linchange="changeTabs" swipeable has-line="{{true}}" aminmated-for-line="{{true}}">
         <l-tabpanel tab="推荐" key="one" slot="one">
           <view class="tab-content">推荐</view>
         </l-tabpanel>
