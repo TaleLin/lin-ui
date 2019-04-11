@@ -1,6 +1,6 @@
 // components/tabs/index.js
 Component({
-  externalClasses: ['l-class-header', 'l-class-active', 'l-class-content', 'l-class-inactive', 'l-class-line', 'l-class-tabimage', 'l-class-header-line'],
+  externalClasses: ['l-class-tabs','l-class-header', 'l-class-active', 'l-class-content', 'l-class-inactive', 'l-class-line', 'l-class-tabimage', 'l-class-header-line'],
   relations: {
     '../tabpanel/index': {
       type: 'child',
@@ -41,6 +41,7 @@ Component({
       type: Boolean,
       value: true
     },
+    aminmatedForLine:Boolean,
     activeColor: {
       type: String,
       value: '#333333'

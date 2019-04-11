@@ -11,7 +11,9 @@ module.exports = Behavior({
             observer: function (newVal, oldVal, changedPath) {
                 if (newVal) {
                     this.init();
-                }
+                }else if(!newVal){
+                    clearInterval(this.data.timer);
+                  }
             }
         },
         timeType: {
