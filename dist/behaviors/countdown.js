@@ -11,9 +11,9 @@ module.exports = Behavior({
             observer: function (newVal, oldVal, changedPath) {
                 if (newVal) {
                     this.init();
-                }else if(!newVal){
+                } else if (!newVal) {
                     clearInterval(this.data.timer);
-                  }
+                }
             }
         },
         timeType: {
@@ -37,6 +37,17 @@ module.exports = Behavior({
     ready: function () {
         this.getLatestTime();
     },
+
+    detached: function () {
+        clearInterval(this.data.timer);
+    },
+
+    pageLifetimes: {
+        hide() {
+            clearInterval(this.data.timer);
+        },
+    },
+
     methods: {
         // 自动补零
         zeroPadding(num) {
