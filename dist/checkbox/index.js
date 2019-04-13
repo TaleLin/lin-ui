@@ -11,6 +11,10 @@ Component({
       type: String,
       value: ''
     },
+    detail: {
+      type: Object,
+      value: {}
+    },
     // checkbox的形状
     shape: {
       type: String,
@@ -59,12 +63,14 @@ Component({
         checked: current
       });
     },
-    // 点击radio
+    // 点击 checkbox
     onCheckBoxChangeTap() {
       if (this.data.disabled) return;
       const item = {
         current: !this.data.checked,
-        value: this.data.value
+        value: this.data.value,
+        detail: this.data.detail,
+        all:null
       };
       const parent = this.getRelationNodes('../checkbox-group/index')[0];
       parent ? parent.onEmitEventHandle(item) : this.triggerEvent('linchange', item);

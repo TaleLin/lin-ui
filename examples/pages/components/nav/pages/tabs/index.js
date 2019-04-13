@@ -102,6 +102,13 @@ Page({
       }, {
         tab: '美妆洗护',
         key: 'cosmetics'
+      },{
+        tab:'家用电器',
+        key:'one'
+      },
+      {
+        tab:'运动女装',
+        key:'sport'
       }],
     })
   },

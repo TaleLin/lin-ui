@@ -105,6 +105,6 @@
     </view>
   </content-card>
 
-  <button openType="openSetting" bindopensetting="getUserInfo">按钮</button>
+  <!-- <button openType="openSetting" bindopensetting="getUserInfo">按钮</button> -->
 
 </content-title>
