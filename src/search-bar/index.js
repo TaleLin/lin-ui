@@ -11,6 +11,10 @@ Component({
     'l-cancel-class'
   ],
   properties: {
+    type: {
+      type: String,
+      value: 'search'
+    },
     placeholder: String,
     cancelText: {
       type: String,
