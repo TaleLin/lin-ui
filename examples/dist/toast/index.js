@@ -11,10 +11,12 @@ Component({
       value: false,
       observer: function (newVal, oldVal) {
         if (newVal) {
+           this.handleSuccess()
           setTimeout(() => {
             this.setData({
               show: false
             })
+            this.handleComplete()
           }, this.properties.duration)
         }
       }
@@ -83,7 +85,11 @@ Component({
   /**
    * 组件的初始数据
    */
-  data: {},
+  data: {
+    success: '',
+    fail: '',
+    complete: ''
+  },
   attached() {
     if (this.data.openApi) {
       this.initToast();
@@ -113,6 +119,8 @@ Component({
         duration: 1500,
         center: true,
         mask: false,
+        success: null,
+        complete: null
       }
       wx.lin = wx.lin || {};
       wx.lin.showToast = (options) => {
@@ -126,6 +134,8 @@ Component({
             duration = config.duration,
             center = config.center,
             mask = config.mask,
+            success = config.success,
+            complete = config.complete
         } = options;
         this.setData({
           title,
@@ -138,6 +148,8 @@ Component({
           center,
           mask,
           show: true,
+          success,
+          complete
         });
         return this;
       };
@@ -145,7 +157,7 @@ Component({
 
     // 返回icon的宽高
     parseIconStyle(str) {
-      let arr = str ? str.split(";") : ['size: 60','color: #fff']
+      let arr = str ? str.split(";") : ['size: 60', 'color: #fff']
       arr.map((item) => {
         item = item.trim().split(':')
         this.setData({
@@ -207,11 +219,28 @@ Component({
       if (this.data.locked !== true) {
         this.setData({
           fullScreen: 'hide',
-
           status: 'hide',
         })
       }
+
       this.triggerEvent('linTap', detail, option);
+    },
+
+    handleComplete() {
+      const {
+        complete
+      } = this.data;
+      complete && complete({
+        errMsg: 'showToast: complete!'
+      });
+    },
+    handleSuccess() {
+      const {
+        success
+      } = this.data;
+      success && success({
+        msg: 'showToast: success!'
+      });
     }
   },
 

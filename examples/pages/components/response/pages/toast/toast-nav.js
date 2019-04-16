@@ -64,7 +64,8 @@ const toastNaviConfigs = [
       center: false,
       mask: false
     }
-  },
+  }
+
 
 ]
 
