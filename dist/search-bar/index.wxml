@@ -21,8 +21,10 @@
         bindfocus="handleInputFocus"
         bindblur="handleInputBlur"
         bindconfirm="handleInputConfirm"/>
-    <view class="close" wx:if="{{clear&&value}}" bindtap="onClearTap">
-        <l-icon  name="close" color="#fff" size="15" />
+    <view class="close-wrap" wx:if="{{clear&&value}}" bindtap="onClearTap">
+        <view class="close">
+            <l-icon  name="close" color="#fff" size="15" />
+        </view>
     </view>
   </view>
   <view wx:if="{{showCancel}}" 
