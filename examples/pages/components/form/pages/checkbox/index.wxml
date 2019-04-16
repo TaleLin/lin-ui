@@ -7,7 +7,7 @@
     >
       <view class='buttun-wrapper'>
         <view class='title'>1. 下面哪些歌是周杰伦创作的？</view>
-        <l-checkbox-group l-class="l-radio-group">
+        <l-checkbox-group current="{{current }}" l-class="l-radio-group">
           <l-checkbox
             l-class="l-radio"
             l-title-class="l-title-class"
