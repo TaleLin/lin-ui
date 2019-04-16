@@ -22,11 +22,11 @@ Page({
         })
         break
       case 1:
-        wx.lin.showMessage({
-          type: 'success',
-          duration: 1500,
-          content: '成功提示'
-        })
+        // wx.lin.showMessage({
+        //   type: 'success',
+        //   duration: 1500,
+        //   content: '成功提示'
+        // })
         this.setData({
           show: true,
           type: 'success',

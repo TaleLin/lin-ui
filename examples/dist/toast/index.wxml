@@ -3,7 +3,7 @@
 <!-- <wxs src="./index.wxs" module="toast" /> -->
 <view
   class="container"
-  hidden="{{!show}}"
+  hidden="{{!status}}"
   style="z-index:{{zIndex}}">
   <view class="toast-bg" wx:if="{{mask}}"></view>
   <view class="toast toast-{{placement || 'bottom'}}" style="{{placement  || 'bottom' === 'bottom' ?  image || icon ? 'padding-top: 25rpx': '': ''}}" >

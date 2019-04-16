@@ -1,20 +1,26 @@
-const config = {
-  content: '',
-  icon: '',
-  image: '',
-  type: 'primary',
-  duration: 1500,
-  success: null
-}
-
 Component({
   externalClasses: ['l-class', 'l-image-class'],
   properties: {
+    show: Boolean,
+    icon: String,
+    image: String,
+    content: String,
+    type: {
+      type: String,
+      value: 'primary'
+    },
+    duration: {
+      type: Number,
+      value: 1500
+    },
+    openApi: {
+      type: Boolean,
+      value: true
+    }
   },
 
   data: {
-    status: false,
-    ...config
+    status: false
   },
 
   attached() {
@@ -27,17 +33,23 @@ Component({
     },
   },
 
+  observers: {
+    'show': function (show) {
+      show && this.changeStatus()
+    }
+  },
+
   methods: {
     initMessage() {
       wx.lin = wx.lin || {};
-      wx.lin.showMessage = (options) => {
+      wx.lin.showMessage = (options = {}) => {
         const {
-          content = config.content,
-          icon = config.icon,
-          image = config.image,
-          type = config.type,
-          duration = config.duration,
-          success = config.success
+          content = '',
+          icon = '',
+          image = '',
+          type = 'primary',
+          duration = 1500,
+          success = null
         } = options;
         this.data.success = success
         this.setData({

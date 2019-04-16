@@ -7,6 +7,7 @@
   <view class="search-input l-input-container {{'search-input-'+ shape}}" style="{{'background-color:'+bgColor}}">
     <l-icon name="research" size="{{iconSize}}" color="{{iconColor}}" />
   <input
+        confirm-type="{{confirmType}}"
         class="input l-input-class {{'input'+ TextAlign}}"
         value="{{ value }}"
         type="{{type}}"
@@ -21,8 +22,10 @@
         bindfocus="handleInputFocus"
         bindblur="handleInputBlur"
         bindconfirm="handleInputConfirm"/>
-    <view class="close" wx:if="{{clear&&value}}" bindtap="onClearTap">
-        <l-icon  name="close" color="#fff" size="15" />
+    <view class="close-wrap" wx:if="{{clear&&value}}" bindtap="onClearTap">
+        <view class="close">
+            <l-icon  name="close" color="#fff" size="15" />
+        </view>
     </view>
   </view>
   <view wx:if="{{showCancel}}" 

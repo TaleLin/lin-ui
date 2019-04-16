@@ -8,16 +8,7 @@ Component({
     // 显示与隐藏
     show: {
       type: Boolean,
-      value: false,
-      observer: function (newVal, oldVal) {
-        if (newVal) {
-          setTimeout(() => {
-            this.setData({
-              show: false
-            })
-          }, this.properties.duration)
-        }
-      }
+      value: false
     },
     // 提示框的文本内容
     title: {
@@ -80,10 +71,18 @@ Component({
 
   },
 
+  observers: {
+    'show': function (show) {
+      show && this.changeStatus()
+    }
+  },
+
   /**
    * 组件的初始数据
    */
-  data: {},
+  data: {
+    status: false
+  },
   attached() {
     if (this.data.openApi) {
       this.initToast();
@@ -103,30 +102,21 @@ Component({
    */
   methods: {
     initToast() {
-      const config = {
-        title: '',
-        icon: '',
-        iconStyle: 'size:60; color:#fff',
-        image: '',
-        imageStyle: '60*60',
-        placement: 'bottom',
-        duration: 1500,
-        center: true,
-        mask: false,
-      }
       wx.lin = wx.lin || {};
-      wx.lin.showToast = (options) => {
+      wx.lin.showToast = (options = {}) => {
         const {
-          title = config.title,
-            icon = config.icon,
-            iconStyle = config.iconStyle,
-            image = config.image,
-            imageStyle = config.imageStyle,
-            placement = config.placement,
-            duration = config.duration,
-            center = config.center,
-            mask = config.mask,
+          title = '',
+          icon = '',
+          iconStyle = 'size:60; color:#fff',
+          image = '',
+          imageStyle = '60*60',
+          placement = 'bottom',
+          duration = 1500,
+          center = true,
+          mask = false,
+          success = null
         } = options;
+        this.data.success = success
         this.setData({
           title,
           icon,
@@ -136,16 +126,30 @@ Component({
           placement,
           duration,
           center,
-          mask,
-          show: true,
+          mask
         });
+        this.changeStatus()
         return this;
       };
     },
 
+    changeStatus() {
+      this.setData({
+        status: true
+      })
+      if (this.data.timer) clearTimeout(this.data.timer)
+      this.data.timer = setTimeout(() => {
+        this.setData({
+          status: false
+        })
+        if (this.data.success) this.data.success()
+        this.data.timer = null
+      }, this.properties.duration)
+    },
+
     // 返回icon的宽高
     parseIconStyle(str) {
-      let arr = str ? str.split(";") : ['size: 60','color: #fff']
+      let arr = str ? str.split(";") : ['size: 60', 'color: #fff']
       arr.map((item) => {
         item = item.trim().split(':')
         this.setData({
