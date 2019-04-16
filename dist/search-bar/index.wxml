@@ -7,6 +7,7 @@
   <view class="search-input l-input-container {{'search-input-'+ shape}}" style="{{'background-color:'+bgColor}}">
     <l-icon name="research" size="{{iconSize}}" color="{{iconColor}}" />
   <input
+        confirm-type="{{confirmType}}"
         class="input l-input-class {{'input'+ TextAlign}}"
         value="{{ value }}"
         type="{{type}}"
