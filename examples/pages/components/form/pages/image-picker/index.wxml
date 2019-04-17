@@ -4,7 +4,7 @@
       class="content"
       name="基本案例"
     >
-    <l-image-picker urls="{{arr}}" />
+    <l-image-picker urls="{{arr}}"/>
     </content-card>
 
     <content-card

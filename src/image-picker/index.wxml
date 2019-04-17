@@ -16,10 +16,10 @@
   <!-- add 按钮 -->
   <l-grid-item wx:if="{{ showBtn }}">
     <!-- 自定义图片选择按钮 -->
-    <view class="{{size == 3? 'img': 'min-img'}}" catchtap="onAddTap" wx:if="{{ custom }}">
+    <view class="item l-item-class {{size == 3? 'img': 'min-img'}}" catchtap="onAddTap" wx:if="{{ custom }}">
       <slot></slot>
     </view>
-    <view class="{{size == 3? 'img': 'min-img'}}" catchtap="onAddTap" wx:else>
+    <view class="item l-item-class {{size == 3? 'img': 'min-img'}}" catchtap="onAddTap" wx:else>
       <image class="add-icon" src="./image/add.png" />
     </view>
   </l-grid-item>

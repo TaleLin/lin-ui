@@ -52,3 +52,7 @@
   width: 44rpx !important;
   height: 44rpx !important;
 }
+
+.line-class {
+  width: 30rpx !important;
+}

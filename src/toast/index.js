@@ -81,7 +81,10 @@ Component({
    * 组件的初始数据
    */
   data: {
-    status: false
+    status: false,
+    success: '',
+    fail: '',
+    complete: ''
   },
   attached() {
     if (this.data.openApi) {
@@ -115,6 +118,7 @@ Component({
           center = true,
           mask = false,
           success = null
+          complete = null
         } = options;
         this.data.success = success
         this.setData({
@@ -126,7 +130,10 @@ Component({
           placement,
           duration,
           center,
-          mask
+          mask,
+          show: true,
+          success,
+          complete
         });
         this.changeStatus()
         return this;
@@ -211,12 +218,9 @@ Component({
       if (this.data.locked !== true) {
         this.setData({
           fullScreen: 'hide',
-
           status: 'hide',
         })
       }
+
       this.triggerEvent('linTap', detail, option);
     }
-  },
-
-})

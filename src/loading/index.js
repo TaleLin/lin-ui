@@ -9,7 +9,7 @@ Component({
     // 类型
     type: {
       type: String,
-      value: 'circle'
+      value: 'rotate'
     },
     // 动画颜色
     color: {

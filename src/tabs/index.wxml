@@ -1,5 +1,5 @@
 <!-- components/tabs/index.wxml -->
-<view class="l-tabs {{'l-placement-'+placement}} {{aminmated ? 'l-aminmated' :''}} {{placement=='left'||placement=='right'?'l-tabs-vertical':'l-tabs-horizontal'}} {{scrollable ? 'l-tabs-scroll':''}}">
+<view class="l-tabs l-class-tabs {{'l-placement-'+placement}} {{aminmated ? 'l-aminmated' :''}} {{placement=='left'||placement=='right'?'l-tabs-vertical':'l-tabs-horizontal'}} {{scrollable ? 'l-tabs-scroll':''}}">
     <scroll-view 
         scroll-x="{{placement=='top'||placement=='bottom' && scrollable}}" 
         scroll-y="{{placement=='left'||placement=='right' && scrollable}}" 
@@ -19,7 +19,7 @@
                 <image wx:if="{{ item.image.activeImage || item.image.defaultImage }}" src="{{item.key===activeKey? item.image.activeImage:item.image.defaultImage}}" class="l-tab-image l-class-tabimage"/>
                 <l-icon wx:if="{{item.icon}}" l-class="{{item.key===activeKey ? 'l-icon-active':'l-icon-inactive'}}" name="{{item.icon}}" size="iconStyle?tabs.parseCSSText(iconStyle).size:28" color="{{item.key===activeKey?activeColor:inactiveColor}}"/>
                     {{item.tab}}
-               <view class="l-tab-line l-class-line" wx:if="{{hasLine && item.key===activeKey}}" style="background:{{item.key===activeKey?activeColor:inactiveColor}}"></view>
+               <view class="l-tab-line {{item.key===activeKey?'l-class-line':''}} {{aminmatedForLine?'l-line-aminmated':''}}" wx:if="{{hasLine}}" style="background:{{item.key===activeKey?activeColor:inactiveColor}}"></view>
             </view>
         </view>
     </scroll-view>
