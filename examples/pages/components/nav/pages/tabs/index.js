@@ -58,7 +58,6 @@ Page({
         image: {
           activeImage: '/pages/components/nav/images/tab-icon/bathroom-active.png',
           defaultImage: '/pages/components/nav/images/tab-icon/bathroom.png',
-          style: 'width:44rpx;height:44rpx;'
         }
       }
     ]
