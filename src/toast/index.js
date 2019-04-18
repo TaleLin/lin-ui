@@ -8,18 +8,7 @@ Component({
     // 显示与隐藏
     show: {
       type: Boolean,
-      value: false,
-      observer: function (newVal, oldVal) {
-        if (newVal) {
-           this.handleSuccess()
-          setTimeout(() => {
-            this.setData({
-              show: false
-            })
-            this.handleComplete()
-          }, this.properties.duration)
-        }
-      }
+      value: false
     },
     // 提示框的文本内容
     title: {
@@ -82,10 +71,17 @@ Component({
 
   },
 
+  observers: {
+    'show': function (show) {
+      show && this.changeStatus()
+    }
+  },
+
   /**
    * 组件的初始数据
    */
   data: {
+    status: false,
     success: '',
     fail: '',
     complete: ''
@@ -109,34 +105,22 @@ Component({
    */
   methods: {
     initToast() {
-      const config = {
-        title: '',
-        icon: '',
-        iconStyle: 'size:60; color:#fff',
-        image: '',
-        imageStyle: '60*60',
-        placement: 'bottom',
-        duration: 1500,
-        center: true,
-        mask: false,
-        success: null,
-        complete: null
-      }
       wx.lin = wx.lin || {};
-      wx.lin.showToast = (options) => {
+      wx.lin.showToast = (options = {}) => {
         const {
-          title = config.title,
-            icon = config.icon,
-            iconStyle = config.iconStyle,
-            image = config.image,
-            imageStyle = config.imageStyle,
-            placement = config.placement,
-            duration = config.duration,
-            center = config.center,
-            mask = config.mask,
-            success = config.success,
-            complete = config.complete
+          title = '',
+          icon = '',
+          iconStyle = 'size:60; color:#fff',
+          image = '',
+          imageStyle = '60*60',
+          placement = 'bottom',
+          duration = 1500,
+          center = true,
+          mask = false,
+          success = null
+          complete = null
         } = options;
+        this.data.success = success
         this.setData({
           title,
           icon,
@@ -151,8 +135,23 @@ Component({
           success,
           complete
         });
+        this.changeStatus()
         return this;
       };
+    },
+
+    changeStatus() {
+      this.setData({
+        status: true
+      })
+      if (this.data.timer) clearTimeout(this.data.timer)
+      this.data.timer = setTimeout(() => {
+        this.setData({
+          status: false
+        })
+        if (this.data.success) this.data.success()
+        this.data.timer = null
+      }, this.properties.duration)
     },
 
     // 返回icon的宽高
@@ -224,24 +223,4 @@ Component({
       }
 
       this.triggerEvent('linTap', detail, option);
-    },
-
-    handleComplete() {
-      const {
-        complete
-      } = this.data;
-      complete && complete({
-        errMsg: 'showToast: complete!'
-      });
-    },
-    handleSuccess() {
-      const {
-        success
-      } = this.data;
-      success && success({
-        msg: 'showToast: success!'
-      });
     }
-  },
-
-})

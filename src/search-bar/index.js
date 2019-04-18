@@ -16,6 +16,10 @@ Component({
       value: 'search'
     },
     placeholder: String,
+    confirmType: {
+      type: String,
+      value: 'search'
+    },
     cancelText: {
       type: String,
       value: '取消'
