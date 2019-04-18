@@ -117,10 +117,9 @@ Component({
           duration = 1500,
           center = true,
           mask = false,
-          success = null
+          success = null,
           complete = null
         } = options;
-        this.data.success = success
         this.setData({
           title,
           icon,
@@ -135,7 +134,7 @@ Component({
           success,
           complete
         });
-        this.changeStatus()
+        this.changeStatus();
         return this;
       };
     },
@@ -223,4 +222,6 @@ Component({
       }
 
       this.triggerEvent('linTap', detail, option);
-    },
+    }
+  }
+})

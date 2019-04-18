@@ -117,7 +117,7 @@ Component({
           duration = 1500,
           center = true,
           mask = false,
-          success = null
+          success = null,
           complete = null
         } = options;
         this.data.success = success
@@ -223,24 +223,6 @@ Component({
       }
 
       this.triggerEvent('linTap', detail, option);
-    },
-
-    handleComplete() {
-      const {
-        complete
-      } = this.data;
-      complete && complete({
-        errMsg: 'showToast: complete!'
-      });
-    },
-    handleSuccess() {
-      const {
-        success
-      } = this.data;
-      success && success({
-        msg: 'showToast: success!'
-      });
     }
-  },
-
+  }
 })
