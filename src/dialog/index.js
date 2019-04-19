@@ -60,8 +60,8 @@ Component({
     }
   },
   data: {
-    confirm: null,
-    cancel: null,
+    success: null,
+    fail: null,
   },
   /**
    * 组件的初始数据
@@ -95,22 +95,24 @@ Component({
         cancelColor: '#3683d6',
         cancelText: '取消',
         confirmColor: '#45526b',
+        success: null,
+        fail: null,
       }
       wx.lin = wx.lin || {};
       wx.lin.showDialog = (options) => {
         const {
           type = config.type,
-          title = config.title,
-          showTitle = config.showTitle,
-          content = config.content,
-          locked = config.locked,
-          confirmText = config.confirmText,
-          cancelColor = config.cancelColor,
-          cancelText = config.cancelText,
-          confirmColor = config.confirmColor,
+            title = config.title,
+            showTitle = config.showTitle,
+            content = config.content,
+            locked = config.locked,
+            confirmText = config.confirmText,
+            cancelColor = config.cancelColor,
+            cancelText = config.cancelText,
+            confirmColor = config.confirmColor,
+            success = config.success,
+            fail = config.fail,
         } = options;
-        this.data.confirm = options.confirm
-        this.data.cancel = options.cancel
         this.setData({
           type,
           title,
@@ -122,6 +124,8 @@ Component({
           cancelText,
           confirmColor,
           show: true,
+          fail,
+          success
         });
         return this;
       };
@@ -129,9 +133,17 @@ Component({
 
     // 确定按钮
     onConfirmTap(e) {
-      if (this.data.confirm) this.data.confirm()
       let detail = 'confirm';
       let option = {};
+
+      const {
+        success
+      } = this.data;
+      success && success({
+        confirm: true,
+        cancel: false,
+        errMsg: 'showDialog: success'
+      });
       this.setData({
         show: !this.data.show
       })
@@ -141,12 +153,22 @@ Component({
 
     // 取消按钮
     onCancelTap(e) {
-      if (this.data.cancel) this.data.cancel()
+
       let detail = 'cancel';
       let option = {};
+
+      const {
+        success
+      } = this.data;
+      success && success({
+        confirm: false,
+        cancel: true,
+        errMsg: 'showDialog: success'
+      });
       this.setData({
         show: !this.data.show
       })
+
       this.triggerEvent('lincancel', detail, option);
     },
 

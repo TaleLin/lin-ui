@@ -11,7 +11,15 @@ Component({
     'l-cancel-class'
   ],
   properties: {
+    confirmType: {
+      type: String,
+      value: 'search'
+    },
     placeholder: String,
+    confirmType: {
+      type: String,
+      value: 'search'
+    },
     cancelText: {
       type: String,
       value: '取消'
@@ -122,8 +130,8 @@ Component({
     onClearTap(event) {
       this.setData({
         value: ''
-      })
+      });
       this.triggerEvent('linclear', event);
     }
   }
-})
+});

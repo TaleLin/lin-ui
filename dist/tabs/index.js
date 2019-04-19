@@ -30,10 +30,6 @@ Component({
       type: String,
       value: 'top',
     },
-    picPlacement: {
-      type: String,
-      value: 'left',
-    },
     aminmated: Boolean,
     swipeable: Boolean,
     scrollable: Boolean,
@@ -86,7 +82,6 @@ Component({
             tab: item.data.tab,
             key: item.data.key,
             icon: item.data.icon,
-            iconStyle: item.data.iconStyle,
             image: item.data.image,
             picPlacement: item.data.picPlacement,
           }

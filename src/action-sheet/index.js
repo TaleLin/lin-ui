@@ -59,7 +59,7 @@ Component({
                 showCancel: false
             }
             wx.lin = wx.lin || {};
-            wx.lin.showActionSheet = (options) => {
+            wx.lin.showActionSheet = (options={}) => {
                 const {
                     itemList = config.itemList,
                     success = config.success,
