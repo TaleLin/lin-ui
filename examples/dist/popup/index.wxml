@@ -5,7 +5,7 @@
   hidden="{{ show ? '' :  'hidden'}}"
   catchtouchmove="doNothingMove"
 >
- 
+  <view class='container-bg'></view>
   <view class="popup-content {{contentAlign}}  popup-fade-{{contentAlign}}-active-{{animation}}  popup-class" catchtap='onPupopTap'>
     <view catchtap="doNothingTap">
       <slot></slot>
