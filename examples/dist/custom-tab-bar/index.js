@@ -35,8 +35,13 @@ Component({
     fontSize: {
       type: Number,
       value: 24
-    }, 
-    isSwitchTab: {
+    },
+    isRedirectToTab: {
+      type: Boolean,
+      value: true
+    },
+    // 是否跳转
+    isNav: {
       type: Boolean,
       value: true
     },
@@ -45,53 +50,25 @@ Component({
       value: []
     }
   },
-  data: {
-    // show: true,
-    // isSwitchTab: true
-    // selected: 0,
-    // color: '#707070',
-    // selectedColor: "#3963BC",
-    // borderStyle: "#f6f6f6",
-    // fontSize: '24',
-    // backgroundColor: "#fff",
-    // list: [
-    //   {
-    //     pagePath: "/index/index",
-    //     iconPath: "/image/home.png",
-    //     selectedIconPath: "/image/home_fill.png",
-    //     text: "首页"
-    //   }, {
-    //     pagePath: "/index2/index",
-    //     iconPath: "/image/add.png",
-    //     style: "circle",
-    //     iconSize: 100,
-    //     selectedIconPath: "/image/add.png",
-    //     text: "发布"
-    //   }, {
-    //     reddot: true,
-    //     pagePath: "/index3/index",
-    //     iconPath: "/image/my.png",
-    //     selectedIconPath: "/image/my_fill.png",
-    //     text: "我的"
-    //   }
-    // ]
-  },
-  attached() {
-  },
+  data: {},
+  attached() {},
 
   methods: {
     switchTab(e) {
       const data = e.currentTarget.dataset
       const url = data.path
-      if(this.data.isSwitchTab) {
-        wx.switchTab({
-          url
-        })
-      } else {
-        wx.navigateTo({
-          url
-        })
+      if (this.data.isNav) {
+        if (this.data.isRedirectToTab) {
+          wx.redirectTo({
+            url
+          })
+        } else {
+          wx.navigateTo({
+            url
+          })
+        }
       }
+
 
       this.showItem(data.index)
     },
