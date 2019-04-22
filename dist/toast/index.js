@@ -120,7 +120,6 @@ Component({
           success = null,
           complete = null
         } = options;
-        this.data.success = success
         this.setData({
           title,
           icon,
@@ -135,7 +134,7 @@ Component({
           success,
           complete
         });
-        this.changeStatus()
+        this.changeStatus();
         return this;
       };
     },

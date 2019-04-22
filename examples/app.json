@@ -81,7 +81,8 @@
       "pages": [
         "pages/tabs/index",
         "pages/tabbar/index",
-        "pages/combined-tabs/index"
+        "pages/combined-tabs/index",
+        "pages/segment/index"
       ]
     },
     {

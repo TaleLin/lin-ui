@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "content-title": "/components/content-title/index",
+    "content-card": "/components/content-card/index",
+    "l-segment": "/dist/segment/index",
+    "l-segment-item": "/dist/segment-item/index",
+    "l-button": "/dist/button/index"
+  }
+}
