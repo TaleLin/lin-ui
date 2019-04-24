@@ -1,0 +1,33 @@
+<!--pages/components/form/pages/rate/index.wxml-->
+<view class='container'>
+  <content-title name="Rate" describe="评分">
+    <content-card class="content" name="基本案例">
+      <l-rate/>
+    </content-card>
+
+    <content-card class="content" name="改变大小">
+      <l-rate size="56"  />
+    </content-card>
+
+      <content-card class="content" name="修改默认样式">
+      <l-rate active-color="#F4516C" inActive-color="rgba(244,81,108,0.1)"/>
+    </content-card>
+
+    <content-card class="content" name="设置默认选中的个数">
+      <l-rate score="3" />
+    </content-card>
+
+    <content-card class="content" name="设置个数">
+      <l-rate score="3" count="10" bind:linChange="changeScore"/>
+    </content-card>
+
+    <content-card class="content" name="禁用">
+      <l-rate score="5" count="10" disabled/>
+    </content-card>
+
+    <content-card class="content" name="自定义图标">
+      <l-rate score="4" name="like"/>
+      <l-rate score="4" name="shouye" active-color="#F4516C" inActive-color="rgba(244,81,108,0.1)"/>
+    </content-card>
+  </content-title>
+</view>
