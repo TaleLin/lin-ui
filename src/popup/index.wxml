@@ -1,12 +1,8 @@
 <!-- popup.wxml -->
-<view
-  class='container-popup'
-  style="z-index:{{zIndex}}; "
-  hidden="{{ show ? '' :  'hidden'}}"
-  catchtouchmove="doNothingMove"
->
- 
-  <view class="popup-content {{contentAlign}}  popup-fade-{{contentAlign}}-active-{{animation}}  popup-class" catchtap='onPupopTap'>
+<view class='container-popup {{ show ? "popup-show" : "" }}   {{ "l-popup-" + contentAlign }}  ' style="z-index:{{zIndex}}; " catchtouchmove="doNothingMove">
+  <view class='container-bg'></view>
+  <view
+    class="popup-content {{ show ? contentAlign : ''}}   popup-fade-{{show ? contentAlign : ''}}-active-{{animation}}  popup-class" catchtap='onPupopTap'>
     <view catchtap="doNothingTap">
       <slot></slot>
     </view>
