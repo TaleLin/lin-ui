@@ -17,7 +17,7 @@
 <div align="center">
 
 ![](https://img.shields.io/badge/build-passing-00d508.svg)
-![](https://img.shields.io/badge/version-0.0.1.alpha.21-3963bc.svg)
+![](https://img.shields.io/badge/version-0.1.0-3963bc.svg)
 ![](https://img.shields.io/badge/license-MIT-3963bc.svg)
 
 </div>
@@ -39,7 +39,7 @@ Lin UI 是基于 **微信小程序原生语法** 实现的组件库。遵循简�
 
 ## 最新版本
 
-核心库：0.0.1-alpha.21
+核心库：0.1.0
 
 示例工程：0.0.1-alpha.1
 
