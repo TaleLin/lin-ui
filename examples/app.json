@@ -93,7 +93,8 @@
         "pages/checkbox/index",
         "pages/textarea/index",
         "pages/image-picker/index",
-        "pages/rules/index"
+        "pages/rules/index",
+        "pages/rate/index"
       ]
     },
     {

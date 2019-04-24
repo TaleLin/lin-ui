@@ -1,23 +1,45 @@
-.container-popup{
+.container-popup {
+  visibility: hidden;
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, .4)
+  right: 0;
+  bottom: 0;
 }
 
-.center{
+.popup-show {
+  visibility: visible;
+}
+
+.popup-show .container-bg {
+  display: block;
+  opacity: 1;
+}
+
+.container-bg {
+  opacity: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 6;
+  background: rgba(0, 0, 0, 0.4);
+  transition: all 0.3s ease-in-out;
+}
+
+.center {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
 }
 
-.popup-bg{
-  height: 100%; 
+.popup-bg {
+  height: 100%;
   width: 100%;
   position: absolute;
+  z-index: 90;
 }
 
 .popup-content {
@@ -28,7 +50,7 @@
   height: 100%;
 }
 
-.center{
+.center {
   display: flex;
   height: 100%;
   width: 100%;
@@ -37,61 +59,53 @@
   justify-content: center;
 }
 
-.left{
+.left {
   display: flex;
   flex-direction: row;
-  height: 100%; 
+  height: 100%;
 }
 
-.right{
+.right {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
-  height: 100%; 
+  height: 100%;
 }
 
-.bottom{
+.bottom {
   display: flex;
   flex-direction: column-reverse;
   width: 100%;
 }
 
-//  居中的动画
-.popup-fade-center-active-show{
-  animation:  popup-center-fadein 0.4s
-} 
-
-// top动画
-.popup-fade-top-active-show{
-  animation:  popup-top-fadein 0.4s
-} 
-
-//  right的动画
-.popup-fade-right-active-show{
-  animation:  popup-right-fadein 0.4s
-} 
-
-//  left的动画
-.popup-fade-left-active-show{
-  animation:  popup-left-fadein 0.4s
-} 
-
-//  bottom的动画
-.popup-fade-bottom-active-show{
-  animation:  popup-bottom-fadein 0.4s
-} 
-
-.popup-fade-center-leave{
-  opacity: 0;
+.popup-fade-center-active-show {
+  animation: popup-center-fadein 0.4s;
 }
 
+.popup-fade-top-active-show {
+  animation:popup-top-fadein 0.3s ease-in-out;
+}
 
-//  center
+.popup-fade-right-active-show {
+  animation: popup-right-fadein 0.3s ease-in-out;
+}
+
+.popup-fade-left-active-show {
+  animation: popup-left-fadein 0.3s ease-in-out;
+}
+
+.popup-fade-bottom-active-show {
+  animation: popup-bottom-fadein 0.3s ease-in-out;
+}
+
+// .popup-fade-center-leave {
+//   opacity: 0;
+// }
+
 @keyframes popup-center-fadein {
   0% {
     transform: scale(0.8);
     opacity: 0;
-
   }
 
   50% {
@@ -101,79 +115,60 @@
   100% {
     transform: scale(1);
     opacity: 1;
-
   }
 }
 
-// top
 @keyframes popup-top-fadein {
   0% {
-    // translate: -100% ;
-    top: -100%;
+    transform: translate3d(0, -100%, 0);
     opacity: 0.1;
   }
 
-  50% {
-    top: -75%;
-    opacity: 0.7;
-  }
-
   100% {
-    top: 0;
+    transform: translate3d(0, 0, 0);
     opacity: 1;
   }
 }
 
-//  left
 @keyframes popup-left-fadein {
   0% {
-    left: -100%;
+    transform: translate3d(-100%, 0, 0);
     opacity: 0.1;
   }
 
-  50% {
-    left: -75%;
-    opacity: 0.7;
-  }
 
   100% {
-    left: 0;
+    transform: translate3d(0, 0, 0);
     opacity: 1;
   }
 }
 
-//  right
 @keyframes popup-right-fadein {
   0% {
-    right: -100%;
+    transform: translate3d(100%, 0, 0);
     opacity: 0.1;
   }
 
-  50% {
-    right: -75%;
+  /* 50% {
+    transform: translate3d(25%, 0,  0);
     opacity: 0.7;
-  }
+  } */
 
   100% {
-    right: 0;
+    transform: translate3d(0, 0, 0);
     opacity: 1;
   }
 }
 
-//  bottom
 @keyframes popup-bottom-fadein {
   0% {
-    bottom: -100%;
+    transform: translate3d(0, 100%, 0);
     opacity: 0.1;
   }
 
-  50% {
-    bottom: -75%;
-    opacity: 0.7;
-  }
 
   100% {
-    bottom: 0;
+    transform: translate3d(0, 0, 0);
     opacity: 1;
   }
 }

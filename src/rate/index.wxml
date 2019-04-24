@@ -1,0 +1,11 @@
+<view class="l-rate l-class">
+     <view
+        wx:for="{{count}}"
+        wx:key="{{item}}" 
+        class="l-rate-star" 
+        data-index="{{index}}" 
+        bindtap="handleClick">
+       <l-icon name="{{name}}" l-class="l-class-icon" size="{{size}}" color="{{score > index ? activeColor : inActiveColor}}"/>
+    </view>
+    
+</view>
