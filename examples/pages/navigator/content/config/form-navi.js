@@ -30,7 +30,7 @@ const formNaviConfigs = [
     componentsPath: "/pages/components/form/pages/image-picker/index"
   },
   {
-    icon: "/images/component/input.png",
+    icon: "/images/component/rate.png",
     title: "Rate",
     desc: "评分",
     componentsPath: "/pages/components/form/pages/rate/index"

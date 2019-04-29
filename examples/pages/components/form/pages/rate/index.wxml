@@ -6,11 +6,11 @@
     </content-card>
 
     <content-card class="content" name="改变大小">
-      <l-rate size="56"  />
+      <l-rate size="56" />
     </content-card>
 
-      <content-card class="content" name="修改默认样式">
-      <l-rate active-color="#F4516C" inActive-color="rgba(244,81,108,0.1)"/>
+    <content-card class="content" name="修改默认样式">
+      <l-rate active-color="#F4516C" inActive-color="rgba(244,81,108,0.1)" />
     </content-card>
 
     <content-card class="content" name="设置默认选中的个数">
@@ -18,7 +18,7 @@
     </content-card>
 
     <content-card class="content" name="设置个数">
-      <l-rate score="3" count="10" bind:linChange="changeScore"/>
+      <l-rate score="3" count="10" bind:linChange="changeScore" />
     </content-card>
 
     <content-card class="content" name="禁用">
@@ -26,8 +26,13 @@
     </content-card>
 
     <content-card class="content" name="自定义图标">
-      <l-rate score="4" name="like"/>
-      <l-rate score="4" name="shouye" active-color="#F4516C" inActive-color="rgba(244,81,108,0.1)"/>
+      <view>
+        <l-rate score="4" name="like" />
+      </view>
+      <view>
+        <l-rate score="4" name="shouye" active-color="#F4516C" inActive-color="rgba(244,81,108,0.1)" />
+      </view>
+
     </content-card>
   </content-title>
 </view>
