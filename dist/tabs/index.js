@@ -144,7 +144,7 @@ Component({
         activeKey,
         tabList
       } = this.data;
-      this._getRect('#' + activeKey)
+      this._getRect('#key-' + activeKey)
         .then((res) => {
           console.log(res)
           if (['top', 'bottom'].indexOf(placement) !== -1) {
