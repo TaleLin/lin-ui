@@ -72,9 +72,13 @@ module.exports = Behavior({
                 timeType,
                 initAddTime
             } = this.data;
-            let countDownTime = timeType === 'second' ?
-                time :
-                Math.ceil((new Date(time).getTime() - new Date().getTime()) / 1000);
+            // IOS不支持2019-04-23 的日期格式
+            let countDownTime = time
+            if(timeType!=='second') {
+                countDownTime = typeof time === 'string' ? countDownTime.replace(/-/g, '/') :countDownTime;
+                countDownTime = Math.ceil((new Date(countDownTime).getTime() - new Date().getTime()) / 1000);
+            }
+                
             if (countDownTime < 0 && timeType !== 'second') {
                 this._getTimeValue(0);
                 this.CountdownEnd();
