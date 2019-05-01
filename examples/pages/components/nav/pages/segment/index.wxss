@@ -37,3 +37,7 @@
   width: 44rpx !important;
   height: 44rpx !important;
 }
+
+.icon-style {
+  margin-right: 10rpx;
+}

@@ -17,7 +17,7 @@ const NaviConfigs = [{
     componentsPath: "/pages/components/nav/pages/tabbar/index"
   },
   {
-    icon: "/images/component/tabbar.png",
+    icon: "/images/component/segment.png",
     title: "segment",
     desc: "标签页（仅头部）",
     componentsPath: "/pages/components/nav/pages/segment/index"

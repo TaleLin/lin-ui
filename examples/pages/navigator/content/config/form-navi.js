@@ -29,12 +29,12 @@ const formNaviConfigs = [
     desc: "图片选择器",
     componentsPath: "/pages/components/form/pages/image-picker/index"
   },
-  {
-    icon: "/images/component/input.png",
-    title: "Rate",
-    desc: "评分",
-    componentsPath: "/pages/components/form/pages/rate/index"
-  },
+  // {
+  //   icon: "/images/component/rate.png",
+  //   title: "Rate",
+  //   desc: "评分",
+  //   componentsPath: "/pages/components/form/pages/rate/index"
+  // },
   {
     icon: "/images/component/rules.png",
     title: "Rules",
