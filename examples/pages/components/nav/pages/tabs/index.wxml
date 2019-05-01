@@ -1,4 +1,3 @@
-<!--pages/nav/pages/tabs/index.wxml-->
 <view class='container'>
   <content-title name="Tabs" describe="标签页">
     <content-card l-content="content" name="等宽标签">

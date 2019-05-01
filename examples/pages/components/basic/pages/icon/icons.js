@@ -14,7 +14,6 @@ const icons = [
   "like",
   "favor",
   "share",
-  "default",
   "research",
   "setting",
   "download",
@@ -40,7 +39,10 @@ const icons = [
   "phone",
   "picture",
   "customer-service",
-  "pull-down"
+  "pull-down",
+  "video",
+  "comment",
+  "default"
   ];
 
 export default icons;
