@@ -2,7 +2,7 @@
     <scroll-view scroll-x="{{placement=='top'||placement=='bottom' && scrollable}}" scroll-y="{{placement=='left'||placement=='right' && scrollable}}" scroll-top="{{transformY}}" scroll-left="{{transformX}}" scroll-with-animation class="l-tabsscroll {{hasLine?'l-tabs-header-line l-class-header-line':''}}">
         <view class="l-tabs-header l-class">
             <block wx:for="{{tabList}}" wx:key="{{item.key}}">
-                <view id="{{item.key}}" wx:if="{{item.tab}}" class="l-tabs-item {{equalWidth?'l-tabs-equal-width':'l-tabs-unequal-width'}} {{item.key===activeKey ?'l-class-active l-tabs-active':'l-class-inactive l-tabs-inactive'}} {{'l-tab-image-placement-'+item.picPlacement}}" style="color:{{item.key===activeKey?activeColor:inactiveColor}}" data-key="{{item.key}}" data-index="{{index}}" bind:tap="handleChange">
+                <view id="key-{{item.key}}" wx:if="{{item.tab}}" class="l-tabs-item {{equalWidth?'l-tabs-equal-width':'l-tabs-unequal-width'}} {{item.key===activeKey ?'l-class-active l-tabs-active':'l-class-inactive l-tabs-inactive'}} {{'l-tab-image-placement-'+item.picPlacement}}" style="color:{{item.key===activeKey?activeColor:inactiveColor}}" data-key="{{item.key}}" data-index="{{index}}" bind:tap="handleChange">
                     <l-badge wx:if="{{(item.badgeCount > 0 || item.dotBadge )}}" count="{{item.badgeCount}}" dot="{{item.dotBadge}}" max-count="{{item.badgeMaxCount}}" count-type="{{item.badgeCountType}}">
                         <template is="tab-item" data="{{item,activeKey,hasLine,activeColor,inactiveColor,aminmatedForLine}}" />
                     </l-badge>

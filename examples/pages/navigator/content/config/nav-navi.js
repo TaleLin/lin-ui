@@ -18,8 +18,8 @@ const NaviConfigs = [{
   },
   {
     icon: "/images/component/segment.png",
-    title: "segment",
-    desc: "标签页（仅头部）",
+    title: "Segment",
+    desc: "选项卡",
     componentsPath: "/pages/components/nav/pages/segment/index"
   }
 ]
