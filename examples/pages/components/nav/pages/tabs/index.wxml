@@ -1,15 +1,14 @@
-<!--pages/nav/pages/tabs/index.wxml-->
 <view class='container'>
   <content-title name="Tabs" describe="标签页">
     <content-card l-content="content" name="等宽标签">
-      <l-tabs bind:linchange="changeTabs" l-class-header-line="header-line">
-        <l-tabpanel tab="客厅" key="one" slot="one">
+      <l-tabs bind:linchange="changeTabs" l-class-header-line="header-line" scrollable>
+        <l-tabpanel tab="客厅" key="1" slot="1">
           <view class="tab-content">客厅</view>
         </l-tabpanel>
-        <l-tabpanel tab="卧室" key="two" slot="two">
+        <l-tabpanel tab="卧室" key="2" slot="2">
           <view class="tab-content">卧室</view>
         </l-tabpanel>
-        <l-tabpanel tab="厨房" key="three" slot="three">
+        <l-tabpanel tab="厨房" key="3" slot="3">
           <view class="tab-content">厨房</view>
         </l-tabpanel>
       </l-tabs>

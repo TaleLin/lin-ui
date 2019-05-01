@@ -8,7 +8,7 @@
         scroll-with-animation
         class="l-tabsscroll {{hasLine?'l-tabs-header-line l-class-header-line':''}}">
         <view class="l-tabs-header l-class-header">
-            <view id="{{item.key}}" 
+            <view id="key-{{item.key}}" 
                 class="l-tabs-item {{equalWidth?'l-tabs-equal-width':'l-tabs-unequal-width'}} {{item.key===activeKey ?'l-class-active l-tabs-active':'l-class-inactive l-tabs-inactive'}} {{'l-tab-image-placement-'+item.picPlacement}}" 
                 style="color:{{item.key===activeKey?activeColor:inactiveColor}}"
                 wx:for="{{tabList}}" 
@@ -17,7 +17,7 @@
                 data-index="{{index}}" 
                 bind:tap="handleChange">
                 <image wx:if="{{ item.image.activeImage || item.image.defaultImage }}" src="{{item.key===activeKey? item.image.activeImage:item.image.defaultImage}}" class="l-tab-image l-class-tabimage"/>
-                <l-icon wx:if="{{item.icon}}" l-class="{{item.key===activeKey ? 'l-icon-active':'l-icon-inactive'}}" name="{{item.icon}}" color="{{item.key===activeKey?activeColor:inactiveColor}}"/>
+                <l-icon wx:if="{{item.icon}}" l-class="l-class-icon" l-class-self="{{item.key===activeKey ? 'l-icon-active':'l-icon-inactive'}}" name="{{item.icon}}" color="{{item.key===activeKey?activeColor:inactiveColor}}"/>
                     {{item.tab}}
                <view class="l-tab-line {{item.key===activeKey?'l-class-line':''}} {{aminmatedForLine?'l-line-aminmated':''}}" wx:if="{{hasLine}}" style="background:{{item.key===activeKey?activeColor:inactiveColor}}"></view>
             </view>

@@ -75,3 +75,8 @@ page {
   font-size: 24rpx;
   margin-top: 5rpx;
 }
+
+.account{
+  width: 690rpx;
+  margin-top: 30rpx;
+}

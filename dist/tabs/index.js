@@ -1,6 +1,6 @@
 // components/tabs/index.js
 Component({
-  externalClasses: ['l-class-tabs','l-class-header', 'l-class-active', 'l-class-content', 'l-class-inactive', 'l-class-line', 'l-class-tabimage', 'l-class-header-line'],
+  externalClasses: ['l-class-tabs','l-class-header', 'l-class-active', 'l-class-content', 'l-class-inactive', 'l-class-line', 'l-class-tabimage', 'l-class-header-line','l-class-icon'],
   relations: {
     '../tabpanel/index': {
       type: 'child',
@@ -144,7 +144,7 @@ Component({
         activeKey,
         tabList
       } = this.data;
-      this._getRect('#' + activeKey)
+      this._getRect('#key-' + activeKey)
         .then((res) => {
           console.log(res)
           if (['top', 'bottom'].indexOf(placement) !== -1) {
