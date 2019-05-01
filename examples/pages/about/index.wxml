@@ -2,7 +2,6 @@
 <view class='container'>
   <view class='logo-container'>
     <image class='logo-img' src='/images/logo.png'></image>
-    <!-- <text class='logo-txt'>昔我往矣，林间有风</text> -->
   </view>
   <view class='address-container'>
     <view class='dot' />
@@ -21,4 +20,5 @@
   <image bindtap='onImage' src='/images/code.jpg' class='code'></image>
   <text class='desc'>关注林间有风公众号</text>
   <text class='desc'>点击图片可保存二维码识别</text>
+  <official-account class="account"></official-account>
 </view>
