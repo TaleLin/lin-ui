@@ -6,15 +6,15 @@ Component({
   relations: {
     '../checkbox/index': {
       type: 'child',
-      linked() {
-        this.onChangeHandle();
-      },
-      linkChanged() {
-        this.onChangeHandle();
-      },
-      unlinked() {
-        this.onChangeHandle();
-      }
+      // linked() {
+      //   this.onChangeHandle();
+      // },
+      // linkChanged() {
+      //   this.onChangeHandle();
+      // },
+      // unlinked() {
+      //   this.onChangeHandle();
+      // }
     }
   },
   properties: {
@@ -31,53 +31,66 @@ Component({
   data: {
     value: [],
     list: [],
+    length: null
   },
   attached() {
     this.initRules()
   },
+  ready() {
+    const len = this.items().length
+    this.data.length = len
+    this.setData({
+      length: len
+    })
+    this.onChangeHandle();
 
+  },
   methods: {
+    items() {
+      let items = this.getRelationNodes('../checkbox/index');
+      return items
+    },
     // checkbox change
     onChangeHandle(val = this.data.current) {
       let items = this.getRelationNodes('../checkbox/index');
-      const len = items.length;
-      if (len) {
+      const len = items.length
+      if (len === this.data.length) {
         items.forEach(item => {
           let type = val.indexOf(item.data.value) !== -1
-          item.onChangeHandle(type);
+          item.onChangeHandle(type, 'init');
         });
       }
     },
+    currentChange(val) {
 
-    onChangeChild(current) {
-
-      const index = this.data.current.indexOf(current.value)
-      index === -1 ? this.data.list.push(current) : this.data.list.splice(index, 1);
-
+      // const index = this.data.current.indexOf(val.value)
+      this.data.list.push(val)
       this.setData({
         value: this.data.list
-      }, () => {
-        this.validatorData({
-          value: this.data.value
-        })
       })
     },
+
     onEmitEventHandle(current) {
+
       const index = this.data.current.indexOf(current.value)
       index === -1 ? this.data.current.push(current.value) : this.data.current.splice(index, 1);
       index === -1 ? this.data.list.push(current) : this.data.list.splice(index, 1);
       this.setData({
-        current: this.data.current,
-        value: this.data.list
+        current: this.data.current
       }, () => {
         this.validatorData({
           value: this.data.value
         })
       })
-      const all = JSON.parse(JSON.stringify(this.data.list))
-      delete all.all
-      current.all = all
 
+      const all = JSON.parse(JSON.stringify(this.data.list))
+      for (let i = 0; i < all.length; i++) {
+        delete all[i].all
+      }
+      current.all = all
+      this.setData({
+        value: all
+      })
       this.triggerEvent('linchange', current)
     }
   }
