@@ -6,11 +6,18 @@
     </content-card>
 
     <content-card class="content" name="设置默认选中的个数">
+      <l-rate score="3" />
+    </content-card>
+
+    <content-card class="content" name="设置默认选中的个数(小数类型)">
       <view>
-        <l-rate score="3" />
+        <l-rate score="3.6" size="56" />
       </view>
       <view>
-        <l-rate score="3.6" />
+        <l-rate score="3.3" size="56" />
+      </view>
+      <view>
+        <l-rate score="3.8" size="56" />
       </view>
     </content-card>
 
@@ -19,7 +26,7 @@
     </content-card>
 
     <content-card class="content" name="自定义颜色">
-      <l-rate active-color="#F4516C" inActive-color="rgba(244,81,108,0.1)" />
+      <l-rate active-color="#FFDD55" inActive-color="#FFF5CE" />
     </content-card>
 
 
@@ -41,7 +48,7 @@
         <l-rate score="4" name="like" />
       </view>
       <view class="box">
-        <l-rate score="4" name="shouye" active-color="#F4516C" inActive-color="rgba(244,81,108,0.1)" l-class-icon="iconfont"/>
+        <l-rate score="4" name="shouye" active-color="#F4516C" inActive-color="rgba(244,81,108,0.1)" l-class-icon="iconfont" />
       </view>
 
     </content-card>

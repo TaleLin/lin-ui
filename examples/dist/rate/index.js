@@ -22,11 +22,11 @@ Component({
         disabled: Boolean,
         activeColor: {
             type: String,
-            value: '#FFDD55'
+            value: '#FF5252'
         },
         inActiveColor: {
             type: String,
-            value: '#FFF5CE'
+            value: '#FFE5E5'
         },
         name:{
             type:String,
