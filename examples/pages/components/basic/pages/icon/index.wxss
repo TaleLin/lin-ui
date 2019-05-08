@@ -31,10 +31,6 @@
   url('iconfont.svg?t=1551939237196#iconfont') format('svg'); /* iOS 4.1- */
 }
 
-.content .iconfont {
-  font-family: "iconfont" !important;
-}
-
 .l-icon-shouye:before {
   content: "\e73d";
 }

@@ -7,7 +7,7 @@
     >
       <view class='buttun-wrapper'>
         <view class='title'>1. 下面哪些歌是周杰伦创作的？</view>
-        <l-checkbox-group current="{{current }}" l-class="l-radio-group">
+        <l-checkbox-group current="{{current }}" l-class="l-radio-group" bind:linchange="change">
           <l-checkbox
             l-class="l-radio"
             l-title-class="l-title-class"
@@ -128,7 +128,7 @@
     >
       <view class='buttun-wrapper'>
         <view class='title'>7.关于中亚沙漏主动技能，说法错误的是？</view>
-        <l-checkbox-group l-class="l-radio-group">
+        <l-checkbox-group l-class="l-radio-group" bind:linchange="change">
           <l-checkbox
             l-class="l-radio"
             l-title-class="l-title-class"
