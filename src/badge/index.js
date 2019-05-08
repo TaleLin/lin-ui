@@ -1,5 +1,5 @@
 Component({
-  externalClasses: ['l-class'],
+  externalClasses: ['l-class','l-class-self'],
   properties: {
     // 红点模式
     dot: {

@@ -2,7 +2,7 @@ Component({
     /**
      * 组件的属性列表
      */
-    externalClasses: ['l-class', 'l-class-icon'],
+    externalClasses: ['l-class', 'l-class-icon','l-class-image'],
     options: {
         multipleSlots: true // 在组件定义时的选项中启用多slot支持
     },
@@ -22,16 +22,18 @@ Component({
         disabled: Boolean,
         activeColor: {
             type: String,
-            value: '#FFDD55'
+            value: '#FF5252'
         },
         inActiveColor: {
             type: String,
-            value: '#FFF5CE'
+            value: '#FFE5E5'
         },
         name:{
             type:String,
             value:'favor-fill'
-        }
+        },
+        activeImage:String,
+        inActiveImage:String
     },
 
     /**
