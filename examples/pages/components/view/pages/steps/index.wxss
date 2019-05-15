@@ -1,0 +1,10 @@
+.shou{
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 50%;
+  background-color: #333;
+  text-align: center;
+  line-height: 40rpx;
+  font-size: 28rpx;
+  color: #fff;
+}

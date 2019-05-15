@@ -63,7 +63,8 @@
         "pages/status-show/index",
         "pages/status-show/show/show",
         "pages/loadmore/index",
-        "pages/loadmore/case/index"
+        "pages/loadmore/case/index",
+        "pages/steps/index"
       ]
     },
     {
