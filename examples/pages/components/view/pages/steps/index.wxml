@@ -1,0 +1,52 @@
+<content-title describe="步骤条" name="Steps">
+  <content-card name="基础用法" cardPadding="{{false}}">
+    <l-steps>
+      <l-step title="已支付" describe="11:30" />
+      <l-step title="备餐中" describe="12:30" />
+      <l-step title="配送中" describe="13:30" />
+    </l-steps>
+  </content-card>
+
+  <content-card name="步骤条元素类型" cardPadding="{{false}}">
+    <l-steps type="dot">
+      <l-step title="已支付" describe="11:30" />
+      <l-step title="备餐中" describe="12:30" />
+      <l-step title="配送中" describe="13:30" />
+    </l-steps>
+  </content-card>
+
+  <content-card name="步骤条方向" cardPadding="{{false}}">
+    <l-steps direction="column">
+      <l-step title="已支付" describe="11:30" />
+      <l-step title="备餐中" describe="12:30" />
+      <l-step title="配送中" describe="13:30" />
+    </l-steps>
+  </content-card>
+
+  <content-card name="设置步骤条元素图标" cardPadding="{{false}}">
+    <l-steps type="dot">
+      <l-step icon="user" title="已支付" describe="11:30" />
+      <l-step title="备餐中" describe="12:30" />
+      <l-step title="配送中" describe="13:30" />
+    </l-steps>
+  </content-card>
+
+  <content-card name="设置步骤条元素状态" cardPadding="{{false}}">
+    <l-steps>
+      <l-step status="finish" title="已支付" describe="11:30" />
+      <l-step status="mistake" title="备餐失败" describe="12:30" />
+      <l-step title="配送中" describe="13:30" />
+    </l-steps>
+  </content-card>
+
+  <content-card name="自定义步骤条元素" cardPadding="{{false}}">
+    <l-steps>
+      <l-step title="已支付" describe="11:30" />
+      <l-step title="备餐中" describe="12:30" />
+      <l-step custom title="已收货" describe="11:30">
+        <view class="shou">收</view>
+      </l-step>
+    </l-steps>
+  </content-card>
+
+</content-title>
