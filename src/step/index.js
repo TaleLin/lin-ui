@@ -2,6 +2,13 @@ Component({
   /**
    * 组件的属性列表
    */
+  externalClasses: [
+    'l-class',
+    'l-step-class',
+    'l-title-class', 
+    'l-describe-class',
+    'l-line-class'
+  ],
   relations: {
     '../steps/index': {
       type: 'parent'
