@@ -1,11 +1,11 @@
-<view class="step {{'step-'+direction}}"  
+<view class="step {{'step-'+direction}} l-class"  
       style="{{direction=='row'?'width:'+(1/length)*750+'rpx':''}}">
   <view class="step-icon">
     <view wx:if="{{custom}}" class="step-custom">
       <slot/>
     </view>
     <view wx:else
-    class="step-icon {{icon?'step-number':'step-'+type}} {{status?'step-number-'+status:''}} {{activeIndex==index+1 && !status?'step-'+type+'-on':''}} {{activeIndex>index+1 && !status?'step-'+type+'-over':''}}">
+    class="l-step-class step-icon {{icon?'step-number':'step-'+type}} {{status?'step-number-'+status:''}} {{activeIndex==index+1 && !status?'step-'+type+'-on':''}} {{activeIndex>index+1 && !status?'step-'+type+'-over':''}}">
       <l-icon wx:if="{{icon || status}}" 
               name="{{icon || status}}" 
               size="{{iconSize}}" 
@@ -14,10 +14,10 @@
     </view>
   </view>
   <view class="step-content {{'step-content-'+direction}}">
-    <view class="step-title {{'step-title-' + direction}} {{status?'step-title-' + status:''}} {{activeIndex==index+1?'step-title-on':''}}">
+    <view class="l-title-class step-title {{'step-title-' + direction}} {{status?'step-title-' + status:''}} {{activeIndex==index+1?'step-title-on':''}}">
       {{title}}
     </view>
-    <view class="step-describe {{activeIndex==index+1?'step-describe-on':''}}">
+    <view class="l-describe-class step-describe {{activeIndex==index+1?'step-describe-on':''}}">
       {{describe}}
     </view>
   </view>
