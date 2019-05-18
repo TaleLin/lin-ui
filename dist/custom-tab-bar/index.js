@@ -86,7 +86,10 @@ Component({
       this.setData({
         selected: idx
       })
-      let detail = idx;
+      let detail = {
+        idx,
+        path:this.route
+      };
       let option = {};
       this.triggerEvent('lintap', detail, option);
     },
