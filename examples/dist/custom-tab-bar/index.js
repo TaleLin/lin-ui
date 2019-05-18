@@ -59,11 +59,11 @@ Component({
       const url = data.path
       if (this.data.isNav) {
         if (this.data.isRedirectToTab) {
-          wx.redirectTo({
+          wx.switchTab({
             url
           })
         } else {
-          wx.navigateTo({
+          wx.switchTab({
             url
           })
         }
