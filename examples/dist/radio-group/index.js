@@ -32,9 +32,9 @@ Component({
       let items = this.getRelationNodes('../radio/index');
       const len = items.length;
       if (len) {
-        items.forEach(item => {
+        items.forEach((item,index) => {
           let type = val === item.data.value
-          item.onChangeHandle(type);
+          item.onChangeHandle(type,index);
         });
       }
     },
