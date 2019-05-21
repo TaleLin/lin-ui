@@ -3,7 +3,13 @@ module.exports = Behavior({
     properties: {
         time: {
             type: Date,
-            value: new Date().getTime() + 86400000
+            value: new Date().getTime() + 86400000,
+            observer:function(newVal,oldVal) {
+                console.log(newVal,oldVal,newVal && !oldVal)
+                if(newVal && !oldVal) {
+                    this.getLatestTime();
+                }
+            }
         },
         status: {
             type: Boolean,
@@ -46,6 +52,9 @@ module.exports = Behavior({
         hide() {
             clearInterval(this.data.timer);
         },
+        show() {
+            this.getLatestTime();
+        }
     },
 
     methods: {

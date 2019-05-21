@@ -40,13 +40,12 @@ gulp.task('copy', () => {
   });
 
 gulp.task('watch', () => {
-    gulp.watch('../src/**/*.less', ['dispose-css']);
-    gulp.watch('../src/**/*.js', ['dispose-js']);
-    gulp.watch('../src/**/*.wxs', ['dispose-wxs']);
-    gulp.watch('../src/**/*.json', ['dispose-json']);
-    gulp.watch('../src/**/*.wxml', ['dispose-wxml']);
-    gulp.watch('../src/**/image/*', ['copy']);
+    gulp.watch('../src/**/*.less', gulp.series('dispose-css'));
+    gulp.watch('../src/**/*.js', gulp.series('dispose-js'));
+    gulp.watch('../src/**/*.wxs', gulp.series('dispose-wxs'));
+    gulp.watch('../src/**/*.json', gulp.series('dispose-json'));
+    gulp.watch('../src/**/*.wxml', gulp.series('dispose-wxml'));
+    gulp.watch('../src/**/image/*', gulp.series('copy'));
 });
 
-gulp.task('default',
-    ['dispose-css', 'dispose-js', 'dispose-wxs','dispose-json', 'dispose-wxml', 'copy', 'watch']);
+gulp.task('default',gulp.series('dispose-css', 'dispose-js', 'dispose-wxs','dispose-json', 'dispose-wxml', 'copy', 'watch'));
