@@ -146,7 +146,6 @@ Component({
       } = this.data;
       this._getRect('#key-' + activeKey)
         .then((res) => {
-          console.log(res)
           if (['top', 'bottom'].indexOf(placement) !== -1) {
             this.setData({
               transformX: res.left>0 ? res.left : 'auto',
