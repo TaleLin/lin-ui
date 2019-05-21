@@ -60,14 +60,12 @@ Component({
             })
         },
         _isHaveUserAvatarUrl: function (openData) {
-            console.log(openData.indexOf('userAvatarUrl') !== -1)
             this.setData({
                 _isHaveUserAvatarUrl: openData.indexOf('userAvatarUrl') !== -1
             })
         },
 
         _isHaveUserNickName: function (openData) {
-            console.log(openData.indexOf('userAvatarUrl') !== -1)
             this.setData({
                 _isHaveUserNickName: openData.indexOf('userAvatarUrl') !== -1
             })

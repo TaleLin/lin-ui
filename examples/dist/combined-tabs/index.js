@@ -6,7 +6,6 @@ Component({
       type: 'child',
     },
     linked(target) {
-      console.log(target)
       // 每次有子节点被插入时执行，target是该节点实例对象，触发在该节点attached生命周期之后
       this.initTabs();
     },
