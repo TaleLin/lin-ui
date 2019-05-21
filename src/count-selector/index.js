@@ -1,5 +1,10 @@
 Component({
-  externalClasses: ['l-class', 'l-symbol-class', 'l-count-class'],
+  externalClasses: [
+    'l-class', 
+    'l-symbol-class', 
+    'l-count-class',
+    'l-disabled-class'
+  ],
   properties: {
     count: {
       type: Number,
@@ -7,7 +12,7 @@ Component({
     },
     max: {
       type: Number,
-      value: 10
+      value: 10000
     },
     min: {
       type: Number,
