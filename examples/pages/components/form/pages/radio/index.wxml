@@ -7,7 +7,7 @@
     >
       <view class='buttun-wrapper'>
         <view class='title'>1. 下面选项中，什么瓜不能吃？</view>
-        <l-radio-group l-class="l-radio-group" >
+        <l-radio-group bind:linchange="onChange" l-class="l-radio-group" >
           <l-radio
             l-class="l-radio"
             l-title-class="l-title-class"

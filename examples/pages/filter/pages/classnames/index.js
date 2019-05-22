@@ -30,7 +30,6 @@ Page({
     }, function (res) {
       if (res) {
         const lineHeight = parseInt(res.lineHeight);
-        console.log('extendText', res, (res.height / lineHeight) > MAX_LINE_COUNT)
         if (lineHeight && res.height) {
           $this.setData({
             isOverHeight: (res.height / lineHeight) > MAX_LINE_COUNT,

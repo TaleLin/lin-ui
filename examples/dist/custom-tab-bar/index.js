@@ -59,11 +59,11 @@ Component({
       const url = data.path
       if (this.data.isNav) {
         if (this.data.isRedirectToTab) {
-          wx.redirectTo({
+          wx.switchTab({
             url
           })
         } else {
-          wx.navigateTo({
+          wx.switchTab({
             url
           })
         }
@@ -86,7 +86,10 @@ Component({
       this.setData({
         selected: idx
       })
-      let detail = idx;
+      let detail = {
+        idx,
+        path:this.route
+      };
       let option = {};
       this.triggerEvent('lintap', detail, option);
     },

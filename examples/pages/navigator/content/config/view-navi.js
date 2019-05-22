@@ -57,6 +57,12 @@ const basicNaviConfigs = [{
     title: "LoadMore",
     desc: "页底提示",
     componentsPath: "/pages/components/view/pages/loadmore/index"
+  },
+  {
+    icon: "/images/component/load-more.png",
+    title: "Steps",
+    desc: "步骤条",
+    componentsPath: "/pages/components/view/pages/steps/index"
   }
 ]
 
