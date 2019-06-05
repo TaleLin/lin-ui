@@ -1,3 +1,8 @@
+<<<<<<< HEAD
 <view class="l-class container {{'container-'+direction}}">
     <slot />
+=======
+<view class="l-class container {{'container-'+direction}}">
+    <slot />
+>>>>>>> 18190d0978d29cfe5061c5b387cf5d8f440ccad9
 </view>

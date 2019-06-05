@@ -1,6 +1,14 @@
+<<<<<<< HEAD
 {
   "component": true,
   "usingComponents": {
     "l-icon":"../icon/index"
   }
+=======
+{
+  "component": true,
+  "usingComponents": {
+    "l-icon":"../icon/index"
+  }
+>>>>>>> 18190d0978d29cfe5061c5b387cf5d8f440ccad9
 }
