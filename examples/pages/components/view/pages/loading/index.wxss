@@ -1,0 +1,53 @@
+.buttun-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.button {
+  background: rgba(223, 237, 255, 1) !important;
+  box-shadow: 6rpx 6rpx 16rpx 0px rgba(229, 233, 239, 0.5) !important;
+  color: rgba(45, 97, 179, 1) !important;
+}
+
+.spin-container {
+  display: flex;
+  flex-direction: column;
+  width: 710rpx;
+  height: 230rpx;
+  margin-bottom: 20rpx;
+}
+
+.spin-top {
+  height: 180rpx;
+  width: 710rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f6f8fa;
+}
+
+.spin-bottom {
+  color: #8c98ae;
+  text-align: center;
+  line-height: 50rpx;
+  height: 50rpx;
+  font-size: 28rpx;
+}
+
+.custom-img{
+  width: 329rpx;
+  height: 247rpx;
+}
+
+
+.loading-img{
+  height: 300rpx;
+  width: 540rpx;
+}
+
+.l-container{
+  background: #f1f1f1 !important;
+}

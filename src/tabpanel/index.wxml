@@ -1,0 +1,4 @@
+<!-- components/tab/index.wxml -->
+<view class="l-tabpanel-content">
+    <slot></slot>
+</view>

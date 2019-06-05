@@ -1,0 +1,54 @@
+<!-- pages/layout/pages/list/index.wxml -->
+<view class='container'>
+  <content-title name="List" describe="列表">
+    <content-card class="content" name="基本案例">
+      <l-list title="生成我的海报" />
+      <l-list title="常见问题" />
+      <l-list title="设置" />
+      <l-list title="客服中心" desc="工作时间：8:00-18:00" />
+    </content-card>
+    <content-card class="content" name="有图标图片的列表">
+      <l-list title="消息" icon="notification" />
+      <l-list title="客厅" image="/pages/components/layout/images/wx_app_compass.png" />
+      <l-list title="清除" image="/pages/components/layout/images/wx_app_clear.png" />
+    </content-card>
+
+    <content-card class="content" name="自定义图标的列表">
+      <l-list title="药品" icon="yaopin" l-class-icon="iconfont" />
+      <l-list title="用药" icon="yongyao" l-class-icon="iconfont" />
+      <l-list title="首页" icon="shouye" l-class-icon="iconfont" />
+    </content-card>
+
+    <content-card class="content" name="有标签元素的列表">
+      <l-list title="购物车" icon="cart" tag-content="购物车" bind:lintap="clickListItem" data-key="cart" />
+      <l-list title="设置" icon="setting" tag-content="我的" tag-color="#F4516c" />
+      <l-list title="消息" icon="notification" tag-content="消息" tag-position="right" />
+      <l-list title="帮助中心" icon="help" tag-content="帮助" tagShape="circle" tag-position="right" />
+    </content-card>
+
+    <content-card class="content" name="有徽标元素的列表">
+      <l-list title="生成我的海报" dot-badge="{{true}}" />
+      <l-list title="消息" icon="notification" badge-count="9" badge-position="right" />
+    </content-card>
+
+    <content-card class="content" name="监听点击事件">
+      <l-list title="购物车" icon="cart" tag-content="购物车" bind:lintap="clickListItem" data-key="cart" />
+      <l-list title="设置" icon="setting" tag-content="我的" tag-color="#F4516c" bind:lintap="clickListItem" data-key="setting" />
+      <l-list title="消息" icon="notification" tag-content="消息" tag-position="right" bind:lintap="clickListItem" data-key="notification" />
+      <l-list title="帮助中心" icon="help" tag-content="帮助" tagShape="circle" tag-position="right" bind:lintap="clickListItem" data-key="help" />
+    </content-card>
+
+    <content-card class="content" name="自定义内容的列表">
+      <l-list right-desc="生成我的海报">
+        <view slot="left-section">
+          <l-radio value="看一看" />
+        </view>
+      </l-list>
+      <l-list title="允许陌生人查看十条朋友圈">
+        <view slot="right-section">
+          <switch />
+        </view>
+      </l-list>
+    </content-card>
+  </content-title>
+</view>

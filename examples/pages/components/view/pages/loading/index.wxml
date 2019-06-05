@@ -1,0 +1,43 @@
+<content-title name="Loading" describe="加载中">
+  <content-card name="{{item.title}}" wx:for="{{loadingNaviConfigs}}" wx:key="{{item.type}}">
+    <view class="spin-container" wx:for="{{item.config}}" wx:for-item="loading" wx:key="loading">
+      <view class="spin-top" style="{{loading.name=='自定义加载动画'? 'background:#fff':''}}">
+        <l-loading show="{{loading.show}}" color="{{loading.color}}" size="{{loading.size}}" type="{{loading.type}}" custom="{{loading.custom}}">
+          <image class='custom-img' src='{{loading.image}}'></image>
+        </l-loading>
+      </view>
+      <view class="spin-bottom">{{loading.name}}</view>
+    </view>
+  </content-card>
+
+  <!-- 全屏模式 -->
+  <content-card
+      class="content"
+      name="全屏状态下的loading"
+    >
+      <view class='buttun-wrapper' style=' margin-bottom: 30rpx;'>
+        <l-button
+          l-class="button"
+          size="large"
+          bind:lintap="onShowDefTap"
+        >
+          显示默认的loading
+        </l-button>
+      </view>
+      <view class='buttun-wrapper'>
+        <l-button
+          l-class="button"
+          size="large"
+          bind:lintap="onShowTap"
+        >
+          显示自定义的loading
+        </l-button>
+      </view>
+    </content-card>
+    <l-loading l-container-class="l-container" show="{{show}}" full-screen="{{true}}" custom="{{true}}" >
+      <image class='loading-img' src='http://img.zcool.cn/community/0198c458ddfd88a801219c772c8902.gif'></image>
+    </l-loading>
+
+    <l-loading l-container-class="l-container" show="{{showDef}}" full-screen="{{true}}">
+    </l-loading>
+</content-title>

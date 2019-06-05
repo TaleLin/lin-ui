@@ -1,0 +1,36 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="header">
+    <image class='header-bg' src='/images/static/index_bg.png'></image>
+    <text class='header-desc'><text class='header-name'>Lin UI </text>原生小程序组件库</text>
+  </view>
+
+  <view class="main">
+    <navi-card
+      wx:for="{{naviConfigs.baseConfig}}"
+      wx:for-item="naviConfig"
+      wx:key="index"
+      data-idx="{{index}}"
+      title="{{naviConfig.title}}"
+      icon="{{naviConfig.icon}}"
+      data-title="{{naviConfig.title}}"
+      data-navigateMark="{{naviConfig.navigateMark}}"
+      bindtap="onNaviCard"
+    />
+  </view>
+
+  <l-card wx:for="{{naviConfigs.shopConfig}}"
+          wx:for-item="naviConfig"
+          wx:key="index"
+          title="{{naviConfig.title}}"
+          image="{{naviConfig.icon}}"
+          bindtap="onCard"
+          position="right" 
+          l-class="shop-card"
+          l-img-class="card-img" 
+          l-title-class="card-title">
+    <view class="shop-dec">
+      专题包含电商小程序常用的组件
+    </view>
+  </l-card>
+</view>

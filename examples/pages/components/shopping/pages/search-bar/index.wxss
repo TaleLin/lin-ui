@@ -1,0 +1,36 @@
+.card-dot {
+  width: 18rpx;
+  height: 18rpx;
+  border-radius: 50%;
+  border: 6rpx solid #3963bc;
+  margin-left: 26rpx;
+}
+
+.card-top {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 750rpx;
+  height: 100rpx;
+}
+
+.content-name {
+  font-size: 28rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(69, 82, 107, 1);
+  line-height: 20px;
+  margin-left: 8px;
+}
+
+.icon-container{
+  display: flex;
+  flex-direction: row;
+  align-items: center
+}
+
+.city{
+  font-size: 28rpx;
+  color: #333;
+  margin-right: 10rpx;
+}

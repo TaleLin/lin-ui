@@ -1,0 +1,21 @@
+/* pages/view/pages/countdown/index.wxss */
+.content {
+  padding-left: 70rpx!important;
+  line-height: 120rpx;
+}
+.content .countdown-blue {
+  width: 52rpx ;
+  height: 52rpx;
+  border: 2rpx solid #3683D6;
+  border-radius: 50%;
+  background:transparent;
+  color: #3683D6;
+}
+
+.content .countdown-text {
+  color: #3683D6;
+}
+
+.btn-toggle {
+  margin: 40rpx 0;
+}

@@ -1,0 +1,42 @@
+<!--pages/view/pages/dialog/index.wxml-->
+<view class='container'>
+  <content-title name="Dialog" describe="模态框">
+    <content-card
+      class="content"
+      name="{{item.title}}"
+      wx:for="{{navConfig}}"
+      wx:key="{{item.type}}"
+    >
+      <view class='buttun-wrapper'>
+        <l-button
+          l-class="button"
+          size="large"
+          data-type="{{item.type}}"
+          bind:lintap="onShowDioTap"
+        >
+          显示模态框
+        </l-button>
+      </view>
+    </content-card>
+  </content-title>
+
+  <!-- pupop -->
+  <l-dialog
+    show="{{currentConf.show}}"
+    type="{{currentConf.type}}"
+    show-close="{{currentConf.showClose}}"
+    title="{{currentConf.title}}"
+    show-title="{{currentConf.showTitle}}"
+    content="{{currentConf.content}}" 
+    cancel-text="{{currentConf.cancelText}}" 
+    cancel-color="{{currentConf.cancelColor}}" 
+    confirm-text="{{currentConf.confirmText}}"  
+    confirm-color="{{currentConf.confirmColor}}"  
+    bind:lintap="onDialogTap"
+    bind:lincancel="onCancelTap"
+    bind:linconfirm="onConfirmTap"
+  >
+    <image class='dio-img' wx:if="{{type===5}}" src='/images/static/loading.gif'></image>
+  </l-dialog>
+
+</view>

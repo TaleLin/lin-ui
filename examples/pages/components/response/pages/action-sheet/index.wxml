@@ -1,0 +1,55 @@
+<!--pages/response/pages/action-sheet/index.wxml-->
+<view class='container'>
+  <content-title name="ActionSheet" describe="操作菜单">
+    <content-card class="content" name="基本使用">
+      <view class='buttun-wrapper'>
+        <l-button l-class="button" size="large" bind:lintap="showBaseActionSheet">
+          基本使用
+        </l-button>
+      </view>
+    </content-card>
+
+    <content-card class="content" name="子菜单长度限制（0<n<11）">
+      <view class='buttun-wrapper'>
+        <l-button l-class="button" size="large" bind:lintap="showActionSheet">
+          举报
+        </l-button>
+      </view>
+    </content-card>
+
+    <content-card class="content" name="点击背景不可关闭组件">
+      <view class='buttun-wrapper'>
+        <l-button l-class="button" size="large" bind:lintap="setLockedActionSheet">
+          操作
+        </l-button>
+      </view>
+    </content-card>
+
+    <content-card class="content" name="添加图片图标">
+      <view class='buttun-wrapper'>
+        <l-button l-class="button" size="large" bind:lintap="showImagesActionSheet">
+          操作
+        </l-button>
+      </view>
+    </content-card>
+
+    <content-card class="content" name="添加标题">
+      <view class='buttun-wrapper'>
+        <l-button l-class="button" size="large" bind:lintap="showTitleActionSheet">
+          操作
+        </l-button>
+      </view>
+    </content-card>
+
+    <content-card class="content" name="微信开放能力">
+      <view class='buttun-wrapper'>
+        <l-button l-class="button" size="large" bind:lintap="showOpenTypeActionSheet">
+          操作
+        </l-button>
+      </view>
+    </content-card>
+
+  </content-title>
+</view>
+
+<l-action-sheet l-class-title="action-title" />

@@ -1,0 +1,66 @@
+<!--pages/nav/pages/tabs/index.wxml-->
+
+<view class='container'>
+  <content-title name="TabBar" describe="自定义标签页">
+    <content-card l-content="content" name="基本使用">
+    <view class='tabbar-wrapper'>
+      <l-tabbar
+        position="custom"
+        color="{{config.color}}"
+        selected-color="{{config.selectedColor}}"
+        border-style="{{config.borderStyle}}"
+        backgroundColor="{{config.backgroundColor}}"
+        list="{{config.list}}"/> 
+    </view>
+    </content-card>
+
+    <content-card l-content="content" name="更改尺寸">
+      <view class='tabbar-wrapper'>
+      <l-tabbar
+        position="custom"
+        color="{{config2.color}}"
+        selected-color="{{config2.selectedColor}}"
+        border-style="{{config2.borderStyle}}"
+        fontSize="{{config2.fontSize}}"
+        backgroundColor="{{config2.backgroundColor}}"
+        list="{{config2.list}}"/> 
+      </view>
+    </content-card>
+
+      <!-- <content-card l-content="content" name="设置背景色">
+      <view class='tabbar-wrapper'>
+        <l-tabbar
+          position="custom"
+          list="{{config3}}"/> 
+      </view>
+    </content-card> -->
+
+    <content-card l-content="content" name="经典案例-虾米音乐APP">
+      <view class='tabbar-wrapper'>
+        <l-tabbar
+          position="custom"
+          selectedColor="{{config3.selectedColor}}"
+          list="{{config3.list}}"/> 
+      </view>
+    </content-card>
+  
+    <content-card l-content="content" name="经典案例-闲鱼APP">
+      <view class='tabbar-wrapper'>
+        <l-tabbar
+          position="custom"
+          list="{{config4.list}}"/> 
+      </view>
+    </content-card>
+ 
+    <content-card l-content="content" name="经典案例-淘宝APP">
+      <view class='tabbar-wrapper'>
+        <l-tabbar
+          position="custom"
+          color="{{config5.color}}"
+          selectedColor="{{config5.selectedColor}}"
+          backgroundImg="{{config5.backgroundImg}}"
+          list="{{config5.list}}"/> 
+      </view>
+    </content-card>
+  </content-title>
+</view>

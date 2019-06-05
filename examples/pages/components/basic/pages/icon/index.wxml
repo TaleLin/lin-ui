@@ -1,0 +1,73 @@
+<!--pages/basic/pages/icon/index.wxml-->
+<content-title name="Icon" describe="图标">
+
+  <content-card name="常规图标">
+    <view class="content">
+      <view class="icon-item" wx:for="{{icons}}" wx:key="icon">
+        <l-icon name="{{item}}" />
+        <text>{{item}}</text>
+      </view>
+    </view>
+  </content-card>
+
+  <content-card name="默认设置">
+    <view class="content">
+      <view class="icon-item">
+        <l-icon name="add" />
+        <text>add</text>
+      </view>
+    </view>
+  </content-card>
+
+  <content-card name="自定义大小">
+    <view class="content">
+      <view class="icon-item">
+        <l-icon name="user" size="30" />
+        <text>size="30"</text>
+      </view>
+      <view class="icon-item">
+        <l-icon name="user" size="40" />
+        <text>size="40"</text>
+      </view>
+      <view class="icon-item">
+        <l-icon name="user" size="50" />
+        <text>size="50"</text>
+      </view>
+    </view>
+  </content-card>
+
+  <content-card name="自定义颜色">
+    <view class="content">
+      <view class="icon-item">
+        <l-icon name="setting" color="#34BFA3" />
+        <text>color="#34BFA3"</text>
+      </view>
+      <view class="icon-item">
+        <l-icon name="setting" color="#F4516C" />
+        <text>color="#F4516C"</text>
+      </view>
+      <view class="icon-item">
+        <l-icon name="setting" color="#FFE57F" />
+        <text>color="#FFE57F"</text>
+      </view>
+    </view>
+  </content-card>
+
+<content-card name="扩展图标库">
+    <view class="content">
+      <view class="icon-item">
+        <l-icon name="shouye" color="#34BFA3" l-class="iconfont"/>
+        <text>color="#34BFA3"</text>
+      </view>
+      <view class="icon-item">
+        <l-icon name="yaopin" color="#F4516C" l-class="iconfont"/>
+        <text>color="#F4516C"</text>
+      </view>
+      <view class="icon-item">
+        <l-icon name="yongyao" color="#FFE57F" l-class="iconfont"/>
+        <text>color="#FFE57F"</text>
+      </view>
+    </view>
+  </content-card>
+
+</content-title>

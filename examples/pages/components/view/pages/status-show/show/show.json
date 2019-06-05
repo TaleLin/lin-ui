@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "status": "/dist/status-show/index"
+  }
+}

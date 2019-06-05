@@ -1,0 +1,10 @@
+<view class="l-rate l-class">
+    <view wx:for="{{count}}" wx:key="{{item}}" class="l-rate-star" data-index="{{index}}" bindtap="handleClick">
+        <view class="icon-checked" wx:if="{{score > index}}" hover-class="none" hover-stop-propagation="false" data-rate="{{score-index}}" style="width:{{score-index<1?(score-index)*100:100}}%">
+            <image wx:if="{{activeImage &&  inActiveImage}}" class="image-item l-class-image" src="{{activeImage}}" mode="aspectFit|aspectFill|widthFix" lazy-load="false"></image>
+            <l-icon wx:else name="{{name}}" l-class="l-class-icon" size="{{size}}" color="{{activeColor}}" />
+        </view>
+        <image wx:if="{{activeImage &&  inActiveImage}}" class="image-item l-class-image" src="{{inActiveImage}}" mode="aspectFit|aspectFill|widthFix" lazy-load="false"></image>
+        <l-icon wx:else name="{{name}}" l-class="l-class-icon" size="{{size}}" color="{{inActiveColor}}"></l-icon>
+    </view>
+</view>

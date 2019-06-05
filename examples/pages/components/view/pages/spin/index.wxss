@@ -1,0 +1,29 @@
+.spin-container {
+  display: flex;
+  flex-direction: column;
+  width: 710rpx;
+  height: 230rpx;
+  margin-bottom: 20rpx;
+}
+
+.spin-top {
+  height: 180rpx;
+  width: 710rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f6f8fa;
+}
+
+.spin-bottom {
+  color: #8c98ae;
+  text-align: center;
+  line-height: 50rpx;
+  height: 50rpx;
+  font-size: 28rpx;
+}
+
+.custom-img{
+  width: 220rpx;
+  height: 180rpx;
+}

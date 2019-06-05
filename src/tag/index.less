@@ -1,0 +1,86 @@
+@import "../../config/styles/_base.less";
+
+.l-tag{
+  padding: 0 18rpx;
+  white-space: nowrap;
+  text-align: center;
+  display: inline-block;
+  color: #ffffff;
+  background-color:  @theme-color;
+
+  // Size
+  &-mini{
+    height: 40rpx;
+    line-height: 40rpx;
+    font-size: 20rpx;
+    border-radius: 2rpx;
+  }
+
+  &-large{
+    height: 52rpx;
+    font-size: 24rpx;
+    line-height: 52rpx;
+    border-radius: 4rpx;
+  }
+
+  // Shape
+  &-mini-square{
+    border-radius: 4rpx;
+  }
+
+  &-large-square{
+    border-radius: 6rpx;
+  }
+
+  &-mini-circle{
+    border-radius: 24rpx;
+  }
+
+  &-large-circle{
+    border-radius: 28rpx;
+  }
+
+  &-plain{
+    background-color: #ffffff;
+    color: @theme-color;
+    border: 2rpx solid @theme-color;
+  }
+
+  &-disable{
+    background-color: #c4c9d2;
+    color:#ffffff;
+  }
+
+}
+
+.select{
+  background-color: @theme-color;
+  color: #ffffff;
+  border: 2rpx solid @theme-color; 
+}
+
+.content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.content-l {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: center;
+}
+
+.tag-image {
+  &-mini{
+    width: 20rpx;
+    height: 20rpx;
+  }
+
+  &-large{
+    width: 24rpx;
+    height: 24rpx;
+  }
+}

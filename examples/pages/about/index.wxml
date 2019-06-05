@@ -1,0 +1,24 @@
+<!--pages/about/index.wxml-->
+<view class='container'>
+  <view class='logo-container'>
+    <image class='logo-img' src='/images/logo.png'></image>
+  </view>
+  <view class='address-container'>
+    <view class='dot' />
+    <view class='doc-container' bindtap='copyLink' data-link="http://doc.mini.7yue.pro">
+      <text class='doc-txt'>Web端文档</text>
+      <text class='address'>http://doc.mini.7yue.pro</text>
+    </view>
+  </view>
+  <view class='address-container'>
+    <view class='dot' />
+    <view class='doc-container' bindtap='copyLink' data-link="https://github.com/Talelin/lin-ui">
+      <text class='doc-txt'>Github</text>
+      <text class='address'>https://github.com/Talelin/lin-ui</text>
+    </view>
+  </view>
+  <image bindtap='onImage' src='/images/code.jpg' class='code'></image>
+  <text class='desc'>关注林间有风公众号</text>
+  <text class='desc'>点击图片可保存二维码识别</text>
+  <official-account class="account"></official-account>
+</view>

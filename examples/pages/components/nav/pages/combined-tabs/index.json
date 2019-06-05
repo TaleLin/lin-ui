@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "content-title": "/components/content-title/index",
+    "content-card": "/components/content-card/index",
+    "l-tabs": "/dist/tabs/index",
+    "l-combined-tabs": "/dist/combined-tabs/index",
+    "l-tabpanel": "/dist/tabpanel/index",
+    "l-button": "/dist/button/index"
+  }
+}

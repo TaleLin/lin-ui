@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "l-search-bar": "/dist/search-bar/index",
+    "l-icon":"/dist/icon/index"
+  }
+}

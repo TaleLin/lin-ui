@@ -1,0 +1,28 @@
+<!--pages/filter/pages/is/index.wxml-->
+<content-title name="{{detail.name}}" describe="{{detail.describe}}" doc="{{false}}">
+  <content-card name="用法">
+    <view>
+      <text class="code">wxs</text>既可以在
+      <text class="code">wxml</text>文件中使用，又可以通过</view>
+    <text class="code">require</text>在
+    <text class="code">wxs</text>文件中使用，具体引入方式如下：
+    <view>1 在
+      <text class="code">wxml</text>文件中使用<text class="code">wxs</text>：</view>
+    <l-wemark md="```html\n<wxs src='../../../dist/filter/{{detail.wxsName}}.wxs' module='{{detail.wxsName}}'/>\n```" highlight="{{true}}" />
+
+    <view>2 在
+      <text class="code">wxs</text>文件中使用<text class="code">wxs</text>：</view>
+    <l-wemark md="```javascript\n var {{detail.wxsName}} = require('../../../dist/filter/{{detail.wxsName}}.wxs')\n```" highlight="{{true}}" />
+    <view>注意事项:</view>
+    <view>1
+      <text class="code">src</text>是相对路径</view>
+    <view>2
+      <text class="code">module</text>值用于调用过滤器的方法</view>
+  </content-card>
+  <content-card name="API列表">
+    <view class="api-list" wx:for="{{detail.apiList}}" wx:key="{{index}}">
+      <l-wemark md="{{item}}" highlight="{{true}}" />
+    </view>
+
+  </content-card>
+</content-title>

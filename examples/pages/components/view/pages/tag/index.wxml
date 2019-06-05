@@ -1,0 +1,22 @@
+<content-title name="Tag" describe="标签">
+
+  <content-card name="{{item.title}}" wx:for="{{tagNaviConfigs}}" wx:key="{{item.type}}">
+    <view class="container">
+      <block wx:for="{{item.config}}" wx:for-item="tag" wx:key="Tag">
+        <l-tag l-class="tag" bg-color="{{tag.bgColor}}" font-color="{{tag.fontColor}}" size="{{tag.size}}" shape="{{tag.shape}}" plain="{{tag.plain}}" icon-name="{{tag.iconName}}" location="{{tag.location}}" icon-size="{{tag.iconSize}}" icon-color="{{tag.iconColor}}" disable="{{tag.disable}}"
+          text="{{tag.text}}">{{tag.content}}</l-tag>
+      </block>
+    </view>
+    
+  </content-card>
+
+  <content-card name="可选中标签">
+    <l-tag size="large" plain font-color="#333" bind:lintap="selectTap" select="{{select}}" l-select-class="select">可选中标签</l-tag>
+  </content-card>
+
+  <!-- <content-card name="可选中标签">
+    <l-tag size="large">内容</l-tag>
+    <view class="l-tag l-tag-large l-tag-large-square">内容</view>
+  </content-card> -->
+
+</content-title>

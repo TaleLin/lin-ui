@@ -1,0 +1,144 @@
+<!--pages/view/pages/dialog/index.wxml-->
+<view class='container'>
+  <content-title name="CheckBox" describe="复选框">
+    <content-card
+      class="content"
+      name="基本案例"
+    >
+      <view class='buttun-wrapper'>
+        <view class='title'>1. 下面哪些歌是周杰伦创作的？</view>
+        <l-checkbox-group current="{{current }}" l-class="l-radio-group" bind:linchange="change">
+          <l-checkbox
+            l-class="l-radio"
+            l-title-class="l-title-class"
+            wx:for="{{items1}}"
+            wx:key="{{item.id}}" 
+            placement="{{position}}"
+            value="{{item.name}}">
+          </l-checkbox>
+        </l-checkbox-group>
+      </view>
+    </content-card>
+    <!-- 更改布局 -->
+    <content-card
+      class="content"
+      name="更改布局方式"
+    >
+      <view class='buttun-wrapper'>
+        <view class='title'>2.周星驰拍过哪些电影？</view>
+        <l-checkbox-group placement="row" l-class="l-radio-group">
+          <l-checkbox
+            l-title-class="l-title-class"
+            l-class="l-radio"
+            wx:for="{{items2}}"
+            wx:key="{{item.id}}" 
+            placement="{{position}}"
+            value="{{item.name}}">
+          </l-checkbox>
+        </l-checkbox-group>
+      </view>
+    </content-card>
+
+    <!--  -->
+    <content-card
+      class="content"
+      name="自定义颜色"
+    >
+      <view class='buttun-wrapper'>
+        <view class='title'>3. 什么天气适合吃火锅？</view>
+        <l-checkbox-group l-class="l-radio-group" >
+          <l-checkbox
+            l-title-class="l-title-class"
+            l-class="l-radio"
+            wx:for="{{items3}}"
+            wx:key="{{item.id}}" 
+            placement="{{position}}"
+            color='#FFE57F'
+            value="{{item.name}}">
+          </l-checkbox>
+        </l-checkbox-group>
+      </view>
+    </content-card>
+
+    <content-card
+      class="content"
+      name="更改尺寸"
+    >
+      <view class='buttun-wrapper'>
+        <view class='title'>4. 以下历史事件中，哪些是和关羽有关的？</view>
+        <l-checkbox-group l-class="l-radio-group" >
+          <l-checkbox
+            l-class="l-radio"
+            l-title-class="l-title-class"
+            wx:for="{{items4}}"
+            wx:key="{{item.id}}" 
+            placement="{{position}}"
+            size="45"
+            value="{{item.name}}">
+          </l-checkbox>
+        </l-checkbox-group>
+      </view>
+    </content-card>
+
+    
+
+    <content-card
+      class="content"
+      name="更改Radio的位置"
+    >
+      <view class='buttun-wrapper'>
+        <view class='title'>5.下列属于温带沙漠气候特征的是？</view>
+        <l-checkbox-group l-class="l-radio-gr oup" >
+          <l-checkbox
+            l-title-class="l-title-class"
+            l-class="l-radio"
+            wx:for="{{items5}}"
+            wx:key="{{item.id}}" 
+            placement="right"
+            value="{{item.name}}">
+          </l-checkbox>
+        </l-checkbox-group>
+      </view>
+    </content-card>
+
+    <content-card
+      class="content"
+      name="更改样式"
+    >
+      <view class='buttun-wrapper'>
+        <view class='title'>6.下列LOL英雄里哪些可以隐身</view>
+        <l-checkbox-group l-class="l-radio-group" >
+          <l-checkbox
+            l-class="l-radio"
+            l-title-class="l-title-class"
+            wx:for="{{items6}}"
+            wx:key="{{item.id}}" 
+            shape="circle"
+            disabled='{{item.disabled}}'
+            value="{{item.name}}">
+          </l-checkbox>
+        </l-checkbox-group>
+      </view>
+    </content-card>
+
+    <!-- 设置禁用 -->
+    <content-card
+      class="content"
+      name="设置禁用"
+    >
+      <view class='buttun-wrapper'>
+        <view class='title'>7.关于中亚沙漏主动技能，说法错误的是？</view>
+        <l-checkbox-group l-class="l-radio-group" bind:linchange="change">
+          <l-checkbox
+            l-class="l-radio"
+            l-title-class="l-title-class"
+            wx:for="{{items7}}"
+            wx:key="{{item.id}}" 
+            disabled='{{item.disabled}}'
+            value="{{item.name}}">
+          </l-checkbox>
+        </l-checkbox-group>
+      </view>
+    </content-card>
+  </content-title>
+</view>

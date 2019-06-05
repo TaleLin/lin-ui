@@ -1,0 +1,123 @@
+<view class='container'>
+  <content-title name="Tabs" describe="标签页">
+    <content-card l-content="content" name="等宽标签">
+      <l-tabs bind:linchange="changeTabs" l-class-header-line="header-line" scrollable>
+        <l-tabpanel tab="客厅" key="1" slot="1">
+          <view class="tab-content">客厅</view>
+        </l-tabpanel>
+        <l-tabpanel tab="卧室" key="2" slot="2">
+          <view class="tab-content">卧室</view>
+        </l-tabpanel>
+        <l-tabpanel tab="厨房" key="3" slot="3">
+          <view class="tab-content">厨房</view>
+        </l-tabpanel>
+      </l-tabs>
+    </content-card>
+
+    <content-card l-content="content" name="非等宽标签">
+      <l-tabs bind:linchange="changeTabs" l-class-header-line="header-line" equal-width="{{false}}" scrollable aminmated-for-line="{{true}}">
+        <l-tabpanel tab="精选" key="one" slot="one">
+          <view class="tab-content">精选</view>
+        </l-tabpanel>
+        <l-tabpanel tab="居家生活" key="two" slot="two">
+          <view class="tab-content">居家生活</view>
+        </l-tabpanel>
+        <l-tabpanel tab="美食厨房" key="three" slot="three">
+          <view class="tab-content">美食厨房</view>
+        </l-tabpanel>
+        <l-tabpanel tab="美妆护肤" key="four" slot="four">
+          <view class="tab-content">美妆</view>
+        </l-tabpanel>
+        <l-tabpanel tab="运动女装" key="five" slot="five">
+          <view class="tab-content">运动女装</view>
+        </l-tabpanel>
+        <l-tabpanel tab="家用电器" key="six" slot="six">
+          <view class="tab-content">家用电器</view>
+        </l-tabpanel>
+        <l-tabpanel tab="厨房用品" key="seven" slot="seven">
+          <view class="tab-content">厨房用品</view>
+        </l-tabpanel>
+        <l-tabpanel tab="卫生清洁" key="eight" slot="eight">
+          <view class="tab-content">卫生清洁</view>
+        </l-tabpanel>
+      </l-tabs>
+    </content-card>
+
+    <content-card l-content="content" name="左侧标签">
+
+      <l-tabs active-key="two" bind:linchange="changeTabs" placement="left" aminmated l-class-line="line-tabs" aminmated-for-line="{{true}}">
+        <l-tabpanel tab="客厅" key="one" slot="one">
+          <view class="tab-content">客厅</view>
+        </l-tabpanel>
+        <l-tabpanel tab="卧室" key="two" slot="two">
+          <view class="tab-content">卧室</view>
+        </l-tabpanel>
+        <l-tabpanel tab="厨房" key="three" slot="three">
+          <view class="tab-content">厨房</view>
+        </l-tabpanel>
+        <l-tabpanel tab="浴室" key="four" slot="four">
+          <view class="tab-content">浴室</view>
+        </l-tabpanel>
+      </l-tabs>
+    </content-card>
+
+
+    <content-card l-content="content" name="标签位置">
+      <l-tabs active-key="two" bind:linchange="changeTabs" placement="{{placement}}" aminmated>
+        <l-tabpanel tab="客厅" key="one" slot="one">
+          <view class="tab-content">客厅</view>
+        </l-tabpanel>
+        <l-tabpanel tab="卧室" key="two" slot="two">
+          <view class="tab-content">卧室</view>
+        </l-tabpanel>
+        <l-tabpanel tab="厨房" key="three" slot="three">
+          <view class="tab-content">厨房</view>
+        </l-tabpanel>
+        <l-tabpanel tab="浴室" key="four" slot="four">
+          <view class="tab-content">浴室</view>
+        </l-tabpanel>
+      </l-tabs>
+      <l-button l-class="toggle-button" bind:lintap="toggleTabPlacement" icon="ellipsis" icon-size="28"></l-button>
+    </content-card>
+
+    <content-card l-content="content" name="滑动切换">
+      <l-tabs l-class-header="swipeable-header" l-class-inactive="swipeable-class-inactive" l-class-line="line-class" l-class-active="swipeable-class-active" active-key="two" bind:linchange="changeTabs" swipeable has-line="{{true}}" aminmated-for-line="{{true}}">
+        <l-tabpanel tab="推荐" key="one" slot="one">
+          <view class="tab-content">推荐</view>
+        </l-tabpanel>
+        <l-tabpanel tab="广场" key="two" slot="two">
+          <view class="tab-content">广场</view>
+        </l-tabpanel>
+        <l-tabpanel tab="发现" key="three" slot="three">
+          <view class="tab-content">发现</view>
+        </l-tabpanel>
+      </l-tabs>
+    </content-card>
+
+
+    <content-card l-content="content" name="滚动标签">
+      <l-tabs bind:linchange="changeTabs" l-class-header="l-class-header" l-class-active="l-class-active" placement="top" scrollable equal-width="{{false}}">
+        <l-tabpanel wx:for="{{scrollAbleTabs}}" tab="{{item.tab}}" key="{{item.key}}" slot="{{item.key}}" wx:key="{{item.key}}">
+          <view class="tab-content">{{item.tab}}</view>
+        </l-tabpanel>
+      </l-tabs>
+    </content-card>
+
+    <content-card l-content="content" name="图标标签">
+      <l-tabs bind:linchange="changeTabs" active-color="#FF783C" inactive-color="#333333">
+        <l-tabpanel wx:for="{{iconTabs}}" tab="{{item.tab}}" key="{{item.key}}" slot="{{item.key}}" wx:key="{{item.key}}" icon="{{item.icon}}" pic-placement="{{item.picPlacement}}">
+          <view class="tab-content">{{item.tab}}</view>
+        </l-tabpanel>
+      </l-tabs>
+    </content-card>
+
+    <content-card l-content="content" name="图片标签">
+      <l-tabs bind:linchange="changeTabs" aminmated l-class-tabimage="tab-image" has-line="{{false}}">
+        <l-tabpanel wx:for="{{imagesTabs}}" tab="{{item.tab}}" key="{{item.key}}" slot="{{item.key}}" wx:key="{{item.key}}" image="{{item.image}}" pic-placement="{{item.picPlacement}}">
+          <view class="tab-content">{{item.tab}}</view>
+        </l-tabpanel>
+      </l-tabs>
+    </content-card>
+
+  </content-title>
+</view>

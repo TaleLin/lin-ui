@@ -1,0 +1,73 @@
+@import "../../config/styles/_theme.less";
+
+.dialog-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width:520rpx;
+  background: #fff;
+  border-radius: 12rpx;
+}
+
+.dialog-title{
+  font-size:32rpx;
+  font-family:PingFangSC-Regular;
+  color:rgba(69,82,107,1);
+  line-height:44rpx;
+  margin-top: 30rpx;
+  padding: 0 25rpx;
+  text-align: center;
+}
+
+.dialog-content{
+  font-size:28rpx;
+  font-family:PingFangSC-Regular;
+  color:rgba(89,108,142,1);
+  line-height:40rpx;
+  margin-top: 30rpx;
+  margin-bottom: 30rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 25rpx;
+}
+
+.dialog-btn-group{
+  width: 100%;
+  height: 80rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 2rpx solid rgba(243,243,243,1);
+}
+
+.dialog-btn-cancel{
+  font-size: 28rpx;
+  height: 80rpx;
+  width: 259rpx;
+  border-right: 2rpx solid rgba(243,243,243,1);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center
+}
+
+.dialog-btn-confirm{
+  font-size: 28rpx;
+  flex: 1;
+  color: @theme-color;
+  height: 80rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center
+}
+
+.active{
+  color:rgba(54,131,214,1);
+}
+
+.leave{
+  color:rgba(69,82,107,1);
+}

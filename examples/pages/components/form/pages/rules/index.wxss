@@ -1,0 +1,53 @@
+/* pages/form/pages/rules/index.wxss */
+
+.container {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+.group-label {
+  font-size: 28rpx;
+  color: #333;
+  display: flex;
+  box-sizing: border-box;
+  height: 88rpx;
+  align-items: flex-start;
+}
+
+.group-label text, .text-desc {
+  font-size: 28rpx;
+  color: #333;
+  width: 170rpx;
+  padding-left: 25rpx;
+  padding-right: 15rpx;
+  box-sizing: border-box;
+}
+
+.text-desc {
+  display: flex;
+  width: auto;
+  line-height: 88rpx;
+}
+.group-label .l-radio-group, .text-view {
+  display: flex;
+  flex-direction: row;
+}
+
+.text-view {
+  flex-direction: column;
+}
+
+.group-label .l-radio {
+  margin-right: 20rpx;
+}
+
+.textarea-class {
+  width:auto !important;
+}
+
+.error-text {
+  background: red;
+  color: #fff !important;
+  border-radius: 8rpx;
+  padding: 0 10rpx;
+}

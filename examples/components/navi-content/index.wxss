@@ -1,0 +1,25 @@
+page{
+  background-color: #fff;
+}
+
+.container {
+  min-height: 100vh;
+  min-width: 100vw;
+  box-sizing: border-box;
+}
+
+.section { 
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  border-radius: 8rpx 8rpx 0 0;
+  padding-bottom: 100rpx;
+  border-top: 20rpx solid #f7f7f7;
+}
+
+.section-content {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}

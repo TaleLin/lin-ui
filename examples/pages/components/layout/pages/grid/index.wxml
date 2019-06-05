@@ -1,0 +1,67 @@
+<!--pages/layout/pages/grid/index.wxml-->
+<view class='container'>
+  <content-title name="Grid" describe="宫格">
+    <content-card class="content" name="基本案例">
+      <view class="view-container">
+        <l-grid>
+          <l-grid-item key="one" slot="one">
+            <view class="num">3</view>
+            <view class="text">助力</view>
+          </l-grid-item>
+          <l-grid-item key="two" slot="two">
+            <view class="num">134</view>
+            <view class="text">点赞</view>
+          </l-grid-item>
+          <l-grid-item key="three" slot="three">
+            <view class="num">1648</view>
+            <view class="text">评论</view>
+          </l-grid-item>
+        </l-grid>
+      </view>
+    </content-card>
+
+    <content-card class="content" name="显示边框">
+      <view class="view-container">
+        <l-grid  show-border="{{true}}">
+          <l-grid-item wx:for="{{grids1}}" wx:key="{{index}}" key="{{index}}" slot="{{index}}" l-grid-item="grid-item">
+            <l-icon name="{{item.image}}" />
+            <view class="text">{{item.text}}</view>
+          </l-grid-item>
+        </l-grid>
+      </view>
+    </content-card>
+
+    <content-card class="content" name="设置每行显示宫格数">
+      <view class="view-container">
+        <l-grid row-num="4" show-row-border="{{true}}">
+          <l-grid-item wx:for="{{grids2}}" wx:key="{{index}}" key="{{index}}" slot="{{index}}" l-grid-item="grid-item">
+            <l-icon name="{{item.image}}" />
+            <view class="text">{{item.text}}</view>
+          </l-grid-item>
+        </l-grid>
+      </view>
+    </content-card>
+
+    <content-card class="content" name="GridItem绑定点击事件">
+      <view class="view-container">
+        <l-grid show-border="{{true}}">
+          <l-grid-item wx:for="{{grids2}}" wx:key="{{index}}" key="{{index}}" slot="{{index}}" bind:lintap="clickGrid" data-text="{{item.text}}" l-grid-item="grid-item">
+            <l-icon name="{{item.image}}" />
+            <view class="text">{{item.text}}</view>
+          </l-grid-item>
+        </l-grid>
+      </view>
+    </content-card>
+
+    <content-card class="content" name="整体Grid绑定点击事件">
+      <view class="view-container">
+        <l-grid show-border="{{true}}" bind:lintap="clickGrids">
+          <l-grid-item wx:for="{{grids2}}" wx:key="{{index}}" key="{{index}}" slot="{{index}}" data-text="{{item.text}}" l-grid-item="grid-item">
+            <l-icon name="{{item.image}}" />
+            <view class="text">{{item.text}}</view>
+          </l-grid-item>
+        </l-grid>
+      </view>
+    </content-card>
+  </content-title>
+</view>

@@ -1,0 +1,43 @@
+/* pages/components/nav/pages/segment/index.wxss */
+
+.content {
+  /* height: 400rpx; */
+  position: relative;
+}
+
+.toggle-button {
+  position: absolute !important;
+  top: -80rpx;
+  right: 20rpx;
+  min-width: 72rpx !important;
+  padding: 0 !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50% !important;
+  background: transparent !important;
+}
+
+.segment-view {
+  height: auto !important;
+}
+
+.tab-item {
+  font-size: 24rpx;
+  text-align: center;
+  line-height: 36rpx;
+}
+
+.segment-view .segment-active {
+  background: #f4516c;
+  color: #fff !important;
+}
+
+.tab-image {
+  width: 44rpx !important;
+  height: 44rpx !important;
+}
+
+.icon-style {
+  margin-right: 10rpx;
+}

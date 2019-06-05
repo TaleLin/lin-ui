@@ -1,0 +1,56 @@
+<!--pages/components/form/pages/rate/index.wxml-->
+<view class='container'>
+  <content-title name="Rate" describe="评分">
+    <content-card class="content" name="基本案例">
+      <l-rate/>
+    </content-card>
+
+    <content-card class="content" name="设置默认选中的个数">
+      <l-rate score="3" />
+    </content-card>
+
+    <content-card class="content" name="设置默认选中的个数(小数类型)">
+      <view>
+        <l-rate score="3.6" size="56" />
+      </view>
+      <view>
+        <l-rate score="3.3" size="56" />
+      </view>
+      <view>
+        <l-rate score="3.8" size="56" />
+      </view>
+    </content-card>
+
+    <content-card class="content" name="自定义大小">
+      <l-rate size="56" />
+    </content-card>
+
+    <content-card class="content" name="自定义颜色">
+      <l-rate active-color="#FFDD55" inActive-color="#FFF5CE" />
+    </content-card>
+
+
+
+    <content-card class="content" name="自定义元素个数">
+      <l-rate score="3" count="10" bind:linChange="changeScore" />
+    </content-card>
+
+    <content-card class="content" name="禁用组件">
+      <l-rate score="5" count="10" disabled/>
+    </content-card>
+
+    <content-card class="content" name="自定义图片">
+      <l-rate score="4" active-image="/pages/components/form/images/smile-active.png" inActive-image="/pages/components/form/images/smile-inactive.png" />
+    </content-card>
+
+    <content-card class="content" name="自定义图标">
+      <view>
+        <l-rate score="4" name="like" />
+      </view>
+      <view class="box">
+        <l-rate score="4" name="shouye" active-color="#F4516C" inActive-color="rgba(244,81,108,0.1)" l-class-icon="iconfont" />
+      </view>
+
+    </content-card>
+  </content-title>
+</view>

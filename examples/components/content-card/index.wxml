@@ -1,0 +1,9 @@
+<view class="content-card">
+  <view class="card-top">
+    <view class="card-dot"></view>
+    <view class="content-name">{{name}}</view>
+  </view>
+  <view class="card-bottom l-content {{cardPadding?'card-padding':'padd'}}">
+    <slot />
+  </view>
+</view>

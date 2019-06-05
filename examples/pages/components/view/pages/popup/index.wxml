@@ -1,0 +1,48 @@
+<!--pages/view/items/mask/index.wxml-->
+<view class='container'>
+  <content-title name="Popup" describe="弹出层">
+    <content-card
+      class="content"
+      name="{{item.title}}"
+      wx:for="{{navConfig}}"
+      wx:key="{{item.type}}"
+    >
+      <view class='buttun-wrapper'>
+        <l-button
+          l-class="button"
+          size="large"
+          data-type="{{item.type}}"
+          bind:lintap="onShowPopupTap"
+        >
+          显示弹出层
+        </l-button>
+      </view>
+    </content-card>
+  </content-title>
+
+  <!-- popup -->
+  <l-popup
+    show="{{currentConf.show}}"
+    showMask="{{currentConf.showMask}}"
+    animation="{{currentConf.animation}}"
+    contentAlign="{{currentConf.contentAlign}}"
+    locked="{{currentConf.locked}}" 
+    bind:lintap="onPopupTap"
+  >
+    <view class='center' wx:if="{{type == 0 ||type ==1  }}">
+      从中间弹出
+    </view>
+    <view class='left' wx:if="{{type == 5}}">从左边弹出</view>
+    <view class='top' wx:if="{{type == 2}}">从上方弹出</view>
+    <view class='right' wx:if="{{type ==3 }}">从右边弹出</view>
+    <view class='bottom' wx:if="{{type == 4}}">
+      从下方弹出
+    </view>
+    <view class='bottom' wx:if="{{type == 6}}">
+      <view class='popup-mask' catchtap='onHidePopupTap'>
+        关闭弹出层
+      </view>
+    </view>
+  </l-popup>
+
+</view>

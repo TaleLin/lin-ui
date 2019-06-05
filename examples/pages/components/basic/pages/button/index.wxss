@@ -1,0 +1,75 @@
+.content {
+  margin-bottom: 20rpx;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  /* line-height: 92rpx */
+}
+
+.style-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  height: 200rpx;
+}
+
+.txt {
+  color: #3963bc;
+  font-size: 28rpx;
+}
+
+.remark {
+  color: #8a8a8a;
+  font-size: 28rpx;
+  margin-right: 10rpx;
+}
+
+.content-con {
+  display: flex;
+  height: 80rpx;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.box {
+  width: 140rpx;
+  height: 80rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.share-box {
+  width: 80rpx;
+  height: 80rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  box-shadow: 0px 1px 8px 0px rgba(220, 220, 220, 0.5);
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 12rpx;
+  box-sizing: border-box;
+  height: 72rpx;
+  width: 180rpx;
+  font-size: 28rpx;
+  background-color: #fff;
+  color: #34bfa3;
+  border: 2rpx solid #34bfa3;
+  border-radius: 9.6rpx;
+  margin-bottom: 20rpx;
+}
+
+.con{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

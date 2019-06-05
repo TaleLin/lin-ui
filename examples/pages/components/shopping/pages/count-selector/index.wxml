@@ -1,0 +1,17 @@
+<content-title name="CountSelector" describe="数量选择器">
+
+  <content-card  name="{{item.title}}" wx:for="{{countConfig}}" wx:key="item">
+    <l-count-selector
+        l-class="count"
+        wx:for="{{item.config}}" 
+        wx:for-item="count"
+        wx:key="count"
+        min="{{count.min}}"
+        count="{{count.count}}"
+        max="{{count.max}}"
+        step="{{count.step}}"
+        disabled="{{count.disabled}}"
+    />
+  </content-card>
+  
+</content-title>

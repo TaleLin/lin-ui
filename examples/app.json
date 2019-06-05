@@ -1,0 +1,134 @@
+{
+  "pages": [
+    "pages/navigator/index/index",
+    "pages/navigator/filter/index",
+    "pages/about/index",
+    "pages/navigator/content/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "Lin UI",
+    "navigationBarTextStyle": "black"
+  },
+  "navigateToMiniProgramAppIdList": [
+    "wxb05fa7b69aa7e5b7"
+  ],
+  "tabBar": {
+    "color": "#bbbbbb",
+    "selectedColor": "#3963BC",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/navigator/index/index",
+        "text": "组件",
+        "iconPath": "/images/tabbar/base.png",
+        "selectedIconPath": "/images/tabbar/base-select.png"
+      },
+      {
+        "pagePath": "pages/navigator/filter/index",
+        "text": "过滤器",
+        "iconPath": "/images/tabbar/filter.png",
+        "selectedIconPath": "/images/tabbar/filter-select.png"
+      },
+      {
+        "pagePath": "pages/about/index",
+        "text": "关于",
+        "iconPath": "/images/tabbar/team.png",
+        "selectedIconPath": "/images/tabbar/team-select.png"
+      }
+    ]
+  },
+  "subPackages": [
+    {
+      "root": "pages/components/basic",
+      "pages": [
+        "pages/button/index",
+        "pages/icon/index"
+      ]
+    },
+    {
+      "root": "pages/components/view",
+      "pages": [
+        "pages/mask/index",
+        "pages/spin/index",
+        "pages/popup/index",
+        "pages/badge/index",
+        "pages/avatar/index",
+        "pages/countdown/index",
+        "pages/tag/index",
+        "pages/loading/index",
+        "pages/notice-bar/index",
+        "pages/status-show/index",
+        "pages/status-show/show/show",
+        "pages/loadmore/index",
+        "pages/loadmore/case/index",
+        "pages/steps/index"
+      ]
+    },
+    {
+      "root": "pages/components/response",
+      "pages": [
+        "pages/message/index",
+        "pages/toast/index",
+        "pages/dialog/index",
+        "pages/slide-view/index",
+        "pages/action-sheet/index"
+      ]
+    },
+    {
+      "root": "pages/components/nav",
+      "pages": [
+        "pages/tabs/index",
+        "pages/tabbar/index",
+        "pages/combined-tabs/index",
+        "pages/segment/index"
+      ]
+    },
+    {
+      "root": "pages/components/form",
+      "pages": [
+        "pages/input/index",
+        "pages/radio/index",
+        "pages/checkbox/index",
+        "pages/textarea/index",
+        "pages/image-picker/index",
+        "pages/rules/index",
+        "pages/rate/index"
+      ]
+    },
+    {
+      "root": "pages/components/layout",
+      "pages": [
+        "pages/list/index",
+        "pages/grid/index",
+        "pages/card/index"
+      ]
+    },
+    {
+      "root": "pages/components/shopping",
+      "pages": [
+        "pages/price/index",
+        "pages/count-selector/index",
+        "pages/search-bar/index"
+      ]
+    },
+    {
+      "root": "pages/filter",
+      "pages": [
+        "pages/base/index",
+        "pages/classnames/index",
+        "pages/zero-padding/index"
+      ]
+    }
+  ],
+  "usingComponents": {
+    "l-toast": "/dist/toast/index",
+    "l-message": "/dist/message/index",
+    "l-button": "/dist/button/index",
+    "content-title": "/components/content-title/index",
+    "content-card": "/components/content-card/index"
+  },
+  "sitemapLocation": "sitemap.json"
+}

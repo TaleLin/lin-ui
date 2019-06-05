@@ -1,0 +1,15 @@
+<view class="container">
+  <view class="section">
+    <navi-title title="{{title}}" count="{{config.length}}"/>
+    <view class="section-content">
+      <detail-navi-card
+        wx:for="{{config}}"
+        wx:for-item="config"
+        wx:key="{{index}}"
+        icon="{{config.icon}}"
+        title="{{config.title}}"
+        componentsPath="{{config.componentsPath}}"
+        desc="{{config.desc}}"/>
+    </view>
+  </view>
+</view>

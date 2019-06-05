@@ -1,0 +1,26 @@
+<!--pages/filter/pages/zero-padding/index.wxml-->
+<wxs src='../../../../dist/filter/zero-padding.wxs' module='zeroPadding' />
+
+<content-title name="ZeroPadding" describe="补零" doc="{{false}}">
+  <content-card name="用法">
+    <view>1 在
+      <text class="code">wxml</text>文件中使用
+      <text class="code">wxs</text>：</view>
+    <l-wemark md="```html\n<wxs src='../../../dist/filter/zero-padding.wxs' module='zeroPadding'/>\n```" highlight="{{true}}" />
+    <view>注意事项:</view>
+    <view>1
+      <text class="code">src</text>是相对路径</view>
+    <view>2
+      <text class="code">module</text>值用于调用过滤器的方法</view>
+  </content-card>
+
+
+  <content-card name="示例">
+    <view class="text-view">
+      {{zeroPadding(3)}}
+      {{zeroPadding(3,4)}}
+    </view>
+
+    <l-wemark md="{{code}}" highlight="{{true}}" />
+  </content-card>
+</content-title>

@@ -1,0 +1,34 @@
+<view class="l-list l-class" style="{{gap?'padding:0 '+gap+'rpx;':''}} {{leftGap?'padding-left:'+leftGap+'rpx':''}} {{rightGap?'padding-right:'+rightGap+'rpx':''}}" bind:tap="tapcell" data-url="{{url}}" data-link-type="{{linkType}}">
+    <!-- left -->
+    <l-badge wx:if="{{(badgeCount > 0 || dotBadge ) && badgePosition ==='left'}}" count="{{badgeCount}}" dot="{{dotBadge}}" max-count="{{badgeMaxCount}}" count-type="{{badgeCountType}}">
+        <template is="cell-left-main" data="{{image,icon,title,desc,tagContent,tagPosition,tagColor,tagShape,tagPlain}}" />
+    </l-badge>
+    <template is="cell-left-main" data="{{image,icon,title,desc,tagContent,tagPosition,tagColor,tagShape,tagPlain}}" wx:else />
+    <!-- right -->
+    <l-badge l-class="badge-right" wx:if="{{(badgeCount > 0 || dotBadge ) && badgePosition ==='right'}}" count="{{badgeCount}}" dot="{{dotBadge}}" max-count="{{badgeMaxCount}}" count-type="{{badgeCountType}}">
+        <template is="cell-right-main" data="{{rightDesc,tagContent,tagPosition,isLink,tagColor,tagShape,tagPlain}}" />
+    </l-badge>
+    <template is="cell-right-main" data="{{rightDesc,tagContent,tagPosition,isLink,tagColor,tagShape,tagPlain}}" wx:else />
+</view>
+<template name="cell-left-main">
+    <view class="left-section ">
+        <image wx:if="{{image}}" class="l-image l-class-image" src="{{image}}" mode="aspectFit|aspectFill|widthFix" />
+        <l-icon wx:elif="{{icon}}" l-class-self="l-icon" l-class="l-class-icon" name="{{icon}}" />
+        <view class="l-text">
+            <view class="l-content l-class-content">{{title}}</view>
+            <view class="l-desc l-class-desc" wx:if="{{desc}}">{{desc}}</view>
+        </view>
+        <l-tag size="mini"  shape="{{tagShape}}" bg-color="{{tagColor}}" l-class="cell-tag" wx:if="{{tagContent && tagPosition ==='left' && !tagPlain}}">{{tagContent}}</l-tag>
+        <l-tag size="mini" shape="{{tagShape}}" plain="{{tagPlain}}" font-color="{{tagColor}}" l-class="cell-tag" wx:elif="{{tagContent && tagPosition ==='left' && tagPlain}}">{{tagContent}}</l-tag>
+        <slot name="left-section"></slot>
+    </view>
+</template>
+<template name="cell-right-main">
+    <view class="right-section l-class-right">
+        <slot name="right-section"></slot>
+        <l-tag size="mini" shape="{{tagShape}}" bg-color="{{tagColor}}" l-class="cell-tag" wx:if="{{tagContent && tagPosition ==='right' && !tagPlain }}">{{tagContent}}</l-tag>
+        <l-tag size="mini" shape="{{tagShape}}" plain="{{tagPlain}}" font-color="{{tagColor}}" l-class="cell-tag" wx:if="{{tagContent && tagPosition ==='right' && tagPlain }}">{{tagContent}}</l-tag>
+        <view class="l-text" wx:if="{{rightDesc}}">{{rightDesc}}</view>
+        <l-icon l-class-self="l-arrow" name="right" wx:if="{{isLink}}" />
+    </view>
+</template>

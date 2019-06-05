@@ -1,0 +1,206 @@
+<!--pages/response/pages/slide-view/index.wxml-->
+<view class='container'>
+  <content-title name="Slide-view" describe="滑动菜单">
+    <content-card
+      class="content"
+      name="{{item.title}}"
+      wx:for="{{navConfig}}"
+      wx:key="{{item.type}}"
+    >
+      <view class='slide-wrapper' wx:if="{{item.type == 0}}">
+        <view class='row'></view>
+        <l-slide-view height="140" width="750" slide-width="340" >
+          <view slot="left" class="left">
+            <view class='left-con'>
+              <text class='left-title'>购买运动器材</text>
+              <text class='left-time'>10-26 18:50</text>
+            </view> 
+            <view class='left-price'><text style="color:rgba(244,81,108,1);">-</text> $2499</view>
+          </view>
+          <view slot="right" class="right">
+            <text>喜欢</text>
+            <text>分享</text>
+            <text>删除</text>
+          </view>
+        </l-slide-view>
+        <view class='row'></view>
+        
+      </view>
+
+      <view class='slide-wrapper' wx:if="{{item.type == 1}}">
+        <view class='row'></view>
+        <l-slide-view height="140" width="750" slide-width="340"
+        threshold="{{item.config.threshold}}" disabled="{{true}}" >
+          <view slot="left" class="left">
+            <view class='left-con'>
+              <text class='left-title'>购买iPhone XS Max</text>
+              <text class='left-time'>10-26 18:50</text>
+            </view> 
+            <view class='left-price'><text style="color:rgba(244,81,108,1);">-</text> $2499</view>
+          </view>
+          <view slot="right" class="right">
+            <text>喜欢</text>
+            <text>分享</text>
+            <text>删除</text>
+          </view>
+        </l-slide-view>
+        <view class='row'></view>
+        
+      </view>
+
+      <view class='slide-wrapper' wx:if="{{item.type == 2}}">
+        <view class='row'></view>
+        <l-slide-view
+          height="140"
+          width="750"
+          slide-width="340"
+          threshold="{{item.config.threshold}}"
+
+        >
+          <view slot="left" class="left">
+            <view class='left-con'>
+              <text class='left-title'>购买肥宅快乐水</text>
+              <text class='left-time'>10-26 18:50</text>
+            </view> 
+            <view class='left-price'><text style="color:rgba(244,81,108,1);">-</text> $12</view>
+          </view>
+          <view slot="right" class="right">
+            <text>喜欢</text>
+            <text>分享</text>
+            <text>删除</text>
+          </view>
+        </l-slide-view>
+        <view class='row'></view>
+        
+      </view>
+
+      <view class='slide-wrapper' wx:if="{{item.type == 3}}">
+        <view class='row'></view>
+        <l-slide-view height="140" width="750" slide-width="340" bindlintap="onSlideTap" auto-close="true">
+          <view slot="left" class="left">
+            <view class='left-con'>
+              <text class='left-title'>购买运动器材</text>
+              <text class='left-time'>10-26 18:50</text>
+            </view> 
+            <view class='left-price'><text style="color:rgba(244,81,108,1);">-</text> $2499</view>
+          </view>
+          <view slot="right" class="right">
+            <text>喜欢</text>
+            <text>分享</text>
+            <text>删除</text>
+          </view>
+        </l-slide-view>
+        <view class='row'></view>
+        
+      </view>
+
+      <view class='slide-wrapper' wx:if="{{item.type == 4}}">
+        <view class='row'></view>
+        <l-slide-view
+          height="140"
+          width="750"
+          slide-width="340"
+          bindslideclose="onCloseTap"
+          bindslideopen="onOpenTap"
+        >
+          <view slot="left" class="left">
+            <view class='left-con'>
+              <text class='left-title'>购买运动器材</text>
+              <text class='left-time'>10-26 18:50</text>
+            </view> 
+            <view class='left-price'><text style="color:rgba(244,81,108,1);">-</text> $2499</view>
+          </view>
+          <view slot="right" class="right">
+            <text>喜欢</text>
+            <text>分享</text>
+            <text>删除</text>
+          </view>
+        </l-slide-view>
+        <view class='row'></view>
+        
+      </view>
+
+      <view class='slide-wrapper' wx:if="{{item.type == 5}}" >
+        <view class='row'></view>
+        <l-slide-view height="140" width="750" slide-width="340" close="{{close}}">
+          <view slot="left" class="left">
+            <view class='left-con'>
+              <text class='left-title'>购买运动器材</text>
+              <text class='left-time'>10-26 18:50</text>
+            </view> 
+            <view class='left-price'><text style="color:rgba(244,81,108,1);">-</text> $2499</view>
+          </view>
+          <view slot="right" class="right">
+            <view class='like'>喜欢</view>
+            <view class='share'>分享</view>
+            <view class='del'>删除</view>
+          </view>
+        </l-slide-view>
+        <view class='row'></view>
+        
+      </view>
+        <l-button
+          class="l-btn"
+          wx:if="{{item.type == 5}}"
+          l-class="button"
+          size="large"
+          data-type="{{item.type}}"
+          bind:lintap="onCloseFiveTap"
+        >
+          关闭slide-view
+        </l-button>
+
+      <view class='slide-wrapper' wx:if="{{item.type == 6}}">
+        <view class='row'></view>
+        <l-slide-view height="140" width="750" slide-width="340" bindslideopen="onSlideOpenTap" data-id='1'  close="{{close1}}"  threshold="50">
+          <view slot="left" class="left">
+            <view class='left-con'>
+              <text class='left-title'>购买运动器材</text>
+              <text class='left-time'>10-26 18:50</text>
+            </view> 
+            <view class='left-price'><text style="color:rgba(244,81,108,1);">-</text> $2499</view>
+          </view>
+          <view slot="right" class="right">
+            <text>喜欢</text>
+            <text>分享</text>
+            <text>删除</text>
+          </view>
+        </l-slide-view>
+        <view class='row'></view>
+
+        <l-slide-view height="140" width="750" slide-width="340" bindslideopen="onSlideOpenTap" data-id='2' close="{{close2}}" threshold="50">
+          <view slot="left" class="left">
+            <view class='left-con'>
+              <text class='left-title'>购买运动器材</text>
+              <text class='left-time'>10-26 18:50</text>
+            </view> 
+            <view class='left-price'><text style="color:rgba(244,81,108,1);">-</text> $2499</view>
+          </view>
+          <view slot="right" class="right">
+            <text>喜欢</text>
+            <text>分享</text>
+            <text>删除</text>
+          </view>
+        </l-slide-view>
+        <view class='row'></view>
+
+        <l-slide-view height="140" width="750" slide-width="340" bindslideopen="onSlideOpenTap" data-id='3'close="{{close3}}" threshold="50">
+          <view slot="left" class="left">
+            <view class='left-con'>
+              <text class='left-title'>购买运动器材</text>
+              <text class='left-time'>10-26 18:50</text>
+            </view> 
+            <view class='left-price'><text style="color:rgba(244,81,108,1);">-</text> $2499</view>
+          </view>
+          <view slot="right" class="right">
+            <text>喜欢</text>
+            <text>分享</text>
+            <text>删除</text>
+          </view>
+        </l-slide-view>
+        <view class='row'></view>
+      </view>
+    </content-card>
+  </content-title>
+</view>
+

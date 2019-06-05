@@ -1,0 +1,19 @@
+/* pages/view/pages/dialog/index.wxss */
+
+.buttun-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.button {
+  background: rgba(223, 237, 255, 1) !important;
+  box-shadow: 6rpx 6rpx 16rpx 0px rgba(229, 233, 239, 0.5) !important;
+  color: rgba(45, 97, 179, 1) !important;
+}
+
+.dio-img{
+  width: 220rpx;
+  height: 165rpx;
+}

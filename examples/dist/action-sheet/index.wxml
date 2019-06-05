@@ -1,0 +1,25 @@
+<l-popup show="{{show}}" showMask="{{true}}" contentAlign="bottom" locked="{{locked}}" bind:lintap="handleClickPopUp">
+    <view class='l-action-sheet'>
+        <view  class="l-item-button l-class-title" wx:if="{{title}}">
+            {{ title }}
+        </view>
+        <view class="" wx:for="{{ itemList }}" wx:key="{{ item.name }}">
+            <l-button bind:lintap="handleClickItem" data-index="{{ index }}" data-item="{{ item }}" open-type="{{ item.openType }}" icon="{{ item.icon }}" type="ghost" size="large" special="{{true}}" long>
+                <view style="{{ item.color ? 'color: ' + item.color : '' }}" class="l-item-button l-class-item {{item.image || item.icon ? 'l-image-button':''}}">
+                    <image wx:if="{{item.image}}" class="l-button-image" src="{{item.image}}" style="{{item.imageStyle}}"/>
+                    <l-icon 
+                        wx:elif="{{ item.icon }}" 
+                        name="{{ item.icon }}" 
+                        l-class="l-item-button"
+                        color="{{item.color}}"></l-icon>  
+                    <text class="l-button-text">{{ item.name }}</text>
+                </view>
+            </l-button>
+        </view>
+        <view class="l-cancel l-class-cancel {{isIphoneX ? 'l-cancel-x':''}}" wx:if="{{ showCancel }}">
+            <l-button type="ghost" size="large" long="true" bind:lintap="handleClickCancel" special="{{true}}">
+                <view class="l-item-button l-cancel-button">{{ cancelText }}</view>
+            </l-button>
+        </view>
+    </view>
+</l-popup>

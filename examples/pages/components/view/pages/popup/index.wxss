@@ -1,0 +1,93 @@
+.buttun-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.button {
+  background: rgba(223, 237, 255, 1) !important;
+  box-shadow: 6rpx 6rpx 16rpx 0px rgba(229, 233, 239, 0.5) !important;
+  color: rgba(45, 97, 179, 1) !important;
+}
+
+.content {
+  margin-bottom: 20rpx;
+}
+
+.center {
+  height: 500rpx;
+  width: 500rpx;
+  background: #fff;
+  text-align: center;
+  line-height: 500rpx;
+  color: #555;
+  border-radius: 8rpx;
+  font-size: 28rpx;
+}
+
+.left {
+  width: 300rpx;
+  height: 100%;
+  background: #fff;
+  border-top-right-radius: 12rpx;
+  border-bottom-right-radius: 12rpx;
+  font-size: 28rpx;
+  color: #555;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.right {
+  width: 300rpx;
+  height: 100%;
+  background: #fff;
+  border-top-left-radius: 12rpx;
+  border-bottom-left-radius: 12rpx;
+  font-size: 28rpx;
+  color: #555;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.top{
+    width: 100%;
+  background: #fff;
+  height: 300rpx;
+  overflow: hidden;
+  text-align: center;
+  line-height: 300rpx;
+  font-size: 28rpx;
+  color: #555;
+  border-bottom-right-radius: 12rpx;
+  border-bottom-left-radius: 12rpx;
+}
+
+.bottom {
+  width: 100%;
+  background: #fff;
+  height: 300rpx;
+  overflow: hidden;
+  text-align: center;
+  line-height: 300rpx;
+  font-size: 28rpx;
+  color: #555;
+  border-top-left-radius: 12rpx;
+  border-top-right-radius: 12rpx;
+}
+
+.popup-mask {
+  width: 180rpx;
+  height: 72rpx;
+  border-radius: 4rpx;
+  border: 1px solid rgba(54, 131, 214, 1);
+  color: rgba(54, 131, 214, 1);
+  font-size: 28rpx;
+  margin: 100rpx auto;
+  line-height: 72rpx;
+  text-align: center;
+}

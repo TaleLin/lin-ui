@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "content-title": "/components/content-title/index",
+    "content-card": "/components/content-card/index",
+    "l-toast": "/dist/toast/index",
+    "l-textarea": "/dist/textarea/index"
+  }
+}

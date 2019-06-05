@@ -1,0 +1,41 @@
+.select{
+  background-color: #333 !important;
+  color: #fff !important;
+  border:1rpx solid #333 !important;
+}
+
+.tag{
+  margin-right: 15rpx !important;
+}
+
+.container{
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+}
+
+.l-tag {
+  padding: 0 16rpx;
+  /* white-space: nowrap;
+  text-align: center;
+  vertical-align: middle;
+  display: inline-block; */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  color: #fff;
+  background-color: #3963bc;
+  margin-left: 15rpx;
+}
+
+.l-tag-large {
+  height: 48rpx;
+  font-size: 24rpx;
+  line-height: 48rpx;
+  border-radius: 4rpx;
+}
+
+.l-tag-large-square {
+  border-radius: 6rpx;
+}

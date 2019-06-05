@@ -1,0 +1,110 @@
+<content-title name="Button" describe="按钮">
+
+  <content-card name="按钮类型">
+    <view class="style-content">
+      <l-button style='margin-right:50rpx'>默认</l-button>
+      <l-button type="success" style='margin-right:50rpx'>成功</l-button>
+      <l-button type="error">错误</l-button>
+      <l-button type="warning">警告</l-button>
+    </view>
+    <view class="style-content">
+      <l-button plain style='margin-right:50rpx'>默认</l-button>
+      <l-button plain type="success" style='margin-right:50rpx'> 成功</l-button>
+      <l-button plain type="error">错误</l-button>
+      <l-button plain type="warning">警告</l-button>
+    </view>
+  </content-card>
+
+  <content-card name="按钮形状">
+    <view class="content">
+      <l-button shape="circle">圆弧按钮</l-button>
+
+      <l-button shape="spuare">方形按钮</l-button>
+
+      <l-button shape="semicircle">半圆按钮</l-button>
+    </view>
+  </content-card>
+
+
+  <content-card name="按钮大小" cardPadding="{{false}}">
+    <view class="content">
+      <l-button size="mini" style='margin-left:10rpx'>小按钮</l-button>
+    </view>
+    <view class="content">
+      <l-button size="medium" style='margin-left:10rpx'>中按钮</l-button>
+    </view>
+    <view class="content">
+      <l-button size="large" style='margin-left:10rpx'>大按钮</l-button>
+    </view>
+    <view class="content">
+      <l-button size="long">通栏按钮</l-button>
+    </view>
+  </content-card>
+
+
+  <content-card name="镂空按钮">
+    <view class="content">
+      <l-button plain="true" size="large">默认</l-button>
+    </view>
+    <view class="content">
+      <l-button plain="true" type="success" size="large">成功</l-button>
+    </view>
+    <view class="content">
+      <l-button plain="true" type="error" size="large">错误</l-button>
+    </view>
+    <view class="content">
+      <l-button plain="true" type="warning" size="large">警告</l-button>
+    </view>
+  </content-card>
+
+  <content-card name="图标按钮">
+    <view class="content">
+      <l-button icon="warning" size="large" icon-color="#fff" icon-size="32">图标按钮</l-button>
+    </view>
+  </content-card>
+
+  <content-card name="禁用">
+    <view class="content">
+      <l-button disabled="true" size="large">禁用按钮</l-button>
+    </view>
+  </content-card>
+
+  <content-card name="加载中">
+    <view class="content">
+      <l-button loading="true" size="large">加载中</l-button>
+    </view>
+    <view class="content">
+      <l-button plain="true" loading="true" type="success" size="large">加载中</l-button>
+    </view>
+  </content-card>
+
+  <content-card name="特殊用法">
+    <view class="content-con">
+      <view class="content">
+        <l-button special="true" open-type="share">
+          <view class="share-box">
+            <l-icon size="40" name="share" color="#3963bc" />
+          </view>
+        </l-button>
+      </view>
+      <view class="content">
+        <l-button special="true" openType="contact">
+          <view class="box">
+            <l-icon size="40" name="customer-service" color="#3963bc" />
+            <text class="txt" style="margin-left:20rpx">客服</text>
+          </view>
+        </l-button>
+      </view>
+      <view class="content">
+        <l-button special="true" openType="getUserInfo" bind:getuserinfo="getUserInfo">
+          <view class="box">
+            <text class="txt">设置</text>
+          </view>
+        </l-button>
+      </view>
+    </view>
+  </content-card>
+
+  <!-- <button openType="openSetting" bindopensetting="getUserInfo">按钮</button> -->
+
+</content-title>

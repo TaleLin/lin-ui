@@ -1,0 +1,1 @@
+  <status show bg-color="{{bgColor}}" button-text="{{buttonText}}" image="{{image}}" describe="{{describe}}" type="{{type}}" />

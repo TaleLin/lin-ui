@@ -1,0 +1,5 @@
+<!--components/navi-card/index.wxml-->
+<view class="navi-card">
+  <image class="navi-icon" src="{{icon}}" />
+  <text>{{title}}</text>
+</view>

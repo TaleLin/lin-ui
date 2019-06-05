@@ -1,0 +1,113 @@
+<!--pages/view/pages/dialog/index.wxml-->
+<view class='container'>
+  <content-title name="Input" describe="输入框">
+    <content-card
+      class="content"
+      name="基本案例"
+    >
+      <view class='buttun-wrapper'>
+        <l-input
+          value='{{value1}}'
+          label="用户名" 
+          clear="{{true}}"
+          placeholder="请输入用户名"          
+          label-width="170"/>
+        <l-input
+          label="密码" 
+          label-width="170"
+          placeholder="请输入密码" />
+      </view>
+    </content-card>
+
+    <content-card
+      class="content"
+      name="对齐方式（居右）"
+    >
+      <view class='buttun-wrapper'>
+        <l-input
+          label="用户名" 
+          placeholder="请输入用户名"
+          label-layout="right"    
+          label-width="170"/>
+        <l-input
+          label="密码"
+          label-layout="right"
+          label-width="170"
+          placeholder="请输入密码" />
+      </view>
+    </content-card>
+
+    <content-card
+      class="content"
+      name="输入框类型"
+    >
+      <view class='buttun-wrapper'>
+        <l-input
+          label="文本" 
+          type="text"
+          clear="{{true}}"
+          placeholder="请输入文本"          
+          label-width="170"/>
+        <l-input
+          label="数字"
+          type="number"           
+          placeholder="请输入数字"          
+          label-width="170"/>
+        <l-input
+          label="密码" 
+          type="password"          
+          label-width="170"
+          placeholder="请输入密码，不少于6位"/>
+        <l-input
+          label="身份证" 
+          type="idcard"          
+          label-width="170"
+          placeholder="身份证号码"/>
+        <l-input
+          label="小数" 
+          type="digit"          
+          placeholder="请输入小数"          
+          label-width="170"/>
+      </view>
+    </content-card>
+
+
+    <content-card
+      class="content"
+      name="带有状态"
+    >
+      <view class='buttun-wrapper'>
+        <l-input
+          label="必填" 
+          placeholder="这里是必填项"   
+          required="{{true}}"       
+          label-width="170"/>
+        <l-input
+          label="清除按钮" 
+          clear="{{true}}"
+          label-width="170"
+          placeholder="输入后可以清除" />
+        <l-input
+          label="禁用" 
+          disabled="{{true}}"
+          label-width="170"
+          placeholder="禁止输入" />
+      </view>
+    </content-card>
+
+        <content-card
+      class="content"
+      name="自定义右边栏"
+    >
+      <view class='buttun-wrapper'>
+        <l-input
+          label="验证码" 
+          placeholder="请输入验证码"     
+          label-width="170"
+        >
+          <image slot="right"  class='img' bindtap='onYzmTap' src="/images/static/yzm.png" />
+        </l-input>
+      </view>
+    </content-card>
+  </content-title>
+</view>

@@ -1,0 +1,37 @@
+<!--pages/view/pages/dialog/index.wxml-->
+<view class='container'>
+  <content-title name="Toast" describe="轻提示">
+    <content-card
+      class="content"
+      name="{{item.title}}"
+      wx:for="{{navConfig}}"
+      wx:key="{{item.type}}"
+    >
+      <view class='buttun-wrapper'>
+        <l-button
+          l-class="button"
+          size="large"
+          data-type="{{item.type}}"
+          bind:lintap="onShowToastTap"
+        >
+          弹出轻提示
+        </l-button>
+      </view>
+    </content-card>
+  </content-title>
+
+  <!-- toast -->
+  <l-toast
+    show="{{currentConf.show}}"
+    title="{{currentConf.title}}"
+    icon="{{currentConf.icon}}"
+    icon-style="{{currentConf.iconStyle}}"
+    image="{{currentConf.image}}"
+    image-style="{{currentConf.imageStyle}}"
+    placement="{{currentConf.placement}}"
+    duration="{{currentConf.duration}}"
+    center="{{currentConf.center}}"
+    mask="{{currentConf.mask}}"  
+  />
+
+</view>

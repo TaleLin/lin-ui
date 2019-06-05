@@ -1,0 +1,31 @@
+<!--pages/filter/pages/classnames/index.wxml-->
+<wxs src='../../../../dist/filter/classnames.wxs' module='classnames'/>
+<content-title name="ClassNames" doc="{{false}}">
+  <content-card name="用法">
+    <view>1 在
+      <text class="code">wxml</text>文件中使用
+      <text class="code">wxs</text>：</view>
+    <l-wemark md="```html\n<wxs src='../../../dist/filter/classnames.wxs' module='classnames'/>\n```" highlight="{{true}}" />
+    <view>注意事项:</view>
+    <view>1
+      <text class="code">src</text>是相对路径</view>
+    <view>2
+      <text class="code">module</text>值用于调用过滤器的方法</view>
+  </content-card>
+
+
+  <content-card name="示例">
+    <view class="text-view">
+      <text class="{{classnames('content',{unextend:isOverHeight && !extend})}}">定风波
+三月七日，沙湖道中遇雨。雨具先去，同行皆狼狈，余独不觉，已而遂晴，故作此词。
+莫听穿林打叶声，何妨吟啸且徐行。竹杖芒鞋轻胜马，谁怕？一蓑烟雨任平生。
+料峭春风吹酒醒，微冷，山头斜照却相迎。回首向来萧瑟处，归去，也无风雨也无晴。</text>
+      <view wx:if="{{isOverHeight}}">
+        <view bindtap="extend" class="show" hidden="{{extend}}">全文</view>
+        <view bindtap="extend" class="show" hidden="{{!extend}}">收起</view>
+      </view>
+    </view>
+
+    <l-wemark md="{{code}}" highlight="{{true}}" />
+  </content-card>
+</content-title>

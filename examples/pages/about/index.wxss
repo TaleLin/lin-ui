@@ -1,0 +1,82 @@
+page {
+  background-color: #f7f7f7;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logo-container {
+  width: 690rpx;
+  margin: 30rpx auto;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40rpx 0;
+  box-sizing: border-box;
+  margin-bottom: 30rpx;
+}
+
+.logo-img {
+  width: 220rpx;
+  height: 100rpx;
+}
+
+.logo-txt {
+  color: #596c8e;
+  font-size: 28rpx;
+}
+
+.address-container {
+  width: 690rpx;
+  margin: 0 auto 2rpx auto;
+  height: 142rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: #fff;
+}
+
+.dot {
+  width: 24rpx;
+  height: 24rpx;
+  border-radius: 50%;
+  background-color: #3963bc;
+  margin-left: 40rpx;
+}
+
+.doc-container {
+  display: flex;
+  flex-direction: column;
+  margin-left: 20rpx;
+}
+
+.doc-txt {
+  color: #8c98ae;
+  font-size: 24rpx;
+}
+
+.address {
+  font-size: 28rpx;
+  color: #596c8e;
+}
+
+.code {
+  width: 210rpx;
+  height: 210rpx;
+  margin: 160rpx auto 30rpx auto;
+}
+
+.desc {
+  color: #8c98ae;
+  font-size: 24rpx;
+  margin-top: 5rpx;
+}
+
+.account{
+  width: 690rpx;
+  margin-top: 30rpx;
+}

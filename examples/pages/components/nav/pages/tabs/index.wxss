@@ -1,0 +1,58 @@
+/* pages/nav/pages/tabs/index.wxss */
+
+.content {
+  /* height: 400rpx; */
+  position: relative;
+}
+
+.tab-content {
+  min-height: 140rpx;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28rpx;
+  color: rgba(140, 152, 174, 1);
+}
+
+.toggle-button {
+  position: absolute !important;
+  top: -80rpx;
+  right: 20rpx;
+  min-width: 72rpx !important;
+  padding: 0 !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50% !important;
+  background: transparent !important;
+}
+
+.swipeable-header {
+  margin: 0 auto;
+  width: 327rpx !important;
+  border: 0 !important;
+}
+
+.swipeable-class-inactive {
+  border-width: 8rpx !important;
+}
+
+.swipeable-class-active {
+  font-weight: 900 !important;
+  font-size: 34rpx !important;
+  border-width: 6rpx !important;
+}
+
+.line-tabs {
+  background: rgba(90, 120, 158, 1) !important;
+}
+
+.tab-image {
+  width: 44rpx !important;
+  height: 44rpx !important;
+}
+
+.line-class {
+  width: 30rpx !important;
+}

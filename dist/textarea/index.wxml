@@ -1,0 +1,28 @@
+<!--  input/input.wxml -->
+<label class='form-item {{disabled? "disabled": ""}}   l-class '>
+  <view class='default-border {{border? "border": ""}}'>
+    <view class='mask' wx:if="{{disabled}}"></view>
+    <!-- 小程序表单组件 -->
+    <textarea
+      class=" textarea"
+      type="{{type}}"
+      value="{{ value }}"
+      password="{{type==='password'}}"
+      placeholder="{{placeholder}}"
+      maxlength="{{maxlength}}"
+      placeholder-class="pls-class"
+      placeholder-style="{{placeholderStyle}}"
+      disabled="{{disabled}}"
+      focus="{{focus}}"
+      auto-height="{{autoHeight}}"
+      bindinput="handleInputChange"
+      bindfocus="handleInputFocus"
+      bindblur="handleInputBlur"
+      bindconfirm="handleInputConfirm"
+      />
+      <view
+        class="indicator"
+        wx:if="{{indicator}}">{{value.length + '/' +  maxlength}}</view>
+  </view>
+</label>
+  <l-error-tip l-error-text="l-error-text" errorText="{{errorText}}" wx:if="{{errorText}}"/>

@@ -1,0 +1,19 @@
+.img{
+  width: 60rpx;
+  height: 60rpx;
+}
+
+.container{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding: 0 80rpx 0 60rpx;
+}
+
+
+.btn{
+  width: 60rpx !important;
+}
+/* notification */

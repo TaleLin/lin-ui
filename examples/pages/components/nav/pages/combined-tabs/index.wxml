@@ -1,0 +1,22 @@
+<!--pages/nav/pages/tabs/index.wxml-->
+
+<view class='container'>
+  <content-title name="CombinedTabs" describe="组合标签">
+    <content-card l-content="content" name="基本使用">
+      <l-combined-tabs bind:linchange="changeTabs" aminmated>
+        <l-tabpanel wx:for="{{dubbleTabs}}" tab="{{item.tab}}" key="{{item.key}}" sub-key="{{item.subKey}}" sub-tab="{{item.subTab}}" slot="{{item.subKey||item.key}}" wx:key="{{item.subTab||item.key}}">
+          <view class="tab-content">{{item.subTab||item.tab}}</view>
+        </l-tabpanel>
+      </l-combined-tabs>
+    </content-card>
+
+
+    <content-card l-content="content" name="滚动标签">
+       <l-combined-tabs bind:linchange="changeTabs" scrollable>
+        <l-tabpanel wx:for="{{dubbleTabs}}" tab="{{item.tab}}" key="{{item.key}}" sub-key="{{item.subKey}}" sub-tab="{{item.subTab}}" slot="{{item.subKey||item.key}}" wx:key="{{item.subTab||item.key}}">
+          <view class="tab-content">{{item.subTab||item.tab}}</view>
+        </l-tabpanel>
+      </l-combined-tabs>
+    </content-card>
+  </content-title>
+</view>

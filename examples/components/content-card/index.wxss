@@ -1,0 +1,47 @@
+.content-card {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0px -4rpx 16rpx 0px rgba(148, 163, 178, 0.05);
+  border-radius: 20rpx 20rpx 0px 0px;
+  border-bottom: 20rpx solid #f7f7f7
+}
+
+.card-dot {
+  width: 18rpx;
+  height: 18rpx;
+  border-radius: 50%;
+  border: 6rpx solid #3963BC;
+  margin-left: 26rpx;
+}
+
+.card-top {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 750rpx;
+  height: 100rpx;
+}
+
+.content-name {
+  font-size: 28rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(69, 82, 107, 1);
+  line-height: 20px;
+  margin-left: 8px;
+}
+
+.card-bottom {
+  width: 750rpx;
+  box-sizing: border-box;
+}
+
+.card-padding {
+  padding: 0rpx 20rpx 40rpx 20rpx;
+}
+
+.padd{
+  padding-bottom: 40rpx;
+}

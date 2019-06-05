@@ -1,0 +1,22 @@
+<content-title name="Spin" describe="加载中">
+  <content-card name="{{item.title}}" wx:for="{{spinNaviConfigs}}" wx:key="{{item.type}}">
+    <view class="spin-container" wx:for="{{item.config}}" wx:for-item="spin" wx:key="spin">
+      <view class="spin-top">
+        <l-spin show="{{spin.show}}" color="{{spin.color}}" size="{{spin.size}}" type="{{spin.type}}" />
+      </view>
+      <view class="spin-bottom">{{spin.name}}</view>
+    </view>
+  </content-card>
+
+  <content-card name="自定义加载动画">
+    <view class="spin-container">
+      <view class="spin-top" style="background:#fff">
+        <l-spin show="true" custom="true">
+          <image class="custom-img" src="/images/view/spin-gif.gif"></image>
+        </l-spin>
+      </view>
+      <view class="spin-bottom">自定义加载动画</view>
+    </view>
+  </content-card>
+
+</content-title>

@@ -1,0 +1,49 @@
+<!--pages/view/pages/dialog/index.wxml-->
+<view class='container'>
+  <content-title name="Textarea" describe="文本域">
+    <content-card
+      class="content"
+      name="基本案例"
+    >
+      <view class='buttun-wrapper'>
+        <l-textarea indicator="{{false}}"  placeholder="说说你的想法吧..."/>
+      </view>
+    </content-card>
+
+    <content-card
+      class="content"
+      name="显示文本计数器"
+    >
+      <view class='buttun-wrapper'>
+        <l-textarea  placeholder="说说你的想法吧..."/>
+      </view>
+    </content-card>
+
+    <content-card
+      class="content"
+      name="禁用"
+    >
+      <view class='buttun-wrapper'>
+        <l-textarea disabled='{{true}}'  placeholder="说说你的想法吧..."/>
+      </view>
+    </content-card>
+
+    <content-card
+      class="content"
+      name="自动增高"
+    >
+      <view class='buttun-wrapper'>
+        <l-textarea auto-height="{{true}}"  placeholder="说说你的想法吧..."/>
+      </view>
+    </content-card>
+
+    <content-card
+      class="content"
+      name="不带border"
+    >
+      <view class='buttun-wrapper'>
+        <l-textarea border="{{false}}"  placeholder="说说你的想法吧..."/>
+      </view>
+    </content-card>
+  </content-title>
+</view>

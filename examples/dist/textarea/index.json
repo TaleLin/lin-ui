@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "l-icon": "../icon/index",
+    "l-error-tip":"../error-tip/index"
+  }
+}

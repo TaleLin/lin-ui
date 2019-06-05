@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "content-title": "/components/content-title/index",
+    "content-card": "/components/content-card/index",
+    "l-action-sheet": "/dist/action-sheet/index",
+    "l-button": "/dist/button/index"
+  }
+}

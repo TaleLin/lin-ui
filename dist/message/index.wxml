@@ -1,0 +1,10 @@
+<view class="l-message l-class {{'l-message-'+type}} {{status?'l-message-show':''}}">
+  <block wx:if="{{status}}">
+    <view style="margin-right:15rpx">
+      <l-icon name="{{icon?icon:type}}" size="28" color="{{type=='warning'?'#333':'#fff'}}" />
+    </view>
+    <image wx:if="{{image}}" src="{{image}}" class="l-message-image l-class-image"/>
+    {{content}}
+    <slot /> 
+  </block>
+</view>

@@ -1,0 +1,36 @@
+<!--pages/view/items/mask/index.wxml-->
+<view class='container'>
+  <content-title name="Mask" describe="遮罩层">
+    <content-card class="content" name="{{item.title}}" wx:for="{{navConfig}}" wx:key="{{item.type}}">
+      <view class='buttun-wrapper'>
+        <l-button
+          l-class="button"
+          size="large"
+          data-type="{{item.type}}"
+          bind:lintap="onShowMaskTap"
+        >
+          显示遮罩
+        </l-button>
+        
+      </view>
+
+    </content-card>
+  </content-title>
+
+    <l-mask
+    show="{{currentConf.show}}"
+    opacity="{{currentConf.opacity}}"
+    z-index="{{currentConf.zIndex}}"
+    center="{{currentConf.center}}"
+    locked="{{currentConf.locked}}"
+    full-screen="{{currentConf.fullScreen}}"
+    bind:lintap="onMaskTap"
+  >
+   <view class='mask-content' wx:if="{{type === 2 || type === 3 || type === 4}}">
+    <view class='mask-close' bindtap='onHideMaskTap'>隐藏遮罩</view>
+   </view>
+
+
+  </l-mask>
+
+</view>

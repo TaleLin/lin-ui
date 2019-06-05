@@ -1,0 +1,8 @@
+{
+  "navigationBarBackgroundColor": "#3963BC",
+  "navigationBarTextStyle": "white",
+  "usingComponents": {
+    "navi-card": "/components/navi-card/index",
+    "l-card":"/dist/card/index"
+  }
+}
