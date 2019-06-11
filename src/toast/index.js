@@ -68,6 +68,8 @@ Component({
       type: Boolean,
       value: true,
     },
+    offsetX:Number,
+    offsetY:Number
 
   },
 

@@ -43,9 +43,10 @@ const toastNaviConfigs = [
       image: "",
       imageStyle: "",
       placement: '',
-      duration: 2000,
+      duration: 10000,
       center: false,
-      mask: false
+      mask: false,
+      offsetX:-100,
     }
   },
 
