@@ -3,7 +3,12 @@ module.exports = Behavior({
     properties: {
         time: {
             type: Date,
-            value: new Date().getTime() + 86400000
+            value: new Date().getTime() + 86400000,
+            observer:function(newVal,oldVal) {
+                if(newVal && !oldVal) {
+                    this.getLatestTime();
+                }
+            }
         },
         status: {
             type: Boolean,
@@ -27,6 +32,10 @@ module.exports = Behavior({
         isZeroPadd: {
             type: Boolean,
             value: true,
+        },
+        countdownType: {
+            type: String,
+            value: "normal"
         }
     },
     data: {
@@ -46,6 +55,9 @@ module.exports = Behavior({
         hide() {
             clearInterval(this.data.timer);
         },
+        show() {
+            this.getLatestTime();
+        }
     },
 
     methods: {
@@ -70,33 +82,53 @@ module.exports = Behavior({
                 time,
                 status,
                 timeType,
-                initAddTime
+                initAddTime,
+                countdownType,
             } = this.data;
             // IOS不支持2019-04-23 的日期格式
             let countDownTime = time
-            if(timeType!=='second') {
-                countDownTime = typeof time === 'string' ? countDownTime.replace(/-/g, '/') :countDownTime;
-                countDownTime = Math.ceil((new Date(countDownTime).getTime() - new Date().getTime()) / 1000);
-            }
-                
-            if (countDownTime < 0 && timeType !== 'second') {
-                this._getTimeValue(0);
-                this.CountdownEnd();
-                return
-            }
-
-            if (countDownTime - initAddTime > 0) {
-                this.getLatestForCountDown(countDownTime);
-            } else if (countDownTime - initAddTime < 0) {
-                this.getLatestForAddTime(countDownTime);
-            } else if (countDownTime - initAddTime === 0) {
-                if (initAddTime <= 0) {
-                    this._getTimeValue(countDownTime);
+            if (countdownType === "normal") {  //当countdownType === normal时，不影响之前的代码
+                if (timeType !== 'second') {
+                    countDownTime = typeof time === 'string' ? countDownTime.replace(/-/g, '/') : countDownTime;
+                    countDownTime = Math.ceil((new Date(countDownTime).getTime() - new Date().getTime()) / 1000);
                 }
-                this.CountdownEnd();
-            }
-            if (status && countDownTime - initAddTime !== 0) {
-                this.init.call(this);
+
+                if (countDownTime < 0 && timeType !== 'second') {
+                    this._getTimeValue(0);
+                    this.CountdownEnd();
+                    return
+                }
+
+                if (countDownTime - initAddTime > 0) {
+                    this.getLatestForCountDown(countDownTime);
+                } else if (countDownTime - initAddTime < 0) {
+                    this.getLatestForAddTime(countDownTime);
+                } else if (countDownTime - initAddTime === 0) {
+                    if (initAddTime <= 0) {
+                        this._getTimeValue(countDownTime);
+                    }
+                    this.CountdownEnd();
+                }
+
+                if (status && countDownTime - initAddTime !== 0) {
+                    this.init.call(this);
+                }
+
+            } else if (countdownType === "anniversary") { //  当countdownType === anniversary时，为纪念日模式
+                if (timeType === "second") {    //  纪念日模式不能设置timeType === second
+                    console.error(`countdownType为${countdownType}类型时，不可设置timeType值为second`)
+                } else {
+                    countDownTime = typeof time === 'string' ? countDownTime.replace(/-/g, '/') : countDownTime;
+                    countDownTime = Math.ceil((new Date().getTime() - new Date(countDownTime).getTime()) / 1000);
+                    if (countDownTime >= 0) {   //  countDownTime计算结果不能为负数
+                        this.getLatestForCountDown(countDownTime);
+                        this.init.call(this);
+                    } else {
+                        console.error("time传值错误")
+                    }
+                }
+            } else { //  countdownType 不能设置为 normal，anniversary 以外的值
+                console.error("错误的countdownType类型")
             }
         },
 
@@ -173,6 +205,6 @@ module.exports = Behavior({
 
         CountdownEnd() {
             this.triggerEvent("linend", {});
-        }
+        },
     }
 });

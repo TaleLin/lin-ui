@@ -57,8 +57,6 @@ module.exports = Behavior({
       };
       this.data.schema.validate(validateValue, (errors, fields) => {
 
-        console.log(errors)
-
         this.triggerEvent('linvalidate', {
           errors,
           isError: !!errors

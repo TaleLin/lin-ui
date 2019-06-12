@@ -53,9 +53,10 @@ Component({
     checked: true
   },
   methods: {
-    onChangeHandle(current) {
+    onChangeHandle(current,id) {
       this.setData({
-        checked: current
+        checked: current,
+        id
       });
     },
     // 点击radio
@@ -63,7 +64,8 @@ Component({
       if (this.data.disabled) return;
       const item = {
         current: !this.data.checked,
-        value: this.data.value
+        value: this.data.value,
+        id:this.data.id
       };
       const parent = this.getRelationNodes('../radio-group/index')[0];
       parent ? parent.onEmitEventHandle(item) : this.triggerEvent('linchange', item);

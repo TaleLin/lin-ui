@@ -88,6 +88,9 @@ Component({
    * 组件的方法列表
    */
   methods: {
+    onCancel(){
+      this.triggerEvent('onCancel')
+    },
     // input属性列表
     handleInputChange(event) {
       const {

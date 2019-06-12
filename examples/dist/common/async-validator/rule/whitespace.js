@@ -12,7 +12,6 @@ import * as util from '../util';
  *  @param options.messages The validation messages.
  */
 function whitespace(rule, value, source, errors, options) {
-  console.log(rule,value)
   if (/^\s+$/.test(value) || value === '') {
     errors.push(util.format(options.messages.whitespace, rule.fullField));
   }

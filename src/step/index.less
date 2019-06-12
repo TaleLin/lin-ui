@@ -1,0 +1,165 @@
+@import "../../config/styles/_base.less";
+
+.step {
+  display: flex;
+  position: relative;
+
+  &-custom{
+    z-index: 2;
+  }
+
+  &-row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &-column {
+    flex-direction: row;
+    height: 160rpx;
+    padding-left: 30rpx;
+    box-sizing: border-box;
+  }
+
+  &-icon {
+    width: 40rpx;
+    height: 40rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &-number {
+    width: 40rpx;
+    height: 40rpx;
+    border-radius: 50%;
+    background-color: @step-color;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 40rpx;
+    font-size: 28rpx;
+    transition: 0.5s;
+    color: #fff;
+    z-index: 2;
+
+    &-mistake {
+      background-color: @error-color;
+    }
+
+    &-finish {
+      background-color: @success-color;
+    }
+
+    &-on {
+      color: #fff;
+      background-color: @step-active-color;
+    }
+
+    &-over {
+      color: #fff;
+      background-color: @step-active-color;
+    }
+  }
+
+  &-dot {
+    width: 24rpx;
+    height: 24rpx;
+    border-radius: 50%;
+    background: @step-color;
+    transition: 0.5s;
+
+    &-on {
+      background-color: @step-active-color
+    }
+
+    &-over {
+      background-color: @step-active-color
+    }
+  }
+
+  &-line {
+    background: @step-color;
+    transition: 0.5s;
+    position: absolute;
+    z-index: 0;
+
+    &-dot {}
+
+    &-row {
+      height: 4rpx;
+      width: 100%;
+      left: 50%;
+
+      &-number {
+        top: 20rpx;
+      }
+    }
+
+    &-column {
+      width: 4rpx;
+      height: 100%;
+      top: 20rpx;
+
+      &-number {
+        left: 46rpx;
+      }
+
+    }
+
+    &-on {
+      background-color: @step-active-color;
+    }
+
+    &-mistake {
+      background-color: @error-color;
+    }
+
+    &-finish {
+      background-color: @success-color;
+    }
+  }
+
+  &-content {
+    display: flex;
+    flex-direction: column;
+
+    &-row {
+      align-items: center;
+      width: 100%;
+    }
+
+    &-column {
+      margin-left: 15rpx;
+    }
+  }
+
+  &-title {
+    color: #333;
+    font-size: 32rpx;
+
+    &-row {
+      margin-top: 15rpx;
+    }
+
+    &-column {
+      // margin-top: 10rpx;
+    }
+
+    &-on {
+      color: @step-active-color;
+    }
+
+    &-finish{
+      color: @success-color;
+    }
+
+    &-mistake{
+      color: @error-color;
+    }
+  }
+
+  &-describe {
+    color: #8C98AE;
+    font-size: 28rpx;
+  }
+}

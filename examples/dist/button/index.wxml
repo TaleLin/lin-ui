@@ -15,7 +15,8 @@
     </view>
   </block>
 </label>
-<button style="dispaly:none" 
+<button style="dispaly:none"
+        wx:if="{{openType}}"
         id="{{name}}" 
         lang="{{lang}}" 
         form-type="{{formType}}" 

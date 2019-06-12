@@ -3,7 +3,12 @@ module.exports = Behavior({
     properties: {
         time: {
             type: Date,
-            value: new Date().getTime() + 86400000
+            value: new Date().getTime() + 86400000,
+            observer:function(newVal,oldVal) {
+                if(newVal && !oldVal) {
+                    this.getLatestTime();
+                }
+            }
         },
         status: {
             type: Boolean,
@@ -50,6 +55,9 @@ module.exports = Behavior({
         hide() {
             clearInterval(this.data.timer);
         },
+        show() {
+            this.getLatestTime();
+        }
     },
 
     methods: {
@@ -106,7 +114,7 @@ module.exports = Behavior({
                     this.init.call(this);
                 }
 
-            } else if (countdownType === "anniversary") { //  当当countdownType === anniversary时，为纪念日模式
+            } else if (countdownType === "anniversary") { //  当countdownType === anniversary时，为纪念日模式
                 if (timeType === "second") {    //  纪念日模式不能设置timeType === second
                     console.error(`countdownType为${countdownType}类型时，不可设置timeType值为second`)
                 } else {

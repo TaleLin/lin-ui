@@ -23,6 +23,10 @@
       <l-button bind:lintap="toggleStatus" l-class="btn-toggle">{{!status?'播放':'暂停'}}</l-button>
     </content-card>
 
+    <content-card l-content="content" name="纪念日模式计时">
+      <l-countdown time="2019-04-24" countdownType="anniversary" />
+    </content-card>
+
     <content-card l-content="content" name="自定义样式">
       <l-countdown l-class-time="countdown-blue" time="30" time-type="second" l-class="countdown-text" status="{{status}}" bind:linend="countdownEnd" />
     </content-card> 
