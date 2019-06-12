@@ -1,0 +1,8 @@
+<!-- miniprogram_npm/lin-ui/progress/index.wxml -->
+<view class="progress-outclass l-progress" style="background-color:{{outColor}};height:{{height}}rpx; {{round?'border-radius:'+height/2+'rpx;':''}} ">
+    <view class="progress-innerclass l-progress-inner" id="inner" style="{{pianyi}} background-color:{{innerColor}}; height:{{height}}rpx; {{round?'border-radius:'+height/2+'rpx;':''}} ">
+        <view hidden="{{!showInfo}}" class="progress-textclass percent" style="background-color:{{innerColor}}; color:#fff;font-size:{{fontSize}}px;{{infoRound?'border-radius: 1em;':''}}">
+            {{percent}}%
+        </view>
+    </view>
+</view>

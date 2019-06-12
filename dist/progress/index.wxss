@@ -1,0 +1,23 @@
+/* miniprogram_npm/lin-ui/progress/index.wxss */
+.l-progress {
+    position: relative;
+    background: #e5e5e5
+}
+
+.l-progress-inner {
+    left: 0;
+    height: 100%;
+    width: 50%;
+    position: absolute;
+}
+
+.percent {
+    top: 50%;
+    right: 0;
+    padding: 0 5px;
+    position: absolute;
+    text-align: center;
+    background-color: #e5e5e5;
+    -webkit-transform: translate(100%, -50%);
+    transform: translate(100%, -50%)
+}
