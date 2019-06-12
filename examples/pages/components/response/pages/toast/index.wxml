@@ -31,7 +31,7 @@
     placement="{{currentConf.placement}}"
     duration="{{currentConf.duration}}"
     center="{{currentConf.center}}"
-    mask="{{currentConf.mask}}"  
+    mask="{{currentConf.mask}}" 
   />
 
 </view>
