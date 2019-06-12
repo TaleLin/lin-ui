@@ -1,0 +1,3 @@
+<view class="l-class water-flow-item-container">
+  <slot/>
+</view>

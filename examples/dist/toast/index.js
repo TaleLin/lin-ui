@@ -68,6 +68,8 @@ Component({
       type: Boolean,
       value: true,
     },
+    offsetX:Number,
+    offsetY:Number
 
   },
 
@@ -118,7 +120,9 @@ Component({
           center = true,
           mask = false,
           success = null,
-          complete = null
+          complete = null,
+          offsetX = 0,
+          offsetY = 0 ,
         } = options;
         this.setData({
           title,
@@ -132,7 +136,9 @@ Component({
           mask,
           show: true,
           success,
-          complete
+          complete,
+          offsetY,
+          offsetX
         });
         this.changeStatus();
         return this;

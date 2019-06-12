@@ -103,7 +103,8 @@
       "pages": [
         "pages/list/index",
         "pages/grid/index",
-        "pages/card/index"
+        "pages/card/index",
+        "pages/water-flow/index"
       ]
     },
     {

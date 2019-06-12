@@ -15,6 +15,12 @@ const layoutNaviConfigs = [{
   desc: "卡片",
   componentsPath: "/pages/components/layout/pages/card/index"
 },
+{
+  icon: "/images/component/card.png",
+  title: "WaterFlow",
+  desc: "瀑布流",
+  componentsPath: "/pages/components/layout/pages/water-flow/index"
+}
 ]
 
 export default layoutNaviConfigs;

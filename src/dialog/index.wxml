@@ -1,5 +1,5 @@
 <!-- popup.wxml -->
-<l-pupop
+<l-popup
     show="{{show}}"
     animation="show"
     contentAlign="center"
@@ -26,4 +26,4 @@
             >{{confirmText}}</view>
         </view>
     </view>
-</l-pupop>
+</l-popup>

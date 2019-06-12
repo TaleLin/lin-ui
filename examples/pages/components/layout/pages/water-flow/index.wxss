@@ -1,0 +1,9 @@
+/* pages/components/layout/pages/water-flow/index.wxss */
+.water-flow{
+  /* margin: 0 15rpx !important; */
+  margin-right: 15rpx !important;
+}
+
+.water-flow-item{
+  margin-bottom: 20rpx;
+}
