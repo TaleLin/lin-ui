@@ -1,0 +1,8 @@
+<content-title name="WaterFlow" describe="瀑布流">
+  <l-water-flow l-class="water-flow">
+    <l-water-flow-item l-class="water-flow-item" wx:for="{{product}}" wx:key="product">
+      <product image="{{item.image}}" title="{{item.title}}" describe="{{item.describe}}" count="{{item.count}}" delCount="{{item.delCount}}" />
+    </l-water-flow-item>
+  </l-water-flow>
+</content-title>
+
