@@ -2,7 +2,6 @@
   "usingComponents": {
     "content-title": "/components/content-title/index",
     "l-water-flow":"/dist/water-flow/index",
-    "l-water-flow-item":"/dist/water-flow-item/index",
     "product":"./component/product/index"
   }
 }

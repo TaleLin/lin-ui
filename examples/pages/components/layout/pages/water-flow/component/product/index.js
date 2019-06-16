@@ -4,11 +4,7 @@ Component({
    * 组件的属性列表
    */
   properties: {
-    image: String,
-    title: String,
-    count: Number,
-    delCount: Number,
-    describe: String
+    data:Object
   },
 
   /**

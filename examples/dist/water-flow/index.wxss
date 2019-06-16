@@ -1,1 +1,1 @@
-.water-flow-container{margin:0 auto}
+.water-flow-container{display:flex;width:100%;box-sizing:border-box}.water-column{flex:1;transition: all .5s ease-in-out;}
