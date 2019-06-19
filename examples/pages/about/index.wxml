@@ -17,6 +17,28 @@
       <text class='address'>https://github.com/Talelin/lin-ui</text>
     </view>
   </view>
+  <view class='attribute-container'>
+    <view class='attribute-title'>贡献人员</view>
+    <view class='attribute-item'>
+      <view class='attribute-code-container'>
+        <view class='code-circle'></view>
+        <view class='code-name'>策划</view>
+        <view class='coder'>七月</view>
+      </view>
+      <view class='attribute-code-container'>
+        <view class='code-circle'></view>
+        <view class='code-name'>研发</view>
+        <view class='coder'>宁缺</view>
+        <view class='coder'>娜娜</view>
+        <view class='coder'>寸起</view>
+      </view>
+      <view class='attribute-code-container'>
+        <view class='code-circle'></view>
+        <view class='code-name'>设计</view>
+        <view class='coder'>瓜瓜</view>
+      </view>
+    </view>
+  </view>
   <image bindtap='onImage' src='/images/code.jpg' class='code'></image>
   <text class='desc'>关注林间有风公众号</text>
   <text class='desc'>点击图片可保存二维码识别</text>

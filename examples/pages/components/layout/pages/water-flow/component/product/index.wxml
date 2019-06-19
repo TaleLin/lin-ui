@@ -1,9 +1,9 @@
-<l-card full type="cover" image="{{image}}" title="{{title}}" l-class="life-container" l-img-class="life-img" l-title-class="life-title" bindtap="onProduct">
+<l-card full type="cover" image="{{data.image}}" title="{{data.title}}" l-class="life-container" l-img-class="life-img" l-title-class="life-title" bindtap="onProduct">
   <view class='life-product-contianer'>
-    <view class='art-content'>{{describe}}</view>
+    <view class='art-content'>{{data.describe}}</view>
     <view class='peice-container'>
-      <l-price unit="￥" count="{{count}}" count-color="#ad0e11" unit-color="#ad0e11" count-size="36"></l-price>
-      <l-price l-class="del-price" unit="￥" count="{{delCount}}" count-color="#ad0e11" unit-color="#ad0e11" delete del-color="#666" count-color="#666" unit-color="#666"></l-price>
+      <l-price unit="￥" count="{{data.count}}" count-color="#ad0e11" unit-color="#ad0e11" count-size="36"></l-price>
+      <l-price l-class="del-price" unit="￥" count="{{data.delCount}}" count-color="#ad0e11" unit-color="#ad0e11" delete del-color="#666" count-color="#666" unit-color="#666"></l-price>
     </view>
   </view>
 </l-card>

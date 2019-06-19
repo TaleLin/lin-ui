@@ -1,6 +1,7 @@
 {
     "component": true,
-    "usingComponents": {
-        "l-water-flow-item": "../water-flow-item/index"
+    "usingComponents": {},
+    "componentGenerics": {
+      "l-water-flow-item": true
     }
-}
+  }
