@@ -76,7 +76,62 @@ page {
   margin-top: 5rpx;
 }
 
-.account{
+.account {
   width: 690rpx;
   margin-top: 30rpx;
+}
+
+.attribute-container {
+  width: 690rpx;
+  padding: 30rpx 40rpx;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fff;
+  box-shadow: 0px 4px 10px 0px rgba(9, 36, 66, 0.04);
+  border-radius: 4px;
+  margin-top: 20rpx;
+}
+
+.attribute-title {
+  font-size: 28rpx;
+  font-family: PingFangSC-Regular;
+  color: rgba(89, 108, 142, 1);
+}
+
+.attribute-item {
+  width: 100%;
+  margin-top: 20rpx;
+}
+
+.attribute-code-container {
+  display: flex;
+  align-items: center;
+  margin-top: 20rpx;
+}
+
+.code-circle {
+  width: 8rpx;
+  height: 8rpx;
+  border: 2rpx solid rgba(57, 99, 188, 1);
+  border-radius: 50%;
+}
+
+.code-name {
+  width: 100rpx;
+  height: 28rpx;
+  background: rgba(57, 99, 188, 0.1);
+  color: #3963bc;
+  font-size: 20rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.coder {
+  font-size: 28rpx;
+  font-family: PingFangSC-Regular;
+  color: rgba(89, 108, 142, 1);
+  margin-left: 16rpx;
 }
