@@ -1,5 +1,5 @@
 <view class="l-class water-flow-container">
-  <view class="water-column">
+  <view class="water-column" style="margin-right:{{columnGap}}">
     <view id="left">
       <block wx:for="{{leftData}}" wx:key="{{index}}">
         <l-water-flow-item data="{{item}}" />

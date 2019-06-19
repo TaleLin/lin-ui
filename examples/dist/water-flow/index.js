@@ -4,10 +4,10 @@ Component({
      * 组件的属性列表
      */
     properties: {
-      columnGap:{
-        type:String,
-        value:'20rpx'
-      }
+        columnGap: {
+            type: String,
+            value: '20rpx'
+        }
     },
 
     /**
@@ -31,7 +31,7 @@ Component({
             wx.lin = wx.lin || {}
             wx.lin.renderWaterFlow = (data = [], success) => {
                 if (Object.prototype.toString.call(data) !== '[object Array]') {
-                    console.error("[masonry]参数类型错误，渲染失败");
+                    console.error("[data]参数类型错误，渲染失败");
                     return false;
                 }
                 this._select(data).then(() => {
