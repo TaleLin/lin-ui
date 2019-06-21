@@ -1,4 +1,7 @@
 {
   "component": true,
-  "usingComponents": {}
+  "usingComponents": {},
+  "componentGenerics": {
+    "l-water-flow-item": true
+  }
 }

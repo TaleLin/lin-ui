@@ -1,7 +1,3 @@
 {
-    "component": true,
-    "usingComponents": {},
-    "componentGenerics": {
-      "l-water-flow-item": true
-    }
-  }
+  "component": true
+}
