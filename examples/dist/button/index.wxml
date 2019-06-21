@@ -1,6 +1,8 @@
 <label for="{{name}}" bindtap="handleTap">
   <block wx:if="{{special}}">
-    <slot/>
+    <view class="l-class special-container">
+      <slot/>
+    </view>
   </block>
   <block wx:else>
     <view class="l-btn {{ 'l-btn-' + size }} {{ 'l-btn-' + type }} {{ 'l-btn-' + shape }} {{plain?'l-btn-plain':''}} {{ disabled ? 'l-btn-disabled' : ''}} l-class " 
