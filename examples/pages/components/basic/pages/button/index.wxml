@@ -105,6 +105,8 @@
     </view>
   </content-card>
 
-  <!-- <button openType="openSetting" bindopensetting="getUserInfo">按钮</button> -->
+  <l-button special="true" openType="getUserInfo" bind:getuserinfo="getUserInfo">
+      <image src="/images/basic/icon-button.png" class='test-img'></image>
+  </l-button>
 
 </content-title>

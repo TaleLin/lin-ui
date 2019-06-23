@@ -7,6 +7,11 @@
   /* line-height: 92rpx */
 }
 
+.test-img{
+  height: 50rpx;
+  width: 50rpx;
+}
+
 .style-content {
   display: flex;
   flex-wrap: wrap;
