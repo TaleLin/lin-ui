@@ -67,7 +67,7 @@ Component({
 
         _isHaveUserNickName: function (openData) {
             this.setData({
-                _isHaveUserNickName: openData.indexOf('userAvatarUrl') !== -1
+                _isHaveUserNickName: openData.indexOf('userNickName') !== -1
             })
         },
         tapAvatar: function (e) {
