@@ -4,7 +4,7 @@
     <view class="content-name">基本用法</view>
   </view>
 
-  <l-search-bar placeholder="搜索" />
+  <l-search-bar placeholder="搜索" bind:lincancel="onCancel" />
 
   <view class="card-top">
     <view class="card-dot"></view>
@@ -19,17 +19,17 @@
   </view>
 
 
-  <l-search-bar shape="circle" placeholder="搜索">
+  <l-search-bar shape="circle" placeholder="搜索" bind:lincancel="onCancel">
   </l-search-bar>
 
-  <l-search-bar bg-color="#bbb" placeholder="搜索" />
+  <l-search-bar bg-color="#bbb" placeholder="搜索" bind:lincancel="onCancel"/>
 
   <view class="card-top">
     <view class="card-dot"></view>
     <view class="content-name">设置搜索框前的地址</view>
   </view>
 
-  <l-search-bar placeholder="搜索" address="北京">
+  <l-search-bar placeholder="搜索" address="北京" bind:lincancel="onCancel">
   </l-search-bar>
 
 
