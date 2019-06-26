@@ -59,7 +59,8 @@ Page({
         defaultImage: '/pages/components/nav/images/tab-icon/bathroom.png',
       }
     }
-    ]
+    ],
+    brageCount:5
   },
 
   changeTabs(e) {
@@ -101,7 +102,6 @@ Page({
    * Lifecycle function--Called when page show
    */
   onShow: function () {
-
   },
 
   /**

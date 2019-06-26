@@ -25,6 +25,7 @@ Component({
       value:'top'
     },
   },
+  
 
   /**
    * 组件的初始数据
@@ -33,4 +34,8 @@ Component({
     isCurrent: false,
     index:0,
   },
+
+  methods:{
+    
+  }
 })

@@ -9,8 +9,8 @@ Component({
   relations: {
     '../segment/index': {
       type: 'parent',
-      linked() {},
-      unlinked() {}
+      linked() { },
+      unlinked() { }
     },
   },
 
@@ -24,7 +24,12 @@ Component({
       value: 'top'
     },
     dotBadge: Boolean,
-    badgeCount: Number,
+    badgeCount: {
+      type: Number,
+      observe: function (newVal, oldVal) {
+        console.log(newVal, oldVal)
+      }
+    },
     badgeMaxCount: {
       type: Number,
       value: 99
@@ -34,7 +39,11 @@ Component({
       value: 'overflow'
     },
   },
-
+  observers: {
+    '**': function (filed) {
+      this.updateData(filed)
+    }
+  },
   /**
    * 组件的初始数据
    */
@@ -44,6 +53,21 @@ Component({
    * 组件的方法列表
    */
   methods: {
+    updateData(filed) {
+      let parent = this.getRelationNodes('../segment/index')[0];
+      if (!parent) return;
+      const tabList = parent.data.tabList;
+      if (!(tabList && tabList.length > 0)) return;
+      const index = tabList.findIndex(tab => tab.key === this.data.key)
+      tabList[index] = filed;
+      parent.setData({
+        tabList: tabList
+      }, () => {
+        if (parent.data.scrollable) {
+          parent.queryMultipleNodes();
+        }
+      })
 
+    },
   }
 })
