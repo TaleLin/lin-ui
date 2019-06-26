@@ -10,6 +10,9 @@ Component({
     'l-input-class',
     'l-cancel-class'
   ],
+  options: {
+    multipleSlots: true // 在组件定义时的选项中启用多slot支持
+  },
   properties: {
     confirmType: {
       type: String,
@@ -24,7 +27,7 @@ Component({
       type: String,
       value: '取消'
     },
-    address:String,
+    address: String,
     iconColor: {
       type: String,
       value: '#333'
@@ -33,23 +36,23 @@ Component({
       type: String,
       value: '28'
     },
-    bgColor:{
-      type:String,
-      value:'#f3f3f3'
+    bgColor: {
+      type: String,
+      value: '#f3f3f3'
     },
     showCancel: {
       type: Boolean,
       value: true
     },
-    shape:{
-      type:String,
-      value:'primary'
+    shape: {
+      type: String,
+      value: 'primary'
     },
-    TextAlign:{
-      type:String,
-      value:'left'
+    TextAlign: {
+      type: String,
+      value: 'left'
     },
-    adress:String,
+    adress: String,
     // 获取焦点
     focus: {
       type: Boolean,
@@ -88,8 +91,8 @@ Component({
    * 组件的方法列表
    */
   methods: {
-    onCancel(){
-      this.triggerEvent('onCancel')
+    onCancel() {
+      this.triggerEvent('lincancel')
     },
     // input属性列表
     handleInputChange(event) {
@@ -104,15 +107,15 @@ Component({
         value
       });
 
-      this.triggerEvent('linchange', event);
+      this.triggerEvent('linchange', detail);
     },
 
     handleInputFocus(event) {
-      this.triggerEvent('linfocus', event);
+      this.triggerEvent('linfocus', event.detail);
     },
 
     handleInputBlur(event) {
-      this.triggerEvent('linblur', event);
+      this.triggerEvent('linblur', event.detail);
     },
 
     handleInputConfirm(event) {
@@ -127,14 +130,14 @@ Component({
         value
       });
 
-      this.triggerEvent('linconfirm', event);
+      this.triggerEvent('linconfirm', detail);
     },
 
     onClearTap(event) {
       this.setData({
         value: ''
       });
-      this.triggerEvent('linclear', event);
+      this.triggerEvent('linclear', event.detail);
     }
   }
 });
