@@ -3,6 +3,7 @@
     "content-title": "/components/content-title/index",
     "content-card": "/components/content-card/index",
     "l-toast": "/dist/toast/index",
+    "l-icon": "/dist/icon/index",
     "l-input": "/dist/input/index"
   }
 }

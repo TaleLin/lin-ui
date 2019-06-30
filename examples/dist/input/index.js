@@ -21,6 +21,11 @@ Component({
       type: Boolean,
       value: false
     },
+    // 是否显示下划线
+    showRow: {
+      type: Boolean,
+      value: true
+    },
     // 是否必选
     required: {
       type: Boolean,
