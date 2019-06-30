@@ -35,6 +35,10 @@
         <l-segment-item tab="卫生清洁" key="eight">
           <view class="tab-content">卫生清洁</view>
         </l-segment-item>
+        <l-segment-item tab="客厅" key="123" />
+        <l-segment-item tab="卧室" key="456" />
+        <l-segment-item tab="厨房" key="789" />
+        <l-segment-item tab="浴室" key="1011" />
       </l-segment>
     </content-card>
 
@@ -73,7 +77,7 @@
     <content-card l-content="content" name="徽标选项卡">
       <l-segment active-key="one" bind:linchange="changeTabs">
         <l-segment-item tab="客厅" key="one" dot-badge="{{true}}"/>
-        <l-segment-item tab="卧室" key="two" badge-count="97"/>
+        <l-segment-item tab="卧室" key="two" badge-count="{{brageCount}}"/>
         <l-segment-item tab="厨房" key="three" badge-count="900" l-class-badge="badge-view"/>
         <l-segment-item tab="浴室" key="four" />
       </l-segment>
