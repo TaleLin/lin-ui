@@ -4,8 +4,8 @@ module.exports = Behavior({
         time: {
             type: Date,
             value: new Date().getTime() + 86400000,
-            observer:function(newVal,oldVal) {
-                if(newVal && !oldVal) {
+            observer: function (newVal, oldVal) {
+                if (newVal && !oldVal) {
                     this.getLatestTime();
                 }
             }
@@ -36,6 +36,10 @@ module.exports = Behavior({
         countdownType: {
             type: String,
             value: "normal"
+        },
+        isClearInterval: {
+            type: Boolean,
+            value: true
         }
     },
     data: {
@@ -48,15 +52,22 @@ module.exports = Behavior({
     },
 
     detached: function () {
-        clearInterval(this.data.timer);
+        if (this.data.isClearInterval) {
+            clearInterval(this.data.timer);
+        }
     },
 
     pageLifetimes: {
         hide() {
-            clearInterval(this.data.timer);
+            if (this.data.isClearInterval) {
+                clearInterval(this.data.timer);
+            }
+
         },
         show() {
-            this.getLatestTime();
+            if (this.data.isClearInterval) {
+                this.getLatestTime();
+            }
         }
     },
 

@@ -12,3 +12,14 @@
   height: 50rpx;
 }
 
+.input-phone{
+  margin-top: 20rpx;
+  border-radius: 60rpx;
+  border: 2rpx solid #eee;
+  background: #eaf0f7;
+  color: red
+}
+
+.input-icon{
+  margin-left: 15rpx;
+}

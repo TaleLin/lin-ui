@@ -95,17 +95,46 @@
       </view>
     </content-card>
 
-        <content-card
+    <content-card
       class="content"
-      name="自定义右边栏"
+      name="经典案例"
     >
       <view class='buttun-wrapper'>
         <l-input
-          label="验证码" 
-          placeholder="请输入验证码"     
-          label-width="170"
+          placeholder="请输入手机号"
+          show-row="{{ false }}"
+          width="600"
+          l-class='input-phone'
+          label-width="120"
+          clear="{{true}}"
         >
+          <l-icon class='input-icon' slot="left" name="phone"/>
+        </l-input>
+      </view>
+      <view class='buttun-wrapper'>
+        <l-input
+          show-row="{{ false }}"
+          width="600"
+          l-class='input-phone'
+          clear="{{true}}"
+
+          placeholder="请输入验证码"     
+          label-width="120"
+        >
+          <l-icon class='input-icon' slot="left" name="picture"/>
           <image slot="right"  class='img' bindtap='onYzmTap' src="/images/static/yzm.png" />
+        </l-input>
+      </view>
+      <view class='buttun-wrapper'>
+        <l-input
+          placeholder="请输入密码"
+          show-row="{{ false }}"
+          width="600"
+          l-class='input-phone'
+          label-width="120"
+          clear="{{true}}"
+        >
+          <l-icon class='input-icon' slot="left" name="password"/>
         </l-input>
       </view>
     </content-card>
