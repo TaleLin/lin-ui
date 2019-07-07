@@ -11,20 +11,20 @@
         <view class="spinner-container container1">
           <view class="circle1  {{type + '-' + size}}" style="background: {{color}}"></view>
           <view class="circle2  {{type + '-' + size}}" style="background: {{color}}"></view>
-          <view class="circle3  {{type + '-'+ size}}" style="background: {{color}}" style="background: {{color}}" style="background: {{color}}"></view>
-          <view class="circle4  {{type + '-'+ size}}" style="background: {{color}}" style="background: {{color}}"></view>
+          <view class="circle3  {{type + '-' + size}}" style="background: {{color}}"></view>
+          <view class="circle4  {{type + '-' + size}}" style="background: {{color}}"></view>
         </view>
         <view class="spinner-container container2">
-          <view class="circle1  {{type + '-'+ size}}" style="background: {{color}}"></view>
-          <view class="circle2  {{type + '-'+ size}}" style="background: {{color}}"></view>
-          <view class="circle3  {{type + '-'  +size}}" style="background: {{color}}"></view>
-          <view class="circle4  {{type + '-'+ size}}" style="background: {{color}}"></view>
+          <view class="circle1  {{type + '-' + size}}" style="background: {{color}}"></view>
+          <view class="circle2  {{type + '-' + size}}" style="background: {{color}}"></view>
+          <view class="circle3  {{type + '-' + size}}" style="background: {{color}}"></view>
+          <view class="circle4  {{type + '-' + size}}" style="background: {{color}}"></view>
         </view>
         <view class="spinner-container container3">
-          <view class="circle1  {{type + '-'+ size}}" style="background: {{color}}"></view>
-          <view class="circle2  {{type + '-'+ size}}" style="background: {{color}}"></view>
-          <view class="circle3  {{type + '-'+ size}}" style="background: {{color}}"></view>
-          <view class="circle4  {{type + '-'+size}}" style="background: {{color}}"></view>
+          <view class="circle1  {{type + '-' + size}}" style="background: {{color}}"></view>
+          <view class="circle2  {{type + '-' + size}}" style="background: {{color}}"></view>
+          <view class="circle3  {{type + '-' + size}}" style="background: {{color}}"></view>
+          <view class="circle4  {{type + '-' + size}}" style="background: {{color}}"></view>
         </view>
       </view>
       <view wx:if="{{ type === 'rotate'}}">
@@ -45,20 +45,20 @@
       <view class="spinner-container container1">
         <view class="circle1  {{type + '-' + size}}" style="background: {{color}}"></view>
         <view class="circle2  {{type + '-' + size}}" style="background: {{color}}"></view>
-        <view class="circle3  {{type + '-'+ size}}" style="background: {{color}}" style="background: {{color}}" style="background: {{color}}"></view>
-        <view class="circle4  {{type + '-'+ size}}" style="background: {{color}}" style="background: {{color}}"></view>
+        <view class="circle3  {{type + '-' + size}}" style="background: {{color}}"></view>
+        <view class="circle4  {{type + '-' + size}}" style="background: {{color}}"></view>
       </view>
       <view class="spinner-container container2">
-        <view class="circle1  {{type + '-'+ size}}" style="background: {{color}}"></view>
-        <view class="circle2  {{type + '-'+ size}}" style="background: {{color}}"></view>
-        <view class="circle3  {{type + '-'  +size}}" style="background: {{color}}"></view>
-        <view class="circle4  {{type + '-'+ size}}" style="background: {{color}}"></view>
+        <view class="circle1  {{type + '-' + size}}" style="background: {{color}}"></view>
+        <view class="circle2  {{type + '-' + size}}" style="background: {{color}}"></view>
+        <view class="circle3  {{type + '-' + size}}" style="background: {{color}}"></view>
+        <view class="circle4  {{type + '-' + size}}" style="background: {{color}}"></view>
       </view>
       <view class="spinner-container container3">
-        <view class="circle1  {{type + '-'+ size}}" style="background: {{color}}"></view>
-        <view class="circle2  {{type + '-'+ size}}" style="background: {{color}}"></view>
-        <view class="circle3  {{type + '-'+ size}}" style="background: {{color}}"></view>
-        <view class="circle4  {{type + '-'+size}}" style="background: {{color}}"></view>
+        <view class="circle1  {{type + '-' + size}}" style="background: {{color}}"></view>
+        <view class="circle2  {{type + '-' + size}}" style="background: {{color}}"></view>
+        <view class="circle3  {{type + '-' + size}}" style="background: {{color}}"></view>
+        <view class="circle4  {{type + '-' + size}}" style="background: {{color}}"></view>
       </view>
     </view>
     <view wx:if="{{ type === 'rotate'}}">

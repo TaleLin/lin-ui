@@ -10,6 +10,7 @@
         <l-checkbox-group current="{{current }}" l-class="l-radio-group" bind:linchange="change">
           <l-checkbox
             l-class="l-radio"
+            type="circle"
             l-title-class="l-title-class"
             wx:for="{{items1}}"
             wx:key="{{item.id}}" 

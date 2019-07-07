@@ -2,11 +2,10 @@
 import naviConfigs from './navi.js'
 Page({
   data: {
-    naviConfigs: naviConfigs,
+    naviConfigs: naviConfigs
   },
 
   onLoad: function() {
-
   },
 
   onShareAppMessage() {
