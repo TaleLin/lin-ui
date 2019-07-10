@@ -64,6 +64,12 @@ page {
   color: #596c8e;
 }
 
+.version {
+  font-size: 30rpx;
+  color: #3963bc;
+  margin-top: 20rpx;
+}
+
 .code {
   width: 210rpx;
   height: 210rpx;
