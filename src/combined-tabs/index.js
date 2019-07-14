@@ -257,7 +257,7 @@ Component({
         const query = wx.createSelectorQuery().in(this);
         query.select(selector).boundingClientRect((res) => {
           if (!res) return reject('找不到元素');
-          resolve(res)
+          resolve(res);
         }).exec();
       });
     }

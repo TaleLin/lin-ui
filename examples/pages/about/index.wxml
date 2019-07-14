@@ -2,7 +2,7 @@
 <view class='container'>
   <view class='logo-container'>
     <image class='logo-img' src='/images/logo.png'></image>
-    <text class='version'>组件库版本号：v{{version}}</text>
+    <text class='version'>版本号：v{{version}}</text>
   </view>
   <view class='address-container'>
     <view class='dot' />
