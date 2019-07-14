@@ -45,7 +45,7 @@ Component({
     updateDataChange(options) {
       this.setData({
         ...options
-      })
+      });
     }
   }
-})
+});

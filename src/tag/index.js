@@ -47,7 +47,7 @@ Component({
       let options = {
         name: this.properties.name,
         select: this.properties.select
-      }
+      };
       this.triggerEvent('lintap', options, {});
       this.triggerEvent('lintapcatch', options, {
         bubbles: true

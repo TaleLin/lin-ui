@@ -20,6 +20,10 @@ Component({
       type: String,
       value: 'right'
     },
+    type: {
+      type: String,
+      value: 'square'  // square 方形   circle 圆形
+    },
     // checkbox的大小
     size: {
       type: [String, Number],

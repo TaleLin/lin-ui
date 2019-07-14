@@ -12,7 +12,7 @@
     </view>
   </l-card>
 
-    <view class="card-top">
+  <view class="card-top">
     <view class="card-dot"></view>
     <view class="content-name">卡片类型（cover）</view>
   </view>
@@ -44,11 +44,7 @@
         <view class="number">10评论</view>
       </view>
     </view>
-    <l-tag  shape="circle" 
-            bg-color="#f3f3f3" 
-            font-color="#3963BC" 
-            slot="more"
-            size="large">+ 关注</l-tag>
+    <l-tag shape="circle" bg-color="#f3f3f3" font-color="#3963BC" slot="more" size="large">+ 关注</l-tag>
   </l-card>
 
   <view class="card-top">
@@ -86,9 +82,9 @@
     <view class="content-name">通栏卡片</view>
   </view>
 
-  <l-card type="primary" full l-class="card" l-img-class="right-card"image="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1549721538811&di=cf9f89bac33be78e9c1eacfad00c4c2d&imgtype=0&src=http%3A%2F%2Fp2.gexing.com%2FG1%2FM00%2F07%2F4B%2FrBACFFNu-XPgEVX7AAG69r794d8992.jpg"
+  <l-card type="primary" full l-class="card" l-img-class="right-card" image="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1549721538811&di=cf9f89bac33be78e9c1eacfad00c4c2d&imgtype=0&src=http%3A%2F%2Fp2.gexing.com%2FG1%2FM00%2F07%2F4B%2FrBACFFNu-XPgEVX7AAG69r794d8992.jpg"
     title="做一个热爱生活的人！">
-     <view class="content">
+    <view class="content">
       大雄要死掉了,他对妻子说:我死之后你找一个男人我就在地下打一一个滚。说完就咽气了。某天...
     </view>
   </l-card>

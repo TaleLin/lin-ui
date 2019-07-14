@@ -24,7 +24,8 @@
     <view class='price-container'>
       <l-price 
         l-class="price" 
-        count="666"
+        count="{{666.80}}"
+        autofix
         unit-size="28"
         count-size="28"
         unit-color="rgb(175,141,80)"
