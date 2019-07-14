@@ -36,11 +36,11 @@
     <view class="content">
       <l-button size="large" style='margin-left:10rpx'>大按钮</l-button>
     </view>
-    <view class="content">
-      <l-button size="long">通栏按钮</l-button>
-    </view>
   </content-card>
 
+  <content-card name="通栏按钮" cardPadding="{{false}}">
+      <l-button size="long">通栏按钮</l-button>
+  </content-card>
 
   <content-card name="镂空按钮">
     <view class="content">

@@ -52,11 +52,11 @@ Component({
    */
   methods: {
     _initSteps() {
-      let steps = this.getRelationNodes('../step/index')
-      let length = steps.length
+      let steps = this.getRelationNodes('../step/index');
+      let length = steps.length;
       if (this.data.direction == 'row') this.setData({
         length
-      })
+      });
       if (length > 0) {
         steps.forEach((step, index) => {
           step.updateDataChange({
@@ -68,4 +68,4 @@ Component({
       }
     }
   }
-})
+});

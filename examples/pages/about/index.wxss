@@ -65,7 +65,7 @@ page {
 }
 
 .version {
-  font-size: 30rpx;
+  font-size: 28rpx;
   color: #3963bc;
   margin-top: 20rpx;
 }
