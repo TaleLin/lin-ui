@@ -1,3 +1,0 @@
-<view class="l-class container {{'container-'+direction}}">
-    <slot />
-</view>

@@ -1,3 +1,0 @@
-<view class="l-countdown l-class">
-    <view class="l-countdown-item" wx:for="{{date}}" wx:key="{{index}}"><text class="l-class-time l-countdown-time">{{item.value}}</text>{{item.name}}</view>
-</view>
