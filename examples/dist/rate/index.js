@@ -53,7 +53,7 @@ Component({
             this.setData({
                 score:index + 1 
             })
-            this.triggerEvent('linChange',{score:index+1})
+            this.triggerEvent('linchange',{score:index+1})
         }
     }
 })
