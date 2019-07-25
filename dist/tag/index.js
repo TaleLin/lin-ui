@@ -50,7 +50,8 @@ Component({
       };
       this.triggerEvent('lintap', options, {});
       this.triggerEvent('lintapcatch', options, {
-        bubbles: true
+        bubbles: true,
+        composed: true
       });
     }
   }
