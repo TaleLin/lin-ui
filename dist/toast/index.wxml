@@ -1,0 +1,23 @@
+
+<!-- toast.wxml -->
+<!-- <wxs src="./index.wxs" module="toast" /> -->
+<view
+  class="container"
+  hidden="{{!status}}"
+  style="z-index:{{zIndex}}">
+  <view class="toast-bg" wx:if="{{mask}}"></view>
+  <view class="toast toast-{{placement || 'bottom'}}" style="padding-top:{{(placement  || 'bottom')=== 'bottom' ?  image || icon ? '25rpx': '': ''}};position:relative;left:{{offsetX}}rpx;top:{{offsetY}}rpx" >
+    <image class="toast-icon"
+      wx:if="{{image}}"
+      src="{{image}}"
+      style="width:{{imageW}}rpx;height:{{imageH}}rpx" />
+    <l-icon
+      class="toast-icon toast-icon-{{icon === 'loading'?'loading':''}}"
+      wx:elif="{{icon && !image}}"
+      size="{{size? size : 60}}"
+      color="{{color? color: icon === 'success'? '#00C292' :  icon === 'error' ? '#F4516C' : '#ffffff'}}"
+      name="{{icon}}"
+    />
+    <text class="toast-text  toast-text-{{placement}}" style="{{placement || 'bottom' === 'bottom' ? icon || image? 'margin-top:10rpx; width:180rpx' : '': '' }}">{{ title }}</text>
+  </view>
+</view>

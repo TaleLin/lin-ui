@@ -1,35 +1,34 @@
 @import "../../config/styles/_base.less";
 
 .l-tag{
-  padding: 0 18rpx;
+  padding: 0 16rpx;
   white-space: nowrap;
   text-align: center;
   display: inline-block;
   color: #ffffff;
   background-color:  @theme-color;
+  border: 2rpx solid @theme-color;
 
   // Size
   &-mini{
-    height: 40rpx;
-    line-height: 40rpx;
+    height: 38rpx;
+    line-height: 38rpx;
     font-size: 20rpx;
-    border-radius: 2rpx;
   }
 
   &-large{
-    height: 52rpx;
+    height: 50rpx;
+    line-height: 50rpx;
     font-size: 24rpx;
-    line-height: 52rpx;
-    border-radius: 4rpx;
   }
 
   // Shape
   &-mini-square{
-    border-radius: 4rpx;
+    border-radius: 2rpx;
   }
 
   &-large-square{
-    border-radius: 6rpx;
+    border-radius: 2rpx;
   }
 
   &-mini-circle{
@@ -47,8 +46,9 @@
   }
 
   &-disable{
-    background-color: #c4c9d2;
+    background-color: @disabled-color;
     color:#ffffff;
+    border-color: @disabled-color;
   }
 
 }

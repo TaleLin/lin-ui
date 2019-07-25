@@ -1,0 +1,1 @@
+.l-grid{display:flex;width:inherit;flex-wrap:wrap}.l-grid .l-grid-item{display:flex;justify-content:center;align-items:center;flex-direction:column;text-align:center;box-sizing:border-box;border-style:solid;border-color:#ededed;border-width:0}.l-grid .center-grid{border-bottom-width:2rpx}.l-grid .side-grid{border-right-width:2rpx}
