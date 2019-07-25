@@ -48,8 +48,7 @@ Component({
         name: this.properties.name,
         select: this.properties.select
       };
-      this.triggerEvent('lintap', options, {});
-      this.triggerEvent('lintapcatch', options, {
+      this.triggerEvent('lintap', options, {
         bubbles: true,
         composed: true
       });
