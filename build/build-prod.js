@@ -4,7 +4,7 @@ const cssmin = require('gulp-clean-css');
 const rename = require('gulp-rename');
 const componentData = require('./build-tool');
 const result = `{common,behaviors,${componentData()}}`;
-const isCustom = result == `{common,behaviors}`
+const isCustom = result == `{common,behaviors}`;
 
 // js => js
 gulp.task('dispose-js', () => {
@@ -35,7 +35,7 @@ gulp.task('dispose-wxs', () => {
 
 // json => json
 gulp.task('dispose-json', () => {
-  const path = result ? `../src/${result}/*.json` : '../src/**/*.json';
+  const path = isCustom ? `../src/${result}/*.json` : '../src/**/*.json';
   return gulp.src(path)
     .pipe(gulp.dest('../dist/'));
 });
