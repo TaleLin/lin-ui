@@ -2,7 +2,7 @@ Component({
   externalClasses: ['l-class', 'l-select-class', 'l-image-class'],
   properties: {
     // 标签名称
-    name: String,
+    name: Object,
     // 标签颜色
     bgColor: String,
     fontColor: String,

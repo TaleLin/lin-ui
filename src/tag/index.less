@@ -1,42 +1,46 @@
 @import "../../config/styles/_base.less";
 
 .l-tag{
-  padding: 0 16rpx;
-  white-space: nowrap;
-  text-align: center;
-  display: inline-block;
-  color: #ffffff;
-  background-color:  @theme-color;
-  border: 2rpx solid @theme-color;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  background-color: #3963bc;
+  border: 2rpx solid #3963bc;
 
   // Size
   &-mini{
     height: 38rpx;
-    line-height: 38rpx;
     font-size: 20rpx;
+    letter-spacing: 1rpx;
   }
 
   &-large{
     height: 50rpx;
-    line-height: 50rpx;
     font-size: 24rpx;
+    min-width: 80rpx;
+    letter-spacing: 2rpx;
   }
 
   // Shape
   &-mini-square{
     border-radius: 2rpx;
+    padding: 0 18rpx;
   }
 
   &-large-square{
     border-radius: 2rpx;
+    padding: 0 18rpx;
   }
 
   &-mini-circle{
-    border-radius: 24rpx;
+    border-radius: 25rpx;
+    padding: 0 20rpx;
   }
 
   &-large-circle{
     border-radius: 28rpx;
+    padding: 0 20rpx;
   }
 
   &-plain{
@@ -60,14 +64,13 @@
 }
 
 .content {
-  display: flex;
-  flex-direction: row;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
 }
 
 .content-l {
-  display: flex;
+  display: inline-flex;
   flex-direction: row-reverse;
   align-items: center;
   justify-content: center;

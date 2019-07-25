@@ -54,7 +54,7 @@ Component({
         success: null,
         fail: null,
         title: '',
-        locked: true,
+        locked: false,
         cancelText: '取消',
         showCancel: false
       };
