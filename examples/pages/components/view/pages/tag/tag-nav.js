@@ -16,6 +16,19 @@ const tagNaviConfigs = [{
       {
         content: '唉 我也不大',
         text: "标签",
+        size: 'medium',
+        bgColor: '',
+        fontColor: '',
+        plain: false,
+        select: false,
+        shape: 'square',
+        iconName: '',
+        iconSize: '',
+        iconColor: ''
+      },
+      {
+        content: '我最大',
+        text: "标签",
         size: 'large',
         bgColor: '',
         fontColor: '',

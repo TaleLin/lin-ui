@@ -19,7 +19,7 @@ Component({
     // 标签大小
     size: {
       type: String,
-      value: 'mini'
+      value: 'medium'
     },
     location: {
       type: String,
