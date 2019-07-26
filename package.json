@@ -38,11 +38,12 @@
     "gulp-less": "^4.0.0",
     "gulp-rename": "^1.2.2",
     "gulp-util": "^3.0.8",
-    "less": "^2.7.3"
-  },
-  "dependencies": {
+    "less": "^2.7.3",
     "jest": "^24.8.0",
     "lodash": "^4.17.15",
     "miniprogram-simulate": "^1.0.7"
+  },
+  "dependencies": {
+
   }
 }
