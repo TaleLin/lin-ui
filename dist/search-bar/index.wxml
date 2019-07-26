@@ -1,0 +1,37 @@
+<view class="search-bar l-class">
+  <slot name="before"/>
+  <view wx:if="{{address}}" class="icon-container">
+    <text class="city">{{address}}</text>
+    <l-icon name="down" color="#333" size="22" />
+  </view>
+  <view class="search-input l-input-container {{'search-input-'+ shape}}" style="{{'background-color:'+bgColor}}">
+    <l-icon name="research" size="{{iconSize}}" color="{{iconColor}}" />
+  <input
+        confirm-type="{{confirmType}}"
+        class="input l-input-class {{'input'+ TextAlign}}"
+        value="{{ value }}"
+        type="{{type}}"
+        password="{{type==='password'}}"
+        placeholder="{{placeholder}}"
+        maxlength="{{maxlength}}"
+        placeholder-class="pls-class l-placeholder-class"
+        placeholder-style="{{placeholderStyle}}"
+        disabled="{{disabled}}"
+        focus="{{focus}}"
+        bindinput="handleInputChange"
+        bindfocus="handleInputFocus"
+        bindblur="handleInputBlur"
+        bindconfirm="handleInputConfirm"/>
+    <view class="close-wrap" wx:if="{{clear&&value}}" bindtap="onClearTap">
+        <view class="close">
+            <l-icon  name="close" color="#fff" size="15" />
+        </view>
+    </view>
+  </view>
+  <view wx:if="{{showCancel}}" 
+        class="cancle l-cancel-class" 
+        bindtap="onCancel">
+        {{cancelText}}
+  </view>
+  <slot name="after"/>
+</view>

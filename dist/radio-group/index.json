@@ -1,0 +1,7 @@
+{
+    "component": true,
+    "usingComponents": {
+        "l-error-tip": "../error-tip/index",
+        "l-radio":"../radio/index"
+    }
+}

@@ -5,13 +5,14 @@
 }
 
 .tag{
-  margin-right: 15rpx !important;
+  margin: 6rpx 15rpx 6rpx 0 !important;
 }
 
 .container{
   display: flex;
   flex-direction: row;
   align-items: flex-end;
+  flex-wrap: wrap;
 }
 
 .l-tag {

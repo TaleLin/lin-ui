@@ -1,0 +1,1 @@
+.grid-item{max-width:initial;max-height:initial;display:flex;justify-content:center;align-items:center;flex-direction:column}

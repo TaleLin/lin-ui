@@ -1,43 +1,63 @@
 @import "../../config/styles/_base.less";
 
 .l-tag{
-  padding: 0 18rpx;
-  white-space: nowrap;
-  text-align: center;
-  display: inline-block;
-  color: #ffffff;
-  background-color:  @theme-color;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  background-color: #3963bc;
+  border: 2rpx solid #3963bc;
 
   // Size
   &-mini{
-    height: 40rpx;
-    line-height: 40rpx;
+    height: 38rpx;
     font-size: 20rpx;
-    border-radius: 2rpx;
+    letter-spacing: 1rpx;
+  }
+
+  &-medium{
+    height: 46rpx;
+    font-size: 24rpx;
+    min-width: 60rpx;
+    letter-spacing: 2rpx;
   }
 
   &-large{
-    height: 52rpx;
+    height: 56rpx;
     font-size: 24rpx;
-    line-height: 52rpx;
-    border-radius: 4rpx;
+    min-width: 80rpx;
+    letter-spacing: 2rpx;
   }
 
   // Shape
   &-mini-square{
-    border-radius: 4rpx;
+    border-radius: 2rpx;
+    padding: 0 18rpx;
+  }
+
+  &-medium-square{
+    border-radius: 2rpx;
+    padding: 0 18rpx;
   }
 
   &-large-square{
-    border-radius: 6rpx;
+    border-radius: 2rpx;
+    padding: 0 18rpx;
   }
 
   &-mini-circle{
-    border-radius: 24rpx;
+    border-radius: 25rpx;
+    padding: 0 20rpx;
+  }
+
+  &-medium-circle{
+    border-radius: 26rpx;
+    padding: 0 20rpx;
   }
 
   &-large-circle{
-    border-radius: 28rpx;
+    border-radius: 30rpx;
+    padding: 0 20rpx;
   }
 
   &-plain{
@@ -47,8 +67,9 @@
   }
 
   &-disable{
-    background-color: #c4c9d2;
+    background-color: @disabled-color;
     color:#ffffff;
+    border-color: @disabled-color;
   }
 
 }
@@ -60,14 +81,13 @@
 }
 
 .content {
-  display: flex;
-  flex-direction: row;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
 }
 
 .content-l {
-  display: flex;
+  display: inline-flex;
   flex-direction: row-reverse;
   align-items: center;
   justify-content: center;

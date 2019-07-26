@@ -1,0 +1,24 @@
+<view class="l-tabs {{'l-placement-'+placement}} {{placement=='left'||placement=='right'?'l-tabs-vertical':'l-tabs-horizontal'}} {{scrollable ? 'l-tabs-scroll':''}}">
+    <scroll-view scroll-x="{{placement=='top'||placement=='bottom' && scrollable}}" scroll-y="{{placement=='left'||placement=='right' && scrollable}}" scroll-top="{{transformY}}" scroll-left="{{transformX}}" scroll-with-animation class="l-tabsscroll {{hasLine?'l-tabs-header-line l-class-header-line':''}}">
+        <view class="l-tabs-header l-class">
+            <block wx:for="{{tabList}}" wx:key="{{item.key}}">
+                <view id="key-{{item.key}}" wx:if="{{item.tab}}" class="l-tabs-item {{equalWidth?'l-tabs-equal-width':'l-tabs-unequal-width'}} {{item.key===activeKey ?'l-class-active l-tabs-active':'l-class-inactive l-tabs-inactive'}} {{'l-tab-image-placement-'+item.picPlacement}}" style="color:{{item.key===activeKey?activeColor:inactiveColor}}" data-key="{{item.key}}" data-index="{{index}}" bind:tap="handleChange">
+                    <l-badge l-class-self="badge-view" l-class="l-class-badge" wx:if="{{(item.badgeCount > 0 || item.dotBadge )}}" count="{{item.badgeCount}}" dot="{{item.dotBadge}}" max-count="{{item.badgeMaxCount}}" count-type="{{item.badgeCountType}}">
+                        <template is="tab-item" data="{{item,activeKey,hasLine,activeColor,inactiveColor,aminmatedForLine}}" />
+                    </l-badge>
+                    <template is="tab-item" data="{{item,activeKey,hasLine,activeColor,inactiveColor,aminmatedForLine}}" wx:else />
+                    <view class="l-tab-line {{item.key===activeKey?'l-class-line':''}} {{aminmatedForLine?'l-line-aminmated':''}}" wx:if="{{hasLine}}" style="background:{{item.key===activeKey?activeColor:inactiveColor}}"></view>
+                </view>
+                <view wx:else id="{{item.key}}" class="l-tabs-item {{equalWidth?'l-tabs-equal-width':'l-tabs-unequal-width'}} {{item.key===activeKey ?'l-class-active l-tabs-active':'l-class-inactive l-tabs-inactive'}} {{'l-tab-image-placement-'+picPlacement}}" style="color:{{item.key===activeKey?activeColor:inactiveColor}}" data-key="{{item.key}}" data-index="{{index}}" bind:tap="handleChange">
+                    <slot name="{{item.key}}"></slot>
+                    <view class="l-tab-line {{item.key===activeKey?'l-class-line':''}} {{aminmatedForLine?'l-line-aminmated':''}}" wx:if="{{hasLine}}" style="background:{{item.key===activeKey?activeColor:inactiveColor}}"></view>
+                </view>
+            </block>
+        </view>
+    </scroll-view>
+</view>
+<template name="tab-item">
+    <image wx:if="{{ item.image.activeImage || item.image.defaultImage }}" src="{{item.key===activeKey? item.image.activeImage:item.image.defaultImage}}" class="l-tab-image l-class-tabimage" />
+    <l-icon wx:if="{{item.icon}}" l-class="l-class-icon" l-class-self="{{item.key===activeKey ? 'l-icon-active':'l-icon-inactive'}}" name="{{item.icon}}" color="{{item.key===activeKey?activeColor:inactiveColor}}" />
+    {{item.tab}}
+</template>

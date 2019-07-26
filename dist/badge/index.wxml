@@ -1,0 +1,6 @@
+<view class="l-badge" bindtap="handleTap">
+  <slot/>
+  <view class="l-badge-content l-class l-class-self" wx:if="{{finalCount}}">{{finalCount}}</view>
+  <view wx:if="{{content}}" class="l-badge-content l-class l-class-self">{{content}}</view>
+  <view wx:if="{{dot}}" class="l-badge-dot  l-class l-class-self"></view>
+</view>  

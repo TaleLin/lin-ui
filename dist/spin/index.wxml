@@ -1,0 +1,10 @@
+<view wx:if="{{show}}" class="{{type=='flash'?'l-class':''}} {{type + '-spinner'}} {{type=='change'||custom?'':'spinner-' + type + '-' + size}}">
+  <block wx:if="{{custom}}">
+    <slot />  
+  </block>
+  <block wx:else>
+    <view style="{{color?'background-color:'+color:''}}" class="l-class {{type+'-bounce1'}}   {{'spinner-'+ type + '-' + size}}"></view>
+    <view wx:if="{{type=='flash' || type=='change'}}" style="{{color?'background-color:'+color:''}}" class="l-class {{type+'-bounce2'}} {{'spinner-'+ type + '-' + size}}"></view>
+    <view wx:if="{{type=='change'}}" style="{{color?'background-color:'+color:''}}" class="l-class {{type+'-bounce3'}}   {{'spinner-'+ type + '-' + size}}"></view>
+  </block>
+</view>

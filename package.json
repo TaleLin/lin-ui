@@ -1,6 +1,6 @@
 {
   "name": "lin-ui",
-  "version": "0.5.9",
+  "version": "0.5.11",
   "description": "A high quality UI components library with MiniProgram",
   "main": "app.js",
   "directories": {
@@ -8,7 +8,8 @@
   },
   "scripts": {
     "dev": "gulp --gulpfile build/build-dev.js",
-    "build": "gulp --gulpfile build/build-prod.js"
+    "build": "gulp --gulpfile build/build-prod.js",
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -38,5 +39,10 @@
     "gulp-rename": "^1.2.2",
     "gulp-util": "^3.0.8",
     "less": "^2.7.3"
+  },
+  "dependencies": {
+    "jest": "^24.8.0",
+    "lodash": "^4.17.15",
+    "miniprogram-simulate": "^1.0.7"
   }
 }

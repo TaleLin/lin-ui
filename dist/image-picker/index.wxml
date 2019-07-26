@@ -1,0 +1,27 @@
+
+<!-- image-picker.wxml -->
+<l-grid row-num="{{ size }}" l-class="l-class">
+  <l-grid-item
+    wx:for="{{ urls }}" 
+    wx:key="{{ index }}"
+    key="{{ index }}"
+    slot="{{ index }}">
+    <view class="item l-item-class" catchtap="onPreviewTap" data-index="{{ index }}">
+      <view class="close" data-index="{{ index }}" catchtap="onDelTap">
+        <l-icon name="close" color="#fff" size="22" l-class-self="close-icon"/>
+      </view>
+      <image class="{{size == 3? 'img': 'min-img'}}" mode="{{ mode }}" src="{{ item }}" />
+    </view>
+  </l-grid-item>
+  <!-- add 按钮 -->
+  <l-grid-item wx:if="{{ showBtn }}">
+    <!-- 自定义图片选择按钮 -->
+    <view class="item l-item-class {{size == 3? 'img': 'min-img'}}" catchtap="onAddTap" wx:if="{{ custom }}">
+      <slot></slot>
+    </view>
+    <view class="item l-item-class {{size == 3? 'img': 'min-img'}}" catchtap="onAddTap" wx:else>
+      <image class="add-icon" src="./image/add.png" />
+    </view>
+  </l-grid-item>
+</l-grid>
+

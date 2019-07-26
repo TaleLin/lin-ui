@@ -1,0 +1,3 @@
+<view class="l-grid-item grid-item">
+    <slot></slot>
+</view>

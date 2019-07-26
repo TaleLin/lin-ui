@@ -1,0 +1,1 @@
+.l-rate,.l-rate-star{display:inline-flex}.l-rate-star{position:relative}.l-rate-star~.l-rate-star{margin-left:10rpx}.icon-checked{position:absolute;overflow:hidden}.image-item{width:80rpx;height:80rpx}
