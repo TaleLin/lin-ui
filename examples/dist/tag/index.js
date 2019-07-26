@@ -2,7 +2,7 @@ Component({
   externalClasses: ['l-class', 'l-select-class', 'l-image-class'],
   properties: {
     // 标签名称
-    name: String,
+    name: Object,
     // 标签颜色
     bgColor: String,
     fontColor: String,
@@ -19,7 +19,7 @@ Component({
     // 标签大小
     size: {
       type: String,
-      value: 'mini'
+      value: 'medium'
     },
     location: {
       type: String,
@@ -48,9 +48,9 @@ Component({
         name: this.properties.name,
         select: this.properties.select
       };
-      this.triggerEvent('lintap', options, {});
-      this.triggerEvent('lintapcatch', options, {
-        bubbles: true
+      this.triggerEvent('lintap', options, {
+        bubbles: true,
+        composed: true
       });
     }
   }

@@ -1,0 +1,4 @@
+<view class="l-class  checkbox-group-{{placement}}">
+    <slot></slot>   
+</view>
+  <l-error-tip l-error-text="l-error-text" errorText="{{errorText}}" wx:if="{{errorText}}"/>
