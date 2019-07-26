@@ -1,6 +1,6 @@
 {
   "name": "lin-ui",
-  "version": "0.5.11",
+  "version": "0.5.12",
   "description": "A high quality UI components library with MiniProgram",
   "main": "app.js",
   "directories": {
@@ -43,7 +43,5 @@
     "lodash": "^4.17.15",
     "miniprogram-simulate": "^1.0.7"
   },
-  "dependencies": {
-
-  }
+  "dependencies": {}
 }
