@@ -21,8 +21,8 @@
     </content-card>
 
     <content-card class="content" name="显示边框">
-      <view class="view-container">
-        <l-grid  show-border="{{true}}">
+      <view class="view-container" >
+        <l-grid  show-border="{{true}}" l-class="grid-container">
           <l-grid-item wx:for="{{grids1}}" wx:key="{{index}}" key="{{index}}" slot="{{index}}" l-grid-item="grid-item">
             <l-icon name="{{item.image}}" />
             <view class="text">{{item.text}}</view>

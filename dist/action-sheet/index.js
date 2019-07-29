@@ -27,7 +27,7 @@ Component({
     this.initUIAdapter();
   },
 
-  lifetimes: {
+  pageLifetimes: {
     show() {
       if (this.data.openApi) {
         this.initActionSheet();

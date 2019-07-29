@@ -72,7 +72,7 @@ Component({
     }
   },
 
-  lifetimes: {
+  pageLifetimes: {
     show() {
       if (this.data.openApi) {
         this.initDialog();
