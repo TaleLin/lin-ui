@@ -1,5 +1,5 @@
 Component({
-  externalClasses: ['l-class','l-class-self'],
+  externalClasses: ['l-class', 'l-class-self'],
   properties: {
     // 红点模式
     dot: {
@@ -32,32 +32,34 @@ Component({
     // 最终数字
     finalCount() {
       switch (this.data.countType) {
-        case 'overflow':
-          this.setData({
-            finalCount: parseInt(this.data.count) >= parseInt(this.data.maxCount) ? `${this.data.maxCount}+` : this.data.count
-          });
-          break;
-        case 'ellipsis':
-          this.setData({
-            finalCount: parseInt(this.data.count) >= parseInt(this.data.maxCount) ? `...` : this.data.count
-          });
-          break;
-        case 'limit':
-          this.setData({
-            finalCount: parseInt(this.data.count) >= 999 ? (parseInt(this.data.count) >= 9999 ? Math.floor(this.data.count / 10000 * 100) / 100 + `w` : Math.floor(this.data.count / 1000 * 100) / 100 + `k`) : this.data.count
-          })
-          break;
-        default:
-          this.setData({
-            finalCount: parseInt(this.data.count)
-          })
-          break;
+      case 'overflow':
+        this.setData({
+          finalCount: parseInt(this.data.count) >= parseInt(this.data.maxCount) ? `${this.data.maxCount}+` : this.data.count
+        });
+        break;
+      case 'ellipsis':
+        this.setData({
+          finalCount: parseInt(this.data.count) >= parseInt(this.data.maxCount) ? `...` : this.data.count
+        });
+        break;
+      case 'limit':
+        this.setData({
+          finalCount: parseInt(this.data.count) >= 999 ? (parseInt(this.data.count) >= 9999 ? Math.floor(this.data.count / 10000 * 100) / 100 + `w` : Math.floor(this.data.count / 1000 * 100) / 100 + `k`) : this.data.count
+        });
+        break;
+      default:
+        this.setData({
+          finalCount: parseInt(this.data.count)
+        });
+        break;
       }
     },
     // 点击事件
     handleTap() {
-      this.triggerEvent('lintap');
-      this.triggerEvent('lintapcatch', {}, { bubbles: true });
+      this.triggerEvent('lintap', {}, {
+        bubbles: true,
+        composed: true
+      });
     },
   }
 });

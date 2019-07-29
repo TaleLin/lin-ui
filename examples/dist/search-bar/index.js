@@ -19,10 +19,6 @@ Component({
       value: 'search'
     },
     placeholder: String,
-    confirmType: {
-      type: String,
-      value: 'search'
-    },
     cancelText: {
       type: String,
       value: '取消'
@@ -92,7 +88,10 @@ Component({
    */
   methods: {
     onCancel() {
-      this.triggerEvent('lincancel')
+      this.triggerEvent('lincancel', {}, {
+        bubbles: true,
+        composed: true
+      });
     },
     // input属性列表
     handleInputChange(event) {
@@ -137,7 +136,10 @@ Component({
       this.setData({
         value: ''
       });
-      this.triggerEvent('linclear', event.detail);
+      this.triggerEvent('linclear', event.detail, {
+        bubbles: true,
+        composed: true
+      });
     }
   }
 });

@@ -30,10 +30,10 @@ const priceNaviConfigs = [{
   config: [{
       count: '666',
       unit: '￥',
-      unitColor: '#3963BC',
+      unitColor: '#333',
       unitSize: 28,
       unitBlod: '600',
-      countColor: '#3963BC',
+      countColor: '#333',
       countSize: 28,
       countBlod: '600',
       delete: false,

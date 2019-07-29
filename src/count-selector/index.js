@@ -1,7 +1,7 @@
 Component({
   externalClasses: [
-    'l-class', 
-    'l-symbol-class', 
+    'l-class',
+    'l-symbol-class',
     'l-count-class',
     'l-disabled-class'
   ],
@@ -41,67 +41,76 @@ Component({
     onBlur(e) {
       let {
         value
-      } = e.detail
+      } = e.detail;
       setTimeout(() => {
-        this.blurCount(value)
-      }, 50)
+        this.blurCount(value);
+      }, 50);
     },
 
     blurCount(value) {
       if (value) {
         if (value > this.properties.max) this.setData({
           count: this.properties.max
-        })
+        });
         else if (value < this.properties.min) this.setData({
           count: this.properties.min
-        })
+        });
         else this.setData({
           count: value
-        })
+        });
       } else {
         this.setData({
           count: this.properties.count
-        })
+        });
       }
       let detail = {
         count: this.data.count,
         type: 'blur'
-      }
-      this.triggerEvent('lintap', detail)
+      };
+      this.triggerEvent('lintap', detail, {
+        bubbles: true,
+        composed: true
+      });
     },
 
     reduceTap() {
-      let distance = this.data.count - this.properties.step
+      let distance = this.data.count - this.properties.step;
       if (distance <= this.properties.min) {
-        this.data.count = this.properties.min
+        this.data.count = this.properties.min;
       } else {
-        this.data.count -= this.properties.step
+        this.data.count -= this.properties.step;
       }
       this.setData({
         count: this.data.count
-      })
+      });
       let detail = {
         count: this.data.count,
         type: 'reduce'
-      }
-      this.triggerEvent('lintap', detail)
+      };
+      this.triggerEvent('lintap', detail, {
+        bubbles: true,
+        composed: true
+      });
     },
 
     addTap() {
       let distance = this.data.count + this.properties.step;
       if (distance >= this.properties.max) {
-        this.data.count = this.properties.max
+        this.data.count = this.properties.max;
       } else {
         this.data.count += this.properties.step;
       }
       this.setData({
         count: this.data.count
-      })
+      });
       let detail = {
         count: this.data.count,
         type: 'add'
-      }
-      this.triggerEvent('lintap', detail)
+      };
+      this.triggerEvent('lintap', detail, {
+        bubbles: true,
+        composed: true
+      });
     },
   }
-})
+});

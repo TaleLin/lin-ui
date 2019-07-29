@@ -32,8 +32,8 @@ Component({
       value: false,
     },
     // 微信原生接口
-    width:Number,
-    height:Number,
+    width: Number,
+    height: Number,
     icon: String,
     image: String,
     iconStyle: {
@@ -68,8 +68,10 @@ Component({
     // button点击事件
     handleTap() {
       if (this.data.disabled) return false;
-      this.triggerEvent('lintap');
-      this.triggerEvent('lintapcatch',{},{ bubbles: true });
+      this.triggerEvent('lintap', {}, {
+        bubbles: true,
+        composed: true
+      });
     },
     // 开放能力事件回调
     openTypeEvent(data) {

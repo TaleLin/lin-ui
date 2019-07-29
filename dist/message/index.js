@@ -35,7 +35,7 @@ Component({
 
   observers: {
     'show': function (show) {
-      show && this.changeStatus()
+      show && this.changeStatus();
     }
   },
 
@@ -51,7 +51,7 @@ Component({
           duration = 1500,
           success = null
         } = options;
-        this.data.success = success
+        this.data.success = success;
         this.setData({
           content,
           icon,
@@ -59,7 +59,7 @@ Component({
           duration,
           type
         });
-        this.changeStatus()
+        this.changeStatus();
         return this;
       };
     },
@@ -67,15 +67,15 @@ Component({
     changeStatus() {
       this.setData({
         status: true
-      })
-      if (this.data.timer) clearTimeout(this.data.timer)
+      });
+      if (this.data.timer) clearTimeout(this.data.timer);
       this.data.timer = setTimeout(() => {
         this.setData({
           status: false
-        })
-        if (this.data.success) this.data.success()
-        this.data.timer = null
-      }, this.properties.duration)
+        });
+        if (this.data.success) this.data.success();
+        this.data.timer = null;
+      }, this.properties.duration);
     }
   }
 });

@@ -11,40 +11,25 @@ Component({
       type: String,
       value: '￥'
     },
-    unitColor: {
-      type: String,
-      value: '#333'
-    },
-    unitSize: {
-      type: [String, Number],
-      value: 28
-    },
+    unitColor: String,
+    unitSize: Number,
     unitBold: {
-      type: String,
-      value: 'normal'
+      type: Number,
+      value: 500
     },
     count: {
       type: Number,
       value: 0.00,
       observer: 'reserveNumber'
     },
-    countColor: {
-      type: String,
-      value: '#333'
-    },
-    countSize: {
-      type: [String, Number],
-      value: 28
-    },
+    countColor: String,
+    countSize: Number,
     countBold: {
-      type: String,
-      value: 'normal'
+      type: Number,
+      value: 500
     },
     delete: Boolean,
-    delColor: {
-      type: String,
-      value: '#777'
-    },
+    delColor: String,
     reserveDigit: {
       type: Number,
       value: 2
@@ -63,21 +48,22 @@ Component({
    * 组件的方法列表
    */
   methods: {
-    reserveNumber(value) {
-      const strValue = value.toString();
+    reserveNumber() {
+      const strValue = this.data.count.toString();
       const dotIndex = strValue.indexOf('.');
       if (strValue.length - dotIndex - 1 > this.data.reserveDigit && dotIndex !== -1) {
         this.setData({
-          result: strValue.substring(0, dotIndex + this.data.reserveDigit)
+          result: strValue.substring(0, dotIndex + 1 + this.data.reserveDigit)
         });
       } else {
         this.addZero(strValue);
       }
     },
     addZero(value) {
-      const realLen = value.indexOf('.') + 1 + this.data.reserveDigit;
+      const dotIndex = value.indexOf('.') == -1 ? value.length - 1 : value.indexOf('.');
+      const realLen = dotIndex + 1 + this.data.reserveDigit;
       if (value.length < realLen && this.data.autofix) {
-        const result = value + '0'.repeat(realLen - value.length);
+        const result = dotIndex == value.indexOf('.') ? value + '0'.repeat(realLen - value.length) : value + '.' + '0'.repeat(realLen - value.length);
         this.setData({
           result
         });

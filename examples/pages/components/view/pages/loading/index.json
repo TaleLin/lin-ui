@@ -2,7 +2,12 @@
   "usingComponents": {
     "content-title": "/components/content-title/index",
     "content-card": "/components/content-card/index",
-    "l-loading":"/dist/loading/index",
+
+    "l-loading": "/dist/loading/index",
+        "l-loading": "/dist/loading/index",
+
+
+        
     "l-button": "/dist/button/index"
   }
 }
