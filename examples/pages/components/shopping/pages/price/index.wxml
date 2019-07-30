@@ -40,7 +40,7 @@
       </l-price>
       <l-price 
         l-class="price" 
-        count="666"
+        count="{{a}}"
         unit-size="28"
         count-size="28"
         unit-color="rgb(175,141,80)"
@@ -56,5 +56,3 @@
   </content-card>
 
 </content-title>
-
-<l-price count="66"/>

@@ -9,10 +9,13 @@ Component({
   properties: {
     unit: {
       type: String,
-      value: '￥'
+      value: '¥'
     },
     unitColor: String,
-    unitSize: Number,
+    unitSize: {
+      type: Number,
+      value: 28
+    },
     unitBold: {
       type: Number,
       value: 500
@@ -23,7 +26,10 @@ Component({
       observer: 'reserveNumber'
     },
     countColor: String,
-    countSize: Number,
+    countSize: {
+      type: Number,
+      value: 28
+    },
     countBold: {
       type: Number,
       value: 500
