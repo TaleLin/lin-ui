@@ -78,6 +78,7 @@ tips：按钮文案存在时按钮才会显示。当`type`属性设置为`cart`�
 | l-image-class | 覆盖图片部分的外部样式类 | String | ---- | --- |
 | l-describe-class | 覆盖文案描述部分的外部样式类 | String | ---- | --- |
 | l-button-class | 覆盖按钮部分的外部样式类 | String | ---- | --- |
+| l-class | 覆盖整个状态展示页区域的外部样式类 | String | ---- | --- |
 
 ### 状态展示页事件（StatusShow Events）
  
