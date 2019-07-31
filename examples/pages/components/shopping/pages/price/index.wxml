@@ -13,8 +13,8 @@
         count-color="{{price.countColor}}"
         unit-size="{{price.unitSize}}"
         count-size="{{price.countSize}}"
-        count-blod="{{price.countBlod}}"
-        unit-blod="{{price.unitBlod}}"
+        count-bold="{{price.countBlod}}"
+        unit-bold="{{price.unitBlod}}"
         delete="{{price.delete}}"
         del-color="{{price.delColor}}"  />
     </view>

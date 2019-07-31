@@ -9,7 +9,7 @@ Component({
   properties: {
     unit: {
       type: String,
-      value: '¥'
+      value: '￥'
     },
     unitColor: String,
     unitSize: {
@@ -17,8 +17,8 @@ Component({
       value: 28
     },
     unitBold: {
-      type: Number,
-      value: 500
+      type: String,
+      value: '500'
     },
     count: {
       type: Number,
@@ -31,8 +31,8 @@ Component({
       value: 28
     },
     countBold: {
-      type: Number,
-      value: 500
+      type: String,
+      value: '500'
     },
     delete: Boolean,
     delColor: String,

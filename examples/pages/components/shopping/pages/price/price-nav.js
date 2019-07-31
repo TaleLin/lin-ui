@@ -5,10 +5,10 @@ const priceNaviConfigs = [{
       unit: '￥',
       unitColor: '',
       unitSize: 28,
-      unitBlod: '',
+      unitBlod: 600,
       countColor: '',
       countSize: 28,
-      countBlod: '',
+      countBlod: 'normal',
       delete: false,
       delColor: ''
     },
