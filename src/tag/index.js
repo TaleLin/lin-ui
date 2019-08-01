@@ -43,7 +43,7 @@ Component({
   },
   methods: {
     handleTap() {
-      if (this.properties.disabled) return false;
+      if (this.properties.disable) return false;
       let options = {
         name: this.properties.name,
         select: this.properties.select
