@@ -4,6 +4,10 @@ Component({
     // 标签名称
     name: Object,
     // 标签颜色
+    type:{
+      type: String,
+      value: 'default'
+    },
     bgColor: String,
     fontColor: String,
     disable: Boolean,

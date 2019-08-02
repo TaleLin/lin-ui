@@ -1,6 +1,18 @@
 const tagNaviConfigs = [{
     title: "标签大小",
     config: [{
+        content: '我超级小',
+        size: 'super-mini',
+        bgColor: '',
+        fontColor: '',
+        plain: false,
+        select: false,
+        shape: 'square',
+        iconName: '',
+        iconSize: '20',
+        iconColor: '#fff',
+        location: 'r'
+      }, {
         content: '欺负我小',
         size: 'mini',
         bgColor: '',
@@ -242,18 +254,18 @@ const tagNaviConfigs = [{
       iconName: '',
       iconSize: '',
       iconColor: ''
-      }, {
-        content: '苍云军',
-        size: 'large',
-        bgColor: '#8e7a50',
-        fontColor: '',
-        plain: false,
-        select: false,
-        shape: 'square',
-        iconName: '',
-        iconSize: '',
-        iconColor: ''
-      }]
+    }, {
+      content: '苍云军',
+      size: 'large',
+      bgColor: '#8e7a50',
+      fontColor: '',
+      plain: false,
+      select: false,
+      shape: 'square',
+      iconName: '',
+      iconSize: '',
+      iconColor: ''
+    }]
   },
   {
     title: "禁用标签",
