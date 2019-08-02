@@ -13,7 +13,6 @@ gulp.task('dispose-js', () => {
     .pipe(gulp.dest('../dist/'));
 });
 
-
 gulp.task('dispose-wxss', () => {
   const path = isCustom ? `../src/${result}/*.less` : '../src/**/*.less',
     remainPath = isCustom ? `!../src/${result}/_*.less` : '!../src/**/_*.less';

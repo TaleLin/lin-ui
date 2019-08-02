@@ -27,7 +27,7 @@ Component({
     this.initMessage();
   },
 
-  lifetimes: {
+  pageLifetimes: {
     show() {
       this.initMessage();
     },
