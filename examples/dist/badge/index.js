@@ -56,8 +56,7 @@ Component({
     },
     // 点击事件
     handleTap() {
-      this.triggerEvent('lintap');
-      this.triggerEvent('lintapcatch', {}, { bubbles: true });
+      this.triggerEvent('lintap',{},{ bubbles: true, composed: true });
     },
   }
 });

@@ -89,8 +89,7 @@ Component({
     },
 
     onBtn() {
-      this.triggerEvent('lintap', {}, {});
-      this.triggerEvent('lintapcatch', {}, { bubbles: true });
+      this.triggerEvent('lintap', {}, { bubbles: true, composed: true });
     }
   }
 })
