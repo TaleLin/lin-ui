@@ -64,7 +64,7 @@ Component({
     onMaskTap(e) {
 
       let detail = true;
-      let option = {};
+      let option = { bubbles: true, composed: true };
 
       if (this.data.locked !== true) {
         this.setData({

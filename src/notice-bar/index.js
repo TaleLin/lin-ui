@@ -126,8 +126,7 @@ Component({
       }
     },
     handleTap() {
-      this.triggerEvent('lintap');
-      this.triggerEvent('lincatchtap', {}, { bubbles: true });
+      this.triggerEvent('lintap',{},{ bubbles: true, composed: true });
       this.setData({
         timer: null
       });
@@ -135,11 +134,10 @@ Component({
     onSwip(e){
       this.triggerEvent('lintap', {
         ...e.currentTarget.dataset
-      });
+      },{ bubbles: true, composed: true });
     },
     onIconTap(){
-      this.triggerEvent('linicontap');
-      this.triggerEvent('liniconcatchtap', {}, { bubbles: true });
+      this.triggerEvent('linicontap',{},{ bubbles: true, composed: true });
       this.setData({
         timer: null
       });

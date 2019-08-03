@@ -67,7 +67,7 @@ Component({
         count: this.data.count,
         type: 'blur'
       }
-      this.triggerEvent('lintap', detail)
+      this.triggerEvent('lintap', detail,{ bubbles: true, composed: true })
     },
 
     reduceTap() {
@@ -84,7 +84,7 @@ Component({
         count: this.data.count,
         type: 'reduce'
       }
-      this.triggerEvent('lintap', detail)
+      this.triggerEvent('lintap', detail,{ bubbles: true, composed: true })
     },
 
     addTap() {
@@ -101,7 +101,7 @@ Component({
         count: this.data.count,
         type: 'add'
       }
-      this.triggerEvent('lintap', detail)
+      this.triggerEvent('lintap', detail,{ bubbles: true, composed: true })
     },
   }
 })

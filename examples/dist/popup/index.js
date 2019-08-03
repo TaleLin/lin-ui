@@ -54,7 +54,7 @@ Component({
     // 点击事件
     onPupopTap(e) {
       let detail = true;
-      let option = {};
+      let option = { bubbles: true, composed: true };
       if (this.data.locked !== true) {
         this.setData({
           show: !this.data.show

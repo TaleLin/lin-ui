@@ -90,7 +90,7 @@ Component({
         idx,
         path:this.route
       };
-      let option = {};
+      let option = { bubbles: true, composed: true };
       this.triggerEvent('lintap', detail, option);
     },
     showRedDot(idx) {
