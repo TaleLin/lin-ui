@@ -6,7 +6,7 @@ Component({
     // 标签颜色
     type:{
       type: String,
-      value: 'default'
+      value: 'touch'
     },
     bgColor: String,
     fontColor: String,

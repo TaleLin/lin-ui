@@ -2,7 +2,7 @@ Component({
   /**
    * 组件的属性列表
    */
-  externalClasses: ['l-class', 'l-unit-class', 'l-count-class'],
+  externalClasses: ['l-deleted-class', 'l-unit-class', 'l-count-class', 'l-class'],
   options: {
     multipleSlots: true // 在组件定义时的选项中启用多slot支持
   },
@@ -11,30 +11,30 @@ Component({
       type: String,
       value: '￥'
     },
-    unitColor: String,
-    unitSize: {
-      type: Number,
-      value: 28
+    size: {
+      type: String,
+      value: '28'
     },
-    unitBold: {
+    color: {
+      type: String,
+      value: '#3963BC'
+    },
+    bold: {
       type: String,
       value: '500'
     },
+    unitColor: String,
+    unitSize: String,
+    unitBold: String,
     count: {
-      type: Number,
-      value: 0.00,
+      type: String,
+      value: '0.00',
       observer: 'reserveNumber'
     },
     countColor: String,
-    countSize: {
-      type: Number,
-      value: 28
-    },
-    countBold: {
-      type: String,
-      value: '500'
-    },
-    delete: Boolean,
+    countSize: String,
+    countBold: String,
+    deleted: Boolean,
     delColor: String,
     reserveDigit: {
       type: Number,
@@ -56,13 +56,20 @@ Component({
   methods: {
     reserveNumber() {
       const strValue = this.data.count.toString();
+      const isNumber = !isNaN(Number(this.data.count));
       const dotIndex = strValue.indexOf('.');
       if (strValue.length - dotIndex - 1 > this.data.reserveDigit && dotIndex !== -1) {
         this.setData({
-          result: strValue.substring(0, dotIndex + 1 + this.data.reserveDigit)
+          result: isNumber ? strValue.substring(0, dotIndex + 1 + this.data.reserveDigit) : strValue
         });
       } else {
-        this.addZero(strValue);
+        if (isNumber) {
+          this.addZero(strValue);
+        } else {
+          this.setData({
+            result: strValue
+          });
+        }
       }
     },
     addZero(value) {
