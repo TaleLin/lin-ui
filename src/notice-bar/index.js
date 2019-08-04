@@ -126,10 +126,7 @@ Component({
       }
     },
     handleTap() {
-      this.triggerEvent('lintap', {}, {
-        bubbles: true,
-        composed: true
-      });
+      this.triggerEvent('lintap',{},{ bubbles: true, composed: true });
       this.setData({
         timer: null
       });
@@ -137,16 +134,10 @@ Component({
     onSwip(e) {
       this.triggerEvent('lintap', {
         ...e.currentTarget.dataset
-      }, {
-        bubbles: true,
-        composed: true
-      });
+      },{ bubbles: true, composed: true });
     },
-    onIconTap() {
-      this.triggerEvent('linicontap', {}, {
-        bubbles: true,
-        composed: true
-      });
+    onIconTap(){
+      this.triggerEvent('linicontap',{},{ bubbles: true, composed: true });
       this.setData({
         timer: null
       });

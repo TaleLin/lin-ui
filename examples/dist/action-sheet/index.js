@@ -87,7 +87,7 @@ Component({
         success
       } = this.data;
       success && success({ ...e.currentTarget.dataset });
-      this.triggerEvent('linitemtap', { ...e.currentTarget.dataset });
+      this.triggerEvent('linitemtap', { ...e.currentTarget.dataset },{ bubbles: true, composed: true });
       this._hideActionSheet();
     },
 
@@ -112,7 +112,7 @@ Component({
       });
       this.triggerEvent('lincancel', {
         errMsg: 'showactionsheet:fail cancel'
-      });
+      },{ bubbles: true, composed: true });
       this._hideActionSheet();
     },
 

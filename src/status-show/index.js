@@ -89,10 +89,7 @@ Component({
     },
 
     onBtn() {
-      this.triggerEvent('lintap', {}, {
-        bubbles: true,
-        composed: true
-      });
+      this.triggerEvent('lintap', {}, { bubbles: true, composed: true });
     }
   }
 });

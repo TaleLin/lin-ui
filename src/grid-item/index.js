@@ -22,9 +22,7 @@ Component({
         tapGridItem(e) {
             this.triggerEvent('lintap', {
                 ...e
-            }, {
-                composed: true
-            })
+            }, { bubbles: true, composed: true })
         },
     }
 });

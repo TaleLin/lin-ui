@@ -70,7 +70,7 @@ Component({
         tapGrid(e) {
             this.triggerEvent('lintap', {
                 index:this.data.currentIndex
-            })
+            },{ bubbles: true, composed: true })
         }
     }
 });
