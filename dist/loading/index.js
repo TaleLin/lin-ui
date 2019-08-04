@@ -1,5 +1,5 @@
 Component({
-  externalClasses: ['l-container-class','l-class'],
+  externalClasses: ['l-container-class', 'l-class'],
   properties: {
     // 显示与隐藏
     show: {
@@ -30,9 +30,40 @@ Component({
     fullScreen: {
       type: Boolean,
       value: false,
-    }
+    },
   },
+
+  attached() {
+    this.initLoading();
+  },
+
   methods: {
+    initLoading() {
+      wx.lin = wx.lin || {};
+      wx.lin.showLoading = (options = {}) => {
+        const {
+          type = 'rotate',
+          color = '',
+          size = 'default',
+          custom = false,
+          fullScreen = false
+        } = options;
+        this.setData({
+          type,
+          color,
+          size,
+          custom,
+          fullScreen,
+          show: true
+        });
+      };
+      wx.lin.hideLoading = () => {
+        this.setData({
+          show: false
+        })
+      }
+    },
+
     // 阻止滑动
     doNothingMove(e) {
       // do nothing……
