@@ -17,9 +17,9 @@ Component({
       type: Number,
       value: 28
     },
-    frontIconColor:{
-      type:String,
-      value:'#3683D6'
+    frontIconColor: {
+      type: String,
+      value: '#3683D6'
     },
     endIconName: {
       type: String,
@@ -29,9 +29,9 @@ Component({
       type: Number,
       value: 28
     },
-    endIconColor:{
-      type:String,
-      value:'#3683D6'
+    endIconColor: {
+      type: String,
+      value: '#3683D6'
     },
     // 背景颜色
     backgroundcolor: {
@@ -83,7 +83,7 @@ Component({
           const duration = rect.width / 40 * this.data.speed;
           const animation = wx.createAnimation({
             duration: duration,
-            timingFunction: "linear",
+            timingFunction: 'linear',
           });
           this.setData({
             wrapWidth: wrapRect.width,
@@ -126,20 +126,18 @@ Component({
       }
     },
     handleTap() {
-      this.triggerEvent('lintap');
-      this.triggerEvent('lincatchtap', {}, { bubbles: true });
+      this.triggerEvent('lintap',{},{ bubbles: true, composed: true });
       this.setData({
         timer: null
       });
     },
-    onSwip(e){
+    onSwip(e) {
       this.triggerEvent('lintap', {
         ...e.currentTarget.dataset
-      });
+      },{ bubbles: true, composed: true });
     },
     onIconTap(){
-      this.triggerEvent('linicontap');
-      this.triggerEvent('liniconcatchtap', {}, { bubbles: true });
+      this.triggerEvent('linicontap',{},{ bubbles: true, composed: true });
       this.setData({
         timer: null
       });

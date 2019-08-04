@@ -9,7 +9,7 @@
                     <template is="tab-item" data="{{item,activeKey,hasLine,activeColor,inactiveColor,aminmatedForLine}}" wx:else />
                     <view class="l-tab-line {{item.key===activeKey?'l-class-line':''}} {{aminmatedForLine?'l-line-aminmated':''}}" wx:if="{{hasLine}}" style="background:{{item.key===activeKey?activeColor:inactiveColor}}"></view>
                 </view>
-                <view wx:else id="{{item.key}}" class="l-tabs-item {{equalWidth?'l-tabs-equal-width':'l-tabs-unequal-width'}} {{item.key===activeKey ?'l-class-active l-tabs-active':'l-class-inactive l-tabs-inactive'}} {{'l-tab-image-placement-'+picPlacement}}" style="color:{{item.key===activeKey?activeColor:inactiveColor}}" data-key="{{item.key}}" data-index="{{index}}" bind:tap="handleChange">
+                <view wx:else id="key-{{item.key}}" class="l-tabs-item {{equalWidth?'l-tabs-equal-width':'l-tabs-unequal-width'}} {{item.key===activeKey ?'l-class-active l-tabs-active':'l-class-inactive l-tabs-inactive'}} {{'l-tab-image-placement-'+picPlacement}}" style="color:{{item.key===activeKey?activeColor:inactiveColor}}" data-key="{{item.key}}" data-index="{{index}}" bind:tap="handleChange">
                     <slot name="{{item.key}}"></slot>
                     <view class="l-tab-line {{item.key===activeKey?'l-class-line':''}} {{aminmatedForLine?'l-line-aminmated':''}}" wx:if="{{hasLine}}" style="background:{{item.key===activeKey?activeColor:inactiveColor}}"></view>
                 </view>

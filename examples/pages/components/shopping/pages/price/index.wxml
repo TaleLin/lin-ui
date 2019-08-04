@@ -13,8 +13,8 @@
         count-color="{{price.countColor}}"
         unit-size="{{price.unitSize}}"
         count-size="{{price.countSize}}"
-        count-blod="{{price.countBlod}}"
-        unit-blod="{{price.unitBlod}}"
+        count-bold="{{price.countBlod}}"
+        unit-bold="{{price.unitBlod}}"
         delete="{{price.delete}}"
         del-color="{{price.delColor}}"  />
     </view>
@@ -40,7 +40,7 @@
       </l-price>
       <l-price 
         l-class="price" 
-        count="666"
+        count="{{a}}"
         unit-size="28"
         count-size="28"
         unit-color="rgb(175,141,80)"

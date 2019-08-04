@@ -156,7 +156,7 @@ Component({
     // 点击 右边区域
     onRightTap(e) {
       let detail = 'click right';
-      let option = {};
+      let option = { bubbles: true, composed: true };
       if (this.properties.autoClose) {
         this.setData({
           popup: false,
@@ -171,7 +171,7 @@ Component({
     // 打开后触发
     onOpenTap(e) {
       let detail = true;
-      let option = {};
+      let option = { bubbles: true, composed: true };
 
       this.triggerEvent('slideopen', detail, option);
     },
@@ -179,7 +179,7 @@ Component({
     // 关闭后触发
     onCloseTap(e) {
       let detail = false;
-      let option = {};
+      let option = { bubbles: true, composed: true };
 
       this.triggerEvent('slideclose', detail, option);
     }
