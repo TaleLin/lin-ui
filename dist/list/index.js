@@ -77,7 +77,7 @@ Component({
             }
             this.triggerEvent('lintap', {
                 e
-            }, {})
+            }, { bubbles: true, composed: true })
         }
     }
 });

@@ -19,3 +19,8 @@
   height: 30rpx !important;
   line-height: 30rpx !important;
 }
+
+.a-price{
+  color: #333 !important;
+  font-size: 40rpx !important;
+}

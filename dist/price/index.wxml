@@ -1,8 +1,8 @@
-<view class='price-container l-class {{delete ? "price-del" : ""}}' style='color: {{delColor}}'>
+<view class='price-container l-class {{deleted ? "price-del l-deleted-class" : ""}}' style='color: {{delColor?delColor:color}}'>
   <slot name="before"/>
   <!-- unit -->
-  <text class="l-unit-class" style="color: {{delete?delColor:unitColor}}; font-size: {{unitSize}}rpx; font-weight: {{unitBold}}">{{unit}}</text>
-<!-- count -->
-  <text class="l-count-class" style="color: {{delete?delColor:countColor}}; font-size: {{countSize}}rpx; font-weight: {{countBold}}">{{result}}</text>
+  <text class="l-unit-class" style="color: {{unitColor?unitColor:color}}; font-size: {{unitSize?unitSize:size}}rpx; font-weight: {{unitBold?unitBold:bold}}">{{unit}}</text>
+  <!-- count -->
+  <text class="l-count-class" style="color: {{countColor?countColor:color}}; font-size: {{countSize?countSize:size}}rpx; font-weight: {{countBold?countBold:bold}}">{{result}}</text>
   <slot name="after" />
 </view>

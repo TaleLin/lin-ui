@@ -155,7 +155,7 @@ Component({
     onCancelTap(e) {
 
       let detail = 'cancel';
-      let option = {};
+      let option = { bubbles: true, composed: true };
 
       const {
         success
@@ -175,7 +175,7 @@ Component({
     // 背景点击事件
     onDialogTap(e) {
       let detail = true;
-      let option = {};
+      let option = { bubbles: true, composed: true };
 
       if (this.data.locked !== true) {
         this.setData({
