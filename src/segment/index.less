@@ -1,4 +1,7 @@
 /* components/tabs/index.wxss */
+.l-tabs {
+    overflow: auto;
+}
 .l-tabs-header {
     display: flex;
     width: 100%;
@@ -61,32 +64,12 @@
 
 .l-placement-top,
 .l-placement-bottom {
-
+    height: 80rpx;
     .l-tabs-header {
-        height: 80rpx;
+        height: 100%;
 
         .l-tabs-item {
             min-height: 100%;
-        }
-    }
-}
-
-.l-placement-left,
-.l-placement-right {
-    display: inline-block;
-
-    .l-tabs-header {
-        flex-direction: column;
-        width: 160rpx;
-
-        &>view {
-            width: 100%;
-            height: 80rpx;
-            background: #f6f8fa;
-        }
-
-        &>.l-tabs-active {
-            background: #fff;
         }
     }
 }
@@ -119,19 +102,28 @@
 }
 
 .l-tabs-vertical {
+    width: 160rpx;
     .l-tabsscroll {
-        width: 160rpx;
+        width: 100%;
+        height:100%;
     }
 
     .l-tabs-header {
         height: 100%;
-        min-height: 80rpx;
+        display: inline-block;
+        width: 100%;
+        flex-direction: column;   
         -webkit-overflow-scrolling: touch;
         white-space: nowrap;
+        overflow-x: hidden;
 
+        .l-tabs-item.l-tabs-active {
+            background: #fff;
+        }
         .l-tabs-item {
             overflow: visible;
             height: 80rpx;
+            background: #f6f8fa;
         }
     }
 }
@@ -149,6 +141,9 @@
 }
 
 .l-tabs-horizontal {
+    .l-tabsscroll {
+        height: 100%;
+    }
     .l-tab-line {
         height: 4rpx;
         width: 0;
@@ -184,7 +179,8 @@
 
 .l-placement-top {
     .l-tab-line {
-        bottom: 0
+        bottom: 0;
+        transform: translateY(-100%)
     }
 
     .l-tabs-header-line {

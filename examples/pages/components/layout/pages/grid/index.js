@@ -56,7 +56,7 @@ Page({
 
   clickGrid(e) {
     wx.showToast({
-      title: e.currentTarget.dataset.text,
+      title: e.detail.cell.text,
       icon: 'none'
     })
   },

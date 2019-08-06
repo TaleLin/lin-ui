@@ -6,9 +6,15 @@ Component({
     },
     externalClasses: ['l-grid-item'],
     properties: {
-        key: String
+        key: String,
+        cell:{
+            type:Object,
+            value:{}
+        },
     },
-    data: {},
+    data: {
+        index:0,
+    },
     attached() {
 
     },
@@ -20,8 +26,9 @@ Component({
     },
     methods: {
         tapGridItem(e) {
+            console.log(this)
             this.triggerEvent('lintap', {
-                ...e
+                ...this.data
             }, { bubbles: true, composed: true })
         },
     }
