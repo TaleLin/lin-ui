@@ -45,6 +45,10 @@ Component({
             type: Boolean,
             value: true
         },
+        even:{
+            type: Boolean,
+            value: true
+        },
         width:Number,
         height:Number,
         itemHeight:Number,
