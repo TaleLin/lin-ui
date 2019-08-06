@@ -10,7 +10,7 @@
     </content-card>
 
     <content-card l-content="content" name="非等宽选项卡">
-      <l-segment bind:linchange="changeTabs" l-class-header-line="header-line" equal-width="{{false}}" scrollable aminmated-for-line="{{true}}">
+      <l-segment bind:linchange="changeTabs" l-class-header-line="header-line" even="{{false}}" scrollable aminmated-for-line="{{true}}">
         <l-segment-item tab="精选" key="one">
           <view class="tab-content">精选</view>
         </l-segment-item>
@@ -53,7 +53,8 @@
     </content-card>
 
     <content-card l-content="content" name="选项卡宽高">
-      <l-segment active-key="two" scrollable width="200" height="600" item-height="100" item-width="220" bind:linchange="changeTabs" placement="{{placement}}">
+      <l-segment active-key="two" scrollable width="200" height="600"  
+      item-height="100" bind:linchange="changeTabs" placement="{{placement}}" even="{{true}}">
         <l-segment-item tab="客厅" key="one" />
         <l-segment-item tab="卧室" key="two" />
         <l-segment-item tab="厨房" key="three" />
