@@ -73,14 +73,7 @@ Component({
     tapAvatar: function (e) {
       this.triggerEvent('lintap', {
         e
-      }, {
-        bubbles: false
-      });
-      this.triggerEvent('lintapcatch', {
-        e
-      }, {
-        bubbles: true
-      });
+      }, { bubbles: true, composed: true });
     },
   }
 });
