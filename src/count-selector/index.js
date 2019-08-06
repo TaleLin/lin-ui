@@ -36,7 +36,13 @@ Component({
    * 组件的方法列表
    */
   methods: {
-    doNothing() { },
+    doNothing(e) {
+      const { type } = e.currentTarget.dataset;
+      this.triggerEvent('linout', { type }, {
+        bubbles: true,
+        composed: true
+      });
+    },
 
     onBlur(e) {
       let {

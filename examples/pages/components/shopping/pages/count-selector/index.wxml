@@ -11,6 +11,8 @@
         max="{{count.max}}"
         step="{{count.step}}"
         disabled="{{count.disabled}}"
+        bind:lintap="onTap"
+        bind:linout="onOut"
     />
   </content-card>
   
