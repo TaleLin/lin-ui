@@ -18,14 +18,6 @@
         align-items: center;
     }
 
-    .l-tabs-equal-width {
-        flex: 1;
-    }
-
-    .l-tabs-unequal-width {
-        padding: 0 20rpx;
-    }
-
     .l-icon-active,
     .l-tabs-active {
         color: #333333;
@@ -110,7 +102,6 @@
 
     .l-tabs-header {
         height: 100%;
-        display: inline-block;
         width: 100%;
         flex-direction: column;   
         -webkit-overflow-scrolling: touch;
@@ -120,11 +111,23 @@
         .l-tabs-item.l-tabs-active {
             background: #fff;
         }
+
+        .l-tabs-equal-width {
+            height: 80rpx;
+        }
+
+        .l-tabs-unequal-width {
+            flex: 1;
+            padding: 10px 0;
+        }
+
         .l-tabs-item {
             overflow: visible;
-            height: 80rpx;
             background: #f6f8fa;
+            width: 100%;
         }
+
+        
     }
 }
 
@@ -141,6 +144,15 @@
 }
 
 .l-tabs-horizontal {
+
+    .l-tabs-equal-width {
+        flex: 1;
+    }
+
+    .l-tabs-unequal-width {
+        padding: 0 20rpx;
+    }
+
     .l-tabsscroll {
         height: 100%;
     }
