@@ -1,5 +1,5 @@
 Component({
-  externalClasses: ['l-class'],
+  externalClasses: ['l-class','l-loading-class'],
   options: {
     multipleSlots: true // 在组件定义时的选项中启用多slot支持
   },
@@ -8,6 +8,10 @@ Component({
     custom: Boolean,
     line: Boolean,
     color: String,
+    size: {
+      type: String,
+      value: '28'
+    },
     type: {
       type: String,
       value: 'loading'
@@ -38,6 +42,7 @@ Component({
           custom = false,
           line = false,
           color = '',
+          size = '28',
           type = 'loading',
           endText = '我是有底线的',
           loadingText = '加载中...'
@@ -46,6 +51,7 @@ Component({
           custom,
           line,
           color,
+          size,
           type,
           endText,
           loadingText,

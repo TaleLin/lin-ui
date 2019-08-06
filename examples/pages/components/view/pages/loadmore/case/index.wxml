@@ -1,4 +1,4 @@
-<l-loadmore show="{{show}}" type="{{type}}">
+<l-loadmore show="{{show}}" type="{{type}}" size="36" l-class="loading">
   <view class="container" slot="content">
     <view class="content" wx:for="{{caseData}}" wx:key="{{item.title}}">
       <view class="des">

@@ -7,7 +7,7 @@
 
     <content-card card-padding="{{false}}" name="自定义页底加载">
       <l-loadmore show custom>
-        <view slot="custom" class="custom-container">
+        <view slot="loading" class="custom-container">
           <image src="/images/static/loadmor.gif" class="custom-img"></image>
           <text class="custom-txt">加载中...</text>
         </view>
