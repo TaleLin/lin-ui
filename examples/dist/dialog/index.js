@@ -134,7 +134,7 @@ Component({
     // 确定按钮
     onConfirmTap(e) {
       let detail = 'confirm';
-      let option = {};
+      let option = { bubbles: true, composed: true };
 
       const {
         success
