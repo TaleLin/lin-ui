@@ -1,4 +1,4 @@
-<view class="l-tabs {{'l-placement-'+placement}} {{placement=='left'||placement=='right'?'l-tabs-vertical':'l-tabs-horizontal'}} {{scrollable ? 'l-tabs-scroll':''}}">
+<view class="l-tabs {{'l-placement-'+placement}} {{placement=='left'||placement=='right'?'l-tabs-vertical':'l-tabs-horizontal'}} {{scrollable ? 'l-tabs-scroll':''}}"  style="{{width?'width:'+ width +'rpx;':'' }}">
     <scroll-view scroll-x="{{placement=='top'||placement=='bottom' && scrollable}}" scroll-y="{{placement=='left'||placement=='right' && scrollable}}" scroll-top="{{transformY}}" scroll-left="{{transformX}}" scroll-with-animation 
     class="l-tabsscroll l-class {{hasLine?'l-tabs-header-line l-class-header-line':''}}"
     style="{{width?'width:'+ width +'rpx;':'' }} {{height?'height:'+height+'rpx':''}}">
