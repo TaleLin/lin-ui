@@ -53,8 +53,8 @@
     </content-card>
 
     <content-card l-content="content" name="选项卡宽高">
-      <l-segment active-key="two" scrollable width="200" height="600"  
-      item-height="100" bind:linchange="changeTabs" placement="{{placement}}" even="{{true}}">
+      <l-segment active-key="two" scrollable width="180" height="600"  
+      item-height="90" bind:linchange="changeTabs" placement="left" even="{{false}}">
         <l-segment-item tab="客厅" key="one" />
         <l-segment-item tab="卧室" key="two" />
         <l-segment-item tab="厨房" key="three" />
