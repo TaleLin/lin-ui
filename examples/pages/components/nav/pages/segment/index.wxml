@@ -1,5 +1,5 @@
 <!--pages/components/nav/pages/segment/index.wxml-->
-<view class='container'>
+<!-- <view class='container'>
   <content-title name="Segment" describe="选项卡">
     <content-card l-content="content" name="等宽选项卡">
       <l-segment bind:linchange="changeTabs">
@@ -52,15 +52,15 @@
       </l-segment>
     </content-card>
 
-    <content-card l-content="content" name="选项卡宽高">
-      <l-segment active-key="two" scrollable width="180" height="600"  
+    <content-card l-content="content" name="选项卡宽高"> -->
+      <l-segment active-key="two" scrollable width="180" height="2000"  
       item-height="90" bind:linchange="changeTabs" placement="left" even="{{false}}">
         <l-segment-item tab="客厅" key="one" />
         <l-segment-item tab="卧室" key="two" />
         <l-segment-item tab="厨房" key="three" />
         <l-segment-item tab="浴室" key="four" />
       </l-segment>
-      <l-button l-class="toggle-button" bind:lintap="toggleTabPlacement" icon="ellipsis" icon-size="28"></l-button>
+      <!-- <l-button l-class="toggle-button" bind:lintap="toggleTabPlacement" icon="ellipsis" icon-size="28"></l-button>
     </content-card>
 
 
@@ -119,4 +119,4 @@
       </l-segment>
     </content-card>
   </content-title>
-</view>
+</view> -->
