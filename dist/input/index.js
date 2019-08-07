@@ -16,6 +16,10 @@ Component({
       type: String,
       value: ''
     },
+    hideLabel:{
+      type: Boolean,
+      value: false
+    },
     // 是否自定义label部分
     labelCustom: {
       type: Boolean,
