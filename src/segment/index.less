@@ -6,7 +6,6 @@
     display: flex;
     width: 100%;
     flex-direction: row;
-    background: rgba(255, 255, 255, 1);
     align-items: center;
 
     .l-tabs-item {
@@ -97,12 +96,15 @@
     width: 160rpx;
     .l-tabsscroll {
         width: 100%;
-        height:100%;
+    }
+
+    .l-tabs-equal-header {
+        height: 100%;
     }
 
     .l-tabs-header {
-        height: 100%;
         width: 100%;
+        
         flex-direction: column;   
         -webkit-overflow-scrolling: touch;
         white-space: nowrap;
@@ -112,13 +114,12 @@
             background: #fff;
         }
 
-        .l-tabs-equal-width {
+        .l-tabs-unequal-width {
             height: 80rpx;
         }
 
-        .l-tabs-unequal-width {
+        .l-tabs-equal-width {
             flex: 1;
-            padding: 10px 0;
         }
 
         .l-tabs-item {
