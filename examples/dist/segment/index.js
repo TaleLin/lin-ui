@@ -123,22 +123,26 @@ Component({
             const {
                 placement,
                 activeKey,
-                tabList
+                tabList,
+                currentIndex
             } = this.data;
+            
             this._getRect('#key-' + activeKey)
                 .then((res) => {
+            
                     if (['top', 'bottom'].indexOf(placement) !== -1) {
                         this.setData({
                             transformX: res.left > 0 ? res.left : 'auto',
                             transformY: 0
                         });
                     } else {
+                        const height = res.height;
                         this._getRect('.l-tabs-header')
                             .then((navRect) => {
-                                const transformY = res.top - navRect.top - navRect.height / 2;
+                                const transformY = height * currentIndex - height / 2;
                                 this.setData({
                                     transformX: 0,
-                                    transformY: transformY
+                                    transformY: transformY > 0 ? transformY : 0
                                 });
                             });
                     }
