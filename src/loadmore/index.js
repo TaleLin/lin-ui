@@ -1,5 +1,5 @@
 Component({
-  externalClasses: ['l-class','l-loading-class'],
+  externalClasses: ['l-class','l-loading-class','l-end-class','l-line-class'],
   options: {
     multipleSlots: true // 在组件定义时的选项中启用多slot支持
   },
