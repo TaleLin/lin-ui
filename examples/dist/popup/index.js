@@ -23,7 +23,7 @@ Component({
     // slot的位置
     contentAlign: {
       type: String,
-      value: ''
+      value: 'center'
     },
     // 锁定
     locked: {
@@ -32,6 +32,9 @@ Component({
     }
   },
 
+  attached() {
+    this._init();
+  },
   /**
    * 组件的初始数据
    */
@@ -43,8 +46,31 @@ Component({
    * 组件的方法列表
    */
   methods: {
+    _init() {
+      wx.lin = wx.lin || {};
+      wx.lin.showPopup = (options) => {
+        const {
+          zIndex = 99,
+          animation = 'show',
+          contentAlign = 'center',
+          locked = false
+        } = { ...options };
+        this.setData({
+          zIndex,
+          animation,
+          contentAlign,
+          locked,
+          show: true
+        });
+      };
+      wx.lin.hidePopup = () => {
+        this.setData({
+          show: false
+        });
+      };
+    },
     // 阻止滑动
-    doNothingMove(e) {
+    doNothingMove() {
       // do nothing……
     },
     doNothingTap() {
@@ -52,18 +78,16 @@ Component({
     },
 
     // 点击事件
-    onPupopTap(e) {
+    onPupopTap() {
       let detail = true;
       let option = { bubbles: true, composed: true };
       if (this.data.locked !== true) {
         this.setData({
           show: !this.data.show
-        })
+        });
       }
 
       this.triggerEvent('lintap', detail, option);
     }
   }
-})
-
-
+});
