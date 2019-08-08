@@ -68,11 +68,7 @@ Component({
             leftData: this.data.leftData,
             rightData: this.data.rightData
           }, () => {
-<<<<<<< HEAD
             this._render(data, ++i, false, success);
-=======
-            this._render(data, ++i, refresh, success);
->>>>>>> develop
           });
         });
       } else {
