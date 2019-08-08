@@ -1,8 +1,7 @@
-// pages/components/water/index.js
 Component({
   /**
-     * 组件的属性列表
-     */
+  * 组件的属性列表
+  */
   properties: {
     columnGap: {
       type: String,
@@ -11,8 +10,8 @@ Component({
   },
 
   /**
-     * 组件的初始数据
-     */
+  * 组件的初始数据
+  */
   data: {
     data: [],
     leftData: [],
@@ -24,43 +23,42 @@ Component({
   },
 
   /**
-     * 组件的方法列表
-     */
+   * 组件的方法列表
+   */
   methods: {
     _init() {
       wx.lin = wx.lin || {};
-      wx.lin.renderWaterFlow = (data = [], refresh = false , success) => {
+      wx.lin.renderWaterFlow = (data = [], refresh = false, success) => {
         if (Object.prototype.toString.call(data) !== '[object Array]') {
           console.error('[data]参数类型错误，渲染失败');
           return false;
         }
-        if(refresh){
+        if (refresh) {
           this.data.leftData = [];
           this.data.rightData = [];
         }
-        this._select(data).then(() => {
+        this._select(data, refresh).then(() => {
           success && success();
         });
       };
     },
-    _select(data) {
+    _select(data, refresh) {
       const query = wx.createSelectorQuery().in(this);
       this.columnNodes = query.selectAll('#left, #right');
 
       return new Promise((resolve) => {
-        this._render(data, 0, () => {
+        this._render(data, 0, refresh, () => {
           resolve();
         });
       });
     },
-    _render(data, i, success) {
+    _render(data, i, refresh, success) {
       if (data.length > i) {
         this.columnNodes.boundingClientRect().exec(res => {
           const rects = res[0];
-          const leftHeight = rects[0].height;
-          const rightHeight = rects[1].height;
-
-          if (leftHeight <= rightHeight) {
+          this.data.leftHeight = rects[0].height;
+          this.data.rightHeight = rects[1].height;
+          if (this.data.leftHeight <= this.data.rightHeight || refresh) {
             this.data.leftData.push(data[i]);
           } else {
             this.data.rightData.push(data[i]);
