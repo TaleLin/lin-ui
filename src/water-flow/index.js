@@ -68,7 +68,7 @@ Component({
             leftData: this.data.leftData,
             rightData: this.data.rightData
           }, () => {
-            this._render(data, ++i, success);
+            this._render(data, ++i, refresh, success);
           });
         });
       } else {
