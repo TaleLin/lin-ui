@@ -12,7 +12,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    wx.lin.renderWaterFlow(product)
+    wx.lin.renderWaterFlow(product.slice(0,3),true)
   },
 
   /**
