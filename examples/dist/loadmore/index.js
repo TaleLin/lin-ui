@@ -34,6 +34,12 @@ Component({
     this._init();
   },
 
+  pageLifetimes: {
+    show() {
+      this._init();
+    },
+  },
+
   methods: {
     _init() {
       wx.lin = wx.lin || {};

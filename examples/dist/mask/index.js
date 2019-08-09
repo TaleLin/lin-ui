@@ -56,12 +56,12 @@ Component({
    */
   methods: {
     // 阻止滑动
-    doNothingMove(e) {
+    doNothingMove() {
       // do nothing……
     },
 
     // 点击事件
-    onMaskTap(e) {
+    onMaskTap() {
 
       let detail = true;
       let option = { bubbles: true, composed: true };
@@ -70,7 +70,7 @@ Component({
         this.setData({
           // fullScreen: 'hide',
           show: false,
-        })
+        });
       }
       this.triggerEvent('lintap', detail, option);
     }
@@ -80,4 +80,4 @@ Component({
   },
 
 
-})
+});

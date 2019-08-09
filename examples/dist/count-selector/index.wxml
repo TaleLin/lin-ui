@@ -4,11 +4,14 @@
         data-type="reduce">
     <text>-</text>
   </view>
-  <input  class="l-count-class count" 
+  <input  wx:if="{{focus}}"
+          class="l-count-class count" 
           disabled="{{disabled}}" 
-          type="number" 
+          type="number"
+          focus="{{focus}}" 
           value="{{count}}"
           bindblur="onBlur"></input>
+  <view wx:else class="l-count-class count" bindtap="onCount">{{count}}</view>        
   <view class="l-symbol-class symbol {{count>=max|| disabled?'disabled l-disabled-class':'abled l-symbol-class'}}" 
         catchtap="{{count>=max|| disabled?'doNothing':'addTap'}}"
         data-type="reduce">
