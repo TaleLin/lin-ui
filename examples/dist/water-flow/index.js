@@ -22,6 +22,11 @@ Component({
     this._init();
   },
 
+  pageLifetimes: {
+    show() {
+      this._init();
+    }
+  },
   /**
    * 组件的方法列表
    */
@@ -68,11 +73,7 @@ Component({
             leftData: this.data.leftData,
             rightData: this.data.rightData
           }, () => {
-<<<<<<< HEAD
             this._render(data, ++i, false, success);
-=======
-            this._render(data, ++i, refresh, success);
->>>>>>> develop
           });
         });
       } else {
