@@ -1,4 +1,3 @@
-
 <!-- mask.wxml -->
 <view
   class="container-mask  {{center? 'center' : ''}}"

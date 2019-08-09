@@ -35,6 +35,12 @@ Component({
   attached() {
     this._init();
   },
+
+  pageLifetimes: {
+    show() {
+      this._init();
+    },
+  },
   /**
    * 组件的初始数据
    */

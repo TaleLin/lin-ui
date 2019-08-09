@@ -29,7 +29,7 @@ Component({
    * 组件的初始数据
    */
   data: {
-
+    focus: false
   },
 
   /**
@@ -44,7 +44,16 @@ Component({
       });
     },
 
+    onCount() {
+      this.setData({
+        focus: true
+      });
+    },
+
     onBlur(e) {
+      this.setData({
+        focus: false
+      });
       let {
         value
       } = e.detail;
