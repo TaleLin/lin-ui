@@ -22,6 +22,11 @@ Component({
     this._init();
   },
 
+  pageLifetimes: {
+    show() {
+      this._init();
+    }
+  },
   /**
    * 组件的方法列表
    */
