@@ -3,6 +3,7 @@ Component({
   properties: {
     // 标签名称
     name: Object,
+    cell: String,
     // 标签颜色
     type:{
       type: String,
@@ -50,6 +51,7 @@ Component({
       if (this.properties.disabled) return false;
       let options = {
         name: this.properties.name,
+        cell: this.properties.cell,
         select: this.properties.select
       };
       this.triggerEvent('lintap', options, {
