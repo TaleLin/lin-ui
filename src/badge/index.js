@@ -23,7 +23,11 @@ Component({
       value: 'overflow'
     },
     // 文字内容
-    content: String
+    content: String,
+    show: {
+      type: Boolean,
+      value: true
+    }
   },
   data: {
     finalCount: 0
