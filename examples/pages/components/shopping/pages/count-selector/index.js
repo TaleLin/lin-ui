@@ -21,7 +21,6 @@ Page({
     wx.showToast({
       title: '超出限制',
     })
-    console.log(e)
   },
   
   /**
