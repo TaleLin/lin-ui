@@ -38,7 +38,7 @@ Component({
   methods: {
     doNothing(e) {
       const { type } = e.currentTarget.dataset;
-      this.triggerEvent('linout', { type }, {
+      this.triggerEvent('linout', { type, way: 'icon' }, {
         bubbles: true,
         composed: true
       });
@@ -66,9 +66,19 @@ Component({
       if (value) {
         if (value > this.properties.max) this.setData({
           count: this.properties.max
+        }, () => {
+          this.triggerEvent('linout', { type: 'overflow_max', way: 'input' }, {
+            bubbles: true,
+            composed: true
+          });
         });
         else if (value < this.properties.min) this.setData({
           count: this.properties.min
+        },() => {
+          this.triggerEvent('linout', { type: 'overflow_min', way: 'input' }, {
+            bubbles: true,
+            composed: true
+          });
         });
         else this.setData({
           count: value
