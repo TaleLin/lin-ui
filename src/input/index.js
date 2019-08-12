@@ -16,6 +16,11 @@ Component({
       type: String,
       value: ''
     },
+    // 是否隐藏label
+    hideLabel:{
+      type: Boolean,
+      value: false
+    },
     // 是否自定义label部分
     labelCustom: {
       type: Boolean,
@@ -119,18 +124,18 @@ Component({
         value
       });
 
-      this.triggerEvent('linchange', event);
+      this.triggerEvent('linchange', event.detail);
     },
 
     handleInputFocus(event) {
-      this.triggerEvent('linfocus', event);
+      this.triggerEvent('linfocus', event.detail);
     },
 
     handleInputBlur(event) {
       this.validatorData({
         value: event.detail.value
       });
-      this.triggerEvent('linblur', event);
+      this.triggerEvent('linblur', event.detail);
     },
     handleInputConfirm(event) {
       const {
@@ -144,13 +149,13 @@ Component({
         value
       });
 
-      this.triggerEvent('linconfirm', event);
+      this.triggerEvent('linconfirm', event.detail);
     },
     onClearTap(event) {
       this.setData({
         value: ''
       })
-      this.triggerEvent('linclear', event);
+      this.triggerEvent('linclear', event.detail);
     },
   }
 })
