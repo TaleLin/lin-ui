@@ -97,6 +97,24 @@
 
     <content-card
       class="content"
+      name="隐藏左侧label"
+    >
+      <view class='buttun-wrapper'>
+        <l-input
+          label="标题" 
+          placeholder="这里没有隐藏标题"     
+          label-width="170"/>
+        <l-input
+          label="清除按钮" 
+          clear="{{true}}"
+          label-width="170"
+          hideLabel="{{true}}"
+          placeholder="这里隐藏了标题" />
+      </view>
+    </content-card>
+
+    <content-card
+      class="content"
       name="经典案例"
     >
       <view class='buttun-wrapper'>
