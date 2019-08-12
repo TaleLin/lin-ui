@@ -8,7 +8,8 @@ Component({
   properties: {
     count: {
       type: Number,
-      value: 1
+      value: 1,
+      observer: 'changeCount'
     },
     max: {
       type: Number,
@@ -60,6 +61,10 @@ Component({
       setTimeout(() => {
         this.blurCount(value);
       }, 50);
+    },
+
+    changeCount(){
+      this.blurCount(this.properties.count);
     },
 
     blurCount(value) {
