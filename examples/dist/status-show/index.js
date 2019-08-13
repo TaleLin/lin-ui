@@ -17,6 +17,18 @@ Component({
     bgColor: {
       type: String,
       valure: '#fff'
+    },
+    top: {
+      type: String,
+      value: "384",
+    },
+    autoFit: {
+      type: Boolean,
+      value: true,
+    },
+    buttonColor: {
+      type: String,
+      value: ""
     }
   },
 
@@ -31,10 +43,80 @@ Component({
     this._changeStatus();
   },
 
+  lifetimes: {
+    attached: function () {
+      this._initStatusShow();
+      if (this.data.autoFit) {
+        this.autoSetMarginTop()
+      }
+    },
+  },
+
+  pageLifetimes: {
+    show() {
+      this._initStatusShow();
+    },
+  },
+
   /**
    * 组件的方法列表
    */
   methods: {
+    _initStatusShow() {
+      wx.lin = wx.lin || {};
+      wx.lin.showStatusShow = (options = {}) => {
+        const {
+          type = 'success',
+            image = '',
+            describe = '',
+            buttonText = '',
+            bgColor = 'fff',
+            top = "",
+            autoFit = true,
+            buttonColor = "",
+        } = options;
+        if (autoFit) {
+          this.setData({
+            type,
+            image,
+            describe,
+            buttonText,
+            bgColor,
+            autoFit,
+            buttonColor,
+            show: true,
+          });
+        } else {
+          this.setData({
+            type,
+            image,
+            describe,
+            buttonText,
+            bgColor,
+            autoFit,
+            top,
+            buttonColor,
+            show: true,
+          });
+        }
+
+        this._changeStatus();
+        return this;
+      };
+    },
+
+    autoSetMarginTop(){
+      const that = this
+      wx.getSystemInfo({
+        success(res) {
+          const top = (res.windowHeight * 750 / res.windowWidth - 246) / 2 * 0.7
+          that.setData({
+            top: top
+          })
+        }
+      })
+    },
+
     _changeStatus() {
       switch (this.properties.type) {
       case 'success':
@@ -87,9 +169,5 @@ Component({
         break;
       }
     },
-
-    onBtn() {
-      this.triggerEvent('lintap', {}, { bubbles: true, composed: true });
-    }
   }
 });

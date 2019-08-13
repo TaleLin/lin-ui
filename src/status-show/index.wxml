@@ -3,12 +3,12 @@
     <slot/>
   </block>
   <block wx:else>
-    <image wx:if="{{image}}" class="left-img l-image-class" src="{{image}}"></image>
-    <image wx:else class="{{type=='success'||type=='error'?'left-img':'top-img'}} {{type=='address'?'ad-img':''}} l-image-class" src="{{typeImage}}"></image>
+    <image wx:if="{{image}}" style="margin-top:{{top}}rpx;" class="left-img l-image-class" src="{{image}}"></image>
+    <image wx:else style="margin-top:{{top}}rpx;" class="{{type=='success'||type=='error'?'left-img':'top-img'}} {{type=='address'?'ad-img':''}} l-image-class" src="{{typeImage}}"></image>
     <text wx:if="{{describe}}" class="status-text l-describe-class">{{describe}}</text>
     <text wx:else class="status-text l-describe-class">{{typeText}}</text>
-    <l-button l-class="l-button-class" wx:if="{{buttonText}}" style="margin-top:80rpx" bind:lintap="onBtn">{{buttonText}}</l-button>
-    <l-button l-class="l-button-class" wx:if="{{!buttonText && type =='network'}}" style="margin-top:80rpx" bind:lintap="onBtn">重新加载</l-button>
-    <l-button l-class="l-button-class" wx:if="{{!buttonText && type =='cart'}}" style="margin-top:80rpx" bind:lintap="onBtn">去逛逛</l-button>
+    <l-button l-class="l-button-class" wx:if="{{buttonText}}" style="margin-top:80rpx" bgColor="{{buttonColor}}">{{buttonText}}</l-button>
+    <l-button l-class="l-button-class" wx:if="{{!buttonText && type =='network'}}" style="margin-top:80rpx" bgColor="{{buttonColor}}">重新加载</l-button>
+    <l-button l-class="l-button-class" wx:if="{{!buttonText && type =='cart'}}" style="margin-top:80rpx" bgColor="{{buttonColor}}">去逛逛</l-button>
   </block>
 </view>
