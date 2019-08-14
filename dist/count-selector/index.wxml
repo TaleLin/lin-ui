@@ -2,7 +2,7 @@
   <view class="symbol {{count<=min|| disabled?'disabled  l-disabled-class':'abled l-symbol-class'}}" 
         catchtap="{{count<=min|| disabled?'doNothing':'reduceTap'}}"
         data-type="overflow_min">
-    <text>-</text>
+    <view class="l-icon l-icon-reduce" style="font-size:{{iconSize}};color:{{iconColor}}"></view>
   </view>
   <input  wx:if="{{focus}}"
           class="l-count-class count" 
@@ -15,6 +15,6 @@
   <view class="l-symbol-class symbol {{count>=max|| disabled?'disabled l-disabled-class':'abled l-symbol-class'}}" 
         catchtap="{{count>=max|| disabled?'doNothing':'addTap'}}"
         data-type="overflow_max">
-       <text>+</text>
+       <view class="l-icon l-icon-add" style="font-size:{{iconSize}};color:{{iconColor}}"></view>
   </view>
 </view>
