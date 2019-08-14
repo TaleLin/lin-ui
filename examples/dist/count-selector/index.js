@@ -23,7 +23,9 @@ Component({
       type: Number,
       value: 1
     },
-    disabled: Boolean
+    disabled: Boolean,
+    iconSize: String,
+    iconColor: String
   },
 
   /**
@@ -63,7 +65,7 @@ Component({
       }, 50);
     },
 
-    changeCount(){
+    changeCount() {
       this.blurCount(this.properties.count);
     },
 
@@ -79,7 +81,7 @@ Component({
         });
         else if (value < this.properties.min) this.setData({
           count: this.properties.min
-        },() => {
+        }, () => {
           this.triggerEvent('linout', { type: 'overflow_min', way: 'input' }, {
             bubbles: true,
             composed: true
