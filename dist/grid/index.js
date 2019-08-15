@@ -28,7 +28,8 @@ Component({
     data: {
         gridItems: [],
         childNum: 0,
-        currentIndex: null,
+        currentIndex: -1,
+        currentCell: -1,
     },
     ready() {
         this.initGrids();
@@ -43,11 +44,12 @@ Component({
         initGrids() {
             let items = this.getRelationNodes('../grid-item/index');
             if (this.data.childNum === items.length) return;
-            const gridItems = items.map((item,index) => {
+            const gridItems = items.map((item, index) => {
                 item.setData({
                     index,
                 })
                 return {
+                    index:index,
                     key: item.data.key,
                     cell: item.data.cell
                 }
@@ -57,5 +59,25 @@ Component({
                 childNum: items.length
             })
         },
+
+        tapGridItem(e) {
+            const { gridIndex } = e.target.dataset;
+            this.setData({
+                currentIndex: gridIndex,
+                currentCell: this.data.gridItems[gridIndex].cell
+            });
+        },
+
+        tapGrid(e) {
+            this.triggerEvent('lintap', {
+                index: this.data.currentIndex,
+                cell: this.data.currentCell
+            }, { bubbles: true, composed: true });
+
+            this.setData({
+                currentIndex: -1,
+                currentCell: -1
+            });
+        }
     }
 });
