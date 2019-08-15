@@ -26,8 +26,7 @@ Component({
     },
     methods: {
         tapGridItem(e) {
-            console.log(this)
-            this.triggerEvent('lintap', {
+            this.triggerEvent('linitemtap', {
                 ...this.data
             }, { bubbles: true, composed: true })
         },
