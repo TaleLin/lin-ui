@@ -45,7 +45,7 @@
     <content-card class="content" name="GridItem绑定点击事件">
       <view class="view-container">
         <l-grid show-border="{{true}}">
-          <l-grid-item wx:for="{{grids2}}" wx:key="{{index}}" key="{{index}}" slot="{{index}}" bind:lintap="clickGrid" cell="{{item}}" l-grid-item="grid-item">
+          <l-grid-item wx:for="{{grids2}}" wx:key="{{index}}" key="{{index}}" slot="{{index}}" bind:linitemtap="clickGrid" cell="{{item}}" l-grid-item="grid-item">
             <l-icon name="{{item.image}}" />
             <view class="text">{{item.text}}</view>
           </l-grid-item>

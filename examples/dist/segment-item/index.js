@@ -26,9 +26,6 @@ Component({
     dotBadge: Boolean,
     badgeCount: {
       type: Number,
-      observe: function (newVal, oldVal) {
-        console.log(newVal, oldVal)
-      }
     },
     badgeMaxCount: {
       type: Number,
