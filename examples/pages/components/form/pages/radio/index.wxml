@@ -20,6 +20,7 @@
         </l-radio-group>
       </view>
     </content-card>
+
     <!-- 更改布局 -->
     <content-card
       class="content"
@@ -146,5 +147,26 @@
         </l-radio-group>
       </view>
     </content-card>
+
+    <content-card
+      class="content"
+      name="带下划线"
+    >
+      <view class='buttun-wrapper'>
+        <view class='title'>8.《魔兽世界怀旧服》什么时候公测？</view>
+        <l-radio-group l-class="l-radio-group" >
+           <l-radio
+            l-title-class="l-title-class-border"
+            l-class="l-radio"
+            wx:for="{{items8}}"
+            wx:key="{{item.id}}" 
+            placement="{{position}}"
+            shape="right"
+            value="{{item.name}}">
+          </l-radio>
+        </l-radio-group>
+      </view>
+    </content-card>
+
   </content-title>
 </view>

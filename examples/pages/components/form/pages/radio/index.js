@@ -85,6 +85,16 @@ Page({
       name: '女朋友',
       disabled: true
     }],
+    items8: [{
+      id: 1,
+      name: '2004年12月16日',
+    }, {
+      id: 2,
+      name: '2005年3月20日'
+    }, {
+      id: 3,
+      name: '2019年8月27日'
+    }],
     position: 'left',
     checked: false,
     disabled: false,
