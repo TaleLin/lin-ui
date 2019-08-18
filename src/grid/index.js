@@ -59,7 +59,6 @@ Component({
                 childNum: items.length
             })
         },
-
         tapGridItem(e) {
             const { gridIndex } = e.target.dataset;
             this.setData({

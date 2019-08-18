@@ -43,7 +43,6 @@ Component({
     methods: {
         initGrids() {
             let items = this.getRelationNodes('../grid-item/index');
-            if (this.data.childNum === items.length) return;
             const gridItems = items.map((item, index) => {
                 item.setData({
                     index,
@@ -59,7 +58,6 @@ Component({
                 childNum: items.length
             })
         },
-
         tapGridItem(e) {
             const { gridIndex } = e.target.dataset;
             this.setData({
