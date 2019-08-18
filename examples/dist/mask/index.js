@@ -18,7 +18,7 @@ Component({
     // mask的z-index值
     zIndex: {
       type: Number,
-      value: -99,
+      value: 99,
 
     },
     // slot是否居中
