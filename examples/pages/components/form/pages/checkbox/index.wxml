@@ -141,5 +141,25 @@
         </l-checkbox-group>
       </view>
     </content-card>
+
+    <content-card
+      class="content"
+      name="带下划线"
+    >
+      <view class='buttun-wrapper'>
+        <view class='title'>8. 前端需要学习哪些技能？</view>
+        <l-checkbox-group current="{{current }}" l-class="l-radio-group" bind:linchange="change">
+          <l-checkbox
+            l-class="l-radio"
+            type="circle"
+            l-title-class="l-title-class-border"
+            wx:for="{{items8}}"
+            wx:key="{{item.id}}"
+            placement="{{position}}"
+            value="{{item.name}}">
+          </l-checkbox>
+        </l-checkbox-group>
+      </view>
+    </content-card>
   </content-title>
 </view>
