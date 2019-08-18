@@ -66,10 +66,10 @@ Component({
     },
 
     changeCount() {
-      this.blurCount(this.properties.count);
+      this.blurCount(this.properties.count, true);
     },
 
-    blurCount(value) {
+    blurCount(value, fromObserver = false) {
       if (value) {
         if (value > this.properties.max) this.setData({
           count: this.properties.max
@@ -99,7 +99,7 @@ Component({
         count: this.data.count,
         type: 'blur'
       };
-      this.triggerEvent('lintap', detail, {
+      if (!fromObserver) this.triggerEvent('lintap', detail, {
         bubbles: true,
         composed: true
       });

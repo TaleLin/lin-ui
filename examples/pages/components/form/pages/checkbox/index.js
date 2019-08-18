@@ -94,6 +94,20 @@ Page({
       name: '开启后，只能免疫技能攻击，无法免疫普通攻击。',
       disabled: true
     }],
+    items8: [{
+      id: 1,
+      name: 'JavaScript',
+      checked: true
+    }, {
+      id: 2,
+      name: 'CSS'
+    }, {
+      id: 3,
+      name: 'NodeJS'
+    }, {
+      id: 4,
+      name: 'Webpack',
+    }],
     position: 'left',
     checked: false,
     disabled: false,

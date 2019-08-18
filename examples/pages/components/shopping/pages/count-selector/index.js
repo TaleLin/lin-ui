@@ -16,7 +16,9 @@ Page({
   onLoad: function () {
 
   },
-
+  onA(e){
+    console.log(e)
+  },
   onOut(e){
     wx.showToast({
       title: '超出限制',
