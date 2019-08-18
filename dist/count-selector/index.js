@@ -23,7 +23,9 @@ Component({
       type: Number,
       value: 1
     },
-    disabled: Boolean
+    disabled: Boolean,
+    iconSize: String,
+    iconColor: String
   },
 
   /**
@@ -63,11 +65,11 @@ Component({
       }, 50);
     },
 
-    changeCount(){
-      this.blurCount(this.properties.count);
+    changeCount() {
+      this.blurCount(this.properties.count, true);
     },
 
-    blurCount(value) {
+    blurCount(value, fromObserver = false) {
       if (value) {
         if (value > this.properties.max) this.setData({
           count: this.properties.max
@@ -79,7 +81,7 @@ Component({
         });
         else if (value < this.properties.min) this.setData({
           count: this.properties.min
-        },() => {
+        }, () => {
           this.triggerEvent('linout', { type: 'overflow_min', way: 'input' }, {
             bubbles: true,
             composed: true
@@ -97,7 +99,7 @@ Component({
         count: this.data.count,
         type: 'blur'
       };
-      this.triggerEvent('lintap', detail, {
+      if (!fromObserver) this.triggerEvent('lintap', detail, {
         bubbles: true,
         composed: true
       });

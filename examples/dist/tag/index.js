@@ -1,9 +1,9 @@
 Component({
   externalClasses: ['l-class', 'l-select-class', 'l-image-class'],
   properties: {
-    // 标签名称
-    name: Object,
-    cell: String,
+    // 标签标识
+    name: String,
+    cell: Object,
     // 标签颜色
     type:{
       type: String,
