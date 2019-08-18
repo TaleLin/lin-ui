@@ -7,11 +7,7 @@
   <view wx:elif="{{custom && type==='loading'}}">
     <slot name="loading" />
   </view>
-<<<<<<< HEAD
   <view class="loading l-class" wx:else>
-=======
-  <view class="loading" wx:else>
->>>>>>> feat:更改water-flow组件wx.lin调用方法
     <view class="line" 
           style="{{'background-color:'+color}}" 
           wx:if="{{line}}"></view>
