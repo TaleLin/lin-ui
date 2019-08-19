@@ -75,9 +75,10 @@ Component({
             describe = '',
             buttonText = '',
             bgColor = 'fff',
-            top = "",
+            top = "260",
             autoFit = true,
             buttonColor = "",
+            part = false,
         } = options;
         if (autoFit) {
           this.setData({
@@ -89,6 +90,7 @@ Component({
             autoFit,
             buttonColor,
             show: true,
+            part,
           });
         } else {
           this.setData({
@@ -101,6 +103,7 @@ Component({
             top,
             buttonColor,
             show: true,
+            part,
           });
         }
 
