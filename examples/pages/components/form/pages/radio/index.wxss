@@ -28,6 +28,11 @@
   color: rgba(140,152,174,1);
 }
 
+.l-title-class-border {
+  border-bottom: 1rpx solid #f1f1f1;
+  padding: 10rpx 0;
+}
+
 .img {
   width: 100rpx;
   height: 50rpx;
