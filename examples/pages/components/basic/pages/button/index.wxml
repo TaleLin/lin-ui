@@ -39,7 +39,7 @@
   </content-card>
 
   <content-card name="通栏按钮" cardPadding="{{false}}">
-      <l-button size="long">通栏按钮</l-button>
+    <l-button size="long">通栏按钮</l-button>
   </content-card>
 
   <content-card name="镂空按钮">

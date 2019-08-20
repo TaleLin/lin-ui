@@ -97,21 +97,21 @@ Component({
         confirmColor: '#45526b',
         success: null,
         fail: null,
-      }
+      };
       wx.lin = wx.lin || {};
       wx.lin.showDialog = (options) => {
         const {
           type = config.type,
-            title = config.title,
-            showTitle = config.showTitle,
-            content = config.content,
-            locked = config.locked,
-            confirmText = config.confirmText,
-            cancelColor = config.cancelColor,
-            cancelText = config.cancelText,
-            confirmColor = config.confirmColor,
-            success = config.success,
-            fail = config.fail,
+          title = config.title,
+          showTitle = config.showTitle,
+          content = config.content,
+          locked = config.locked,
+          confirmText = config.confirmText,
+          cancelColor = config.cancelColor,
+          cancelText = config.cancelText,
+          confirmColor = config.confirmColor,
+          success = config.success,
+          fail = config.fail,
         } = options;
         this.setData({
           type,
@@ -132,7 +132,7 @@ Component({
     },
 
     // 确定按钮
-    onConfirmTap(e) {
+    onConfirmTap() {
       let detail = 'confirm';
       let option = { bubbles: true, composed: true };
 
@@ -146,13 +146,13 @@ Component({
       });
       this.setData({
         show: !this.data.show
-      })
+      });
       this.triggerEvent('linconfirm', detail, option);
 
     },
 
     // 取消按钮
-    onCancelTap(e) {
+    onCancelTap() {
 
       let detail = 'cancel';
       let option = { bubbles: true, composed: true };
@@ -167,23 +167,23 @@ Component({
       });
       this.setData({
         show: !this.data.show
-      })
+      });
 
       this.triggerEvent('lincancel', detail, option);
     },
 
     // 背景点击事件
-    onDialogTap(e) {
+    onDialogTap() {
       let detail = true;
       let option = { bubbles: true, composed: true };
 
       if (this.data.locked !== true) {
         this.setData({
           show: !this.data.show
-        })
+        });
       }
 
       this.triggerEvent('lintap', detail, option);
     }
   }
-})
+});
