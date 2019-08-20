@@ -31,12 +31,13 @@ Component({
    * 组件的初始数据
    */
   data: {
-    focus: false
+    focus: false,
+    result: 1
   },
 
   observers: {
     'count,min,max': function () {
-      this.valueRange(this.data.count, 'params');
+      this.valueRange(this.data.count, 'parameter');
     }
   },
 
@@ -90,25 +91,29 @@ Component({
     },
 
     valueRange(value, way = 'input') {
-      if (value > this.properties.max) this.setData({
-        result: this.properties.max
-      }, () => {
-        this.triggerEvent('linout', { type: 'overflow_max', way }, {
-          bubbles: true,
-          composed: true
+      if (value > this.properties.max) {
+        this.setData({
+          result: this.properties.max
+        }, () => {
+          this.triggerEvent('linout', { type: 'overflow_max', way }, {
+            bubbles: true,
+            composed: true
+          });
         });
-      });
-      else if (value < this.properties.min) this.setData({
-        result: this.properties.min
-      }, () => {
-        this.triggerEvent('linout', { type: 'overflow_min', way }, {
-          bubbles: true,
-          composed: true
+      } else if (value < this.properties.min) {
+        this.setData({
+          result: this.properties.min
+        }, () => {
+          this.triggerEvent('linout', { type: 'overflow_min', way }, {
+            bubbles: true,
+            composed: true
+          });
         });
-      });
-      else this.setData({
-        result: value
-      });
+      } else {
+        this.setData({
+          result: value
+        });
+      }
     },
 
     reduceTap() {
