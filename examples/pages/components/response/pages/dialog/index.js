@@ -20,6 +20,13 @@ Page({
 
   },
 
+  onA(){
+    wx.showModal({
+      title: '提示',
+      content: '这是一个模态弹窗'
+    })
+  },
+
   // 确定按钮
   onConfirmTap(e){
     console.log(e)
