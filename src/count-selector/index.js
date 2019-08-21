@@ -68,6 +68,7 @@ Component({
       } = e.detail;
       setTimeout(() => {
         this.blurCount(Number(value), () => {
+          this.data.count = this.data.result;
           this.triggerEvent('lintap', {
             count: this.data.result,
             type: 'blur'

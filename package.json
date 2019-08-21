@@ -27,6 +27,7 @@
   "homepage": "https://github.com/TaleLin/lin-ui#readme",
   "devDependencies": {
     "child_process": "^1.0.2",
+    "del": "^5.0.0",
     "eslint": "^5.0.1",
     "eslint-config-standard": "^11.0.0",
     "eslint-plugin-import": "^2.13.0",
@@ -38,8 +39,8 @@
     "gulp-less": "^4.0.0",
     "gulp-rename": "^1.2.2",
     "gulp-util": "^3.0.8",
-    "less": "^2.7.3",
     "jest": "^24.8.0",
+    "less": "^2.7.3",
     "lodash": "^4.17.15",
     "miniprogram-simulate": "^1.0.7"
   },
