@@ -1,8 +1,10 @@
 const gulp = require('gulp');
+const { series, parallel } = require('gulp');
 const less = require('gulp-less');
 const cssmin = require('gulp-clean-css');
 const rename = require('gulp-rename');
 const componentData = require('./build-tool');
+const del = require('del');
 const result = `{common,behaviors,${componentData()}}`;
 const isCustom = (result != `{common,behaviors,}`);
 
@@ -53,11 +55,23 @@ gulp.task('dispose-copy', () => {
     .pipe(gulp.dest('../dist/'));
 });
 
-gulp.task('default', gulp.series(
-  'dispose-js',
-  'dispose-wxss',
-  'dispose-wxml',
-  'dispose-wxs',
-  'dispose-copy',
-  'dispose-json'
+// clean
+gulp.task('dispose-clean', () => {
+  return del([
+    '../dist/**/*'
+  ], {
+    force: true
+  });
+});
+
+gulp.task('default', series(
+  'dispose-clean',
+  parallel(
+    'dispose-copy',
+    'dispose-js',
+    'dispose-wxss',
+    'dispose-wxs',
+    'dispose-json',
+    'dispose-wxml'
+  )
 ));
