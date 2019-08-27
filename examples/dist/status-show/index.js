@@ -19,8 +19,8 @@ Component({
       valure: '#fff'
     },
     top: {
-      type: String,
-      value: "260",
+      type: Number,
+      value: 260,
     },
     autoFit: {
       type: Boolean,
@@ -40,11 +40,19 @@ Component({
    * 组件的初始数据
    */
   data: {
-
-  },
-
-  ready() {
-    this._changeStatus();
+    multiple: 1,
+    image_margin_top: 260,
+    ad_img_width: 198,
+    ad_img_height: 204,
+    top_img_width: 264,
+    top_img_height: 204,
+    left_img_width: 120,
+    left_img_height: 184,
+    text_margin_top: 40,
+    font_size: 30,
+    button_margin_top: 80,
+    button_height: 36,
+    button_width: 90,
   },
 
   lifetimes: {
@@ -54,11 +62,64 @@ Component({
         this.autoSetMarginTop()
       }
     },
+
+    ready() {
+      this._changeStatus();
+    },
   },
 
   pageLifetimes: {
     show() {
       this._initStatusShow();
+      const that = this
+
+      if (!this.data.part) {
+        console.log('part 为false')
+        return
+      }
+
+      wx.getSystemInfo({
+        success(res) {
+          that.setData({
+            windowHeight: res.windowHeight,
+            windowWidth: res.windowWidth,
+          })
+        }
+      })
+
+      const query = wx.createSelectorQuery().in(this)
+      query.select('#statusShow').boundingClientRect()
+      query.exec(function (res) {
+        const multiple_width = res[0].width / that.data.windowWidth
+        const multiple_height = res[0].height / that.data.windowHeight
+        const multiple = multiple_width > multiple_height ? multiple_height : multiple_width
+        that.setData({
+          multiple,
+          ad_img_width: that.data.ad_img_width * multiple,
+          ad_img_height: that.data.ad_img_height * multiple,
+          top_img_width: that.data.top_img_width * multiple,
+          top_img_height: that.data.top_img_height * multiple,
+          left_img_width: that.data.left_img_width * multiple,
+          left_img_height: that.data.left_img_height * multiple,
+          top: that.data.top * multiple,
+          text_margin_top: that.data.text_margin_top * multiple,
+          font_size: that.data.font_size * multiple > 16 ? that.data.font_size * multiple : 16,
+          button_margin_top: that.data.button_margin_top * multiple,
+        })
+      })
+
+      const query_button = wx.createSelectorQuery().in(this)
+      query_button.select("#button").boundingClientRect()
+      query_button.exec(function (res) {
+        if (res[0]) {
+          that.setData({
+            button_height: that.data.button_height * that.data.multiple > 28 ? that.data.button_height * that.data.multiple : 28,
+            button_width: that.data.button_width * that.data.multiple,
+          })
+        }
+      })
+
+      console.log(this.data)
     },
   },
 
@@ -75,7 +136,7 @@ Component({
             describe = '',
             buttonText = '',
             bgColor = 'fff',
-            top = "260",
+            top = 260,
             autoFit = true,
             buttonColor = "",
             part = false,
@@ -179,7 +240,7 @@ Component({
 
 
     tapStatusShow() {
-      this.triggerEvent('lcorvertap', {}, {
+      this.triggerEvent('lincorvertap', {}, {
         bubbles: true,
         composed: true
       });
