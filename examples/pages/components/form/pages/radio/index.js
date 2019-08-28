@@ -1,6 +1,3 @@
-// pages/view/pages/dialog/index.js
-import navConfig from './radio-nav.js';
-
 Page({
 
   /**
@@ -66,13 +63,16 @@ Page({
     }],
     items6: [{
       id: 1,
-      name: '1号',
+      name: 'RNG',
     }, {
       id: 2,
-      name: '45号'
+      name: 'IG'
     }, {
       id: 3,
-      name: '13号',
+      name: 'FPX',
+    }, {
+      id: 4,
+      name: '其他',
     }],
     items7: [{
       id: 1,
@@ -95,21 +95,24 @@ Page({
       id: 3,
       name: '2019年8月27日'
     }],
-    position: 'left',
-    checked: false,
-    disabled: false,
-  },
-
-  onChange(e){
-    console.log(e)
+    position: 'left'
   },
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function(options) {
+  onLoad() {
 
   },
 
+  onChange(e) {
+    const {
+      currentKey
+    } = { ...e.detail
+    };
+    this.setData({
+      currentKey
+    });
+  },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -159,4 +162,4 @@ Page({
   onShareAppMessage: function() {
 
   }
-})
+});

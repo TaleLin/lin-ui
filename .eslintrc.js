@@ -21,9 +21,10 @@ module.exports = {
             1,
             2
         ],
-        "linebreak-style": [ // 强制执行一致的换行样式（'unix'）
-            1,
-            "unix"
+        "linebreak-style": [
+            0,
+            "error", 
+            "windows"
         ],
         "quotes": [ // 强制一致使用反引号，双引号或单引号（反引号或单引号）
             1,

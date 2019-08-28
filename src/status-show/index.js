@@ -17,6 +17,10 @@ Component({
     bgColor: {
       type: String,
       valure: '#fff'
+    },
+    openApi: {
+      type: Boolean,
+      value: true
     }
   },
 
@@ -27,14 +31,46 @@ Component({
 
   },
 
-  ready() {
+  attached() {
     this._changeStatus();
+    if (this.data.openApi) this._init();
+  },
+
+  pageLifetimes: {
+    show() {
+      this._init();
+    },
   },
 
   /**
    * 组件的方法列表
    */
   methods: {
+    _init() {
+      wx.lin = wx.lin || {};
+      wx.lin.showStatusShow = (options) => {
+        const {
+          type = 'success',
+          image = '',
+          describe = '',
+          buttonText = '',
+          bgColor = '#fff'
+        } = { ...options };
+        this.setData({
+          show: true,
+          type,
+          image,
+          describe,
+          buttonText,
+          bgColor
+        });
+      };
+      wx.lin.hideStatusShow = () => {
+        this.setData({
+          show: false
+        });
+      };
+    },
     _changeStatus() {
       switch (this.properties.type) {
       case 'success':

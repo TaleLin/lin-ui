@@ -1,9 +1,11 @@
-// toast
+import computeOffset from '../behaviors/computeOffset';
+import zIndex from '../behaviors/zIndex';
 Component({
   /**
    * 组件的属性列表
    */
-  externalClasses: [''],
+  behaviors: [computeOffset, zIndex],
+  externalClasses: ['l-bg-class', 'l-icon-class', 'l-class', 'l-image-class'],
   properties: {
     // 显示与隐藏
     show: {
@@ -17,28 +19,11 @@ Component({
       observer: 'elip'
     },
     // icon
-    icon: {
-      type: String,
-      value: '',
-
-    },
-    // icon-style
-    iconStyle: {
-      type: String,
-      value: 'size:60; color:#fff',
-      observer: 'parseIconStyle'
-    },
+    icon: String,
+    size: String,
+    color: String,
     // image
-    image: {
-      type: String,
-      value: '',
-    },
-    // icon-style
-    imageStyle: {
-      type: String,
-      value: '60*60',
-      observer: 'parseImageStyle'
-    },
+    image: String,
     // 文字的显示方位
     placement: {
       type: String,
@@ -52,7 +37,7 @@ Component({
     // 提示框的层级
     zIndex: {
       type: Number,
-      value: 999
+      value: 777
     },
     // 设置提示框是否为垂直居中
     center: {
@@ -68,14 +53,13 @@ Component({
       type: Boolean,
       value: true,
     },
-    offsetX:Number,
-    offsetY:Number
-
+    offsetX: Number,
+    offsetY: Number
   },
 
   observers: {
     'show': function (show) {
-      show && this.changeStatus()
+      show && this.changeStatus();
     }
   },
 
@@ -99,6 +83,7 @@ Component({
       if (this.data.openApi) {
         this.initToast();
       }
+      this.offsetMargin();
     },
   },
 
@@ -112,9 +97,7 @@ Component({
         const {
           title = '',
           icon = '',
-          iconStyle = 'size:60; color:#fff',
           image = '',
-          imageStyle = '60*60',
           placement = 'bottom',
           duration = 1500,
           center = true,
@@ -122,19 +105,16 @@ Component({
           success = null,
           complete = null,
           offsetX = 0,
-          offsetY = 0 ,
+          offsetY = 0,
         } = options;
         this.setData({
           title,
           icon,
-          iconStyle,
           image,
-          imageStyle,
           placement,
           duration,
           center,
           mask,
-          show: true,
           success,
           complete,
           offsetY,
@@ -148,53 +128,28 @@ Component({
     changeStatus() {
       this.setData({
         status: true
-      })
-      if (this.data.timer) clearTimeout(this.data.timer)
+      });
+      if (this.data.timer) clearTimeout(this.data.timer);
       this.data.timer = setTimeout(() => {
         this.setData({
           status: false
-        })
-        if (this.data.success) this.data.success()
-        this.data.timer = null
-      }, this.properties.duration)
-    },
-
-    // 返回icon的宽高
-    parseIconStyle(str) {
-      let arr = str ? str.split(";") : ['size: 60', 'color: #fff']
-      arr.map((item) => {
-        item = item.trim().split(':')
-        this.setData({
-          [item[0]]: item[1]
-        })
-        return item
-      })
-    },
-
-    // 返回图片的宽高
-    parseImageStyle(str) {
-      let arr = str ? str.split("*") : [60, 60]
-      if (arr.length === 1) {
-        arr = [arr[0], arr[0]]
-      }
-      this.setData({
-        imageW: arr[0],
-        imageH: arr[1]
-      })
-      return arr
+        });
+        if (this.data.success) this.data.success();
+        this.data.timer = null;
+      }, this.properties.duration);
     },
 
     elip(text) {
-      var textLen = text ? this.strlen(text) : 0
+      var textLen = text ? this.strlen(text) : 0;
       if (textLen) {
-        text = text.substring(0, 20)
+        text = text.substring(0, 20);
       } else {
-        text = ''
+        text = '';
       }
       this.setData({
         title: text
-      })
-      return text
+      });
+      return text;
     },
 
     strlen(str) {
@@ -210,12 +165,12 @@ Component({
       return len;
     },
     // 阻止滑动
-    doNothingMove(e) {
+    doNothingMove() {
       // do nothing……
     },
 
     // 点击事件
-    onMaskTap(e) {
+    onMaskTap() {
 
       let detail = true;
       let option = { bubbles: true, composed: true };
@@ -224,10 +179,10 @@ Component({
         this.setData({
           fullScreen: 'hide',
           status: 'hide',
-        })
+        });
       }
 
       this.triggerEvent('lintap', detail, option);
     }
   }
-})
+});

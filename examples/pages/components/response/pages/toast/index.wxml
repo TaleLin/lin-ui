@@ -25,13 +25,12 @@
     show="{{currentConf.show}}"
     title="{{currentConf.title}}"
     icon="{{currentConf.icon}}"
-    icon-style="{{currentConf.iconStyle}}"
     image="{{currentConf.image}}"
-    image-style="{{currentConf.imageStyle}}"
     placement="{{currentConf.placement}}"
     duration="{{currentConf.duration}}"
     center="{{currentConf.center}}"
     mask="{{currentConf.mask}}" 
+    l-image-class="img"
   />
 
 </view>

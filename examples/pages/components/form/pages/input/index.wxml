@@ -108,7 +108,7 @@
           label="清除按钮" 
           clear="{{true}}"
           label-width="170"
-          hideLabel="{{true}}"
+          hide-label
           placeholder="这里隐藏了标题" />
       </view>
     </content-card>

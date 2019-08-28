@@ -1,21 +1,41 @@
 <!--pages/view/pages/dialog/index.wxml-->
 <view class='container'>
+  <l-toast/>
+
   <content-title name="Radio" describe="单选框">
+      <content-card
+      class="content"
+      name="自定义样式"
+    >
+      <view class='buttun-wrapper'>
+        <view class='title'>1. 2019年夏季赛冠军你认为是哪个队伍？</view>
+          <l-radio-group l-class="l-radio-group" length="4" bind:linchange ="onChange">
+            <l-radio
+              l-class="l-radio"
+              wx:for="{{items6}}"
+              wx:key="{{item.id}}" 
+              key="{{item.id}}"
+              custom>
+                <image class="radio-img" src="{{item.id==currentKey?'./images/radiobutton.png':'./images/radio.png'}}" slot="icon"/>
+                <text style="color:{{item.id==currentKey?'#d4237a':'#707070'}}">{{item.name}}</text>
+            </l-radio>
+          </l-radio-group>
+      </view>
+    </content-card>
     <content-card
       class="content"
       name="基本案例"
     >
       <view class='buttun-wrapper'>
-        <view class='title'>1. 下面选项中，什么瓜不能吃？</view>
-        <l-radio-group bind:linchange="onChange" l-class="l-radio-group" >
+        <view class='title'>2. 下面选项中，什么瓜不能吃？</view>
+        <l-radio-group l-class="l-radio-group" length="4">
           <l-radio
             l-class="l-radio"
-            l-title-class="l-title-class"
             wx:for="{{items1}}"
-            wx:key="{{item.id}}" 
-            placement="{{position}}"
-            shape="circle"
-            value="{{item.name}}">
+            wx:key="{{item.id}}"
+            key="{{item.id}}" 
+            placement="{{position}}">
+            {{item.name}}
           </l-radio>
         </l-radio-group>
       </view>
@@ -27,16 +47,15 @@
       name="更改布局方式"
     >
       <view class='buttun-wrapper'>
-        <view class='title'>2.考试时候用什么铅笔？</view>
-        <l-radio-group placement="row" l-class="l-radio-group" >
+        <view class='title'>3.考试时候用什么铅笔？</view>
+        <l-radio-group placement="row" l-class="l-radio-group" length="3">
           <l-radio
-            l-title-class="l-title-class"
             l-class="l-radio"
             wx:for="{{items2}}"
             wx:key="{{item.id}}" 
-            placement="{{position}}"
-            shape="circle"
-            value="{{item.name}}">
+            key="{{item.id}}"
+            placement="{{position}}">
+            {{item.name}}
           </l-radio>
         </l-radio-group>
       </view>
@@ -47,18 +66,17 @@
       class="content"
       name="自定义颜色"
     >
-      <view class='buttun-wrapper'>
-        <view class='title'>3. 在《魔兽世界》这款游戏里，巫妖王是谁？</view>
-        <l-radio-group l-class="l-radio-group" >
+      <view class='buttun-wrapper' length="3">
+        <view class='title'>4. 在《魔兽世界》这款游戏里，巫妖王是谁？</view>
+        <l-radio-group l-class="l-radio-group" length="3">
           <l-radio
-            l-title-class="l-title-class"
-            l-class="l-radio"
+           l-class="l-radio"
             wx:for="{{items3}}"
             wx:key="{{item.id}}" 
+            key="{{item.id}}" 
             placement="{{position}}"
-            shape="circle"
-            color='#FFE57F'
-            value="{{item.name}}">
+            select-color='#FFE57F'>
+            {{item.name}}
           </l-radio>
         </l-radio-group>
       </view>
@@ -69,17 +87,17 @@
       name="更改尺寸"
     >
       <view class='buttun-wrapper'>
-        <view class='title'>4.自带消音器和4倍镜的狙击枪是？</view>
-        <l-radio-group l-class="l-radio-group" >
+        <view class='title'>5.自带消音器和4倍镜的狙击枪是？</view>
+        <l-radio-group l-class="l-radio-group" length="3">
           <l-radio
             l-class="l-radio"
-            l-title-class="l-title-class"
             wx:for="{{items4}}"
             wx:key="{{item.id}}" 
+            key="{{item.id}}" 
             placement="{{position}}"
             shape="circle"
-            size="36"
-            value="{{item.name}}">
+            size="36rpx">
+            {{item.name}}
           </l-radio>
         </l-radio-group>
       </view>
@@ -92,36 +110,15 @@
       name="更改Radio的位置"
     >
       <view class='buttun-wrapper'>
-        <view class='title'>5.盖伦的武器叫什么？</view>
-        <l-radio-group l-class="l-radio-gr oup" >
+        <view class='title'>6.盖伦的武器叫什么？</view>
+        <l-radio-group l-class="l-radio-gr oup" length="3">
           <l-radio
-            l-title-class="l-title-class"
             l-class="l-radio"
             wx:for="{{items5}}"
             wx:key="{{item.id}}" 
-            placement="right"
-            shape="circle"
-            value="{{item.name}}">
-          </l-radio>
-        </l-radio-group>
-      </view>
-    </content-card>
-
-    <content-card
-      class="content"
-      name="更改样式"
-    >
-      <view class='buttun-wrapper'>
-        <view class='title'>6.马可波罗‘激情绿茵’皮肤上的号码？</view>
-        <l-radio-group l-class="l-radio-group">
-          <l-radio
-            l-class="l-radio"
-            l-title-class="l-title-class"
-            wx:for="{{items6}}"
-            wx:key="{{item.id}}" 
-            shape="right"
-            disabled='{{item.disabled}}'
-            value="{{item.name}}">
+            key="{{item.id}}"
+            placement="right">
+            {{item.name}}
           </l-radio>
         </l-radio-group>
       </view>
@@ -134,15 +131,15 @@
     >
       <view class='buttun-wrapper'>
         <view class='title'>7.程序猿最渴望拥有？</view>
-        <l-radio-group l-class="l-radio-group" >
+        <l-radio-group l-class="l-radio-group" length="3">
           <l-radio
             l-class="l-radio"
-            l-title-class="l-title-class"
+            l-disabled-class="l-radio-disabled"
             wx:for="{{items7}}"
             wx:key="{{item.id}}" 
-            shape="right"
-            disabled='{{item.disabled}}'
-            value="{{item.name}}">
+            key="{{item.id}}" 
+            disabled='{{item.disabled}}'>
+            {{item.name}}
           </l-radio>
         </l-radio-group>
       </view>
@@ -154,15 +151,14 @@
     >
       <view class='buttun-wrapper'>
         <view class='title'>8.《魔兽世界怀旧服》什么时候公测？</view>
-        <l-radio-group l-class="l-radio-group" >
+        <l-radio-group l-class="l-radio-group" length="3">
            <l-radio
-            l-title-class="l-title-class-border"
-            l-class="l-radio"
+            l-class="l-radio l-title-class-border"
             wx:for="{{items8}}"
             wx:key="{{item.id}}" 
-            placement="{{position}}"
-            shape="right"
-            value="{{item.name}}">
+            key="{{item.id}}" 
+            placement="{{position}}">
+            {{item.name}}
           </l-radio>
         </l-radio-group>
       </view>

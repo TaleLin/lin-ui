@@ -8,12 +8,11 @@ Component({
   properties: {
     count: {
       type: Number,
-      value: 1,
-      observer: 'changeCount'
+      value: 1
     },
     max: {
       type: Number,
-      value: 10000
+      value: 9999
     },
     min: {
       type: Number,
@@ -32,7 +31,14 @@ Component({
    * 组件的初始数据
    */
   data: {
-    focus: false
+    focus: false,
+    result: 1
+  },
+
+  observers: {
+    'count,min,max': function () {
+      this.valueRange(this.data.count, 'parameter');
+    }
   },
 
   /**
@@ -61,48 +67,54 @@ Component({
         value
       } = e.detail;
       setTimeout(() => {
-        this.blurCount(value);
+        this.blurCount(Number(value), () => {
+          this.data.count = this.data.result;
+          this.triggerEvent('lintap', {
+            count: this.data.result,
+            type: 'blur'
+          }, {
+            bubbles: true,
+            composed: true
+          });
+        });
       }, 50);
     },
 
-    changeCount() {
-      this.blurCount(this.properties.count, true);
+    blurCount(value, callback) {
+      if (value) {
+        this.valueRange(value);
+      } else {
+        this.setData({
+          result: this.properties.count
+        });
+      }
+      callback && callback();
     },
 
-    blurCount(value, fromObserver = false) {
-      if (value) {
-        if (value > this.properties.max) this.setData({
-          count: this.properties.max
+    valueRange(value, way = 'input') {
+      if (value > this.properties.max) {
+        this.setData({
+          result: this.properties.max
         }, () => {
-          this.triggerEvent('linout', { type: 'overflow_max', way: 'input' }, {
+          this.triggerEvent('linout', { type: 'overflow_max', way }, {
             bubbles: true,
             composed: true
           });
         });
-        else if (value < this.properties.min) this.setData({
-          count: this.properties.min
+      } else if (value < this.properties.min) {
+        this.setData({
+          result: this.properties.min
         }, () => {
-          this.triggerEvent('linout', { type: 'overflow_min', way: 'input' }, {
+          this.triggerEvent('linout', { type: 'overflow_min', way }, {
             bubbles: true,
             composed: true
           });
-        });
-        else this.setData({
-          count: value
         });
       } else {
         this.setData({
-          count: this.properties.count
+          result: value
         });
       }
-      let detail = {
-        count: this.data.count,
-        type: 'blur'
-      };
-      if (!fromObserver) this.triggerEvent('lintap', detail, {
-        bubbles: true,
-        composed: true
-      });
     },
 
     reduceTap() {
@@ -113,13 +125,12 @@ Component({
         this.data.count -= this.properties.step;
       }
       this.setData({
-        count: this.data.count
+        result: this.data.count
       });
-      let detail = {
-        count: this.data.count,
+      this.triggerEvent('lintap', {
+        count: this.data.result,
         type: 'reduce'
-      };
-      this.triggerEvent('lintap', detail, {
+      }, {
         bubbles: true,
         composed: true
       });
@@ -133,13 +144,12 @@ Component({
         this.data.count += this.properties.step;
       }
       this.setData({
-        count: this.data.count
+        result: this.data.count
       });
-      let detail = {
-        count: this.data.count,
+      this.triggerEvent('lintap', {
+        count: this.data.result,
         type: 'add'
-      };
-      this.triggerEvent('lintap', detail, {
+      }, {
         bubbles: true,
         composed: true
       });

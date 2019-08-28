@@ -1,9 +1,11 @@
-// dialog
+import computeOffset from '../behaviors/computeOffset';
+import zIndex from '../behaviors/zIndex';
 Component({
   /**
    * 组件的属性列表
    */
-  externalClasses: ['l-class', 'l-class-title', 'l-class-content', 'l-class-confirm', 'l-class-cancel'],
+  behaviors: [computeOffset,zIndex],
+  externalClasses: ['l-class', 'l-title-class', 'l-content-class', 'l-confirm-class', 'l-cancel-class', 'l-bg-class'],
   properties: {
     // 显示与隐藏
     show: {
@@ -54,6 +56,10 @@ Component({
       type: String,
       value: '#45526b'
     },
+    contentColor: {
+      type: String,
+      value: 'rgba(89,108,142,1)'
+    },
     openApi: {
       type: Boolean,
       value: true
@@ -85,33 +91,21 @@ Component({
    */
   methods: {
     initDialog() {
-      const config = {
-        type: 'alert',
-        title: '提示',
-        showTitle: true,
-        content: '',
-        locked: true,
-        confirmText: '确定',
-        cancelColor: '#3683d6',
-        cancelText: '取消',
-        confirmColor: '#45526b',
-        success: null,
-        fail: null,
-      }
       wx.lin = wx.lin || {};
       wx.lin.showDialog = (options) => {
         const {
-          type = config.type,
-            title = config.title,
-            showTitle = config.showTitle,
-            content = config.content,
-            locked = config.locked,
-            confirmText = config.confirmText,
-            cancelColor = config.cancelColor,
-            cancelText = config.cancelText,
-            confirmColor = config.confirmColor,
-            success = config.success,
-            fail = config.fail,
+          type = 'alert',
+          title = '提示',
+          showTitle = true,
+          content = '',
+          locked = true,
+          confirmText = '确定',
+          contentColor = 'rgba(89,108,142,1)',
+          cancelColor = '#45526b',
+          cancelText = '取消',
+          confirmColor = '#3683d6',
+          success = null,
+          fail = null,
         } = options;
         this.setData({
           type,
@@ -123,6 +117,7 @@ Component({
           cancelColor,
           cancelText,
           confirmColor,
+          contentColor,
           show: true,
           fail,
           success
@@ -132,7 +127,7 @@ Component({
     },
 
     // 确定按钮
-    onConfirmTap(e) {
+    onConfirmTap() {
       let detail = 'confirm';
       let option = { bubbles: true, composed: true };
 
@@ -146,13 +141,13 @@ Component({
       });
       this.setData({
         show: !this.data.show
-      })
+      });
       this.triggerEvent('linconfirm', detail, option);
 
     },
 
     // 取消按钮
-    onCancelTap(e) {
+    onCancelTap() {
 
       let detail = 'cancel';
       let option = { bubbles: true, composed: true };
@@ -167,23 +162,23 @@ Component({
       });
       this.setData({
         show: !this.data.show
-      })
+      });
 
       this.triggerEvent('lincancel', detail, option);
     },
 
     // 背景点击事件
-    onDialogTap(e) {
+    onDialogTap() {
       let detail = true;
       let option = { bubbles: true, composed: true };
 
       if (this.data.locked !== true) {
         this.setData({
           show: !this.data.show
-        })
+        });
       }
 
       this.triggerEvent('lintap', detail, option);
     }
   }
-})
+});

@@ -39,4 +39,6 @@
     <image class='dio-img' wx:if="{{type===5}}" src='/images/static/loading.gif'></image>
   </l-dialog>
 
+  <button bindtap="onA">111</button>
+
 </view>

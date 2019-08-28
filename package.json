@@ -1,14 +1,16 @@
 {
   "name": "lin-ui",
-  "version": "0.5.15",
+  "version": "0.6.0",
   "description": "A high quality UI components library with MiniProgram",
   "main": "app.js",
   "directories": {
     "example": "examples"
   },
   "scripts": {
-    "dev": "gulp --gulpfile build/build-dev.js",
-    "build": "gulp --gulpfile build/build-prod.js",
+    "dev": "gulp -f build/index.js dev",
+    "build": "gulp -f build/index.js build",
+    "watch": "gulp -f build/index.js watch",
+    "lint": "eslint ./src/**/*.js",
     "test": "jest"
   },
   "repository": {
@@ -27,6 +29,7 @@
   "homepage": "https://github.com/TaleLin/lin-ui#readme",
   "devDependencies": {
     "child_process": "^1.0.2",
+    "del": "^5.0.0",
     "eslint": "^5.0.1",
     "eslint-config-standard": "^11.0.0",
     "eslint-plugin-import": "^2.13.0",
@@ -38,8 +41,8 @@
     "gulp-less": "^4.0.0",
     "gulp-rename": "^1.2.2",
     "gulp-util": "^3.0.8",
-    "less": "^2.7.3",
     "jest": "^24.8.0",
+    "less": "^2.7.3",
     "lodash": "^4.17.15",
     "miniprogram-simulate": "^1.0.7"
   },
