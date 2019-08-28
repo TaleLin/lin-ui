@@ -91,33 +91,21 @@ Component({
    */
   methods: {
     initDialog() {
-      const config = {
-        type: 'alert',
-        title: '提示',
-        showTitle: true,
-        content: '',
-        locked: true,
-        confirmText: '确定',
-        cancelColor: '#3683d6',
-        cancelText: '取消',
-        confirmColor: '#45526b',
-        success: null,
-        fail: null,
-      };
       wx.lin = wx.lin || {};
       wx.lin.showDialog = (options) => {
         const {
-          type = config.type,
-          title = config.title,
-          showTitle = config.showTitle,
-          content = config.content,
-          locked = config.locked,
-          confirmText = config.confirmText,
-          cancelColor = config.cancelColor,
-          cancelText = config.cancelText,
-          confirmColor = config.confirmColor,
-          success = config.success,
-          fail = config.fail,
+          type = 'alert',
+          title = '提示',
+          showTitle = true,
+          content = '',
+          locked = true,
+          confirmText = '确定',
+          contentColor = 'rgba(89,108,142,1)',
+          cancelColor = '#45526b',
+          cancelText = '取消',
+          confirmColor = '#3683d6',
+          success = null,
+          fail = null,
         } = options;
         this.setData({
           type,
@@ -129,6 +117,7 @@ Component({
           cancelColor,
           cancelText,
           confirmColor,
+          contentColor,
           show: true,
           fail,
           success

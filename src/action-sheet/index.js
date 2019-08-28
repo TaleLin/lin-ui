@@ -56,25 +56,16 @@ Component({
       });
     },
     initActionSheet() {
-      const config = {
-        itemList: [],
-        success: null,
-        fail: null,
-        title: '',
-        locked: false,
-        cancelText: '取消',
-        showCancel: false
-      };
       wx.lin = wx.lin || {};
       wx.lin.showActionSheet = (options={}) => {
         const {
-          itemList = config.itemList,
-          success = config.success,
-          fail = config.fail,
-          title = config.title,
-          locked = config.locked,
-          cancelText = config.cancelText,
-          showCancel = config.showCancel,
+          itemList = [],
+          success = null,
+          fail = null,
+          title = '',
+          locked = false,
+          cancelText = '取消',
+          showCancel = false,
         } = options;
         this.setData({
           itemList: itemList.slice(0, 10),
