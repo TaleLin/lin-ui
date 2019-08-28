@@ -10,6 +10,10 @@ Component({
       value: '取消'
     },
     title: String,
+    zIndex:{
+      type:Number,
+      value: 777
+    },
     openApi: {
       type: Boolean,
       value: true,

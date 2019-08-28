@@ -1,19 +1,15 @@
-// mask
+import zIndex from '../behaviors/zIndex';
 Component({
   /**
    * 组件的属性列表
    */
-  externalClasses: ['popup-class'],
+  behaviors: [zIndex],
+  externalClasses: ['l-bg-class'],
   properties: {
     // 显示与隐藏
     show: {
       type: Boolean,
       value: false
-    },
-    // z-index值
-    zIndex: {
-      type: Number,
-      value: 99
     },
     // 动画效果的显示和隐藏
     animation: {

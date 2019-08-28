@@ -1,9 +1,11 @@
-// dialog
+import computeOffset from '../behaviors/computeOffset';
+import zIndex from '../behaviors/zIndex';
 Component({
   /**
    * 组件的属性列表
    */
-  externalClasses: ['l-class', 'l-class-title', 'l-class-content', 'l-class-confirm', 'l-class-cancel'],
+  behaviors: [computeOffset,zIndex],
+  externalClasses: ['l-class', 'l-title-class', 'l-content-class', 'l-confirm-class', 'l-cancel-class', 'l-bg-class'],
   properties: {
     // 显示与隐藏
     show: {
@@ -53,6 +55,10 @@ Component({
     cancelColor: {
       type: String,
       value: '#45526b'
+    },
+    contentColor: {
+      type: String,
+      value: 'rgba(89,108,142,1)'
     },
     openApi: {
       type: Boolean,

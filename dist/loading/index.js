@@ -1,4 +1,6 @@
+import zIndex from '../behaviors/zIndex';
 Component({
+  behaviors: [zIndex],
   externalClasses: ['l-container-class', 'l-class'],
   properties: {
     // 显示与隐藏

@@ -1,4 +1,4 @@
-<l-popup show="{{show}}" showMask="{{true}}" contentAlign="bottom" locked="{{locked}}" bind:lintap="handleClickPopUp">
+<l-popup show="{{show}}" showMask="{{true}}" contentAlign="bottom" locked="{{locked}}" bind:lintap="handleClickPopUp" z-index="{{zIndex}}">
     <view class='l-action-sheet'>
         <view  class="l-item-button l-class-title" wx:if="{{title}}">
             {{ title }}
