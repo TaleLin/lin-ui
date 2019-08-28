@@ -1,5 +1,5 @@
 //index.js
-import naviConfigs from './navi.js'
+import naviConfigs from './navi.js';
 Page({
   data: {
     naviConfigs: naviConfigs
@@ -16,16 +16,16 @@ Page({
     let {
       title,
       navigatemark
-    } = e.target.dataset
+    } = e.target.dataset;
     wx.navigateTo({
       url: '/pages/navigator/content/index?title=' + title + '&navigatemark=' + navigatemark
-    })
+    });
   },
 
-  onCard(e) {
+  onCard() {
     // const path = e.target.dataset.path
     wx.navigateTo({
       url: '/pages/navigator/content/index?title=电商专题&navigatemark=shopping'
-    })
+    });
   }
-})
+});

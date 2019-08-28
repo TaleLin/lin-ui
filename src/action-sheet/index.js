@@ -1,4 +1,7 @@
+import zIndex from '../behaviors/zIndex';
+
 Component({
+  behaviors: [zIndex],
   externalClasses: ['l-class-title', 'l-class-item', 'l-class-cancel'],
   properties: {
     locked: Boolean,
@@ -10,6 +13,10 @@ Component({
       value: '取消'
     },
     title: String,
+    zIndex:{
+      type:Number,
+      value: 777
+    },
     openApi: {
       type: Boolean,
       value: true,

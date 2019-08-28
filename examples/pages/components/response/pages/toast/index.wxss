@@ -17,3 +17,8 @@
   width: 220rpx;
   height: 180rpx;
 }
+
+.img{
+  width: 60rpx !important;
+  height: 60rpx !important;
+}
