@@ -41,6 +41,7 @@ Component({
       this._isHaveUserNickName(openData);
     },
     _parseCSSText: function parseCSSText(cssText) {
+      // eslint-disable-next-line no-useless-escape
       var cssTxt = cssText.replace('/\/\*(.|\s)*?\*\//g', ' ').replace('/\s+/g', ' ');
       var style = {};
       var properties = cssTxt.split(';').map(function (o) {

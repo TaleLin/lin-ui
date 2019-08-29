@@ -21,8 +21,6 @@ Component({
     current: {
       type: String
     },
-    length: Number,
-
     noneChecked: {
       type: Boolean,
       value: true

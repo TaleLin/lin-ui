@@ -4,11 +4,11 @@ Component({
   relations: {
     '../tabpanel/index': {
       type: 'child',
-      linked(target) {
+      linked() {
         // 每次有子节点被插入时执行，target是该节点实例对象，触发在该节点attached生命周期之后
         this.initTabs();
       },
-      unlinked(target) {
+      unlinked() {
         this.initTabs();
       }
     },
@@ -30,14 +30,14 @@ Component({
       type: String,
       value: 'top',
     },
-    aminmated: Boolean,
+    animated: Boolean,
     swipeable: Boolean,
     scrollable: Boolean,
     hasLine: {
       type: Boolean,
       value: true
     },
-    aminmatedForLine:Boolean,
+    animatedForLine:Boolean,
     activeColor: {
       type: String,
       value: '#333333'
@@ -84,7 +84,7 @@ Component({
             icon: item.data.icon,
             image: item.data.image,
             picPlacement: item.data.picPlacement,
-          }
+          };
         });
         this.setData({
           tabList: tab,
@@ -141,8 +141,7 @@ Component({
     queryMultipleNodes() {
       const {
         placement,
-        activeKey,
-        tabList
+        activeKey
       } = this.data;
       this._getRect('#key-' + activeKey)
         .then((res) => {
@@ -169,7 +168,7 @@ Component({
         const query = wx.createSelectorQuery().in(this);
         query.select(selector).boundingClientRect((res) => {
           if (!res) return reject('找不到元素');
-          resolve(res)
+          resolve(res);
         }).exec();
       });
     }
