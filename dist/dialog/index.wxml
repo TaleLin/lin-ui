@@ -9,7 +9,7 @@
     z-index="{{zIndex}}"
 >
     <view class="dialog-container l-class" style="margin-bottom:{{distance}}px">
-        <view class="dialog-title l-title-class" wx:if="{{showTitle}}">{{title}}</view>
+        <view class="dialog-title l-title-class" style="color:{{titleColor}}" wx:if="{{showTitle}}">{{title}}</view>
         <view class="dialog-content l-content-class" style="color:{{contentColor}}">
             <slot />
             {{content}}

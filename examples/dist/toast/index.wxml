@@ -16,6 +16,6 @@
       name="{{icon}}"
     />
     <slot wx:else/>
-    <text class="toast-text  toast-text-{{placement}}" style="{{placement || 'bottom' === 'bottom' ? icon || image? 'margin-top:10rpx; width:180rpx' : '': '' }}">{{ title }}</text>
+    <text class="toast-text l-title-class  toast-text-{{placement}}" style="{{placement || 'bottom' === 'bottom' ? icon || image? 'margin-top:10rpx; width:180rpx' : '': '' }}">{{ title }}</text>
   </view>
 </view>

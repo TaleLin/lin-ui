@@ -55,37 +55,37 @@ Component({
 
   methods: {
     switchTab(e) {
-      const data = e.currentTarget.dataset
-      const url = data.path
+      const data = e.currentTarget.dataset;
+      const url = data.path;
       if (this.data.isNav) {
         if (this.data.isRedirectToTab) {
           wx.switchTab({
             url
-          })
+          });
         } else {
           wx.switchTab({
             url
-          })
+          });
         }
       }
 
 
-      this.showItem(data.index)
+      this.showItem(data.index);
     },
     show() {
       this.setData({
         show: true
-      })
+      });
     },
     hide() {
       this.setData({
         show: false
-      })
+      });
     },
     showItem(idx) {
       this.setData({
         selected: idx
-      })
+      });
       let detail = {
         idx,
         path:this.route
@@ -94,28 +94,28 @@ Component({
       this.triggerEvent('lintap', detail, option);
     },
     showRedDot(idx) {
-      const redDot = `list[${idx}].redDot`
+      const redDot = `list[${idx}].redDot`;
       this.setData({
         [redDot]: true
-      })
+      });
     },
     hideRedDot(idx) {
-      const redDot = `list[${idx}].redDot`
+      const redDot = `list[${idx}].redDot`;
       this.setData({
         [redDot]: false
-      })
+      });
     },
     setTabBarBadge(idx, text) {
-      const badge = `list[${idx}].badge`
+      const badge = `list[${idx}].badge`;
       this.setData({
         [badge]: text
-      })
+      });
     },
     removeTabBarBadge(idx) {
-      const badge = `list[${idx}].badge`
+      const badge = `list[${idx}].badge`;
       this.setData({
         [badge]: ''
-      })
+      });
     }
   }
-})
+});

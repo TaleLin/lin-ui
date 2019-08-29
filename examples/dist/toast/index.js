@@ -5,7 +5,7 @@ Component({
    * 组件的属性列表
    */
   behaviors: [computeOffset, zIndex],
-  externalClasses: ['l-bg-class', 'l-icon-class', 'l-class', 'l-image-class'],
+  externalClasses: ['l-bg-class', 'l-icon-class', 'l-class', 'l-image-class', 'l-title-class '],
   properties: {
     // 显示与隐藏
     show: {
