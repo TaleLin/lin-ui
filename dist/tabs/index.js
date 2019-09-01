@@ -92,6 +92,7 @@ Component({
             tab: item.data.tab,
             key: item.data.key,
             icon: item.data.icon,
+            iconSize: item.data.iconSize,
             image: item.data.image,
             picPlacement: item.data.picPlacement,
           };

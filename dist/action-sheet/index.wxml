@@ -11,7 +11,8 @@
                         wx:elif="{{ item.icon }}" 
                         name="{{ item.icon }}" 
                         l-class="l-item-button"
-                        color="{{item.color}}"></l-icon>  
+                        size="{{ item.iconSize }}"
+                        color="{{item.color?item.color||item.iconColor}}"></l-icon>  
                     <text class="l-button-text">{{ item.name }}</text>
                 </view>
             </l-button>

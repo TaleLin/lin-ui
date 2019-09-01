@@ -5,7 +5,7 @@ Component({
    */
   externalClasses: [
     'l-class',
-    'l-input-container',
+    'l-input-container-class',
     'l-placeholder-class',
     'l-input-class',
     'l-cancel-class'

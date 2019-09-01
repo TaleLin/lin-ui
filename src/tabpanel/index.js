@@ -29,7 +29,10 @@ Component({
     subKey: String,
     key: String,
     icon: String,
-    iconStyle: String,
+    iconSize: {
+      type: String,
+      value: '20'
+    },
     image: Object,
     picPlacement: {
       type: String,

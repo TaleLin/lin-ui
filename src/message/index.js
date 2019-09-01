@@ -6,6 +6,14 @@ Component({
   properties: {
     show: Boolean,
     icon: String,
+    iconColor: {
+      type: String,
+      value: '#fff'
+    },
+    iconSize: {
+      type: String,
+      value: '28'
+    },
     image: String,
     content: String,
     type: {
