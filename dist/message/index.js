@@ -1,4 +1,6 @@
+import zIndex from '../behaviors/zIndex';
 Component({
+  behaviors: [zIndex],
   externalClasses: ['l-class', 'l-image-class'],
   properties: {
     show: Boolean,

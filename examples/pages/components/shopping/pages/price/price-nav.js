@@ -74,9 +74,36 @@ const priceNaviConfigs = [{
     countColor: '',
     countSize: 28,
     countBlod: '600',
-    delete: true,
+    del: true,
     delColor: ''
   }]
-}]
+  }, {
+    title: "自动补零、保留小数位数",
+    config: [{
+      count: '666',
+      unit: '￥',
+      unitColor: '',
+      unitSize: 28,
+      unitBlod: '600',
+      countColor: '',
+      countSize: 28,
+      countBlod: '600',
+      autofix: true,
+      reserveDigit: 2,
+      delColor: ''
+    },{
+        count: '666.66',
+        unit: '￥',
+        unitColor: '',
+        unitSize: 28,
+        unitBlod: '600',
+        countColor: '',
+        countSize: 28,
+        countBlod: '600',
+        reserveDigit: 3,
+        autofix: true,
+        delColor: ''
+      }]
+  }]
 
 export default priceNaviConfigs;

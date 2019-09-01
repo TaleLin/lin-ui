@@ -92,13 +92,10 @@ Component({
       this.triggerEvent('linblur', event);
     },
     handleInputConfirm(event) {
-      const { detail = {} } = event;
-      const { value = '' } = detail;
-
       this.triggerEvent('linconfirm', event);
     },
     // onClearTap(e) {
     //   this.setData({ value: '' })
     // },
   }
-})
+});

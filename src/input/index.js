@@ -154,8 +154,8 @@ Component({
     onClearTap(event) {
       this.setData({
         value: ''
-      })
+      });
       this.triggerEvent('linclear', event.detail);
     },
   }
-})
+});

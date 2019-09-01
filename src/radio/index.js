@@ -1,5 +1,5 @@
 Component({
-  externalClasses: ['l-class', 'l-title-class'],
+  externalClasses: ['l-class', 'l-disabled-class'],
   behaviors: ['wx://form-field'],
   relations: {
     '../radio-group/index': {
@@ -7,69 +7,80 @@ Component({
     }
   },
   properties: {
-    value: {
-      type: String,
-      value: ''
-    },
-    // radio的形状
-    shape: {
-      type: String,
-      value: ''
-    },
+    key: String,
+    cell: Object,
     // radio的大小
     size: {
-      type: [String, Number],
-      value: 36
+      type: String,
+      value: '32rpx'
     },
-    // 是否选中
-    checked: {
-      type: Boolean,
-      value: false
-    },
-    // 不可选状态
     disabled: {
-      type: Boolean,
-      value: false
+      type: Boolean
     },
-    //  选中后的颜色
+    custom: Boolean,
     color: {
       type: String,
-      value: ''
+      value: '#ccc'
     },
-    //  是否自定义内容
-    custom: {
-      type: Boolean,
-      value: false
+    //  选中后的颜色
+    selectColor: {
+      type: String,
+      value: '#3963BC'
     },
-    // radio的布局
+    disabledColor:{
+      type: String,
+      value: '#ccc'
+    },
     placement: {
       type: String,
       value: 'left'
     }
   },
   data: {
-    right: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEgAAABICAYAAABV7bNHAAAAAXNSR0IArs4c6QAAAp1JREFUeAHtmD1IlVEYx80KLckSpIw2kxAcAoeGBiODGlpcJGgxRChBsMGpocWpqSUcXFxaIlBoaYikoaEhaAgaAtdIKsK+yL5uvweu8HI7PO+9571cOvf9P/DnvO95znPO+f+uvl8dHQoREAEREAEREAEREAEREAEREAEREAEREAEREAEREAEREAERaDaBSqXSg/Y2e97k5wPKIHqM/qDvaBntT95YMwwAYgS9RbWx1Iz5k54DIifRu1oy1fMvtJ1JGyyyecyPog9VGKFmm85yXo8wfgp9DFHJ9K0V+QGSrQXAabSVARE63KBzIFmTsRvH9Bj6HCKS6XvN8bHYNZKtw/Q4+poBETp8RefRZE3GbhzTF9C3EJFM30uOD8eukWwdpi8ie/jz4gXJ/mRNxm4c0xPIbtdePCfZF7tGS+vY6CF0Fp0oujBzTKKfyItnJA8WXasl9Wz0CspeJ+5z3huzOHWX0S/kxVOSB2Lmb3kNGx1GPwJu7NrQ0PMI46fQb+TFE5I9LTcauyCbve64sYe2oXrmZtwMyoPziDFpvamz4WvIi02Sox4k8rPIPld48ZBktzfPf5lj0wPoveeM3Cd0LmSA/vmcWks/QF2h+iT62PwZZBC8sFv2pawhzhe8gmpulTb9N3NM2CcI+3fywq4xcwaJ9oY3sJq7R7snCzXpY8wcR3Zhzov1vAHk76LdSQMJbR5TR5Dd4ovECsXt+0UQc72onr8Shv0Ty/TsCsFvqz5MdiF7om4k7jC4/eHs/NKY7URLdRK6vVNXuhZAN3Mg3SodlFrDALqKQq8Si7VjS3sOoPPIPo1avEHTpYXhGQfMPi+vnAiIgAiIgAiIgAiIgAiIgAiIgAiIgAiIgAiIgAiIgAiIgAiIQCME/gJuaIsjMhxDzAAAAABJRU5ErkJggg==',
-    circle: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEgAAABICAYAAABV7bNHAAAAAXNSR0IArs4c6QAAAjlJREFUeAHtmjFOw0AQRWOUApGSBqhNR8MZcgEKehcUXCMnAlHmFBTQQU1ooAtCAsn8j9aS5SRaR56xlc0f6cuOdz2z87wbe9cejWQiIAIiIAIiIAIiIAIiIAIiIAIiIAIiIAIiIAIiIAIi0A+BrJ8wm6OUZXmI0nPoFDoLNd+wXUAvWZZ9h2P7swGUCVRAd9AS2mQsY50CmiRPCEmOoVtoAW1rPIfnjpMEhcRy6AnqavSRJwUJCU2hz65kaufT1zQJSEwE+qklZ7VLn7sNCQlwWFn2nCZc+nYdbm63eTScf6aP0IXzUHiG/0s8Dvx6xDnwcBp83mDrDYehGIOxXMylB6H38JnlFTpxafWq03ccytGLlqtF3Y549aBrNKsvOCTAWIxpbl6ArsxbGnfoEtN8iGF4cW71AR3FczKt8QVvx9ZzN48exIln33BImjEZ29Q8AFUzctOGtnRmHtsDEJcthjLz2B6AhoLjEtcDEBe6hjIutJmaByDzRm6RsfnF0W0+Qt+8B4XnkHkkrkfx3PoZiI00BxQyf/AgEPHpEtN8iDEJTVYjlzLMqmeRapbFsxDT0ue/L5ceRM+pLJiZE687BKSdX3Kt5+OyD0hatI+RDZAsF+/Tee1TwQvDTS8OKyDrtoCkV8/rwDSPAVT18cI99mMfL7BOwXOafvr47Xabb9t4JF59/sLFrmo9h5NOTnr38/OXtvBUTwREQAREQAREQAREQAREQAREQAREQAREQAREQAREICkCf2RxAMVsHYMpAAAAAElFTkSuQmCC',
-    checked: true
+    checked: false
   },
   methods: {
-    onChangeHandle(current,id) {
+    setChecked(checked) {
       this.setData({
-        checked: current,
-        id
+        checked,
       });
     },
     // 点击radio
     onRadioChangeTap() {
-      if (this.data.disabled) return;
-      const item = {
-        current: !this.data.checked,
-        value: this.data.value,
-        id:this.data.id
-      };
+      if (this.properties.disabled) {
+        return;
+      }
       const parent = this.getRelationNodes('../radio-group/index')[0];
-      parent ? parent.onEmitEventHandle(item) : this.triggerEvent('linchange', item);
-      parent ? parent.onChangeHandle(item.value) : this.onChangeHandle(true);
+      const noneChecked = parent.properties.noneChecked;
+      const isCurrent = this.isCurrentSelectedKey(parent);
+      let select = true;
+      if (isCurrent) {
+        select = false;
+        if (!noneChecked) {
+          return;
+        }
+      }
+      const checked = !this.data.checked;
+      this.data.checked = checked;
+
+      // 子组件不能修改父组件属性
+      // parent.properties.current = null
+      const item = {
+        checked,
+        key: this.properties.key,
+        cell: this.properties.cell
+      };
+      if (parent) {
+        parent.onEmitEventHandle(item, select);
+      }
+    },
+
+    isCurrentSelectedKey(parent) {
+      const currentKey = parent.properties.current;
+      if (currentKey == this.properties.key) {
+        return true;
+      }
+      return false;
     }
   }
 });

@@ -1,4 +1,10 @@
 /**index.wxss**/
+.a{
+  width: 46.875rpx;
+  height: 20px;
+  background: rebeccapurple;
+  margin: 0 0 50rpx 50rpx;
+}
 
 page {
   background: #f7f7f7;

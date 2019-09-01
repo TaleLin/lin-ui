@@ -5,11 +5,11 @@ Component({
     '../tabpanel/index': {
       type: 'child',
     },
-    linked(target) {
+    linked() {
       // 每次有子节点被插入时执行，target是该节点实例对象，触发在该节点attached生命周期之后
       this.initTabs();
     },
-    unlinked(target) {
+    unlinked() {
       this.initTabs();
     }
   },
@@ -92,7 +92,7 @@ Component({
       let items = this.getRelationNodes('../tabpanel/index');
       if (items.length > 0) {
         const tabList = [];
-        items.forEach((item, index) => {
+        items.forEach((item) => {
           const tabIndex = tabList.findIndex(tabItem => tabItem.tab === item.data.tab);
           let tab = {};
           if (tabIndex === -1) {

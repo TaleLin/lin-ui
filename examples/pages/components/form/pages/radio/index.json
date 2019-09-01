@@ -4,6 +4,7 @@
     "content-card": "/components/content-card/index",
     "l-toast": "/dist/toast/index",
     "l-radio-group": "/dist/radio-group/index",
-    "l-radio": "/dist/radio/index"
+    "l-radio": "/dist/radio/index",
+    "l-loading":"/dist/loading/index"
   }
 }

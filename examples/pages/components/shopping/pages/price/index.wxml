@@ -15,44 +15,12 @@
         count-size="{{price.countSize}}"
         count-bold="{{price.countBlod}}"
         unit-bold="{{price.unitBlod}}"
-        delete="{{price.delete}}"
+        deleted="{{price.del}}"
+        reserveDigit="{{price.reserveDigit}}"
+        autofix="{{price.autofix}}"
         del-color="{{price.delColor}}"  />
     </view>
   </content-card>
 
-  <content-card name="设置价格前后内容">
-    <view class='price-container'>
-      <l-price 
-        l-class="price" 
-        count="{{666.80}}"
-        autofix
-        unit-size="28"
-        count-size="28"
-        unit-color="rgb(175,141,80)"
-        count-color="rgb(175,141,80)">
-        <l-tag slot="before"
-               l-class="tag-l"
-               bg-color="rgb(242,235,209)"
-               font-color="rgb(175,141,80)">
-          VIP
-        </l-tag>
-        <l-icon name="default"/>
-      </l-price>
-      <l-price 
-        l-class="price" 
-        count="{{a}}"
-        unit-size="28"
-        count-size="28"
-        unit-color="rgb(175,141,80)"
-        count-color="rgb(175,141,80)">
-        <l-tag slot="after"
-               l-class="tag-r"
-               bg-color="rgb(242,235,209)"
-               font-color="rgb(175,141,80)">
-          VIP
-        </l-tag>
-      </l-price>
-    </view>
-  </content-card>
-
+  <view class="a"></view>
 </content-title>
