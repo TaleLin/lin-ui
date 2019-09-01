@@ -1,4 +1,5 @@
-module.exports = Behavior({
+// eslint-disable-next-line no-undef
+export default Behavior({
   behaviors: [],
   properties: {
     zIndex:{

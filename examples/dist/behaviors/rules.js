@@ -2,7 +2,8 @@ import Schema from '../common/async-validator/index';
 /**
  * @param tipType String [toast , message , text]
  */
-module.exports = Behavior({
+// eslint-disable-next-line no-undef
+export default Behavior({
   behaviors: [],
   properties: {
     // 校验
@@ -55,7 +56,7 @@ module.exports = Behavior({
       const validateValue = {
         [this.data.name]: value
       };
-      this.data.schema.validate(validateValue, (errors, fields) => {
+      this.data.schema.validate(validateValue, (errors) => {
 
         this.triggerEvent('linvalidate', {
           errors,
@@ -76,7 +77,7 @@ module.exports = Behavior({
             wx.showToast({
               icon: 'none',
               title: `请在页面内引入${tipType}组件`
-            })
+            });
             return;
           }
 
@@ -95,4 +96,4 @@ module.exports = Behavior({
 
     }
   }
-})
+});

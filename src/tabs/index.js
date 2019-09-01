@@ -1,6 +1,16 @@
 // components/tabs/index.js
 Component({
-  externalClasses: ['l-class-tabs','l-class-header', 'l-class-active', 'l-class-content', 'l-class-inactive', 'l-class-line', 'l-class-tabimage', 'l-class-header-line','l-class-icon'],
+  externalClasses: [
+    'l-class-tabs',
+    'l-class-header',
+    'l-class-active',
+    'l-class-content',
+    'l-class-inactive',
+    'l-class-line',
+    'l-class-tabimage',
+    'l-class-header-line',
+    'l-class-icon'
+  ],
   relations: {
     '../tabpanel/index': {
       type: 'child',
@@ -37,7 +47,7 @@ Component({
       type: Boolean,
       value: true
     },
-    animatedForLine:Boolean,
+    animatedForLine: Boolean,
     activeColor: {
       type: String,
       value: '#333333'
@@ -46,9 +56,9 @@ Component({
       type: String,
       value: '#bbbbbb'
     },
-    equalWidth:{
-      type:Boolean,
-      value:true
+    equalWidth: {
+      type: Boolean,
+      value: true
     }
 
   },
@@ -147,7 +157,7 @@ Component({
         .then((res) => {
           if (['top', 'bottom'].indexOf(placement) !== -1) {
             this.setData({
-              transformX: res.left>0 ? res.left : 'auto',
+              transformX: res.left > 0 ? res.left : 'auto',
               transformY: 0
             });
           } else {

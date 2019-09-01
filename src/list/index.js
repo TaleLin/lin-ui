@@ -17,9 +17,29 @@ Component({
   options: {
     multipleSlots: true
   },
-  externalClasses: ['l-class', 'l-class-icon', 'l-class-image','l-class-right','l-class-content','l-class-desc'],
+  externalClasses: [
+    'l-class',
+    'l-class-icon',
+    'l-icon-class',
+    'l-class-image',
+    'l-image-class',
+    'l-class-right',
+    'l-right-class',
+    'l-class-content',
+    'l-content-class',
+    'l-class-desc',
+    'l-desc-class'
+  ],
   properties: {
     icon: String,
+    iconColor: {
+      type: String,
+      value: '#3963BC'
+    },
+    iconSize: {
+      type: String,
+      value: '28'
+    },
     image: String,
     title: String,
     desc: String,
