@@ -28,7 +28,7 @@ Component({
     },
     buttonColor: {
       type: String,
-      value: ""
+      value: ''
     },
     part: {
       type: Boolean,
@@ -59,7 +59,7 @@ Component({
     attached: function () {
       this._initStatusShow();
       if (this.data.autoFit) {
-        this.autoSetMarginTop()
+        this.autoSetMarginTop();
       }
     },
 
@@ -71,7 +71,7 @@ Component({
   pageLifetimes: {
     show() {
       this._initStatusShow();
-      const that = this
+      const that = this;
 
       wx.getSystemInfo({
         success(res) {
@@ -79,20 +79,20 @@ Component({
             windowHeight: res.windowHeight,
             windowWidth: res.windowWidth,
             px2rpx: res.windowWidth / 750
-          })
+          });
         }
-      })
+      });
 
       if (!this.data.part) {
-        return
+        return;
       }
 
-      const query = wx.createSelectorQuery().in(this)
-      query.select('#statusShow').boundingClientRect()
+      const query = wx.createSelectorQuery().in(this);
+      query.select('#statusShow').boundingClientRect();
       query.exec(function (res) {
-        const multiple_width = res[0].width / that.data.windowWidth
-        const multiple_height = res[0].height / that.data.windowHeight
-        const multiple = multiple_width > multiple_height ? multiple_height : multiple_width
+        const multiple_width = res[0].width / that.data.windowWidth;
+        const multiple_height = res[0].height / that.data.windowHeight;
+        const multiple = multiple_width > multiple_height ? multiple_height : multiple_width;
         that.setData({
           statusShow_width: res[0].width,
           statusShow_height: res[0].height,
@@ -107,32 +107,32 @@ Component({
           text_margin_top: that.data.text_margin_top * multiple,
           font_size: that.data.font_size * multiple > 16 ? that.data.font_size * multiple : 16,
           button_margin_top: that.data.button_margin_top * multiple,
-        })
-      })
+        });
+      });
 
-      const query_button = wx.createSelectorQuery().in(this)
-      query_button.select("#button").boundingClientRect()
+      const query_button = wx.createSelectorQuery().in(this);
+      query_button.select('#button').boundingClientRect();
       query_button.exec(function (res) {
         if (res[0]) {
           that.setData({
             button_height: that.data.button_height * that.data.multiple > 28 ? that.data.button_height * that.data.multiple : 28,
             button_width: that.data.button_width * that.data.multiple,
-          })
+          });
         }
-      })
+      });
     },
   },
 
   observers: {
     'type, statusShow_height, text_margin_top, button_height, button_margin_top': function () {
       if (this.data.part) {
-        const image_height = this.data.type == 'success' || this.data.type == 'error' ? this.data.left_img_height : this.data.type == 'address' ? this.data.ad_img_height : this.data.top_img_height
-        const button_height = this.data.buttonText || this.data.type == 'cart' || this.data.type == 'network' ? 44 : 0
-        const button_margin_top = this.data.buttonText || this.data.type == 'cart' || this.data.type == 'network' ? this.data.button_margin_top : 0
-        const top = (this.data.statusShow_height / this.data.px2rpx - image_height - this.data.text_margin_top - button_height - button_margin_top - 44) / 2
+        const image_height = this.data.type == 'success' || this.data.type == 'error' ? this.data.left_img_height : this.data.type == 'address' ? this.data.ad_img_height : this.data.top_img_height;
+        const button_height = this.data.buttonText || this.data.type == 'cart' || this.data.type == 'network' ? 44 : 0;
+        const button_margin_top = this.data.buttonText || this.data.type == 'cart' || this.data.type == 'network' ? this.data.button_margin_top : 0;
+        const top = (this.data.statusShow_height / this.data.px2rpx - image_height - this.data.text_margin_top - button_height - button_margin_top - 44) / 2;
         this.setData({
           top
-        })
+        });
       }
     }
   },
@@ -146,14 +146,14 @@ Component({
       wx.lin.showStatusShow = (options = {}) => {
         const {
           type = 'success',
-            image = '',
-            describe = '',
-            buttonText = '',
-            bgColor = 'fff',
-            top = 260,
-            autoFit = true,
-            buttonColor = "",
-            part = false,
+          image = '',
+          describe = '',
+          buttonText = '',
+          bgColor = 'fff',
+          top = 260,
+          autoFit = true,
+          buttonColor = '',
+          part = false,
         } = options;
         if (autoFit) {
           this.setData({
@@ -188,76 +188,76 @@ Component({
     },
 
     autoSetMarginTop() {
-      const that = this
-      const image_height = this.data.type == 'success' || this.data.type == 'error' ? this.data.left_img_height : this.data.type == 'address' ? this.data.ad_img_height : this.data.top_img_height
-      const button_height = this.data.buttonText || this.data.type == 'cart' || this.data.type == 'network' ? 72 : 0
-      const button_margin_top = this.data.buttonText || this.data.type == 'cart' || this.data.type == 'network' ? 80 : 0
+      const that = this;
+      const image_height = this.data.type == 'success' || this.data.type == 'error' ? this.data.left_img_height : this.data.type == 'address' ? this.data.ad_img_height : this.data.top_img_height;
+      const button_height = this.data.buttonText || this.data.type == 'cart' || this.data.type == 'network' ? 72 : 0;
+      const button_margin_top = this.data.buttonText || this.data.type == 'cart' || this.data.type == 'network' ? 80 : 0;
       wx.getSystemInfo({
         success(res) {
-          const multiple = res.windowWidth / 750
+          const multiple = res.windowWidth / 750;
           // 屏幕居中
-          const top = (res.screenHeight / multiple - image_height - 40 - 84 - button_height - button_margin_top) / 2 + res.windowHeight / multiple - res.screenHeight / multiple
+          const top = (res.screenHeight / multiple - image_height - 40 - 84 - button_height - button_margin_top) / 2 + res.windowHeight / multiple - res.screenHeight / multiple;
           // 可视区域居中
           // const top = (res.windowHeight * 750 / res.windowWidth - image_height - 40 - 84 - button_height - button_margin_top) / 2 
 
           that.setData({
             top: top
-          })
+          });
 
         }
-      })
+      });
     },
 
     _changeStatus() {
       switch (this.properties.type) {
-        case 'success':
-          this.setData({
-            typeImage: 'image/success.png',
-            typeText: '操作成功~'
-          });
-          break;
-        case 'error':
-          this.setData({
-            typeImage: 'image/error.png',
-            typeText: '操作失败~'
-          });
-          break;
-        case 'cart':
-          this.setData({
-            typeImage: 'image/cart.png',
-            typeText: '购物车空空如也，去逛逛吧~'
-          });
-          break;
-        case 'order':
-          this.setData({
-            typeImage: 'image/order.png',
-            typeText: '您暂时还没有订单哦~'
-          });
-          break;
-        case 'network':
-          this.setData({
-            typeImage: 'image/network.png',
-            typeText: '糟糕！网络错误~'
-          });
-          break;
-        case 'address':
-          this.setData({
-            typeImage: 'image/address.png',
-            typeText: '您暂时还没有地址哦~'
-          });
-          break;
-        case 'product':
-          this.setData({
-            typeImage: 'image/product.png',
-            typeText: '暂时还没有商品哦~~'
-          });
-          break;
-        case 'data':
-          this.setData({
-            typeImage: 'image/data.png',
-            typeText: '暂时还没有相关数据哦~~'
-          });
-          break;
+      case 'success':
+        this.setData({
+          typeImage: 'image/success.png',
+          typeText: '操作成功~'
+        });
+        break;
+      case 'error':
+        this.setData({
+          typeImage: 'image/error.png',
+          typeText: '操作失败~'
+        });
+        break;
+      case 'cart':
+        this.setData({
+          typeImage: 'image/cart.png',
+          typeText: '购物车空空如也，去逛逛吧~'
+        });
+        break;
+      case 'order':
+        this.setData({
+          typeImage: 'image/order.png',
+          typeText: '您暂时还没有订单哦~'
+        });
+        break;
+      case 'network':
+        this.setData({
+          typeImage: 'image/network.png',
+          typeText: '糟糕！网络错误~'
+        });
+        break;
+      case 'address':
+        this.setData({
+          typeImage: 'image/address.png',
+          typeText: '您暂时还没有地址哦~'
+        });
+        break;
+      case 'product':
+        this.setData({
+          typeImage: 'image/product.png',
+          typeText: '暂时还没有商品哦~~'
+        });
+        break;
+      case 'data':
+        this.setData({
+          typeImage: 'image/data.png',
+          typeText: '暂时还没有相关数据哦~~'
+        });
+        break;
       }
     },
 
@@ -272,12 +272,12 @@ Component({
       this.setData({
         customImageHeight: e.detail.height,
         customImageWidth: e.detail.width
-      })
+      });
       if (this.data.part) {
         this.setData({
           customImageHeight: this.data.customImageHeight * this.data.multiple,
           customImageWidth: this.data.customImageWidth * this.data.multiple
-        })
+        });
       }
     }
 
