@@ -73,19 +73,19 @@ Component({
       this._initStatusShow();
       const that = this
 
-      if (!this.data.part) {
-        console.log('part 为false')
-        return
-      }
-
       wx.getSystemInfo({
         success(res) {
           that.setData({
             windowHeight: res.windowHeight,
             windowWidth: res.windowWidth,
+            px2rpx: res.windowWidth / 750
           })
         }
       })
+
+      if (!this.data.part) {
+        return
+      }
 
       const query = wx.createSelectorQuery().in(this)
       query.select('#statusShow').boundingClientRect()
@@ -94,6 +94,8 @@ Component({
         const multiple_height = res[0].height / that.data.windowHeight
         const multiple = multiple_width > multiple_height ? multiple_height : multiple_width
         that.setData({
+          statusShow_width: res[0].width,
+          statusShow_height: res[0].height,
           multiple,
           ad_img_width: that.data.ad_img_width * multiple,
           ad_img_height: that.data.ad_img_height * multiple,
@@ -118,9 +120,21 @@ Component({
           })
         }
       })
-
-      console.log(this.data)
     },
+  },
+
+  observers: {
+    'type, statusShow_height, text_margin_top, button_height, button_margin_top': function () {
+      if (this.data.part) {
+        const image_height = this.data.type == 'success' || this.data.type == 'error' ? this.data.left_img_height : this.data.type == 'address' ? this.data.ad_img_height : this.data.top_img_height
+        const button_height = this.data.buttonText || this.data.type == 'cart' || this.data.type == 'network' ? 44 : 0
+        const button_margin_top = this.data.buttonText || this.data.type == 'cart' || this.data.type == 'network' ? this.data.button_margin_top : 0
+        const top = (this.data.statusShow_height / this.data.px2rpx - image_height - this.data.text_margin_top - button_height - button_margin_top - 44) / 2
+        this.setData({
+          top
+        })
+      }
+    }
   },
 
   /**
@@ -175,12 +189,21 @@ Component({
 
     autoSetMarginTop() {
       const that = this
+      const image_height = this.data.type == 'success' || this.data.type == 'error' ? this.data.left_img_height : this.data.type == 'address' ? this.data.ad_img_height : this.data.top_img_height
+      const button_height = this.data.buttonText || this.data.type == 'cart' || this.data.type == 'network' ? 72 : 0
+      const button_margin_top = this.data.buttonText || this.data.type == 'cart' || this.data.type == 'network' ? 80 : 0
       wx.getSystemInfo({
         success(res) {
-          const top = (res.windowHeight * 750 / res.windowWidth - 246) / 2 * 0.7
+          const multiple = res.windowWidth / 750
+          // 屏幕居中
+          const top = (res.screenHeight / multiple - image_height - 40 - 84 - button_height - button_margin_top) / 2 + res.windowHeight / multiple - res.screenHeight / multiple
+          // 可视区域居中
+          // const top = (res.windowHeight * 750 / res.windowWidth - image_height - 40 - 84 - button_height - button_margin_top) / 2 
+
           that.setData({
             top: top
           })
+
         }
       })
     },
@@ -238,12 +261,24 @@ Component({
       }
     },
 
-
     tapStatusShow() {
       this.triggerEvent('lincorvertap', {}, {
         bubbles: true,
         composed: true
       });
+    },
+
+    loadimage(e) {
+      this.setData({
+        customImageHeight: e.detail.height,
+        customImageWidth: e.detail.width
+      })
+      if (this.data.part) {
+        this.setData({
+          customImageHeight: this.data.customImageHeight * this.data.multiple,
+          customImageWidth: this.data.customImageWidth * this.data.multiple
+        })
+      }
     }
 
   }
