@@ -17,7 +17,7 @@
                 data-index="{{index}}" 
                 bind:tap="handleChange">
                 <image wx:if="{{ item.image.activeImage || item.image.defaultImage }}" src="{{item.key===activeKey? item.image.activeImage:item.image.defaultImage}}" class="l-tab-image l-class-tabimage"/>
-                <l-icon wx:if="{{item.icon}}" l-class="l-class-icon" l-class-self="{{item.key===activeKey ? 'l-icon-active':'l-icon-inactive'}}" name="{{item.icon}}" color="{{item.key===activeKey?activeColor:inactiveColor}}"/>
+                <l-icon wx:if="{{item.icon}}" l-class="l-class-icon" l-class-self="{{item.key===activeKey ? 'l-icon-active':'l-icon-inactive'}}" name="{{item.icon}}" color="{{item.key===activeKey?activeColor:inactiveColor}}" size="{{iconSize}}"/>
                     {{item.tab}}
                <view class="l-tab-line {{item.key===activeKey?'l-class-line':''}} {{animatedForLine?'l-line-aminmated':''}}" wx:if="{{hasLine}}" style="background:{{item.key===activeKey?activeColor:inactiveColor}}"></view>
             </view>

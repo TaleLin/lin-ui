@@ -17,8 +17,8 @@ Component({
     title: String,
     // icon
     icon: String,
-    size: String,
-    color: String,
+    iconSize: String,
+    iconColor: String,
     // image
     image: String,
     // 文字的显示方位

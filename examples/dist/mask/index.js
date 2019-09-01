@@ -4,7 +4,7 @@ Component({
    * 组件的属性列表
    */
   behaviors: [zIndex],
-  externalClasses: ['mask-class'],
+  externalClasses: ['l-class','l-mask-class'],
   properties: {
     // 显示与隐藏
     show: {
