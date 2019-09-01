@@ -1,6 +1,5 @@
 // components/tab/index.js
 Component({
-  externalClasses: ['v-tab-active', 'tab-default'],
   relations: {
     '../tabs/index': {
       type: 'parent',

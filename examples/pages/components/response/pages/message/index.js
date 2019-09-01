@@ -16,17 +16,11 @@ Page({
       case 0:
         wx.lin.showMessage({
           type: 'primary',
-          icon: true,
           duration: 1500,
           content: '默认提示'
         })
         break
       case 1:
-        // wx.lin.showMessage({
-        //   type: 'success',
-        //   duration: 1500,
-        //   content: '成功提示'
-        // })
         this.setData({
           show: true,
           type: 'success',
@@ -46,13 +40,6 @@ Page({
           type: 'warning',
           duration: 1500,
           content: '警告提示'
-        })
-        break
-      case 4:
-        wx.lin.showMessage({
-          type: 'primary',
-          duration: 1500,
-          content: '无图标提示'
         })
         break
       case 5:

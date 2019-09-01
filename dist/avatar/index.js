@@ -1,5 +1,9 @@
 Component({
-  externalClasses: ['l-class', 'l-class-text'],
+  externalClasses: [
+    'l-class', 
+    'l-class-text',
+    'l-text-class'
+  ],
   properties: {
     icon: String,
     text: String,

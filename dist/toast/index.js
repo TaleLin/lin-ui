@@ -1,10 +1,11 @@
 import computeOffset from '../behaviors/computeOffset';
 import zIndex from '../behaviors/zIndex';
+import wacthShow from '../behaviors/wacthShow';
 Component({
   /**
    * 组件的属性列表
    */
-  behaviors: [computeOffset, zIndex],
+  behaviors: [computeOffset, zIndex, wacthShow],
   externalClasses: ['l-bg-class', 'l-icon-class', 'l-class', 'l-image-class', 'l-title-class '],
   properties: {
     // 显示与隐藏
@@ -13,11 +14,7 @@ Component({
       value: false
     },
     // 提示框的文本内容
-    title: {
-      type: String,
-      value: '',
-      observer: 'elip'
-    },
+    title: String,
     // icon
     icon: String,
     size: String,
@@ -57,12 +54,6 @@ Component({
     offsetY: Number
   },
 
-  observers: {
-    'show': function (show) {
-      show && this.changeStatus();
-    }
-  },
-
   /**
    * 组件的初始数据
    */
@@ -72,6 +63,7 @@ Component({
     fail: '',
     complete: ''
   },
+
   attached() {
     if (this.data.openApi) {
       this.initToast();
@@ -123,33 +115,11 @@ Component({
         this.changeStatus();
         return this;
       };
-    },
-
-    changeStatus() {
-      this.setData({
-        status: true
-      });
-      if (this.data.timer) clearTimeout(this.data.timer);
-      this.data.timer = setTimeout(() => {
+      wx.lin.hideMessage = () => {
         this.setData({
           status: false
         });
-        if (this.data.success) this.data.success();
-        this.data.timer = null;
-      }, this.properties.duration);
-    },
-
-    elip(text) {
-      var textLen = text ? this.strlen(text) : 0;
-      if (textLen) {
-        text = text.substring(0, 20);
-      } else {
-        text = '';
-      }
-      this.setData({
-        title: text
-      });
-      return text;
+      };
     },
 
     strlen(str) {

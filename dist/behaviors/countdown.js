@@ -1,4 +1,5 @@
-module.exports = Behavior({
+// eslint-disable-next-line no-undef
+export default Behavior({
   behaviors: [],
   properties: {
     time: {
@@ -13,7 +14,7 @@ module.exports = Behavior({
     status: {
       type: Boolean,
       value: true,
-      observer: function (newVal, oldVal, changedPath) {
+      observer: function (newVal) {
         if (newVal) {
           this.init();
         } else if (!newVal) {
