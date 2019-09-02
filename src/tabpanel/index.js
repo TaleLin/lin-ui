@@ -1,6 +1,5 @@
 // components/tab/index.js
 Component({
-  externalClasses: ['v-tab-active', 'tab-default'],
   relations: {
     '../tabs/index': {
       type: 'parent',
@@ -30,7 +29,10 @@ Component({
     subKey: String,
     key: String,
     icon: String,
-    iconStyle: String,
+    iconSize: {
+      type: String,
+      value: '20'
+    },
     image: Object,
     picPlacement: {
       type: String,

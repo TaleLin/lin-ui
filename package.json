@@ -8,7 +8,7 @@
   },
   "scripts": {
     "dev": "gulp -f build/index.js dev",
-    "build": "gulp -f build/index.js build",
+    "build": "gulp -f build/index.js build && npm run dev && npm run lint",
     "watch": "gulp -f build/index.js watch",
     "lint": "eslint ./src/**/*.js",
     "test": "jest"

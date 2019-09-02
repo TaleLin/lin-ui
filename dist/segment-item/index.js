@@ -18,6 +18,10 @@ Component({
     tab: String,
     key: String,
     icon: String,
+    iconSize: {
+      type: String,
+      value: '20'
+    },
     image: Object,
     picPlacement: {
       type: String,
