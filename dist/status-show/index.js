@@ -185,6 +185,11 @@ Component({
         this._changeStatus();
         return this;
       };
+      wx.lin.hideStatusShow = () => {
+        this.setData({
+          show: false
+        });
+      };
     },
 
     autoSetMarginTop() {
