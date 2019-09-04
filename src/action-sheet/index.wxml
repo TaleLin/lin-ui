@@ -12,7 +12,7 @@
                         name="{{ item.icon }}" 
                         l-class="l-item-button"
                         size="{{ item.iconSize }}"
-                        color="{{item.color?item.color||item.iconColor}}"></l-icon>  
+                        color="{{item.iconColor?item.iconColor:item.color}}"></l-icon>  
                     <text class="l-button-text">{{ item.name }}</text>
                 </view>
             </l-button>
