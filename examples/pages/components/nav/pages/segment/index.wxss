@@ -1,7 +1,5 @@
 /* pages/components/nav/pages/segment/index.wxss */
-
 .content {
-  /* height: 400rpx; */
   position: relative;
 }
 
