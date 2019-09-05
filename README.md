@@ -17,36 +17,21 @@
 <div align="center">
 
 ![](https://img.shields.io/badge/build-passing-00d508.svg)
-![](https://img.shields.io/badge/version-0.6.0-3963bc.svg)
+![](https://img.shields.io/npm/v/lin-ui.svg)
+![](https://img.shields.io/npm/dt/lin-ui.svg)
 ![](https://img.shields.io/badge/license-MIT-3963bc.svg)
 
 </div>
 
 <div align="center">
 
-![](https://img.shields.io/badge/less-^2.7.3-00d508.svg)
-![](https://img.shields.io/badge/eslint-^5.0.1-00d508.svg)
-![](https://img.shields.io/badge/cli-0.0.1.alpha.1-3963bc.svg)
-![](https://img.shields.io/badge/npm-v3.0.0+-00d508.svg)
-![](https://img.shields.io/badge/gulp-v3.9.1-00d508.svg)
-![](https://img.shields.io/badge/node-v8.11.0+-00d508.svg)
+⚡️ 文档网站: http://doc.mini.7yue.pro/
 
 </div>
 
 # 简介
 
 Lin UI 是基于 **微信小程序原生语法** 实现的组件库。遵循简洁，易用的设计规范。
-
-## 最新版本
-
-核心库：0.6.0
-
-示例工程：0.0.1-alpha.2
-
-
-## 文档地址
-
-http://doc.mini.7yue.pro/ 
 
 ## 讨论交流
 QQ群号：699501172 <br/>
