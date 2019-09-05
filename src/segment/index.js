@@ -1,7 +1,10 @@
+import scrollCenter from '../behaviors/scrollCenter';
+
 Component({
   /**
      * 组件的属性列表
      */
+  behaviors: [scrollCenter],
   externalClasses: [
     'l-class',
     'l-header-class',
@@ -133,51 +136,6 @@ Component({
       this.triggerEvent('linchange', {
         activeKey,
         currentIndex
-      });
-    },
-
-    queryMultipleNodes() {
-      const {
-        placement,
-        currentIndex
-      } = this.data;
-      this._getRect('.l-tabs-item')
-        .then((res) => {
-          if (['top', 'bottom'].indexOf(placement) !== -1) {
-            const currentRect = res[currentIndex];
-            const { screenWidth } = wx.getSystemInfoSync();
-
-            let transformX = res
-              .slice(0, currentIndex)
-              .reduce((prev, curr) => prev + curr.width, 0);
-
-            transformX += (currentRect.width - screenWidth) / 2;
-
-            this.setData({
-              transformX,
-              transformY: 0
-            });
-          } else {
-            const height = res.height;
-            this._getRect('.l-tabs-header')
-              .then(() => {
-                const transformY = height * currentIndex - height / 2;
-                this.setData({
-                  transformX: 0,
-                  transformY: transformY > 0 ? transformY : 0
-                });
-              });
-          }
-        });
-    },
-
-    _getRect(selector) {
-      return new Promise((resolve, reject) => {
-        const query = wx.createSelectorQuery().in(this);
-        query.selectAll(selector).boundingClientRect((res) => {
-          if (!res) return reject('找不到元素');
-          resolve(res);
-        }).exec();
       });
     }
   }

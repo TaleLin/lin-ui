@@ -1,5 +1,6 @@
-// components/tabs/index.js
+import scrollCenter from '../behaviors/scrollCenter';
 Component({
+  behaviors: [scrollCenter],
   externalClasses: [
     'l-class-tabs',
     'l-class-header',
@@ -146,50 +147,6 @@ Component({
       this.triggerEvent('linchange', {
         activeKey,
         currentIndex
-      });
-    },
-
-    queryMultipleNodes() {
-      const {
-        placement,
-        currentIndex
-      } = this.data;
-      this._getRect('.l-tabs-item')
-        .then((res) => {
-          if (['top', 'bottom'].indexOf(placement) !== -1) {
-            const currentRect = res[currentIndex];
-            const { screenWidth } = wx.getSystemInfoSync();
-
-            let transformX = res
-              .slice(0, currentIndex)
-              .reduce((prev, curr) => prev + curr.width, 0);
-
-            transformX += (currentRect.width - screenWidth) / 2;
-
-            this.setData({
-              transformX,
-              transformY: 0
-            });
-          } else {
-            this._getRect('.l-tabs-header')
-              .then((navRect) => {
-                const transformY = res.top - navRect.top - navRect.height / 2;
-                this.setData({
-                  transformX: 0,
-                  transformY: transformY
-                });
-              });
-          }
-        });
-    },
-
-    _getRect(selector) {
-      return new Promise((resolve, reject) => {
-        const query = wx.createSelectorQuery().in(this);
-        query.selectAll(selector).boundingClientRect((res) => {
-          if (!res) return reject('找不到元素');
-          resolve(res);
-        }).exec();
       });
     }
   }
