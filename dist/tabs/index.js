@@ -152,13 +152,22 @@ Component({
     queryMultipleNodes() {
       const {
         placement,
-        activeKey
+        currentIndex
       } = this.data;
-      this._getRect('#key-' + activeKey)
+      this._getRect('.l-tabs-item')
         .then((res) => {
           if (['top', 'bottom'].indexOf(placement) !== -1) {
+            const currentRect = res[currentIndex];
+            const { screenWidth } = wx.getSystemInfoSync();
+
+            let transformX = res
+              .slice(0, currentIndex)
+              .reduce((prev, curr) => prev + curr.width, 0);
+
+            transformX += (currentRect.width - screenWidth) / 2;
+
             this.setData({
-              transformX: res.left > 0 ? res.left : 'auto',
+              transformX,
               transformY: 0
             });
           } else {
@@ -177,7 +186,7 @@ Component({
     _getRect(selector) {
       return new Promise((resolve, reject) => {
         const query = wx.createSelectorQuery().in(this);
-        query.select(selector).boundingClientRect((res) => {
+        query.selectAll(selector).boundingClientRect((res) => {
           if (!res) return reject('找不到元素');
           resolve(res);
         }).exec();
