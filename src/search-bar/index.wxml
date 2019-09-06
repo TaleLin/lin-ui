@@ -4,7 +4,7 @@
     <text class="city">{{address}}</text>
     <l-icon name="down" color="#333" size="22" />
   </view>
-  <view class="search-input l-input-container-class {{'search-input-'+ shape}}" style="{{'background-color:'+bgColor}}">
+  <view class="search-input l-container-class {{'search-input-'+ shape}}" style="{{'background-color:'+bgColor}}">
     <slot wx:if="{{custom}}" name="icon"/>
     <l-icon wx:else name="{{icon}}" size="{{iconSize}}" color="{{iconColor}}" l-class="l-icon-class" />
     <input
