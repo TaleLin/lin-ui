@@ -5,8 +5,9 @@
     <l-icon name="down" color="#333" size="22" />
   </view>
   <view class="search-input l-input-container-class {{'search-input-'+ shape}}" style="{{'background-color:'+bgColor}}">
-    <l-icon name="research" size="{{iconSize}}" color="{{iconColor}}" />
-  <input
+    <slot wx:if="{{custom}}" name="icon"/>
+    <l-icon wx:else name="{{icon}}" size="{{iconSize}}" color="{{iconColor}}" l-class="l-icon-class" />
+    <input
         confirm-type="{{confirmType}}"
         class="input l-input-class {{'input'+ TextAlign}}"
         value="{{ value }}"
