@@ -1,24 +1,20 @@
-<view id="statusShow" wx:if="{{show}}" class="l-status-container l-class l-container-class" style="{{'background:'+bgColor+';'}} {{part?'':'position: fixed;'}}" bind:tap="tapStatusShow">
+<view wx:if="{{show}}" class="l-status-container l-class {{fullScreen ? 'content': ''}}" style="{{'background:'+bgColor}}" bind:tap="tapStatusShow">
   <block wx:if="{{custom}}">
     <slot />
   </block>
   <block wx:else>
-    <image id="statusShowImage" wx:if="{{image}}" style="margin-top:{{top}}rpx;height:{{customImageHeight}}rpx;width:{{customImageWidth}}rpx" class="l-image-class" src="{{image}}" bindload="loadimage"></image>
-    <image id="image" wx:else style="margin-top:{{top}}rpx; {{type=='success'||type=='error'?'width:'+left_img_width+'rpx;height:'+left_img_height+'rpx;':type=='address'?'width:'+ad_img_width+'rpx;height:'+ad_img_height+'rpx;':'width:'+top_img_width+'rpx;height:'+top_img_height+'rpx;'}}" class="l-image-class" src="{{typeImage}}"></image>
-    <text wx:if="{{describe}}" class="status-text l-describe-class" style="margin-top:{{part && autoFit?text_margin_top:'40'}}rpx;font-size:{{part && autoFit?font_size:'30'}}rpx;">
-      {{describe}}
-    </text>
-    <text wx:else class="status-text l-describe-class" style="margin-top:{{part && autoFit?text_margin_top:'40'}}rpx;font-size:{{part && autoFit?font_size:'30'}}rpx;">
-      {{typeText}}
-    </text>
-    <l-button id="button" l-class="l-button-class {{part && autoFit?'no_min_width':''}}" wx:if="{{buttonText}}" height="{{part && autoFit?button_height:72}}" style="margin-top:{{button_margin_top}}rpx;" bgColor="{{buttonColor}};">
-      <view style="font-size:{{part && autoFit?font_size:'28'}}rpx;">{{buttonText}}</view>
+    <image wx:if="{{image}}" class="left-img l-image-class {{fullScreen ? 'image_margin_top': ''}}" src="{{image}}"></image>
+    <image wx:else class="{{type=='success'||type=='error'?'left-img':'top-img'}} {{type=='address'?'ad-img':''}} l-image-class {{fullScreen ? 'image_margin_top': ''}}" src="{{typeImage}}"></image>
+    <text wx:if="{{describe}}" class="status-text l-describe-class">{{describe}}</text>
+    <text wx:else class="status-text l-describe-class">{{typeText}}</text>
+    <l-button l-class="l-button-class button_margin_top" wx:if="{{buttonText}}">
+      <view>{{buttonText}}</view>
     </l-button>
-    <l-button id="button" l-class="l-button-class {{part && autoFit?'no_min_width':''}}" wx:if="{{!buttonText && type =='network'}}" height="{{part && autoFit?button_height:72}}" style="margin-top:{{button_margin_top}}rpx;" bgColor="{{buttonColor}};">
-      <view style="font-size:{{part && autoFit?font_size:'28'}}rpx;">重新加载</view>
+    <l-button l-class="l-button-class button_margin_top" wx:if="{{!buttonText && type =='network'}}">
+      <view>重新加载</view>
     </l-button>
-    <l-button id="button" l-class="l-button-class {{part && autoFit?'no_min_width':''}}" wx:if="{{!buttonText && type =='cart'}}" height="{{part && autoFit?button_height:72}}" style="margin-top:{{button_margin_top}}rpx;" bgColor="{{buttonColor}};">
-      <view style="font-size:{{part && autoFit?font_size:'28'}}rpx;">去逛逛</view>
+    <l-button l-class="l-button-class button_margin_top" wx:if="{{!buttonText && type =='cart'}}">
+      <view>去逛逛</view>
     </l-button>
   </block>
 </view>
