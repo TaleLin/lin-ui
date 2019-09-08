@@ -9,7 +9,16 @@ Component({
     'l-class-line',
     'l-class-tabimage',
     'l-class-header-line',
-    'l-class-icon'
+    'l-class-icon',
+    'l-tabs-class',
+    'l-header-class',
+    'l-active-class',
+    'l-content-class',
+    'l-inactive-class',
+    'l-line-class',
+    'l-tabimage-class',
+    'l-header-line-class',
+    'l-icon-class'
   ],
   relations: {
     '../tabpanel/index': {
