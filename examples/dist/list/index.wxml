@@ -13,7 +13,7 @@
 <template name="cell-left-main">
     <view class="left-section ">
         <image wx:if="{{image}}" class="l-image l-class-image l-image-class" src="{{image}}" mode="aspectFit|aspectFill|widthFix" />
-        <l-icon wx:elif="{{icon}}" l-class-self="l-icon" l-class="l-class-icon l-icon-class" name="{{icon}}" size="{{iconSize}}" coloe="{{iconColor}}" />
+        <l-icon wx:elif="{{icon}}" l-self-class="l-icon" l-class="l-class-icon l-icon-class" name="{{icon}}" size="{{iconSize}}" coloe="{{iconColor}}" />
         <view class="l-text">
             <view class="l-content l-class-content l-content-class">{{title}}</view>
             <view class="l-desc l-class-desc l-desc-class" wx:if="{{desc}}">{{desc}}</view>
@@ -29,6 +29,6 @@
         <l-tag size="mini" shape="{{tagShape}}" bg-color="{{tagColor}}" l-class="cell-tag" wx:if="{{tagContent && tagPosition ==='right' && !tagPlain }}">{{tagContent}}</l-tag>
         <l-tag size="mini" shape="{{tagShape}}" plain="{{tagPlain}}" font-color="{{tagColor}}" l-class="cell-tag" wx:if="{{tagContent && tagPosition ==='right' && tagPlain }}">{{tagContent}}</l-tag>
         <view class="l-text" wx:if="{{rightDesc}}">{{rightDesc}}</view>
-        <l-icon l-class-self="l-arrow" name="right" wx:if="{{isLink}}" />
+        <l-icon l-self-class="l-arrow" name="right" wx:if="{{isLink}}" />
     </view>
 </template>

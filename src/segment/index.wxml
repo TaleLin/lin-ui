@@ -6,7 +6,7 @@
             <block wx:for="{{tabList}}" wx:key="{{item.key}}">
                 <view wx:if="{{item.tab}}" class="l-tabs-item {{( even && equalWidth)?'l-tabs-equal-width':'l-tabs-unequal-width'}} {{item.key===activeKey ?'l-class-active l-active-class l-tabs-active':'l-class-inactive l-inactive-class l-tabs-inactive'}} {{'l-tab-image-placement-'+item.picPlacement}}" 
                     style="color:{{item.key===activeKey?activeColor:inactiveColor}};{{itemWidth?'width:'+ itemWidth +'rpx':'' }};{{itemHeight?'height:'+itemHeight+'rpx':''}}" data-key="{{item.key}}" data-index="{{index}}" bind:tap="handleChange">
-                    <l-badge l-class-self="badge-view" l-class="l-class-badge l-badge-class" wx:if="{{(item.badgeCount > 0 || item.dotBadge )}}" count="{{item.badgeCount}}" dot="{{item.dotBadge}}" max-count="{{item.badgeMaxCount}}" count-type="{{item.badgeCountType}}">
+                    <l-badge l-self-class="badge-view" l-class="l-class-badge l-badge-class" wx:if="{{(item.badgeCount > 0 || item.dotBadge )}}" count="{{item.badgeCount}}" dot="{{item.dotBadge}}" max-count="{{item.badgeMaxCount}}" count-type="{{item.badgeCountType}}">
                         <template is="tab-item" data="{{item,activeKey,hasLine,activeColor,inactiveColor,animatedForLine}}" />
                     </l-badge>
                     <template is="tab-item" data="{{item,activeKey,hasLine,activeColor,inactiveColor,animatedForLine}}" wx:else />
@@ -22,6 +22,6 @@
 </view>
 <template name="tab-item">
     <image wx:if="{{ item.image.activeImage || item.image.defaultImage }}" src="{{item.key===activeKey? item.image.activeImage:item.image.defaultImage}}" class="l-tab-image l-class-tabimage" />
-    <l-icon wx:if="{{item.icon}}" l-class="l-class-icon" l-class-self="{{item.key===activeKey ? 'l-icon-active':'l-icon-inactive'}}" name="{{item.icon}}" color="{{item.key===activeKey?activeColor:inactiveColor}}" size="{{item.iconSize}}"/>
+    <l-icon wx:if="{{item.icon}}" l-class="l-class-icon" l-self-class="{{item.key===activeKey ? 'l-icon-active':'l-icon-inactive'}}" name="{{item.icon}}" color="{{item.key===activeKey?activeColor:inactiveColor}}" size="{{item.iconSize}}"/>
     {{item.tab}}
 </template>

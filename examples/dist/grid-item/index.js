@@ -4,7 +4,7 @@ Component({
       type: 'parent'
     },
   },
-  externalClasses: ['l-grid-item'],
+  externalClasses: ['l-grid-item', 'l-grid-item-class'],
   properties: {
     key: String,
     cell:{
