@@ -5,8 +5,9 @@ Component({
    */
   externalClasses: [
     'l-class',
-    'l-input-container-class',
+    'l-container-class',
     'l-placeholder-class',
+    'l-icon-class',
     'l-input-class',
     'l-cancel-class'
   ],
@@ -24,9 +25,14 @@ Component({
       value: '取消'
     },
     address: String,
+    custom: Boolean,
+    icon: {
+      type: String,
+      value: 'research'
+    },
     iconColor: {
       type: String,
-      value: '#333'
+      value: '#bdbdbd'
     },
     iconSize: {
       type: String,

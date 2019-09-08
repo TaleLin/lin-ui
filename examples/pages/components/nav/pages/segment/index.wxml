@@ -1,8 +1,8 @@
-<!--pages/components/nav/pages/segment/index.wxml-->
+
 <view class='container'>
   <content-title name="Segment" describe="选项卡">
     <content-card l-content="content" name="等宽选项卡">
-      <l-segment bind:linchange="changeTabs">
+      <l-segment bind:linchange="changeTabs" l-class="aaa">
         <l-segment-item tab="客厅" key="one" />
         <l-segment-item tab="卧室" key="two" />
         <l-segment-item tab="厨房" key="three" />
@@ -10,7 +10,7 @@
     </content-card>
 
     <content-card l-content="content" name="非等宽选项卡">
-      <l-segment bind:linchange="changeTabs" l-class-header-line="header-line" even="{{false}}" scrollable animated-for-line="{{true}}">
+      <l-segment l-class-header-line="header-line" even="{{false}}" scrollable animated-for-line="{{true}}">
         <l-segment-item tab="精选" key="one">
           <view class="tab-content">精选</view>
         </l-segment-item>
@@ -42,19 +42,8 @@
       </l-segment>
     </content-card>
 
-    <content-card l-content="content" name="左侧选项卡">
-
-      <l-segment active-key="two" bind:linchange="changeTabs" placement="left" l-class-line="line-tabs" animated-for-line="{{true}}">
-        <l-segment-item tab="客厅" key="one" />
-        <l-segment-item tab="卧室" key="two" />
-        <l-segment-item tab="厨房" key="three" />
-        <l-segment-item tab="浴室" key="four" />
-      </l-segment>
-    </content-card>
-
     <content-card l-content="content" name="选项卡宽高">
-      <l-segment active-key="two" scrollable width="180" height="1000"  
-      item-height="90" bind:linchange="changeTabs" placement="left" even="{{false}}">
+      <l-segment active-key="two" scrollable width="180" height="1000" item-height="90" bind:linchange="changeTabs" placement="left" even="{{false}}">
         <l-segment-item tab="客厅" key="one" />
         <l-segment-item tab="卧室" key="two" />
         <l-segment-item tab="厨房" key="three" />
@@ -88,9 +77,9 @@
 
     <content-card l-content="content" name="徽标选项卡">
       <l-segment active-key="one" bind:linchange="changeTabs">
-        <l-segment-item tab="客厅" key="one" dot-badge="{{true}}"/>
-        <l-segment-item tab="卧室" key="two" badge-count="{{brageCount}}"/>
-        <l-segment-item tab="厨房" key="three" badge-count="900" l-class-badge="badge-view"/>
+        <l-segment-item tab="客厅" key="one" dot-badge="{{true}}" />
+        <l-segment-item tab="卧室" key="two" badge-count="{{brageCount}}" />
+        <l-segment-item tab="厨房" key="three" badge-count="900" l-class-badge="badge-view" />
         <l-segment-item tab="浴室" key="four" />
       </l-segment>
     </content-card>

@@ -1,10 +1,14 @@
+import scrollCenter from '../behaviors/scrollCenter';
+
 Component({
   /**
      * 组件的属性列表
      */
+  behaviors: [scrollCenter],
   externalClasses: [
     'l-class',
-    'l-class-active', 
+    'l-header-class',
+    'l-class-active',
     'l-active-class',
     'l-class-inactive',
     'l-inactive-class',
@@ -61,14 +65,14 @@ Component({
       type: Boolean,
       value: true
     },
-    even:{
+    even: {
       type: Boolean,
       value: true
     },
-    width:Number,
-    height:Number,
-    itemHeight:Number,
-    itemWidth:Number
+    width: Number,
+    height: Number,
+    itemHeight: Number,
+    itemWidth: Number
   },
 
   /**
@@ -84,9 +88,9 @@ Component({
      */
   methods: {
     initTabs(val = this.data.activeKey) {
-      let items = this.getRelationNodes('../segment-item/index');       
+      let items = this.getRelationNodes('../segment-item/index');
       if (items.length > 0) {
-        if(items.length === this.data.tabList.length ) return;
+        if (items.length === this.data.tabList.length) return;
         let activeKey = val,
           currentIndex = this.data.currentIndex;
         const tab = items.map((item, index) => {
@@ -132,45 +136,6 @@ Component({
       this.triggerEvent('linchange', {
         activeKey,
         currentIndex
-      });
-    },
-
-    queryMultipleNodes() {
-      const {
-        placement,
-        activeKey,
-        currentIndex
-      } = this.data;
-            
-      this._getRect('#key-' + activeKey)
-        .then((res) => {
-            
-          if (['top', 'bottom'].indexOf(placement) !== -1) {
-            this.setData({
-              transformX: res.left > 0 ? res.left : 'auto',
-              transformY: 0
-            });
-          } else {
-            const height = res.height;
-            this._getRect('.l-tabs-header')
-              .then(() => {
-                const transformY = height * currentIndex - height / 2;
-                this.setData({
-                  transformX: 0,
-                  transformY: transformY > 0 ? transformY : 0
-                });
-              });
-          }
-        });
-    },
-
-    _getRect(selector) {
-      return new Promise((resolve, reject) => {
-        const query = wx.createSelectorQuery().in(this);
-        query.select(selector).boundingClientRect((res) => {
-          if (!res) return reject('找不到元素');
-          resolve(res);
-        }).exec();
       });
     }
   }

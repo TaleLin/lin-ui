@@ -1,36 +1,27 @@
 <content-title name="SearchBar" describe="搜索栏">
-  <view class="card-top">
-    <view class="card-dot"></view>
-    <view class="content-name">基本用法</view>
-  </view>
+  <content-card name="基本用法">
+    <l-search-bar placeholder="搜索" bind:lincancel="onCancel" />
+  </content-card>
 
-  <l-search-bar placeholder="搜索" bind:lincancel="onCancel" />
+  <content-card name="是否显示搜索后文字">
+    <l-search-bar placeholder="搜索" show-cancel="{{false}}" />
+  </content-card>
 
-  <view class="card-top">
-    <view class="card-dot"></view>
-    <view class="content-name">是否显示搜索后文字</view>
-  </view>
+  <content-card name="设置搜索框背景颜色及形状">
 
-  <l-search-bar placeholder="搜索" show-cancel="{{false}}" />
+    <l-search-bar shape="circle" placeholder="搜索" bind:lincancel="onCancel">
+    </l-search-bar>
 
-  <view class="card-top">
-    <view class="card-dot"></view>
-    <view class="content-name">设置搜索框背景颜色及形状</view>
-  </view>
+    <l-search-bar l-class="aa" bg-color="#e5e7df" placeholder="搜索" bind:lincancel="onCancel" />
+  </content-card>
 
 
-  <l-search-bar shape="circle" placeholder="搜索" bind:lincancel="onCancel">
-  </l-search-bar>
-
-  <l-search-bar bg-color="#bbb" placeholder="搜索" bind:lincancel="onCancel"/>
-
-  <view class="card-top">
-    <view class="card-dot"></view>
-    <view class="content-name">设置搜索框前的地址</view>
-  </view>
+  <content-card name="设置搜索框前的地址">
 
   <l-search-bar placeholder="搜索" address="北京" bind:lincancel="onCancel">
   </l-search-bar>
+
+  </content-card>
 
 
 </content-title>

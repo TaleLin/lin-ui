@@ -3,141 +3,157 @@ page {
 }
 
 .container {
-  display: flex;
+  display       : flex;
   flex-direction: column;
-  align-items: center;
+  align-items   : center;
 }
 
 .logo-container {
-  width: 690rpx;
-  margin: 30rpx auto;
+  width           : 690rpx;
+  margin          : 30rpx auto;
   background-color: #fff;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 40rpx 0;
-  box-sizing: border-box;
-  margin-bottom: 30rpx;
+  display         : flex;
+  flex-direction  : column;
+  align-items     : center;
+  padding         : 40rpx 0;
+  box-sizing      : border-box;
+  margin-bottom   : 30rpx;
 }
 
 .logo-img {
-  width: 220rpx;
+  width : 220rpx;
   height: 100rpx;
 }
 
 .logo-txt {
-  color: #596c8e;
+  color    : #596c8e;
   font-size: 28rpx;
 }
 
 .address-container {
-  width: 690rpx;
-  margin: 0 auto 2rpx auto;
-  height: 142rpx;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
+  width           : 690rpx;
+  margin          : 0 auto 2rpx auto;
+  height          : 142rpx;
+  display         : flex;
+  flex-direction  : row;
+  align-items     : center;
   background-color: #fff;
 }
 
 .dot {
-  width: 24rpx;
-  height: 24rpx;
-  border-radius: 50%;
+  width           : 24rpx;
+  height          : 24rpx;
+  border-radius   : 50%;
   background-color: #3963bc;
-  margin-left: 40rpx;
+  margin-left     : 40rpx;
 }
 
 .doc-container {
-  display: flex;
+  display       : flex;
   flex-direction: column;
-  margin-left: 20rpx;
+  margin-left   : 20rpx;
 }
 
 .doc-txt {
-  color: #8c98ae;
+  color    : #8c98ae;
   font-size: 24rpx;
 }
 
 .address {
   font-size: 28rpx;
-  color: #596c8e;
+  color    : #596c8e;
 }
 
 .version {
-  font-size: 28rpx;
-  color: #3963bc;
+  font-size : 28rpx;
+  color     : #3963bc;
   margin-top: 20rpx;
 }
 
 .code {
-  width: 210rpx;
+  width : 210rpx;
   height: 210rpx;
   margin: 160rpx auto 30rpx auto;
 }
 
 .desc {
-  color: #8c98ae;
-  font-size: 24rpx;
+  color     : #8c98ae;
+  font-size : 24rpx;
   margin-top: 5rpx;
 }
 
 .account {
-  width: 690rpx;
+  width     : 690rpx;
   margin-top: 30rpx;
 }
 
 .attribute-container {
-  width: 690rpx;
-  padding: 30rpx 40rpx;
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  width           : 690rpx;
+  padding         : 30rpx 40rpx;
+  box-sizing      : border-box;
+  display         : flex;
+  flex-direction  : column;
+  align-items     : center;
   background-color: #fff;
-  box-shadow: 0px 4px 10px 0px rgba(9, 36, 66, 0.04);
-  border-radius: 4px;
-  margin-top: 20rpx;
+  box-shadow      : 0px 4px 10px 0px rgba(9, 36, 66, 0.04);
+  border-radius   : 4px;
+  margin-top      : 20rpx;
 }
 
 .attribute-title {
-  font-size: 28rpx;
+  font-size  : 28rpx;
   font-family: PingFangSC-Regular;
-  color: rgba(89, 108, 142, 1);
+  color      : rgba(89, 108, 142, 1);
 }
 
 .attribute-item {
-  width: 100%;
+  width     : 100%;
   margin-top: 20rpx;
 }
 
 .attribute-code-container {
-  display: flex;
+  display    : flex;
   align-items: center;
-  margin-top: 20rpx;
+  margin-top : 20rpx;
 }
 
 .code-circle {
-  width: 8rpx;
-  height: 8rpx;
-  border: 2rpx solid rgba(57, 99, 188, 1);
+  width        : 8rpx;
+  height       : 8rpx;
+  border       : 2rpx solid rgba(57, 99, 188, 1);
   border-radius: 50%;
 }
 
 .code-name {
-  width: 100rpx;
-  height: 28rpx;
-  background: rgba(57, 99, 188, 0.1);
-  color: #3963bc;
-  font-size: 20rpx;
-  display: flex;
-  align-items: center;
+  width          : 100rpx;
+  height         : 28rpx;
+  background     : rgba(57, 99, 188, 0.1);
+  color          : #3963bc;
+  font-size      : 20rpx;
+  display        : flex;
+  align-items    : center;
   justify-content: center;
 }
 
 .coder {
-  font-size: 28rpx;
+  font-size  : 28rpx;
   font-family: PingFangSC-Regular;
-  color: rgba(89, 108, 142, 1);
+  color      : rgba(89, 108, 142, 1);
   margin-left: 16rpx;
+}
+
+.version-container {
+  display   : flex;
+  margin-top: 15rpx;
+}
+
+.version-img {
+  width : 140rpx;
+  height: 35rpx;
+}
+
+.download-img {
+  width      : 182rpx;
+  height     : 35rpx;
+  margin-left: 20rpx;
 }
