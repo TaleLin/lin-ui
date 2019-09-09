@@ -1,9 +1,8 @@
 // components/tab/index.js
 Component({
-  externalClasses: ["v-tab-active", "tab-default"],
   relations: {
-    "../tabs/index": {
-      type: "parent",
+    '../tabs/index': {
+      type: 'parent',
       linked: function(target) {
         !this.data.parent && this.setData({
           parent: target
@@ -11,8 +10,8 @@ Component({
         // 每次被插入到custom-ul时执行，target是custom-ul节点实例对象，触发在attached生命周期之后
       }
     },
-    "../combined-tabs/index": {
-      type: "parent",
+    '../combined-tabs/index': {
+      type: 'parent',
       linked: function(target) {
         !this.data.parent && this.setData({
           parent: target
@@ -30,16 +29,19 @@ Component({
     subKey: String,
     key: String,
     icon: String,
-    iconStyle: String,
+    iconSize: {
+      type: String,
+      value: '20'
+    },
     image: Object,
     picPlacement: {
       type: String,
-      value: "top"
+      value: 'top'
     }
   },
 
   observers: {
-    "**": function(filed) {
+    '**': function(filed) {
       this.updateData(filed);
     }
   },
@@ -54,10 +56,10 @@ Component({
   },
 
   methods: {
-    updateData(filed) {
+    updateData() {
       let parent = this.data.parent;
       if (!parent) return;
-      parent.initTabs()
+      parent.initTabs();
     }
   }
 });

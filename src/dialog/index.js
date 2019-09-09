@@ -56,6 +56,7 @@ Component({
       type: String,
       value: '#45526b'
     },
+    titleColor: String,
     contentColor: {
       type: String,
       value: 'rgba(89,108,142,1)'

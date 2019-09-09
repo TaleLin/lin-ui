@@ -2,7 +2,7 @@ import zIndex from '../behaviors/zIndex';
 
 Component({
   behaviors: [zIndex],
-  externalClasses: ['l-class-title', 'l-class-item', 'l-class-cancel'],
+  externalClasses: ['l-class-title', 'l-class-item', 'l-class-cancel','l-title-class','l-item-class','l-cancel-class'],
   properties: {
     locked: Boolean,
     showCancel: Boolean,

@@ -18,6 +18,10 @@ Component({
     tab: String,
     key: String,
     icon: String,
+    iconSize: {
+      type: String,
+      value: '20'
+    },
     image: Object,
     picPlacement: {
       type: String,
@@ -38,7 +42,7 @@ Component({
   },
   observers: {
     '**': function (filed) {
-      this.updateData(filed)
+      this.updateData(filed);
     }
   },
   /**
@@ -55,7 +59,7 @@ Component({
       if (!parent) return;
       const tabList = parent.data.tabList;
       if (!(tabList && tabList.length > 0)) return;
-      const index = tabList.findIndex(tab => tab.key === this.data.key)
+      const index = tabList.findIndex(tab => tab.key === this.data.key);
       tabList[index] = filed;
       parent.setData({
         tabList: tabList
@@ -63,8 +67,8 @@ Component({
         if (parent.data.scrollable) {
           parent.queryMultipleNodes();
         }
-      })
+      });
 
     },
   }
-})
+});

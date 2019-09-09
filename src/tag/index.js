@@ -30,7 +30,7 @@ Component({
       type: String,
       value: 'left'
     },
-    iconName: String,
+    icon: String,
     iconSize: {
       type: String,
       value: '20'

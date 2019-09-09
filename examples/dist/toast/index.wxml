@@ -11,11 +11,11 @@
     <l-icon
       class="l-icon-class toast-icon toast-icon-{{icon === 'loading'?'loading':''}}"
       wx:elif="{{icon && !image}}"
-      size="{{size? size : 60}}"
-      color="{{color? color: icon === 'success'? '#00C292' :  icon === 'error' ? '#F4516C' : '#ffffff'}}"
+      size="{{iconSize? iconSize : 60}}"
+      color="{{iconColor? iconColor: icon === 'success'? '#00C292' :  icon === 'error' ? '#F4516C' : '#ffffff'}}"
       name="{{icon}}"
     />
     <slot wx:else/>
-    <text class="toast-text  toast-text-{{placement}}" style="{{placement || 'bottom' === 'bottom' ? icon || image? 'margin-top:10rpx; width:180rpx' : '': '' }}">{{ title }}</text>
+    <text class="toast-text l-title-class  toast-text-{{placement}}" style="{{placement || 'bottom' === 'bottom' ? icon || image? 'margin-top:10rpx' : '': '' }}">{{ title }}</text>
   </view>
 </view>

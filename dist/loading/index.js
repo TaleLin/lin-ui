@@ -1,12 +1,21 @@
-import zIndex from '../behaviors/zIndex';
+import computeOffset from '../behaviors/computeOffset';
 Component({
-  behaviors: [zIndex],
+  behaviors: [computeOffset],
   externalClasses: ['l-container-class', 'l-class'],
   properties: {
     // 显示与隐藏
     show: {
       type: Boolean,
       value: false
+    },
+    opacity:{
+      type: String,
+      value: '1'
+    },
+    bgColor: String,
+    zIndex:{
+      type:String,
+      value: '776'
     },
     // 类型
     type: {
@@ -21,18 +30,12 @@ Component({
     // loading 动画大小
     size: {
       type: String,
-      value: 'default',
+      value: 'medium',
     },
     // 自定义
-    custom: {
-      type: Boolean,
-      value: false,
-    },
+    custom: Boolean,
     // 全屏模式
-    fullScreen: {
-      type: Boolean,
-      value: false,
-    }
+    fullScreen: Boolean
   },
 
   attached() {
@@ -54,7 +57,8 @@ Component({
           fullScreen = false,
           color = '',
           type = 'rotate',
-          size = 'default'
+          size = 'default',
+          opacity = '1'
         } = { ...options };
         this.setData({
           custom,
@@ -62,6 +66,7 @@ Component({
           color,
           type,
           size,
+          opacity,
           show: true
         });
       };

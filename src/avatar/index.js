@@ -1,12 +1,20 @@
 Component({
-  externalClasses: ['l-class', 'l-class-text'],
+  externalClasses: [
+    'l-class', 
+    'l-class-text',
+    'l-text-class'
+  ],
   properties: {
     icon: String,
-    text: String,
-    iconStyle: {
+    iconColor: {
       type: String,
-      observer: '_parseCSSText'
+      value: '#3963BC'
     },
+    iconSize: {
+      type: String,
+      value: '28'
+    },
+    text: String,
     src: String,
     openData: {
       type: Array,
@@ -40,25 +48,7 @@ Component({
       this._isHaveUserAvatarUrl(openData);
       this._isHaveUserNickName(openData);
     },
-    _parseCSSText: function parseCSSText(cssText) {
-      var cssTxt = cssText.replace('/\/\*(.|\s)*?\*\//g', ' ').replace('/\s+/g', ' ');
-      var style = {};
-      var properties = cssTxt.split(';').map(function (o) {
-        return o.split(':').map(function (x) {
-          return x && x.trim();
-        });
-      });
-      properties.forEach(function (property) {
-        var key = property[0];
-        var value = property[1];
-        style[key] = value;
-      });
-
-      this.setData({
-        _iconSize: style.size || this.data.size * 0.6,
-        _iconColor: style.color || '#ffffff',
-      });
-    },
+    
     _isHaveUserAvatarUrl: function (openData) {
       this.setData({
         _isHaveUserAvatarUrl: openData.indexOf('userAvatarUrl') !== -1

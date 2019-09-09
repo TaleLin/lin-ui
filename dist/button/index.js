@@ -37,10 +37,6 @@ Component({
     icon: String,
     image: String,
     bgColor: String,
-    iconStyle: {
-      type: String,
-      value: 'size:20;color:#3683D6'
-    },
     iconColor: String,
     iconSize: String,
     openType: String,

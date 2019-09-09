@@ -5,8 +5,9 @@ Component({
    */
   externalClasses: [
     'l-class',
-    'l-input-container',
+    'l-container-class',
     'l-placeholder-class',
+    'l-icon-class',
     'l-input-class',
     'l-cancel-class'
   ],
@@ -24,9 +25,16 @@ Component({
       value: '取消'
     },
     address: String,
+    custom: Boolean,
+    value: String,
+    type: String,
+    icon: {
+      type: String,
+      value: 'research'
+    },
     iconColor: {
       type: String,
-      value: '#333'
+      value: '#bdbdbd'
     },
     iconSize: {
       type: String,
@@ -50,10 +58,7 @@ Component({
     },
     adress: String,
     // 获取焦点
-    focus: {
-      type: Boolean,
-      value: false
-    },
+    focus: Boolean,
     // 是否显示清除按钮
     clear: {
       type: Boolean,

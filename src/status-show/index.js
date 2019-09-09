@@ -16,7 +16,11 @@ Component({
     buttonText: String,
     bgColor: {
       type: String,
-      valure: '#fff'
+      value: '#fff'
+    },
+    fullScreen: {
+      type: Boolean,
+      value: true,
     },
     openApi: {
       type: Boolean,
@@ -54,7 +58,8 @@ Component({
           image = '',
           describe = '',
           buttonText = '',
-          bgColor = '#fff'
+          bgColor = '#fff',
+          fullScreen = true
         } = { ...options };
         this.setData({
           show: true,
@@ -62,7 +67,8 @@ Component({
           image,
           describe,
           buttonText,
-          bgColor
+          bgColor,
+          fullScreen
         });
       };
       wx.lin.hideStatusShow = () => {
@@ -71,6 +77,7 @@ Component({
         });
       };
     },
+    
     _changeStatus() {
       switch (this.properties.type) {
       case 'success':
@@ -124,8 +131,11 @@ Component({
       }
     },
 
-    onBtn() {
-      this.triggerEvent('lintap', {}, { bubbles: true, composed: true });
+    tapStatusShow() {
+      this.triggerEvent('lincorvertap', {}, {
+        bubbles: true,
+        composed: true
+      });
     }
   }
 });

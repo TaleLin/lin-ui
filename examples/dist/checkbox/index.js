@@ -62,7 +62,7 @@ Component({
   },
   methods: {
     onChangeHandle(current, type) {
-      if (this.data.disabled)  return
+      if (this.data.disabled)  return;
       // 页面不调用，由父组件调用 改变选中状态
       this.setData({
         checked: current
@@ -73,7 +73,7 @@ Component({
           current: current,
           value: this.data.value,
           detail: this.data.detail
-        }
+        };
         const parent = this.getRelationNodes('../checkbox-group/index')[0];
         parent ? parent.currentChange(item) : this.triggerEvent('linchange', item);
       }
@@ -93,7 +93,7 @@ Component({
       // parent ? console.log('') : this.onChangeHandle(true);
       this.setData({
         checked: !this.data.checked
-      })
+      });
     }
   }
 });

@@ -19,7 +19,7 @@ Component({
     clear: {
       type: Boolean,
       value: false,
-      observer: function (newVal, oldVal, changedPath) {
+      observer: function (newVal) {
         if (newVal) {
           this.handleClear();
         }
@@ -35,11 +35,6 @@ Component({
       type: String,
       value: 'original',
     },
-    // 选择图片的来源
-    // sourceType: {
-    //   type: String,
-    //   value: '',
-    // },
     // 图片裁剪、缩放的模式
     mode: {
       type: String,
@@ -74,7 +69,7 @@ Component({
         urls: [],
         clear: false,
         showBtn: true
-      })
+      });
       let detail = true;
       let option = {};
       this.triggerEvent('linclear', detail, option);
@@ -82,9 +77,9 @@ Component({
 
     // 预览 preview
     onPreviewTap(e) {
-      const that = this
-      const index = e.currentTarget.dataset.index
-      const tempFilePath = this.data.urls[index]
+      const that = this;
+      const index = e.currentTarget.dataset.index;
+      const tempFilePath = this.data.urls[index];
       let detail = {
         index, // 下标
         current: tempFilePath, // 当前显示图片的http链接
@@ -95,18 +90,18 @@ Component({
         wx.previewImage({
           current: tempFilePath, // 当前显示图片的http链接
           urls: that.data.urls // 需要预览的图片http链接列表
-        })
+        });
       }
       this.triggerEvent('linpreview', detail, option);
     },
 
 
     // 增加 add
-    onAddTap(e) {
-      const that = this
-      const count = this.data.count - this.data.urls.length
+    onAddTap() {
+      const that = this;
+      const count = this.data.count - this.data.urls.length;
       if (count === 0 ) {
-        return
+        return;
       }
       wx.chooseImage({
         count,
@@ -114,65 +109,65 @@ Component({
         sourceType: ['album', 'camera'],
         success(res) {
           // tempFilePath可以作为img标签的src属性显示图片
-          const tempFilePath = res.tempFilePaths
-          const newtempFilePaths = that.data.urls.concat(tempFilePath)
+          const tempFilePath = res.tempFilePaths;
+          const newtempFilePaths = that.data.urls.concat(tempFilePath);
           // 判断是否还能继续添加图片 
           if (newtempFilePaths.length === parseInt(that.data.count)) {
             that.setData({
               showBtn: false
-            })
+            });
           }
           that.setData({
             urls: newtempFilePaths,
             value: newtempFilePaths,
             tempFilePath
-          })
+          });
           let detail = {
             current: tempFilePath,
             all: newtempFilePaths
-          }
+          };
           let option = {};
     
           that.triggerEvent('linchange', detail, option);
         }
-      })
+      });
 
     },
 
     // 删除 remove
     onDelTap(e) {
-      const index = e.currentTarget.dataset.index
-      const urls = this.data.urls
-      const tempFilePath = urls[index]
-      const tempFilePaths = this.handleSplice(urls, tempFilePath)
+      const index = e.currentTarget.dataset.index;
+      const urls = this.data.urls;
+      const tempFilePath = urls[index];
+      const tempFilePaths = this.handleSplice(urls, tempFilePath);
       // 判断是否还能继续添加图片 
       if (tempFilePaths.length < parseInt(this.data.count)) {
         this.setData({
           showBtn: true
-        })
+        });
       }
       this.setData({
         tempFilePath,
         urls: tempFilePaths,
         value: tempFilePaths,
-      })
+      });
       let detail = {
         index,
         current: tempFilePath,
         all: tempFilePaths
-      } 
+      }; 
       let option = {};
 
       this.triggerEvent('linremove', detail, option);
 
     },
     handleSplice(arr, current) {
-      const newArr = arr.filter(item => item!== current)
-      return newArr
+      const newArr = arr.filter(item => item!== current);
+      return newArr;
     },
     
   },
 
   attached: function () {
   },
-})
+});

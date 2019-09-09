@@ -294,7 +294,7 @@ const tagNaviConfigs = [{
     plain: false,
     select: false,
     shape: 'square',
-    iconName: 'warning',
+    icon: 'warning',
     iconSize: '20',
     iconColor: '#fff',
     location: 'left'
@@ -307,7 +307,7 @@ const tagNaviConfigs = [{
     plain: false,
     select: false,
     shape: 'square',
-    iconName: 'warning',
+    icon: 'warning',
     iconSize: '20',
     iconColor: '#fff',
     location: 'right'

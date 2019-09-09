@@ -1,14 +1,34 @@
-// components/tabs/index.js
+import scrollCenter from '../behaviors/scrollCenter';
 Component({
-  externalClasses: ['l-class-tabs','l-class-header', 'l-class-active', 'l-class-content', 'l-class-inactive', 'l-class-line', 'l-class-tabimage', 'l-class-header-line','l-class-icon'],
+  behaviors: [scrollCenter],
+  externalClasses: [
+    'l-class-tabs',
+    'l-class-header',
+    'l-class-active',
+    'l-class-content',
+    'l-class-inactive',
+    'l-class-line',
+    'l-class-tabimage',
+    'l-class-header-line',
+    'l-class-icon',
+    'l-tabs-class',
+    'l-header-class',
+    'l-active-class',
+    'l-content-class',
+    'l-inactive-class',
+    'l-line-class',
+    'l-tabimage-class',
+    'l-header-line-class',
+    'l-icon-class'
+  ],
   relations: {
     '../tabpanel/index': {
       type: 'child',
-      linked(target) {
+      linked() {
         // 每次有子节点被插入时执行，target是该节点实例对象，触发在该节点attached生命周期之后
         this.initTabs();
       },
-      unlinked(target) {
+      unlinked() {
         this.initTabs();
       }
     },
@@ -30,14 +50,14 @@ Component({
       type: String,
       value: 'top',
     },
-    aminmated: Boolean,
+    animated: Boolean,
     swipeable: Boolean,
     scrollable: Boolean,
     hasLine: {
       type: Boolean,
       value: true
     },
-    aminmatedForLine:Boolean,
+    animatedForLine: Boolean,
     activeColor: {
       type: String,
       value: '#333333'
@@ -46,9 +66,9 @@ Component({
       type: String,
       value: '#bbbbbb'
     },
-    equalWidth:{
-      type:Boolean,
-      value:true
+    equalWidth: {
+      type: Boolean,
+      value: true
     }
 
   },
@@ -82,9 +102,10 @@ Component({
             tab: item.data.tab,
             key: item.data.key,
             icon: item.data.icon,
+            iconSize: item.data.iconSize,
             image: item.data.image,
             picPlacement: item.data.picPlacement,
-          }
+          };
         });
         this.setData({
           tabList: tab,
@@ -135,42 +156,6 @@ Component({
       this.triggerEvent('linchange', {
         activeKey,
         currentIndex
-      });
-    },
-
-    queryMultipleNodes() {
-      const {
-        placement,
-        activeKey,
-        tabList
-      } = this.data;
-      this._getRect('#key-' + activeKey)
-        .then((res) => {
-          if (['top', 'bottom'].indexOf(placement) !== -1) {
-            this.setData({
-              transformX: res.left>0 ? res.left : 'auto',
-              transformY: 0
-            });
-          } else {
-            this._getRect('.l-tabs-header')
-              .then((navRect) => {
-                const transformY = res.top - navRect.top - navRect.height / 2;
-                this.setData({
-                  transformX: 0,
-                  transformY: transformY
-                });
-              });
-          }
-        });
-    },
-
-    _getRect(selector) {
-      return new Promise((resolve, reject) => {
-        const query = wx.createSelectorQuery().in(this);
-        query.select(selector).boundingClientRect((res) => {
-          if (!res) return reject('找不到元素');
-          resolve(res)
-        }).exec();
       });
     }
   }

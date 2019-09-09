@@ -15,7 +15,7 @@ Component({
       value: '32rpx'
     },
     disabled: {
-      type: Boolean,
+      type: Boolean
     },
     custom: Boolean,
     color: {
@@ -26,6 +26,10 @@ Component({
     selectColor: {
       type: String,
       value: '#3963BC'
+    },
+    disabledColor:{
+      type: String,
+      value: '#ccc'
     },
     placement: {
       type: String,

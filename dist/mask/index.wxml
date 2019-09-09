@@ -1,13 +1,13 @@
 <!-- mask.wxml -->
 <view
-  class="container-mask  {{center? 'center' : ''}}"
+  class="container-mask  {{center? 'center' : ''}} l-class"
   hidden="{{ show? '' :  'hidden'}}"
   catchtouchmove="doNothingMove"
   catchtap="onMaskTap"
   style="z-index:{{zIndex}}; {{show? 'background: rgba(0,0,0,' + opacity+ ')' :  ''}}"
 >
   <!-- <view class="mask-bg" catchtap="onMaskTap" ></view> -->
-  <view class="mask-content mask-class" >
+  <view class="mask-content l-mask-class" >
     <slot></slot>
   </view>
 </view>
