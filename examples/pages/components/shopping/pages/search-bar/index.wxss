@@ -22,3 +22,7 @@
 .aa{
   margin-top: 20rpx;
 }
+
+.bb{
+  width: 500rpx !important; 
+}

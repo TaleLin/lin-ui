@@ -12,13 +12,13 @@
     <l-search-bar shape="circle" placeholder="搜索" bind:lincancel="onCancel">
     </l-search-bar>
 
-    <l-search-bar l-class="aa" bg-color="#e5e7df" placeholder="搜索" bind:lincancel="onCancel" />
+    <l-search-bar l-container-class="aa" bg-color="#e5e7df" placeholder="搜索" bind:lincancel="onCancel" />
   </content-card>
 
 
   <content-card name="设置搜索框前的地址">
 
-  <l-search-bar placeholder="搜索" address="北京" bind:lincancel="onCancel">
+  <l-search-bar placeholder="搜索" address="北京" bind:lincancel="onCancel" l-class="bb">
   </l-search-bar>
 
   </content-card>

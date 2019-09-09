@@ -30,18 +30,12 @@ Component({
     // loading 动画大小
     size: {
       type: String,
-      value: 'default',
+      value: 'medium',
     },
     // 自定义
-    custom: {
-      type: Boolean,
-      value: false,
-    },
+    custom: Boolean,
     // 全屏模式
-    fullScreen: {
-      type: Boolean,
-      value: false,
-    }
+    fullScreen: Boolean
   },
 
   attached() {
