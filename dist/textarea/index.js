@@ -6,7 +6,7 @@ Component({
    * 组件的属性列表
    */
   behaviors: ['wx://form-field',rules],
-  externalClasses: ['l-class','l-error-text'],
+  externalClasses: ['l-class','l-error-text','l-error-text-class'],
   properties: {
     // 占位文本
     placeholder: {

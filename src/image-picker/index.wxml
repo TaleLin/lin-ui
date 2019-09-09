@@ -8,7 +8,7 @@
     slot="{{ index }}">
     <view class="item l-item-class" catchtap="onPreviewTap" data-index="{{ index }}">
       <view class="close" data-index="{{ index }}" catchtap="onDelTap">
-        <l-icon name="close" color="#fff" size="22" l-class-self="close-icon"/>
+        <l-icon name="close" color="#fff" size="22" l-self-class="close-icon"/>
       </view>
       <image class="{{size == 3? 'img': 'min-img'}}" mode="{{ mode }}" src="{{ item }}" />
     </view>
