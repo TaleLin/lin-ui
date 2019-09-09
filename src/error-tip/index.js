@@ -2,7 +2,7 @@ Component({
   /**
      * 组件的属性列表
      */
-  externalClasses: ['l-error-text'],
+  externalClasses: ['l-error-text', 'l-error-text-class'],
 
   properties: {
     errorText:String
