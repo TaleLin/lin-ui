@@ -26,6 +26,8 @@ Component({
     },
     address: String,
     custom: Boolean,
+    value: String,
+    type: String,
     icon: {
       type: String,
       value: 'research'
@@ -56,10 +58,7 @@ Component({
     },
     adress: String,
     // 获取焦点
-    focus: {
-      type: Boolean,
-      value: false
-    },
+    focus: Boolean,
     // 是否显示清除按钮
     clear: {
       type: Boolean,
