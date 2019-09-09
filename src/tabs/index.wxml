@@ -6,8 +6,8 @@
         scroll-top="{{transformY}}" 
         scroll-left="{{transformX}}" 
         scroll-with-animation
-        class="l-tabsscroll {{hasLine?'l-tabs-header-line l-class-header-line':''}}">
-        <view class="l-tabs-header l-class-header">
+        class="l-tabsscroll l-class-header l-header-class {{hasLine?'l-tabs-header-line l-class-header-line':''}}">
+        <view class="l-tabs-header">
             <view class="l-tabs-item {{equalWidth?'l-tabs-equal-width':'l-tabs-unequal-width'}} {{item.key===activeKey ?'l-class-active l-tabs-active':'l-class-inactive l-tabs-inactive'}} {{'l-tab-image-placement-'+item.picPlacement}}" 
                 style="color:{{item.key===activeKey?activeColor:inactiveColor}}"
                 wx:for="{{tabList}}" 
