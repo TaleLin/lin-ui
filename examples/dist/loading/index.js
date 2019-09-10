@@ -57,7 +57,7 @@ Component({
           fullScreen = false,
           color = '',
           type = 'rotate',
-          size = 'default',
+          size = 'medium',
           opacity = '1'
         } = { ...options };
         this.setData({
