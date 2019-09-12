@@ -8,7 +8,7 @@
         wx:key="price"
         l-class="price" 
         unit="{{price.unit}}"
-        count="{{price.count}}"
+        value="{{price.value}}"
         unit-color="{{price.unitColor}}"
         count-color="{{price.countColor}}"
         unit-size="{{price.unitSize}}"

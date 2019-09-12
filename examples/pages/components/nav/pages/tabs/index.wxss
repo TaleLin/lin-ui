@@ -1,5 +1,11 @@
 /* pages/nav/pages/tabs/index.wxss */
 
+.header{
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
 .content {
   /* height: 400rpx; */
   position: relative;

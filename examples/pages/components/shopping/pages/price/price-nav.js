@@ -1,7 +1,7 @@
 const priceNaviConfigs = [{
   title: "基础用法",
   config: [{
-      count: '666',
+      value: '666',
       unit: '￥',
       unitColor: '',
       unitSize: 28,
@@ -13,7 +13,7 @@ const priceNaviConfigs = [{
       delColor: ''
     },
     {
-      count: '666',
+      value: '666',
       unit: '$',
       unitColor: '',
       unitSize: 28,
@@ -24,7 +24,7 @@ const priceNaviConfigs = [{
       delete: false,
       delColor: ''
     }, {
-      count: '666~777',
+      value: '666~777',
       unit: "¥",
       unitColor: '',
       unitSize: 28,
@@ -39,7 +39,7 @@ const priceNaviConfigs = [{
 }, {
   title: "设置价格单位及价格颜色和大小",
   config: [{
-      count: '666',
+    value: '666',
       unit: '￥',
       unitColor: '#333',
       unitSize: 28,
@@ -51,7 +51,7 @@ const priceNaviConfigs = [{
       delColor: ''
     },
     {
-      count: '666',
+      value: '666',
       unit: '￥',
       unitColor: '#3963BC',
       unitSize: 22,
@@ -66,7 +66,7 @@ const priceNaviConfigs = [{
 }, {
   title: "删除态价格",
   config: [{
-    count: '666',
+    value: '666',
     unit: '￥',
     unitColor: '',
     unitSize: 28,
@@ -80,7 +80,7 @@ const priceNaviConfigs = [{
   }, {
     title: "自动补零、保留小数位数",
     config: [{
-      count: '666',
+      value: '666',
       unit: '￥',
       unitColor: '',
       unitSize: 28,
@@ -92,7 +92,7 @@ const priceNaviConfigs = [{
       reserveDigit: 2,
       delColor: ''
     },{
-        count: '666.66',
+        value: '666.66',
         unit: '￥',
         unitColor: '',
         unitSize: 28,

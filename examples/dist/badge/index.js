@@ -1,16 +1,22 @@
 Component({
-  externalClasses: ['l-class', 'l-class-self','l-self-class'],
+  externalClasses: ['l-class', 'l-class-self', 'l-self-class'],
   properties: {
     // 红点模式
     dot: {
       type: Boolean,
       value: false
     },
-    // 数字
-    count: {
-      type: Number,
-      value: 0,
-      observer: 'finalCount'
+    shape: {
+      type: String,
+      value: 'horn'
+    },
+    value: {
+      type: String,
+      value: '0'
+    },
+    mode: {
+      type: String,
+      value: 'number'
     },
     // 数字最大值
     maxCount: {
@@ -18,12 +24,10 @@ Component({
       value: 99
     },
     // 数字形式
-    countType: {
+    numberType: {
       type: String,
       value: 'overflow'
     },
-    // 文字内容
-    content: String,
     show: {
       type: Boolean,
       value: true
@@ -32,28 +36,42 @@ Component({
   data: {
     finalCount: 0
   },
+  observers: {
+    'value': function () {
+      this.finalCount();
+    }
+  },
   methods: {
     // 最终数字
     finalCount() {
-      switch (this.data.countType) {
+      if (isNaN(Number(this.data.value)) || (this.data.mode === 'text')) {
+        this.setData({
+          finalCount: this.data.value
+        });
+      } else {
+        this.switchType();
+      }
+    },
+    switchType() {
+      switch (this.data.numberType) {
       case 'overflow':
         this.setData({
-          finalCount: parseInt(this.data.count) >= parseInt(this.data.maxCount) ? `${this.data.maxCount}+` : this.data.count
+          finalCount: Number(this.data.value) >= Number(this.data.maxCount) ? `${this.data.maxCount}+` : this.data.value
         });
         break;
       case 'ellipsis':
         this.setData({
-          finalCount: parseInt(this.data.count) >= parseInt(this.data.maxCount) ? `...` : this.data.count
+          finalCount: Number(this.data.value) >= Number(this.data.maxCount) ? `...` : this.data.value
         });
         break;
       case 'limit':
         this.setData({
-          finalCount: parseInt(this.data.count) >= 999 ? (parseInt(this.data.count) >= 9999 ? Math.floor(this.data.count / 10000 * 100) / 100 + `w` : Math.floor(this.data.count / 1000 * 100) / 100 + `k`) : this.data.count
+          finalCount: Number(this.data.value) >= 999 ? (Number(this.data.value) >= 9999 ? Math.floor(this.data.value / 10000 * 100) / 100 + `w` : Math.floor(this.data.value / 1000 * 100) / 100 + `k`) : this.data.value
         });
         break;
       default:
         this.setData({
-          finalCount: parseInt(this.data.count)
+          finalCount: Number(this.data.value)
         });
         break;
       }

@@ -23,10 +23,13 @@ Component({
     unitColor: String,
     unitSize: String,
     unitBold: String,
-    count: {
+    value: {
       type: String,
-      value: '0.00',
-      observer: 'reserveNumber'
+      value: '0.00'
+    },
+    mode: {
+      type: String,
+      value: 'number'
     },
     countColor: String,
     countSize: String,
@@ -47,21 +50,27 @@ Component({
 
   },
 
+  observers: {
+    'value': function () {
+      this.reserveNumber();
+    }
+  },
+
   /**
    * 组件的方法列表
    */
   methods: {
     reserveNumber() {
-      const countToNumber = Number(this.data.count);
-      const isNumber = !isNaN(Number(countToNumber));
-      if (isNumber && this.data.autofix) {
+      const countToNumber = Number(this.data.value);
+      const isText = isNaN(Number(countToNumber)) || (this.data.mode === 'text');
+      if (!isText && this.data.autofix) {
         const result = countToNumber.toFixed(this.data.reserveDigit);
         this.setData({
           result
         });
       } else {
         this.setData({
-          result: this.data.count
+          result: this.data.value
         });
       }
     }
