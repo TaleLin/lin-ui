@@ -2,13 +2,13 @@
 
   <content-card name="{{item.title}}" wx:for="{{badgeNaviConfigs}}" wx:key="item">
     <view class="container">
-      <l-badge count="{{item.count}}" max-count="{{item.maxCount}}" dot="{{item.dot}}" content="{{item.content}}" count-type="{{item.countType}}">
+      <l-badge value="{{item.count}}" max-count="{{item.maxCount}}" dot="{{item.dot}}" content="{{item.content}}" number-type="{{item.countType}}" shape="{{item.type}}">
         <image class="img" src="/images/view/default-image.jpg" />
       </l-badge>
-      <l-badge count="{{item.count}}" max-count="{{item.maxCount}}" dot="{{item.dot}}" content="{{item.content}}" count-type="{{item.countTypeT}}">
+      <l-badge value="{{item.count}}" max-count="{{item.maxCount}}" dot="{{item.dot}}" content="{{item.content}}" number-type="{{item.countTypeT}}" shape="{{item.type}}">
         <l-icon name="notification" size="40" color="#3683d6" />
       </l-badge>
-      <l-badge  count="{{item.count}}" max-count="{{item.maxCount}}" dot="{{item.dot}}" content="{{item.content}}" count-type="{{item.countTypeP}}">
+      <l-badge  value="{{item.count}}" max-count="{{item.maxCount}}" dot="{{item.dot}}" number-type="{{item.countTypeP}}" shape="{{item.typeT || 'horn'}}">
         <l-icon name="picture" size="40" color="#3683d6" />
       </l-badge>
     </view>

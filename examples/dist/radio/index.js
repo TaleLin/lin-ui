@@ -12,7 +12,7 @@ Component({
     // radio的大小
     size: {
       type: String,
-      value: '32rpx'
+      value: '36rpx'
     },
     disabled: {
       type: Boolean

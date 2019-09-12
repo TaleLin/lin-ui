@@ -1,3 +1,6 @@
 <content-title name="WaterFlow" describe="瀑布流">
-  <l-water-flow generic:l-water-flow-item="product" />
+    <l-water-flow generic:l-water-flow-item="product" />
+    <view style="width:100%">
+      <view class="aaa"></view>
+    </view>
 </content-title>
