@@ -1,9 +1,11 @@
 const badgeNaviConfigs = [{
     title: "数字徽章",
-    count: 10,
+    count: 96,
     content: '',
     maxCount: 99,
     dot: false,
+    type: 'circle',
+    typeT:'horn',
     countType: 'overflow',
     countTypeT: 'overflow'
   },
@@ -13,17 +15,10 @@ const badgeNaviConfigs = [{
     content: '',
     maxCount: 99,
     dot: false,
+    type: 'horn',
     countType: 'overflow',
     countTypeT: 'ellipsis',
     countTypeP: 'limit'
-  },
-  {
-    title: "文字徽章",
-    count: 0,
-    content: '文字',
-    maxCount: 99,
-    dot: false,
-    countType: 'overflow'
   },
   {
     title: "红点徽章",
@@ -31,6 +26,7 @@ const badgeNaviConfigs = [{
     content: '',
     maxCount: 99,
     dot: true,
+    type: 'horn',
     countType: 'overflow'
   },
 ]
