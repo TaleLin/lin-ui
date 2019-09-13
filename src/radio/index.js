@@ -12,7 +12,7 @@ Component({
     // radio的大小
     size: {
       type: String,
-      value: '36rpx'
+      value: '38rpx'
     },
     disabled: {
       type: Boolean
@@ -27,13 +27,17 @@ Component({
       type: String,
       value: '#3963BC'
     },
-    disabledColor:{
+    disabledColor: {
       type: String,
       value: '#ccc'
     },
     placement: {
       type: String,
       value: 'left'
+    },
+    transition: {
+      type: Boolean,
+      value: true
     }
   },
   data: {
