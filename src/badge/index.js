@@ -56,17 +56,17 @@ Component({
       switch (this.data.numberType) {
       case 'overflow':
         this.setData({
-          finalCount: Number(this.data.value) >= Number(this.data.maxCount) ? `${this.data.maxCount}+` : this.data.value
+          finalCount: Number(this.data.value) > Number(this.data.maxCount) ? `${this.data.maxCount}+` : this.data.value
         });
         break;
       case 'ellipsis':
         this.setData({
-          finalCount: Number(this.data.value) >= Number(this.data.maxCount) ? `...` : this.data.value
+          finalCount: Number(this.data.value) > Number(this.data.maxCount) ? `...` : this.data.value
         });
         break;
       case 'limit':
         this.setData({
-          finalCount: Number(this.data.value) >= 999 ? (Number(this.data.value) >= 9999 ? Math.floor(this.data.value / 10000 * 100) / 100 + `w` : Math.floor(this.data.value / 1000 * 100) / 100 + `k`) : this.data.value
+          finalCount: Number(this.data.value) > 999 ? (Number(this.data.value) >= 9999 ? Math.floor(this.data.value / 10000 * 100) / 100 + `w` : Math.floor(this.data.value / 1000 * 100) / 100 + `k`) : this.data.value
         });
         break;
       default:
