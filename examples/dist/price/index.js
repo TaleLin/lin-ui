@@ -31,9 +31,9 @@ Component({
       type: String,
       value: 'number'
     },
-    countColor: String,
-    countSize: String,
-    countBold: String,
+    valueColor: String,
+    valueSize: String,
+    valueBold: String,
     deleted: Boolean,
     delColor: String,
     reserveDigit: {

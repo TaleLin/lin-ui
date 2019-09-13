@@ -2,5 +2,5 @@
   <!-- unit -->
   <text class="l-unit-class" style="color: {{unitColor?unitColor:color}}; font-size: {{unitSize?unitSize:size}}rpx; font-weight: {{unitBold?unitBold:bold}}">{{unit}}</text>
   <!-- count -->
-  <text class="l-count-class" style="color: {{countColor?countColor:color}}; font-size: {{countSize?countSize:size}}rpx; font-weight: {{countBold?countBold:bold}}">{{result}}</text>
+  <text class="l-count-class" style="color: {{valueColor?valueColor:color}}; font-size: {{valueSize?valueSize:size}}rpx; font-weight: {{valueBold?valueBold:bold}}">{{result}}</text>
 </view>
