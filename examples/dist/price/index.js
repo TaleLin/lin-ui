@@ -2,7 +2,7 @@ Component({
   /**
    * 组件的属性列表
    */
-  externalClasses: ['l-deleted-class', 'l-unit-class', 'l-count-class', 'l-class'],
+  externalClasses: ['l-deleted-class', 'l-unit-class', 'l-value-class', 'l-class'],
   properties: {
     unit: {
       type: String,
