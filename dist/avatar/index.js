@@ -1,6 +1,6 @@
 Component({
   externalClasses: [
-    'l-class', 
+    'l-class',
     'l-class-text',
     'l-text-class'
   ],
@@ -48,7 +48,7 @@ Component({
       this._isHaveUserAvatarUrl(openData);
       this._isHaveUserNickName(openData);
     },
-    
+
     _isHaveUserAvatarUrl: function (openData) {
       this.setData({
         _isHaveUserAvatarUrl: openData.indexOf('userAvatarUrl') !== -1
@@ -61,9 +61,10 @@ Component({
       });
     },
     tapAvatar: function (e) {
-      this.triggerEvent('lintap', {
-        e
-      }, { bubbles: true, composed: true });
+      this.triggerEvent('lintap', e, {
+        bubbles: true,
+        composed: true
+      });
     },
   }
 });
