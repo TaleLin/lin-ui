@@ -95,9 +95,10 @@ Component({
           url
         });
       }
-      this.triggerEvent('lintap', {
-        e
-      }, { bubbles: true, composed: true });
+      this.triggerEvent('lintap', e, {
+        bubbles: true,
+        composed: true
+      });
     }
   }
 });
