@@ -124,7 +124,7 @@ Component({
         value
       });
 
-      this.triggerEvent('linchange', event.detail);
+      this.triggerEvent('lininput', event.detail);
     },
 
     handleInputFocus(event) {
