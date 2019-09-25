@@ -1,4 +1,4 @@
-<view class="l-list l-class" hover-class="l-list-hover" hover-start-time="20" hover-stay-time="50"  style="{{gap?'padding:0 '+gap+'rpx;':''}} {{leftGap?'padding-left:'+leftGap+'rpx':''}} {{rightGap?'padding-right:'+rightGap+'rpx':''}}" bind:tap="tapcell" data-url="{{url}}" data-link-type="{{linkType}}">
+<view class="l-list l-class" hover-class="{{isHover?'l-list-hover':''}}" hover-start-time="20" hover-stay-time="50"  style="{{gap?'padding:0 '+gap+'rpx;':''}} {{leftGap?'padding-left:'+leftGap+'rpx':''}} {{rightGap?'padding-right:'+rightGap+'rpx':''}}" bind:tap="tapcell" data-url="{{url}}" data-link-type="{{linkType}}">
     <!-- left -->
     <l-badge wx:if="{{(badgeCount > 0 || dotBadge ) && badgePosition ==='left'}}" value="{{badgeCount}}" dot="{{dotBadge}}" max-count="{{badgeMaxCount}}" number-type="{{badgeCountType}}">
         <template is="cell-left-main" data="{{image,icon,title,desc,tagContent,tagPosition,tagColor,tagShape,tagPlain}}" />
@@ -13,7 +13,7 @@
 <template name="cell-left-main">
     <view class="left-section ">
         <image wx:if="{{image}}" class="l-image l-class-image l-image-class" src="{{image}}" mode="aspectFit|aspectFill|widthFix" />
-        <l-icon wx:elif="{{icon}}" l-self-class="l-icon" l-class="l-class-icon l-icon-class" name="{{icon}}" size="{{iconSize}}" coloe="{{iconColor}}" />
+        <l-icon wx:elif="{{icon}}" l-self-class="l-icon" l-class="l-class-icon l-icon-class" name="{{icon}}" size="{{iconSize}}" color="{{iconColor}}" />
         <view class="l-text">
             <view class="l-content l-class-content l-content-class">{{title}}</view>
             <view class="l-desc l-class-desc l-desc-class" wx:if="{{desc}}">{{desc}}</view>

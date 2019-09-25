@@ -1,10 +1,12 @@
 import computeOffset from '../behaviors/computeOffset';
 import zIndex from '../behaviors/zIndex';
+import hover from '../behaviors/hover';
+
 Component({
   /**
    * 组件的属性列表
    */
-  behaviors: [computeOffset,zIndex],
+  behaviors: [computeOffset,zIndex,hover],
   externalClasses: ['l-class', 'l-title-class', 'l-content-class', 'l-confirm-class', 'l-cancel-class', 'l-bg-class'],
   properties: {
     // 显示与隐藏

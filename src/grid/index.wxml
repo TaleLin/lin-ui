@@ -1,6 +1,6 @@
 <view class="l-grid l-class" bindtap="tapGrid">
     <view bindtap="tapGridItem" 
-          hover-class="l-gird-hover" 
+          hover-class="{{isHover?'l-gird-hover':''}}" 
           hover-start-time="20"
           hover-stay-time="50" 
           data-grid-index="{{item.index}}" 
