@@ -1,4 +1,7 @@
+import hover from '../behaviors/hover';
+
 Component({
+  behaviors:[hover],
   externalClasses: [
     'l-class',
     'l-symbol-class',

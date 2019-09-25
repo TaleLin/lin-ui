@@ -48,7 +48,7 @@
         <l-rate score="4" name="like" />
       </view>
       <view class="box">
-        <l-rate score="4" name="shouye" active-color="#F4516C" inActive-color="rgba(244,81,108,0.1)" l-class-icon="iconfont" />
+        <l-rate score="4" name="user" active-color="#F4516C" inActive-color="rgba(244,81,108,0.1)" l-class-icon="iconfont" />
       </view>
 
     </content-card>
