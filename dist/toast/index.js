@@ -51,7 +51,37 @@ Component({
       value: true,
     },
     offsetX: Number,
-    offsetY: Number
+    offsetY: Number,
+    bottom: Number,
+    left: Number,
+    toast_width: Number,
+    toast_height: Number,
+    screen_width: Number,
+    screen_height: Number,
+  },
+
+  observers: {
+    'show': function (show) {
+      show && this.changeStatus();
+    },
+    'toast_width, toast_height, screenWidth, screenHeight, windowHeight, offsetX, offsetY': function (toast_width, toast_height, screenWidth, screenHeight, windowHeight, offsetX, offsetY) {
+      // 以上数据有任意一项被更改的时候，调用以下函数
+      if (this.data.mask) {
+        const bottom = screenHeight - windowHeight - offsetY;
+        const left = -offsetX;
+        this.setData({
+          bottom,
+          left
+        });
+      } else {
+        const bottom = (screenHeight - toast_height) / 2 - offsetY;
+        const left = (screenWidth - toast_width) / 2 - offsetX;
+        this.setData({
+          bottom,
+          left
+        });
+      }
+    }
   },
 
   /**
@@ -76,6 +106,9 @@ Component({
         this.initToast();
       }
       this.offsetMargin();
+
+      // 获取系统和组件的高宽信息
+      this.getSystemInfo();
     },
   },
 
@@ -98,6 +131,8 @@ Component({
           complete = null,
           offsetX = 0,
           offsetY = 0,
+          iconSize = '60',
+          iconColor = 'fff',
         } = options;
         this.setData({
           title,
@@ -110,9 +145,12 @@ Component({
           success,
           complete,
           offsetY,
-          offsetX
+          offsetX,
+          iconSize,
+          iconColor,
         });
         this.changeStatus();
+        this.getSystemInfo();
         return this;
       };
       wx.lin.hideMessage = () => {
@@ -120,6 +158,30 @@ Component({
           status: false
         });
       };
+    },
+
+    getSystemInfo() {
+      const that = this;
+
+      // 获取组件的高宽信息
+      const query = wx.createSelectorQuery().in(this);
+      query.select('.toast').boundingClientRect(function (res) {
+        that.setData({
+          toast_width: res.width,
+          toast_height: res.height,
+        });
+      }).exec();
+
+      // 获取系统的高宽信息
+      wx.getSystemInfo({
+        success(res) {
+          that.setData({
+            screenWidth: res.screenWidth,
+            screenHeight: res.screenHeight,
+            windowHeight: res.windowHeight,
+          });
+        }
+      });
     },
 
     strlen(str) {
@@ -143,7 +205,10 @@ Component({
     onMaskTap() {
 
       let detail = true;
-      let option = { bubbles: true, composed: true };
+      let option = {
+        bubbles: true,
+        composed: true
+      };
 
       if (this.data.locked !== true) {
         this.setData({
