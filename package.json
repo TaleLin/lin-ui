@@ -11,7 +11,8 @@
     "build": "gulp -f build/index.js build && npm run dev && npm run lint",
     "watch": "gulp -f build/index.js watch",
     "lint": "eslint ./src/**/*.js",
-    "test": "jest"
+    "test": "jest",
+    "release": "sh build/release.sh"
   },
   "repository": {
     "type": "git",
