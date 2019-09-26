@@ -26,6 +26,8 @@
 <div align="center">
 
 ⚡️ 文档网站: http://doc.mini.7yue.pro/
+<!-- <br/>
+❤️ 教程地址:  -->
 
 </div>
 
