@@ -64,7 +64,7 @@ Component({
   methods: {
     // button点击事件
     handleTap() {
-      if (this.data.disabled) return false;
+      if (this.data.disabled || this.data.loading) return false;
       this.triggerEvent('lintap', {}, {
         bubbles: true,
         composed: true

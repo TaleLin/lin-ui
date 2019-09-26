@@ -1,4 +1,7 @@
+import hover from '../behaviors/hover';
+
 Component({
+  behaviors:[hover],
   relations: {
     '../list/index': {
       type: 'parent', // 关联的目标节点应为子节点

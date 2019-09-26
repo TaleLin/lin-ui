@@ -1,7 +1,8 @@
 import zIndex from '../behaviors/zIndex';
+import hover from '../behaviors/hover';
 
 Component({
-  behaviors: [zIndex],
+  behaviors: [zIndex,hover],
   externalClasses: ['l-class-title', 'l-class-item', 'l-class-cancel','l-title-class','l-item-class','l-cancel-class'],
   properties: {
     locked: Boolean,
