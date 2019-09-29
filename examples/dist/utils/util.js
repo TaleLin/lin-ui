@@ -20,7 +20,7 @@ const px2rpx = function (pxNumber) {
   return rpxNumber;
 };
 
-exports = {
+export {
   promisic,
   px2rpx
 };
