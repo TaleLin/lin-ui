@@ -1,11 +1,13 @@
 //index.js
 import naviConfigs from './navi.js';
+import { promisic } from '../../../dist/utils/util.js'
 Page({
   data: {
     naviConfigs: naviConfigs
   },
 
   onLoad: function() {
+    console.log(promisic)
   },
 
   onShareAppMessage() {
