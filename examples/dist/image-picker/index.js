@@ -94,7 +94,7 @@ Component({
       const urls = this.data.urls;
       var tempFilePath = '';
       var previewImageList = [];
-      const newOrOld = this.judgeNewOrOld();
+      const newOrOld = this.data.newOrOld;
 
       if (newOrOld == 'old') {
         tempFilePath = this.data.urls[index];
@@ -131,7 +131,7 @@ Component({
       if (count === 0) {
         return;
       }
-      const newOrOld = this.judgeNewOrOld();
+      const newOrOld = this.data.newOrOld;
       wx.chooseImage({
         count,
         sizeType: this.data.sizeType,
