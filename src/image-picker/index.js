@@ -63,12 +63,12 @@ Component({
   lifetimes: {
     attached: function () {
       // 在组件实例进入页面节点树时执行
-      const newOrOld = this.judgeNewOrOld()
+      const newOrOld = this.judgeNewOrOld();
       this.setData({
         newOrOld
-      })
+      });
       if (newOrOld == 'old') {
-        console.log('image-picker组件已经升级，建议使用最新版本，当前用法会在后续版本中暂停支持')
+        console.log('image-picker组件已经升级，建议使用最新版本，当前用法会在后续版本中暂停支持');
       }
     },
   },
@@ -91,19 +91,19 @@ Component({
     // 预览 preview
     onPreviewTap(e) {
       const index = e.currentTarget.dataset.index;
-      const urls = this.data.urls
-      var tempFilePath = ''
-      var previewImageList = []
-      const newOrOld = this.judgeNewOrOld()
+      const urls = this.data.urls;
+      var tempFilePath = '';
+      var previewImageList = [];
+      const newOrOld = this.judgeNewOrOld();
 
       if (newOrOld == 'old') {
         tempFilePath = this.data.urls[index];
-        previewImageList = this.data.urls
+        previewImageList = this.data.urls;
 
       } else {
         tempFilePath = this.data.urls[index].url;
         for (var i = 0; i < urls.length; i++) {
-          previewImageList.push(urls[i].url)
+          previewImageList.push(urls[i].url);
         }
       }
 
@@ -131,14 +131,14 @@ Component({
       if (count === 0) {
         return;
       }
-      const newOrOld = this.judgeNewOrOld()
+      const newOrOld = this.judgeNewOrOld();
       wx.chooseImage({
         count,
         sizeType: this.data.sizeType,
         sourceType: ['album', 'camera'],
         success(res) {
           // tempFilePath可以作为img标签的src属性显示图片
-          var tempFilePath = []
+          var tempFilePath = [];
           if (newOrOld == 'old') {
             tempFilePath = res.tempFilePaths;
           } else {
@@ -146,7 +146,7 @@ Component({
               tempFilePath.push({
                 url: res.tempFilePaths[i],
                 // key: null
-              })
+              });
             }
           }
           const newtempFilePaths = that.data.urls.concat(tempFilePath);
@@ -206,14 +206,14 @@ Component({
     },
 
     judgeNewOrOld: function () {
-      const urls = this.data.urls
+      const urls = this.data.urls;
       if (urls.length != 0) {
         if (typeof (urls[0]) != 'object') {
-          return 'old'
+          return 'old';
         }
-        return 'new'
+        return 'new';
       }
-      return 'new'
+      return 'new';
     }
 
   },
