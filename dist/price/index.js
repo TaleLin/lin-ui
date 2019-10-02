@@ -74,5 +74,14 @@ Component({
         });
       }
     }
+  },
+
+  /**
+   * 组件生命周期函数-在组件布局完成后执行
+   */
+  ready: function (){
+    this.setData({
+      result: this.properties.value
+    });
   }
 });
