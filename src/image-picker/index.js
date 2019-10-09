@@ -68,7 +68,7 @@ Component({
         newOrOld
       });
       if (newOrOld == 'old') {
-        console.log('image-picker组件已经升级，建议使用最新版本，当前用法会在后续版本中暂停支持');
+        console.warn('image-picker组件已经升级，建议使用最新版本，当前用法会在后续版本中暂停支持');
       }
     },
   },
