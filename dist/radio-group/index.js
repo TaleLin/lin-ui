@@ -68,7 +68,10 @@ Component({
 
     init() {
       const items = this.getRelationNodes('../radio/index');
-      this.checkDefaultItem(items, this.properties.current);
+      clearTimeout(this.timeout);
+      this.timeout = setTimeout(()=>{
+        this.checkDefaultItem(items, this.properties.current);
+      },100);
       this.checkedKeyRepeat(items);
       this.onChangeHandle(items);
     },
@@ -103,6 +106,11 @@ Component({
         bubbles: true,
         composed: true
       });
+    }
+  },
+  observers: {
+    'current': function() {
+      this.init();
     }
   }
 });
