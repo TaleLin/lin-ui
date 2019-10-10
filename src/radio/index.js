@@ -86,10 +86,5 @@ Component({
       }
       return false;
     }
-  },
-  observers: {
-    'current': function() {
-      this.init();
-    }
   }
 });
