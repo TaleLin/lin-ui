@@ -1,0 +1,20 @@
+<content-card
+  class="content"
+  name="2、设置禁用"
+  >
+  <view class='buttun-wrapper'>
+    <view class='title'>2. 下面哪些歌是周杰伦创作的？</view>
+    <l-checkbox-group bind:linchange="change">
+      <l-checkbox
+        wx:for="{{items}}"
+        wx:key="{{item.id}}" 
+        placement="{{position}}"
+        key="{{item.id}}"
+        checked="{{item.checked}}"
+        disabled="{{item.disabled}}"
+      >
+      {{item.name}}
+      </l-checkbox>
+    </l-checkbox-group>
+  </view>
+</content-card>

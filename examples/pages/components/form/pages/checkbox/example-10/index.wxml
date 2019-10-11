@@ -1,0 +1,19 @@
+<content-card
+  class="content"
+  name="10、可选项目数量的限制"
+  >
+  <view class='buttun-wrapper'>
+    <view class='title'>10. 下面哪些歌是周杰伦创作的？</view>
+    <l-checkbox-group bind:linchange="change" min="2" max="3" bind:linout="tipOverflow">
+      <l-checkbox
+        wx:for="{{items}}"
+        wx:key="{{item.id}}" 
+        placement="{{position}}"
+        key="{{item.name}}"
+        checked="{{item.checked}}"
+      >
+      {{item.name}}
+      </l-checkbox>
+    </l-checkbox-group>
+  </view>
+</content-card>

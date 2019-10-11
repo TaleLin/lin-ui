@@ -1,0 +1,23 @@
+<content-card
+  class="content"
+  name="5、自定义颜色"
+  >
+  <view class='buttun-wrapper'>
+    <view class='title'>5. 下面哪些歌是周杰伦创作的？</view>
+    <l-checkbox-group bind:linchange="change">
+      <l-checkbox
+        wx:for="{{items}}"
+        wx:key="{{item.id}}" 
+        placement="{{position}}"
+        key="{{item.name}}"
+        checked="{{item.checked}}"
+        color='#FFE57F'
+        select-color='#FFE57F'
+        disabled-color='#ccc'
+        disabled="{{item.id === 1}}"
+      >
+      {{item.name}}
+      </l-checkbox>
+    </l-checkbox-group>
+  </view>
+</content-card>
