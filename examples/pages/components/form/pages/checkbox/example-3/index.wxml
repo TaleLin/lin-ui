@@ -1,0 +1,19 @@
+<content-card
+  class="content"
+  name="3、更改布局方式"
+  >
+  <view class='buttun-wrapper'>
+    <view class='title'>3. 下面哪些歌是周杰伦创作的？</view>
+    <l-checkbox-group bind:linchange="change" placement="row">
+      <l-checkbox
+        wx:for="{{items}}"
+        wx:key="{{item.id}}" 
+        placement="{{position}}"
+        key="{{item.id}}"
+        checked="{{item.checked}}"
+      >
+      {{item.name}}
+      </l-checkbox>
+    </l-checkbox-group>
+  </view>
+</content-card>
