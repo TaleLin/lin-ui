@@ -1,14 +1,8 @@
-<view class="l-class  checkbox-wrapper" catchtap="onCheckBoxChangeTap">
-  <label class='label-{{placement}} '>
-    <view wx:if="{{checked}}" class='checkbox  checkbox-type-{{ type }}' style="background:{{ checked ? color: '' }}; height:{{size}}rpx; width:{{size}}rpx">
-      <image class='checkbox-{{shape==="right"? "right": "circle"}}' src='{{shape==="right"? right: circle}}'></image>
-    </view>
-    <view wx:else style='background:{{  disabled? "#ccc":""}};  :;height:{{size}}rpx; width:{{size}}rpx' class='checkbox-unselected  checkbox checkbox-type-{{ type }} '>
-      <image class='checkbox-{{shape==="right"? "right": "circle"}}' src='{{shape === "right"? right: circle}}'></image>
-    </view>
-    <view wx:if="{{ !custom }}" class="checkbox-title{{disabled? '-disabled': ''}} l-title-class">{{value}}</view>
-    <view wx:else class="checkbox-title">
-      <slot />
-    </view>
-  </label>
+<view bind:tap="onCheckboxChangeTap" 
+      class="label label-{{placement}} label-placement-{{parentPlacement}} {{disabled ? 'label-disabled l-disabled-class' : 'l-class'}}">
+        <view class="checkbox" style="color:{{checked ? selectColor : (disabled ? disabledColor : color)}};font-size: {{size}}">
+            <slot wx:if="{{custom}}" name="icon"/>
+            <view wx:else class="iconfont {{checked? 'icon-select': 'icon-unselect'}}"></view>
+        </view>
+        <slot />
 </view>
