@@ -9,8 +9,8 @@ Component({
       },
       linkChanged() {
       },
-      unlinked() {
-        this.init();
+      unlinked(target) {
+        this.init(target);
       }
     }
   },
@@ -60,7 +60,7 @@ Component({
         this._selected[key] = checked;
       }
     },
-   
+
     checkMax(min, max) {
       if(min !== null && min < 0) {
         throw new Error('最小选择个数必须大于等于0');
@@ -75,7 +75,7 @@ Component({
 
     onEmitEventHandle(currentItem) {
       currentItem.checked ? this.addSelect(currentItem.key):this.removeSelect(currentItem.key);
-      
+
       this.triggerEvent('linchange', currentItem, {
         bubbles: true,
         composed: true

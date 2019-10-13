@@ -7,7 +7,7 @@ Component({
     }
   },
   options: {
-    multipleSlots: true 
+    multipleSlots: true
   },
   properties: {
     // checkbox 按钮的位置
@@ -49,7 +49,7 @@ Component({
     },
     color: {
       type: String,
-      value: '#333'
+      value: '#ccc'
     },
     checked: {
       type: Boolean,
@@ -70,7 +70,7 @@ Component({
       if (this.properties.disabled || this.data.parentDisabled) {
         return;
       }
-      
+
       const parent = this.getRelationNodes('../checkbox-group/index')[0];
 
       if(this.properties.checked) {
@@ -78,7 +78,7 @@ Component({
       } else {
         if(this.isOverflow('max')) return;
       }
-      
+
       const item = {
         checked: !this.properties.checked,
         key: this.properties.key,
@@ -88,9 +88,9 @@ Component({
         parent.onEmitEventHandle(item);
       }
     },
-   
+
     /**
-     * 
+     *
      * @param {*} type (max/min)
      */
     isOverflow(type) {

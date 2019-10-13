@@ -1,15 +1,8 @@
 {
   "usingComponents": {
     "content-title": "/components/content-title/index",
-    "example-1": "./example-1/index",
-    "example-2": "./example-2/index",
-    "example-3": "./example-3/index",
-    "example-4": "./example-4/index",
-    "example-5": "./example-5/index",
-    "example-6": "./example-6/index",
-    "example-7": "./example-7/index",
-    "example-8": "./example-8/index",
-    "example-9": "./example-9/index",
-    "example-10": "./example-10/index"
+    "content-card": "/components/content-card/index",
+    "l-checkbox-group": "/dist/checkbox-group/index",
+    "l-checkbox": "/dist/checkbox/index"
   }
 }

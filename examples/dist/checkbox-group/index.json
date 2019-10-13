@@ -1,6 +1,7 @@
 {
     "component": true,
     "usingComponents": {
-        "l-error-tip":"../error-tip/index"
+        "l-error-tip":"../error-tip/index",
+        "l-checkbox": "../checkbox/index"
     }
 }
