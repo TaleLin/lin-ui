@@ -1,14 +1,15 @@
 /* pages/view/pages/dialog/index.wxss */
 
-/* .buttun-wrapper {
+.buttun-wrapper {
   display: flex;
   flex-direction: column;
+  padding-left: 40rpx;
 }
 
 .checkbox-img{
   width: 30rpx;
   height: 30rpx;
-  margin-right: 20rpx;
+  /* margin-right: 20rpx; */
 }
 
 .title {
@@ -17,27 +18,21 @@
   font-weight: 400;
   color: rgba(51, 51, 51, 1);
   line-height: 20px;
-  margin-left: 40rpx;
+  /* margin-left: 40rpx; */
   margin-bottom: 30rpx;
 }
 
-.l-radio-group{
+.l-checkbox {
+  color: rgba(140, 152, 174, 1) !important;
+}
+.l-checkbox-disabled {
+  color: #dddddd !important;
+}
+.l-checkbox-group{
+  margin-top: 30rpx
 }
 
-.l-radio{
+.l-checkbox-color{
+  color: #707070 !important;
 }
 
-.l-title-class{
-  color: rgba(140,152,174,1);
-}
-
-.l-title-class-border{
-  color: rgba(140,152,174,1);
-  border-bottom: 1rpx solid #f1f1f1;
-  padding: 10rpx 0;
-}
-
-.img {
-  width: 100rpx;
-  height: 50rpx;
-} */
