@@ -74,9 +74,9 @@ Component({
       const parent = this.getRelationNodes('../checkbox-group/index')[0];
 
       if(this.properties.checked) {
-        if(this.isOverflow('min')) return;
+        if(this.isOverflow('minSelected')) return;
       } else {
-        if(this.isOverflow('max')) return;
+        if(this.isOverflow('maxSelected')) return;
       }
 
       const item = {
@@ -95,12 +95,14 @@ Component({
      */
     isOverflow(type) {
       const parent = this.getRelationNodes('../checkbox-group/index')[0];
+
       const limit = parent.properties[type];
       if (!limit) return false;
       const selectedLength = Object.values(parent._selected).length;
-      let isOverflow = type === 'min' ? selectedLength <= limit : selectedLength >= limit;
+      let isOverflow = type === 'minSelected' ? selectedLength <= limit : selectedLength >= limit;
       if (isOverflow) {
-        parent.onEmitOverflowHandle && parent.onEmitOverflowHandle({key: this.properties.key, number: limit, type: `overflow_${type}`});
+        let backType = type === 'minSelected' ? 'min_selected' : 'max_selected';
+        parent.onEmitOverflowHandle && parent.onEmitOverflowHandle({key: this.properties.key, limitNumber: limit, type: `overflow_${backType}`});
       }
       return isOverflow;
     }

@@ -11,7 +11,7 @@
           <l-checkbox
             l-class="l-checkbox-color"
             wx:for="{{items1}}"
-            wx:key="{{item.id}}" 
+            wx:key="{{item.id}}"
             placement="{{position}}"
             key="{{item.name}}"
             checked="{{item.checked}}"
@@ -32,7 +32,7 @@
           <l-checkbox
             l-class="l-checkbox-color"
             wx:for="{{items2}}"
-            wx:key="{{item.id}}" 
+            wx:key="{{item.id}}"
             placement="{{position}}"
             key="{{item.id}}"
             checked="{{item.checked}}"
@@ -53,7 +53,7 @@
           <l-checkbox
             l-class="l-checkbox-color"
             wx:for="{{items3}}"
-            wx:key="{{item.id}}" 
+            wx:key="{{item.id}}"
             placement="{{position}}"
             key="{{item.name}}"
             checked="{{item.checked}}"
@@ -78,7 +78,7 @@
           <l-checkbox
             l-class="l-checkbox-color"
             wx:for="{{items4}}"
-            wx:key="{{item.id}}" 
+            wx:key="{{item.id}}"
             placement="{{position}}"
             key="{{item.name}}"
             size="{{'42rpx'}}"
@@ -100,7 +100,7 @@
           <l-checkbox
             l-class="l-checkbox-color"
             wx:for="{{items5}}"
-            wx:key="{{item.id}}" 
+            wx:key="{{item.id}}"
             placement="{{position}}"
             key="{{item.id}}"
             checked="{{item.checked}}"
@@ -110,7 +110,7 @@
         </l-checkbox-group>
       </view>
     </content-card>
-    
+
     <content-card
       class="content"
       name="6、自定义图标"
@@ -121,13 +121,13 @@
           <l-checkbox
             l-class="l-checkbox-color"
             wx:for="{{items6}}"
-            wx:key="{{item.id}}" 
+            wx:key="{{item.id}}"
             placement="{{position}}"
             key="{{item.name}}"
             custom
             checked="{{item.checked}}"
           >
-            <image class="checkbox-img"  src="{{item.checked ? './images/radiobutton.png':'./images/radio.png'}}" slot="icon"/>          
+            <image class="checkbox-img"  src="{{item.checked ? './images/radiobutton.png':'./images/radio.png'}}" slot="icon"/>
             {{item.name}}
           </l-checkbox>
         </l-checkbox-group>
@@ -144,7 +144,7 @@
           <l-checkbox
             l-class="l-checkbox-color"
             wx:for="{{items7}}"
-            wx:key="{{item.id}}" 
+            wx:key="{{item.id}}"
             placement="{{position}}"
             key="{{item.id}}"
             checked="{{item.checked}}"
@@ -165,9 +165,9 @@
         <l-checkbox-group l-class="l-checkbox-group" bind:linchange="change" placement="row" data-index="8">
           <l-checkbox
             l-class="l-checkbox"
-            l-disabled-class="l-checkbox-disabled" 
+            l-disabled-class="l-checkbox-disabled"
             wx:for="{{items8}}"
-            wx:key="{{item.id}}" 
+            wx:key="{{item.id}}"
             placement="{{position}}"
             key="{{item.name}}"
             checked="{{item.checked}}"
@@ -178,7 +178,7 @@
         </l-checkbox-group>
       </view>
     </content-card>
-    
+
     <content-card
       class="content"
       name="9、按钮样式"
@@ -189,7 +189,7 @@
           <l-checkbox
             l-class="l-checkbox-color"
             wx:for="{{items9}}"
-            wx:key="{{item.id}}" 
+            wx:key="{{item.id}}"
             placement="{{position}}"
             key="{{item.name}}"
             checked="{{item.checked}}"
@@ -197,23 +197,23 @@
           >
           <l-button size="mini" slot="icon" plain="{{!item.checked}}">
               {{item.name}}
-            </l-button>                        
+            </l-button>
           </l-checkbox>
         </l-checkbox-group>
       </view>
     </content-card>
-    
+
     <content-card
       class="content"
       name="10、可选项目数量的限制"
       >
       <view class='buttun-wrapper'>
         <view class='title'>10. 下面哪些演员获得影帝称号？</view>
-        <l-checkbox-group bind:linchange="change" min="2" max="3" bind:linout="tipOverflow" data-index="10">
+        <l-checkbox-group bind:linchange="change" min-selected="2" max-selected="3" bind:linout="tipOverflow" data-index="10">
           <l-checkbox
             l-class="l-checkbox-color"
             wx:for="{{items10}}"
-            wx:key="{{item.id}}" 
+            wx:key="{{item.id}}"
             placement="{{position}}"
             key="{{item.name}}"
             checked="{{item.checked}}"

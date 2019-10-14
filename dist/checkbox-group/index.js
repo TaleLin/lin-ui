@@ -21,11 +21,11 @@ Component({
       value: 'column', //column row
     },
     // 最多选中值
-    max: {
+    maxSelected: {
       type: [Number,null],
       value: null
     },
-    min: {
+    minSelected: {
       type: [Number,null],
       value: null
     }
@@ -33,8 +33,8 @@ Component({
   data: {
   },
   attached() {
-    let { min, max} = this.properties;
-    this.checkMax(min, max);
+    let { minSelected, maxSelected} = this.properties;
+    this.checkMax(minSelected, maxSelected);
   },
   methods: {
 

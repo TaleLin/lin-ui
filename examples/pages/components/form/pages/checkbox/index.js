@@ -187,7 +187,7 @@ Page({
   },
 
   tipOverflow(data) {
-    let title = data.detail.type === 'overflow_max' ? `最多选择${data.detail.number}个` : `至少选择${data.detail.number}个`;
+    let title = data.detail.type === 'overflow_max_selected' ? `最多选择${data.detail.limitNumber}个` : `至少选择${data.detail.limitNumber}个`;
     wx.showToast({
       title: title,
       icon: 'none',
