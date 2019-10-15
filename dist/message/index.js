@@ -1,5 +1,5 @@
 import zIndex from '../behaviors/zIndex';
-import watchShow from '../behaviors/wacthShow';
+import watchShow from '../behaviors/watchShow';
 Component({
   behaviors: [zIndex, watchShow],
   externalClasses: ['l-class', 'l-image-class'],
@@ -32,6 +32,11 @@ Component({
 
   data: {
     status: false
+  },
+
+  // 解决 addListener undefined 的错误
+  observers: {
+    'icon': function () {}
   },
 
   attached() {

@@ -1,11 +1,11 @@
 import computeOffset from '../behaviors/computeOffset';
 import zIndex from '../behaviors/zIndex';
-import wacthShow from '../behaviors/wacthShow';
+import watchShow from '../behaviors/watchShow';
 Component({
   /**
    * 组件的属性列表
    */
-  behaviors: [computeOffset, zIndex, wacthShow],
+  behaviors: [computeOffset, zIndex, watchShow],
   externalClasses: ['l-bg-class', 'l-icon-class', 'l-class', 'l-image-class', 'l-title-class '],
   properties: {
     // 显示与隐藏
@@ -62,6 +62,11 @@ Component({
     success: '',
     fail: '',
     complete: ''
+  },
+
+  // 解决 addListener undefined 的错误
+  observers: {
+    'icon': function () {}
   },
 
   attached() {
