@@ -209,7 +209,7 @@
       >
       <view class='buttun-wrapper'>
         <view class='title'>10. 下面哪些演员获得影帝称号？</view>
-        <l-checkbox-group bind:linchange="change" min="2" max="3" bind:linout="tipOverflow" data-index="10">
+        <l-checkbox-group bind:linchange="change" min-selected="2" max-selected="3" bind:linout="tipOverflow" data-index="10">
           <l-checkbox
             l-class="l-checkbox-color"
             wx:for="{{items10}}"
