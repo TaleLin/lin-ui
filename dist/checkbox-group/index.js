@@ -9,8 +9,8 @@ Component({
       },
       linkChanged() {
       },
-      unlinked(target) {
-        this.init(target);
+      unlinked() {
+        // this.init(target);
       }
     }
   },
