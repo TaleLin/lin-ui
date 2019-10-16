@@ -70,7 +70,7 @@
 
     <content-card
       class="content"
-      name="4、更改chcekbox尺寸"
+      name="4、更改checkbox尺寸"
       >
       <view class='buttun-wrapper'>
         <view class='title'>4. 以下历史事件中，哪些和关羽有关？</view>
@@ -101,7 +101,7 @@
             l-class="l-checkbox-color"
             wx:for="{{items5}}"
             wx:key="{{item.id}}"
-            placement="{{position}}"
+            placement="right"
             key="{{item.id}}"
             checked="{{item.checked}}"
           >
@@ -219,6 +219,28 @@
             checked="{{item.checked}}"
           >
           {{item.name}}
+          </l-checkbox>
+        </l-checkbox-group>
+      </view>
+    </content-card>
+
+    <content-card
+            class="content"
+            name="11、带下划线"
+    >
+      <view class='buttun-wrapper'>
+        <view class='title'>11. 你最喜欢的男演员是？</view>
+        <l-checkbox-group l-class="l-checkbox-group" bind:linchange="change" data-index="11">
+          <l-checkbox
+            l-class="l-title-class-border"
+            l-disabled-class="l-checkbox-disabled"
+            wx:for="{{items11}}"
+            wx:key="{{item.id}}"
+            placement="{{position}}"
+            key="{{item.name}}"
+            checked="{{item.checked}}"
+          >
+            {{item.name}}
           </l-checkbox>
         </l-checkbox-group>
       </view>

@@ -157,6 +157,23 @@ Page({
       name: '周星驰',
       checked: false
     }],
+    items11: [{
+      id: 1,
+      name: '成龙',
+      checked: false
+    }, {
+      id: 2,
+      name: '甄子丹',
+      checked: false
+    }, {
+      id: 3,
+      name: '周润发',
+      checked: false
+    }, {
+      id: 4,
+      name: '周星驰',
+      checked: false
+    }],
     position: 'left'
   },
 
