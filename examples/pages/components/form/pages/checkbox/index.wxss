@@ -36,3 +36,10 @@
   color: #707070 !important;
 }
 
+
+.l-title-class-border{
+  color: rgba(140,152,174,1);
+  border-bottom: 1rpx solid #eee;
+  padding: 10rpx 0;
+}
+
