@@ -1,97 +1,98 @@
-import rules from '../behaviors/rules';
-
 Component({
-  behaviors: ['wx://form-field', rules],
+  behaviors: ['wx://form-field'],
   externalClasses: ['l-class', 'l-error-text', 'l-error-text-class'],
   relations: {
     '../checkbox/index': {
       type: 'child',
-      // linked() {
-      //   this.onChangeHandle();
-      // },
-      // linkChanged() {
-      //   this.onChangeHandle();
-      // },
-      // unlinked() {
-      //   this.onChangeHandle();
-      // }
+      linked(target) {
+        this.init(target);
+      },
+      linkChanged() {
+      },
+      unlinked() {
+        // this.init(target);
+      }
     }
   },
   properties: {
-    current: {
-      type: Array,
-      value: [],
-      observer: 'onChangeHandle'
-    },
+    // 选项的排列方式 一行显示 or 多行显示
     placement: {
       type: String,
       value: 'column', //column row
     },
+    // 最多选中值
+    maxSelected: {
+      type: [Number,null],
+      value: null
+    },
+    minSelected: {
+      type: [Number,null],
+      value: null
+    }
   },
   data: {
-    value: [],
-    list: [],
-    length: null
   },
   attached() {
-    this.initRules();
-  },
-  ready() {
-    const len = this.items().length;
-    this.data.length = len;
-    this.setData({
-      length: len
-    });
-    this.onChangeHandle();
-
+    let { minSelected, maxSelected} = this.properties;
+    this.checkMax(minSelected, maxSelected);
   },
   methods: {
-    items() {
-      let items = this.getRelationNodes('../checkbox/index');
-      return items;
+
+    init(target) {
+      if(this._keys === undefined) this._keys = {};
+      if(this._selected === undefined) this._selected = {};
+      this.checkDefaultItem(target);
+      this.checkedKeyRepeat(target);
     },
-    // checkbox change
-    onChangeHandle(val = this.data.current) {
-      let items = this.getRelationNodes('../checkbox/index');
-      const len = items.length;
-      if (len === this.data.length) {
-        items.forEach(item => {
-          let type = val.indexOf(item.data.value) !== -1;
-          item.onChangeHandle(type, 'init');
-        });
+
+    checkedKeyRepeat(target) {
+      let { key } = target.properties;
+      if(this._keys[key]) {
+        throw new Error(`keys有重复元素, chekbox的key属性不能重复：${key}`);
+      } else {
+        this._keys[key] = true;
       }
     },
-    currentChange(val) {
 
-      // const index = this.data.current.indexOf(val.value)
-      this.data.list.push(val);
-      this.setData({
-        value: this.data.list
-      });
+    checkDefaultItem(target) {
+      const { key, checked } = target.properties;
+      if(checked) {
+        this._selected[key] = checked;
+      }
     },
 
-    onEmitEventHandle(current) {
-
-      const index = this.data.current.indexOf(current.value);
-      index === -1 ? this.data.current.push(current.value) : this.data.current.splice(index, 1);
-      index === -1 ? this.data.list.push(current) : this.data.list.splice(index, 1);
-      this.setData({
-        current: this.data.current
-      }, () => {
-        this.validatorData({
-          value: this.data.value
-        });
-      });
-
-      const all = JSON.parse(JSON.stringify(this.data.list));
-      for (let i = 0; i < all.length; i++) {
-        delete all[i].all;
+    checkMax(min, max) {
+      if(min !== null && min < 0) {
+        throw new Error('最小选择个数必须大于等于0');
       }
-      current.all = all;
-      this.setData({
-        value: all
+      if(max !== null && max < 0) {
+        throw new Error('最多选择个数必须大于0');
+      }
+      if(max !== null && min !== null && min >= max) {
+        throw new Error('最多选择个数必须大于最小选择个数');
+      }
+    },
+
+    onEmitEventHandle(currentItem) {
+      currentItem.checked ? this.addSelect(currentItem.key):this.removeSelect(currentItem.key);
+
+      this.triggerEvent('linchange', currentItem, {
+        bubbles: true,
+        composed: true
       });
-      this.triggerEvent('linchange', current);
+    },
+    onEmitOverflowHandle(data){
+      this.triggerEvent('linout', data, {
+        bubbles: true,
+        composed: true
+      });
+    },
+    removeSelect(key) {
+      delete this._selected[key];
+    },
+    addSelect(key) {
+      this._selected[key] = key;
     }
+
   }
 });

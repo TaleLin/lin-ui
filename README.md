@@ -2,7 +2,7 @@
 <p align="center">
   <!-- <a href="http://doc.mini.7yue.pro/"> -->
     <img
-      class="QR-img" src="http://imglf3.nosdn0.126.net/img/YUdIR2E3ME5weEZWVFhTU3I2YnRTVnB6VHZsbHR0SzJtMHNCK28rUE41QzljaFBmdmc2ZUFBPT0.jpg?imageView&thumbnail=500x0&quality=96&stripmeta=0&type=jpg">
+      class="QR-img" src="https://raw.githubusercontent.com/zhc525349965/fisher_book/master/app/image/lin-ui小程序.jpg">
   <!-- </a> -->
 </p>
 
@@ -34,15 +34,15 @@
 Lin UI 是基于 **微信小程序原生语法** 实现的组件库。遵循简洁，易用的设计规范。
 
 ## 讨论交流
-QQ群号：699501172 <br/>
+QQ群号：643205479 <br/>
 
-<img class="QR-img" style="height: 100px; width:100px" src="http://imglf4.nosdn0.126.net/img/YUdIR2E3ME5weEdlNThuRmI4TFh3YVczZzB1N3BrbithelM1OFZMb09SSDNuQSs5V0RhM2lBPT0.jpg?imageView&thumbnail=250x0&quality=96&stripmeta=0&type=jpg">
+<img class="QR-img" style="height: 100px; width:100px" src="https://raw.githubusercontent.com/zhc525349965/fisher_book/master/app/image/qq群新.png">
 
 
 ## 微信公众号
 微信搜索：林间有风 <br/>
 
-<img class="QR-img" style="height: 100px; width:100px"  src="http://imglf6.nosdn0.126.net/img/YUdIR2E3ME5weEdlNThuRmI4TFh3UWhiNmladWVoaTlXUXpicEFPa1F6czFNYkdmcWRIbGRRPT0.jpg?imageView&thumbnail=500x0&quality=96&stripmeta=0&type=jpg">
+<img class="QR-img" style="height: 100px; width:100px"  src="https://raw.githubusercontent.com/zhc525349965/fisher_book/master/app/image/公众号.jpg">
 
 
 ## 快速上手

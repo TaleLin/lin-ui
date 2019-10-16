@@ -3,59 +3,66 @@
   <content-title name="CheckBox" describe="复选框">
     <content-card
       class="content"
-      name="基本案例"
-    >
+      name="1、基本案例"
+      >
       <view class='buttun-wrapper'>
         <view class='title'>1. 下面哪些歌是周杰伦创作的？</view>
-        <l-checkbox-group current="{{current }}" l-class="l-radio-group" bind:linchange="change">
+        <l-checkbox-group bind:linchange="change" data-index="1">
           <l-checkbox
-            l-class="l-radio"
-            type="circle"
-            l-title-class="l-title-class"
+            l-class="l-checkbox-color"
             wx:for="{{items1}}"
-            wx:key="{{item.id}}" 
+            wx:key="{{item.id}}"
             placement="{{position}}"
-            value="{{item.name}}">
-          </l-checkbox>
-        </l-checkbox-group>
-      </view>
-    </content-card>
-    <!-- 更改布局 -->
-    <content-card
-      class="content"
-      name="更改布局方式"
-    >
-      <view class='buttun-wrapper'>
-        <view class='title'>2.周星驰拍过哪些电影？</view>
-        <l-checkbox-group placement="row" l-class="l-radio-group">
-          <l-checkbox
-            l-title-class="l-title-class"
-            l-class="l-radio"
-            wx:for="{{items2}}"
-            wx:key="{{item.id}}" 
-            placement="{{position}}"
-            value="{{item.name}}">
+            key="{{item.name}}"
+            checked="{{item.checked}}"
+          >
+          {{item.name}}
           </l-checkbox>
         </l-checkbox-group>
       </view>
     </content-card>
 
-    <!--  -->
     <content-card
       class="content"
-      name="自定义颜色"
-    >
+      name="2、更改布局方式"
+      >
+      <view class='buttun-wrapper'>
+        <view class='title'>2. 周星驰拍过哪些电影？</view>
+        <l-checkbox-group bind:linchange="change2" placement="row" data-index="2">
+          <l-checkbox
+            l-class="l-checkbox-color"
+            wx:for="{{items2}}"
+            wx:key="{{item.id}}"
+            placement="{{position}}"
+            key="{{item.id}}"
+            checked="{{item.checked}}"
+          >
+          {{item.name}}
+          </l-checkbox>
+        </l-checkbox-group>
+      </view>
+    </content-card>
+
+    <content-card
+      class="content"
+      name="3、自定义颜色"
+      >
       <view class='buttun-wrapper'>
         <view class='title'>3. 什么天气适合吃火锅？</view>
-        <l-checkbox-group l-class="l-radio-group" >
+        <l-checkbox-group bind:linchange="change" data-index="3">
           <l-checkbox
-            l-title-class="l-title-class"
-            l-class="l-radio"
+            l-class="l-checkbox-color"
             wx:for="{{items3}}"
-            wx:key="{{item.id}}" 
+            wx:key="{{item.id}}"
             placement="{{position}}"
+            key="{{item.name}}"
+            checked="{{item.checked}}"
             color='#FFE57F'
-            value="{{item.name}}">
+            select-color='#FFE57F'
+            disabled-color='#ccc'
+            disabled="{{item.id === 1}}"
+          >
+          {{item.name}}
           </l-checkbox>
         </l-checkbox-group>
       </view>
@@ -63,40 +70,42 @@
 
     <content-card
       class="content"
-      name="更改尺寸"
-    >
+      name="4、更改checkbox尺寸"
+      >
       <view class='buttun-wrapper'>
-        <view class='title'>4. 以下历史事件中，哪些是和关羽有关的？</view>
-        <l-checkbox-group l-class="l-radio-group" >
+        <view class='title'>4. 以下历史事件中，哪些和关羽有关？</view>
+        <l-checkbox-group bind:linchange="change" placement="row" data-index="4">
           <l-checkbox
-            l-class="l-radio"
-            l-title-class="l-title-class"
+            l-class="l-checkbox-color"
             wx:for="{{items4}}"
-            wx:key="{{item.id}}" 
+            wx:key="{{item.id}}"
             placement="{{position}}"
-            size="45"
-            value="{{item.name}}">
+            key="{{item.name}}"
+            size="{{'42rpx'}}"
+            checked="{{item.checked}}"
+          >
+          {{item.name}}
           </l-checkbox>
         </l-checkbox-group>
       </view>
     </content-card>
 
-    
-
     <content-card
       class="content"
-      name="更改Radio的位置"
-    >
+      name="5、更改按钮位置"
+      >
       <view class='buttun-wrapper'>
-        <view class='title'>5.下列属于温带沙漠气候特征的是？</view>
-        <l-checkbox-group l-class="l-radio-gr oup" >
+        <view class='title'>5. 下列属于温带沙漠气候特征的是？</view>
+        <l-checkbox-group bind:linchange="change2" data-index="5">
           <l-checkbox
-            l-title-class="l-title-class"
-            l-class="l-radio"
+            l-class="l-checkbox-color"
             wx:for="{{items5}}"
-            wx:key="{{item.id}}" 
+            wx:key="{{item.id}}"
             placement="right"
-            value="{{item.name}}">
+            key="{{item.id}}"
+            checked="{{item.checked}}"
+          >
+          {{item.name}}
           </l-checkbox>
         </l-checkbox-group>
       </view>
@@ -104,39 +113,44 @@
 
     <content-card
       class="content"
-      name="更改样式"
-    >
+      name="6、自定义图标"
+      >
       <view class='buttun-wrapper'>
-        <view class='title'>6.下列LOL英雄里哪些可以隐身</view>
-        <l-checkbox-group l-class="l-radio-group" >
+        <view class='title'>6. 下面LOL英雄哪些可以隐身？</view>
+        <l-checkbox-group bind:linchange="change" placement="row" data-index="6">
           <l-checkbox
-            l-class="l-radio"
-            l-title-class="l-title-class"
+            l-class="l-checkbox-color"
             wx:for="{{items6}}"
-            wx:key="{{item.id}}" 
-            shape="circle"
-            disabled='{{item.disabled}}'
-            value="{{item.name}}">
+            wx:key="{{item.id}}"
+            placement="{{position}}"
+            key="{{item.name}}"
+            custom
+            checked="{{item.checked}}"
+          >
+            <image class="checkbox-img"  src="{{item.checked ? './images/radiobutton.png':'./images/radio.png'}}" slot="icon"/>
+            {{item.name}}
           </l-checkbox>
         </l-checkbox-group>
       </view>
     </content-card>
 
-    <!-- 设置禁用 -->
     <content-card
       class="content"
-      name="设置禁用"
-    >
+      name="7、设置禁用"
+      >
       <view class='buttun-wrapper'>
-        <view class='title'>7.关于中亚沙漏主动技能，说法错误的是？</view>
-        <l-checkbox-group l-class="l-radio-group" bind:linchange="change">
+        <view class='title'>7. 关于中亚沙漏主动技能，说法错误的是？</view>
+        <l-checkbox-group bind:linchange="change2" data-index="7">
           <l-checkbox
-            l-class="l-radio"
-            l-title-class="l-title-class"
+            l-class="l-checkbox-color"
             wx:for="{{items7}}"
-            wx:key="{{item.id}}" 
-            disabled='{{item.disabled}}'
-            value="{{item.name}}">
+            wx:key="{{item.id}}"
+            placement="{{position}}"
+            key="{{item.id}}"
+            checked="{{item.checked}}"
+            disabled="{{item.disabled}}"
+          >
+          {{item.name}}
           </l-checkbox>
         </l-checkbox-group>
       </view>
@@ -144,19 +158,89 @@
 
     <content-card
       class="content"
-      name="带下划线"
-    >
+      name="8、外部样式"
+      >
       <view class='buttun-wrapper'>
         <view class='title'>8. 前端需要学习哪些技能？</view>
-        <l-checkbox-group current="{{current }}" l-class="l-radio-group" bind:linchange="change">
+        <l-checkbox-group l-class="l-checkbox-group" bind:linchange="change" placement="row" data-index="8">
           <l-checkbox
-            l-class="l-radio"
-            type="circle"
-            l-title-class="l-title-class-border"
+            l-class="l-checkbox"
+            l-disabled-class="l-checkbox-disabled"
             wx:for="{{items8}}"
             wx:key="{{item.id}}"
             placement="{{position}}"
-            value="{{item.name}}">
+            key="{{item.name}}"
+            checked="{{item.checked}}"
+            disabled="{{item.id==1}}"
+          >
+          {{item.name}}
+          </l-checkbox>
+        </l-checkbox-group>
+      </view>
+    </content-card>
+
+    <content-card
+      class="content"
+      name="9、按钮样式"
+      >
+      <view class='buttun-wrapper'>
+        <view class='title'>9. 你喜欢哪些球类运动？</view>
+        <l-checkbox-group bind:linchange="change" placement="row" data-index="9">
+          <l-checkbox
+            l-class="l-checkbox-color"
+            wx:for="{{items9}}"
+            wx:key="{{item.id}}"
+            placement="{{position}}"
+            key="{{item.name}}"
+            checked="{{item.checked}}"
+            custom
+          >
+          <l-button size="mini" slot="icon" plain="{{!item.checked}}">
+              {{item.name}}
+            </l-button>
+          </l-checkbox>
+        </l-checkbox-group>
+      </view>
+    </content-card>
+
+    <content-card
+      class="content"
+      name="10、可选项目数量的限制"
+      >
+      <view class='buttun-wrapper'>
+        <view class='title'>10. 下面哪些演员获得影帝称号？</view>
+        <l-checkbox-group bind:linchange="change" min-selected="2" max-selected="3" bind:linout="tipOverflow" data-index="10">
+          <l-checkbox
+            l-class="l-checkbox-color"
+            wx:for="{{items10}}"
+            wx:key="{{item.id}}"
+            placement="{{position}}"
+            key="{{item.name}}"
+            checked="{{item.checked}}"
+          >
+          {{item.name}}
+          </l-checkbox>
+        </l-checkbox-group>
+      </view>
+    </content-card>
+
+    <content-card
+            class="content"
+            name="11、带下划线"
+    >
+      <view class='buttun-wrapper'>
+        <view class='title'>11. 你最喜欢的男演员是？</view>
+        <l-checkbox-group l-class="l-checkbox-group" bind:linchange="change" data-index="11">
+          <l-checkbox
+            l-class="l-title-class-border"
+            l-disabled-class="l-checkbox-disabled"
+            wx:for="{{items11}}"
+            wx:key="{{item.id}}"
+            placement="{{position}}"
+            key="{{item.name}}"
+            checked="{{item.checked}}"
+          >
+            {{item.name}}
           </l-checkbox>
         </l-checkbox-group>
       </view>
