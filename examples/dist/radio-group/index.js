@@ -68,10 +68,6 @@ Component({
 
     init() {
       const items = this.getRelationNodes('../radio/index');
-      clearTimeout(this.timeout);
-      this.timeout = setTimeout(()=>{
-        this.checkDefaultItem(items, this.properties.current);
-      },100);
       this.checkedKeyRepeat(items);
       this.onChangeHandle(items);
     },
@@ -81,17 +77,6 @@ Component({
         let checked = this.properties.current == item.data.key;
         item.setChecked(checked, item.data.key);
       });
-    },
-
-    checkDefaultItem(items, defaultKey) {
-      if(this.properties.noneChecked){
-        return;
-      }
-      const item = items.find(item => item.data.key == defaultKey);
-      if (!item) {
-        throw new Error('当设置noneChecked为false时，' +
-                    'radio-group必须设置current，且current的值必须合法');
-      }
     },
 
     onEmitEventHandle(currentItem, select) {
