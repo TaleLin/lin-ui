@@ -164,6 +164,7 @@
         <view class='title'>8. 前端需要学习哪些技能？</view>
         <l-checkbox-group l-class="l-checkbox-group" bind:linchange="change" placement="row" data-index="8">
           <l-checkbox
+            class="checkbox-mg"
             l-class="l-checkbox"
             l-disabled-class="l-checkbox-disabled"
             wx:for="{{items8}}"
@@ -171,7 +172,6 @@
             placement="{{position}}"
             key="{{item.name}}"
             checked="{{item.checked}}"
-            disabled="{{item.id==1}}"
           >
           {{item.name}}
           </l-checkbox>
