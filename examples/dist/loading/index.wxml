@@ -1,15 +1,15 @@
 <view class="container-loading l-container-class {{fullScreen ? 'content': ''}}" wx:if="{{show && fullScreen}}" style="background:{{bgColor}};opacity:{{opacity}};z-index:{{zIndex}}" catchtouchmove="doNothingMove">
-  <view wx:if="{{show}}" 
-        class=" {{type=='flash'?'l-class':''}} {{type + '-spinner'}} {{type=='change'||custom?'':'spinner-' + type + '-' + size}}"
+  <view wx:if="{{show}}"
+        class="l-class {{type + '-spinner'}} {{type=='change'||custom?'':'spinner-' + type + '-' + size}}"
         style="margin-bottom:{{distance}}px">
     <block wx:if="{{custom}}">
       <slot />
     </block>
     <block wx:else>
-      <view style="{{color?'background-color:'+color:''}}" class="l-class {{type+'-bounce1'}}   {{'spinner-'+ type + '-' + size}}"></view>
-      <view wx:if="{{type=='flash' || type=='change'}}" style="{{color?'background-color:'+color:''}}" class="l-class {{type+'-bounce2'}} {{'spinner-'+ type + '-' + size}}"></view>
-      <view wx:if="{{type=='change'}}" style="{{color?'background-color:'+color:''}}" class="l-class {{type+'-bounce3'}}   {{'spinner-'+ type + '-' + size}}"></view>
-      <view class="spinner-circle {{'spinner-circle_' + size}}" wx:if="{{ type === 'circle'}}">
+      <view wx:if="{{type=='flash' || type=='change' || type=='flip'}}"  style="{{color?'background-color:'+color:''}}" class="{{type+'-bounce1'}}   {{'spinner-'+ type + '-' + size}}"></view>
+      <view wx:if="{{type=='flash' || type=='change'}}" style="{{color?'background-color:'+color:''}}" class="{{type+'-bounce2'}} {{'spinner-'+ type + '-' + size}}"></view>
+      <view wx:if="{{type=='change'}}" style="{{color?'background-color:'+color:''}}" class="{{type+'-bounce3'}}   {{'spinner-'+ type + '-' + size}}"></view>
+      <view class="spinner-circle {{'spinner-circle-' + size}}" wx:if="{{ type === 'circle'}}">
         <view class="spinner-container container1">
           <view class="circle1  {{type + '-' + size}}" style="background: {{color}}"></view>
           <view class="circle2  {{type + '-' + size}}" style="background: {{color}}"></view>
@@ -35,15 +35,15 @@
     </block>
   </view>
 </view>
-<view wx:if="{{show && !fullScreen}}" class=" {{type=='flash'?'l-class':''}} {{type + '-spinner'}} {{type=='change'||custom?'':'spinner-' + type + '-' + size}}">
+<view wx:if="{{show && !fullScreen}}" class="l-class {{type + '-spinner'}} {{type=='change'||custom?'':'spinner-' + type + '-' + size}}">
   <block wx:if="{{custom}}">
     <slot />
   </block>
   <block wx:else>
-    <view style="{{color?'background-color:'+color:''}}" class="l-class {{type+'-bounce1'}}   {{'spinner-'+ type + '-' + size}}"></view>
-    <view wx:if="{{type=='flash' || type=='change'}}" style="{{color?'background-color:'+color:''}}" class="l-class {{type+'-bounce2'}} {{'spinner-'+ type + '-' + size}}"></view>
-    <view wx:if="{{type=='change'}}" style="{{color?'background-color:'+color:''}}" class="l-class {{type+'-bounce3'}}   {{'spinner-'+ type + '-' + size}}"></view>
-    <view wx:if="{{ type === 'circle'}}" class="spinner-circle {{'spinner-circle_' + size}}">
+    <view wx:if="{{type=='flash' || type=='change' || type=='flip'}}"  style="{{color?'background-color:'+color:''}}" class="{{type+'-bounce1'}}   {{'spinner-'+ type + '-' + size}}"></view>
+    <view wx:if="{{type=='flash' || type=='change'}}" style="{{color?'background-color:'+color:''}}" class="{{type+'-bounce2'}} {{'spinner-'+ type + '-' + size}}"></view>
+    <view wx:if="{{type=='change'}}" style="{{color?'background-color:'+color:''}}" class="{{type+'-bounce3'}}   {{'spinner-'+ type + '-' + size}}"></view>
+    <view wx:if="{{ type === 'circle'}}" class="spinner-circle {{'spinner-circle-' + size}}">
       <view class="spinner-container container1">
         <view class="circle1  {{type + '-' + size}}" style="background: {{color}}"></view>
         <view class="circle2  {{type + '-' + size}}" style="background: {{color}}"></view>
