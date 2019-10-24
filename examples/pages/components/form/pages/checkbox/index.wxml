@@ -3,10 +3,10 @@
   <content-title name="CheckBox" describe="复选框">
     <content-card
       class="content"
-      name="1、基本案例"
+      name="基本案例"
       >
       <view class='buttun-wrapper'>
-        <view class='title'>1. 下面哪些歌是周杰伦创作的？</view>
+        <view class='title'>下面哪些歌是周杰伦创作的？</view>
         <l-checkbox-group bind:linchange="change" data-index="1">
           <l-checkbox
             l-class="l-checkbox-color"
@@ -24,10 +24,10 @@
 
     <content-card
       class="content"
-      name="2、更改布局方式"
+      name="更改布局方式"
       >
       <view class='buttun-wrapper'>
-        <view class='title'>2. 周星驰拍过哪些电影？</view>
+        <view class='title'>周星驰拍过哪些电影？</view>
         <l-checkbox-group bind:linchange="change2" placement="row" data-index="2">
           <l-checkbox
             l-class="l-checkbox-color"
@@ -45,10 +45,10 @@
 
     <content-card
       class="content"
-      name="3、自定义颜色"
+      name="自定义颜色"
       >
       <view class='buttun-wrapper'>
-        <view class='title'>3. 什么天气适合吃火锅？</view>
+        <view class='title'>什么天气适合吃火锅？</view>
         <l-checkbox-group bind:linchange="change" data-index="3">
           <l-checkbox
             l-class="l-checkbox-color"
@@ -70,10 +70,10 @@
 
     <content-card
       class="content"
-      name="4、更改checkbox尺寸"
+      name="更改checkbox尺寸"
       >
       <view class='buttun-wrapper'>
-        <view class='title'>4. 以下历史事件中，哪些和关羽有关？</view>
+        <view class='title'>以下历史事件中，哪些和关羽有关？</view>
         <l-checkbox-group bind:linchange="change" placement="row" data-index="4">
           <l-checkbox
             l-class="l-checkbox-color"
@@ -92,10 +92,10 @@
 
     <content-card
       class="content"
-      name="5、更改按钮位置"
+      name="更改按钮位置"
       >
       <view class='buttun-wrapper'>
-        <view class='title'>5. 下列属于温带沙漠气候特征的是？</view>
+        <view class='title'>下列属于温带沙漠气候特征的是？</view>
         <l-checkbox-group bind:linchange="change2" data-index="5">
           <l-checkbox
             l-class="l-checkbox-color"
@@ -113,10 +113,10 @@
 
     <content-card
       class="content"
-      name="6、自定义图标"
+      name="自定义图标"
       >
       <view class='buttun-wrapper'>
-        <view class='title'>6. 下面LOL英雄哪些可以隐身？</view>
+        <view class='title'>下面LOL英雄哪些可以隐身？</view>
         <l-checkbox-group bind:linchange="change" placement="row" data-index="6">
           <l-checkbox
             l-class="l-checkbox-color"
@@ -136,10 +136,10 @@
 
     <content-card
       class="content"
-      name="7、设置禁用"
+      name="设置禁用"
       >
       <view class='buttun-wrapper'>
-        <view class='title'>7. 关于中亚沙漏主动技能，说法错误的是？</view>
+        <view class='title'>关于中亚沙漏主动技能，说法错误的是？</view>
         <l-checkbox-group bind:linchange="change2" data-index="7">
           <l-checkbox
             l-class="l-checkbox-color"
@@ -158,10 +158,10 @@
 
     <content-card
       class="content"
-      name="8、外部样式"
+      name="外部样式"
       >
       <view class='buttun-wrapper'>
-        <view class='title'>8. 前端需要学习哪些技能？</view>
+        <view class='title'>前端需要学习哪些技能？</view>
         <l-checkbox-group l-class="l-checkbox-group" bind:linchange="change" placement="row" data-index="8">
           <l-checkbox
             class="checkbox-mg"
@@ -181,10 +181,10 @@
 
     <content-card
       class="content"
-      name="9、按钮样式"
+      name="按钮样式"
       >
       <view class='buttun-wrapper'>
-        <view class='title'>9. 你喜欢哪些球类运动？</view>
+        <view class='title'>你喜欢哪些球类运动？</view>
         <l-checkbox-group bind:linchange="change" placement="row" data-index="9">
           <l-checkbox
             l-class="l-checkbox-color"
@@ -205,10 +205,10 @@
 
     <content-card
       class="content"
-      name="10、可选项目数量的限制"
+      name="可选项目数量的限制"
       >
       <view class='buttun-wrapper'>
-        <view class='title'>10. 下面哪些演员获得影帝称号？</view>
+        <view class='title'>下面哪些演员获得影帝称号？</view>
         <l-checkbox-group bind:linchange="change" min-selected="2" max-selected="3" bind:linout="tipOverflow" data-index="10">
           <l-checkbox
             l-class="l-checkbox-color"
@@ -226,10 +226,10 @@
 
     <content-card
             class="content"
-            name="11、带下划线"
+            name="带下划线"
     >
       <view class='buttun-wrapper'>
-        <view class='title'>11. 你最喜欢的男演员是？</view>
+        <view class='title'>你最喜欢的男演员是？</view>
         <l-checkbox-group l-class="l-checkbox-group" bind:linchange="change" data-index="11">
           <l-checkbox
             l-class="l-title-class-border"
