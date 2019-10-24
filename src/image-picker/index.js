@@ -78,14 +78,19 @@ Component({
    */
   methods: {
     handleClear() {
+      var urls = this.data.urls;
       this.setData({
         urls: [],
         clear: false,
         showBtn: true
       });
-      let detail = true;
+      let info = {
+        all: urls,
+        current: urls,
+      };
+
       let option = {};
-      this.triggerEvent('linclear', detail, option);
+      this.triggerEvent('linclear', info, option);
     },
 
     // 预览 preview
@@ -168,6 +173,7 @@ Component({
           let option = {};
 
           that.triggerEvent('linchange', detail, option);
+          that.triggerEvent('linpush', detail, option);
         }
       });
 
