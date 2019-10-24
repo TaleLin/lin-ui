@@ -104,7 +104,7 @@ Component({
           offsetX = 0,
           offsetY = 0,
           iconSize = '60',
-          iconColor = '#fff'
+          iconColor = ''
         } = options;
         this.setData({
           title,
