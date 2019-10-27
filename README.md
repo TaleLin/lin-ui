@@ -26,6 +26,8 @@
 <div align="center">
 
 ⚡️ 文档网站: http://doc.mini.7yue.pro/
+<br/>
+🔥 教程地址: https://course.7yue.pro
 
 </div>
 
@@ -34,20 +36,28 @@
 Lin UI 是基于 **微信小程序原生语法** 实现的组件库。遵循简洁，易用的设计规范。
 
 ## 讨论交流
-QQ群号：643205479 <br/>
 
-<img class="QR-img" style="height: 100px; width:100px" src="https://raw.githubusercontent.com/zhc525349965/fisher_book/master/app/image/qq群新.png">
+<div style="display:flex;flex-direction:row">
+  <div style="display:flex;flex-direction:column;align-items: center;margin-right:20px;">
+    <img class="QR-img" style="height: 80px; width:80px" src="https://raw.githubusercontent.com/zhc525349965/fisher_book/master/app/image/qq群新.png">
+    <p style="font-size:12px;">QQ群号：643205479</p>
+  </div>
 
-
-## 微信公众号
-微信搜索：林间有风 <br/>
-
-<img class="QR-img" style="height: 100px; width:100px"  src="https://raw.githubusercontent.com/zhc525349965/fisher_book/master/app/image/公众号.jpg">
+  <div style="display:flex;flex-direction:column;align-items: center;margin-right:20px;">
+    <img class="QR-img" style="height: 80px; width:80px"  src="https://raw.githubusercontent.com/zhc525349965/fisher_book/master/app/image/公众号.jpg">
+    <p style="font-size:12px;">微信公众号：林间有风</p>
+  </div>
+</div>
 
 ## Lin UI商业案例
-微信搜索：风袖 <br/>
 
-<img class="QR-img" style="height: 100px; width:100px"  src="https://raw.githubusercontent.com/zhc525349965/fisher_book/master/app/image/风袖.jpg">
+<div style="display:flex;flex-direction:row">
+  <div style="display:flex;flex-direction:column;align-items: center;margin-right:20px;">
+    <img class="QR-img" style="height: 80px; width:80px"  src="https://raw.githubusercontent.com/zhc525349965/fisher_book/master/app/image/风袖.jpg" alt="风袖">
+    <p style="font-size:12px;">风袖</p>
+  </div>
+</div>
+
 
 
 ## 快速上手
