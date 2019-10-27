@@ -24,19 +24,19 @@ Component({
     },
     activeIndex: {
       type: Number,
-      value: 1
+      value: 0
     },
-    activeColor: {
+    color: String,
+    status: {
       type: String,
-      value: '#3963bc'
+      value: 'process'
     },
-    color: {
-      type: String,
-      value: ''
-    },
-    type: {
-      type: String,
-      value: 'number'
+    dot: Boolean
+  },
+
+  observers: {
+    'activeIndex': function () {
+      this._initSteps();
     }
   },
 
@@ -53,14 +53,13 @@ Component({
   methods: {
     _initSteps() {
       let steps = this.getRelationNodes('../step/index');
-      let length = steps.length;
-      if (this.data.direction == 'row') this.setData({
-        length
-      });
-      if (length > 0) {
+      this.data.length = steps.length;
+      if (this.data.length > 0) {
+        if (this.data.activeIndex > this.data.length || this.data.activeIndex < 0) {
+          console.error(`active-index值:${this.data.activeIndex}不在合理范围内`);
+        }
         steps.forEach((step, index) => {
           step.updateDataChange({
-            length,
             index,
             ...this.data
           });

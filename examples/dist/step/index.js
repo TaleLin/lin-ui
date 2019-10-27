@@ -5,10 +5,13 @@ Component({
   externalClasses: [
     'l-class',
     'l-step-class',
-    'l-title-class', 
+    'l-title-class',
     'l-describe-class',
     'l-line-class'
   ],
+  options: {
+    multipleSlots: true // 在组件定义时的选项中启用多slot支持
+  },
   relations: {
     '../steps/index': {
       type: 'parent'
@@ -16,17 +19,13 @@ Component({
   },
   properties: {
     icon: String,
-    status: String,
     title: String,
     describe: String,
     iconSize: {
       type: Number,
       value: 24
     },
-    iconColor: {
-      type: String,
-      value: '#fff'
-    },
+    iconColor: String,
     custom: Boolean
   },
 

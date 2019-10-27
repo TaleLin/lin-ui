@@ -1,131 +1,141 @@
 @import "../../config/styles/_base.less";
 
 .step {
-  display: flex;
+  display : flex;
   position: relative;
 
-  &-custom{
+  &-custom {
     z-index: 2;
   }
 
   &-row {
     flex-direction: column;
-    align-items: center;
+    align-items   : center;
   }
 
   &-column {
     flex-direction: row;
-    height: 160rpx;
-    padding-left: 30rpx;
-    box-sizing: border-box;
+    min-height    : 120rpx;
+    padding-left  : 30rpx;
+    box-sizing    : border-box;
+  }
+
+  &-container {
+    display         : flex;
+    justify-content : center;
+    z-index         : 2;
+    align-items     : center;
+    background-color: #fff;
+
+    &-row {
+      width: 70rpx;
+      height: 40rpx;
+    }
+
+    &-column {
+      height: 60rpx;
+      width: 40rpx;
+    }
   }
 
   &-icon {
-    width: 40rpx;
-    height: 40rpx;
-    display: flex;
-    align-items: center;
+    width          : 40rpx;
+    height         : 40rpx;
+    display        : flex;
+    align-items    : center;
     justify-content: center;
+    line-height    : 40rpx;
+    font-size      : 22rpx;
+    transition     : 0.5s;
+    box-sizing     : border-box;
   }
 
-  &-number {
-    width: 40rpx;
-    height: 40rpx;
-    border-radius: 50%;
-    background-color: @step-color;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    line-height: 40rpx;
-    font-size: 28rpx;
-    transition: 0.5s;
-    color: #fff;
-    z-index: 2;
+  &-process {
+    color           : #fff;
+    background-color: @step-active-color;
+    border-radius   : 50%;
+  }
 
-    &-mistake {
+  &-error {
+    background-color: #fff;
+    border          : 1px solid @error-color;
+    color           : @error-color;
+    border-radius   : 50%;
+  }
+
+  &-finish {
+    background-color: #fff;
+    color           : @step-active-color;
+    border          : 1px solid @step-active-color;
+    border-radius   : 50%;
+  }
+
+  &-wait {
+    background-color: #fff;
+    color           : @step-color;
+    border          : 1px solid @step-color;
+    border-radius   : 50%;
+  }
+
+  &-dot {
+    width        : 24rpx;
+    height       : 24rpx;
+    border-radius: 50%;
+    transition   : 0.5s;
+
+    &-process {
+      background-color: @step-active-color;
+    }
+
+    &-wait {
+      background-color: @step-color;
+    }
+
+    &-error {
       background-color: @error-color;
     }
 
     &-finish {
-      background-color: @success-color;
-    }
-
-    &-on {
-      color: #fff;
       background-color: @step-active-color;
-    }
-
-    &-over {
-      color: #fff;
-      background-color: @step-active-color;
-    }
-  }
-
-  &-dot {
-    width: 24rpx;
-    height: 24rpx;
-    border-radius: 50%;
-    background: @step-color;
-    transition: 0.5s;
-
-    &-on {
-      background-color: @step-active-color
-    }
-
-    &-over {
-      background-color: @step-active-color
     }
   }
 
   &-line {
     background: @step-color;
     transition: 0.5s;
-    position: absolute;
-    z-index: 0;
-
-    &-dot {}
+    position  : absolute;
+    z-index   : 0;
 
     &-row {
-      height: 4rpx;
-      width: 100%;
-      left: 50%;
-
-      &-number {
-        top: 20rpx;
-      }
+      height: 2rpx;
+      width : 100%;
+      left  : 50%;
+      top   : 18rpx;
     }
 
     &-column {
-      width: 4rpx;
+      width : 2rpx;
       height: 100%;
-      top: 20rpx;
-
-      &-number {
-        left: 46rpx;
-      }
-
+      top   : 20rpx;
+      left  : 47rpx;
     }
 
-    &-on {
-      background-color: @step-active-color;
-    }
-
-    &-mistake {
-      background-color: @error-color;
+    &-wait {
+      background-color: #e8e8e8;
     }
 
     &-finish {
-      background-color: @success-color;
+      background-color: @step-active-color;
     }
   }
 
   &-content {
-    display: flex;
+    display       : flex;
     flex-direction: column;
 
     &-row {
       align-items: center;
-      width: 100%;
+      width      : 100%;
     }
 
     &-column {
@@ -134,32 +144,46 @@
   }
 
   &-title {
-    color: #333;
-    font-size: 32rpx;
+    color    : #595959;
+    font-size: 26rpx;
 
     &-row {
       margin-top: 15rpx;
     }
 
     &-column {
-      // margin-top: 10rpx;
+      margin-top: 15rpx;
     }
 
-    &-on {
-      color: @step-active-color;
-    }
-
-    &-finish{
-      color: @success-color;
-    }
-
-    &-mistake{
-      color: @error-color;
+    &-process {
+      color    : #333333;
+      font-size: 28rpx;
     }
   }
 
   &-describe {
-    color: #8C98AE;
-    font-size: 28rpx;
+    color    : #8C98AE;
+    font-size: 22rpx;
   }
+}
+
+@font-face {
+  font-family: "iconfont";
+  src        : url('data:application/x-font-woff2;charset=utf-8;base64,d09GMgABAAAAAAK8AAsAAAAABpQAAAJvAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHEIGVgCDBgp8gQsBNgIkAwwLCAAEIAWEbQc2G9EFyK4wbuGJaCgrSmkBCSe/ZeUtviBzEXztx/bd3f+oNEiuzaerJhKN6WQSJFqlZELxTOZqTS9l0hsflgVC/bD3z/dzv8lMXAksyeryeByfVkhgV93EvwdIwC+b/hetH5jPyAA+z+X0JtCBXONbltMcw496AcYBBbYnRoEEXEQBcAqyOwK15PsEmg2KiewMTy6yCoWzLBD3lqGwilJKUaRqo1C37C3iRaUxPaUnPMffj18LUUFSZc7a3bshnfV++DD/2GVISBPo4QoZU5hCXLeWThULiSvWbCrpb64VIS2VhYlVpqU+6B8vETWnsxWM0XLiI19G8OGABDKoy5VBzDRje98gRHertt+2fLx2cdC6ZJwcnK226Ifh0uzy4vzK8sLSytxprqHAHexGbz8/6za6C3ePjwW29viP3ailnm7Zz+SntAd5IV0IBHuvvy3Xd/41thTw/osdBRahcefh4Gepwb5iah13LrrKV9mRrBsIJKhCjvrnxLq9Trf0wb2ERn0TIg0GcmSNhsjCTqHSYgm1RutoNmnkcIseUrEoTZiwRRA63SBp94as0zNZ2BdU+v2h1hnFaHYczWe2GAmrakCiQqiDmgdLEz73vFSVdM+jkXUVWdTG/DLK0MpCOpGqVkfQR7nEhjBnZIg4cCk8GCaPoesKCKSwUaOESRS0J5O87UUJTXisyjYJKQjSAVUesGgEHw+Hk6ra5+chQ5ZLIXsEDfllSApZ44O0hBRAjph8SPAoz4RyDBmEcICTBA8YJrOQyyWAoH2WDWlIgjmhEGiXdAdx1JTY3uL93xFo5kzMkSJHUT+g+5BNxVpWMAYAAA==') format('woff2')
+}
+
+.iconfont {
+  font-family            : "iconfont" !important;
+  font-size              : 24rpx;
+  font-style             : normal;
+  -webkit-font-smoothing : antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-finish:before {
+  content: "\e600";
+}
+
+.icon-error:before {
+  content: "\e6cf";
 }
