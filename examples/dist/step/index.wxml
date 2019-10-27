@@ -1,27 +1,67 @@
 <view class="step {{'step-'+direction}} l-class"  
       style="{{direction=='row'?'width:'+(1/length)*750+'rpx':''}}">
-  <view class="step-icon">
+  <view class="step-container l-step-class {{'step-container-'+direction}}">
     <view wx:if="{{custom}}" class="step-custom">
-      <slot/>
+      <slot name="dot"/>
     </view>
     <view wx:else
-    class="l-step-class step-icon {{icon?'step-number':'step-'+type}} {{status?'step-number-'+status:''}} {{activeIndex==index+1 && !status?'step-'+type+'-on':''}} {{activeIndex>index+1 && !status?'step-'+type+'-over':''}}">
-      <l-icon wx:if="{{icon || status}}" 
-              name="{{icon || status}}" 
-              size="{{iconSize}}" 
-              color="{{iconColor}}"/>
-      <block wx:if="{{type=='number' && !icon &&!status}}">{{index+1}}</block>
+          class="l-step-class {{dot && !icon?'step-dot-'+currentStatus.setStatus(activeIndex,index,status)+' step-dot':'step-'+currentStatus.setStatus(activeIndex,index,status)+' step-icon'}}"
+          style="{{dot?currentStatus.dotStyle(activeIndex,index,color):currentStatus.statusStyle(activeIndex,index,color)}}">
+      <l-icon wx:if="{{icon}}" name="{{icon}}" size="{{iconSize}}" color="{{(currentStatus.setStatus(activeIndex,index,status))==='process'?'#3963BC':iconColor}}"/>
+      <block wx:if="{{!dot && !icon}}">
+        <view wx:if="{{currentStatus.setStatus(activeIndex,index,status)==='error' || currentStatus.setStatus(activeIndex,index,status)==='finish'}}" 
+              class="iconfont icon-{{currentStatus.setStatus(activeIndex,index,status)}}"></view>
+        <block wx:else>{{index+1}}</block>
+      </block>
     </view>
   </view>
   <view class="step-content {{'step-content-'+direction}}">
-    <view class="l-title-class step-title {{'step-title-' + direction}} {{status?'step-title-' + status:''}} {{activeIndex==index+1?'step-title-on':''}}">
+    <view class="l-title-class {{'step-title-' + direction}} {{activeIndex===index?'step-title-process':'step-title'}}">
       {{title}}
     </view>
-    <view class="l-describe-class step-describe {{activeIndex==index+1?'step-describe-on':''}}">
+    <view class="l-describe-class step-describe">
       {{describe}}
+      <slot name="describe"/>
     </view>
   </view>
-  <view class="step-line {{'step-line-'+ direction}} {{'step-line-'+ direction + '-number'}} {{'step-line-'+type}} {{status?'step-line-'+ status:''}} {{activeIndex>index?'step-line-on':''}}" 
+  <view class="step-line l-line-class {{'step-line-'+ direction}} {{activeIndex>index?'step-line-finish':'step-line-wait'}}"
+        style="{{activeIndex>index?('background-color:'+color):''}}" 
         wx:if="{{length !== index+1}}">
   </view>
 </view>
+
+<wxs module="currentStatus">
+var setStatus = function(activeIndex,index,status){
+  if(activeIndex===index){
+    return status || 'process'
+  } else if(activeIndex>index){
+    return 'finish'
+  }else{
+    return 'wait'
+  }
+}
+
+var statusStyle = function(activeIndex,index,color){
+  if(activeIndex===index){
+    return ('background-color:' + color)
+  } else if(activeIndex>index){
+    return ('border-color:' + color + ';color:' + color)
+  }else{
+    return ''
+  }
+}
+
+var dotStyle = function(activeIndex,index,color){
+  if(activeIndex>=index){
+    return ('background-color:' + color)
+  } else{
+    return ''
+  }
+}
+
+module.exports = {
+  setStatus:setStatus,
+  statusStyle:statusStyle,
+  dotStyle:dotStyle
+}
+</wxs>
