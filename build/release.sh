@@ -43,7 +43,7 @@ select VERSION in patch minor major "Specific Version"
         git add -A
         git commit -m "release v${NEW_VERSION}"
         git origin master
-        git push origin refs/tags/v${NEW_VERSION}
+        git push origin refs/tags/${NEW_VERSION}
 
         # async develop
         git checkout develop
