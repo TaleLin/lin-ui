@@ -95,7 +95,8 @@
         "pages/textarea/index",
         "pages/image-picker/index",
         "pages/rules/index",
-        "pages/rate/index"
+        "pages/rate/index",
+        "pages/form/index"
       ]
     },
     {

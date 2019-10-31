@@ -1,0 +1,1 @@
+.form-item-container{display:flex}.form-item-container.label-column{flex-direction:column}.form-item-container.label-row{flex-direction:row}

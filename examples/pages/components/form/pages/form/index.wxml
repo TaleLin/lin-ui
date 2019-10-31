@@ -1,0 +1,10 @@
+<view>
+    <l-form>
+        <l-form-item label="兴趣爱好">
+            <l-checkbox-group placement="row">
+                <l-checkbox key="篮球">篮球</l-checkbox>
+                <l-checkbox key="足球">足球</l-checkbox>
+            </l-checkbox-group>
+        </l-form-item>
+    </l-form>
+</view>

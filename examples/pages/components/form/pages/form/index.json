@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "l-form": "/dist/form/index",
+    "l-form-item": "/dist/form-item/index",
+    "l-checkbox-group": "/dist/checkbox-group/index",
+    "l-checkbox": "/dist/checkbox/index"
+  }
+}
