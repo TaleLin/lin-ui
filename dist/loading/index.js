@@ -15,10 +15,13 @@ Component({
       type: String,
       value: '1'
     },
-    bgColor: String,
+    bgColor: {
+      type: String,
+      value: '#fff'
+    },
     zIndex:{
-      type:String,
-      value: '776'
+      type: Number,
+      value: 776
     },
     // 类型
     type: {

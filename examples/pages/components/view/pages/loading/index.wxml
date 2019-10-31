@@ -15,8 +15,8 @@
     class="content"
     name="指定loading区域"
   >
-    <l-loading show="{{true}}" type="circle" opacity="0.1" bg-color="#ccc" custom l-class="position-top">
-      <view slot="content" style="height: 300px;"></view>
+    <l-loading show="{{true}}" type="circle" custom l-class="position-top" z-index="112">
+      <view slot="content" style="height: 300px;">1111</view>
       <image class='custom-img' src='/images/static/loading.gif'></image>
     </l-loading>
   </content-card>
