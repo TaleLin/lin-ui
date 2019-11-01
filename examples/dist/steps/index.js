@@ -35,7 +35,8 @@ Component({
       type: String,
       value: 'process'
     },
-    dot: Boolean
+    dot: Boolean,
+    reverse: Boolean
   },
 
   observers: {
