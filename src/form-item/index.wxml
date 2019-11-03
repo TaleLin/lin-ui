@@ -1,5 +1,5 @@
-<view class="form-item-container">
-    <view class="label">{{label}}</view>
+<view class="form-item-container {{'label-' + labelPlacement}}">
+    <view class="label {{required ? 'label-required': ''}}" style="min-width: {{labelWidth}}">{{label}}</view>
     <view class="content">
         <slot />
     </view>

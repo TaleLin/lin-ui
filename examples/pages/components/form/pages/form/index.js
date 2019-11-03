@@ -5,7 +5,44 @@ Page({
    * 页面的初始数据
    */
   data: {
+    items1: [{
+      id: 1,
+      name: '青花瓷',
+      checked: true
+    }, {
+      id: 2,
+      name: '双截棍',
+      checked: false
+    }, {
+      id: 3,
+      name: '一千年以后',
+      checked: false
+    }, {
+      id: 4,
+      name: '江南',
+      checked: true
+    }]
 
+  },
+
+  change(e) {
+    let items = this.data.items1;
+    items.forEach(item => {
+      if(item.id == e.detail.key) {
+        item.checked = e.detail.checked;
+      }
+    });
+    this.setData({
+      items1: items
+    });
+  },
+
+  submit(){
+    // let params = {}
+    wx.lin.getValues(this);
+    // this.list = this.selectComponent("#love");
+    // params.love = this.list.getValues();
+    // console.log(this.list.getValues());
   },
 
   /**

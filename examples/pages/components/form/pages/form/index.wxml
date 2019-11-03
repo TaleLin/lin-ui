@@ -1,10 +1,11 @@
-<view>
+<view style="background:#fff">
     <l-form>
-        <l-form-item label="兴趣爱好">
-            <l-checkbox-group placement="row">
-                <l-checkbox key="篮球">篮球</l-checkbox>
-                <l-checkbox key="足球">足球</l-checkbox>
+        <l-form-item label="兴趣爱好:" name="love" label-width="160rpx">
+            <l-checkbox-group placement="row" id="love" bind:linchange="change">
+                <!--<l-checkbox wx:for="{{items1}}" key="篮球">篮球</l-checkbox>-->
+                <l-checkbox wx:key="{{item.id}}" wx:for="{{items1}}" key="{{item.id}}" checked="{{item.checked}}">{{item.name}}</l-checkbox>
             </l-checkbox-group>
         </l-form-item>
     </l-form>
+    <view bind:tap="submit">111</view>
 </view>

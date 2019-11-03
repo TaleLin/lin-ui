@@ -2,12 +2,36 @@ Component({
   /**
      * 组件的属性列表
      */
-  externalClasses: [],
+  externalClasses: ["l-require-class"],
   properties: {
     label: String,
-    position: {
+    labelPlacement: {
       type: String,
       value: 'row'
+    },
+    labelRowAlign: {
+      type: String,
+      value: 'left'
+    },
+    labelColumnAlign: {
+      type: String,
+      value: 'top'
+    },
+    labelWidth: {
+      type: String,
+      value: '120rpx'
+    },
+    required: {
+      type: Boolean,
+      value: false
+    },
+    rules: {
+      type: Array,
+      value: []
+    },
+    name: {
+      type: String,
+      value: ''
     }
   },
 

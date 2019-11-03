@@ -2,6 +2,7 @@
 
 .form-item-container{
   display: flex;
+  align-items: stretch;
   &.label-column{
     flex-direction: column;
   }
@@ -9,6 +10,30 @@
     flex-direction: row;
   }
   .label {
-
+    display: flex;
+    &-column-top{
+      align-items: flex-start;
+    }
+    &-column-bottom{
+      align-items: flex-end;
+    }
+    &-column-center{
+      align-items: center;
+    }
+    &-row-left{
+      align-items: flex-start;
+    }
+    &-row-right{
+      align-items: flex-end;
+    }
+    &-row-center{
+      align-items: center;
+    }
+    &.label-required{
+      color: red;
+    }
+  }
+  .content{
+    flex: 1;
   }
 }
