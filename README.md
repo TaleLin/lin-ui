@@ -2,7 +2,7 @@
 <p align="center">
   <!-- <a href="http://doc.mini.7yue.pro/"> -->
     <img
-      class="QR-img" src="https://raw.githubusercontent.com/zhc525349965/fisher_book/master/app/image/lin-ui小程序.jpg">
+      class="QR-img" src="https://img-gzb.oss-cn-shanghai.aliyuncs.com/lala/2bdab36cc138813e87fe60000f474b67.jpg">
   <!-- </a> -->
 </p>
 
@@ -39,13 +39,13 @@ Lin UI 是基于 **微信小程序原生语法** 实现的组件库。遵循简�
 
 <table>
   <tbody>
-    <tr>
-      <td align="center" valign="middle">
-        <img class="QR-img" style="height: 60px; width:60px" src="https://raw.githubusercontent.com/zhc525349965/fisher_book/master/app/image/qq群新.png">
+    <tr >
+      <td align="center" valign="middle" style="border-style:none">
+        <img class="QR-img" style="height: 60px; width:60px" src="https://img-gzb.oss-cn-shanghai.aliyuncs.com/lala/2eaecf76cbae927b05cdcc309babec4b.jpg">
         <p style="font-size:12px;">QQ群号：643205479</p>
       </td>
-      <td align="center" valign="middle">
-        <img class="QR-img" style="height: 60px; width:60px"  src="https://raw.githubusercontent.com/zhc525349965/fisher_book/master/app/image/公众号.jpg">
+      <td align="center" valign="middle" style="border-style:none">
+        <img class="QR-img" style="height: 60px; width:60px"  src="https://img-gzb.oss-cn-shanghai.aliyuncs.com/lala/5b4dad8dc5cda58e26922fde2471308f.jpg">
         <p style="font-size:12px;">微信公众号：林间有风</p>
       </td>
     </tr>
@@ -57,8 +57,8 @@ Lin UI 是基于 **微信小程序原生语法** 实现的组件库。遵循简�
 <table>
   <tbody>
     <tr>
-      <td align="center" valign="middle">
-         <img class="QR-img" style="height: 60px; width:60px"  src="https://raw.githubusercontent.com/zhc525349965/fisher_book/master/app/image/风袖.jpg" alt="风袖">
+      <td align="center" valign="middle" style="border-style:none">
+         <img class="QR-img" style="height: 60px; width:60px"  src="https://img-gzb.oss-cn-shanghai.aliyuncs.com/lala/b3aa01f2a1c00573757d3d42248177bf.jpg" alt="风袖">
         <p style="font-size:12px;">风袖</p>
       </td>
     </tr>
