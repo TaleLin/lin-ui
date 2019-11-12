@@ -41,7 +41,7 @@ Lin UI 是基于 **微信小程序原生语法** 实现的组件库。遵循简�
   <tbody>
     <tr >
       <td align="center" valign="middle" style="border-style:none">
-        <img class="QR-img" style="height: 60px; width:60px" src="https://img-gzb.oss-cn-shanghai.aliyuncs.com/lala/2eaecf76cbae927b05cdcc309babec4b.jpg">
+        <img class="QR-img" style="height: 60px; width:60px" src="https://img-gzb.oss-cn-shanghai.aliyuncs.com/lala/40D46DF4ED2D741369A4B186738D1534.png">
         <p style="font-size:12px;">QQ群号：643205479</p>
       </td>
       <td align="center" valign="middle" style="border-style:none">
