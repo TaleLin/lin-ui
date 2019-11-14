@@ -27,11 +27,16 @@ Component({
       value: 0
     },
     color: String,
+    stepMinHeight: {
+      type: String,
+      value: '120'
+    },
     status: {
       type: String,
       value: 'process'
     },
-    dot: Boolean
+    dot: Boolean,
+    reverse: Boolean
   },
 
   observers: {
@@ -52,19 +57,20 @@ Component({
    */
   methods: {
     _initSteps() {
-      let steps = this.getRelationNodes('../step/index');
-      this.data.length = steps.length;
-      if (this.data.length > 0) {
-        if (this.data.activeIndex > this.data.length || this.data.activeIndex < 0) {
-          console.error(`active-index值:${this.data.activeIndex}不在合理范围内`);
-        }
-        steps.forEach((step, index) => {
-          step.updateDataChange({
-            index,
-            ...this.data
+      const query = wx.createSelectorQuery().in(this);
+      query.select('.steps-container').boundingClientRect().exec(res => {
+        let steps = this.getRelationNodes('../step/index');
+        this.data.length = steps.length;
+        if (this.data.length > 0) {
+          steps.forEach((step, index) => {
+            step.updateDataChange({
+              index,
+              ...this.data,
+              stepsWidth: res[0].width
+            });
           });
-        });
-      }
+        }
+      });
     }
   }
 });

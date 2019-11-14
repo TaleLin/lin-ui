@@ -2,6 +2,9 @@ import computeOffset from '../behaviors/computeOffset';
 Component({
   behaviors: [computeOffset],
   externalClasses: ['l-container-class', 'l-class'],
+  options: {
+    multipleSlots: true
+  },
   properties: {
     // 显示与隐藏
     show: {
@@ -12,10 +15,13 @@ Component({
       type: String,
       value: '1'
     },
-    bgColor: String,
+    bgColor: {
+      type: String,
+      value: '#fff'
+    },
     zIndex:{
-      type:String,
-      value: '776'
+      type: Number,
+      value: 776
     },
     // 类型
     type: {
