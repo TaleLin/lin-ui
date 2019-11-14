@@ -1,6 +1,0 @@
-<view class='price-container l-class {{deleted ? "price-del l-deleted-class" : ""}}' style='color: {{delColor?delColor:color}}'>
-  <!-- unit -->
-  <text class="l-unit-class" style="color: {{unitColor?unitColor:color}}; font-size: {{unitSize?unitSize:size}}rpx; font-weight: {{unitBold?unitBold:bold}}">{{unit}}</text>
-  <!-- count -->
-  <text class="l-value-class" style="color: {{valueColor?valueColor:color}}; font-size: {{valueSize?valueSize:size}}rpx; font-weight: {{valueBold?valueBold:bold}}">{{result}}</text>
-</view>
