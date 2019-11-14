@@ -27,11 +27,24 @@ Component({
       value: 0
     },
     color: String,
+<<<<<<< HEAD
     status: {
       type: String,
       value: 'process'
     },
     dot: Boolean
+=======
+    stepMinHeight: {
+      type: String,
+      value: '120'
+    },
+    status: {
+      type: String,
+      value: 'process'
+    },
+    dot: Boolean,
+    reverse: Boolean
+>>>>>>> develop
   },
 
   observers: {
@@ -52,6 +65,7 @@ Component({
    */
   methods: {
     _initSteps() {
+<<<<<<< HEAD
       let steps = this.getRelationNodes('../step/index');
       this.data.length = steps.length;
       if (this.data.length > 0) {
@@ -62,9 +76,22 @@ Component({
           step.updateDataChange({
             index,
             ...this.data
+=======
+      const query = wx.createSelectorQuery().in(this);
+      query.select('.steps-container').boundingClientRect().exec(res => {
+        let steps = this.getRelationNodes('../step/index');
+        this.data.length = steps.length;
+        if (this.data.length > 0) {
+          steps.forEach((step, index) => {
+            step.updateDataChange({
+              index,
+              ...this.data,
+              stepsWidth: res[0].width
+            });
+>>>>>>> develop
           });
-        });
-      }
+        }
+      });
     }
   }
 });

@@ -21,6 +21,17 @@
 
   <content-card name="步骤条方向" cardPadding="{{false}}">
     <l-steps direction="column" active-index="1">
+<<<<<<< HEAD
+=======
+      <l-step title="已支付" describe="11:30" />
+      <l-step title="备餐中" describe="12:30" />
+      <l-step title="配送中" describe="13:30" />
+    </l-steps>
+  </content-card>
+
+  <content-card name="步骤条顺序" cardPadding="{{false}}">
+    <l-steps direction="column" reverse active-index="1">
+>>>>>>> develop
       <l-step title="已支付" describe="11:30" />
       <l-step title="备餐中" describe="12:30" />
       <l-step title="配送中" describe="13:30" />
@@ -57,6 +68,7 @@
       <l-step title="备餐中" describe="12:30" />
       <l-step custom title="已收货" describe="11:30">
         <view class="shou" slot="dot">收</view>
+<<<<<<< HEAD
       </l-step>
     </l-steps>
   </content-card>
@@ -77,10 +89,35 @@
         <view class="describe-container" slot="describe">
           步骤条更新完成😄
         </view>
+=======
+>>>>>>> develop
       </l-step>
     </l-steps>
   </content-card>
 
+<<<<<<< HEAD
+=======
+  <content-card name="自定义描述内容" cardPadding="{{false}}">
+    <l-steps direction="column" active-index="1">
+      <l-step title="2019-9-25 11:30">
+        <view class="describe-container" slot="describe">
+          广大群众反映步骤条问题
+        </view>
+      </l-step>
+      <l-step title="2019-10-05 12:30">
+        <view class="describe-container" slot="describe">
+          拾玖重构步骤条
+        </view>
+      </l-step>
+      <l-step title="2019-10-25 13:30">
+        <view class="describe-container" slot="describe">
+          步骤条更新完成😄
+        </view>
+      </l-step>
+    </l-steps>
+  </content-card>
+
+>>>>>>> develop
 </content-title>
 
 <l-toast/>
