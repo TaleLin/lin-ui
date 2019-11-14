@@ -50,7 +50,6 @@
 .l-container{
   background: #f1f1f1 !important;
 }
-
 .position-top{
   /*position: relative !important;*/
   transform: translate(-50%,0) !important;

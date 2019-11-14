@@ -35,7 +35,6 @@
     </block>
   </view>
 </view>
-
 <view wx:if="{{!fullScreen}}" style="position: relative">
     <slot name="content"/>
     <view wx:if="{{show}}" class="inner-loading-container" style="background:{{bgColor}};opacity:{{opacity}};z-index:{{zIndex}}"></view>
