@@ -1,0 +1,6 @@
+<!-- miniprogram_npm/lin-ui/wechat/index.wxml -->
+<view class="container l-class" style='width:{{colum*(size+gapRow)}}rpx;height:{{row*size+(row-1)*gapColum}}rpx;'>
+    <block wx:for="{{urls}}" wx:key="index">
+        <image id='{{index}}' bind:tap="onPreviewTap" class="{{urls.length == 1?horizontal_screen?'horizontal l-one-image-class':'vertical l-one-image-class':''}}" style="{{urls.length == 1?horizontal_screen?'height:'+shortSideValue+'rpx;':'width:'+shortSideValue+'rpx':'height:'+size+'rpx;width:'+size+'rpx;margin-right:'+gapRow+'rpx;margin-bottom:'+gapColum+'rpx;'}}" src="{{newOrOld=='old'?item:item.url}}" mode="{{urls.length == 1?modeOne:modeMultiple}}" />
+    </block>
+</view>
