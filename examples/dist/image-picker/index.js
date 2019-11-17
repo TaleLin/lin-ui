@@ -49,6 +49,11 @@ Component({
     isPreview: {
       type: Boolean,
       value: true
+    },
+    // 所选图片最大限制，单位字节
+    maxImageSize: {
+      type: Number,
+      value: 10000000,
     }
   },
 
@@ -151,7 +156,13 @@ Component({
               tempFilePath.push({
                 url: res.tempFilePaths[i],
                 // key: null
+                imageSize: res.tempFiles[i].size
               });
+              if (res.tempFiles[i].size > that.data.maxImageSize) {
+                tempFilePath[i].overSize = true;
+              } else {
+                tempFilePath[i].overSize = false;
+              }
             }
           }
           const newtempFilePaths = that.data.urls.concat(tempFilePath);
@@ -174,6 +185,23 @@ Component({
 
           that.triggerEvent('linchange', detail, option);
           that.triggerEvent('linpush', detail, option);
+
+          // 超过大小的image集合
+          var overSizeList = [];
+          for (var n = 0; n < newtempFilePaths.length; n++) {
+            if (newtempFilePaths[n].overSize) {
+              overSizeList.push(newtempFilePaths[n]);
+            }
+          }
+
+          if (overSizeList.length > 0) {
+            let detail = {
+              current: tempFilePath,
+              all: newtempFilePaths,
+              overSizeList: overSizeList,
+            };
+            that.triggerEvent('linoversize', detail, option);
+          }
         }
       });
 
