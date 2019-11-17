@@ -1,8 +1,22 @@
+import rules from '../behaviors/rules';
+
 Component({
   /**
      * 组件的属性列表
      */
-  externalClasses: ["l-require-class"],
+  externalClasses: ['l-require-class'],
+  behaviors: [rules],
+  relations: {
+    '../form/index': {
+      type: 'parent',
+      linked: function() {
+      },
+      linkChanged: function() {
+      },
+      unlinked: function() {
+      }
+    }
+  },
   properties: {
     label: String,
     labelPlacement: {
@@ -25,14 +39,14 @@ Component({
       type: Boolean,
       value: false
     },
-    rules: {
-      type: Array,
-      value: []
-    },
+    // rules: {
+    //   type: Array,
+    //   value: []
+    // },
     name: {
       type: String,
       value: ''
-    }
+    },
   },
 
   /**
@@ -40,6 +54,9 @@ Component({
      */
   data: {
 
+  },
+  attached(){
+    this.initRules();
   },
 
   /**

@@ -4,3 +4,4 @@
         <slot />
     </view>
 </view>
+<l-error-tip l-error-text-class="l-error-text l-error-text-class" errorText="{{errorText}}" wx:if="{{errorText}}"/>

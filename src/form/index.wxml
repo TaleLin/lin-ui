@@ -1,1 +1,7 @@
 <slot />
+<view bind:tap="submit">
+    <slot name="submit"/>
+</view>
+<view bind:tap="reset">
+    <slot name="reset"/>
+</view>

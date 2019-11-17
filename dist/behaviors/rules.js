@@ -26,6 +26,7 @@ export default Behavior({
       'toast': 'title',
     },
     errorText: '',
+    errors: []
   },
 
   methods: {
@@ -42,9 +43,7 @@ export default Behavior({
         schema,
       });
     },
-    validatorData({
-      value
-    }) {
+    validatorData(value) {
       const {
         rules,
         tipType,
@@ -53,10 +52,14 @@ export default Behavior({
       } = this.data;
 
       if (!rules) return;
-      const validateValue = {
-        [this.data.name]: value
-      };
-      this.data.schema.validate(validateValue, (errors) => {
+      // const validateValue = {
+      //   [this.data.name]: value
+      // };
+      this.data.schema.validate(value, (errors) => {
+        // console.log(errors);
+        this.setData({
+          errors: errors || []
+        });
 
         this.triggerEvent('linvalidate', {
           errors,

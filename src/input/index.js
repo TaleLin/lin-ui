@@ -1,5 +1,6 @@
 // input/input.js
-import rules from '../behaviors/rules';
+// import rules from '../behaviors/rules';
+import eventBus from '../utils/eventBus.js'
 
 Component({
   /**
@@ -8,7 +9,8 @@ Component({
   options: {
     multipleSlots: true,
   },
-  behaviors: ['wx://form-field', rules],
+  behaviors: ['wx://form-field'],
+  // behaviors: ['wx://form-field', rules],
   externalClasses: ['l-class', 'l-label-class','l-error-text','l-error-text-class'],
   properties: {
     // 表单标题（label）的文本
@@ -91,7 +93,7 @@ Component({
       type: Boolean,
       value: false
     },
-    // 占位文字的样式  
+    // 占位文字的样式
     placeholderStyle: {
       type: String,
       value: ''
@@ -105,7 +107,7 @@ Component({
 
   },
   attached() {
-    this.initRules();
+    // this.initRules();
   },
   /**
    * 组件的方法列表
@@ -132,9 +134,10 @@ Component({
     },
 
     handleInputBlur(event) {
-      this.validatorData({
-        value: event.detail.value
-      });
+      // this.validatorData({
+      //   value: event.detail.value
+      // });
+      eventBus.emit(`lin-input-blur-${this.id}`,this.id)
       this.triggerEvent('linblur', event.detail);
     },
     handleInputConfirm(event) {
@@ -157,5 +160,8 @@ Component({
       });
       this.triggerEvent('linclear', event.detail);
     },
+    getValues() {
+      return this.data.value;
+    }
   }
 });

@@ -1,11 +1,29 @@
 <view style="background:#fff">
-    <l-form>
-        <l-form-item label="兴趣爱好:" name="love" label-width="160rpx">
-            <l-checkbox-group placement="row" id="love" bind:linchange="change">
-                <!--<l-checkbox wx:for="{{items1}}" key="篮球">篮球</l-checkbox>-->
-                <l-checkbox wx:key="{{item.id}}" wx:for="{{items1}}" key="{{item.id}}" checked="{{item.checked}}">{{item.name}}</l-checkbox>
-            </l-checkbox-group>
+
+    <l-form name="form2222" bind:linsubmit="submit">
+        <l-form-item tip-type="text" rules="{{emailRules}}" label="name:" name="name" label-width="160rpx">
+            <l-input id="name" value="{{name}}" hide-label/>
         </l-form-item>
+        <l-form-item tip-type="text" rules="{{ageRules}}" label="love:" name="love" label-width="160rpx">
+            <l-input id="love" value="{{love}}" hide-label/>
+        </l-form-item>
+        <view slot="button">提交验证</view>
     </l-form>
-    <view bind:tap="submit">111</view>
+    <l-form name="form1111" bind:linsubmit="submit">
+        <l-form-item tip-type="text" rules="{{emailRules}}" label="email:" name="email" label-width="160rpx">
+            <l-input id="email" value="{{email}}" hide-label/>
+        </l-form-item>
+        <l-form-item tip-type="text" rules="{{ageRules}}" label="age:" name="age" label-width="160rpx">
+            <l-input id="age" value="{{age}}" hide-label/>
+        </l-form-item>
+        <l-form-item tip-type="text" rules="{{passwordRules}}" label="password:" name="password" label-width="160rpx">
+            <l-input id="password" value="{{password}}" hide-label/>
+        </l-form-item>
+        <l-form-item tip-type="text" rules="{{password2Rules}}" label="password2:" name="password2" label-width="160rpx">
+            <l-input id="password2" value="{{password2}}" hide-label/>
+        </l-form-item>
+        <view slot="button">提交验证</view>
+    </l-form>
+    <l-toast></l-toast>
+    <l-message></l-message>
 </view>

@@ -92,6 +92,9 @@ Component({
     },
     addSelect(key) {
       this._selected[key] = key;
+    },
+    getValues() {
+      return '111';
     }
 
   }

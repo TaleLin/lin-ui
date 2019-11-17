@@ -5,7 +5,14 @@ Page({
    * 页面的初始数据
    */
   data: {
-    items1: [{
+    email: '',
+    age: '',
+    password: '',
+    password2: '',
+    love: '',
+    name: '',
+    items1: [
+      {
       id: 1,
       name: '青花瓷',
       checked: true
@@ -21,7 +28,85 @@ Page({
       id: 4,
       name: '江南',
       checked: true
-    }]
+    }],
+    items2: [
+      {
+      id: 1,
+      name: '青花瓷',
+      checked: false
+    }, {
+      id: 2,
+      name: '双截棍',
+      checked: false
+    }, {
+      id: 3,
+      name: '一千年以后',
+      checked: false
+    }, {
+      id: 4,
+      name: '江南',
+      checked: false
+    }],
+    emailRules: [
+      {
+        type: 'email',
+        required: true,
+        message: '邮箱地址不合法'
+      },
+      // {
+      //   validator(rule, value, callback, source) {
+      //     console.log(value)
+      //     console.log(source)
+      //     // var errors = [];
+      //     // errors.push(new Error())
+      //     callback([new Error('111')]);
+      //   },
+      //   message: 'Value is not equal to "test".',
+      // }
+    ],
+    ageRules: {
+      validator(rule, value, callback) {
+        if(value < 10) {
+          callback(false);
+        } else {
+          callback()
+        }
+
+        // var errors = [];
+        // errors.push(false)
+        // callback([new Error('222')]);
+      },
+      message: '年龄必须大于等于10岁'
+    },
+    passwordRules: {
+      validator(rule, value, callback,source) {
+        // console.log(source)
+        const {password,password2} = source;
+        if(password !== password2) {
+          callback(false);
+        }
+        callback()
+      },
+      message: '两次密码输入不一致'
+    },
+    password2Rules: [
+      {
+        type: 'email',
+        required: true,
+        message: '密码必须邮箱格式邮箱地址不合法'
+      },
+      {
+        validator(rule, value, callback,source) {
+          // console.log(source)
+          const {password,password2} = source;
+          if(password !== password2) {
+            callback(false);
+          }
+          callback()
+        },
+        message: '两次密码输入不一致'
+      }
+    ]
 
   },
 
@@ -37,19 +122,15 @@ Page({
     });
   },
 
-  submit(){
-    // let params = {}
-    wx.lin.getValues(this);
-    // this.list = this.selectComponent("#love");
-    // params.love = this.list.getValues();
-    // console.log(this.list.getValues());
+  submit(data){
+    console.log(data)
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function () {
-
+    wx.lin.initValidateForm(this)
   },
 
   /**

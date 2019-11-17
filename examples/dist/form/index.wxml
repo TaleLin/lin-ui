@@ -1,1 +1,4 @@
 <slot />
+<view bind:tap="submit">
+    <slot name="button"/>
+</view>
