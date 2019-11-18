@@ -3,7 +3,7 @@ Component({
   /**
    * 组件的属性列表
    */
-  externalClasses: ['l-class', 'l-one-image-class'],
+  externalClasses: ['l-class', 'l-one-image-class', 'l-multi-image-class'],
   properties: {
     urls: {
       type: Array,
@@ -70,6 +70,11 @@ Component({
   lifetimes: {
     attached: function () {
       // 在组件实例进入页面节点树时执行
+      //判断传入urls长度
+      if (this.data.urls.length > 9) {
+        console.warn('超过9张图片！');
+        return;
+      }
       // 判断传入模式
       const newOrOld = this.judgeNewOrOld();
       this.setData({
