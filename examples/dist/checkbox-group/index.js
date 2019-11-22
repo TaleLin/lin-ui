@@ -95,11 +95,11 @@ Component({
     },
     _selected(){
       const items = this.getRelationNodes('../checkbox/index');
-      let num = 0
+      let num = 0;
       items.map(item=> {
         item.properties.checked ? num++ : '';
-      })
-      return num
+      });
+      return num;
     }
 
   }
