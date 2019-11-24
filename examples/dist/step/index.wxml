@@ -40,6 +40,7 @@ var setStatus = function(activeIndex,index,status){
     return 'wait'
   }
 }
+
 var statusStyle = function(activeIndex,index,color,status){
   if(activeIndex===index){
     return status==='error'?'':('background-color:' + color)

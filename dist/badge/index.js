@@ -66,7 +66,7 @@ Component({
         break;
       case 'limit':
         this.setData({
-          finalCount: Number(this.data.value) > 999 ? (Number(this.data.value) >= 9999 ? Math.floor(this.data.value / 10000 * 100) / 100 + `w` : Math.floor(this.data.value / 1000 * 100) / 100 + `k`) : this.data.value
+          finalCount: Number(this.data.value) > 999 ? `${ Number.isInteger(this.data.value / 1000)? (this.data.value/1000) : (this.data.value/1000).toFixed(1) }k` : this.data.value
         });
         break;
       default:

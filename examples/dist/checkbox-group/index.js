@@ -40,8 +40,8 @@ Component({
 
     init(target) {
       if(this._keys === undefined) this._keys = {};
-      if(this._selected === undefined) this._selected = {};
-      this.checkDefaultItem(target);
+      // if(this._selected === undefined) this._selected = {};
+      // this.checkDefaultItem(target);
       this.checkedKeyRepeat(target);
     },
 
@@ -74,7 +74,7 @@ Component({
     },
 
     onEmitEventHandle(currentItem) {
-      currentItem.checked ? this.addSelect(currentItem.key):this.removeSelect(currentItem.key);
+      // currentItem.checked ? this.addSelect(currentItem.key):this.removeSelect(currentItem.key);
 
       this.triggerEvent('linchange', currentItem, {
         bubbles: true,
@@ -92,6 +92,14 @@ Component({
     },
     addSelect(key) {
       this._selected[key] = key;
+    },
+    _selected(){
+      const items = this.getRelationNodes('../checkbox/index');
+      let num = 0;
+      items.map(item=> {
+        item.properties.checked ? num++ : '';
+      });
+      return num;
     }
 
   }
