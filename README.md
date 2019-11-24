@@ -11,7 +11,7 @@
 <div class="row" />
 
 <div align="center">
-  <span class="desc" >Fantastic native based Mini-Programe components</span> 
+  <span class="desc" >Fantastic native based Mini-Program components</span> 
 </div>
 
 <div align="center">
