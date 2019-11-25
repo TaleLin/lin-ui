@@ -13,7 +13,7 @@
           value="{{result}}"
           bindblur="onBlur"></input>
   <view wx:else class="l-count-class count" bindtap="onCount">{{result}}</view>        
-  <view class="l-symbol-class symbol {{result>=max|| disabled?'disabled l-disabled-class':'abled l-symbol-class'}}" 
+  <view class="symbol {{result>=max|| disabled?'disabled l-disabled-class':'abled l-symbol-class'}}" 
         catchtap="{{result>=max|| disabled?'doNothing':'addTap'}}"
         data-type="overflow_max"
         hover-class="{{isHover?'count-hover':''}}">
