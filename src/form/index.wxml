@@ -1,7 +1,11 @@
-<slot />
-<view bind:tap="submit">
-    <slot name="submit"/>
+<view class="l-form-container-class">
+    <slot />
 </view>
-<view bind:tap="reset">
-    <slot name="reset"/>
+<view class="l-form-btn-class">
+    <view class="l-form-submit-class" bind:tap="submit">
+        <slot name="submit"/>
+    </view>
+    <view class="l-form-reset-class" bind:tap="reset">
+        <slot name="reset"/>
+    </view>
 </view>

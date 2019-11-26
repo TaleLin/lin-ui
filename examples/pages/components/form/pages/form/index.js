@@ -5,120 +5,151 @@ Page({
    * 页面的初始数据
    */
   data: {
-    email: '',
-    age: '',
-    password: '',
-    password2: '',
-    love: '',
-    name: '',
-    items1: [
+    form: {
+      name: '',
+      music: '',
+      sex: '',
+      desc: '',
+      score: ''
+    },
+    ruleForm: {
+      name: '',
+      music: '',
+      sex: '',
+      desc: '',
+      score: ''
+    },
+    items: [
       {
       id: 1,
-      name: '青花瓷',
-      checked: true
+      name: '青瓷',
+      checked: false
     }, {
       id: 2,
-      name: '双截棍',
+      name: '双棍',
       checked: false
     }, {
       id: 3,
-      name: '一千年以后',
+      name: '明天',
       checked: false
-    }, {
-      id: 4,
-      name: '江南',
-      checked: true
     }],
     items2: [
       {
-      id: 1,
-      name: '青花瓷',
-      checked: false
-    }, {
-      id: 2,
-      name: '双截棍',
-      checked: false
-    }, {
-      id: 3,
-      name: '一千年以后',
-      checked: false
-    }, {
-      id: 4,
-      name: '江南',
-      checked: false
-    }],
-    emailRules: [
-      {
-        type: 'email',
-        required: true,
-        message: '邮箱地址不合法'
+        id: 1,
+        name: '青瓷',
+        checked: false
       },
-      // {
-      //   validator(rule, value, callback, source) {
-      //     console.log(value)
-      //     console.log(source)
-      //     // var errors = [];
-      //     // errors.push(new Error())
-      //     callback([new Error('111')]);
-      //   },
-      //   message: 'Value is not equal to "test".',
-      // }
+      {
+        id: 2,
+        name: '双棍',
+        checked: false
+      },
+      {
+        id: 3,
+        name: '明天',
+        checked: false
+      }
     ],
-    ageRules: {
-      validator(rule, value, callback) {
-        if(value < 10) {
-          callback(false);
-        } else {
-          callback()
-        }
-
-        // var errors = [];
-        // errors.push(false)
-        // callback([new Error('222')]);
-      },
-      message: '年龄必须大于等于10岁'
-    },
-    passwordRules: {
-      validator(rule, value, callback,source) {
-        // console.log(source)
-        const {password,password2} = source;
-        if(password !== password2) {
-          callback(false);
-        }
-        callback()
-      },
-      message: '两次密码输入不一致'
-    },
-    password2Rules: [
+    tipType: 'toast',
+    isSubmitValidate: 1,
+    alignType: 'start',
+    nameRules: [
+      { required: true, message: '请输入真实姓名', trigger: 'blur' },
+      { min: 3, max: 5, message: '长度在 3 到 5 个字符', trigger: 'blur' },
+    ],
+    descRules: { min: 10, max: 50, message: '请输入10到50个字符的自我描述', trigger: 'change' },
+    musicRules: [
+      { type:'array', required: true, message: '歌曲必选', trigger: 'change' },
+    ],
+    scoreRules: [
+      { type:'number',required: true, message: '请选择评分', trigger: 'blur' },
       {
-        type: 'email',
-        required: true,
-        message: '密码必须邮箱格式邮箱地址不合法'
-      },
+        validator(rule, value, callback) {
+          if(value < 3) {
+            callback(false);
+          } else {
+            callback()
+          }
+        },
+        message: '评分必须大于等于3分',
+        trigger: 'change'
+      }
+    ],
+    register: {
+      loginId: '',
+      password: '',
+      confirm: ''
+    },
+    loginIdRules: {
+      type: 'email',
+      required: true,
+      message: '邮箱地址不合法'
+    },
+    passwordRules: [
+      { required: true, message: '请输入登录密码', trigger: 'blur' },
+      { min: 8, max: 20, message: '密码长度在8-20个字符之间', trigger: 'blur' },
+      { pattern: '^[A-Za-z0-9]+$', message: '密码必须由数字字母组成',trigger: 'blur'}
+    ],
+    confirmRules: [
       {
         validator(rule, value, callback,source) {
-          // console.log(source)
-          const {password,password2} = source;
-          if(password !== password2) {
+          const {password,confirm} = source;
+          if(password !== confirm) {
             callback(false);
           }
           callback()
         },
-        message: '两次密码输入不一致'
+        message: '两次密码输入不一致',
+        trigger: 'change'
       }
     ]
 
   },
 
   change(e) {
-    let items = this.data.items1;
+    let items = this.data.items;
     items.forEach(item => {
-      if(item.id == e.detail.key) {
+      if(item.name == e.detail.key) {
         item.checked = e.detail.checked;
       }
     });
     this.setData({
-      items1: items
+      items: items
+    });
+  },
+
+  change2(e) {
+    let items = this.data.items2;
+    items.forEach(item => {
+      if(item.name == e.detail.key) {
+        item.checked = e.detail.checked;
+      }
+    });
+    this.setData({
+      items2: items
+    });
+  },
+
+  changeTipType(e){
+    this.setData({
+      tipType: e.currentTarget.dataset.type
+    });
+    wx.lin.resetForm('ruleForm')
+  },
+
+  changeSubmitValidate(e) {
+    const {
+      currentKey
+    } = { ...e.detail
+    };
+    this.setData({
+      isSubmitValidate: currentKey
+    });
+  },
+
+  changeAlignType(e) {
+    this.setData({
+      alignType: e.currentTarget.dataset.type
     });
   },
 

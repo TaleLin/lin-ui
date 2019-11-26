@@ -125,7 +125,7 @@ Component({
       this.setData({
         value
       });
-
+      eventBus.emit(`lin-form-change-${this.id}`,this.id)
       this.triggerEvent('lininput', event.detail);
     },
 
@@ -137,7 +137,7 @@ Component({
       // this.validatorData({
       //   value: event.detail.value
       // });
-      eventBus.emit(`lin-input-blur-${this.id}`,this.id)
+      eventBus.emit(`lin-form-blur-${this.id}`,this.id)
       this.triggerEvent('linblur', event.detail);
     },
     handleInputConfirm(event) {
@@ -162,6 +162,11 @@ Component({
     },
     getValues() {
       return this.data.value;
+    },
+    reset() {
+      this.setData({
+        value: ''
+      })
     }
   }
 });

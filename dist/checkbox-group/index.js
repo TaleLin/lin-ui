@@ -1,3 +1,5 @@
+import eventBus from "../utils/eventBus";
+
 Component({
   behaviors: ['wx://form-field'],
   externalClasses: ['l-class', 'l-error-text', 'l-error-text-class'],
@@ -55,9 +57,9 @@ Component({
     },
 
     checkDefaultItem(target) {
-      const { key, checked } = target.properties;
+      const { key, checked, cell } = target.properties;
       if(checked) {
-        this._selected[key] = checked;
+        this._selected[key] = {...cell,checked:true, value: key};
       }
     },
 
@@ -74,12 +76,13 @@ Component({
     },
 
     onEmitEventHandle(currentItem) {
-      currentItem.checked ? this.addSelect(currentItem.key):this.removeSelect(currentItem.key);
+      currentItem.checked ? this.addSelect (currentItem):this.removeSelect(currentItem.key);
 
       this.triggerEvent('linchange', currentItem, {
         bubbles: true,
         composed: true
       });
+      eventBus.emit(`lin-form-change-${this.id}`,this.id);
     },
     onEmitOverflowHandle(data){
       this.triggerEvent('linout', data, {
@@ -90,11 +93,21 @@ Component({
     removeSelect(key) {
       delete this._selected[key];
     },
-    addSelect(key) {
-      this._selected[key] = key;
+    addSelect(currentItem) {
+      let {key, ...obj} = currentItem
+      this._selected[key] = {...obj, value: key};
     },
     getValues() {
-      return '111';
+      return Object.values(this._selected)
+    },
+    reset() {
+      this._selected = {}
+      const list =  this.getRelationNodes('../checkbox/index');
+      return list.forEach(item => {
+        return item.setData({
+          checked: false
+        })
+      })
     }
 
   }

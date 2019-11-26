@@ -3,7 +3,7 @@ Component({
   /**
      * 组件的属性列表
      */
-  externalClasses: [],
+  externalClasses: ['l-form-container-class', 'l-form-submit-class', 'l-form-reset-class', 'l-form-btn-class'],
   options: {
     multipleSlots: true,
   },
@@ -11,7 +11,7 @@ Component({
     '../form-item/index': {
       type: 'child',
       linked: function(target) {
-        this._initFormKey(target);
+        this._initItem(target);
       },
       linkChanged: function() {
       },
@@ -24,14 +24,15 @@ Component({
     name: {
       type: String,
       value: ''
+    },
+    isSubmitValidate: {
+      type: Boolean,
+      value: true
     }
   },
 
   attached() {
     this._init();
-    // eventBus.on(`lin-input-blur`, (id) => {
-    //   this._validateItem(id)
-    // })
   },
 
   /**
@@ -46,39 +47,38 @@ Component({
      */
   methods: {
     _init() {
-      const formName = this.data.name
-      const _wx = this;
       wx.lin = wx.lin || {};
-      wx.lin.form = wx.lin.form || {}
-      wx.lin.form[formName] = {
-        _wx,
-        _page: null
-      }
-      wx.lin.initValidateForm = function(_this) {
-        let keys = Object.keys(wx.lin.form)
-        console.log(keys)
-        keys.forEach(item => {
-          wx.lin.form[item]._page = _this
-        })
-        // this._this = _this
-        // _wx.setData({
-        //   _this
-        // })
-      }
-      // wx.lin.validateForm = function () {
-      //   return _wx._validateForm();
-      // };
-      // wx.lin.validateItem = function ( id) {
-      //   return _wx._validateItem( id);
-      // };
+      wx.lin.forms = wx.lin.forms || {};
+      wx.lin.forms[this.properties.name] = this;
+      wx.lin.initValidateForm = (_this) => {
+        wx.lin._instantiation = _this;
+      };
+      wx.lin.submitForm = function (name) {
+        wx.lin.forms[name].submit();
+      };
+      wx.lin.resetForm = function (name) {
+        wx.lin.forms[name].reset();
+      };
+
     },
-    _initFormKey(target) {
+
+    _initItem(target) {
       this._keys = this._keys || {};
       this._errors = this._errors || {};
       const key = target.properties.name;
-      eventBus.on(`lin-input-blur-${key}`, (id) => {
-        this._validateItem(id)
-      })
+      eventBus.on(`lin-form-blur-${key}`, (id) => {
+        this._validateItem(id, 'blur');
+        // clearTimeout(this.blur_time)
+        // this.blur_time = setTimeout(()=>{
+        //   this._validateItem(id, 'blur');
+        // }, 200)
+      });
+      eventBus.on(`lin-form-change-${key}`, (id) => {
+        clearTimeout(this.change_time);
+        this.change_time = setTimeout(()=>{
+          this._validateItem(id, 'change');
+        }, 200);
+      });
       if(this._keys[key]) {
         throw new Error(`表单项存在重复的name：${key}`);
       }
@@ -86,28 +86,8 @@ Component({
       this._errors[key] = [];
     },
 
-    _validateForm() {
-      let _this =  wx.lin.form[this.data.name]._page
-      // 校验name的rule
-      let formErrors = [];
-      let params = this._getValues();
-      const items = this.getRelationNodes('../form-item/index');
-      items.forEach(item => {
-        const id = item.properties.name;
-        const formItem = _this.selectComponent(`#${id}`);
-        if(formItem) {
-          item.validatorData(params);
-        } else {
-          throw new Error(`表单项不存在name：${id}`);
-        }
-        // 收集error-text数量
-        formErrors = formErrors.concat(item.data.errors);
-      });
-      return formErrors;
-    },
-
-    _validateItem(id) {
-      let _this =  wx.lin.form[this.data.name]._page;
+    _validateItem(id, type) {
+      let _this = wx.lin._instantiation;
 
       let params = this._getValues();
 
@@ -115,31 +95,74 @@ Component({
       const currentTarget =  items.find(item => item.properties.name === id);
       const formItem = _this.selectComponent(`#${id}`);
       if(formItem) {
-        currentTarget.validatorData(params);
+        currentTarget.validatorData(params, type);
       } else {
         throw new Error(`表单项不存在name：${id}`);
       }
+      this._errors[id] = currentTarget.data.errors;
       return currentTarget.data.errors;
+    },
+
+    _forEachNodes(func) {
+      const items = this.getRelationNodes('../form-item/index');
+      items.forEach((item, index) => {
+        func(item, index);
+      });
+    },
+
+    _validateForm() {
+      let _this = wx.lin._instantiation;
+      // 校验name的rule
+      let formErrors = [];
+      let params = this._getValues();
+      this._forEachNodes(item => {
+        const id = item.properties.name;
+        const formItem = _this.selectComponent(`#${id}`);
+        if(formItem) {
+          item.validatorData(params);
+        } else {
+          throw new Error(`表单项不存在name：${id}`);
+        }
+        this._errors[id] = item.data.errors;
+        formErrors = formErrors.concat(item.data.errors);
+      });
+      return formErrors;
     },
 
     _getValues() {
       let params = {};
-      let _this =  wx.lin.form[this.data.name]._page;
-      const items = this.getRelationNodes('../form-item/index');
-      items.forEach(item => {
+      let _this = wx.lin._instantiation;
+
+      this._forEachNodes(item => {
         const _id = item.properties.name;
         const formItem = _this.selectComponent(`#${_id}`);
         if(formItem) {
           params[_id] = formItem.getValues();
         }
       });
-      return params
+      return params;
     },
 
     submit() {
-      this._validateForm()
-      // wx.lin.validateForm()
-      this.triggerEvent('linsubmit', this._getValues())
+      let errors = this.data.isSubmitValidate ? this._validateForm(): [];
+      this.triggerEvent('linsubmit', {
+        values: this._getValues(),
+        errors: this.data.isSubmitValidate ? this._errors: {},
+        isValidate: errors.length === 0
+      });
+    },
+    reset() {
+      let _this = wx.lin._instantiation;
+      this._forEachNodes((item) => {
+        item.setData({
+          errorText: ''
+        });
+        const _id = item.properties.name;
+        const formItem = _this.selectComponent(`#${_id}`);
+        if(formItem) {
+          formItem.reset();
+        }
+      })
     }
   }
 });

@@ -1,5 +1,6 @@
 // input/input.js
 import rules from '../behaviors/rules';
+import eventBus from "../utils/eventBus";
 
 Component({
   /**
@@ -52,7 +53,7 @@ Component({
     rules: {
       type: Object,
     },
-    // 占位文字的样式  
+    // 占位文字的样式
     placeholderStyle: {
       type: String,
       value: ''
@@ -85,7 +86,7 @@ Component({
       this.setData({
         value
       });
-
+      eventBus.emit(`lin-form-change-${this.id}`,this.id);
       this.triggerEvent('lininput', event.detail);
     },
 
@@ -94,14 +95,21 @@ Component({
     },
 
     handleInputBlur(event) {
-      this.validatorData({
-        value: event.detail.value
-      });
+      // this.validatorData({
+      //   value: event.detail.value
+      // });
+      eventBus.emit(`lin-form-blur-${this.id}`,this.id);
       this.triggerEvent('linblur', event.detail);
     },
     handleInputConfirm(event) {
       this.triggerEvent('linconfirm', event.detail);
     },
+    getValues() {
+      return this.data.value
+    },
+    reset() {
+      this.data.value = ''
+    }
     // onClearTap(e) {
     //   this.setData({ value: '' })
     // },

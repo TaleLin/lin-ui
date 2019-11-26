@@ -2,38 +2,70 @@
 
 .form-item-container{
   display: flex;
-  align-items: stretch;
+  align-items: center;
+  border-bottom: 1px solid #eeeeee;
+  color: #777;
+  padding: 0 20rpx ;
+  position: relative;
+  &.textHeight{
+    margin-bottom: 44rpx;
+  }
   &.label-column{
     flex-direction: column;
+    .label-text{
+      line-height: 44rpx;
+    }
   }
   &.label-row{
     flex-direction: row;
-  }
-  .label {
-    display: flex;
-    &-column-top{
-      align-items: flex-start;
+    .label-text{
+      line-height: 88rpx;
     }
-    &-column-bottom{
-      align-items: flex-end;
+  }
+  .label-text {
+    display: flex;
+    line-height: 88rpx;
+    &-column-start{
+      justify-content: flex-start;
+    }
+    &-column-end{
+      justify-content: flex-end;
     }
     &-column-center{
-      align-items: center;
+      justify-content: center;
     }
-    &-row-left{
-      align-items: flex-start;
+    &-row-start{
+      justify-content: flex-start;
     }
-    &-row-right{
-      align-items: flex-end;
+    &-row-end{
+      justify-content: flex-end;
     }
     &-row-center{
-      align-items: center;
-    }
-    &.label-required{
-      color: red;
+      justify-content: center;
     }
   }
-  .content{
+  .label-content{
     flex: 1;
   }
+  .label-text-required::before {
+    display: inline-block;
+    margin-right: 4px;
+    color: #f5222d;
+    //font-size: 14px;
+    font-family: SimSun,sans-serif;
+    content: '*';
+  }
+}
+.error-text{
+  text-align: right;
+  line-height: 44rpx;
+  color: #f56c6c;
+  font-size: 12px;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  padding-left: 24rpx;
+}
+.row{
+  display: none !important;
 }
