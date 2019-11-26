@@ -12,7 +12,7 @@ const {
 const path = require('path');
 
 const componentData = require('./until');
-const result = `{common,behaviors,untils,${componentData()}}`;
+const result = `{common/*,behaviors,utils,${componentData()}}`;
 const isCustom = (result !== `{common,behaviors,untils,}`);
 
 const distPath = path.resolve(__dirname, '../dist');
