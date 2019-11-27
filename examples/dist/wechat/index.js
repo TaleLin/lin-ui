@@ -72,8 +72,8 @@ Component({
       // 在组件实例进入页面节点树时执行
       //判断传入urls长度
       if (this.data.urls.length > 9) {
-        console.warn('超过9张图片！')
-        return
+        console.warn('超过9张图片！');
+        return;
       }
       // 判断传入模式
       const newOrOld = this.judgeNewOrOld();
@@ -86,57 +86,57 @@ Component({
 
       // 根据urls长度判断布局
       switch (urls.length) {
-        case 1:
-          this.horizontalOrVertical(newOrOld == 'new' ? urls[0].url : urls[0]);
-          break;
-        case 2:
-          this.setData({
-            row: 1,
-            colum: 2
-          });
-          break;
-        case 3:
-          this.setData({
-            row: 1,
-            colum: 3
-          });
-          break;
-        case 4:
-          this.setData({
-            row: 2,
-            colum: 2
-          });
-          break;
-        case 5:
-          this.setData({
-            row: 2,
-            colum: 3
-          });
-          break;
-        case 6:
-          this.setData({
-            row: 2,
-            colum: 3
-          });
-          break;
-        case 7:
-          this.setData({
-            row: 3,
-            colum: 3
-          });
-          break;
-        case 8:
-          this.setData({
-            row: 3,
-            colum: 3
-          });
-          break;
-        case 9:
-          this.setData({
-            row: 3,
-            colum: 3
-          });
-          break;
+      case 1:
+        this.horizontalOrVertical(newOrOld == 'new' ? urls[0].url : urls[0]);
+        break;
+      case 2:
+        this.setData({
+          row: 1,
+          colum: 2
+        });
+        break;
+      case 3:
+        this.setData({
+          row: 1,
+          colum: 3
+        });
+        break;
+      case 4:
+        this.setData({
+          row: 2,
+          colum: 2
+        });
+        break;
+      case 5:
+        this.setData({
+          row: 2,
+          colum: 3
+        });
+        break;
+      case 6:
+        this.setData({
+          row: 2,
+          colum: 3
+        });
+        break;
+      case 7:
+        this.setData({
+          row: 3,
+          colum: 3
+        });
+        break;
+      case 8:
+        this.setData({
+          row: 3,
+          colum: 3
+        });
+        break;
+      case 9:
+        this.setData({
+          row: 3,
+          colum: 3
+        });
+        break;
       }
     },
   },
@@ -160,7 +160,7 @@ Component({
     //判断照片是横屏还是竖屏并计算短边的长度
     //如不指定短边的长度，短边会默认显示image组件的长度
     horizontalOrVertical: function (src) {
-      var that = this;
+      let that = this;
       wx.getImageInfo({
         src: src,
         success(res) {
@@ -177,8 +177,8 @@ Component({
     onPreviewTap(e) {
       const index = e.currentTarget.id;
       const urls = this.data.urls;
-      var tempFilePath = '';
-      var previewImageList = [];
+      let tempFilePath = '';
+      let previewImageList = [];
       const newOrOld = this.data.newOrOld;
 
       if (newOrOld == 'old') {
@@ -187,7 +187,7 @@ Component({
 
       } else {
         tempFilePath = urls[index].url;
-        for (var i = 0; i < urls.length; i++) {
+        for (let i = 0; i < urls.length; i++) {
           previewImageList.push(urls[i].url);
         }
       }
