@@ -83,7 +83,7 @@ Component({
    */
   methods: {
     handleClear() {
-      var urls = this.data.urls;
+      let urls = this.data.urls;
       this.setData({
         urls: [],
         clear: false,
@@ -102,8 +102,8 @@ Component({
     onPreviewTap(e) {
       const index = e.currentTarget.dataset.index;
       const urls = this.data.urls;
-      var tempFilePath = '';
-      var previewImageList = [];
+      let tempFilePath = '';
+      let previewImageList = [];
       const newOrOld = this.data.newOrOld;
 
       if (newOrOld == 'old') {
@@ -112,7 +112,7 @@ Component({
 
       } else {
         tempFilePath = this.data.urls[index].url;
-        for (var i = 0; i < urls.length; i++) {
+        for (let i = 0; i < urls.length; i++) {
           previewImageList.push(urls[i].url);
         }
       }
@@ -148,11 +148,11 @@ Component({
         sourceType: ['album', 'camera'],
         success(res) {
           // tempFilePath可以作为img标签的src属性显示图片
-          var tempFilePath = [];
+          let tempFilePath = [];
           if (newOrOld == 'old') {
             tempFilePath = res.tempFilePaths;
           } else {
-            for (var i = 0; i < res.tempFilePaths.length; i++) {
+            for (let i = 0; i < res.tempFilePaths.length; i++) {
               tempFilePath.push({
                 url: res.tempFilePaths[i],
                 // key: null
@@ -187,8 +187,8 @@ Component({
           that.triggerEvent('linpush', detail, option);
 
           // 超过大小的image集合
-          var overSizeList = [];
-          for (var n = 0; n < newtempFilePaths.length; n++) {
+          let overSizeList = [];
+          for (let n = 0; n < newtempFilePaths.length; n++) {
             if (newtempFilePaths[n].overSize) {
               overSizeList.push(newtempFilePaths[n]);
             }
