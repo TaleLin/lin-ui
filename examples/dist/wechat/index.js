@@ -86,57 +86,57 @@ Component({
 
       // 根据urls长度判断布局
       switch (urls.length) {
-        case 1:
-          this.horizontalOrVertical(newOrOld == 'new' ? urls[0].url : urls[0]);
-          break;
-        case 2:
-          this.setData({
-            row: 1,
-            colum: 2
-          });
-          break;
-        case 3:
-          this.setData({
-            row: 1,
-            colum: 3
-          });
-          break;
-        case 4:
-          this.setData({
-            row: 2,
-            colum: 2
-          });
-          break;
-        case 5:
-          this.setData({
-            row: 2,
-            colum: 3
-          });
-          break;
-        case 6:
-          this.setData({
-            row: 2,
-            colum: 3
-          });
-          break;
-        case 7:
-          this.setData({
-            row: 3,
-            colum: 3
-          });
-          break;
-        case 8:
-          this.setData({
-            row: 3,
-            colum: 3
-          });
-          break;
-        case 9:
-          this.setData({
-            row: 3,
-            colum: 3
-          });
-          break;
+      case 1:
+        this.horizontalOrVertical(newOrOld == 'new' ? urls[0].url : urls[0]);
+        break;
+      case 2:
+        this.setData({
+          row: 1,
+          colum: 2
+        });
+        break;
+      case 3:
+        this.setData({
+          row: 1,
+          colum: 3
+        });
+        break;
+      case 4:
+        this.setData({
+          row: 2,
+          colum: 2
+        });
+        break;
+      case 5:
+        this.setData({
+          row: 2,
+          colum: 3
+        });
+        break;
+      case 6:
+        this.setData({
+          row: 2,
+          colum: 3
+        });
+        break;
+      case 7:
+        this.setData({
+          row: 3,
+          colum: 3
+        });
+        break;
+      case 8:
+        this.setData({
+          row: 3,
+          colum: 3
+        });
+        break;
+      case 9:
+        this.setData({
+          row: 3,
+          colum: 3
+        });
+        break;
       }
     },
   },
