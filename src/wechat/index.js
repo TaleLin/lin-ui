@@ -160,7 +160,7 @@ Component({
     //判断照片是横屏还是竖屏并计算短边的长度
     //如不指定短边的长度，短边会默认显示image组件的长度
     horizontalOrVertical: function (src) {
-      var that = this;
+      let that = this;
       wx.getImageInfo({
         src: src,
         success(res) {
@@ -177,8 +177,8 @@ Component({
     onPreviewTap(e) {
       const index = e.currentTarget.id;
       const urls = this.data.urls;
-      var tempFilePath = '';
-      var previewImageList = [];
+      let tempFilePath = '';
+      let previewImageList = [];
       const newOrOld = this.data.newOrOld;
 
       if (newOrOld == 'old') {
@@ -187,7 +187,7 @@ Component({
 
       } else {
         tempFilePath = urls[index].url;
-        for (var i = 0; i < urls.length; i++) {
+        for (let i = 0; i < urls.length; i++) {
           previewImageList.push(urls[i].url);
         }
       }
