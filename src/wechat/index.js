@@ -32,7 +32,7 @@ Component({
       value: 360,
     },
     // 1张图片时的显示模式
-    modeOne: {
+    modeSingle: {
       type: String,
       value: 'aspectFit',
     },
