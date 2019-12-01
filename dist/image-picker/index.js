@@ -46,7 +46,7 @@ Component({
       value: false
     },
     // 是否可以预览
-    isPreview: {
+    preview: {
       type: Boolean,
       value: true
     },
@@ -124,7 +124,7 @@ Component({
         all: urls // 需要预览的图片http链接列表
       };
       let option = {};
-      if (this.data.isPreview === true) {
+      if (this.data.preview === true) {
         wx.previewImage({
           current: tempFilePath, // 当前显示图片的http链接
           urls: previewImageList // 需要预览的图片http链接列表
