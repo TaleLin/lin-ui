@@ -18,6 +18,18 @@ Component({
   attached() {
 
   },
+  observers: {
+    'key': function() {
+      const parent = this.getRelationNodes('../grid/index')[0];
+      if (parent) {
+        parent.setData({
+          gridItems: [],
+          childNum: 0
+        });
+        parent.initGrids();
+      }
+    }
+  },
 
   lifetimes: {
     show() {
