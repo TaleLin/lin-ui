@@ -3,14 +3,14 @@ Component({
   /**
    * 组件的属性列表
    */
-  externalClasses: ['l-class', 'l-one-image-class', 'l-multi-image-class'],
+  externalClasses: ['l-class', 'l-single-image-class', 'l-multi-image-class'],
   properties: {
     urls: {
       type: Array,
       value: []
     },
     // 是否可以预览
-    isPreview: {
+    preview: {
       type: Boolean,
       value: true
     },
@@ -27,6 +27,10 @@ Component({
       type: Number,
       value: 10,
     },
+    singleImageLongSide: {
+      type: Number,
+      value: 360,
+    },
     // 1张图片时的显示模式
     modeOne: {
       type: String,
@@ -42,7 +46,7 @@ Component({
    * 组件的初始数据
    */
   data: {
-    // 传值方式是新方式还是就方式
+    // 传值方式是新方式还是旧方式
     newOrOld: {
       type: String,
       value: null
@@ -168,7 +172,7 @@ Component({
           const shortSide = res.width >= res.height ? res.height : res.width;
           that.setData({
             horizontal_screen: res.width >= res.height ? true : false,
-            shortSideValue: shortSide * 360 / longSide
+            shortSideValue: shortSide * that.data.singleImageLongSide / longSide
           });
         }
       });
@@ -198,13 +202,13 @@ Component({
         all: urls // 需要预览的图片http链接列表
       };
       let option = {};
-      if (this.data.isPreview === true) {
+      if (this.data.preview === true) {
         wx.previewImage({
           current: tempFilePath, // 当前显示图片的http链接
           urls: previewImageList // 需要预览的图片http链接列表
         });
       }
-      this.triggerEvent('linpreview', detail, option);
+      this.triggerEvent('lintap', detail, option);
     }
 
   }
