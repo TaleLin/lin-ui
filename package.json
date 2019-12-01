@@ -44,7 +44,7 @@
     "gulp-util": "^3.0.8",
     "jest": "^24.8.0",
     "less": "^2.7.3",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.13",
     "miniprogram-simulate": "^1.0.7"
   },
   "dependencies": {}
