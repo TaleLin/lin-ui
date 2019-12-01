@@ -23,7 +23,7 @@ Component({
       type: Number,
       value: 10,
     },
-    gapColum: {
+    gapColumn: {
       type: Number,
       value: 10,
     },
