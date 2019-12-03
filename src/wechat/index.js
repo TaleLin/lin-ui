@@ -14,11 +14,6 @@ Component({
       type: Boolean,
       value: true
     },
-    // 多图模式时的尺寸大小
-    size: {
-      type: Number,
-      value: 158,
-    },
     gapRow: {
       type: Number,
       value: 10,
@@ -27,16 +22,23 @@ Component({
       type: Number,
       value: 10,
     },
-    singleImageLongSide: {
+    // 单图时长边大小
+    singleSize: {
       type: Number,
       value: 360,
     },
-    // 1张图片时的显示模式
-    modeSingle: {
+    // 多图时图片边长
+    multipleSize: {
+      type: Number,
+      value: 158,
+    },
+    // 单图显示模式
+    singleMode: {
       type: String,
       value: 'aspectFit',
     },
-    modeMultiple: {
+    // 多图显示模式
+    multipleMode: {
       type: String,
       value: 'aspectFill',
     }
@@ -51,7 +53,7 @@ Component({
       type: String,
       value: null
     },
-    // 一张图片时，短边的长度
+    // 单图短边大小
     shortSideValue: {
       type: Number,
       value: 0
@@ -172,7 +174,7 @@ Component({
           const shortSide = res.width >= res.height ? res.height : res.width;
           that.setData({
             horizontal_screen: res.width >= res.height ? true : false,
-            shortSideValue: shortSide * that.data.singleImageLongSide / longSide
+            shortSideValue: shortSide * that.data.singleSize / longSide
           });
         }
       });

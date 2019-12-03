@@ -1,6 +1,6 @@
 <!-- miniprogram_npm/lin-ui/wechat/index.wxml -->
-<view class="container l-class" style='width:{{colum*(size+gapRow)}}rpx;height:{{row*size+(row-1)*gapColumn}}rpx;'>
+<view class="container l-class" style='width:{{colum*(multipleSize+gapRow)}}rpx;height:{{row*multipleSize+(row-1)*gapColumn}}rpx;'>
     <block wx:for="{{urls}}" wx:key="index">
-        <image id='{{index}}' bind:tap="onPreviewTap" class="{{urls.length == 1?horizontal_screen?'l-single-image-class':'vertical l-single-image-class':'l-multi-image-class'}}" style="{{urls.length == 1?horizontal_screen?'height:'+shortSideValue+'rpx;width:'+singleImageLongSide+'rpx;':'width:'+shortSideValue+'rpx;height:'+singleImageLongSide+'rpx;':'height:'+size+'rpx;width:'+size+'rpx;margin-right:'+gapRow+'rpx;margin-bottom:'+gapColumn+'rpx;'}}" src="{{newOrOld=='old'?item:item.url}}" mode="{{urls.length == 1?modeSingle:modeMultiple}}" />
+        <image id='{{index}}' bind:tap="onPreviewTap" class="{{urls.length == 1?horizontal_screen?'l-single-image-class':'vertical l-single-image-class':'l-multi-image-class'}}" style="{{urls.length == 1?horizontal_screen?'height:'+shortSideValue+'rpx;width:'+singleSize+'rpx;':'width:'+shortSideValue+'rpx;height:'+singleSize+'rpx;':'height:'+size+'rpx;width:'+size+'rpx;margin-right:'+gapRow+'rpx;margin-bottom:'+gapColumn+'rpx;'}}" src="{{newOrOld=='old'?item:item.url}}" mode="{{urls.length == 1?singleMode:multipleMode}}" />
     </block>
 </view>
