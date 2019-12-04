@@ -75,20 +75,40 @@
   animation: popup-center-fadein 0.4s;
 }
 
+.popup-fade-center-active-hide {
+  animation: popup-center-fadeout 0.4s;
+}
+
 .popup-fade-top-active-show {
   animation:popup-top-fadein 0.3s ease-in-out;
+}
+
+.popup-fade-top-active-hide {
+  animation:popup-top-fadeout 0.3s ease-in-out;
 }
 
 .popup-fade-right-active-show {
   animation: popup-right-fadein 0.3s ease-in-out;
 }
 
+.popup-fade-right-active-hide {
+  animation: popup-right-fadeout 0.3s ease-in-out;
+}
+
 .popup-fade-left-active-show {
   animation: popup-left-fadein 0.3s ease-in-out;
 }
 
+.popup-fade-left-active-hide {
+  animation: popup-left-fadeout 0.3s ease-in-out;
+}
+
 .popup-fade-bottom-active-show {
   animation: popup-bottom-fadein 0.3s ease-in-out;
+}
+
+.popup-fade-bottom-active-hide {
+  animation: popup-bottom-fadeout 0.3s ease-in-out;
 }
 
 // .popup-fade-center-leave {
@@ -111,6 +131,22 @@
   }
 }
 
+@keyframes popup-center-fadeout {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(1.1);
+  }
+
+  100% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+}
+
 @keyframes popup-top-fadein {
   0% {
     transform: translate3d(0, -100%, 0);
@@ -120,6 +156,18 @@
   100% {
     transform: translate3d(0, 0, 0);
     opacity: 1;
+  }
+}
+
+@keyframes popup-top-fadeout {
+  0% {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translate3d(0, -100%, 0);
+    opacity: 0.1;
   }
 }
 
@@ -135,6 +183,20 @@
     opacity: 1;
   }
 }
+
+@keyframes popup-left-fadeout {
+  0% {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+
+
+  100% {
+    transform: translate3d(-100%, 0, 0);
+    opacity: 0.1;
+  }
+}
+
 
 @keyframes popup-right-fadein {
   0% {
@@ -153,15 +215,27 @@
   }
 }
 
-@keyframes popup-bottom-fadein {
+@keyframes popup-right-fadeout {
   0% {
-    transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translate3d(100%, 0, 0);
     opacity: 0.1;
+  }
+}
+
+@keyframes popup-bottom-fadeout {
+  0% {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
   }
 
 
   100% {
-    transform: translate3d(0, 0, 0);
-    opacity: 1;
+    transform: translate3d(0, 100%, 0);
+    opacity: 0.1;
   }
 }
