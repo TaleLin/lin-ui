@@ -3,7 +3,7 @@
   <view class='container-bg l-bg-class'></view>
   <view
     wx:if="{{show}}"
-    class="popup-content {{ show ? contentAlign : ''}}   popup-fade-{{show ? contentAlign : ''}}-active-{{animation}}" catchtap='onPupopTap'>
+    class="popup-content {{ show ? contentAlign : ''}}   popup-fade-{{contentAlign}}-active-{{animation ? status:''}}" catchtap='onPupopTap'>
     <view catchtap="doNothingTap">
       <slot></slot>
     </view>

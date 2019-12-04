@@ -25,6 +25,10 @@ Component({
     openApi: {
       type: Boolean,
       value: true
+    },
+    custom: {
+      type: Boolean,
+      value: false
     }
   },
 
@@ -77,7 +81,7 @@ Component({
         });
       };
     },
-    
+
     _changeStatus() {
       switch (this.properties.type) {
       case 'success':

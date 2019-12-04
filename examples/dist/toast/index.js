@@ -124,7 +124,7 @@ Component({
         this.changeStatus();
         return this;
       };
-      wx.lin.hideMessage = () => {
+      wx.lin.hideToast = () => {
         this.setData({
           status: false
         });

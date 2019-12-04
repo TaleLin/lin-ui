@@ -80,11 +80,6 @@
   }
 }
 
-.l-tabpanel-content {
-  display: flex;
-  // height: 100%;
-}
-
 .l-sub-placement-left .l-tabs-main .l-tabpanel-content{
   width: 100%;
   flex-direction: column;
@@ -99,6 +94,7 @@
 
 .l-placement-top .l-tabpanel-content {
   width: 100%;
+  height: 100%;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -109,10 +105,10 @@
   -ms-flex-direction: row;
   flex-direction: row;
 }
-.l-aminmated.l-placement-top .l-tabpanel-content {
-  will-change: margin-left;
-  -webkit-transition: margin-left 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
-  transition: margin-left 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+
+.l-subpanel-content  {
+  width: 100%;
+  height: 100%;
 }
 
 .l-tabpanel {
@@ -134,6 +130,10 @@
   pointer-events: none;
 }
 
+.l-subpanel {
+    height: 100%;
+}
+
 //  滚动标签栏-水平
 .l-tabs-scroll.l-tabs-horizontal {
   .l-tabs-header {
@@ -143,6 +143,10 @@
       overflow: visible;
       min-width: 160rpx;
     }
+  }
+
+  .l-tabpanel-content {
+    height: 150px;
   }
 }
 
@@ -240,10 +244,7 @@
 
 
   .l-tabs-main {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: row;
+    flex:1;
   }
 
 .l-combined-tabs-main {
