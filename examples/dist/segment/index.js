@@ -75,6 +75,20 @@ Component({
     itemWidth: Number
   },
 
+  observers: {
+    'activeKey': function (newKey) {
+      if(!newKey) return;
+      const index = this.data.tabList.findIndex(tab=>tab.key===newKey);
+      this.setData({
+        currentIndex:index
+      },() => {
+        if (this.data.scrollable) {
+          this.queryMultipleNodes();
+        }
+      });
+    }
+  },
+
   /**
      * 组件的初始数据
      */
