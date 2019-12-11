@@ -1,4 +1,4 @@
-// miniprogram_npm/lin-ui/wechat/index.js
+// miniprogram_npm/lin-ui/picture-album/index.js
 Component({
   /**
    * 组件的属性列表
