@@ -1,0 +1,21 @@
+<content-title name="Skeleton" describe="骨架屏">
+  <content-card name="基础用法">
+    <l-skeleton  />
+  </content-card>
+
+  <content-card name="基础用法">
+    <l-skeleton avatar/>
+  </content-card>
+
+  <content-card name="基础用法">
+    <l-skeleton avatar rows-width="20%" />
+  </content-card>
+
+  <content-card name="基础用法">
+    <l-skeleton avatar active="{{false}}" />
+  </content-card>
+
+  <content-card name="基础用法">
+    <l-skeleton rows-width="100%" rows-height="260rpx" />
+  </content-card>
+</content-title>

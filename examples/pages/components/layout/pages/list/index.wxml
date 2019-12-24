@@ -8,7 +8,7 @@
       <l-list title="客服中心" desc="工作时间：8:00-18:00" />
     </content-card>
     <content-card class="content" name="有图标图片的列表">
-      <l-list title="消息" icon="notification" />
+      <l-list  l-icon-class="icon" title="消息" icon="notification" />
       <l-list title="客厅" image="/pages/components/layout/images/wx_app_compass.png" />
       <l-list title="清除" image="/pages/components/layout/images/wx_app_clear.png" />
     </content-card>

@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "l-skeleton": "/dist/skeleton/index",
+    "l-button": "/dist/button/index"
+  }
+}
