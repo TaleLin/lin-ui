@@ -20,6 +20,11 @@ const layoutNaviConfigs = [{
   title: "WaterFlow",
   desc: "瀑布流",
   componentsPath: "/pages/components/layout/pages/water-flow/index"
+}, {
+  icon: "/images/component/grid.jpg",
+  title: "Album",
+  desc: "相册",
+    componentsPath: "/pages/components/layout/pages/album/index"
 }
 ]
 
