@@ -1,7 +1,7 @@
-<view class="l-skeleton-container">
+<view wx:if="{{show}}" class="l-skeleton-container l-class">
 
   <view wx:if="{{avatar}}" 
-        class="l-skeleton-avatar bg {{active?'active':''}} l-skeleton-avatar-{{avatarShape}}" 
+        class="l-avatar-class l-skeleton-avatar bg {{active?'active':''}} l-skeleton-avatar-{{avatarShape}}" 
         style="width:{{avatarSize}};height:{{avatarSize}}"></view>
 
   <view class="l-skeleton-right">
@@ -15,9 +15,11 @@
     <view wx:if="{{paragraph}}"
           wx:for="{{r}}"
           wx:key="{{index}}"
-          class="l-skeleton-rows bg {{active?'active':''}}"
+          class="l-row-class l-skeleton-rows bg {{active?'active':''}}"
           style="height:{{item.height}};width:{{item.width}}"
     ></view>
   </view>
 
 </view>
+
+<slot wx:else/>

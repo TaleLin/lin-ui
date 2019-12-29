@@ -2,6 +2,12 @@ Component({
   /**
    * 组件的属性列表
    */
+  externalClasses: [
+    'l-class',
+    'l-title-class',
+    'l-avatar-class',
+    'l-row-class'
+  ],
   properties: {
     loading: {
       type: Boolean,
@@ -15,7 +21,7 @@ Component({
       type: Boolean,
       value: true
     },
-    active: {
+    show: {
       type: Boolean,
       value: true
     },
@@ -28,24 +34,15 @@ Component({
     },
     rowsWidth: {
       type: Array,
-      optionalTypes: [Array, String]
+      optionalTypes: [Array, String],
+      value: '60%'
     },
     rowsHeight: {
       type: Array,
-      optionalTypes: [Array, String]
+      optionalTypes: [Array, String],
+      value: '34rpx'
     },
-    rows: {
-      type: Number,
-      value: 3
-    }
-  },
-
-  attached() {
-    this.setData({
-      rowsHeight: ['34rpx', '34rpx', '34rpx'],
-      rowsWidth: ['100%', '100%', '60%'],
-      rows: 3
-    });
+    rows: Number
   },
 
   observers: {
@@ -69,7 +66,7 @@ Component({
   methods: {
     _arrRepeat(target, n) {
       const r = [];
-      for (let i = 0; i < n; i++) {
+      for (let i = 0; i < n-1; i++) {
         r.push(target);
       }
       return r;
