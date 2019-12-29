@@ -21,7 +21,7 @@ Component({
       type: Boolean,
       value: true
     },
-    show: {
+    active: {
       type: Boolean,
       value: true
     },

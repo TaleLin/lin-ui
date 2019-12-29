@@ -12,12 +12,12 @@ Page({
   showNode() {
     this.setData({
       show: true
-    })
+    });
     const timer = setTimeout(() => {
       this.setData({
         show: false
-      })
-    }, 300)
+      });
+    }, 1200);
   },
   /**
    * 生命周期函数--监听页面加载
@@ -74,4 +74,4 @@ Page({
   onShareAppMessage: function() {
 
   }
-})
+});

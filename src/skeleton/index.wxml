@@ -1,4 +1,4 @@
-<view wx:if="{{show}}" class="l-skeleton-container l-class">
+<view wx:if="{{loading}}" class="l-skeleton-container l-class">
 
   <view wx:if="{{avatar}}" 
         class="l-avatar-class l-skeleton-avatar bg {{active?'active':''}} l-skeleton-avatar-{{avatarShape}}" 
