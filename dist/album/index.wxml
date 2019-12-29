@@ -1,0 +1,6 @@
+<!-- miniprogram_npm/lin-ui/picture-album/index.wxml -->
+<view class="container l-class" style="{{urls.length == 2 || urls.length == 4?'width:'+(2*multipleSize+gapRow)+'rpx;':'width:'+(3*multipleSize+ 2 *gapRow)+'rpx;'}} grid-row-gap:{{gapColumn}}rpx; grid-column-gap:{{gapRow}}rpx;grid-template-columns:repeat(auto-fit, {{multipleSize}}rpx);">
+    <block wx:for="{{urls}}" wx:key="index">
+        <image id='{{index}}' bind:tap="onPreviewTap" class="{{urls.length == 1?horizontal_screen?'l-single-image-class':'vertical l-single-image-class':'l-multi-image-class'}}" style="{{urls.length == 1?horizontal_screen?'height:'+shortSideValue+'rpx;width:'+singleSize+'rpx;':'width:'+shortSideValue+'rpx;height:'+singleSize+'rpx;':'height:'+multipleSize+'rpx;width:'+multipleSize+'rpx;'}}" src="{{newOrOld=='old'?item:item.url}}" mode="{{urls.length == 1?singleMode:multipleMode}}" />
+    </block>
+</view>
