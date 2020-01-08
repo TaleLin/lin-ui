@@ -5,12 +5,32 @@ Page({
    * 页面的初始数据
    */
   data: {
+    student: {
+      name: '',
+      age: '',
+      address: ''
+    },
     form: {
       name: '',
       music: '',
       sex: '',
       desc: '',
       score: ''
+    },
+    loginForm: {
+      loginId: '',
+      password: '',
+      loginIdRules:{
+        type: 'email',
+        required: true,
+        message: '邮箱地址不合法',
+        trigger: 'change'
+      },
+      passwordRules: [
+        { required: true, message: '请输入登录密码', trigger: 'blur' },
+        { min: 8, max: 20, message: '密码长度在8-20个字符之间', trigger: 'blur' },
+        { pattern: '^[A-Za-z0-9]+$', message: '密码必须由数字字母组成',trigger: 'blur'}
+      ],
     },
     ruleForm: {
       name: '',
@@ -83,7 +103,8 @@ Page({
     loginIdRules: {
       type: 'email',
       required: true,
-      message: '邮箱地址不合法'
+      message: '邮箱地址不合法',
+      trigger: 'blur'
     },
     passwordRules: [
       { required: true, message: '请输入登录密码', trigger: 'blur' },
@@ -154,7 +175,7 @@ Page({
   },
 
   submit(data){
-    console.log(data)
+    console.log(JSON.stringify(data.detail))
   },
 
   /**

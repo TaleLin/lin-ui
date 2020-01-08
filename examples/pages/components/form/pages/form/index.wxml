@@ -5,6 +5,35 @@
             name="基本案例"
         >
             <view class='buttun-wrapper'>
+                <l-form name="student" l-form-btn-class="l-form-btn-class" bind:linsubmit="submit">
+                    <l-form-item label="姓名:" name="studentName">
+                        <l-input id="studentName" value="{{student.name}}" hide-label show-row="{{false}}"/>
+                    </l-form-item>
+
+                    <l-form-item label="年龄:" name="studentAge">
+                        <l-input id="studentAge" value="{{student.age}}" hide-label show-row="{{false}}"/>
+                    </l-form-item>
+
+                    <l-form-item label="地址:" name="studentAddress">
+                        <l-input id="studentAddress" value="{{student.address}}" hide-label show-row="{{false}}"/>
+                    </l-form-item>
+
+
+                    <view slot="submit">
+                        <l-button>提交</l-button>
+                    </view>
+                    <view slot="reset">
+                        <l-button type="default" plain>重置</l-button>
+                    </view>
+                </l-form>
+
+            </view>
+        </content-card>
+        <content-card
+            class="content"
+            name="基本案例"
+        >
+            <view class='buttun-wrapper'>
                 <l-form name="form" bind:linsubmit="submit" l-form-btn-class="l-form-btn-class">
                     <l-form-item label="填写姓名:" name="name">
                         <l-input id="name" value="{{form.name}}" hide-label show-row="{{false}}"/>
@@ -48,6 +77,30 @@
                     </view>
                 </l-form>
 
+            </view>
+        </content-card>
+
+        <content-card
+                class="content"
+                name="带验证的表单"
+        >
+            <view class='buttun-wrapper'>
+                <l-form name="loginForm" bind:linsubmit="submit" l-form-btn-class="l-form-btn-class">
+                    <l-form-item label="账号:" name="loginFormLoginId" rules="{{loginForm.loginIdRules}}">
+                        <l-input id="loginFormLoginId" value="{{loginForm.loginId}}" hide-label show-row="{{false}}"/>
+                    </l-form-item>
+
+                    <l-form-item label="密码:" name="loginFormPassword" rules="{{loginForm.passwordRules}}">
+                        <l-input id="loginFormPassword" value="{{loginForm.password}}" hide-label show-row="{{false}}"/>
+                    </l-form-item>
+
+                    <view slot="submit">
+                        <l-button>注册</l-button>
+                    </view>
+                    <view slot="reset">
+                        <l-button type="default" plain>重置</l-button>
+                    </view>
+                </l-form>
             </view>
         </content-card>
 
