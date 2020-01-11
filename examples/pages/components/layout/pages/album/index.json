@@ -2,6 +2,7 @@
   "usingComponents": {
     "content-title": "/components/content-title/index",
     "content-card": "/components/content-card/index",
-    "l-album": "/dist/album/index"
+    "l-album": "/dist/album/index",
+    "l-avatar": "/dist/avatar/index"
   }
 }

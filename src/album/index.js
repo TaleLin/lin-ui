@@ -52,7 +52,7 @@ Component({
    */
   data: {
     // 传值方式是新方式还是旧方式
-    newType: false,
+    newType: true,
     // 单图短边大小
     shortSideValue: 0,
     // 图片排列几行
