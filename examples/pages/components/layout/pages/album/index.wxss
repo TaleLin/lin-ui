@@ -14,3 +14,36 @@
     line-height: 30rpx;
     margin-top: 9rpx;
 }
+
+.album {
+    display: flex;
+    flex-direction: row;
+}
+
+.avatar {
+    margin-left: 20rpx;
+}
+
+.right {
+    margin-left: 20rpx;
+}
+
+.name {
+    color: rgb(91, 108, 160);
+    font-weight: 450;
+}
+
+.content {
+    margin-top: 7rpx;
+    margin-right: 10rpx;
+    color: black;
+    font-weight: 445;
+    margin-bottom: 15rpx;
+}
+
+.line {
+    height: 1px;
+    border-top: solid Silver 1px;
+    /* margin-bottom: 40rpx; */
+    margin-top: 30rpx;
+}
