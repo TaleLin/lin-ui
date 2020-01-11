@@ -40,6 +40,10 @@ Component({
     multipleMode: {
       type: String,
       value: 'aspectFill',
+    },
+    key: {
+      type: String,
+      value: 'url'
     }
   },
 
@@ -48,28 +52,32 @@ Component({
    */
   data: {
     // 传值方式是新方式还是旧方式
-    newOrOld: null,
+    newType: false,
     // 单图短边大小
     shortSideValue: 0,
+    // 图片排列几行
+    row: 0,
+    // 图片排列几列
+    colum: 0,
   },
 
   /**
    * 组件的生命周期
    */
   lifetimes: {
-    attached: function () {
+    attached() {
       // 在组件实例进入页面节点树时执行
 
       //判断传入urls长度
       if (this.data.urls.length > 9) {
-        const urls = this.data.urls.slice(0, 9);
+        const urls = this.data.urls.slice(0, 9)
         this.setData({
           urls
-        });
+        })
         console.warn('超过9张图片！');
       }
 
-      this.preview();
+      this.preview()
 
     },
   },
@@ -79,29 +87,27 @@ Component({
    */
   methods: {
     // 判断传入的urls是字符串列表(old模式)还是对象列表(new模式) 
-    judgeNewOrOld: function () {
+    judgeType() {
       const urls = this.data.urls;
       if (urls.length != 0) {
-        if (typeof (urls[0]) != 'object') {
-          return 'old';
+        if (typeof (urls[0]) !== 'object') {
+          return false;
         }
-        return 'new';
       }
-      return 'new';
+      return true;
     },
 
     //判断照片是横屏还是竖屏并计算短边的长度
     //如不指定短边的长度，短边会默认显示image组件的长度
     horizontalOrVertical: function (src) {
-      let that = this;
       wx.getImageInfo({
         src: src,
-        success(res) {
+        success: (res) => {
           const longSide = res.width >= res.height ? res.width : res.height;
           const shortSide = res.width >= res.height ? res.height : res.width;
-          that.setData({
-            horizontal_screen: res.width >= res.height ? true : false,
-            shortSideValue: shortSide * that.data.singleSize / longSide
+          this.setData({
+            horizontalScreen: res.width >= res.height ? true : false,
+            shortSideValue: shortSide * this.data.singleSize / longSide
           });
         }
       });
@@ -110,16 +116,17 @@ Component({
     // 显示图片
     preview: function () {
       // 判断传入模式
-      const newOrOld = this.judgeNewOrOld();
+      const newType = this.judgeType();
       this.setData({
-        newOrOld
+        newType
       });
 
       //显示图片
       const urls = this.data.urls;
+      const key = this.data.key
 
       if (urls.length == 1) {
-        this.horizontalOrVertical(newOrOld == 'new' ? urls[0].url : urls[0]);
+        this.horizontalOrVertical(newType ? urls[0][key] : urls[0]);
       }
     },
 
@@ -128,17 +135,17 @@ Component({
       const urls = this.data.urls;
       let tempFilePath = '';
       let previewImageList = [];
-      const newOrOld = this.data.newOrOld;
+      const newType = this.data.newType;
+      const key = this.data.key
 
-      if (newOrOld == 'old') {
+      if (newType) {
+        tempFilePath = urls[index][key];
+        for (let i = 0; i < urls.length; i++) {
+          previewImageList.push(urls[i][key]);
+        }
+      } else {
         tempFilePath = urls[index];
         previewImageList = urls;
-
-      } else {
-        tempFilePath = urls[index].url;
-        for (let i = 0; i < urls.length; i++) {
-          previewImageList.push(urls[i].url);
-        }
       }
 
       let detail = {
