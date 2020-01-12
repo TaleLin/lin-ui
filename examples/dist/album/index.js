@@ -70,14 +70,14 @@ Component({
 
       //判断传入urls长度
       if (this.data.urls.length > 9) {
-        const urls = this.data.urls.slice(0, 9)
+        const urls = this.data.urls.slice(0, 9);
         this.setData({
           urls
-        })
+        });
         console.warn('超过9张图片！');
       }
 
-      this.preview()
+      this.preview();
 
     },
   },
@@ -122,7 +122,7 @@ Component({
       });
       //显示图片
       const urls = this.data.urls;
-      const key = this.data.key
+      const key = this.data.key;
 
       if (urls.length == 1) {
         this.horizontalOrVertical(newType ? urls[0][key] : urls[0]);
@@ -135,7 +135,7 @@ Component({
       let tempFilePath = '';
       let previewImageList = [];
       const newType = this.data.newType;
-      const key = this.data.key
+      const key = this.data.key;
 
       if (newType) {
         tempFilePath = urls[index][key];
