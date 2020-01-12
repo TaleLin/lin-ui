@@ -16,12 +16,13 @@ const layoutNaviConfigs = [{
   componentsPath: "/pages/components/layout/pages/card/index"
 },
 {
-  icon: "/images/component/card.png",
+  icon: "/images/component/waterFlow.png",
   title: "WaterFlow",
   desc: "瀑布流",
   componentsPath: "/pages/components/layout/pages/water-flow/index"
-}, {
-  icon: "/images/component/grid.jpg",
+}, 
+{
+  icon: "/images/component/album.png",
   title: "Album",
   desc: "相册",
     componentsPath: "/pages/components/layout/pages/album/index"
