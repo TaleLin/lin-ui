@@ -1,6 +1,6 @@
 <view class="l-class card-container {{'card-container-' + type}} {{'card-container-' + type + '-' + position}} {{full?'card-container-full':'card-container-unfull'}}">
   <block wx:if="{{type ==='primary' || type ==='cover'}}">
-    <image wx:if="{{!plaintext}}" class="l-img-class {{full?'cover-img-full':'cover-img-unfull'}} {{ 'card-img-' + type }} {{ 'card-img-' + type + '-' + position }}" mode="aspectFill" lazy-load="{{true}}" src="{{image}}"></image>
+    <image wx:if="{{!plaintext}}" class="l-img-class {{full?'cover-img-full':'cover-img-unfull'}} {{ 'card-img-' + type }} {{ 'card-img-' + type + '-' + position }}" mode="{{imageMode}}" lazy-load="{{true}}" src="{{image}}"></image>
     <view class="card-content">
       <text class="l-title-class card-title {{'card-title-' + type}}">{{title}}</text>
       <slot />

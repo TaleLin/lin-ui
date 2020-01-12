@@ -71,8 +71,7 @@ Component({
         });
         setTimeout(()=>{
           this.setData({
-            show: false,
-            status: 'show'
+            show: false
           });
         },300);
       };

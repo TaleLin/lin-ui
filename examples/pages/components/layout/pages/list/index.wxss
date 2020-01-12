@@ -4,6 +4,10 @@
   overflow-x: hidden;
 }
 
+.icon{
+  color: rebeccapurple !important;
+}
+
 @font-face {font-family: "iconfont-self";
   src: url('iconfont.eot?t=1551939237196'); /* IE9 */
   src: url('iconfont.eot?t=1551939237196#iefix') format('embedded-opentype'), /* IE6-IE8 */

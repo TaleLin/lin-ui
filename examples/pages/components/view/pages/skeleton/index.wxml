@@ -1,0 +1,48 @@
+<content-title name="Skeleton" describe="骨架屏">
+  <content-card name="基础用法">
+    <l-skeleton rows="3" />
+  </content-card>
+
+  <content-card name="设置行数">
+    <l-skeleton rows="2" />
+  </content-card>
+
+  <content-card name="设置段落宽度">
+    <l-skeleton rows="3" rows-width="20%" />
+  </content-card>
+
+  <content-card name="设置段落高度">
+    <l-skeleton rows="3" rows-width="100%" rows-height="260rpx" />
+  </content-card>
+
+  <content-card name="关闭动画">
+    <l-skeleton rows="3" active="{{false}}" />
+  </content-card>
+
+  <content-card name="展示头像展位图">
+    <l-skeleton rows="3" avatar />
+  </content-card>
+
+  <content-card name="显示插槽内容">
+    <l-skeleton avatar rows="3" rows-width="100%" loading="{{show}}">
+      <l-card type="avatar" l-class="card" full image="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1549711852726&di=6b454cec0b57f62d46089487454fa56f&imgtype=0&src=http%3A%2F%2Fimg3.duitang.com%2Fuploads%2Fitem%2F201609%2F14%2F20160914062816_SC8KU.jpeg"
+        title="七月在夏天" describe="18个小时前">
+        <view class="avter-content">
+          很简单，豆瓣现在这样就给大家指了一条明路:以后凡是这种国产的风口浪尖的的片子，会涉及到各方背后利益关系的片子...
+        </view>
+        <view class="avter-share-container">
+          <view class="like-container">
+            <l-icon name="like" color="#666" size="28" />
+            <view class="number">160喜欢</view>
+          </view>
+          <view class="like-container">
+            <l-icon name="default" color="#666" size="28" />
+            <view class="number">10评论</view>
+          </view>
+        </view>
+        <l-tag shape="circle" bg-color="#f3f3f3" font-color="#3963BC" slot="more" size="large">+ 关注</l-tag>
+      </l-card>
+    </l-skeleton>
+    <l-button size="large" l-class="button" bind:lintap="showNode">显示Skeleton</l-button>
+  </content-card>
+</content-title>

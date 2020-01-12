@@ -63,6 +63,12 @@ const basicNaviConfigs = [{
     title: "Steps",
     desc: "步骤条",
     componentsPath: "/pages/components/view/pages/steps/index"
+  },
+  {
+    icon: "/images/component/load-more.png",
+    title: "Skeleton",
+    desc: "骨架屏",
+    componentsPath: "/pages/components/view/pages/skeleton/index"
   }
 ]
 

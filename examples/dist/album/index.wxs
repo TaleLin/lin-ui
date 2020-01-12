@@ -1,0 +1,39 @@
+var containerStyle = function (urls, multipleSize, gapRow, gapColumn) {
+    urls.length == 2 || urls.length == 4 ? 'width:' + (2 * multipleSize + gapRow) + 'rpx;' : 'width:' + (3 * multipleSize + 2 * gapRow) + 'rpx;'
+    if (urls.length == 2 || urls.length == 4) {
+        return 'width:' + (2 * multipleSize + gapRow) + 'rpx; grid-row-gap:' + gapColumn + 'rpx; grid-column-gap:' + gapRow + 'rpx;grid-template-columns:repeat(auto-fit, ' + multipleSize + 'rpx);'
+    } else {
+        return 'width:' + (3 * multipleSize + 2 * gapRow) + 'rpx; grid-row-gap:' + gapColumn + 'rpx; grid-column-gap:' + gapRow + 'rpx;grid-template-columns:repeat(auto-fit, ' + multipleSize + 'rpx);'
+    }
+
+}
+
+var blockClass = function (urls, horizontalScreen) {
+    if (urls.length == 1) {
+        if (horizontalScreen) {
+            return 'l-single-image-class'
+        } else {
+            return 'vertical l-single-image-class'
+        }
+    } else {
+        return 'l-multi-image-class'
+    }
+}
+
+var blockStyle = function (urls, horizontalScreen, shortSideValue, singleSize, multipleSize) {
+    if (urls.length == 1) {
+        if (horizontalScreen) {
+            return 'height:' + shortSideValue + 'rpx;width:' + singleSize + 'rpx;'
+        } else {
+            return 'width:' + shortSideValue + 'rpx;height:' + singleSize + 'rpx;'
+        }
+    } else {
+        return 'height:' + multipleSize + 'rpx;width:' + multipleSize + 'rpx;'
+    }
+}
+
+module.exports = {
+    containerStyle: containerStyle,
+    blockClass: blockClass,
+    blockStyle: blockStyle
+}
