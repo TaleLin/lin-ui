@@ -1,0 +1,6 @@
+<wxs src="index.wxs" module="album"></wxs>
+<view class="container l-class" style="{{album.containerStyle(urls, multipleSize, gapRow, gapColumn)}}">
+    <block wx:for="{{urls}}" wx:key="index">
+        <image id='{{index}}' bind:tap="onPreviewTap" class="{{album.blockClass(urls, horizontalScreen)}}" style="{{album.blockStyle(urls, horizontalScreen, shortSideValue, singleSize, multipleSize)}}" src="{{newType?item[key]:item}}" mode="{{urls.length == 1?singleMode:multipleMode}}" />
+    </block>
+</view>
