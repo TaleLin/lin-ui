@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "l-skeleton": "/dist/skeleton/index",
+    "l-button": "/dist/button/index",
+    "l-icon":"/dist/icon/index",
+    "l-card":"/dist/card/index",
+    "l-tag":"/dist/tag/index"
+  }
+}
