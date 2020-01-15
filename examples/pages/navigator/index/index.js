@@ -4,7 +4,8 @@ Page({
   data: {
     naviConfigs: naviConfigs
   },
-  onLoad() {
+
+  onLoad: function() {
   },
 
   onShareAppMessage() {

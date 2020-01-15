@@ -11,7 +11,7 @@ const badgeNaviConfigs = [{
   },
   {
     title: "数字显示方式",
-    count: 1100,
+    count: 1000,
     content: '',
     maxCount: 99,
     dot: false,

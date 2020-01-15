@@ -16,10 +16,6 @@ Component({
       type:String,
       value:'left'
     },
-    imageMode:{
-      type:String,
-      value: 'aspectFit'
-    },
     type: {
       type: String,
       value: 'primary'

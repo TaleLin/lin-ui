@@ -27,14 +27,6 @@
     </l-steps>
   </content-card>
 
-  <content-card name="步骤条顺序" cardPadding="{{false}}">
-    <l-steps direction="column" reverse active-index="1">
-      <l-step title="已支付" describe="11:30" />
-      <l-step title="备餐中" describe="12:30" />
-      <l-step title="配送中" describe="13:30" />
-    </l-steps>
-  </content-card>
-
   <content-card name="设置步骤条元素图标" cardPadding="{{false}}">
     <l-steps dot direction="column" active-index="1">
       <l-step icon="cart" title="已支付" describe="11:30" />

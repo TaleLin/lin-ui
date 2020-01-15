@@ -1,7 +1,7 @@
 const priceNaviConfigs = [{
   title: "基础用法（max=10,min=1,count=1）",
   config: [{
-    count: 5,
+    count: 1,
     min: 1,
     max: 10,
     step: 1,

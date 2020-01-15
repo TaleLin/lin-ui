@@ -1,0 +1,18 @@
+{
+  "usingComponents": {
+    "content-title": "/components/content-title/index",
+    "content-card": "/components/content-card/index",
+    "l-form": "/dist/form/index",
+    "l-form-item": "/dist/form-item/index",
+    "l-checkbox-group": "/dist/checkbox-group/index",
+    "l-checkbox": "/dist/checkbox/index",
+    "l-toast": "/dist/toast/index",
+    "l-message": "/dist/message/index",
+    "l-input": "/dist/input/index",
+    "l-textarea": "/dist/textarea/index",
+    "l-radio-group": "/dist/radio-group/index",
+    "l-radio": "/dist/radio/index",
+    "l-rate": "/dist/rate/index",
+    "l-button": "/dist/button/index"
+  }
+}

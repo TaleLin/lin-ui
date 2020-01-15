@@ -6,7 +6,7 @@
         <l-tag l-class="tag" bg-color="{{tag.bgColor}}" font-color="{{tag.fontColor}}" size="{{tag.size}}" shape="{{tag.shape}}" plain="{{tag.plain}}" icon-name="{{tag.iconName}}" location="{{tag.location}}" icon-size="{{tag.iconSize}}" icon-color="{{tag.iconColor}}" disable="{{tag.disable}}">{{tag.content}}</l-tag>
       </block>
     </view>
-    
+
   </content-card>
 
   <content-card name="可选中标签">

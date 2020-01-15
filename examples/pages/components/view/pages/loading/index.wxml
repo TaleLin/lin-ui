@@ -1,4 +1,3 @@
-
 <content-title name="Loading" describe="加载中">
   <content-card name="{{item.title}}" wx:for="{{loadingNaviConfigs}}" wx:key="{{item.type}}">
     <view class="spin-container" wx:for="{{item.config}}" wx:for-item="loading" wx:key="loading">
@@ -10,17 +9,6 @@
       <view class="spin-bottom">{{loading.name}}</view>
     </view>
   </content-card>
-
-  <content-card
-    class="content"
-    name="指定loading区域"
-  >
-    <l-loading show="{{true}}" type="circle" custom l-class="position-top" z-index="112">
-      <view slot="content" style="height: 300px;">1111</view>
-      <image class='custom-img' src='/images/static/loading.gif'></image>
-    </l-loading>
-  </content-card>
-
 
   <!-- 全屏模式 -->
   <content-card
