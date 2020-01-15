@@ -13,8 +13,8 @@ Component({
     },
     // 动画效果的显示和隐藏
     animation: {
-      type: String,
-      value: 'show'
+      type: Boolean,
+      value: true
     },
     // slot的位置
     contentAlign: {
@@ -41,7 +41,7 @@ Component({
    * 组件的初始数据
    */
   data: {
-
+    status: 'show'
   },
 
   /**
@@ -53,7 +53,7 @@ Component({
       wx.lin.showPopup = (options) => {
         const {
           zIndex = 99,
-          animation = 'show',
+          animation = true,
           contentAlign = 'center',
           locked = false
         } = { ...options };
@@ -67,8 +67,13 @@ Component({
       };
       wx.lin.hidePopup = () => {
         this.setData({
-          show: false
+          status: 'hide'
         });
+        setTimeout(()=>{
+          this.setData({
+            show: false
+          });
+        },300);
       };
     },
     // 阻止滑动
@@ -84,9 +89,25 @@ Component({
       let detail = true;
       let option = { bubbles: true, composed: true };
       if (this.data.locked !== true) {
-        this.setData({
-          show: !this.data.show
-        });
+        if(!this.data.show) {
+          this.setData({
+            show: true,
+            status: 'show'
+          });
+        } else {
+          this.setData({
+            status: 'hide'
+          });
+          setTimeout(()=>{
+            this.setData({
+              show: false,
+              status: 'show'
+            });
+          },300);
+        }
+        // this.setData({
+        //   show: !this.data.show
+        // });
       }
 
       this.triggerEvent('lintap', detail, option);

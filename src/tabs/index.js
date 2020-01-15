@@ -27,9 +27,6 @@ Component({
       linked() {
         // 每次有子节点被插入时执行，target是该节点实例对象，触发在该节点attached生命周期之后
         this.initTabs();
-      },
-      unlinked() {
-        this.initTabs();
       }
     },
 
@@ -44,7 +41,6 @@ Component({
     activeKey: {
       type: String,
       value: '',
-      observer: 'changeCurrent'
     },
     placement: {
       type: String,
@@ -78,6 +74,19 @@ Component({
     currentIndex: 0,
     transformX: 0,
     transformY: 0,
+  },
+  observers: {
+    'activeKey': function (newKey) {
+      if(!newKey) return;
+      const index = this.data.tabList.findIndex(tab=>tab.key===newKey);
+      this.setData({
+        currentIndex:index
+      },() => {
+        if (this.data.scrollable) {
+          this.queryMultipleNodes();
+        }
+      });
+    }
   },
 
   ready() {

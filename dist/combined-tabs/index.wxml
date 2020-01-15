@@ -4,10 +4,10 @@
     <view class="l-tabs l-sub-placement-left l-tabs-vertical {{aminmated ? 'l-aminmated' :''}}  {{scrollable ? 'l-tabs-scroll':''}}">
         <template is="tab-header" wx:if="{{tabList[currentIndex].subTabs.length}}" data="{{tab:tabList[currentIndex].subTabs,placemanet,scrollable,transformY,transformX,activeKey:tabList[currentIndex].activeSubKey,hasLine,activeColor,inactiveColor,headerType:'subTab'}}"></template>
         <view class="l-tabs-main">
-            <view wx:if="{{!swipeable}}" class="l-tabpanel-content" style="{{'margin-left:'+ -100 *currentIndex +'%;'}}">
+            <view wx:if="{{!swipeable}}" class="l-tabpanel-content">
                 <view class="l-tabpanel {{item.key===activeKey?'l-tabpanel-active':'l-tabpanel-inactive'}}" wx:for="{{tabList}}" wx:key="{{item.key}}" style="{{placement=='left'||placement=='right' ? 'position:absolute;width:100%;height:100%;transform:translate(0,'+ 100 * index +'%) translateZ(0px);':''}}">
-                    <view class="l-tabpanel-content" wx:if="{{item.subTabs.length>0}}" style="{{'transform:translate(0,'+ -100 * item.subCurrentIndex +'%) translateZ(0px);'}}">
-                        <view class="l-tabpanel" wx:for="{{item.subTabs}}" wx:for-item="tab" wx:key="{{tab.key}}">
+                    <view class="l-subpanel-content" wx:if="{{item.subTabs.length>0}}" style="{{'transform:translate(0,'+ -100 * item.subCurrentIndex +'%) translateZ(0px);'}}">
+                        <view class="l-subpanel" wx:for="{{item.subTabs}}" wx:for-item="tab" wx:key="{{tab.key}}">
                             <slot name="{{tab.key}}"></slot>
                         </view>
                     </view>
