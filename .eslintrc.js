@@ -41,5 +41,6 @@ module.exports = {
             allow: ["info", "warn", "error"]
         }], //  不建议使用console.log
         "no-undef": [2], // 禁用未声明的变量
+        'no-useless-escape': 'off', //关闭不必要转义字符的检测
     }
 }
