@@ -55,7 +55,7 @@ export default Behavior({
         //   item.trigger = ['blur'];
         //   return;
         // }
-      })
+      });
 
     },
     getNeedValidateRule(type) {
