@@ -1,6 +1,6 @@
 // input/input.js
 import rules from '../behaviors/rules';
-import eventBus from "../utils/eventBus";
+import eventBus from '../utils/eventBus';
 
 Component({
   /**
@@ -105,10 +105,10 @@ Component({
       this.triggerEvent('linconfirm', event.detail);
     },
     getValues() {
-      return this.data.value
+      return this.data.value;
     },
     reset() {
-      this.data.value = ''
+      this.data.value = '';
     }
     // onClearTap(e) {
     //   this.setData({ value: '' })

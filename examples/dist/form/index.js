@@ -1,4 +1,4 @@
-import eventBus from '../utils/eventBus.js'
+import eventBus from '../utils/eventBus.js';
 Component({
   /**
      * 组件的属性列表
@@ -103,8 +103,11 @@ Component({
       return currentTarget.data.errors;
     },
 
-    _forEachNodes(func) {
-      const items = this.getRelationNodes('../form-item/index');
+    _forEachNodes(func, isReverse) {
+      let items = this.getRelationNodes('../form-item/index');
+      if (isReverse) {
+        items.reverse();
+      }
       items.forEach((item, index) => {
         func(item, index);
       });
@@ -125,7 +128,7 @@ Component({
         }
         this._errors[id] = item.data.errors;
         formErrors = formErrors.concat(item.data.errors);
-      });
+      }, true);
       return formErrors;
     },
 
@@ -162,7 +165,7 @@ Component({
         if(formItem) {
           formItem.reset();
         }
-      })
+      });
     }
   }
 });

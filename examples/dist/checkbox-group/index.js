@@ -1,4 +1,4 @@
-import eventBus from "../utils/eventBus";
+import eventBus from '../utils/eventBus';
 
 Component({
   behaviors: ['wx://form-field'],
@@ -94,20 +94,20 @@ Component({
       delete this._selected[key];
     },
     addSelect(currentItem) {
-      let {key, ...obj} = currentItem
+      let {key, ...obj} = currentItem;
       this._selected[key] = {...obj, value: key};
     },
     getValues() {
-      return Object.values(this._selected)
+      return Object.values(this._selected);
     },
     reset() {
-      this._selected = {}
+      this._selected = {};
       const list =  this.getRelationNodes('../checkbox/index');
       return list.forEach(item => {
         return item.setData({
           checked: false
-        })
-      })
+        });
+      });
     }
 
   }
