@@ -3,7 +3,7 @@
         <view  class="l-item-button l-class-title l-title-class" wx:if="{{title}}">
             {{ title }}
         </view>
-        <view wx:for="{{ itemList }}" wx:key="{{ item.name }}" hover-class="{{isHover?'list-hover':''}}">
+        <view wx:for="{{ itemList }}" wx:key="name" hover-class="{{isHover?'list-hover':''}}">
             <l-button bind:lintap="handleClickItem" data-index="{{ index }}" data-item="{{ item }}" open-type="{{ item.openType }}" icon="{{ item.icon }}" type="ghost" size="large" special="{{true}}" long>
                 <view style="{{ item.color ? 'color: ' + item.color : '' }}" class="l-item-button l-class-item l-item-class {{item.image || item.icon ? 'l-image-button':''}}">
                     <image wx:if="{{item.image}}" class="l-button-image" src="{{item.image}}" style="{{item.imageStyle}}"/>

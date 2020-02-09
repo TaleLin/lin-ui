@@ -1,4 +1,4 @@
-import eventBus from "../utils/eventBus";
+import eventBus from '../utils/eventBus';
 
 Component({
   /**
@@ -59,7 +59,7 @@ Component({
       eventBus.emit(`lin-form-change-${this.id}`,this.id);
     },
     getValues() {
-      return this.data.score
+      return this.data.score;
     },
     reset() {
       this.setData({

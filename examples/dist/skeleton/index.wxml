@@ -14,7 +14,7 @@
 
     <view wx:if="{{paragraph}}"
           wx:for="{{r}}"
-          wx:key="{{index}}"
+          wx:key="index"
           class="l-row-class l-skeleton-rows bg {{active?'active':''}}"
           style="height:{{item.height}};width:{{item.width}}"
     ></view>

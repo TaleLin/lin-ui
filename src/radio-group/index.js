@@ -1,4 +1,4 @@
-import eventBus from "../utils/eventBus";
+import eventBus from '../utils/eventBus';
 
 Component({
   externalClasses: ['l-class', 'l-error-text', 'l-error-text-class'],
@@ -96,10 +96,10 @@ Component({
       eventBus.emit(`lin-form-change-${this.id}`,this.id);
     },
     getValues() {
-      return this.data.current
+      return this.data.current;
     },
     reset() {
-      this.data.current = ''
+      this.data.current = '';
     }
   },
   observers: {
