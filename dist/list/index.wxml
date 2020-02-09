@@ -1,9 +1,9 @@
 <view class="l-list l-class" hover-class="{{isHover?'l-list-hover':''}}" hover-start-time="20" hover-stay-time="50"  style="{{gap?'padding:0 '+gap+'rpx;':''}} {{leftGap?'padding-left:'+leftGap+'rpx':''}} {{rightGap?'padding-right:'+rightGap+'rpx':''}}" bind:tap="tapcell" data-url="{{url}}" data-link-type="{{linkType}}">
     <!-- left -->
     <l-badge wx:if="{{(badgeCount > 0 || dotBadge ) && badgePosition ==='left'}}" value="{{badgeCount}}" dot="{{dotBadge}}" max-count="{{badgeMaxCount}}" number-type="{{badgeCountType}}">
-        <template is="cell-left-main" data="{{image,icon,title,desc,tagContent,tagPosition,tagColor,tagShape,tagPlain}}" />
+        <template is="cell-left-main" data="{{image,icon,iconSize,iconColor,title,desc,tagContent,tagPosition,tagColor,tagShape,tagPlain}}" />
     </l-badge>
-    <template is="cell-left-main" data="{{image,icon,title,desc,tagContent,tagPosition,tagColor,tagShape,tagPlain}}" wx:else />
+    <template is="cell-left-main" data="{{image,icon,iconSize,iconColor,title,desc,tagContent,tagPosition,tagColor,tagShape,tagPlain}}" wx:else />
     <!-- right -->
     <l-badge l-class="badge-right" wx:if="{{(badgeCount > 0 || dotBadge ) && badgePosition ==='right'}}" value="{{badgeCount}}" dot="{{dotBadge}}" max-count="{{badgeMaxCount}}" number-type="{{badgeCountType}}">
         <template is="cell-right-main" data="{{rightDesc,tagContent,tagPosition,isLink,tagColor,tagShape,tagPlain}}" />
