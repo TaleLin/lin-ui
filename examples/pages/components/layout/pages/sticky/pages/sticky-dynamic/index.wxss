@@ -21,10 +21,6 @@
 } 
 
 
-page {
-  padding-bottom: 1000rpx;
-}
-
 .container {
   max-width: 100vw;
   overflow: visible;
