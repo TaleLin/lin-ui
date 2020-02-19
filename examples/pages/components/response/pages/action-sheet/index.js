@@ -6,17 +6,20 @@ Page({
    */
   data: {
     show:false,
-    shareList: [{
-        name: '保存海报分享',
-        image:'/images/response/picture.png', 
-        imageStyle:'width:40rpx;height:40rpx;',
-        color:'#3683D6'    
-      },
+    shareList: [
       {
         name: '转发给好友',
         icon: 'share',
+        iconSize: '26',
         color:'#F4516C'
-      }
+      },
+      {
+        name: '保存海报分享',
+        image: '/images/response/picture.png',
+
+        imageStyle: 'width:40rpx;height:40rpx;',
+        color: '#3683D6'
+      },
     ],
 
     itemList: [{

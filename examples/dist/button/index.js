@@ -1,5 +1,11 @@
 Component({
-  externalClasses: ['l-class', 'l-hover-class', 'l-img-class','l-icon-class'],
+  externalClasses: [
+    'l-class', 
+    'l-label-class',
+    'l-hover-class', 
+    'l-img-class',
+    'l-icon-class'
+  ],
   properties: {
     // button组建标识
     name: {
