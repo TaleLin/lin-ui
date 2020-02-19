@@ -4,6 +4,7 @@ const {
   parallel
 } = require('gulp');
 const less = require('gulp-less');
+const uglify = require('gulp-uglify');
 const cssmin = require('gulp-clean-css');
 const rename = require('gulp-rename');
 const del = require('del');

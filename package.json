@@ -41,6 +41,7 @@
     "gulp-clean-css": "^3.9.3",
     "gulp-less": "^4.0.0",
     "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^3.0.2",
     "gulp-util": "^3.0.8",
     "jest": "^24.8.0",
     "less": "^2.7.3",
