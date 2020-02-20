@@ -1,9 +1,13 @@
 const {
   buildWxss,
+  buildWxml,
+  buildImage,
+  buildJson,
+  buildJs,
   copyStatic,
   clean,
   copy
-} = require('./build');
+} = require('./task');
 const {
   series,
   parallel,
@@ -30,6 +34,23 @@ module.exports = {
         `!${srcProPath}/_*.less`,
         distPath
       ),
+      buildWxml(
+        `${srcProPath}/*.wxml`,
+        `!${srcProPath}/_*.wxml`,
+        distPath
+      ),
+      buildImage(
+        `${srcProPath}/*.png`,
+        distPath
+      ),
+      buildJson(
+        `${srcProPath}/*.json`,
+        distPath
+      ),
+      buildJs(
+        `${srcProPath}/*.js`,
+        distPath
+      ),
       copyStatic(
         srcProPath,
         distPath
@@ -46,7 +67,8 @@ module.exports = {
       ),
       copyStatic(
         srcDevPath,
-        examplePath
+        examplePath,
+        'dev'
       )
     )
   ),

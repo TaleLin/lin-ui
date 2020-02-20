@@ -1,6 +1,1 @@
-{
-  "component": true,
-  "usingComponents": {
-    "l-button":"../button/index"
-  }
-}
+{"component":true,"usingComponents":{"l-button":"../button/index"}}

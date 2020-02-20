@@ -1,6 +1,6 @@
 <view wx:if="{{show}}" class="l-status-container l-class {{fullScreen ? 'content': ''}}" style="{{'background:'+bgColor}}" bind:tap="tapStatusShow">
   <block wx:if="{{custom}}">
-    <slot />
+    <slot/>
   </block>
   <block wx:else>
     <image wx:if="{{image}}" class="left-img l-image-class {{fullScreen ? 'image_margin_top': ''}}" src="{{image}}"></image>

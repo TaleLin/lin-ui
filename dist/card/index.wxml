@@ -3,7 +3,7 @@
     <image wx:if="{{!plaintext}}" class="l-img-class {{full?'cover-img-full':'cover-img-unfull'}} {{ 'card-img-' + type }} {{ 'card-img-' + type + '-' + position }}" mode="{{imageMode}}" lazy-load src="{{image}}"></image>
     <view class="card-content">
       <text class="l-title-class card-title {{'card-title-' + type}}">{{title}}</text>
-      <slot />
+      <slot/>
     </view>
   </block>
   <block wx:if="{{type ==='avatar'}}">
@@ -15,8 +15,8 @@
           <text class="describe">{{describe}}</text>
         </view>
       </view>
-      <slot name="more" />
+      <slot name="more"/>
     </view>
-    <slot />
+    <slot/>
   </block>
 </view>
