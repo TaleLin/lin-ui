@@ -38,7 +38,7 @@
       "@commitlint/config-conventional"
     ]
   },
-  "homepage": "https://github.com/TaleLin/lin-ui#readme",
+  "homepage": "http://doc.mini.7yue.pro",
   "devDependencies": {
     "@commitlint/cli": "^8.3.5",
     "@commitlint/config-conventional": "^8.3.4",
