@@ -1,16 +1,14 @@
-<!-- 内容插槽 -->
-<slot name="content" />
+
+<slot name="content"/>
 <view bindtap="onLoadmore" wx:if="{{show}}">
   <view wx:if="{{custom && type==='end'}}">
-    <slot name="end" />
+    <slot name="end"/>
   </view>
   <view wx:elif="{{custom && type==='loading'}}">
-    <slot name="loading" />
+    <slot name="loading"/>
   </view>
   <view class="loading l-class" wx:else>
-    <view class="line" 
-          style="{{'background-color:'+color}}" 
-          wx:if="{{line}}"></view>
+    <view class="line" style="{{'background-color:'+color}}" wx:if="{{line}}"></view>
     <view class="rotate" style="border-color: {{color}};width:{{size}}rpx;height:{{size}}rpx" wx:if="{{type=='loading'}}"></view>
     <view class="loading-text l-loading-class" style="color:{{color}};font-size:{{size}}rpx" wx:if="{{type=='loading'}}">{{loadingText}}</view>
     <view class="loading-text l-end-class" style="{{'color:'+color}};font-size:{{size}}rpx" wx:if="{{type=='end'}}">{{endText}}</view>

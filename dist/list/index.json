@@ -1,8 +1,1 @@
-{
-    "component": true,
-    "usingComponents": {
-      "l-icon":"../icon/index",
-      "l-badge":"../badge/index",
-      "l-tag":"../tag/index"
-    }
-  }
+{"component":true,"usingComponents":{"l-icon":"../icon/index","l-badge":"../badge/index","l-tag":"../tag/index"}  }
