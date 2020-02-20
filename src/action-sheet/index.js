@@ -1,5 +1,5 @@
 import zIndex from '../behaviors/zIndex';
-import hover from '../behaviors/hover'
+import hover from '../behaviors/hover';
 
 Component({
   behaviors: [zIndex,hover],

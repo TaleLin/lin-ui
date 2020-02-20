@@ -59,7 +59,7 @@
     "gulp-rename": "^1.2.2",
     "gulp-uglify-es": "^2.0.0",
     "gulp-util": "^3.0.8",
-    "husky": "^4.2.3",
+    "husky": "^1.0.0-rc.6",
     "jest": "^24.8.0",
     "less": "^2.7.3",
     "lodash": "^4.17.15",
