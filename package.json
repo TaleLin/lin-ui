@@ -27,8 +27,21 @@
   "files": [
     "dist"
   ],
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint",
+      "commit-msg": "commitlint -e $GIT_PARAMS"
+    }
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
   "homepage": "https://github.com/TaleLin/lin-ui#readme",
   "devDependencies": {
+    "@commitlint/cli": "^8.3.5",
+    "@commitlint/config-conventional": "^8.3.4",
     "child_process": "^1.0.2",
     "del": "^5.0.0",
     "eslint": "^5.0.1",
@@ -46,6 +59,7 @@
     "gulp-rename": "^1.2.2",
     "gulp-uglify-es": "^2.0.0",
     "gulp-util": "^3.0.8",
+    "husky": "^4.2.3",
     "jest": "^24.8.0",
     "less": "^2.7.3",
     "lodash": "^4.17.15",
