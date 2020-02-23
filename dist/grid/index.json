@@ -1,6 +1,1 @@
-{
-    "component": true,
-    "usingComponents": {
-      "l-grid-item":"../grid-item/index"
-    }
-  }
+{"component":true,"usingComponents":{"l-grid-item":"../grid-item/index"}  }

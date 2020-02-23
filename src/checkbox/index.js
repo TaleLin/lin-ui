@@ -98,7 +98,7 @@ Component({
 
       const limit = parent.properties[type];
       if (!limit) return false;
-      const selectedLength = parent._selected();
+      const selectedLength = Object.values(parent._selected).length;
       let isOverflow = type === 'minSelected' ? selectedLength <= limit : selectedLength >= limit;
       if (isOverflow) {
         let backType = type === 'minSelected' ? 'min_selected' : 'max_selected';

@@ -1,3 +1,5 @@
+import eventBus from '../utils/eventBus';
+
 Component({
   /**
      * 组件的属性列表
@@ -51,9 +53,18 @@ Component({
       if(this.data.disabled) return;
       const {index} = e.currentTarget.dataset;
       this.setData({
-        score:index + 1 
+        score:index + 1
       });
       this.triggerEvent('linchange',{score:index+1});
+      eventBus.emit(`lin-form-change-${this.id}`,this.id);
+    },
+    getValues() {
+      return this.data.score;
+    },
+    reset() {
+      this.setData({
+        score:0
+      });
     }
   }
 });

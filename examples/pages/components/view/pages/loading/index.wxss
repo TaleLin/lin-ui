@@ -15,12 +15,12 @@
   display: flex;
   flex-direction: column;
   width: 710rpx;
-  height: 330rpx;
+  height: 230rpx;
   margin-bottom: 20rpx;
 }
 
 .spin-top {
-  height: 280rpx;
+  height: 180rpx;
   width: 710rpx;
   display: flex;
   align-items: center;
@@ -49,10 +49,4 @@
 
 .l-container{
   background: #f1f1f1 !important;
-}
-.position-top{
-  /*position: relative !important;*/
-  transform: translate(-50%,0) !important;
-  /*left: 0 !important;*/
-  top: 100rpx !important;
 }

@@ -1,10 +1,1 @@
-import rules from '../rule/index.js';
-
-function required(rule, value, callback, source, options) {
-  const errors = [];
-  const type = Array.isArray(value) ? 'array' : typeof value;
-  rules.required(rule, value, source, errors, options, type);
-  callback(errors);
-}
-
-export default required;
+import rules from"../rule/index.js";function required(r,e,u,i,o){const t=[],a=Array.isArray(e)?"array":typeof e;rules.required(r,e,i,t,o,a),u(t)}export default required;

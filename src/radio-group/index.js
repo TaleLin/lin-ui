@@ -1,3 +1,5 @@
+import eventBus from '../utils/eventBus';
+
 Component({
   externalClasses: ['l-class', 'l-error-text', 'l-error-text-class'],
   behaviors: ['wx://form-field'],
@@ -91,6 +93,13 @@ Component({
         bubbles: true,
         composed: true
       });
+      eventBus.emit(`lin-form-change-${this.id}`,this.id);
+    },
+    getValues() {
+      return this.data.current;
+    },
+    reset() {
+      this.data.current = '';
     }
   },
   observers: {

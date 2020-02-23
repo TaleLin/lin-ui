@@ -8,11 +8,12 @@ export default Behavior({
   properties: {
     // 校验
     rules: {
-      type: Object,
+      type: [Object,Array],
+      value: []
     },
     tipType: {
       type: String,
-      value: ''
+      value:'toast'
     }
   },
   data: {
@@ -26,37 +27,69 @@ export default Behavior({
       'toast': 'title',
     },
     errorText: '',
+    errors: []
   },
 
   methods: {
     initRules() {
+      // const rulesName = this.data.name;
+      const {
+        rules
+      } = this.data;
+      if (!rules) return;
+      // 如果rule 是单个object
+      if(Object.prototype.toString.call(rules) === '[object Object]') {
+        this.data.rules = [rules];
+      }
+
+      this.data.rules.forEach(item => {
+        if(!item.trigger) {
+          item.trigger = [];
+          return;
+        }
+        if(typeof item.trigger === 'string') {
+          item.trigger = [item.trigger];
+          return;
+        }
+        // if(Object.prototype.toString.call(item.trigger) === '[object Object]') {
+        //   item.trigger = ['blur'];
+        //   return;
+        // }
+      });
+
+    },
+    getNeedValidateRule(type) {
       const rulesName = this.data.name;
       const {
         rules
       } = this.data;
       if (!rules) return;
+
+      const list = type ? rules.filter(item => {
+        return item.trigger.indexOf(type) > -1;
+      }): rules;
       const schema = new Schema({
-        [rulesName]: this.data.rules,
+        [rulesName]: list,
       });
       this.setData({
         schema,
       });
+      return list;
     },
-    validatorData({
-      value
-    }) {
+    validatorData(value, type) {
       const {
-        rules,
         tipType,
         tipFun,
         tipContent
       } = this.data;
+      const rules = this.getNeedValidateRule(type);
 
       if (!rules) return;
-      const validateValue = {
-        [this.data.name]: value
-      };
-      this.data.schema.validate(validateValue, (errors) => {
+
+      this.data.schema.validate(value, (errors) => {
+        this.setData({
+          errors: errors || []
+        });
 
         this.triggerEvent('linvalidate', {
           errors,
@@ -70,7 +103,7 @@ export default Behavior({
             this.setData({
               errorText: errors[0].message
             });
-            return;
+            return errors;
           }
 
           if (!wx.lin || !wx.lin[funName]) {
@@ -78,7 +111,7 @@ export default Behavior({
               icon: 'none',
               title: `请在页面内引入${tipType}组件`
             });
-            return;
+            return errors;
           }
 
           wx.lin[funName] && wx.lin[funName]({
@@ -86,6 +119,7 @@ export default Behavior({
             duration: 1500,
             mask: false,
           });
+          return errors;
         } else if (!errors && tipType) {
           this.setData({
             errorText: ''

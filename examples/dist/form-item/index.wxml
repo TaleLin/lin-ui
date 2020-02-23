@@ -1,0 +1,16 @@
+<view class="l-form-item-class form-item-container {{'label-' + labelPlacement}} {{tipType === 'text' ? 'textHeight': ''}}">
+    <view
+        class="l-form-label-class label-text {{isRequired ? 'label-text-required': ''}} {{'label-text-' + labelPlacement+ '-' + alignItems}}"
+        style="min-width: {{labelPlacement==='row' ? labelWidth : '100%'}};max-width: {{labelPlacement==='row' ? labelWidth : '100%'}}">
+        <view wx:if="{{labelSlot}}">
+            <slot name="label" />
+        </view>
+        <view wx:else>
+            {{label}}
+        </view>
+    </view>
+    <view class="label-content l-form-content-class">
+        <slot />
+    </view>
+    <l-error-tip class="error-text" l-error-text-class="l-error-text-class" errorText="{{errorText}}" wx:if="{{errorText}}"/>
+</view>

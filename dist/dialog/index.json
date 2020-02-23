@@ -1,6 +1,1 @@
-{
-  "component": true,
-  "usingComponents": {
-    "l-popup": "../popup/index"
-  }
-}
+{"component":true,"usingComponents":{"l-popup":"../popup/index"}}

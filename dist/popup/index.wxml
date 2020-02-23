@@ -1,9 +1,7 @@
-<!-- popup.wxml -->
-<view class='container-popup {{ show ? "popup-show" : "" }}   {{ "l-popup-" + contentAlign }}  ' style="z-index:{{zIndex}}; " catchtouchmove="doNothingMove">
-  <view class='container-bg l-bg-class'></view>
-  <view
-    wx:if="{{show}}"
-    class="popup-content {{ show ? contentAlign : ''}}   popup-fade-{{contentAlign}}-active-{{animation ? status:''}}" catchtap='onPupopTap'>
+
+<view class='container-popup {{ show ? "popup-show" : "" }} {{ "l-popup-" + contentAlign }}' style="z-index:{{zIndex}};" catchtouchmove="doNothingMove">
+  <view class="container-bg l-bg-class"></view>
+  <view wx:if="{{show}}" class="popup-content {{ show ? contentAlign : ''}} popup-fade-{{contentAlign}}-active-{{animation ? status:''}}" catchtap="onPupopTap">
     <view catchtap="doNothingTap">
       <slot></slot>
     </view>

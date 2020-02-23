@@ -1,0 +1,210 @@
+<view style="background:#fff">
+    <content-title name="Form" describe="表单">
+        <content-card
+            class="content"
+            name="基本案例"
+        >
+            <view class='buttun-wrapper'>
+                <l-form name="student" l-form-btn-class="l-form-btn-class" bind:linsubmit="submit">
+                    <l-form-item label="姓名:" name="studentName">
+                        <l-input id="studentName" value="{{student.name}}" hide-label show-row="{{false}}"/>
+                    </l-form-item>
+
+                    <l-form-item label="年龄:" name="studentAge">
+                        <l-input id="studentAge" value="{{student.age}}" hide-label show-row="{{false}}"/>
+                    </l-form-item>
+
+                    <l-form-item label="地址:" name="studentAddress">
+                        <l-input id="studentAddress" value="{{student.address}}" hide-label show-row="{{false}}"/>
+                    </l-form-item>
+
+
+                    <view slot="submit">
+                        <l-button>提交</l-button>
+                    </view>
+                    <view slot="reset">
+                        <l-button type="default" plain>重置</l-button>
+                    </view>
+                </l-form>
+
+            </view>
+        </content-card>
+        <content-card
+            class="content"
+            name="基本案例"
+        >
+            <view class='buttun-wrapper'>
+                <l-form name="form" bind:linsubmit="submit" l-form-btn-class="l-form-btn-class">
+                    <l-form-item label="填写姓名:" name="name">
+                        <l-input id="name" value="{{form.name}}" hide-label show-row="{{false}}"/>
+                    </l-form-item>
+                    <l-form-item label="选择歌曲:" name="music" >
+                        <l-checkbox-group bind:linchange="change" id="music" placement="row">
+                            <l-checkbox
+                                l-class="l-checkbox-color"
+                                wx:for="{{items}}"
+                                wx:key="{{item.id}}"
+                                placement="{{position}}"
+                                key="{{item.name}}"
+                                checked="{{item.checked}}"
+                            >
+                                {{item.name}}
+                            </l-checkbox>
+                        </l-checkbox-group>
+                    </l-form-item>
+                    <l-form-item label="选择性别:" name="sex">
+                        <l-radio-group id="sex" placement="row">
+                            <l-radio key="0">
+                                男
+                            </l-radio>
+                            <l-radio key="1">
+                                女
+                            </l-radio>
+                        </l-radio-group>
+                    </l-form-item>
+                    <l-form-item label="自我评分:" name="score">
+                        <l-rate id="score" value="{{form.score}}" />
+                    </l-form-item>
+                    <l-form-item label="性格描述:" name="desc">
+                        <l-textarea border="{{false}}" id="desc" value="{{form.desc}}" />
+                    </l-form-item>
+
+                    <view slot="submit">
+                        <l-button>提交验证</l-button>
+                    </view>
+                    <view slot="reset">
+                        <l-button type="default" plain>重置</l-button>
+                    </view>
+                </l-form>
+
+            </view>
+        </content-card>
+
+        <content-card
+                class="content"
+                name="带验证的表单"
+        >
+            <view class='buttun-wrapper'>
+                <l-form name="loginForm" bind:linsubmit="submit" l-form-btn-class="l-form-btn-class">
+                    <l-form-item label="账号:" name="loginFormLoginId" rules="{{loginForm.loginIdRules}}">
+                        <l-input id="loginFormLoginId" value="{{loginForm.loginId}}" hide-label show-row="{{false}}"/>
+                    </l-form-item>
+
+                    <l-form-item label="密码:" name="loginFormPassword" rules="{{loginForm.passwordRules}}">
+                        <l-input id="loginFormPassword" value="{{loginForm.password}}" hide-label show-row="{{false}}"/>
+                    </l-form-item>
+
+                    <view slot="submit">
+                        <l-button>注册</l-button>
+                    </view>
+                    <view slot="reset">
+                        <l-button type="default" plain>重置</l-button>
+                    </view>
+                </l-form>
+            </view>
+        </content-card>
+
+        <content-card
+            class="content"
+            name="带验证的表单"
+        >
+            <view class='buttun-wrapper'>
+                <view class="tip-type">
+                    <view>提醒方式</view>
+                    <l-button bind:tap="changeTipType" size="mini" data-type="text">text</l-button>
+                    <l-button bind:tap="changeTipType" size="mini"  data-type="message">message</l-button>
+                    <l-button bind:tap="changeTipType" size="mini"  data-type="toast">toast</l-button>
+                </view>
+                <view class="tip-type">
+                    <view>label对齐方式</view>
+                    <l-button bind:tap="changeAlignType" size="mini" data-type="start">左对齐</l-button>
+                    <l-button bind:tap="changeAlignType" size="mini"  data-type="center">居中</l-button>
+                    <l-button bind:tap="changeAlignType" size="mini"  data-type="end">右对齐</l-button>
+                </view>
+                <view class="tip-type">
+                    <view>提交时是否验证</view>
+                    <l-radio-group bind:linchange="changeSubmitValidate" current="{{isSubmitValidate}}" placement="row">
+                        <l-radio key="1">
+                            是
+                        </l-radio>
+                        <l-radio key="0">
+                            否
+                        </l-radio>
+                    </l-radio-group>
+                </view>
+                <l-form is-submit-validate="{{isSubmitValidate == 1}}" name="ruleForm" bind:linsubmit="submit" l-form-btn-class="l-form-btn-class">
+                    <l-form-item tip-type="{{tipType}}" align-items="{{alignType}}" label="填写姓名:" name="ruleName" rules="{{nameRules}}">
+                        <l-input id="ruleName" value="{{ruleForm.name}}" hide-label show-row="{{false}}"/>
+                    </l-form-item>
+                    <l-form-item tip-type="{{tipType}}" align-items="{{alignType}}" rules="{{musicRules}}" label="选择歌曲:" name="ruleMusic" >
+                        <l-checkbox-group bind:linchange="change2" id="ruleMusic" placement="row">
+                            <l-checkbox
+                                l-class="l-checkbox-color"
+                                wx:for="{{items2}}"
+                                wx:key="{{item.id}}"
+                                placement="{{position}}"
+                                key="{{item.name}}"
+                                    checked="{{item.checked}}"
+                            >
+                                {{item.name}}
+                            </l-checkbox>
+                        </l-checkbox-group>
+                    </l-form-item>
+                    <l-form-item tip-type="{{tipType}}" align-items="{{alignType}}" label="选择性别:" name="ruleSex">
+                        <l-radio-group id="ruleSex" placement="row">
+                            <l-radio key="0">
+                                男
+                            </l-radio>
+                            <l-radio key="1">
+                                女
+                            </l-radio>
+                        </l-radio-group>
+                    </l-form-item>
+                    <l-form-item tip-type="{{tipType}}" align-items="{{alignType}}" rules="{{scoreRules}}" label="自我评分:" name="ruleScore">
+                        <l-rate id="ruleScore" value="{{ruleForm.score}}" />
+                    </l-form-item>
+                    <l-form-item tip-type="{{tipType}}" align-items="{{alignType}}" rules="{{descRules}}" label="性格描述:" name="ruleDesc">
+                        <l-textarea border="{{false}}" id="ruleDesc" value="{{ruleForm.desc}}" />
+                    </l-form-item>
+
+                    <view slot="submit">
+                        <l-button>提交验证</l-button>
+                    </view>
+                    <view slot="reset">
+                        <l-button type="default" plain>重置</l-button>
+                    </view>
+                </l-form>
+            </view>
+        </content-card>
+
+        <content-card
+            class="content"
+            name="联合校验"
+        >
+            <view class='buttun-wrapper'>
+                <l-form name="register" l-form-btn-class="l-form-btn-class">
+                    <l-form-item tip-type="text" label="登录账号:" name="loginId" rules="{{loginIdRules}}">
+                        <l-input id="loginId" value="{{register.loginId}}" hide-label show-row="{{false}}"/>
+                    </l-form-item>
+
+                    <l-form-item tip-type="text" label="登录密码:" name="password" rules="{{passwordRules}}">
+                        <l-input id="password" value="{{register.password}}" hide-label show-row="{{false}}"/>
+                    </l-form-item>
+                    <l-form-item tip-type="text" label="确认密码:" name="confirm" rules="{{confirmRules}}">
+                        <l-input id="confirm" value="{{register.confirm}}" hide-label show-row="{{false}}"/>
+                    </l-form-item>
+
+                    <view slot="submit">
+                        <l-button>注册</l-button>
+                    </view>
+                    <view slot="reset">
+                        <l-button type="default" plain>重置</l-button>
+                    </view>
+                </l-form>
+            </view>
+        </content-card>
+    </content-title>
+
+    <l-toast></l-toast>
+    <l-message></l-message>
+</view>

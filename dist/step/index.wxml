@@ -1,16 +1,12 @@
-<view class="step {{'step-'+direction}} l-class"  
-      style="{{direction==='row'?'width:'+(1/length)*stepsWidth+'px':'min-height:'+stepMinHeight+'rpx'}}">
+<view class="step {{'step-'+direction}} l-class" style="{{direction==='row'?'width:'+(1/length)*stepsWidth+'px':'min-height:'+stepMinHeight+'rpx'}}">
   <view class="step-container l-step-class {{'step-container-'+direction}}">
     <view wx:if="{{custom}}" class="step-custom">
       <slot name="dot"/>
     </view>
-    <view wx:else
-          class="l-step-class {{dot && !icon?'step-dot-'+currentStatus.setStatus(activeIndex,index,status)+' step-dot':'step-'+currentStatus.setStatus(activeIndex,index,status)+' step-icon'}}"
-          style="{{dot?currentStatus.dotStyle(activeIndex,index,color):currentStatus.statusStyle(activeIndex,index,color,status)}}">
+    <view wx:else class="l-step-class {{dot && !icon?'step-dot-'+currentStatus.setStatus(activeIndex,index,status)+' step-dot':'step-'+currentStatus.setStatus(activeIndex,index,status)+' step-icon'}}" style="{{dot?currentStatus.dotStyle(activeIndex,index,color):currentStatus.statusStyle(activeIndex,index,color,status)}}">
       <l-icon wx:if="{{icon}}" name="{{icon}}" size="{{iconSize}}" color="{{(currentStatus.setStatus(activeIndex,index,status))==='process'?'#3963BC':iconColor}}"/>
       <block wx:if="{{!dot && !icon}}">
-        <view wx:if="{{currentStatus.setStatus(activeIndex,index,status)==='error' || currentStatus.setStatus(activeIndex,index,status)==='finish'}}" 
-              class="iconfont icon-{{currentStatus.setStatus(activeIndex,index,status)}}"></view>
+        <view wx:if="{{currentStatus.setStatus(activeIndex,index,status)==='error' || currentStatus.setStatus(activeIndex,index,status)==='finish'}}" class="iconfont icon-{{currentStatus.setStatus(activeIndex,index,status)}}"></view>
         <block wx:else>{{index+1}}</block>
       </block>
     </view>
@@ -24,9 +20,7 @@
       <slot name="describe"/>
     </view>
   </view>
-  <view class="step-line l-line-class {{'step-line-'+ direction}} {{currentStatus.isReverse(reverse,activeIndex,index)?'step-line-finish':'step-line-wait'}}"
-        style="{{activeIndex>index?('background-color:'+color):''}}" 
-        wx:if="{{reverse?(index!==0):(length!==index+1)}}">
+  <view class="step-line l-line-class {{'step-line-'+ direction}} {{activeIndex>index?'step-line-finish':'step-line-wait'}}" style="{{activeIndex>index?('background-color:'+color):''}}" wx:if="{{length !== index+1}}">
   </view>
 </view>
 
@@ -59,17 +53,9 @@ var dotStyle = function(activeIndex,index,color){
   }
 }
 
-var isReverse = function(reverse,activeIndex,index) {
-  if(reverse){
-    return (activeIndex>=index)
-  }
-  return (activeIndex>index)
-}
-
 module.exports = {
   setStatus:setStatus,
   statusStyle:statusStyle,
-  dotStyle:dotStyle,
-  isReverse:isReverse
+  dotStyle:dotStyle
 }
 </wxs>

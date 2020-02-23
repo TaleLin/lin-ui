@@ -1,20 +1,8 @@
-<!-- components/tabs/index.wxml -->
+
 <view class="l-tabs l-class-tabs l-tabs-class {{'l-placement-'+placement}} {{animated ? 'l-aminmated' :''}} {{placement=='left'||placement=='right'?'l-tabs-vertical':'l-tabs-horizontal'}} {{scrollable ? 'l-tabs-scroll':''}}">
-    <scroll-view 
-        scroll-x="{{placement=='top'||placement=='bottom' && scrollable}}" 
-        scroll-y="{{placement=='left'||placement=='right' && scrollable}}" 
-        scroll-top="{{transformY}}" 
-        scroll-left="{{transformX}}" 
-        scroll-with-animation
-        class="l-tabsscroll l-class-header l-header-class {{hasLine?'l-tabs-header-line l-class-header-line l-header-line-class':''}}">
+    <scroll-view scroll-x="{{placement=='top'||placement=='bottom' && scrollable}}" scroll-y="{{placement=='left'||placement=='right' && scrollable}}" scroll-top="{{transformY}}" scroll-left="{{transformX}}" scroll-with-animation class="l-tabsscroll l-class-header l-header-class {{hasLine?'l-tabs-header-line l-class-header-line l-header-line-class':''}}">
         <view class="l-tabs-header">
-            <view class="l-tabs-item {{equalWidth?'l-tabs-equal-width':'l-tabs-unequal-width'}} {{item.key===activeKey ?'l-class-active l-active-class l-tabs-active':'l-class-inactive l-inactive-class l-tabs-inactive'}} {{'l-tab-image-placement-'+item.picPlacement}}" 
-                style="color:{{item.key===activeKey?activeColor:inactiveColor}}"
-                wx:for="{{tabList}}" 
-                wx:key="{{item.key}}" 
-                data-key="{{item.key}}"
-                data-index="{{index}}" 
-                bind:tap="handleChange">
+            <view class="l-tabs-item {{equalWidth?'l-tabs-equal-width':'l-tabs-unequal-width'}} {{item.key===activeKey ?'l-class-active l-active-class l-tabs-active':'l-class-inactive l-inactive-class l-tabs-inactive'}} {{'l-tab-image-placement-'+item.picPlacement}}" style="color:{{item.key===activeKey?activeColor:inactiveColor}}" wx:for="{{tabList}}" wx:key="key" data-key="{{item.key}}" data-index="{{index}}" bind:tap="handleChange">
                 <image wx:if="{{ item.image.activeImage || item.image.defaultImage }}" src="{{item.key===activeKey? item.image.activeImage:item.image.defaultImage}}" class="l-tab-image l-class-tabimage l-tabimage-class"/>
                 <l-icon wx:if="{{item.icon}}" l-class="l-class-icon l-icon-class" l-self-class="{{item.key===activeKey ? 'l-icon-active':'l-icon-inactive'}}" name="{{item.icon}}" color="{{item.key===activeKey?activeColor:inactiveColor}}" size="{{item.iconSize}}"/>
                     {{item.tab}}
@@ -23,12 +11,12 @@
         </view>
     </scroll-view>
     <view wx:if="{{!swipeable}}" class="l-tabpanel-content l-class-content l-content-class" style="{{placement=='top'||placement=='bottom' ? 'margin-left:'+ -100 *currentIndex +'%;':'transform:translate(0,'+ -100 * currentIndex +'%) translateZ(0px);'}}">
-        <view class="l-tabpanel {{item.key===activeKey?'l-tabpanel-active':'l-tabpanel-inactive'}}" wx:for="{{tabList}}" wx:key="{{item.key}}" style="{{placement=='left'||placement=='right' ? 'position:absolute;width:100%;height:100%;transform:translate(0,'+ 100 * index +'%) translateZ(0px);':''}}">
+        <view class="l-tabpanel {{item.key===activeKey?'l-tabpanel-active':'l-tabpanel-inactive'}}" wx:for="{{tabList}}" wx:key="key" style="{{placement=='left'||placement=='right' ? 'position:absolute;width:100%;height:100%;transform:translate(0,'+ 100 * index +'%) translateZ(0px);':''}}">
             <slot name="{{item.key}}"></slot>
         </view>
     </view>
     <swiper wx:else class="l-tabpanel-content l-tabpanel-swiper l-class-content l-content-class" bindchange="swiperChange" current="{{currentIndex}}" vertical="{{placement=='left'||placement=='right'}}">
-        <swiper-item class="l-tabpanel {{item.key===activeKey?'l-tabpanel-active':''}}" wx:for="{{tabList}}" wx:key="{{item.key}}">
+        <swiper-item class="l-tabpanel {{item.key===activeKey?'l-tabpanel-active':''}}" wx:for="{{tabList}}" wx:key="key">
             <slot name="{{item.key}}"></slot>
         </swiper-item>
     </swiper>
