@@ -1,5 +1,5 @@
 <view class="l-form-container-class">
-    <slot />
+    <slot/>
 </view>
 <view class="l-form-btn-class">
     <view class="l-form-submit-class" bind:tap="submit">

@@ -19,6 +19,10 @@ Component({
     type: {
       type: String,
       value: 'primary'
+    },
+    imageMode: {
+      type: String,
+      value: 'scaleToFill'
     }
   },
 

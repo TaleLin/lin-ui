@@ -1,10 +1,1 @@
-// eslint-disable-next-line no-undef
-export default Behavior({
-  behaviors: [],
-  properties: {
-    isHover:{
-      type: Boolean,
-      value: true
-    }
-  }
-});
+export default Behavior({behaviors:[],properties:{isHover:{type:Boolean,value:!0}}});

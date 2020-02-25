@@ -1,4 +1,4 @@
-<label for="{{name}}" bindtap="handleTap">
+<label for="{{name}}" bindtap="handleTap" class="l-label-class">
   <block wx:if="{{special}}">
     <view class="special-container l-class">
       <slot/>
