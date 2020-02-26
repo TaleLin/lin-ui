@@ -2,3 +2,4 @@ build/*.js
 config/*.js
 example/*.js
 dist
+src/bahaviors/*.js

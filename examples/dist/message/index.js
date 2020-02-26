@@ -1,7 +1,9 @@
 import zIndex from '../behaviors/zIndex';
 import watchShow from '../behaviors/watchShow';
+import validator from '../behaviors/validator';
+
 Component({
-  behaviors: [zIndex, watchShow],
+  behaviors: [zIndex, watchShow, validator],
   externalClasses: ['l-class', 'l-image-class'],
   properties: {
     show: Boolean,
@@ -18,7 +20,8 @@ Component({
     content: String,
     type: {
       type: String,
-      value: 'primary'
+      value: 'primary',
+      options: ['primary', 'warning', 'success', 'error']
     },
     duration: {
       type: Number,
@@ -36,7 +39,7 @@ Component({
 
   // 解决 addListener undefined 的错误
   observers: {
-    'icon': function () {}
+    'icon': function () { }
   },
 
   attached() {
@@ -72,7 +75,7 @@ Component({
         this.changeStatus();
         return this;
       };
-      wx.lin.hideMessage = ()=>{
+      wx.lin.hideMessage = () => {
         this.setData({
           status: false
         });

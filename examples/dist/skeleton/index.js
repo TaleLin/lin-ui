@@ -1,3 +1,5 @@
+import validator from '../behaviors/validator';
+
 Component({
   /**
    * 组件的属性列表
@@ -8,6 +10,7 @@ Component({
     'l-avatar-class',
     'l-row-class'
   ],
+  behaviors: [validator],
   properties: {
     loading: {
       type: Boolean,
@@ -30,7 +33,8 @@ Component({
     avatarSize: String,
     avatarShape: {
       type: String,
-      value: 'circle'
+      value: 'circle',
+      options: ['circle', 'square']
     },
     rowsWidth: {
       type: Array,

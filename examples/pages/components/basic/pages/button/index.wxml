@@ -19,7 +19,7 @@
     <view class="content">
       <l-button shape="circle">圆弧按钮</l-button>
 
-      <l-button shape="spuare">方形按钮</l-button>
+      <l-button shape="square">方形按钮</l-button>
 
       <l-button shape="semicircle">半圆按钮</l-button>
     </view>

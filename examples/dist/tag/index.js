@@ -1,13 +1,17 @@
+import validator from '../behaviors/validator';
+
 Component({
   externalClasses: ['l-class', 'l-select-class', 'l-image-class'],
+  behaviors: [validator],
   properties: {
     // 标签标识
     name: String,
     cell: Object,
     // 标签颜色
-    type:{
+    type: {
       type: String,
-      value: 'touch'
+      value: 'touch',
+      options: ['reading', 'touch']
     },
     bgColor: String,
     fontColor: String,
@@ -15,7 +19,8 @@ Component({
     // 标签形状
     shape: {
       type: String,
-      value: 'square'
+      value: 'square',
+      options: ['square', 'circle']
     },
     // 是否为选中态
     select: Boolean,
@@ -24,11 +29,13 @@ Component({
     // 标签大小
     size: {
       type: String,
-      value: 'medium'
+      value: 'medium',
+      options: ['large', 'medium', 'mini', 'super-mini']
     },
     location: {
       type: String,
-      value: 'left'
+      value: 'left',
+      options: ['left', 'right']
     },
     icon: String,
     iconSize: {

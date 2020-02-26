@@ -1,7 +1,10 @@
+import validator from '../behaviors/validator';
+
 Component({
   externalClasses: [
     'l-class'
   ],
+  behaviors: [validator],
   options: {
     multipleSlots: true // 在组件定义时的选项中启用多slot支持
   },
@@ -20,7 +23,8 @@ Component({
   properties: {
     direction: {
       type: String,
-      value: 'row'
+      value: 'row',
+      options: ['row', 'colunm']
     },
     activeIndex: {
       type: Number,
@@ -33,7 +37,8 @@ Component({
     },
     status: {
       type: String,
-      value: 'process'
+      value: 'process',
+      options: ['process', 'error']
     },
     dot: Boolean
   },
