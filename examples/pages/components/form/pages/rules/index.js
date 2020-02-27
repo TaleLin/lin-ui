@@ -41,7 +41,8 @@ Component({
       type: "number",
       required: true,
       message: '请重新输入数字'
-    }
+    },
+    likes: ['读书']
 
   },
   methods: {
@@ -51,6 +52,22 @@ Component({
 
     linvalidate(e) {
       console.log('linvalidate', e)
+    },
+
+    changeCheckbox(e){
+      const key = e.detail.key
+      const checked = e.detail.checked
+      let likes = this.data.likes
+      if (checked) {
+        likes.push(key)
+      } else {
+        likes = likes.filter(item => {
+          return item !== key
+        })
+      }
+      this.setData({
+        likes: likes
+      });
     },
 
     /**

@@ -42,7 +42,7 @@
 }
 
 .textarea-class {
-  width:auto !important;
+  /*width:auto !important;*/
 }
 
 .error-text {
