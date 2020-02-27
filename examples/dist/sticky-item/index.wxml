@@ -1,0 +1,16 @@
+<view class="l-sticky-item l-class">
+  <!-- sticky-item-header-wrapper用于占位，因为sticky-item-header吸顶后脱离文档流，导致sticky-item组件高度减小 -->
+  <view
+    class="l-sticky-item-header-wrapper l-header-wrapper-class"
+    style="height:{{isFixedTop&&stickyItemWrapperHeight?stickyItemWrapperHeight+'px':'auto'}}"
+  ></view>
+  <view
+    style="{{mode==='js'?(isFixedTop?'position:fixed;':''):''}} top:{{top}}rpx"
+    class="l-sticky-item-header l-sticky-item-header{{mode==='js'?(isFixedTop?'-fixed l-header-sticky-class':''):(mode==='css'?'-sticky l-header-sticky-class':'')}} l-header-class"
+  >
+    <slot name="header"></slot>
+  </view>
+  <view class="l-sticky-item-body l-body-class">
+    <slot name="body"></slot>
+  </view>
+</view>

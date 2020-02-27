@@ -1,0 +1,3 @@
+<view class="l-sticky l-class">
+  <slot></slot>
+</view>

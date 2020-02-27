@@ -1,0 +1,30 @@
+<view class="container">
+  <content-title name="Sticky" describe="吸顶容器">
+    <content-card name="动态插入内容">
+      <l-sticky
+        bind:linunsticky="linunsticky"
+        bind:linsticky="linsticky"
+        scrollTop="{{scrollTop}}"
+        mode="js"
+      >
+        <l-sticky-item l-header-sticky-class="l-header-sticky-class">
+          <view class="dynamic-card-header" slot="header">今日新闻</view>
+          <view slot="body" class="dynamic-card-body">
+            <block wx:for="{{dynamicCard}}" wx:key="index">
+              <l-card
+                type="primary"
+                l-class="card"
+                l-img-class="right-card"
+                image="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1549711458710&di=e4af10c03585ed60f2b51bc61393cef8&imgtype=0&src=http%3A%2F%2Fimg0.pconline.com.cn%2Fpconline%2Fbizi%2Fdesktop%2F1410%2FA2_1.jpg"
+                title="{{item.title}}"
+              >
+                <view class="content">{{item.content}}</view>
+              </l-card>
+            </block>
+            <l-loadmore show="{{true}}" line="{{true}}" />
+          </view>
+        </l-sticky-item>
+      </l-sticky>
+    </content-card>
+  </content-title>
+</view>

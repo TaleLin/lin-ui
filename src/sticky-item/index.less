@@ -1,0 +1,25 @@
+.l-sticky-item{
+  display: flex;
+  flex-direction: column;
+}
+
+.l-sticky-wrapper{
+  overflow: visible;
+}
+
+.l-sticky-item-header{
+  width: 100%;
+}
+
+.l-sticky-item-header-fixed{
+  position: fixed;
+  top: 0;
+}
+
+/* 判断当前webview内核是否支持sticky属性 */
+@supports(position: sticky){
+  .l-sticky-item-header-sticky{
+    position: sticky;
+  }
+}
+
