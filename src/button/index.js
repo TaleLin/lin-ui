@@ -1,11 +1,14 @@
+import validator from '../behaviors/validator';
+
 Component({
   externalClasses: [
-    'l-class', 
+    'l-class',
     'l-label-class',
-    'l-hover-class', 
+    'l-hover-class',
     'l-img-class',
     'l-icon-class'
   ],
+  behaviors: [validator],
   properties: {
     // button组建标识
     name: {
@@ -15,15 +18,18 @@ Component({
     type: {
       type: String,
       value: 'default',
+      options: ['warning', 'success', 'error', 'default']
     },
     plain: Boolean,
     size: {
       type: String,
       value: 'medium',
+      options: ['medium', 'large', 'mini', 'long']
     },
     shape: {
       type: String,
       value: 'circle',
+      options: ['square', 'circle', 'semicircle']
     },
     disabled: {
       type: Boolean,

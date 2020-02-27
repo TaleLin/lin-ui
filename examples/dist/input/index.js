@@ -10,64 +10,36 @@ Component({
     multipleSlots: true,
   },
   behaviors: ['wx://form-field'],
-  // behaviors: ['wx://form-field', rules],
-  externalClasses: ['l-class', 'l-label-class','l-error-text','l-error-text-class'],
+  externalClasses: ['l-class', 'l-label-class', 'l-error-text', 'l-error-text-class'],
   properties: {
     // 表单标题（label）的文本
-    label: {
-      type: String,
-      value: ''
-    },
+    label: String,
     // 是否隐藏label
-    hideLabel:{
-      type: Boolean,
-      value: false
-    },
+    hideLabel: Boolean,
     // 是否自定义label部分
-    labelCustom: {
-      type: Boolean,
-      value: false
-    },
+    labelCustom: Boolean,
     // 是否显示下划线
     showRow: {
       type: Boolean,
       value: true
     },
     // 是否必选
-    required: {
-      type: Boolean,
-      value: false
-    },
+    required: Boolean,
     // 占位文本
-    placeholder: {
-      type: String,
-      value: ''
-    },
+    placeholder: String,
     // 输入框类型
     type: {
       type: String,
       value: 'text'
     },
     // 输入框的值
-    value: {
-      type: String,
-      value: ''
-    },
+    value: String,
     // 是否需要冒号
-    colon: {
-      type: Boolean,
-      value: false
-    },
+    colon: Boolean,
     // 获取焦点
-    focus: {
-      type: Boolean,
-      value: false
-    },
+    focus: Boolean,
     // 是否显示清除按钮
-    clear: {
-      type: Boolean,
-      value: false
-    },
+    clear: Boolean,
     // 最大输入长度
     maxlength: {
       type: Number,
@@ -89,15 +61,9 @@ Component({
       value: 'left'
     },
     // 是否禁用
-    disabled: {
-      type: Boolean,
-      value: false
-    },
+    disabled: Boolean,
     // 占位文字的样式
-    placeholderStyle: {
-      type: String,
-      value: ''
-    },
+    placeholderStyle: String,
   },
 
   /**
@@ -125,7 +91,7 @@ Component({
       this.setData({
         value
       });
-      eventBus.emit(`lin-form-change-${this.id}`,this.id);
+      eventBus.emit(`lin-form-change-${this.id}`, this.id);
       this.triggerEvent('lininput', event.detail);
     },
 
@@ -137,7 +103,7 @@ Component({
       // this.validatorData({
       //   value: event.detail.value
       // });
-      eventBus.emit(`lin-form-blur-${this.id}`,this.id);
+      eventBus.emit(`lin-form-blur-${this.id}`, this.id);
       this.triggerEvent('linblur', event.detail);
     },
     handleInputConfirm(event) {
