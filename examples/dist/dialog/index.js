@@ -1,12 +1,12 @@
 import computeOffset from '../behaviors/computeOffset';
 import zIndex from '../behaviors/zIndex';
 import hover from '../behaviors/hover';
-
+import validator from '../behaviors/validator';
 Component({
   /**
    * 组件的属性列表
    */
-  behaviors: [computeOffset,zIndex,hover],
+  behaviors: [computeOffset, zIndex, hover, validator],
   externalClasses: ['l-class', 'l-title-class', 'l-content-class', 'l-confirm-class', 'l-cancel-class', 'l-bg-class'],
   properties: {
     // 显示与隐藏
@@ -17,7 +17,8 @@ Component({
     // 类型 【 alert: 提示框， confrim: 确认框 】
     type: {
       type: String,
-      value: 'alert'
+      value: 'alert',
+      options: ['alert', 'confirm']
     },
     // 标题文字
     title: {

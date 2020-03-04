@@ -1,9 +1,11 @@
 import zIndex from '../behaviors/zIndex';
+import validator from '../behaviors/validator';
+
 Component({
   /**
    * 组件的属性列表
    */
-  behaviors: [zIndex],
+  behaviors: [zIndex, validator],
   externalClasses: ['l-bg-class'],
   properties: {
     // 显示与隐藏
@@ -19,7 +21,8 @@ Component({
     // slot的位置
     contentAlign: {
       type: String,
-      value: 'center'
+      value: 'center',
+      options: ['top', 'right', 'left', 'bottom', 'center']
     },
     // 锁定
     locked: {
