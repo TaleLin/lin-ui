@@ -1,7 +1,6 @@
 // input/input.js
-// import rules from '../behaviors/rules';
 import eventBus from '../utils/eventBus.js';
-
+import validator from '../behaviors/validator';
 Component({
   /**
    * 组件的属性列表
@@ -9,7 +8,7 @@ Component({
   options: {
     multipleSlots: true,
   },
-  behaviors: ['wx://form-field'],
+  behaviors: ['wx://form-field', validator],
   externalClasses: ['l-class', 'l-label-class', 'l-error-text', 'l-error-text-class'],
   properties: {
     // 表单标题（label）的文本
@@ -30,7 +29,8 @@ Component({
     // 输入框类型
     type: {
       type: String,
-      value: 'text'
+      value: 'text',
+      options: ['text', 'idcard', 'digit', 'password', 'number']
     },
     // 输入框的值
     value: String,
@@ -58,7 +58,8 @@ Component({
     // label标题的显示位置 left top right
     labelLayout: {
       type: String,
-      value: 'left'
+      value: 'left',
+      options: ['left', 'right']
     },
     // 是否禁用
     disabled: Boolean,
