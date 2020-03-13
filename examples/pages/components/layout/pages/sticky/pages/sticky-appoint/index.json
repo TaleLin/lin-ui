@@ -1,0 +1,15 @@
+{
+  "usingComponents": {
+    "content-title": "/components/content-title/index",
+    "content-card": "/components/content-card/index",
+    "l-sticky":"/dist/sticky/index",
+    "l-sticky-item":"/dist/sticky-item/index",
+    "search-bar":"/dist/search-bar/index",
+    "l-grid-item": "/dist/grid-item/index",
+    "l-grid": "/dist/grid/index",
+    "l-icon":"/dist/icon/index",
+    "l-segment": "/dist/segment/index",
+    "l-segment-item": "/dist/segment-item/index",
+    "l-card":"/dist/card/index"
+  }
+}

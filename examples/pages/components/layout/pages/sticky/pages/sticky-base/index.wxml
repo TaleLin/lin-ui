@@ -1,0 +1,18 @@
+<view class="container">
+  <content-title name="Sticky" describe="吸顶容器">
+    <content-card name="基本案例">
+      <l-sticky mode="css">
+        <block wx:for="{{addresses}}" wx:key="index">
+          <l-sticky-item>
+            <view class="index-header" slot="header">{{item.index}}</view>
+            <view slot="body">
+              <block wx:for="{{item.items}}" wx:key="index">
+                <view class="index-body-item">{{item}}</view>
+              </block>
+            </view>
+          </l-sticky-item>
+        </block>
+      </l-sticky>
+    </content-card>
+  </content-title>
+</view>

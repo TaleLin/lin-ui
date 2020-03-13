@@ -1,8 +1,11 @@
+import validator from '../behaviors/validator';
+
 Component({
   /**
    * 组件的属性列表
    */
   externalClasses: ['l-deleted-class', 'l-unit-class', 'l-value-class', 'l-class'],
+  behaviors: [validator],
   properties: {
     unit: {
       type: String,
@@ -29,7 +32,8 @@ Component({
     },
     mode: {
       type: String,
-      value: 'number'
+      value: 'number',
+      options: ['number', 'text']
     },
     valueColor: String,
     valueSize: String,

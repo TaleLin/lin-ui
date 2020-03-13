@@ -1,6 +1,8 @@
 import computeOffset from '../behaviors/computeOffset';
+import validator from '../behaviors/validator';
+
 Component({
-  behaviors: [computeOffset],
+  behaviors: [computeOffset, validator],
   externalClasses: ['l-container-class', 'l-class'],
   properties: {
     // 显示与隐藏
@@ -8,7 +10,7 @@ Component({
       type: Boolean,
       value: false
     },
-    opacity:{
+    opacity: {
       type: String,
       value: '1'
     },
@@ -20,7 +22,8 @@ Component({
     // 类型
     type: {
       type: String,
-      value: 'rotate'
+      value: 'rotate',
+      options: ['flash', 'flip', 'change', 'rotate', 'circle']
     },
     // 动画颜色
     color: {

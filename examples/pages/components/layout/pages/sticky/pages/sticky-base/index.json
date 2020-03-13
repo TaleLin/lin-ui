@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "content-title": "/components/content-title/index",
+    "content-card": "/components/content-card/index",
+    "l-sticky":"/dist/sticky/index",
+    "l-sticky-item":"/dist/sticky-item/index"
+  }
+}

@@ -1,0 +1,105 @@
+<view class="container">
+  <content-title name="Sticky" describe="吸顶容器">
+    <content-card name="指定吸顶位置">
+      <l-sticky scrollTop="{{scrollTop}}" mode="css">
+        <l-sticky-item l-header-sticky-class="l-header-sticky-class">
+          <view slot="header" class="container-search-bar" style="height:80rpx">
+            <search-bar style="width:100%" l-container-class="l-container-class" />
+          </view>
+          <view slot="body" class="view-container">
+            <l-grid>
+              <l-grid-item
+                wx:for="{{grids2}}"
+                wx:key="index"
+                key="{{index}}"
+                slot="{{index}}"
+                cell="{{item}}"
+                l-grid-item="grid-item"
+              >
+                <l-icon name="{{item.image}}" />
+                <view class="text">{{item.text}}</view>
+              </l-grid-item>
+            </l-grid>
+            <l-sticky scrollTop="{{scrollTop}}" mode="css">
+              <l-sticky-item top="80" l-header-sticky-class="l-header-sticky-class">
+                <l-segment style="background-color:white" slot="header" active-key="one">
+                  <l-segment-item tab="客厅" key="one" dot-badge="{{true}}" />
+                  <l-segment-item tab="卧室" key="two" badge-count="{{brageCount}}" />
+                  <l-segment-item
+                    tab="厨房"
+                    key="three"
+                    badge-count="900"
+                    l-class-badge="badge-view"
+                  />
+                  <l-segment-item tab="浴室" key="four" />
+                </l-segment>
+                <view style="margin-top:30rpx" slot="body">
+                  <l-card
+                    type="primary"
+                    l-class="card"
+                    l-img-class="right-card"
+                    position="right"
+                    image="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1549711458710&di=e4af10c03585ed60f2b51bc61393cef8&imgtype=0&src=http%3A%2F%2Fimg0.pconline.com.cn%2Fpconline%2Fbizi%2Fdesktop%2F1410%2FA2_1.jpg"
+                    title="做一个热爱生活的人！"
+                  >
+                    <view class="content">很简单，豆瓣现在这样就给大家指了一条明路:以后凡是这种国产的风口浪尖的的片子...</view>
+                  </l-card>
+
+                  <l-card
+                    type="primary"
+                    l-class="card"
+                    l-img-class="right-card"
+                    image="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1549711458710&di=e4af10c03585ed60f2b51bc61393cef8&imgtype=0&src=http%3A%2F%2Fimg0.pconline.com.cn%2Fpconline%2Fbizi%2Fdesktop%2F1410%2FA2_1.jpg"
+                    title="做一个热爱生活的人！"
+                  >
+                    <view class="content">很简单，豆瓣现在这样就给大家指了一条明路:以后凡是这种国产的风口浪尖的的片子...</view>
+                  </l-card>
+
+                  <l-card
+                    type="primary"
+                    l-class="card"
+                    l-img-class="right-card"
+                    image="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1549711458710&di=e4af10c03585ed60f2b51bc61393cef8&imgtype=0&src=http%3A%2F%2Fimg0.pconline.com.cn%2Fpconline%2Fbizi%2Fdesktop%2F1410%2FA2_1.jpg"
+                    title="做一个热爱生活的人！"
+                  >
+                    <view class="content">很简单，豆瓣现在这样就给大家指了一条明路:以后凡是这种国产的风口浪尖的的片子...</view>
+                  </l-card>
+
+                  <l-card
+                    type="primary"
+                    l-class="card"
+                    l-img-class="right-card"
+                    image="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1549711458710&di=e4af10c03585ed60f2b51bc61393cef8&imgtype=0&src=http%3A%2F%2Fimg0.pconline.com.cn%2Fpconline%2Fbizi%2Fdesktop%2F1410%2FA2_1.jpg"
+                    title="做一个热爱生活的人！"
+                  >
+                    <view class="content">很简单，豆瓣现在这样就给大家指了一条明路:以后凡是这种国产的风口浪尖的的片子...</view>
+                  </l-card>
+
+                  <l-card
+                    type="primary"
+                    l-class="card"
+                    l-img-class="right-card"
+                    image="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1549711458710&di=e4af10c03585ed60f2b51bc61393cef8&imgtype=0&src=http%3A%2F%2Fimg0.pconline.com.cn%2Fpconline%2Fbizi%2Fdesktop%2F1410%2FA2_1.jpg"
+                    title="做一个热爱生活的人！"
+                  >
+                    <view class="content">很简单，豆瓣现在这样就给大家指了一条明路:以后凡是这种国产的风口浪尖的的片子...</view>
+                  </l-card>
+
+                  <l-card
+                    type="primary"
+                    l-class="card"
+                    l-img-class="right-card"
+                    image="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1549711458710&di=e4af10c03585ed60f2b51bc61393cef8&imgtype=0&src=http%3A%2F%2Fimg0.pconline.com.cn%2Fpconline%2Fbizi%2Fdesktop%2F1410%2FA2_1.jpg"
+                    title="做一个热爱生活的人！"
+                  >
+                    <view class="content">很简单，豆瓣现在这样就给大家指了一条明路:以后凡是这种国产的风口浪尖的的片子...</view>
+                  </l-card>
+                </view>
+              </l-sticky-item>
+            </l-sticky>
+          </view>
+        </l-sticky-item>
+      </l-sticky>
+    </content-card>
+  </content-title>
+</view>
