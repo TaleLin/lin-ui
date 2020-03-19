@@ -95,9 +95,9 @@ Component({
     },
 
     handleInputBlur(event) {
-      // this.validatorData({
-      //   value: event.detail.value
-      // });
+      this.validatorData({
+        [this.data.name]: event.detail.value
+      });
       eventBus.emit(`lin-form-blur-${this.id}`,this.id);
       this.triggerEvent('linblur', event.detail);
     },

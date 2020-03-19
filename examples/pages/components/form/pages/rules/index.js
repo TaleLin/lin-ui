@@ -27,8 +27,14 @@ Component({
       required: true
     },
     sexRules: {
+      type: 'string',
+      required: true,
+      message: '请选择性别'
+    },
+    habbitRules: {
       type: 'array',
-      required: true
+      required: true,
+      message: '至少选择一个兴趣爱好'
     },
     phoneRules: [{
       type: "string",

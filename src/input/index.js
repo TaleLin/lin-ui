@@ -1,6 +1,7 @@
 // input/input.js
 import eventBus from '../utils/eventBus.js';
 import validator from '../behaviors/validator';
+import rules from '../behaviors/rules';
 Component({
   /**
    * 组件的属性列表
@@ -8,7 +9,7 @@ Component({
   options: {
     multipleSlots: true,
   },
-  behaviors: ['wx://form-field', validator],
+  behaviors: ['wx://form-field', validator, rules],
   externalClasses: ['l-class', 'l-label-class', 'l-error-text', 'l-error-text-class'],
   properties: {
     // 表单标题（label）的文本
@@ -101,9 +102,9 @@ Component({
     },
 
     handleInputBlur(event) {
-      // this.validatorData({
-      //   value: event.detail.value
-      // });
+      this.validatorData({
+        [this.data.name]: event.detail.value
+      });
       eventBus.emit(`lin-form-blur-${this.id}`, this.id);
       this.triggerEvent('linblur', event.detail);
     },
