@@ -1,0 +1,24 @@
+<view class="container">
+  <content-title name="Sticky" describe="吸顶容器">
+
+    <content-card class="content" name="使用案例">
+      <view class="view-container">
+        <l-grid row-num="3" l-class="grid-container">
+          <l-grid-item bind:tap="onTapBase" key="one" slot="one" l-grid-item="grid-item">
+            <l-icon name="order" />
+            <view class="text">基本案例</view>
+          </l-grid-item>
+          <l-grid-item bind:tap="onTapAppoint" key="two" slot="two" l-grid-item="grid-item">
+            <l-icon name="order" />
+            <view class="text">指定吸附位置</view>
+          </l-grid-item>
+          <l-grid-item bind:tap="onTapDynamic" key="three" slot="three" l-grid-item="grid-item">
+            <l-icon name="order" />
+            <view class="text">动态插入内容</view>
+          </l-grid-item>
+        </l-grid>
+      </view>
+    </content-card>
+
+  </content-title>
+</view>
