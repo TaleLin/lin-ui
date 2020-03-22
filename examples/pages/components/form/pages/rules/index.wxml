@@ -7,10 +7,10 @@
           <l-input label="邮箱" placeholder="请输入邮箱" label-width="170" name="email" rules="{{emailRules}}" tipType="message" bind:linvalidate="linvalidate"/>
           <l-input label="用户名" placeholder="长度需要在12个字以内" label-width="170" name="user" rules="{{userRules}}" tipType="text" clear="{{true}}" l-error-text="error-text"/>
           <l-input label="密码" label-width="170" placeholder="请输入密码" name="password" rules="{{passwordRules}}" tipType="toast"/>
-          <l-input label="手机号" label-width="170" placeholder="请输入密码" name="phone" rules="{{phoneRules}}" tipType="toast"/>
+          <l-input label="手机号" label-width="170" placeholder="请输入手机号" name="phone" rules="{{phoneRules}}" tipType="toast"/>
           <view class="group-label">
             <text>爱好</text>
-            <l-checkbox-group l-class="l-radio-group" rules="{{sexRules}}" name="habbit" tipType="text" bind:linchange="changeCheckbox">
+            <l-checkbox-group l-class="l-radio-group" rules="{{habbitRules}}" name="habbit" tipType="text" bind:linchange="changeCheckbox">
               <l-checkbox l-class="l-radio" l-title-class="l-title-class" placement="left" key="读书" checked="{{util.isChecked('读书',likes)}}">读书</l-checkbox>
               <l-checkbox l-class="l-radio" l-title-class="l-title-class" placement="left" key="写字" checked="{{util.isChecked('写字',likes)}}">写字</l-checkbox>
               <l-checkbox l-class="l-radio" l-title-class="l-title-class" placement="left" key="摄影" checked="{{util.isChecked('摄影',likes)}}">摄影</l-checkbox>
