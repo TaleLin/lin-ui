@@ -1,7 +1,9 @@
 import eventBus from '../utils/eventBus';
+import rules from '../behaviors/rules';
+
 
 Component({
-  behaviors: ['wx://form-field'],
+  behaviors: ['wx://form-field',rules],
   externalClasses: ['l-class', 'l-error-text', 'l-error-text-class'],
   relations: {
     '../checkbox/index': {
@@ -77,6 +79,10 @@ Component({
 
     onEmitEventHandle(currentItem) {
       currentItem.checked ? this.addSelect (currentItem):this.removeSelect(currentItem.key);
+
+      this.validatorData({
+        [this.data.name]: Object.values(this._selected)
+      });
 
       this.triggerEvent('linchange', currentItem, {
         bubbles: true,

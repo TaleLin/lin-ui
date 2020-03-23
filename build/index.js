@@ -74,11 +74,11 @@ module.exports = {
   ),
   watch: parallel(
     () => {
-      watch(`${srcDevPath}/*.less`, buildWxss(`${srcDevPath}/*.less`, `!${srcDevPath}/_*.less`, examplePath));
-      watch(`${srcDevPath}/*.wxml`, copy(srcDevPath, examplePath, 'wxml'));
-      watch(`${srcDevPath}/*.wxs`, copy(srcDevPath, examplePath, 'wxs'));
-      watch(`${srcDevPath}/*.json`, copy(srcDevPath, examplePath, 'json'));
-      watch(`${srcDevPath}/*.js`, copy(srcDevPath, examplePath, 'js'));
+      watch("../src/**/*.less", buildWxss(`${srcDevPath}/*.less`, `!${srcDevPath}/_*.less`, examplePath));
+      watch("../src/**/*.wxml", copy(srcDevPath, examplePath, 'wxml'));
+      watch("../src/**/*.wxs", copy(srcDevPath, examplePath, 'wxs'));
+      watch("../src/**/*.json", copy(srcDevPath, examplePath, 'json'));
+      watch("../src/**/*.js", copy(srcDevPath, examplePath, 'js'));
     }
   )
 };

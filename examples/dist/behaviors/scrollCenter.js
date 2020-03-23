@@ -12,15 +12,14 @@ export default Behavior({
       });
     },
     queryScrollNode(res, currentIndex, type = 'width') {
+      if(currentIndex<0) return;
       const currentRect = res[currentIndex];
-
       this.getRect('.l-tabsscroll').then(_ => {
+        if(!_) return console.error('找不到元素');
         const scrollWidth = _[type];
-
         let transformDistance = res
           .slice(0, currentIndex)
           .reduce((prev, curr) => prev + curr[type], 0);
-
         transformDistance += (currentRect[type] - scrollWidth) / 2;
 
         if (type === 'width') {
