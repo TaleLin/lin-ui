@@ -1,0 +1,14 @@
+<view class="container">
+  <view bind:tap="onTapTitle" class="container-title">
+    <view>这是标题</view>
+    <l-icon style="{{bodyExpand?'transform:rotate(90deg);':''}}" name="right" size="28" color="#333"></l-icon>
+  </view>
+  <view class="container-body" style="height:{{bodyHeight}}px">
+    <view class="container-body-wrapper">
+      <view>1111</view>
+      <view>1111</view>
+      <view>1111</view>
+      <view>1111</view>
+    </view>
+  </view>
+</view>

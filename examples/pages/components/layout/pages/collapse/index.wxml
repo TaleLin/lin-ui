@@ -1,0 +1,17 @@
+<view class="container">
+  <content-title name="Collapse" describe="折叠面板">
+    <content-card name="基本案例">
+      <l-collapse-item/>
+      <l-collapse-item/>
+      <l-collapse-item/>
+    </content-card>
+
+    <content-card name="手风琴">
+
+    </content-card>
+
+    <content-card name="高级案例">
+
+    </content-card>
+  </content-title>
+</view>

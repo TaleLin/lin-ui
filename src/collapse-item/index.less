@@ -1,0 +1,35 @@
+@import "../../config/styles/_base";
+
+.container {
+  //background-color: gainsboro;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  box-sizing: border-box;
+
+  &-title {
+    display: flex;
+    justify-content: space-between;
+    padding: 10 rpx;
+    align-items: center;
+    color: @title-color;
+    font-size: @size-font-base;
+
+    l-icon {
+      transition: .3s;
+    }
+  }
+
+  &-body {
+    width: 100%;
+    color: @text-color;
+    box-sizing: border-box;
+    font-size: @size-font-base;
+    transition: height .3s ease-in-out;
+    overflow: hidden;
+
+    &-wrapper {
+      padding: 10 rpx;
+    }
+  }
+}
