@@ -45,6 +45,7 @@
         <view class="ticket-container-bottom">
           <l-collapse>
             <l-collapse-item l-body-class="l-body-class" l-title-class="l-title-class" customTitle="{{true}}">
+              <!--自定义标题-->
               <view class="title" slot="title">
                 <view class="ticket-detail-container">使用规则
                   <l-icon name="down" size="16" color="#999"/>

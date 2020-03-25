@@ -1,6 +1,6 @@
 Component({
 
-  externalClasses:["l-class","l-title-class","l-body-class"],
+  externalClasses:['l-class','l-title-class','l-body-class'],
 
   relations: {
     '../collapse/index': {
@@ -15,7 +15,7 @@ Component({
   properties: {
     title: {
       type: String,
-      value: "默认标题"
+      value: '默认标题'
     },
     /**
      * 自定义标题部分内容
@@ -62,7 +62,7 @@ Component({
       }
 
       let parents = this.getRelationNodes('../collapse/index');
-      parents[0].onTapCollapseItem(this)
+      parents[0].onTapCollapseItem(this);
     },
 
     /**

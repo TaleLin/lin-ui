@@ -37,7 +37,7 @@ const layoutNaviConfigs = [{
     icon: "/images/component/album.png",
     title: "Collapse",
     desc: "折叠面板",
-    componentsPath: "/pages/components/layout/pages/sticky/index"
+    componentsPath: "/pages/components/layout/pages/collapse/index"
   }
 ]
 
