@@ -4,16 +4,16 @@
             {{ title }}
         </view>
         <view wx:for="{{ itemList }}" wx:key="name" hover-class="{{isHover?'list-hover':''}}">
-            <l-button bind:lintap="handleClickItem" data-index="{{ index }}" data-item="{{ item }}" open-type="{{ item.openType }}" icon="{{ item.icon }}" type="ghost" size="large" special="{{true}}" long>
+            <l-button bind:lintap="handleClickItem" data-index="{{ index }}" data-item="{{ item }}" open-type="{{ item.openType }}" icon="{{ item.icon }}" type="default" size="large" special="{{true}}" long>
                 <view style="{{ item.color ? 'color: ' + item.color : '' }}" class="l-item-button l-class-item l-item-class {{item.image || item.icon ? 'l-image-button':''}}">
                     <image wx:if="{{item.image}}" class="l-button-image" src="{{item.image}}" style="{{item.imageStyle}}"/>
-                    <l-icon wx:elif="{{ item.icon }}" name="{{ item.icon }}" l-class="l-item-button" size="{{ item.iconSize }}" color="{{item.iconColor?item.iconColor:item.color}}"></l-icon>  
+                    <l-icon wx:elif="{{ item.icon }}" name="{{ item.icon }}" l-class="l-item-button" size="{{ item.iconSize }}" color="{{item.iconColor?item.iconColor:item.color}}"></l-icon>
                     <text class="l-button-text">{{ item.name }}</text>
                 </view>
             </l-button>
         </view>
         <view class="l-cancel l-class-cancel l-cancel-class {{isIphoneX ? 'l-cancel-x':''}}" wx:if="{{ showCancel }}" hover-class="{{isHover?'list-hover':''}}">
-            <l-button type="ghost" size="large" long="true" bind:lintap="handleClickCancel" special="{{true}}">
+            <l-button type="default" size="large" long="true" bind:lintap="handleClickCancel" special="{{true}}">
                 <view class="l-item-button l-cancel-button">{{ cancelText }}</view>
             </l-button>
         </view>
