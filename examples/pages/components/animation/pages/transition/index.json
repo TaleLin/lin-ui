@@ -1,0 +1,14 @@
+{
+  "usingComponents": {
+    "content-title": "/components/content-title/index",
+    "content-card": "/components/content-card/index",
+    "l-transition":"/dist/transition/index",
+    "l-button":"/dist/button/index",
+    "l-list": "/dist/list/index",
+    "l-status": "/dist/status-show/index",
+    "l-card": "/dist/card/index",
+    "l-price": "/dist/price/index",
+    "l-tag": "/dist/tag/index",
+    "l-icon": "/dist/icon/index"
+  }
+}

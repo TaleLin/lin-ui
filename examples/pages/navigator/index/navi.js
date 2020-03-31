@@ -6,6 +6,11 @@ const naviConfigs = {
       navigateMark: "basic"
     },
     {
+      icon: "/images/navigator/icon-basic.png",
+      title: "动画组件",
+      navigateMark: "animation"
+    },
+    {
       icon: "/images/navigator/icon-flex.png",
       title: "布局组件",
       navigateMark: "layout"

@@ -1,0 +1,115 @@
+<content-title name="Transition" describe="动画">
+
+  <content-card class="content" name="动画">
+    <l-list title="fade 淡入" data-name="fade" bind:lintap="changeType" />
+    <l-list title="fade-up 上滑淡入" data-name="fade-up" bind:lintap="changeType" />
+    <l-list title="fade-down 下滑淡入" data-name="fade-down" bind:lintap="changeType" />
+    <l-list title="fade-left 左滑淡入" data-name="fade-left" bind:lintap="changeType" />
+    <l-list title="fade-right 右滑淡入" data-name="fade-right" bind:lintap="changeType" />
+    <l-list title="slide-up 上滑进入" data-name="slide-up" bind:lintap="changeType" />
+    <l-list title="slide-down 下滑进入" data-name="slide-down" bind:lintap="changeType" />
+    <l-list title="slide-left 左滑进入" data-name="slide-left" bind:lintap="changeType" />
+    <l-list title="slide-right 右滑进入" data-name="slide-right" bind:lintap="changeType" />
+    <l-list title="案例一" data-name="0" bind:lintap="openCase" />
+    <l-list title="案例二" data-name="1" bind:lintap="openCase" />
+    <l-list title="案例三" data-name="2" bind:lintap="openCase" />
+  </content-card>
+
+</content-title>
+
+<!--基础示例-->
+<l-transition
+      show="{{ show }}"
+      duration="{{ { enter: 300, leave: 1000 } }}"
+      l-custom-class="lin-custom-class"
+      bind:linbeforeenter="beforeEnter"
+      bind:linenter="entering"
+      bind:linafterenter="afterEnter"
+      bind:linbeforeleave="beforeLeave"
+      bind:linleave="leaving"
+      bind:linafterleave="afterLeave"
+      name="{{transitionName}}"
+>
+  <label>林间有风</label>
+</l-transition>
+
+<!--案例一-->
+<view wx:if="{{ caseStatus[0] }}" class="mask"></view>
+<l-transition
+    show="{{ caseStatus[0] }}"
+    duration="300"
+    name="fade"
+    l-custom-class="case-custom-class-0"
+>
+  <view class="case-container-0">
+    <view>
+      <image style="width:100%" widthFix src="/images/animation/transition/test.png"/>
+    </view>
+    <view class="case-close-0">
+      <l-icon color="#fff" l-class="case-icon-class-0" name="close" bind:tap="closeCase" data-name="0"/>
+    </view>
+  </view>
+</l-transition>
+
+
+<!--案例二-->
+<l-transition
+    show="{{ caseStatus[1] }}"
+    duration="300"
+    name=""
+    l-custom-class="case-custom-class"
+    l-enter-active-class="lin-enter-active-class"
+    l-leave-active-class="lin-leave-active-class"
+    l-enter-class="lin-enter-class"
+    l-leave-to-class="lin-leave-to-class"
+  >
+  <l-status show type="cart" full-screen="{{false}}" bind:lintap="closeCase" data-name="1"/>
+</l-transition>
+
+
+<!--案例三-->
+<view wx:if="{{ caseStatus[2] }}" class="mask" bind:tap="closeCase" data-name="2"></view>
+<l-transition
+        show="{{ caseStatus[2] }}"
+        duration="400"
+        name=""
+        l-custom-class="case-custom-class-1"
+        l-enter-active-class="lin-enter-active-class-1"
+        l-leave-active-class="lin-leave-active-class-1"
+        l-enter-class="lin-enter-class-1"
+        l-leave-to-class="lin-leave-to-class-1"
+>
+  <view class="sku">
+    <view class="sku-card-container">
+      <l-card l-class="sku-card"
+              image="https://timgsa.baidu.com/timg?image&quality=80&size=b10000_10000&sec=1549701108&di=d141540da70a7f92abd6f90ffef7460c&src=http://ztd00.photos.bdimg.com/ztd/w=700;q=50/sign=0b1f180b5a43fbf2c52ca4238045bbbd/b7fd5266d0160924665b9f18dd0735fae6cd34b2.jpg"
+              title="新疆精选苹果"
+              type="primary">
+        <view class="sku-card-content">
+          <view>新疆苹果,又名塞威氏苹果,蔷微科,落叶乔木。</view>
+          <view class="sku-card-price">
+            <l-price unit="￥" value="666"></l-price>
+          </view>
+        </view>
+      </l-card>
+    </view>
+    <view class="sku-tag-container">
+      <view class="sku-tag-title">规格分类</view>
+      <view class="sku-tag-list">
+        <l-tag l-class="tag-item" bg-color="#eee" font-color="#333" size="mini">试用装1个</l-tag>
+        <l-tag l-class="tag-item" bg-color="#eee" font-color="#333" size="mini">散装5kg装（约4-5个）</l-tag>
+        <l-tag l-class="tag-item" bg-color="#eee" font-color="#333" size="mini">散装10kg装（约9-11个）</l-tag>
+        <l-tag l-class="tag-item" bg-color="#eee" font-color="#333" size="mini">散装12kg装（约10-12个）</l-tag>
+        <l-tag l-class="tag-item" bg-color="#eee" font-color="#333" size="mini">小号 1 箱装（约8kg）</l-tag>
+        <l-tag l-class="tag-item" bg-color="#eee" font-color="#333" size="mini">中号 1 箱装（约12kg）</l-tag>
+        <l-tag l-class="tag-item" bg-color="#eee" font-color="#333" size="mini">大号 1 箱装（约16kg）</l-tag>
+      </view>
+    </view>
+    <view class="sku-action">
+      <l-button width="100%" class="sku-action-container" l-class="sku-action-item" l-label-ckass="sku-action-item" shape="square" bind:tap="closeCase" data-name="2">确定</l-button>
+      <l-button width="100%" class="sku-action-container" l-class="sku-action-item" l-label-ckass="sku-action-item" shape="square" plain bind:tap="closeCase" data-name="2">取消</l-button>
+    </view>
+  </view>
+</l-transition>
+
+
