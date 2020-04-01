@@ -30,6 +30,13 @@ Component({
     openApi: {
       type: Boolean,
       value: true
+    },
+    /**
+     * message距离顶部的距离
+     */
+    top: {
+      type: Number,
+      value: 0
     }
   },
 
@@ -39,7 +46,8 @@ Component({
 
   // 解决 addListener undefined 的错误
   observers: {
-    'icon': function () { }
+    'icon': function () {
+    }
   },
 
   attached() {
@@ -62,7 +70,8 @@ Component({
           image = '',
           type = 'primary',
           duration = 1500,
-          success = null
+          success = null,
+          top = 0
         } = options;
         this.data.success = success;
         this.setData({
@@ -70,7 +79,8 @@ Component({
           icon,
           image,
           duration,
-          type
+          type,
+          top
         });
         this.changeStatus();
         return this;
