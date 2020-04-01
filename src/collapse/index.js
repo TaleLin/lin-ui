@@ -6,7 +6,16 @@ Component({
 
   relations: {
     '../collapse-item/index': {
-      type: 'child'
+      type: 'child',
+      linked: function () {
+        this._setAllItemId();
+      },
+      linkChanged: function () {
+        this._setAllItemId();
+      },
+      unlinked: function () {
+        this._setAllItemId();
+      }
     }
   },
 
@@ -65,11 +74,21 @@ Component({
       }
     },
 
+    /**
+     * 点击折叠面板子项回调函数
+     * @param collapseItem
+     */
     onTapCollapseItem(collapseItem) {
       if (this.data.type === 'accordion') {
         this.foldAllExpandItem(collapseItem);
       }
-      this.setCollapseItemStatus(collapseItem,!collapseItem.data.isExpandContent);
+      this.setCollapseItemStatus(collapseItem, !collapseItem.data.isExpandContent);
+
+      if (!collapseItem.data.isExpandContent) {
+        this.triggerEvent('linexpand', {id: collapseItem.data.itemId ? collapseItem.data.itemId : collapseItem.data._idDefault});
+      } else {
+        this.triggerEvent('linfold', {id: collapseItem.data.itemId ? collapseItem.data.itemId : collapseItem.data._idDefault});
+      }
     },
 
     /**
@@ -99,6 +118,16 @@ Component({
         }
       }
       this.data._expandItems = [];
+    },
+
+    /**
+     * 重新设置子项组件的默认id
+     */
+    _setAllItemId() {
+      let children = this.getRelationNodes('../collapse-item/index');
+      children.forEach((item, index) => {
+        item.data._idDefault = index;
+      });
     }
   }
 });

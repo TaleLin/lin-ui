@@ -5,7 +5,7 @@
             color="{{disable?'#DEE2E6':'#333'}}"></l-icon>
     <slot name="title"></slot>
   </view>
-  <view class="container-body" style="height:{{bodyHeight}}px">
+  <view class="container-body" style="height:{{bodyHeight}}px;transition-duration:{{animationTime}}s">
     <view class="container-body-wrapper l-body-class">
       <slot></slot>
     </view>

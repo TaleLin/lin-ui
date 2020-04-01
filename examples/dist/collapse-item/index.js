@@ -1,6 +1,6 @@
 Component({
 
-  externalClasses:['l-class','l-title-class','l-body-class'],
+  externalClasses: ['l-class', 'l-title-class', 'l-body-class'],
 
   relations: {
     '../collapse/index': {
@@ -9,16 +9,27 @@ Component({
   },
 
   options: {
-    multipleSlots: true
+    multipleSlots: true,
+    pureDataPattern: /^_/
   },
 
   properties: {
+    /**
+     * 折叠面板子项自定义id
+     */
+    itemId: {
+      type:String,
+      value:'default'
+    },
+    /**
+     * 标题文字
+     */
     title: {
       type: String,
       value: '默认标题'
     },
     /**
-     * 自定义标题部分内容
+     * 是否开启自定义标题
      */
     customTitle: {
       type: Boolean,
@@ -32,13 +43,12 @@ Component({
       value: false
     },
     /**
-     * 是否显示分隔线
+     * 内容区域展开动画速度
      */
-    divide: {
-      type: Boolean,
-      value: true
+    animationTime:{
+      type:String,
+      value:'0.3'
     }
-
   },
   data: {
     /**
@@ -49,18 +59,19 @@ Component({
      * 内容区是否展开
      */
     isExpandContent: false,
-
+    /**
+     * 默认id
+     */
+    _idDefault: -1,
   },
   methods: {
     /**
      * 点击标题
      */
     onTapTitle() {
-
       if (this.data.disable) {
         return;
       }
-
       let parents = this.getRelationNodes('../collapse/index');
       parents[0].onTapCollapseItem(this);
     },
