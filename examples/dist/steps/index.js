@@ -24,7 +24,7 @@ Component({
     direction: {
       type: String,
       value: 'row',
-      options: ['row', 'colunm']
+      options: ['row', 'column']
     },
     activeIndex: {
       type: Number,
