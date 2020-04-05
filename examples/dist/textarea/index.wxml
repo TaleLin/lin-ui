@@ -4,7 +4,7 @@
     <view class='mask' wx:if="{{disabled}}"></view>
     <!-- 小程序表单组件 -->
     <textarea
-      class="textarea l-inner-class"
+      class="{{autoHeight ? 'textarea-auto-height': 'textarea'}} l-inner-class"
       type="{{type}}"
       value="{{ value }}"
       password="{{type==='password'}}"
