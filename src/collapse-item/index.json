@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "l-list": "../list/index",
+    "l-icon": "../icon/index"
+  }
+}
