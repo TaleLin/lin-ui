@@ -32,6 +32,12 @@ const layoutNaviConfigs = [{
     title: "Sticky",
     desc: "吸顶容器",
     componentsPath: "/pages/components/layout/pages/sticky/index"
+  },
+  {
+    icon: "/images/component/album.png",
+    title: "Collapse",
+    desc: "折叠面板",
+    componentsPath: "/pages/components/layout/pages/collapse/index"
   }
 ]
 

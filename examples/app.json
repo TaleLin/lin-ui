@@ -111,7 +111,8 @@
         "pages/sticky/index",
         "pages/sticky/pages/sticky-base/index",
         "pages/sticky/pages/sticky-appoint/index",
-        "pages/sticky/pages/sticky-dynamic/index"
+        "pages/sticky/pages/sticky-dynamic/index",
+        "pages/collapse/index"
       ]
     },
     {
