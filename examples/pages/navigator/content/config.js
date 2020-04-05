@@ -1,4 +1,5 @@
 import basic from './config/basic-navi.js'
+import animation from './config/animation-navi.js'
 import response from './config/response-navi.js'
 import layout from './config/layout-navi.js'
 import nav from './config/nav-navi.js'
@@ -13,7 +14,8 @@ const config = {
   view,
   nav,
   form,
-  shopping
+  shopping,
+  animation
 }
 
 export default config
