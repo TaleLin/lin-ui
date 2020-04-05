@@ -21,7 +21,7 @@
 <l-transition
       show="{{ show }}"
       duration="{{ { enter: 300, leave: 1000 } }}"
-      l-custom-class="lin-custom-class"
+      l-class="lin-custom-class"
       bind:linbeforeenter="beforeEnter"
       bind:linenter="entering"
       bind:linafterenter="afterEnter"
@@ -39,7 +39,7 @@
     show="{{ caseStatus[0] }}"
     duration="300"
     name="fade"
-    l-custom-class="case-custom-class-0"
+    l-class="case-custom-class-0"
 >
   <view class="case-container-0">
     <view>
@@ -57,7 +57,7 @@
     show="{{ caseStatus[1] }}"
     duration="300"
     name=""
-    l-custom-class="case-custom-class"
+    l-class="case-custom-class"
     l-enter-active-class="lin-enter-active-class"
     l-leave-active-class="lin-leave-active-class"
     l-enter-class="lin-enter-class"
@@ -73,7 +73,7 @@
         show="{{ caseStatus[2] }}"
         duration="400"
         name=""
-        l-custom-class="case-custom-class-1"
+        l-class="case-custom-class-1"
         l-enter-active-class="lin-enter-active-class-1"
         l-leave-active-class="lin-leave-active-class-1"
         l-enter-class="lin-enter-class-1"

@@ -6,7 +6,7 @@ Component({
    */
   behaviors: [transition(true)],
   externalClasses: [
-    'l-custom-class',
+    'l-class',
     'l-enter-class',
     'l-enter-active-class',
     'l-enter-to-class',
