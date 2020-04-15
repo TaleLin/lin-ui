@@ -6,7 +6,7 @@
       name="基本案例"
     >
       <view class='buttun-wrapper'>
-        <l-textarea indicator="{{false}}"  placeholder="说说你的想法吧..."/>
+        <l-textarea style="width:100%" indicator="{{false}}"  placeholder="说说你的想法吧..."/>
       </view>
     </content-card>
 
