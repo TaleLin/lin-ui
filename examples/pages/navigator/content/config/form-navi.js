@@ -40,6 +40,12 @@ const formNaviConfigs = [
     title: "Rules",
     desc: "校验",
     componentsPath: "/pages/components/form/pages/rules/index"
+  },
+  {
+    icon: "/images/component/rules.png",
+    title: "Form",
+    desc: "表单",
+    componentsPath: "/pages/components/form/pages/form/index"
   }
 ]
 

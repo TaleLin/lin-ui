@@ -12,3 +12,7 @@
     justify-content: space-around;
     margin: 40rpx 0;
 }
+
+.l-input-container-class {
+    width: 100% !important;
+}
