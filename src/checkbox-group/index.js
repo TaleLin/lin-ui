@@ -52,7 +52,7 @@ Component({
     checkedKeyRepeat(target) {
       let { key } = target.properties;
       if(this._keys[key]) {
-        throw new Error(`keys有重复元素, chekbox的key属性不能重复：${key}`);
+        throw new Error(`keys有重复元素, checkbox的key属性不能重复：${key}`);
       } else {
         this._keys[key] = true;
       }

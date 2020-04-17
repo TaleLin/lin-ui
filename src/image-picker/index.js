@@ -153,7 +153,7 @@ Component({
         success(res) {
           // tempFilePath可以作为img标签的src属性显示图片
           let tempFilePath = [];
-          if (newOrOld == 'old') {
+          if (newOrOld === 'old') {
             tempFilePath = res.tempFilePaths;
           } else {
             for (let i = 0; i < res.tempFilePaths.length; i++) {
@@ -162,11 +162,7 @@ Component({
                 // key: null
                 imageSize: res.tempFiles[i].size
               });
-              if (res.tempFiles[i].size > that.data.maxImageSize) {
-                tempFilePath[i].overSize = true;
-              } else {
-                tempFilePath[i].overSize = false;
-              }
+              tempFilePath[i].overSize = res.tempFiles[i].size > that.data.maxImageSize;
             }
           }
           const newtempFilePaths = that.data.urls.concat(tempFilePath);
@@ -239,8 +235,7 @@ Component({
 
     },
     handleSplice(arr, current) {
-      const newArr = arr.filter(item => item !== current);
-      return newArr;
+      return arr.filter(item => item !== current);
     },
 
     judgeNewOrOld: function () {

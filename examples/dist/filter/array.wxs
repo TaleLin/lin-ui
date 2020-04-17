@@ -4,7 +4,7 @@ function _isArray(targetArray, funName) {
     if (!is.isArray(targetArray)) {
         console.log('[WXS:Array]' + funName + ',targetArray must be array');
         return false;
-    };
+    }
     return true;
 }
 
@@ -117,7 +117,7 @@ function slice(targetArray, beginSlice, endSlice) {
  * splice 截取数组
  * @param {Array} targetArray 目标数组
  * @param {Number} start
- * @param {Number} deleteCount 
+ * @param {Number} deleteCount
  */
 function splice(targetArray, start, deleteCount) {
     var validatorArray = _isArray(targetArray, 'splice');
@@ -140,7 +140,7 @@ function splice(targetArray, start, deleteCount) {
  * @param {Array} targetArray 目标数组
  * @param {String} searchValue 被查找的值
  * @param {Number} fromIndex 开始查找的位置
- * 
+ *
  */
 function indexOf(targetArray, searchValue, fromIndex = 0) {
     var validatorArray = _isArray(targetArray, 'indexOf');
@@ -152,7 +152,7 @@ function indexOf(targetArray, searchValue, fromIndex = 0) {
  * @param {Array} targetArray 目标数组
  * @param {String} searchValue 被查找的值
  * @param {Number} fromIndex 开始查找的位置，str.length
- * 
+ *
  */
 function lastIndexOf(targetArray, searchValue, fromIndex = 0) {
     var validatorArray = _isArray(targetArray, 'lastIndexOf');

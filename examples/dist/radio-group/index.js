@@ -78,7 +78,7 @@ Component({
 
     onChangeHandle(items) {
       items.forEach((item) => {
-        let checked = this.properties.current == item.data.key;
+        let checked = this.properties.current === item.data.key;
         item.setChecked(checked, item.data.key);
       });
     },

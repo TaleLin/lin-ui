@@ -1,11 +1,11 @@
-import countDownBehavios from '../behaviors/countdown';
+import countDownBehaviors from '../behaviors/countdown';
 Component({
   externalClasses: [
     'l-class',
     'l-class-time',
     'l-time-class'
   ],
-  behaviors:[countDownBehavios],
+  behaviors:[countDownBehaviors],
   properties: {
     doneText:{
       type:String,
@@ -13,6 +13,6 @@ Component({
     }
   },
   methods: {
-        
+
   }
 });

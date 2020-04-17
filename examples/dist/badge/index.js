@@ -2,7 +2,7 @@ import validator from '../behaviors/validator';
 
 Component({
   externalClasses: ['l-class', 'l-class-self', 'l-self-class'],
-  behaivors: [validator],
+  behaviors: [validator],
   properties: {
     // 红点模式
     dot: {
@@ -67,12 +67,12 @@ Component({
         break;
       case 'ellipsis':
         this.setData({
-          finalCount: Number(this.data.value) > Number(this.data.maxCount) ? `...` : this.data.value
+          finalCount: Number(this.data.value) > Number(this.data.maxCount) ? '...' : this.data.value
         });
         break;
       case 'limit':
         this.setData({
-          finalCount: Number(this.data.value) > 999 ? (Number(this.data.value) >= 9999 ? Math.floor(this.data.value / 10000 * 100) / 100 + `w` : Math.floor(this.data.value / 1000 * 100) / 100 + `k`) : this.data.value
+          finalCount: Number(this.data.value) > 999 ? (Number(this.data.value) >= 9999 ? Math.floor(this.data.value / 10000 * 100) / 100 + 'w' : Math.floor(this.data.value / 1000 * 100) / 100 + 'k') : this.data.value
         });
         break;
       default:
