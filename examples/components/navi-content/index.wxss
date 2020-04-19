@@ -1,14 +1,10 @@
-page{
-  background-color: #fff;
-}
-
 .container {
   min-height: 100vh;
   min-width: 100vw;
   box-sizing: border-box;
 }
 
-.section { 
+.section {
   width: 100%;
   height: 100%;
   background: #fff;
