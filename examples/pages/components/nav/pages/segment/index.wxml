@@ -64,13 +64,13 @@
 
     <content-card l-content="content" name="图标选项卡">
       <l-segment bind:linchange="changeTabs" active-color="#FF783C" inactive-color="#333333" l-class-icon="icon-style">
-        <l-segment-item wx:for="{{iconTabs}}" tab="{{item.tab}}" key="{{item.key}}" wx:key="{{item.key}}" icon="{{item.icon}}" pic-placement="{{item.picPlacement}}" />
+        <l-segment-item wx:for="{{iconTabs}}" tab="{{item.tab}}" key="{{item.key}}" wx:key="key" icon="{{item.icon}}" pic-placement="{{item.picPlacement}}" />
       </l-segment>
     </content-card>
 
     <content-card l-content="content" name="图片标签">
       <l-segment bind:linchange="changeTabs" l-class-tabimage="tab-image" has-line="{{false}}">
-        <l-segment-item wx:for="{{imagesTabs}}" tab="{{item.tab}}" key="{{item.key}}" wx:key="{{item.key}}" image="{{item.image}}" pic-placement="{{item.picPlacement}}" />
+        <l-segment-item wx:for="{{imagesTabs}}" tab="{{item.tab}}" key="{{item.key}}" wx:key="key" image="{{item.image}}" pic-placement="{{item.picPlacement}}" />
       </l-segment>
     </content-card>
 

@@ -11,7 +11,7 @@
           <l-checkbox
             l-class="l-checkbox-color"
             wx:for="{{items1}}"
-            wx:key="{{item.id}}"
+            wx:key="id"
             placement="{{position}}"
             key="{{item.name}}"
             checked="{{item.checked}}"
@@ -32,7 +32,7 @@
           <l-checkbox
             l-class="l-checkbox-color"
             wx:for="{{items2}}"
-            wx:key="{{item.id}}"
+            wx:key="id"
             placement="{{position}}"
             key="{{item.id}}"
             checked="{{item.checked}}"
@@ -53,7 +53,7 @@
           <l-checkbox
             l-class="l-checkbox-color"
             wx:for="{{items3}}"
-            wx:key="{{item.id}}"
+            wx:key="id"
             placement="{{position}}"
             key="{{item.name}}"
             checked="{{item.checked}}"
@@ -78,7 +78,7 @@
           <l-checkbox
             l-class="l-checkbox-color"
             wx:for="{{items4}}"
-            wx:key="{{item.id}}"
+            wx:key="id"
             placement="{{position}}"
             key="{{item.name}}"
             size="{{'42rpx'}}"
@@ -100,7 +100,7 @@
           <l-checkbox
             l-class="l-checkbox-color"
             wx:for="{{items5}}"
-            wx:key="{{item.id}}"
+            wx:key="id"
             placement="right"
             key="{{item.id}}"
             checked="{{item.checked}}"
@@ -121,7 +121,7 @@
           <l-checkbox
             l-class="l-checkbox-color"
             wx:for="{{items6}}"
-            wx:key="{{item.id}}"
+            wx:key="id"
             placement="{{position}}"
             key="{{item.name}}"
             custom
@@ -144,7 +144,7 @@
           <l-checkbox
             l-class="l-checkbox-color"
             wx:for="{{items7}}"
-            wx:key="{{item.id}}"
+            wx:key="id"
             placement="{{position}}"
             key="{{item.id}}"
             checked="{{item.checked}}"
@@ -168,7 +168,7 @@
             l-class="l-checkbox"
             l-disabled-class="l-checkbox-disabled"
             wx:for="{{items8}}"
-            wx:key="{{item.id}}"
+            wx:key="id"
             placement="{{position}}"
             key="{{item.name}}"
             checked="{{item.checked}}"
@@ -189,7 +189,7 @@
           <l-checkbox
             l-class="l-checkbox-color"
             wx:for="{{items9}}"
-            wx:key="{{item.id}}"
+            wx:key="id"
             placement="{{position}}"
             key="{{item.name}}"
             checked="{{item.checked}}"
@@ -213,7 +213,7 @@
           <l-checkbox
             l-class="l-checkbox-color"
             wx:for="{{items10}}"
-            wx:key="{{item.id}}"
+            wx:key="id"
             placement="{{position}}"
             key="{{item.name}}"
             checked="{{item.checked}}"
@@ -235,7 +235,7 @@
             l-class="l-title-class-border"
             l-disabled-class="l-checkbox-disabled"
             wx:for="{{items11}}"
-            wx:key="{{item.id}}"
+            wx:key="id"
             placement="{{position}}"
             key="{{item.name}}"
             checked="{{item.checked}}"

@@ -5,7 +5,7 @@
       class="content"
       name="{{item.title}}"
       wx:for="{{navConfig}}"
-      wx:key="{{item.type}}"
+      wx:key="type"
     >
       <view class='slide-wrapper' wx:if="{{item.type == 0}}">
         <view class='row'></view>
@@ -14,7 +14,7 @@
             <view class='left-con'>
               <text class='left-title'>购买运动器材</text>
               <text class='left-time'>10-26 18:50</text>
-            </view> 
+            </view>
             <view class='left-price'><text style="color:rgba(244,81,108,1);">-</text> $2499</view>
           </view>
           <view slot="right" class="right">
@@ -24,7 +24,7 @@
           </view>
         </l-slide-view>
         <view class='row'></view>
-        
+
       </view>
 
       <view class='slide-wrapper' wx:if="{{item.type == 1}}">
@@ -35,7 +35,7 @@
             <view class='left-con'>
               <text class='left-title'>购买iPhone XS Max</text>
               <text class='left-time'>10-26 18:50</text>
-            </view> 
+            </view>
             <view class='left-price'><text style="color:rgba(244,81,108,1);">-</text> $2499</view>
           </view>
           <view slot="right" class="right">
@@ -45,7 +45,7 @@
           </view>
         </l-slide-view>
         <view class='row'></view>
-        
+
       </view>
 
       <view class='slide-wrapper' wx:if="{{item.type == 2}}">
@@ -61,7 +61,7 @@
             <view class='left-con'>
               <text class='left-title'>购买肥宅快乐水</text>
               <text class='left-time'>10-26 18:50</text>
-            </view> 
+            </view>
             <view class='left-price'><text style="color:rgba(244,81,108,1);">-</text> $12</view>
           </view>
           <view slot="right" class="right">
@@ -71,7 +71,7 @@
           </view>
         </l-slide-view>
         <view class='row'></view>
-        
+
       </view>
 
       <view class='slide-wrapper' wx:if="{{item.type == 3}}">
@@ -81,7 +81,7 @@
             <view class='left-con'>
               <text class='left-title'>购买运动器材</text>
               <text class='left-time'>10-26 18:50</text>
-            </view> 
+            </view>
             <view class='left-price'><text style="color:rgba(244,81,108,1);">-</text> $2499</view>
           </view>
           <view slot="right" class="right">
@@ -91,7 +91,7 @@
           </view>
         </l-slide-view>
         <view class='row'></view>
-        
+
       </view>
 
       <view class='slide-wrapper' wx:if="{{item.type == 4}}">
@@ -107,7 +107,7 @@
             <view class='left-con'>
               <text class='left-title'>购买运动器材</text>
               <text class='left-time'>10-26 18:50</text>
-            </view> 
+            </view>
             <view class='left-price'><text style="color:rgba(244,81,108,1);">-</text> $2499</view>
           </view>
           <view slot="right" class="right">
@@ -117,7 +117,7 @@
           </view>
         </l-slide-view>
         <view class='row'></view>
-        
+
       </view>
 
       <view class='slide-wrapper' wx:if="{{item.type == 5}}" >
@@ -127,7 +127,7 @@
             <view class='left-con'>
               <text class='left-title'>购买运动器材</text>
               <text class='left-time'>10-26 18:50</text>
-            </view> 
+            </view>
             <view class='left-price'><text style="color:rgba(244,81,108,1);">-</text> $2499</view>
           </view>
           <view slot="right" class="right">
@@ -137,7 +137,7 @@
           </view>
         </l-slide-view>
         <view class='row'></view>
-        
+
       </view>
         <l-button
           class="l-btn"
@@ -157,7 +157,7 @@
             <view class='left-con'>
               <text class='left-title'>购买运动器材</text>
               <text class='left-time'>10-26 18:50</text>
-            </view> 
+            </view>
             <view class='left-price'><text style="color:rgba(244,81,108,1);">-</text> $2499</view>
           </view>
           <view slot="right" class="right">
@@ -173,7 +173,7 @@
             <view class='left-con'>
               <text class='left-title'>购买运动器材</text>
               <text class='left-time'>10-26 18:50</text>
-            </view> 
+            </view>
             <view class='left-price'><text style="color:rgba(244,81,108,1);">-</text> $2499</view>
           </view>
           <view slot="right" class="right">
@@ -189,7 +189,7 @@
             <view class='left-con'>
               <text class='left-title'>购买运动器材</text>
               <text class='left-time'>10-26 18:50</text>
-            </view> 
+            </view>
             <view class='left-price'><text style="color:rgba(244,81,108,1);">-</text> $2499</view>
           </view>
           <view slot="right" class="right">

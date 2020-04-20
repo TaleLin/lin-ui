@@ -43,7 +43,7 @@
                             <l-checkbox
                                 l-class="l-checkbox-color"
                                 wx:for="{{items}}"
-                                wx:key="{{item.id}}"
+                                wx:key="id"
                                 placement="{{position}}"
                                 key="{{item.name}}"
                                 checked="{{item.checked}}"
@@ -141,7 +141,7 @@
                             <l-checkbox
                                 l-class="l-checkbox-color"
                                 wx:for="{{items2}}"
-                                wx:key="{{item.id}}"
+                                wx:key="id"
                                 placement="{{position}}"
                                 key="{{item.name}}"
                                     checked="{{item.checked}}"
