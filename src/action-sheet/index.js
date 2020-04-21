@@ -51,7 +51,7 @@ Component({
       wx.getSystemInfo({
         success: (res) => {
           this.setData({
-            isIphoneX: res.model == 'iPhone X' ? true : false,
+            isIphoneX: res.model === 'iPhone X',
           });
         }
       });

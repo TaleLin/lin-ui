@@ -81,10 +81,7 @@ Component({
 
     isCurrentSelectedKey(parent) {
       const currentKey = parent.properties.current;
-      if (currentKey == this.properties.key) {
-        return true;
-      }
-      return false;
+      return currentKey === this.properties.key;
     }
   }
 });

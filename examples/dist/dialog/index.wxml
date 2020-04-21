@@ -3,7 +3,7 @@
     show="{{show}}"
     animation="show"
     contentAlign="center"
-    locked="{{true}}" 
+    locked="{{true}}"
     bind:lintap="onDialogTap"
     l-bg-class="l-bg-class"
     z-index="{{zIndex}}"
@@ -20,7 +20,7 @@
                 style="color: {{cancelColor}}"
                 catchtap="onCancelTap"
                 hover-class="{{isHover?'group-hover':''}}"
-                wx:if="{{type=='confirm'}}"
+                wx:if="{{type==='confirm'}}"
                 >{{cancelText}}</view>
             <view
                 class="dialog-btn-confirm l-confirm-class"

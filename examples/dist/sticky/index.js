@@ -127,7 +127,7 @@ Component({
     checkSupportCssSticky() {
       return new Promise((resolve) => {
         const stickyItemNodes = this.getStickyItemNodes();
-        if (stickyItemNodes.length == 0) {
+        if (stickyItemNodes.length === 0) {
           resolve(false);
         }
 

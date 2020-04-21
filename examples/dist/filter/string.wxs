@@ -4,7 +4,7 @@ function _isString(targetString, funName) {
     if (!is.isString(targetString)) {
         console.log('[WXS:String]' + funName + ',targetString must be string');
         return false;
-    };
+    }
     return true;
 }
 /**
@@ -29,7 +29,7 @@ function valueOf(targetString) {
  * charAt 一个字符串中返回指定的字符。
  * @param {String} targetString 目标字符串
  * @param {Number} index 返回指定字符的位置
- * 
+ *
  */
 function charAt(targetString, index = 0) {
     var validatorString = _isString(targetString, 'charAt');
@@ -40,7 +40,7 @@ function charAt(targetString, index = 0) {
  * charCodeAt 返回0到65535之间的整数，表示给定索引处的UTF-16代码单元
  * @param {String} targetString 目标字符串
  * @param {Number} index 返回指定字符的位置
- * 
+ *
  */
 function charCodeAt(targetString, index = 0) {
     var validatorString = _isString(targetString, 'charCodeAt');
@@ -52,7 +52,7 @@ function charCodeAt(targetString, index = 0) {
  * @param {String} targetString 目标字符串
  * @param {String} searchValue 被查找的值
  * @param {Number} fromIndex 开始查找的位置
- * 
+ *
  */
 function indexOf(targetString, searchValue, fromIndex = 0) {
     var validatorString = _isString(targetString, 'indexOf');
@@ -64,7 +64,7 @@ function indexOf(targetString, searchValue, fromIndex = 0) {
  * @param {String} targetString 目标字符串
  * @param {String} searchValue 被查找的值
  * @param {Number} fromIndex 开始查找的位置，str.length
- * 
+ *
  */
 function lastIndexOf(targetString, searchValue, fromIndex = 0) {
     var validatorString = _isString(targetString, 'lastIndexOf');
@@ -76,7 +76,7 @@ function lastIndexOf(targetString, searchValue, fromIndex = 0) {
  * @param {String} targetString 目标字符串
  * @param {Number} beginSlice 从该索引（以 0 为基数）处开始提取原字符串中的字符
  * @param {Number} endSlice 在该索引（以 0 为基数）处结束提取字符
- * 
+ *
  */
 function slice(targetString, beginSlice, endSlice) {
     var validatorString = _isString(targetString, 'slice');
@@ -87,8 +87,8 @@ function slice(targetString, beginSlice, endSlice) {
  * split 分割字符串
  * @param {String} targetString 目标字符串
  * @param {String} separator 从该索引（以 0 为基数）处开始提取原字符串中的字符
- * @param {Number} limit 
- * 
+ * @param {Number} limit
+ *
  */
 function split(targetString, separator, limit) {
     var validatorString = _isString(targetString, 'split');
@@ -100,7 +100,7 @@ function split(targetString, separator, limit) {
  * @param {String} targetString 目标字符串
  * @param {Number} indexStart 需要截取的第一个字符的索引，该字符作为返回的字符串的首字母。
  * @param {Number} indexEnd 一个 0 到字符串长度之间的整数，以该数字为索引的字符不包含在截取的字符串内。
- * 
+ *
  */
 function substring(targetString, indexStart, indexEnd) {
     var validatorString = _isString(targetString, 'substring');
@@ -110,7 +110,7 @@ function substring(targetString, indexStart, indexEnd) {
 /**
  * toLowerCase 字符串值转为小写形式
  * @param {String} targetString 目标字符串
- * 
+ *
  */
 function toLowerCase(targetString) {
     var validatorString = _isString(targetString, 'toLowerCase');
@@ -120,7 +120,7 @@ function toLowerCase(targetString) {
 /**
  * toLocaleLowerCase 字符串值转为小写形式
  * @param {String} targetString 目标字符串
- * 
+ *
  */
 function toLocaleLowerCase(targetString) {
     var validatorString = _isString(targetString, 'toLocaleLowerCase');
@@ -130,7 +130,7 @@ function toLocaleLowerCase(targetString) {
 /**
  * toUpperCase 字符串值转为大写形式
  * @param {String} targetString 目标字符串
- * 
+ *
  */
 function toUpperCase(targetString) {
     var validatorString = _isString(targetString, 'toUpperCase');
@@ -140,7 +140,7 @@ function toUpperCase(targetString) {
 /**
  * toLocaleUpperCase 根据任何特定于语言环境的案例映射，返回调用字符串值转换为大写的值。
  * @param {String} targetString 目标字符串
- * 
+ *
  */
 function toLocaleUpperCase(targetString) {
     var validatorString = _isString(targetString, 'toLocaleUpperCase');
@@ -150,7 +150,7 @@ function toLocaleUpperCase(targetString) {
 /**
  * trim 从一个字符串的两端删除空白字符
  * @param {String} targetString 目标字符串
- * 
+ *
  */
 function trim(targetString) {
     var validatorString = _isString(targetString, 'trim');
