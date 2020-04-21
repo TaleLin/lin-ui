@@ -5,7 +5,7 @@
       class="content"
       name="{{item.title}}"
       wx:for="{{navConfig}}"
-      wx:key="{{item.type}}"
+      wx:key="type"
     >
       <view class='buttun-wrapper'>
         <l-button
@@ -27,11 +27,11 @@
     show-close="{{currentConf.showClose}}"
     title="{{currentConf.title}}"
     show-title="{{currentConf.showTitle}}"
-    content="{{currentConf.content}}" 
-    cancel-text="{{currentConf.cancelText}}" 
-    cancel-color="{{currentConf.cancelColor}}" 
-    confirm-text="{{currentConf.confirmText}}"  
-    confirm-color="{{currentConf.confirmColor}}"  
+    content="{{currentConf.content}}"
+    cancel-text="{{currentConf.cancelText}}"
+    cancel-color="{{currentConf.cancelColor}}"
+    confirm-text="{{currentConf.confirmText}}"
+    confirm-color="{{currentConf.confirmColor}}"
     bind:lintap="onDialogTap"
     bind:lincancel="onCancelTap"
     bind:linconfirm="onConfirmTap"

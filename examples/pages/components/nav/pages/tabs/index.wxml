@@ -97,7 +97,7 @@
 
     <content-card l-content="content" name="滚动标签">
       <l-tabs bind:linchange="changeTabs" l-class-header="l-class-header" l-class-active="l-class-active" placement="top" scrollable equal-width="{{false}}">
-        <l-tabpanel wx:for="{{scrollAbleTabs}}" tab="{{item.tab}}" key="{{item.key}}" slot="{{item.key}}" wx:key="{{item.key}}">
+        <l-tabpanel wx:for="{{scrollAbleTabs}}" tab="{{item.tab}}" key="{{item.key}}" slot="{{item.key}}" wx:key="key">
           <view class="tab-content">{{item.tab}}</view>
         </l-tabpanel>
       </l-tabs>
@@ -105,7 +105,7 @@
 
     <content-card l-content="content" name="图标标签">
       <l-tabs bind:linchange="changeTabs" active-color="#FF783C" inactive-color="#333333">
-        <l-tabpanel wx:for="{{iconTabs}}" tab="{{item.tab}}" key="{{item.key}}" slot="{{item.key}}" wx:key="{{item.key}}" icon="{{item.icon}}" pic-placement="{{item.picPlacement}}">
+        <l-tabpanel wx:for="{{iconTabs}}" tab="{{item.tab}}" key="{{item.key}}" slot="{{item.key}}" wx:key="key" icon="{{item.icon}}" pic-placement="{{item.picPlacement}}">
           <view class="tab-content">{{item.tab}}</view>
         </l-tabpanel>
       </l-tabs>
@@ -113,7 +113,7 @@
 
     <content-card l-content="content" name="图片标签">
       <l-tabs bind:linchange="changeTabs" animated l-class-tabimage="tab-image" has-line="{{false}}">
-        <l-tabpanel wx:for="{{imagesTabs}}" tab="{{item.tab}}" key="{{item.key}}" slot="{{item.key}}" wx:key="{{item.key}}" image="{{item.image}}" pic-placement="{{item.picPlacement}}">
+        <l-tabpanel wx:for="{{imagesTabs}}" tab="{{item.tab}}" key="{{item.key}}" slot="{{item.key}}" wx:key="key" image="{{item.image}}" pic-placement="{{item.picPlacement}}">
           <view class="tab-content">{{item.tab}}</view>
         </l-tabpanel>
       </l-tabs>
