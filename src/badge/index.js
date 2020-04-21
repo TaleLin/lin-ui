@@ -2,7 +2,7 @@ import validator from '../behaviors/validator';
 
 Component({
   externalClasses: ['l-class', 'l-class-self', 'l-self-class'],
-  behaivors: [validator],
+  behaviors: [validator],
   properties: {
     // 红点模式
     dot: {

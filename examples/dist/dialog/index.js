@@ -14,7 +14,7 @@ Component({
       type: Boolean,
       value: false
     },
-    // 类型 【 alert: 提示框， confrim: 确认框 】
+    // 类型 【 alert: 提示框， confirm: 确认框 】
     type: {
       type: String,
       value: 'alert',

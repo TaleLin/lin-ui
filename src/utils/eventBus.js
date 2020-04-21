@@ -13,7 +13,7 @@ EventBus.prototype = {
         //如果存在，则删除之前添加的事件
         for (var i = 0, busLength = objBus.length; i < busLength; i++) {
           var tempMap = objBus[i];
-          if (tempMap.k == key) {
+          if (tempMap.k === key) {
             objBus.splice(i, 1);
           }
         }
@@ -24,7 +24,7 @@ EventBus.prototype = {
       if (key) {
         for (var i = 0, busLength = objBus.length; i < busLength; i++) {
           var map = objBus[i];
-          if (map.k == key) {
+          if (map.k === key) {
             return map.v();
           }
         }
@@ -35,7 +35,7 @@ EventBus.prototype = {
     if (key) {
       for (var i = 0, busLength = arrBus.length; i < busLength; i++) {
         var map = arrBus[i];
-        if (map.k == key) {
+        if (map.k === key) {
           return map.v(data);
         }
       }
@@ -63,7 +63,7 @@ EventBus.prototype = {
       if (key) {
         for (var i = 0, busLength = arrBus.length; i < busLength; i++) {
           var map = arrBus[i];
-          if (map.k == key) {
+          if (map.k === key) {
             map.v();
           }
         }

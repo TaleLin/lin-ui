@@ -54,7 +54,7 @@ Component({
   lifetimes: {
     ready: function () {
       // 设置显示模式
-      const parent = this.getParentComponet();
+      const parent = this.getParentComponent();
       const mode = parent.data.mode;
       this.setData({mode});
     }
@@ -68,7 +68,7 @@ Component({
      * @param {Number} scrollTop 页面垂直滚动距离
      */
     updateStickyItemPosition(scrollTop) {
-      const parent = this.getParentComponet();
+      const parent = this.getParentComponent();
       const {index, stickyItemTop, stickyItemHeight, top} = this.data;
       const isFixedTop = scrollTop > stickyItemTop - top && scrollTop < stickyItemHeight + stickyItemTop - top;
 
@@ -97,7 +97,7 @@ Component({
       // 设置索引值
       this.setData({index});
       // 从父级组件获取页面垂直滚动距离
-      const parent = this.getParentComponet();
+      const parent = this.getParentComponent();
       const scrollTop = parent.data.scrollTop;
 
 
@@ -129,7 +129,7 @@ Component({
     /**
      * 获取父级组件-sticky实例
      */
-    getParentComponet() {
+    getParentComponent() {
       const stickys = this.getRelationNodes('../sticky/index');
       if (stickys.length === 0) {
         return;

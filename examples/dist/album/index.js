@@ -86,10 +86,10 @@ Component({
    * 组件的方法列表
    */
   methods: {
-    // 判断传入的urls是字符串列表(old模式)还是对象列表(new模式) 
+    // 判断传入的urls是字符串列表(old模式)还是对象列表(new模式)
     judgeType() {
       const urls = this.data.urls;
-      if (urls.length != 0) {
+      if (urls.length !== 0) {
         if (typeof (urls[0]) !== 'object') {
           return false;
         }
@@ -106,7 +106,7 @@ Component({
           const longSide = res.width >= res.height ? res.width : res.height;
           const shortSide = res.width >= res.height ? res.height : res.width;
           this.setData({
-            horizontalScreen: res.width >= res.height ? true : false,
+            horizontalScreen: res.width >= res.height,
             shortSideValue: shortSide * this.data.singleSize / longSide
           });
         }
@@ -124,7 +124,7 @@ Component({
       const urls = this.data.urls;
       const key = this.data.key;
 
-      if (urls.length == 1) {
+      if (urls.length === 1) {
         this.horizontalOrVertical(newType ? urls[0][key] : urls[0]);
       }
     },

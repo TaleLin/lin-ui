@@ -105,7 +105,7 @@ Component({
           currentIndex = this.data.currentIndex;
         const tab = items.map((item, index) => {
 
-          activeKey = !val && index == 0 ? item.data.key : activeKey;
+          activeKey = !val && index === 0 ? item.data.key : activeKey;
           currentIndex = item.data.key === activeKey ? index : currentIndex;
           return {
             tab: item.data.tab,
@@ -132,7 +132,7 @@ Component({
         source,
         current
       } = e.detail;
-      if (source == 'touch') {
+      if (source === 'touch') {
         const currentIndex = current;
         const activeKey = this.data.tabList[current].key;
         this._setChangeData({
