@@ -76,7 +76,7 @@ Component({
       this.setData({
         newOrOld
       });
-      if (newOrOld == 'old') {
+      if (newOrOld === 'old') {
         console.warn('image-picker组件已经升级，建议使用最新版本，当前用法会在后续版本中暂停支持');
       }
     },
@@ -110,7 +110,7 @@ Component({
       let previewImageList = [];
       const newOrOld = this.data.newOrOld;
 
-      if (newOrOld == 'old') {
+      if (newOrOld === 'old') {
         tempFilePath = this.data.urls[index];
         previewImageList = this.data.urls;
 
@@ -240,8 +240,8 @@ Component({
 
     judgeNewOrOld: function () {
       const urls = this.data.urls;
-      if (urls.length != 0) {
-        if (typeof (urls[0]) != 'object') {
+      if (urls.length !== 0) {
+        if (typeof (urls[0]) !== 'object') {
           return 'old';
         }
         return 'new';
