@@ -74,7 +74,7 @@ Component({
       let activeKey = val,
         currentIndex = this.data.currentIndex;
       this.data.tabList.forEach((item, index) => {
-        activeKey = !val && index == 0 ? item.key : activeKey;
+        activeKey = !val && index === 0 ? item.key : activeKey;
         currentIndex = item.key === activeKey ? index : currentIndex;
       });
       this.setData({
@@ -127,7 +127,7 @@ Component({
         source,
         current
       } = e.detail;
-      if (source == 'touch') {
+      if (source === 'touch') {
         const currentIndex = current;
         const activeKey = this.data.tabList[current].key;
         const subCurrentIndex = this.data.tabList[currentIndex].subCurrentIndex;
@@ -145,7 +145,7 @@ Component({
         source,
         current
       } = e.detail;
-      if (source == 'touch') {
+      if (source === 'touch') {
         const {
           currentIndex,
           activeKey
