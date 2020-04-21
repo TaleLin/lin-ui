@@ -1,1 +1,4 @@
 /* pages/navigator/content/index.wxss */
+page{
+  background-color: #fff;
+}

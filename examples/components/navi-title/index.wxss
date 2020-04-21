@@ -1,5 +1,3 @@
-/* components/navi-title/index.wxss */
-
 .navi-title {
   display: flex;
   justify-content: space-between;
@@ -7,7 +5,6 @@
   height: 100rpx;
   align-items: center;
   border-radius: 12rpx 12rpx 0 0 ;
-  /* background: #ccc; */
 }
 
 .line {
@@ -20,11 +17,10 @@
 
 .title-left {
   display: flex;
-  /* justify-content: center; */
   align-items: center;
 }
 
-.title-left text {
+.title-left .title-left-text {
   font-size: 28rpx;
   color: #3683d6;
 }
