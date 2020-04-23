@@ -1,19 +1,21 @@
 import Schema from '../common/async-validator/index';
+import validator from '../behaviors/validator';
 /**
  * @param tipType String [toast , message , text]
  */
 // eslint-disable-next-line no-undef
 export default Behavior({
-  behaviors: [],
+  behaviors: [validator],
   properties: {
     // 校验
     rules: {
-      type: [Object,Array],
+      type: [Object, Array],
       value: []
     },
     tipType: {
       type: String,
-      value:'toast'
+      value: 'toast',
+      options: ['toast', 'message', 'text']
     }
   },
   data: {

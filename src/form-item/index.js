@@ -77,7 +77,6 @@ Component({
           this.setData({
             isRequired: true
           });
-          return;
         }
       });
     }

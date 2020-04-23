@@ -1,0 +1,103 @@
+/* pages/components/layout/pages/sticky/index.wxss */
+
+.num {
+  color: #fc6517;
+  font-size: 42rpx;
+  font-style: italic;
+}
+
+.text {
+  height: 30rpx;
+  font-size: 22rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(102, 102, 102, 1);
+  line-height: 30rpx;
+  margin-top: 9rpx;
+}
+
+.grid-item {
+  height: 200rpx;
+} 
+
+
+.container {
+  max-width: 100vw;
+  overflow: visible;
+}
+
+.text {
+  height: 30rpx;
+  font-size: 22rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(102, 102, 102, 1);
+  line-height: 30rpx;
+  margin-top: 9rpx;
+}
+
+.grid-item {
+  height: 200rpx;
+}
+
+.l-header-sticky-class {
+  right: 0 !important;
+  box-sizing: border-box !important;
+  padding: 0 20rpx !important;
+  background-color: white !important;
+  z-index: 1 !important;
+}
+
+.l-container-class {
+  background-color: white !important;
+}
+
+
+
+/* 指定吸顶位置 */
+.container-search-bar {
+  height: 40px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  background-color: white;
+}
+
+/* 卡片样式 */
+.card {
+  margin: 10rpx auto !important;
+}
+
+.right-card {
+  height: 180rpx !important;
+  width: 220rpx !important;
+  border-radius: 12rpx !important;
+}
+
+.content {
+  margin-top: 10rpx;
+  color: #666;
+  font-size: 26rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 5;
+}
+
+.dynamic-card-header{
+  height: 40rpx;
+  line-height: 30rpx;
+  font-weight: bold;
+  background-color: white;
+  margin: 30rpx 0;
+
+}
+
+.dynamic-card-body{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

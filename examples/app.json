@@ -107,7 +107,12 @@
         "pages/grid/index",
         "pages/card/index",
         "pages/water-flow/index",
-        "pages/album/index"
+        "pages/album/index",
+        "pages/sticky/index",
+        "pages/sticky/pages/sticky-base/index",
+        "pages/sticky/pages/sticky-appoint/index",
+        "pages/sticky/pages/sticky-dynamic/index",
+        "pages/collapse/index"
       ]
     },
     {

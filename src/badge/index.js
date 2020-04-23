@@ -1,5 +1,8 @@
+import validator from '../behaviors/validator';
+
 Component({
   externalClasses: ['l-class', 'l-class-self', 'l-self-class'],
+  behaviors: [validator],
   properties: {
     // 红点模式
     dot: {
@@ -8,7 +11,8 @@ Component({
     },
     shape: {
       type: String,
-      value: 'horn'
+      value: 'horn',
+      options: ['horn', 'circle']
     },
     value: {
       type: String,
@@ -16,7 +20,8 @@ Component({
     },
     mode: {
       type: String,
-      value: 'number'
+      value: 'number',
+      options: ['number', 'text']
     },
     // 数字最大值
     maxCount: {
@@ -26,7 +31,8 @@ Component({
     // 数字形式
     numberType: {
       type: String,
-      value: 'overflow'
+      value: 'overflow',
+      options: ['overflow', 'limit', 'ellipsis']
     },
     show: {
       type: Boolean,
@@ -61,12 +67,12 @@ Component({
         break;
       case 'ellipsis':
         this.setData({
-          finalCount: Number(this.data.value) > Number(this.data.maxCount) ? `...` : this.data.value
+          finalCount: Number(this.data.value) > Number(this.data.maxCount) ? '...' : this.data.value
         });
         break;
       case 'limit':
         this.setData({
-          finalCount: Number(this.data.value) > 999 ? (Number(this.data.value) >= 9999 ? Math.floor(this.data.value / 10000 * 100) / 100 + `w` : Math.floor(this.data.value / 1000 * 100) / 100 + `k`) : this.data.value
+          finalCount: Number(this.data.value) > 999 ? (Number(this.data.value) >= 9999 ? Math.floor(this.data.value / 10000 * 100) / 100 + 'w' : Math.floor(this.data.value / 1000 * 100) / 100 + 'k') : this.data.value
         });
         break;
       default:

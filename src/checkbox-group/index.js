@@ -1,7 +1,9 @@
 import eventBus from '../utils/eventBus';
+import rules from '../behaviors/rules';
+
 
 Component({
-  behaviors: ['wx://form-field'],
+  behaviors: ['wx://form-field',rules],
   externalClasses: ['l-class', 'l-error-text', 'l-error-text-class'],
   relations: {
     '../checkbox/index': {
@@ -50,7 +52,7 @@ Component({
     checkedKeyRepeat(target) {
       let { key } = target.properties;
       if(this._keys[key]) {
-        throw new Error(`keys有重复元素, chekbox的key属性不能重复：${key}`);
+        throw new Error(`keys有重复元素, checkbox的key属性不能重复：${key}`);
       } else {
         this._keys[key] = true;
       }
@@ -77,6 +79,10 @@ Component({
 
     onEmitEventHandle(currentItem) {
       currentItem.checked ? this.addSelect (currentItem):this.removeSelect(currentItem.key);
+
+      this.validatorData({
+        [this.data.name]: Object.values(this._selected)
+      });
 
       this.triggerEvent('linchange', currentItem, {
         bubbles: true,

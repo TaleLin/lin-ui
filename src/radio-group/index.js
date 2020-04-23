@@ -1,8 +1,10 @@
 import eventBus from '../utils/eventBus';
+import rules from '../behaviors/rules';
+
 
 Component({
   externalClasses: ['l-class', 'l-error-text', 'l-error-text-class'],
-  behaviors: ['wx://form-field'],
+  behaviors: ['wx://form-field',rules],
   relations: {
     '../radio/index': {
       type: 'child',
@@ -76,7 +78,7 @@ Component({
 
     onChangeHandle(items) {
       items.forEach((item) => {
-        let checked = this.properties.current == item.data.key;
+        let checked = this.properties.current === item.data.key;
         item.setChecked(checked, item.data.key);
       });
     },
@@ -88,6 +90,9 @@ Component({
       // currentItem.currentKey = this.properties.current
       Object.assign(currentItem, {
         currentKey: this.properties.current
+      });
+      this.validatorData({
+        [this.data.name]: this.data.current
       });
       this.triggerEvent('linchange', currentItem, {
         bubbles: true,

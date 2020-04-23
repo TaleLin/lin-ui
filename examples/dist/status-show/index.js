@@ -132,6 +132,10 @@ Component({
           typeText: '暂时还没有相关数据哦~~'
         });
         break;
+      default:
+        console.warn(
+          `${this.data.type} is not a valid value`
+        );
       }
     },
 

@@ -1,7 +1,7 @@
 <!--pages/view/items/mask/index.wxml-->
 <view class='container'>
   <content-title name="Mask" describe="遮罩层">
-    <content-card class="content" name="{{item.title}}" wx:for="{{navConfig}}" wx:key="item.type">
+    <content-card class="content" name="{{item.title}}" wx:for="{{navConfig}}" wx:key="type">
       <view class='buttun-wrapper'>
         <l-button
           l-class="button"
@@ -11,7 +11,7 @@
         >
           显示遮罩
         </l-button>
-        
+
       </view>
 
     </content-card>

@@ -1,7 +1,9 @@
 import zIndex from '../behaviors/zIndex';
 import watchShow from '../behaviors/watchShow';
+import validator from '../behaviors/validator';
+
 Component({
-  behaviors: [zIndex, watchShow],
+  behaviors: [zIndex, watchShow, validator],
   externalClasses: ['l-class', 'l-image-class'],
   properties: {
     show: Boolean,
@@ -18,7 +20,8 @@ Component({
     content: String,
     type: {
       type: String,
-      value: 'primary'
+      value: 'primary',
+      options: ['primary', 'warning', 'success', 'error']
     },
     duration: {
       type: Number,
@@ -27,6 +30,13 @@ Component({
     openApi: {
       type: Boolean,
       value: true
+    },
+    /**
+     * message距离顶部的距离
+     */
+    top: {
+      type: Number,
+      value: 0
     }
   },
 
@@ -36,7 +46,8 @@ Component({
 
   // 解决 addListener undefined 的错误
   observers: {
-    'icon': function () {}
+    'icon': function () {
+    }
   },
 
   attached() {
@@ -59,7 +70,8 @@ Component({
           image = '',
           type = 'primary',
           duration = 1500,
-          success = null
+          success = null,
+          top = 0
         } = options;
         this.data.success = success;
         this.setData({
@@ -67,12 +79,13 @@ Component({
           icon,
           image,
           duration,
-          type
+          type,
+          top
         });
         this.changeStatus();
         return this;
       };
-      wx.lin.hideMessage = ()=>{
+      wx.lin.hideMessage = () => {
         this.setData({
           status: false
         });

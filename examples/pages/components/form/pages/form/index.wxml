@@ -7,15 +7,15 @@
             <view class='buttun-wrapper'>
                 <l-form name="student" l-form-btn-class="l-form-btn-class" bind:linsubmit="submit">
                     <l-form-item label="姓名:" name="studentName">
-                        <l-input id="studentName" value="{{student.name}}" hide-label show-row="{{false}}"/>
+                        <l-input l-class="l-input-container-class" id="studentName" value="{{student.name}}" hide-label show-row="{{false}}"/>
                     </l-form-item>
 
                     <l-form-item label="年龄:" name="studentAge">
-                        <l-input id="studentAge" value="{{student.age}}" hide-label show-row="{{false}}"/>
+                        <l-input l-class="l-input-container-class"  id="studentAge" value="{{student.age}}" hide-label show-row="{{false}}"/>
                     </l-form-item>
 
                     <l-form-item label="地址:" name="studentAddress">
-                        <l-input id="studentAddress" value="{{student.address}}" hide-label show-row="{{false}}"/>
+                        <l-input l-class="l-input-container-class"  id="studentAddress" value="{{student.address}}" hide-label show-row="{{false}}"/>
                     </l-form-item>
 
 
@@ -36,14 +36,14 @@
             <view class='buttun-wrapper'>
                 <l-form name="form" bind:linsubmit="submit" l-form-btn-class="l-form-btn-class">
                     <l-form-item label="填写姓名:" name="name">
-                        <l-input id="name" value="{{form.name}}" hide-label show-row="{{false}}"/>
+                        <l-input l-class="l-input-container-class"  id="name" value="{{form.name}}" hide-label show-row="{{false}}"/>
                     </l-form-item>
                     <l-form-item label="选择歌曲:" name="music" >
                         <l-checkbox-group bind:linchange="change" id="music" placement="row">
                             <l-checkbox
                                 l-class="l-checkbox-color"
                                 wx:for="{{items}}"
-                                wx:key="{{item.id}}"
+                                wx:key="id"
                                 placement="{{position}}"
                                 key="{{item.name}}"
                                 checked="{{item.checked}}"
@@ -66,7 +66,7 @@
                         <l-rate id="score" value="{{form.score}}" />
                     </l-form-item>
                     <l-form-item label="性格描述:" name="desc">
-                        <l-textarea border="{{false}}" id="desc" value="{{form.desc}}" />
+                        <l-textarea l-class="l-input-container-class"  border="{{false}}" id="desc" value="{{form.desc}}" />
                     </l-form-item>
 
                     <view slot="submit">
@@ -87,11 +87,11 @@
             <view class='buttun-wrapper'>
                 <l-form name="loginForm" bind:linsubmit="submit" l-form-btn-class="l-form-btn-class">
                     <l-form-item label="账号:" name="loginFormLoginId" rules="{{loginForm.loginIdRules}}">
-                        <l-input id="loginFormLoginId" value="{{loginForm.loginId}}" hide-label show-row="{{false}}"/>
+                        <l-input l-class="l-input-container-class"  id="loginFormLoginId" value="{{loginForm.loginId}}" hide-label show-row="{{false}}"/>
                     </l-form-item>
 
                     <l-form-item label="密码:" name="loginFormPassword" rules="{{loginForm.passwordRules}}">
-                        <l-input id="loginFormPassword" value="{{loginForm.password}}" hide-label show-row="{{false}}"/>
+                        <l-input l-class="l-input-container-class"  id="loginFormPassword" value="{{loginForm.password}}" hide-label show-row="{{false}}"/>
                     </l-form-item>
 
                     <view slot="submit">
@@ -134,14 +134,14 @@
                 </view>
                 <l-form is-submit-validate="{{isSubmitValidate == 1}}" name="ruleForm" bind:linsubmit="submit" l-form-btn-class="l-form-btn-class">
                     <l-form-item tip-type="{{tipType}}" align-items="{{alignType}}" label="填写姓名:" name="ruleName" rules="{{nameRules}}">
-                        <l-input id="ruleName" value="{{ruleForm.name}}" hide-label show-row="{{false}}"/>
+                        <l-input l-class="l-input-container-class"  id="ruleName" value="{{ruleForm.name}}" hide-label show-row="{{false}}"/>
                     </l-form-item>
                     <l-form-item tip-type="{{tipType}}" align-items="{{alignType}}" rules="{{musicRules}}" label="选择歌曲:" name="ruleMusic" >
                         <l-checkbox-group bind:linchange="change2" id="ruleMusic" placement="row">
                             <l-checkbox
                                 l-class="l-checkbox-color"
                                 wx:for="{{items2}}"
-                                wx:key="{{item.id}}"
+                                wx:key="id"
                                 placement="{{position}}"
                                 key="{{item.name}}"
                                     checked="{{item.checked}}"
@@ -164,7 +164,7 @@
                         <l-rate id="ruleScore" value="{{ruleForm.score}}" />
                     </l-form-item>
                     <l-form-item tip-type="{{tipType}}" align-items="{{alignType}}" rules="{{descRules}}" label="性格描述:" name="ruleDesc">
-                        <l-textarea border="{{false}}" id="ruleDesc" value="{{ruleForm.desc}}" />
+                        <l-textarea l-class="l-input-container-class" border="{{false}}" id="ruleDesc" value="{{ruleForm.desc}}" />
                     </l-form-item>
 
                     <view slot="submit">
@@ -184,14 +184,14 @@
             <view class='buttun-wrapper'>
                 <l-form name="register" l-form-btn-class="l-form-btn-class">
                     <l-form-item tip-type="text" label="登录账号:" name="loginId" rules="{{loginIdRules}}">
-                        <l-input id="loginId" value="{{register.loginId}}" hide-label show-row="{{false}}"/>
+                        <l-input l-class="l-input-container-class"  id="loginId" value="{{register.loginId}}" hide-label show-row="{{false}}"/>
                     </l-form-item>
 
                     <l-form-item tip-type="text" label="登录密码:" name="password" rules="{{passwordRules}}">
-                        <l-input id="password" value="{{register.password}}" hide-label show-row="{{false}}"/>
+                        <l-input l-class="l-input-container-class"  id="password" value="{{register.password}}" hide-label show-row="{{false}}"/>
                     </l-form-item>
                     <l-form-item tip-type="text" label="确认密码:" name="confirm" rules="{{confirmRules}}">
-                        <l-input id="confirm" value="{{register.confirm}}" hide-label show-row="{{false}}"/>
+                        <l-input l-class="l-input-container-class"  id="confirm" value="{{register.confirm}}" hide-label show-row="{{false}}"/>
                     </l-form-item>
 
                     <view slot="submit">

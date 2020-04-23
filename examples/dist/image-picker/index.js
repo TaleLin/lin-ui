@@ -1,10 +1,11 @@
-// mask
+import validator from '../behaviors/validator';
+
 Component({
   /**
    * 组件的属性列表
    */
   externalClasses: ['l-class', 'l-item-class'],
-  behaviors: ['wx://form-field'],
+  behaviors: ['wx://form-field', validator],
   properties: {
     urls: {
       type: Array,
@@ -28,17 +29,20 @@ Component({
     // 每行可显示的个数
     size: {
       type: [String, Number],
-      value: 3
+      value: 3,
+      options: [3, 4, '3', '4']
     },
     // 所选的图片的尺寸 ['original', 'compressed']
     sizeType: {
       type: String,
       value: 'original',
+      options: ['original', 'compressed']
     },
     // 图片裁剪、缩放的模式
     mode: {
       type: String,
       value: 'aspectFit', // 参考微信小程序 image 组件的mode属性列表
+      options: ['scaleToFill', 'aspectFit', 'aspectFill', 'widthFix', 'top', 'bottom', 'center', 'left', 'right', 'top left', 'top right', 'bottom left', 'bottom right']
     },
     // 设置是否传入slot
     custom: {
@@ -149,7 +153,7 @@ Component({
         success(res) {
           // tempFilePath可以作为img标签的src属性显示图片
           let tempFilePath = [];
-          if (newOrOld == 'old') {
+          if (newOrOld === 'old') {
             tempFilePath = res.tempFilePaths;
           } else {
             for (let i = 0; i < res.tempFilePaths.length; i++) {
@@ -158,15 +162,11 @@ Component({
                 // key: null
                 imageSize: res.tempFiles[i].size
               });
-              if (res.tempFiles[i].size > that.data.maxImageSize) {
-                tempFilePath[i].overSize = true;
-              } else {
-                tempFilePath[i].overSize = false;
-              }
+              tempFilePath[i].overSize = res.tempFiles[i].size > that.data.maxImageSize;
             }
           }
           const newtempFilePaths = that.data.urls.concat(tempFilePath);
-          // 判断是否还能继续添加图片 
+          // 判断是否还能继续添加图片
           if (newtempFilePaths.length === parseInt(that.data.count)) {
             that.setData({
               showBtn: false
@@ -213,7 +213,7 @@ Component({
       const urls = this.data.urls;
       const tempFilePath = urls[index];
       const tempFilePaths = this.handleSplice(urls, tempFilePath);
-      // 判断是否还能继续添加图片 
+      // 判断是否还能继续添加图片
       if (tempFilePaths.length < parseInt(this.data.count)) {
         this.setData({
           showBtn: true
@@ -235,8 +235,7 @@ Component({
 
     },
     handleSplice(arr, current) {
-      const newArr = arr.filter(item => item !== current);
-      return newArr;
+      return arr.filter(item => item !== current);
     },
 
     judgeNewOrOld: function () {

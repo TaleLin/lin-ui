@@ -1,0 +1,62 @@
+<view class="container">
+  <content-title name="Collapse" describe="折叠面板">
+    <content-card name="基本案例">
+      <l-collapse bind:linfold="fold" bind:linexpand="expand">
+        <l-collapse-item title="Lin UI">
+          Lin UI 是基于微信小程序原生语法实现的组件库。遵循简洁，易用的设计规范。
+        </l-collapse-item>
+        <l-collapse-item title="Lin-CMS">
+          Lin-CMS 是林间有风团队经过大量项目实践所提炼出的一套内容管理系统框架。
+          Lin-CMS 可以有效的帮助开发者提高 CMS 的开发效率。
+        </l-collapse-item>
+        <l-collapse-item title="林间有风" disable="{{true}}">
+          林间有风是一个团队
+        </l-collapse-item>
+      </l-collapse>
+    </content-card>
+
+    <content-card name="手风琴">
+      <l-collapse type="accordion">
+        <l-collapse-item title="Lin UI">
+          Lin UI 是基于微信小程序原生语法实现的组件库。遵循简洁，易用的设计规范。
+        </l-collapse-item>
+        <l-collapse-item title="Lin-CMS">
+          Lin-CMS 是林间有风团队经过大量项目实践所提炼出的一套内容管理系统框架。
+          Lin-CMS 可以有效的帮助开发者提高 CMS 的开发效率。
+        </l-collapse-item>
+        <l-collapse-item title="林间有风">
+          林间有风是一个团队
+        </l-collapse-item>
+      </l-collapse>
+    </content-card>
+
+    <content-card name="高级案例">
+      <view class="ticket-container">
+        <view class="ticket-container-top">
+          <view class="ticket-left">
+            <view class="name">全场饮品券</view>
+            <view class="date">有效期至2021-03-25</view>
+          </view>
+          <view class="ticket-right">
+            <view class="number">3.8</view>
+            <view class="text">折</view>
+          </view>
+        </view>
+        <view class="ticket-container-bottom">
+          <l-collapse>
+            <l-collapse-item l-body-class="l-body-class" l-title-class="l-title-class" customTitle="{{true}}">
+              <!--自定义标题-->
+              <view class="title" slot="title">
+                <view class="ticket-detail-container">使用规则
+                  <l-icon name="down" size="16" color="#999"/>
+                </view>
+                <l-button l-class height="50" size="mini" shape="semicircle" plain="{{true}}">立即使用</l-button>
+              </view>
+              <text>1、本券一次使用1张限1件商品，自领取日起有效期7天。\n2、本优惠券不与其他优惠同享</text>
+            </l-collapse-item>
+          </l-collapse>
+        </view>
+      </view>
+    </content-card>
+  </content-title>
+</view>

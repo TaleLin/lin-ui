@@ -1,4 +1,5 @@
-// cpn/search-bar/index.js
+import validator from '../behaviors/validator';
+
 Component({
   /**
    * 组件的属性列表
@@ -11,6 +12,7 @@ Component({
     'l-input-class',
     'l-cancel-class'
   ],
+  behaviors: [validator],
   options: {
     multipleSlots: true // 在组件定义时的选项中启用多slot支持
   },
@@ -50,13 +52,14 @@ Component({
     },
     shape: {
       type: String,
-      value: 'primary'
+      value: 'primary',
+      options: ['circle', 'primary']
     },
-    TextAlign: {
+    textAlign: {
       type: String,
-      value: 'left'
+      value: 'left',
+      options: ['left', 'right']
     },
-    adress: String,
     // 获取焦点
     focus: Boolean,
     // 是否显示清除按钮
@@ -70,15 +73,9 @@ Component({
       value: 140
     },
     // 是否禁用
-    disabled: {
-      type: Boolean,
-      value: false
-    },
-    // 占位文字的样式  
-    placeholderStyle: {
-      type: String,
-      value: ''
-    }
+    disabled: Boolean,
+    // 占位文字的样式
+    placeholderStyle: String
   },
 
   /**

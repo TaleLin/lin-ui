@@ -7,7 +7,7 @@
             {{content}}
         </view>
         <view class="dialog-btn-group">
-            <view class="dialog-btn-cancel l-cancel-class" style="color: {{cancelColor}}" catchtap="onCancelTap" hover-class="{{isHover?'group-hover':''}}" wx:if="{{type=='confirm'}}">{{cancelText}}</view>
+            <view class="dialog-btn-cancel l-cancel-class" style="color: {{cancelColor}}" catchtap="onCancelTap" hover-class="{{isHover?'group-hover':''}}" wx:if="{{type==='confirm'}}">{{cancelText}}</view>
             <view class="dialog-btn-confirm l-confirm-class" style="color: {{confirmColor}}" hover-class="{{isHover?'group-hover':''}}" catchtap="onConfirmTap">{{confirmText}}</view>
         </view>
     </view>

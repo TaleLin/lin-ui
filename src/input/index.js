@@ -1,7 +1,7 @@
 // input/input.js
-// import rules from '../behaviors/rules';
 import eventBus from '../utils/eventBus.js';
-
+import validator from '../behaviors/validator';
+import rules from '../behaviors/rules';
 Component({
   /**
    * 组件的属性列表
@@ -9,65 +9,38 @@ Component({
   options: {
     multipleSlots: true,
   },
-  behaviors: ['wx://form-field'],
-  // behaviors: ['wx://form-field', rules],
-  externalClasses: ['l-class', 'l-label-class','l-error-text','l-error-text-class'],
+  behaviors: ['wx://form-field', validator, rules],
+  externalClasses: ['l-class', 'l-label-class', 'l-error-text', 'l-error-text-class'],
   properties: {
     // 表单标题（label）的文本
-    label: {
-      type: String,
-      value: ''
-    },
+    label: String,
     // 是否隐藏label
-    hideLabel:{
-      type: Boolean,
-      value: false
-    },
+    hideLabel: Boolean,
     // 是否自定义label部分
-    labelCustom: {
-      type: Boolean,
-      value: false
-    },
+    labelCustom: Boolean,
     // 是否显示下划线
     showRow: {
       type: Boolean,
       value: true
     },
     // 是否必选
-    required: {
-      type: Boolean,
-      value: false
-    },
+    required: Boolean,
     // 占位文本
-    placeholder: {
-      type: String,
-      value: ''
-    },
+    placeholder: String,
     // 输入框类型
     type: {
       type: String,
-      value: 'text'
+      value: 'text',
+      options: ['text', 'idcard', 'digit', 'password', 'number']
     },
     // 输入框的值
-    value: {
-      type: String,
-      value: ''
-    },
+    value: String,
     // 是否需要冒号
-    colon: {
-      type: Boolean,
-      value: false
-    },
+    colon: Boolean,
     // 获取焦点
-    focus: {
-      type: Boolean,
-      value: false
-    },
+    focus: Boolean,
     // 是否显示清除按钮
-    clear: {
-      type: Boolean,
-      value: false
-    },
+    clear: Boolean,
     // 最大输入长度
     maxlength: {
       type: Number,
@@ -86,18 +59,13 @@ Component({
     // label标题的显示位置 left top right
     labelLayout: {
       type: String,
-      value: 'left'
+      value: 'left',
+      options: ['left', 'right']
     },
     // 是否禁用
-    disabled: {
-      type: Boolean,
-      value: false
-    },
+    disabled: Boolean,
     // 占位文字的样式
-    placeholderStyle: {
-      type: String,
-      value: ''
-    },
+    placeholderStyle: String,
   },
 
   /**
@@ -125,7 +93,7 @@ Component({
       this.setData({
         value
       });
-      eventBus.emit(`lin-form-change-${this.id}`,this.id);
+      eventBus.emit(`lin-form-change-${this.id}`, this.id);
       this.triggerEvent('lininput', event.detail);
     },
 
@@ -134,10 +102,10 @@ Component({
     },
 
     handleInputBlur(event) {
-      // this.validatorData({
-      //   value: event.detail.value
-      // });
-      eventBus.emit(`lin-form-blur-${this.id}`,this.id);
+      this.validatorData({
+        [this.data.name]: event.detail.value
+      });
+      eventBus.emit(`lin-form-blur-${this.id}`, this.id);
       this.triggerEvent('linblur', event.detail);
     },
     handleInputConfirm(event) {

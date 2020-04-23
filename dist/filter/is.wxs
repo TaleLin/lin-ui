@@ -8,7 +8,7 @@ var TYPE = {
     FUNCTION: 'Function',
     ARRAY: 'Array',
     DATE: 'Date',
-    REGEXP: 'RegExp',
+    REGEXP: 'RegExp'
 }
 
 function isUndefined(val) {

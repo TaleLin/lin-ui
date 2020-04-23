@@ -1,13 +1,9 @@
-page{
-  background-color: #f3f3f3;
-}
-
 .content-title {
   display: flex;
   flex-direction: column;
   align-items: center;
   background: transparent;
-  box-sizing: border-box; 
+  box-sizing: border-box;
   padding-bottom: 160rpx;
 }
 

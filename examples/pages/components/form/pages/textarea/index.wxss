@@ -1,10 +1,10 @@
 /* pages/view/pages/dialog/index.wxss */
 
 .buttun-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  /*display: flex;*/
+  /*flex-direction: column;*/
+  /*align-items: center;*/
+  /*justify-content: center;*/
 }
 
 .img{

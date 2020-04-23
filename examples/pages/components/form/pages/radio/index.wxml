@@ -13,7 +13,7 @@
             <l-radio
               l-class="l-radio"
               wx:for="{{items6}}"
-              wx:key="{{item.id}}" 
+              wx:key="id"
               key="{{item.id}}"
               custom>
                 <image class="radio-img" src="{{item.id==currentKey?'./images/radiobutton.png':'./images/radio.png'}}" slot="icon"/>
@@ -32,8 +32,8 @@
           <l-radio
             l-class="l-radio"
             wx:for="{{items1}}"
-            wx:key="{{item.id}}"
-            key="{{item.id}}" 
+            wx:key="id"
+            key="{{item.id}}"
             placement="{{position}}">
             {{item.name}}
           </l-radio>
@@ -52,7 +52,7 @@
           <l-radio
             l-class="l-radio"
             wx:for="{{items2}}"
-            wx:key="{{item.id}}" 
+            wx:key="id"
             key="{{item.id}}"
             placement="{{position}}">
             {{item.name}}
@@ -72,8 +72,8 @@
           <l-radio
            l-class="l-radio"
             wx:for="{{items3}}"
-            wx:key="{{item.id}}" 
-            key="{{item.id}}" 
+            wx:key="id"
+            key="{{item.id}}"
             placement="{{position}}"
             select-color='#FFE57F'>
             {{item.name}}
@@ -92,8 +92,8 @@
           <l-radio
             l-class="l-radio"
             wx:for="{{items4}}"
-            wx:key="{{item.id}}" 
-            key="{{item.id}}" 
+            wx:key="id"
+            key="{{item.id}}"
             placement="{{position}}"
             shape="circle"
             size="36rpx">
@@ -103,7 +103,7 @@
       </view>
     </content-card>
 
-    
+
 
     <content-card
       class="content"
@@ -115,7 +115,7 @@
           <l-radio
             l-class="l-radio"
             wx:for="{{items5}}"
-            wx:key="{{item.id}}" 
+            wx:key="id"
             key="{{item.id}}"
             placement="right">
             {{item.name}}
@@ -136,8 +136,8 @@
             l-class="l-radio"
             l-disabled-class="l-radio-disabled"
             wx:for="{{items7}}"
-            wx:key="{{item.id}}" 
-            key="{{item.id}}" 
+            wx:key="id"
+            key="{{item.id}}"
             disabled='{{item.disabled}}'>
             {{item.name}}
           </l-radio>
@@ -155,8 +155,8 @@
            <l-radio
             l-class="l-radio l-title-class-border"
             wx:for="{{items8}}"
-            wx:key="{{item.id}}" 
-            key="{{item.id}}" 
+            wx:key="id"
+            key="{{item.id}}"
             placement="{{position}}">
             {{item.name}}
           </l-radio>

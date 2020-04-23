@@ -1,0 +1,18 @@
+/* pages/components/layout/pages/sticky/pages/stick-base/index.wxss */
+/* 基本案例 */
+.index-header {
+  padding-left: 20rpx;
+  box-sizing: border-box;
+  color: #3863bc;
+  background-color: #eeeeee;
+}
+
+.index-body-item {
+  padding-left: 20rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+}
+
+.index-body-item:not(:last-of-type) {
+  border-bottom: 1px solid #dedede;
+}

@@ -1,4 +1,5 @@
 build/*.js
 config/*.js
-example/*.js
+examples/**/*.js
 dist
+src/bahaviors/*.js

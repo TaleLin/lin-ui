@@ -1,5 +1,5 @@
 <content-title name="Loading" describe="加载中">
-  <content-card name="{{item.title}}" wx:for="{{loadingNaviConfigs}}" wx:key="item.type">
+  <content-card name="{{item.title}}" wx:for="{{loadingNaviConfigs}}" wx:key="type">
     <view class="spin-container" wx:for="{{item.config}}" wx:for-item="loading" wx:key="loading">
       <view class="spin-top" style="{{loading.name=='自定义加载动画'? 'background:#fff':''}}">
         <l-loading show="{{loading.show}}" color="{{loading.color}}" size="{{loading.size}}" type="{{loading.type}}" custom="{{loading.custom}}">

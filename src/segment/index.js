@@ -105,7 +105,7 @@ Component({
         let activeKey = val,
           currentIndex = this.data.currentIndex;
         const tab = items.map((item, index) => {
-          activeKey = !val && index == 0 ? item.data.key : activeKey;
+          activeKey = !val && index === 0 ? item.data.key : activeKey;
           currentIndex = item.data.key === activeKey ? index : currentIndex;
           return {
             ...item.data

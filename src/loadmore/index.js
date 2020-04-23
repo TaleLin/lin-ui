@@ -1,8 +1,11 @@
+import validator from '../behaviors/validator';
+
 Component({
-  externalClasses: ['l-class','l-loading-class','l-end-class','l-line-class'],
+  externalClasses: ['l-class', 'l-loading-class', 'l-end-class', 'l-line-class'],
   options: {
     multipleSlots: true // 在组件定义时的选项中启用多slot支持
   },
+  behaviors: [validator],
   properties: {
     show: Boolean,
     custom: Boolean,
@@ -14,7 +17,8 @@ Component({
     },
     type: {
       type: String,
-      value: 'loading'
+      value: 'loading',
+      options: ['loading', 'end']
     },
     endText: {
       type: String,
