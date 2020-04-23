@@ -71,7 +71,7 @@ Component({
   },
 
   ready() {
-    if (this.properties.type == 'roll' && this.properties.show) {
+    if (this.properties.type === 'roll' && this.properties.show) {
       this.initAnimation();
     }
   },
