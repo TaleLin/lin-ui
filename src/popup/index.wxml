@@ -1,11 +1,27 @@
 <!-- popup.wxml -->
-<view class='container-popup {{ show ? "popup-show" : "" }}   {{ "l-popup-" + contentAlign }}  ' style="z-index:{{zIndex}}; " catchtouchmove="doNothingMove">
-  <view class='container-bg l-bg-class'></view>
-  <view
-    wx:if="{{show}}"
-    class="popup-content {{ show ? contentAlign : ''}}   popup-fade-{{contentAlign}}-active-{{animation ? status:''}}" catchtap='onPupopTap'>
-    <view catchtap="doNothingTap">
-      <slot></slot>
+  <view class='l-class container-popup {{ show ? "popup-show" : "" }} {{contentAlign ? contentAlign : direction}}' style="z-index:{{zIndex}};" >
+    <view class='container-bg l-bg-class'  style="opacity: {{opacity}}" catchtap='onPupopTap' catchtouchmove="doNothingMove"></view>
+    <l-transition
+        wx:if="{{animation && transition}}"
+        show="{{ show }}"
+        class="popup-content"
+        name=""
+        duration="300"
+        l-enter-class='{{(contentAlign ? contentAlign : direction) + "-lin-enter-class"}}'
+        l-enter-active-class='{{(contentAlign ? contentAlign : direction) + "-lin-enter-active-class"}}'
+        l-enter-to-class='{{(contentAlign ? contentAlign : direction) + "-lin-enter-to-class"}}'
+        l-leave-class='{{(contentAlign ? contentAlign : direction) + "-lin-leave-class"}}'
+        l-leave-active-class='{{(contentAlign ? contentAlign : direction) + "-lin-leave-active-class"}}'
+        l-leave-to-class='{{(contentAlign ? contentAlign : direction) + "-lin-leave-to-class"}}'
+    >
+        <view class='{{"popup-content-"+ (contentAlign ? contentAlign : direction)}} l-panel-class' >
+          <slot></slot>
+        </view>
+    </l-transition>
+    <view wx:if="{{!(animation && transition) && show}}" class="popup-content" style="z-index:100">
+        <view class='test {{"popup-content-"+ (contentAlign ? contentAlign : direction)}} l-panel-class'>
+            <slot></slot>
+        </view>
     </view>
   </view>
-</view>
+
