@@ -1,4 +1,7 @@
+
 {
   "component": true,
-  "usingComponents": {}
+  "usingComponents": {
+    "l-transition":"../transition/index"
+  }
 }
