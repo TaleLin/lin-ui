@@ -142,6 +142,14 @@ Component({
         bubbles: true,
         composed: true
       });
+    },
+
+    /**
+     * 监听点击地址事件
+     * @param event
+     */
+    handleTapFrontText(event){
+      this.triggerEvent('linfronttap',event.detail)
     }
   }
 });
