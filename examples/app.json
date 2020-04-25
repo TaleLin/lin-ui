@@ -66,7 +66,8 @@
         "pages/loadmore/case/index",
         "pages/steps/index",
         "pages/skeleton/index",
-        "pages/progress/index"
+        "pages/progress/index",
+        "pages/arc-popup/index"
       ]
     },
     {

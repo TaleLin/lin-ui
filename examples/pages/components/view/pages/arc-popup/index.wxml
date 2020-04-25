@@ -1,0 +1,45 @@
+<!--pages/components/view/pages/arc-popup/index.wxml-->
+<view class='container'>
+  <content-title name="ArcPopup" describe="弧形滚动弹出层">
+    <content-card class="content" name="{{item.title}}" wx:for="{{navConfig}}" wx:key="type">
+      <view class='buttun-wrapper'>
+        <l-button l-class="button" size="large" data-type="{{item.type}}" bind:lintap="onShowPopupTap">
+          显示弹出层
+        </l-button>
+      </view>
+    </content-card>
+  </content-title>
+
+  <!-- popup -->
+  <l-arc-popup show="{{currentConf.show}}" transition="{{currentConf.transition}}" direction="{{currentConf.direction}}" locked="{{currentConf.locked}}" maxHeight="{{currentConf.maxHeight}}" minHeight="{{currentConf.minHeight}}" arcRadius="{{currentConf.arcRadius}}" opacity="{{currentConf.opacity}}">
+    <view wx:if="{{type == 0 }}">
+      基础案例
+    </view>
+    <view class='popup-mask' catchtap='onHidePopupTap' wx:if="{{type == 2}}">
+      关闭弹出层
+    </view>
+    <view wx:if="{{type == 1 }}">
+      无动画案例
+    </view>
+    <view wx:if="{{type == 3 }}">
+      从上方弹出
+    </view>
+    <view wx:if="{{type == 4 }}" style="height: 800rpx;">
+      超出高度可滚动
+    </view>
+
+    <view wx:if="{{type == 5 }}">
+      设置最小高度
+    </view>
+
+    <view wx:if="{{type == 6 }}">
+      设置组件弧度
+    </view>
+
+     <view wx:if="{{type == 7 }}">
+      设置遮罩区域透明度
+    </view>
+
+  </l-arc-popup>
+
+</view>
