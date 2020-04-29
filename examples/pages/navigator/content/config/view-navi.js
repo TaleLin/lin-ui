@@ -53,19 +53,19 @@ const basicNaviConfigs = [{
     componentsPath: "/pages/components/view/pages/status-show/index"
   },
   {
-    icon: "/images/component/load-more.png",
+    icon: "/images/component/loadmore.png",
     title: "LoadMore",
     desc: "页底提示",
     componentsPath: "/pages/components/view/pages/loadmore/index"
   },
   {
-    icon: "/images/component/load-more.png",
+    icon: "/images/component/steps.png",
     title: "Steps",
     desc: "步骤条",
     componentsPath: "/pages/components/view/pages/steps/index"
   },
   {
-    icon: "/images/component/load-more.png",
+    icon: "/images/component/skeleton.png",
     title: "Skeleton",
     desc: "骨架屏",
     componentsPath: "/pages/components/view/pages/skeleton/index"
