@@ -26,7 +26,7 @@ Component({
       type: String,
       value: '取消'
     },
-    address: String,
+    frontText: String,
     custom: Boolean,
     value: String,
     type: String,
