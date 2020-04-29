@@ -1,7 +1,7 @@
 <view class="search-bar l-container-class">
   <slot name="before"/>
-  <view wx:if="{{address}}" class="icon-container" bind:tap="handleTapFrontText">
-    <text class="city">{{address}}</text>
+  <view wx:if="{{frontText}}" class="icon-container" bind:tap="handleTapFrontText">
+    <text class="city">{{frontText}}</text>
     <l-icon name="down" color="#333" size="22"/>
   </view>
   <view class="search-input l-class {{'search-input-'+ shape}}" style="{{'background-color:'+bgColor}}">
