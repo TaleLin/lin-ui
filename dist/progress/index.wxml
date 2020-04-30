@@ -1,0 +1,16 @@
+
+<view class="container l-class">
+    <view class="text l-text-class" wx:if="{{showInfo && textPosition==='left'}}" style="color:{{textColor?textColor:''}};margin-right:{{interval}}rpx">
+        {{percent}}%
+    </view>
+    <view class="progress short" style="height:{{strokeWidth}}rpx;">
+        <view class="slot" style="margin-left:{{marginLeft}}rpx;margin-top:{{marginTop}}rpx;">
+            <slot name="header"></slot>
+        </view>
+        <view class="percent {{activeColor?'':'active'}} l-active-class" style="width:{{percent}}%;height:{{strokeWidth}}rpx;border-radius:{{borderRadius}}rpx;{{activeColor?'background-color:'+activeColor+';':''}}"></view>
+        <view class="background l-background-class" style="height:{{strokeWidth}}rpx;border-radius:{{borderRadius}}rpx;background-color:{{backgroundColor}};"></view>
+    </view>
+    <view class="text l-text-class" wx:if="{{showInfo && textPosition==='right'}}" style="color:{{textColor?textColor:''}};margin-left:{{interval}}rpx">
+        {{percent}}%
+    </view>
+</view>

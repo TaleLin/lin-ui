@@ -28,7 +28,7 @@ const layoutNaviConfigs = [{
     componentsPath: "/pages/components/layout/pages/album/index"
   },
   {
-    icon: "/images/component/album.png",
+    icon: "/images/component/sticky.png",
     title: "Sticky",
     desc: "吸顶容器",
     componentsPath: "/pages/components/layout/pages/sticky/index"

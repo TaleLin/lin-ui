@@ -1,0 +1,71 @@
+<!-- pages/components/view/pages/progress/index.wxml -->
+<view class='container'>
+    <content-title name="Progress" describe="进度条">
+        <content-card l-content="content" name="基本使用方法">
+            <l-progress percent="20"></l-progress>
+            <view style="margin-top:10rpx;">
+                <l-progress percent="50"></l-progress>
+            </view>
+        </content-card>
+        <content-card l-content="content" name="自定义宽度">
+            <l-progress percent="20"></l-progress>
+            <view style="margin-top:10rpx;">
+                <l-progress percent="50" stroke-width='20'></l-progress>
+            </view>
+        </content-card>
+        <content-card l-content="content" name="设置圆角">
+            <l-progress percent="20" stroke-width='20' border-radius='8'></l-progress>
+            <view style="margin-top:10rpx;">
+                <l-progress percent="50" stroke-width='20' border-radius='15'></l-progress>
+            </view>
+        </content-card>
+        <content-card l-content="content" name="已选进度条颜色">
+            <l-progress percent="20"></l-progress>
+            <view style="margin-top:10rpx;">
+                <l-progress percent="50" active-color="red"></l-progress>
+            </view>
+        </content-card>
+        <content-card l-content="content" name="背景颜色">
+            <l-progress percent="20"></l-progress>
+            <view style="margin-top:10rpx;">
+                <l-progress percent="50" background-color='#FF00FF'></l-progress>
+            </view>
+        </content-card>
+        <content-card l-content="content" name="显示数值">
+            <view style="height:45rpx;">
+                <l-progress percent="20" show-info="{{true}}"></l-progress>
+            </view>
+            <view style="height:45rpx;">
+                <l-progress percent="50" show-info="{{true}}" text-position="left"></l-progress>
+            </view>
+            <view style="height:45rpx;">
+                <l-progress percent="50" show-info="{{true}}" text-color='red'></l-progress>
+            </view>
+        </content-card>
+        <content-card l-content="content" name="自定义header">
+            <l-progress>
+                <view slot='header' style="width:25rpx;height:25rpx;border-radius:50%;background-color:red;display:block;"></view>
+            </l-progress>
+            <view style="margin-top:40rpx;">
+                <l-progress percent="50">
+                    <image src="imoji.jpg" slot='header' style="width:30rpx;height:30rpx;border-radius:50%;display:block;" />
+                </l-progress>
+            </view>
+            <view style="margin-top:40rpx;">
+                <l-progress percent="100">
+                    <view slot='header' style="width:25rpx;height:25rpx;background-color:green;display:block;"></view>
+                </l-progress>
+            </view>
+        </content-card>
+        <content-card l-content="content" name="动画">
+            <l-progress percent="50" active="{{true}}">
+                <view slot='header' style="width:25rpx;height:25rpx;border-radius:50%;background-color:red;display:block;"></view>
+            </l-progress>
+            <view style="margin-top:40rpx;">
+                <l-progress percent="100" active="{{true}}">
+                    <view slot='header' style="width:25rpx;height:25rpx;background-color:green;display:block;"></view>
+                </l-progress>
+            </view>
+        </content-card>
+    </content-title>
+</view>
