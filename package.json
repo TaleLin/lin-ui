@@ -33,11 +33,6 @@
       "commit-msg": "commitlint -e $GIT_PARAMS"
     }
   },
-  "commitlint": {
-    "extends": [
-      "@commitlint/config-conventional"
-    ]
-  },
   "homepage": "http://doc.mini.7yue.pro",
   "devDependencies": {
     "@commitlint/cli": "^8.3.5",
