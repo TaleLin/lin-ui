@@ -65,7 +65,8 @@
         "pages/loadmore/index",
         "pages/loadmore/case/index",
         "pages/steps/index",
-        "pages/skeleton/index"
+        "pages/skeleton/index",
+        "pages/progress/index"
       ]
     },
     {
