@@ -1,0 +1,9 @@
+/* pages/components/view/pages/progress/index.wxss */
+.content {
+    padding-left: 70rpx !important;
+    line-height: 120rpx;
+}
+
+.slot-class {
+    margin-top: -40rpx !important;
+}
