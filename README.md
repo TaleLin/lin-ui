@@ -11,7 +11,7 @@
 <div class="row" />
 
 <div align="center">
-  <span class="desc" >Fantastic native based Mini-Programe components</span> 
+  <span class="desc" >Fantastic native based Mini-Programe components</span>
 </div>
 
 <div align="center">
@@ -78,7 +78,7 @@ Lin UI提供两种安装方法，满足不同开发者的需求。如果您需�
 
 打开小程序的项目根目录，执行下面的命令。
 
-```base
+```sh
 npm install lin-ui --production
 ```
 
@@ -92,7 +92,7 @@ npm install lin-ui --production
 
 直接通过git下载  `Lin UI`  源代码，并将 `dist` 目录（Lin UI 组件库）拷贝到自己的项目中。
 
-```base
+```sh
 git clone https://github.com/TaleLin/lin-ui.git
 ```
 
@@ -114,7 +114,7 @@ git clone https://github.com/TaleLin/lin-ui.git
 ```
 
 然后在wxml中直接使用该组件。
-```wxml
+```html
 <l-icon name="add"> </l-icon>
 ```
 
@@ -126,12 +126,12 @@ git clone https://github.com/TaleLin/lin-ui.git
 <br />
 为满足自定义的需求，首先我们要去下载 `Lin UI` 源码。
 
-```base
+```sh
 git clone https://github.com/TaleLin/lin-ui.git
 ```
 安装相关依赖
 
-```base
+```sh
 npm install
 ```
 
@@ -145,7 +145,7 @@ npm install
  - 组件样式变量
 找到根目录，打开`config/style/_base.less`文件，进行修改即可。
 
- 
+
 - 主题色更改
 
 同样打开根目录，打开`config/style/_theme.less`文件，看到文件中定义了一个变量 `@theme-color` ，如果有主题色修改的需求，更改它即可。
@@ -159,7 +159,7 @@ npm install
 其他
 更改完成后，在 `Lin UI` 下的根目录里打开终端执行如下所示命令
 
-```bash
+```sh
 npm run build
 ```
 
