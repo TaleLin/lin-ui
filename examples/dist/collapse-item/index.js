@@ -1,3 +1,5 @@
+import nodeUtil from '../utils/node-util';
+
 Component({
 
   externalClasses: ['l-class', 'l-title-class', 'l-body-class'],
@@ -18,8 +20,8 @@ Component({
      * 折叠面板子项自定义id
      */
     itemId: {
-      type:String,
-      value:'default'
+      type: String,
+      value: 'default'
     },
     /**
      * 标题文字
@@ -45,9 +47,9 @@ Component({
     /**
      * 内容区域展开动画速度
      */
-    animationTime:{
-      type:String,
-      value:'0.3'
+    animationTime: {
+      type: String,
+      value: '0.3'
     }
   },
   data: {
@@ -68,37 +70,68 @@ Component({
     /**
      * 点击标题
      */
-    onTapTitle() {
+    async onTapTitle() {
       if (this.data.disable) {
         return;
       }
       let parents = this.getRelationNodes('../collapse/index');
-      parents[0].onTapCollapseItem(this);
+      await parents[0].onTapCollapseItem(this);
     },
 
     /**
      * 折叠内容区
      */
-    foldContent() {
-      this.setData({
-        isExpandContent: false,
-        bodyHeight: 0
-      });
+    async foldContent() {
+      // 获取 container-body-wrapper 的 css 属性信息
+      const containerBodyWrapperRect =
+        await nodeUtil.getNodeRectFromComponent(this, '.container-body-wrapper')
+
+      // 这里很重要，先把高度改为固定高度，transition 才会生效
+      if (this.data.isExpandContent) {
+        this.setData({
+          bodyHeight: containerBodyWrapperRect.height + 'px'
+        })
+
+        setTimeout(() => {
+          this.setData({
+            isExpandContent: false,
+            bodyHeight: '0px'
+          })
+        }, 20)
+      } else {
+        this.setData({
+          isExpandContent: false,
+          bodyHeight: '0px'
+        })
+      }
+
+
     },
 
     /**
      * 展开内容区
      */
-    expandContent() {
-      this.createSelectorQuery()
-        .select('.container-body-wrapper')
-        .fields({size: true}, (res) => {
-          this.setData({
-            isExpandContent: true,
-            bodyHeight: res.height
-          });
+    async expandContent() {
+      // 获取 container-body-wrapper 的 css 属性信息
+      const containerBodyWrapperRect =
+        await nodeUtil.getNodeRectFromComponent(this, '.container-body-wrapper')
+
+      this.setData({
+        isExpandContent: true,
+        bodyHeight: containerBodyWrapperRect.height + 'px'
+      })
+    },
+
+    /**
+     * 过渡效果结束后，把高度改为 auto
+     * 不然内容改变时，由于高度固定，内容会显示不全
+     */
+    onTransitionend() {
+      if (this.data.isExpandContent) {
+        this.setData({
+          bodyHeight: 'auto'
         })
-        .exec();
+      }
     }
   }
 });
