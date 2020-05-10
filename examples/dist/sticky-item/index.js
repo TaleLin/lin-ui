@@ -1,3 +1,4 @@
+import nodeUtil from '../utils/node-util';
 Component({
   externalClasses: ['l-class', 'l-header-wrapper-class', 'l-header-class', 'l-header-sticky-class', 'l-body-class'],
   options: {
@@ -93,7 +94,7 @@ Component({
      * 更新sticky-item组件的基础数据
      * @param {Number} index 当前sticky-item的索引值
      */
-    updateStickyItemBaseData(index) {
+    async updateStickyItemBaseData(index) {
       // 设置索引值
       this.setData({index});
       // 从父级组件获取页面垂直滚动距离
@@ -101,40 +102,32 @@ Component({
       const scrollTop = parent.data.scrollTop;
 
 
-      const query = wx.createSelectorQuery().in(this);
-
       /**
        * 设置sticky-item组件距页面顶部的距离
        * 和sticky-item组件的高度
        */
-      query
-        .select('.l-sticky-item')
-        .boundingClientRect((res) => {
-          this.setData({
-            stickyItemTop: res.top + scrollTop,
-            stickyItemHeight: res.height
-          });
-        }).exec();
+      const stickyItemNodeRect = await nodeUtil.getNodeRectFromComponent(this,'.l-sticky-item')
+      this.setData({
+        stickyItemTop: stickyItemNodeRect.top + scrollTop,
+        stickyItemHeight: stickyItemNodeRect.height
+      })
 
       // 设置sticky-item-header外层容器高度
-      query
-        .select('.l-sticky-item-header')
-        .boundingClientRect((res) => {
-          this.setData({
-            stickyItemWrapperHeight: res.height
-          });
-        }).exec();
+      const stickyItemHeaderNodeRect = await nodeUtil.getNodeRectFromComponent(this,'.l-sticky-item-header')
+      this.setData({
+        stickyItemWrapperHeight: stickyItemHeaderNodeRect.height
+      });
     },
 
     /**
      * 获取父级组件-sticky实例
      */
     getParentComponent() {
-      const stickys = this.getRelationNodes('../sticky/index');
-      if (stickys.length === 0) {
+      const sticks = this.getRelationNodes('../sticky/index');
+      if (sticks.length === 0) {
         return;
       }
-      return stickys[0];
+      return sticks[0];
     }
   }
 });
