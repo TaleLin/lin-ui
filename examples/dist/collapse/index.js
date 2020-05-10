@@ -54,7 +54,7 @@ Component({
     }
   },
   methods: {
-    updateView() {
+    async updateView() {
       let expandItemId;
       if (this.data.type === 'accordion') {
         expandItemId = this.data.expandItemId.slice(0, 1);
@@ -67,9 +67,9 @@ Component({
         let item = children[i];
         let id = item.id ? item.id : i;
         if (expandItemId.indexOf(id) > -1 && !item.isExpandContent) {
-          this.setCollapseItemStatus(item, true);
+          await this.setCollapseItemStatus(item, true);
         } else if (item.isExpandContent || this.data.type === 'accordion') {
-          this.setCollapseItemStatus(item, false);
+          await this.setCollapseItemStatus(item, false);
         }
       }
     },
@@ -78,9 +78,9 @@ Component({
      * 点击折叠面板子项回调函数
      * @param collapseItem
      */
-    onTapCollapseItem(collapseItem) {
+    async onTapCollapseItem(collapseItem) {
       if (this.data.type === 'accordion') {
-        this.foldAllExpandItem(collapseItem);
+        await this.foldAllExpandItem(collapseItem);
       }
       this.setCollapseItemStatus(collapseItem, !collapseItem.data.isExpandContent);
 
@@ -94,12 +94,12 @@ Component({
     /**
      * 设置子组件状态
      */
-    setCollapseItemStatus(collapseItem, isExpand) {
+    async setCollapseItemStatus(collapseItem, isExpand) {
       if (isExpand) {
         collapseItem.expandContent();
         this.data._expandItems.push(collapseItem);
       } else {
-        collapseItem.foldContent();
+        await collapseItem.foldContent();
         for (let i = 0; i < this.data._expandItems.length; i++) {
           if (this.data._expandItems[i] === collapseItem) {
             this.data._expandItems.splice(i, 1);
