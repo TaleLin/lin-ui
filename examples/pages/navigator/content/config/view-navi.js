@@ -75,7 +75,13 @@ const basicNaviConfigs = [{
     title: "Progress",
     desc: "进度条",
     componentsPath: "/pages/components/view/pages/progress/index"
-  }
+  },
+  {
+    icon: "/images/component/popup.png",
+    title: "ArcPopup",
+    desc: "弧形滚动弹出层",
+    componentsPath: "/pages/components/view/pages/arc-popup/index"
+  },
 ]
 
 export default basicNaviConfigs;
