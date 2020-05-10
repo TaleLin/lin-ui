@@ -4,7 +4,7 @@
     <l-icon class="container-title-icon" wx:if="{{!customTitle}}" style="{{isExpandContent?'transform:rotate(-180deg);':''}}" name="down" size="28" color="{{disable?'#DEE2E6':'#333'}}"></l-icon>
     <slot name="title"></slot>
   </view>
-  <view class="container-body" style="height:{{bodyHeight}}px;transition-duration:{{animationTime}}s">
+  <view catch:transitionend="onTransitionend" class="container-body" style="height:{{bodyHeight}};transition-duration:{{animationTime}}s">
     <view class="container-body-wrapper l-body-class">
       <slot></slot>
     </view>
