@@ -19,3 +19,4 @@ yarn-error.log
 .vscode
 package-lock.json
 examples/project.config.json
+/.run

@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "l-index-list": "../index-list/index"
+  }
+}
