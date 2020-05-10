@@ -55,11 +55,14 @@ Component({
   },
   methods: {
     handleTap() {
-      if (this.properties.disabled) return false;
+      if(this.data.disable){
+        return
+      }
+
       let options = {
-        name: this.properties.name,
-        cell: this.properties.cell,
-        select: this.properties.select
+        name: this.data.name,
+        cell: this.data.cell,
+        select: this.data.select
       };
       this.triggerEvent('lintap', options, {
         bubbles: true,
