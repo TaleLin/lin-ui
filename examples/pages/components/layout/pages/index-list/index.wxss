@@ -1,0 +1,85 @@
+.segment-wrapper{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 80rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background-color: white;
+  z-index: 999;
+}
+
+l-segment{
+  width: 100%;
+}
+
+.title {
+  background-color: #494949;
+}
+
+.city-item-wrapper {
+  width: 100%;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  font-size: 26rpx;
+}
+
+.city-item {
+  margin-left: 30rpx;
+  margin-right: 60rpx;
+  width: 100%;
+  height: 80rpx;
+  display: flex;
+  align-items: center;
+}
+
+.city-item-wrapper:not(:last-of-type) > .city-item {
+  border-bottom: 1px solid #f1f1f1;
+}
+
+.index-list-container{
+  padding-top: 80rpx;
+}
+
+l-index-list{
+  transition: 0.3s;
+}
+
+/*联系人*/
+
+.l-selected-class{
+  background-color: #06c05f !important;
+}
+
+.l-tip-text-class{
+  color: #fff !important;
+  font-size: 48rpx !important;
+}
+
+.l-tip-class{
+  background-color: #cccccc !important;
+}
+
+.person-item{
+  display: flex;
+  align-items: center;
+  color: #1a1a1a;
+  background-color: #fff;
+  height: 110rpx;
+  box-sizing: border-box;
+  padding-left: 30rpx;
+}
+
+.person-avatar{
+  width: 72rpx;
+  height: 72rpx;
+  border-radius: 10rpx;
+}
+
+.person-name{
+  margin-left: 20rpx;
+}
