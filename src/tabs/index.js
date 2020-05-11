@@ -65,8 +65,9 @@ Component({
     equalWidth: {
       type: Boolean,
       value: true
-    }
-
+    },
+    // 内容区域高度
+    contentHeight:Number
   },
 
   data: {
