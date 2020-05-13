@@ -12,7 +12,8 @@
     "watch": "gulp -f build/index.js watch",
     "lint": "eslint ./src/**/*.js",
     "test": "jest",
-    "release": "sh build/release.sh"
+    "release": "sh build/release.sh",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -n .convention-changelog-config.js"
   },
   "repository": {
     "type": "git",
