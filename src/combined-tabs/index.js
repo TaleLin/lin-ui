@@ -1,7 +1,7 @@
 // components/tabs/index.js
 Component({
   externalClasses: ['l-class-header', 'l-class-active', 'l-class-inactive', 'l-class-line', 'l-class-tabimage',
-    'l-header-class', 'l-active-class', 'l-inactive-class', 'l-line-class', 'l-tabimage-class'
+    'l-header-class', 'l-active-class', 'l-inactive-class', 'l-line-class', 'l-tabimage-class','l-content-class'
   ],
   relations: {
     '../tabpanel/index': {
