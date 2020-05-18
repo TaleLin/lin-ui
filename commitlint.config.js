@@ -13,6 +13,7 @@ module.exports = {
         'VuePress',
         'package.json',
         'README',
+        'util',
         '.editorconfig',
         '.gitignore',
         'commitlint',

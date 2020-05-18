@@ -1,4 +1,4 @@
-import nodeUtil from '../utils/node-util'
+import nodeUtil from '../core/utils/node-util'
 
 Component({
 

@@ -1,7 +1,7 @@
-import nodeUtil from '../utils/node-util'
-import dataUtil from '../utils/data-util'
-import eventUtil from '../utils/event-util'
-import pixelUtil from '../utils/pixel-util'
+import nodeUtil from '../core/utils/node-util'
+import dataUtil from '../core/utils/data-util'
+import eventUtil from '../core/utils/event-util'
+import pixelUtil from '../core/utils/pixel-util'
 
 // 默认的 Sidebar 数据
 const defaultSidebarData = [
