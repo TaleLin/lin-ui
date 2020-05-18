@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "header":"../components/header/index",
+    "mounth":"../components/mounth/index"
+  }
+}

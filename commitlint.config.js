@@ -60,7 +60,8 @@ module.exports = {
         'Price',
         'Counter',
         'SearchBar',
-        'IndexList'
+        'IndexList',
+        'Calendar'
       ]
     ]
   }

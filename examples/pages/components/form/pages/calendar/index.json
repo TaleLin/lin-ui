@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "l-calendar": "/dist/calendar/index"
+  }
+}

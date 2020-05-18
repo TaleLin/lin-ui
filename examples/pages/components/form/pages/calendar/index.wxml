@@ -1,0 +1,13 @@
+<!--pages/view/pages/dialog/index.wxml-->
+<view class='container'>
+  <content-title name="Input" describe="输入框">
+    <content-card
+      class="content"
+      name="基本案例"
+    >
+      <view style="height: 700rpx">
+        <l-calendar multiple defaultDate="{{ defaultDate }}"></l-calendar>
+      </view>
+    </content-card>    
+  </content-title>
+</view>

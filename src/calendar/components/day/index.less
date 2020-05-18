@@ -1,0 +1,42 @@
+.calendar-day-container{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  align-items: center;
+  &.selected{
+    background-color: #58bd6b;
+    color: #ffffff;
+  }
+  &.start{
+    background-color: #58bd6b;
+    color: #ffffff;
+  }
+  &.end{
+    background-color: #58bd6b;
+    color: #ffffff;
+  }
+  &.disabled{
+    color: #c8c9cc;
+    cursor: default;
+    background: #ffffff;
+  }
+  &.middle{
+    background-color: #eff9f0;
+    color: #58bd6b;
+  }
+  // background-color: red;
+  // color: #eff9f0;
+  .top{
+    height: 44rpx;
+    line-height: 44rpx;
+    font-size: 24rpx;
+  }
+  .text{
+    flex: 1;
+  }
+  .bottom{
+    height: 44rpx;
+    line-height: 44rpx;
+    font-size: 24rpx;
+  }
+}

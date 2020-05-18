@@ -36,6 +36,12 @@ const formNaviConfigs = [
     componentsPath: "/pages/components/form/pages/rate/index"
   },
   {
+    icon: "/images/component/rate.png",
+    title: "Calendar",
+    desc: "日历",
+    componentsPath: "/pages/components/form/pages/calendar/index"
+  },
+  {
     icon: "/images/component/rules.png",
     title: "Rules",
     desc: "校验",

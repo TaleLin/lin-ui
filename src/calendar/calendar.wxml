@@ -1,0 +1,20 @@
+<wxs src="./index.wxs" module="computed"></wxs>
+
+<template name="calendar">
+  <view class="calendar-container">
+    <header></header>
+    <scroll-view class="calendar-body-wrap" scroll-y>
+      <mounth 
+        wx:for="{{ computed.getMonths(minDate, maxDate) }}"
+        wx:key="index"
+        date="{{ item }}"
+        minDate="{{ minDate }}"
+        maxDate="{{ maxDate }}"
+        currentDate="{{ currentDate }}"
+        type="{{ type }}"
+        bind:clickDay="clickDay"
+      >
+      </mounth>
+    </scroll-view>
+  </view>
+</template>

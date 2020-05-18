@@ -1,0 +1,6 @@
+<import src="./calendar.wxml" />
+
+<template
+  is="calendar"
+  data="{{ currentDate, type, color, defaultDate, format, formatter, minDate, maxDate, minSelect, maxSelect, showConfirm, confirmText, maxLimitMessage, minLimitMessage, showTitle, showSubtitle }}"
+/>
