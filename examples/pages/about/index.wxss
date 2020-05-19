@@ -139,7 +139,7 @@ page {
   font-size  : 28rpx;
   font-family: PingFangSC-Regular;
   color      : rgba(89, 108, 142, 1);
-  margin-left: 16rpx;
+  margin-left: 12rpx;
 }
 
 .version-container {
