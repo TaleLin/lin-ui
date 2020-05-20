@@ -1,4 +1,4 @@
-import eventBus from '../utils/eventBus';
+import eventBus from '../core/utils/event-bus';
 import rules from '../behaviors/rules';
 
 
