@@ -1,6 +1,6 @@
 // input/input.js
 import rules from '../behaviors/rules';
-import eventBus from '../utils/eventBus';
+import eventBus from '../core/utils/event-bus';
 
 Component({
   /**
