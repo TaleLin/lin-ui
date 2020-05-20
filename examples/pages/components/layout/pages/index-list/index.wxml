@@ -6,10 +6,11 @@
       l-selected-class="l-selected-class"
       l-tip-class="l-tip-class"
       style="width:100%"
+      sidebar-data="{{sideBarData}}"
       l-tip-text-class="l-tip-text-class">
-      <block wx:for="{{26}}" wx:key="index" wx:for-index="anchorIndex">
+      <block wx:for="{{sideBarData.length}}" wx:key="index" wx:for-index="anchorIndex">
         <l-index-anchor/>
-        <block wx:for="{{5}}" wx:key="index" wx:for-index="itemIndex">
+        <block wx:for="{{2}}" wx:key="index" wx:for-index="itemIndex">
           <view class="person-item">
             <image lazy-load="{{true}}" class="person-avatar"
                    src="{{util.getApi(anchorIndex%3)}}&xxx={{anchorIndex*10+itemIndex}}"></image>
