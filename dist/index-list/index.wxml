@@ -6,7 +6,7 @@
     </block>
 
     
-    <view class="tip l-tip-class" style="top:{{tipTop}}px;{{showTip?'':'display:none'}}">
+    <view class="tip l-tip-class" style="top:{{tipTop}}px;{{showTip?'':'opacity:0;'}}transform: rotate(-45deg) translateY({{-tipHeight/2-tipHeightOverflow}}px);">
       <view class="tip-text l-tip-text-class">{{tipText}}</view>
     </view>
   </view>
