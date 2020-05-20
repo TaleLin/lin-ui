@@ -405,6 +405,14 @@ Component({
         this.switchTipShow(false)
       }, 300)
       this.switchIsMovingSidebar(false)
+    },
+
+    /**
+     * 监听 点击侧边栏
+     */
+    onTapSidebar(event){
+      // 把事件对象传入触摸滑动监听函数即可
+      this.onTouchMove(event)
     }
   }
 })
