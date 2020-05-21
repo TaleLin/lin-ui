@@ -32,17 +32,6 @@ class NodeUtil {
         }).exec()
     })
   }
-
-  async getNodeFieldsFromComponent(component, selector, fields) {
-    return await new Promise((resolve) => {
-      component
-        .createSelectorQuery()
-        .select(selector)
-        .fields(fields, (res) => {
-          resolve(res)
-        }).exec()
-    })
-  }
 }
 
 const nodeUtil = new NodeUtil()

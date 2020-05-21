@@ -1,1 +1,0 @@
-class NodeUtil{async getNodeRectFromComponent(e,t){return await new Promise(n=>{e.createSelectorQuery().select(t).boundingClientRect(e=>{n(e)}).exec()})}async getNodesRectFromComponent(e,t){return await new Promise(n=>{e.createSelectorQuery().selectAll(t).boundingClientRect(e=>{n(e)}).exec()})}}const nodeUtil=new NodeUtil;export default nodeUtil;
