@@ -13,3 +13,19 @@
     box-sizing: border-box;
     border: 0 solid @border-color-split;
 }
+
+.active() {
+    opacity: 0.15;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    border: inherit;
+    border-radius: inherit; /* inherit parent's border radius */
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    content: ' ';
+    background-color: @active-color;
+    border-color: @active-color;
+}
