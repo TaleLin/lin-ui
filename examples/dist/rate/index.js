@@ -1,4 +1,4 @@
-import eventBus from '../core/utils/event-bus';
+import eventBus from '../utils/eventBus';
 
 Component({
   /**
