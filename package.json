@@ -1,6 +1,6 @@
 {
   "name": "lin-ui",
-  "version": "0.8.0",
+  "version": "0.8.1",
   "description": "A high quality UI components library with MiniProgram",
   "main": "app.js",
   "directories": {
@@ -13,7 +13,7 @@
     "lint": "eslint ./src/**/*.js",
     "test": "jest",
     "release": "sh build/release.sh",
-    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -n .convention-changelog-config.js"
+    "changelog": "conventional-changelog -p conventionalcommits -i CHANGELOG.md -s -n .convention-changelog-config.js"
   },
   "repository": {
     "type": "git",
