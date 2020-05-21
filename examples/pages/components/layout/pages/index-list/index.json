@@ -3,6 +3,7 @@
     "l-index-list": "/dist/index-list/index",
     "l-index-anchor": "/dist/index-anchor/index",
     "l-segment": "/dist/segment/index",
-    "l-segment-item": "/dist/segment-item/index"
+    "l-segment-item": "/dist/segment-item/index",
+    "content-title": "/components/content-title/index"
   }
 }

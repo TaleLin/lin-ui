@@ -1,7 +1,7 @@
-import nodeUtil from '../utils/node-util'
-import dataUtil from '../utils/data-util'
-import eventUtil from '../utils/event-util'
-import pixelUtil from '../utils/pixel-util'
+import nodeUtil from '../core/utils/node-util'
+import dataUtil from '../core/utils/data-util'
+import eventUtil from '../core/utils/event-util'
+import pixelUtil from '../core/utils/pixel-util'
 
 // 默认的 Sidebar 数据
 const defaultSidebarData = [
@@ -28,7 +28,7 @@ Component({
   },
 
   lifetimes: {
-    async attached() {
+    attached() {
       this.init()
     }
   },
@@ -75,7 +75,9 @@ Component({
       // 改变量用于标识是否正在滑动 Sidebar
       // 滑动侧栏的时候需要禁止页面滚动去改变 Sidebar 激活项
       // 不然会出现 Sidebar 激活项乱跳动的问题
-      isMoving: false
+      isMoving: false,
+      // sidebar-item 节点 rect 信息
+      sidebarItemRect: {}
     },
     // Anchor 节点信息
     _anchor: {
@@ -95,7 +97,9 @@ Component({
     // Tip 提示绝对定位的top值
     tipTop: 0,
     // 是否显示 Tip
-    showTip: false
+    showTip: false,
+    // tip 高度
+    tipHeight: 0
   },
 
   observers: {
@@ -122,7 +126,7 @@ Component({
       // 解析 Sidebar Rect 信息
       await this.parseSidebarRect()
       // 解析 SidebarItem Rect 信息
-      this.parseSidebarItemRect()
+      await this.parseSidebarItemRect()
       // 获取 index-anchor 所有组件实例
       await this.parseIndexAnchors()
       // 解析 Anchor Rect 信息
@@ -152,18 +156,39 @@ Component({
      * 把 Sidebar 每个 Item 的中点位置存到 data 中
      * 用于 Tip 定位使用
      */
-    parseSidebarItemRect() {
+    async parseSidebarItemRect() {
       // Sidebar 索引个数
       const sidebarLength = this.data.sidebarData.length
-      // Sidebar 单个索引高度
+      // 获取 sidebar-item 节点
+      const sidebarItemRect = await nodeUtil.getNodeRectFromComponent(this, '.sidebar-item')
+      // Sidebar 单个索引高度(包含了 margin 空隙)
       const sidebarItemHeight = this.data._sidebar.height / sidebarLength
-
+      // Sidebar 单个索引真实高度
+      const sidebarItemRealHeight = sidebarItemRect.height
+      // 获取 sidebar-item margin-top 属性
+      const sidebarItemFields = await nodeUtil.getNodeFieldsFromComponent(this, '.sidebar-item', {
+        computedStyle: ['margin-top']
+      })
+      // 获取 tip height 属性
+      // 只能用 height 获取高度，因为 tip 旋转后，rect的宽高发生了变化
+      const tipFields = await nodeUtil.getNodeFieldsFromComponent(this, '.tip', {
+        computedStyle: ['height']
+      })
       const sidebarItemCenterPoints = []
-      for (let i = 0; i < sidebarLength; i++) {
-        sidebarItemCenterPoints.push(i * sidebarItemHeight)
+      const sidebarItemMarginTop = sidebarItemFields['margin-top'].replace('px', '')
+
+      for (let i = 1; i <= sidebarLength; i++) {
+        sidebarItemCenterPoints.push((i * 2 - 1) * sidebarItemRealHeight / 2 + i * parseInt(sidebarItemMarginTop))
       }
+
+      const tipHeight = parseInt(tipFields.height.replace('px', ''))
       this.setData({
+        tipHeight,
+        // tip 旋转后，中线位置下移了 20.5%
+        tipHeightOverflow: tipHeight * 0.205,
+        ['_sidebar.sidebarItemRect']: sidebarItemRect,
         ['_sidebar.sidebarItemHeight']: sidebarItemHeight,
+        ['_sidebar.sidebarItemRealHeight']: sidebarItemRealHeight,
         ['_sidebar.sidebarItemCenterPoints']: sidebarItemCenterPoints
       })
     },
@@ -403,8 +428,16 @@ Component({
       // 300 毫秒后隐藏 Tip
       setTimeout(() => {
         this.switchTipShow(false)
-      }, 300)
+      }, 500)
       this.switchIsMovingSidebar(false)
+    },
+
+    /**
+     * 监听 点击侧边栏
+     */
+    onTapSidebar(event) {
+      // 把事件对象传入触摸滑动监听函数即可
+      this.onTouchMove(event)
     }
   }
 })

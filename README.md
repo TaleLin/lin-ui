@@ -27,7 +27,7 @@
 
 ⚡️ 文档网站: http://doc.mini.7yue.pro/
 <br/>
-🔥 教程地址: https://course.7yue.pro
+🔥 教程地址: [https://talelin.com](https://talelin.com/#course)
 
 </div>
 
@@ -151,9 +151,7 @@ npm install
 同样打开根目录，打开`config/style/_theme.less`文件，看到文件中定义了一个变量 `@theme-color` ，如果有主题色修改的需求，更改它即可。
 ```less
 // 主题色
-
-@theme-color            : #2c61b4;                      // 主题色
-
+@theme-color: #2c61b4;
 ```
 
 其他

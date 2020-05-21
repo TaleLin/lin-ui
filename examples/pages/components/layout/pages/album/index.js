@@ -5,20 +5,26 @@ Page({
    * 页面的初始数据
    */
   data: {
-    urls1_1: ['http://img2.imgtn.bdimg.com/it/u=1944156091,814818697&fm=26&gp=0.jpg'],
-    urls1_2: ['https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1575390421137&di=3ba6f1c3b893af11a8cf7a32455d011c&imgtype=0&src=http%3A%2F%2Fhbimg.b0.upaiyun.com%2Fee327b05d345a246d773b4b73df51c408f11112615d8e-5luZ3f_fw658'],
-    urls5: ['http://img2.imgtn.bdimg.com/it/u=1944156091,814818697&fm=26&gp=0.jpg', 'http://pic1.win4000.com/wallpaper/2/596470aa0a9d3.jpg', 'http://pic1.win4000.com/wallpaper/2018-02-02/5a741b536cf04.jpg', 'http://image.naic.org.cn/uploadfile/2017/1011/1507715213116632.jpg', 'http://e0.ifengimg.com/10/2019/0421/9FB69F78D3D83925878EF2CFFEFA435E3F0F5DED_size144_w1080_h608.jpeg'],
+    urls1_1: ['https://656e-env-9eb476-1258886794.tcb.qcloud.la/images/album/photo-3.jpg?sign=d71bb290f896e14bb800d0fb807f6764&t=1590025427'],
+    urls5: [
+      'https://656e-env-9eb476-1258886794.tcb.qcloud.la/images/album/photo-1.jpg?sign=ff17b6597c5659186d54469e6122d153&t=1590025404',
+      'https://656e-env-9eb476-1258886794.tcb.qcloud.la/images/album/photo-2.jpg?sign=7ccd10f793df154311f15a7b15d9ba57&t=1590025418',
+      'https://656e-env-9eb476-1258886794.tcb.qcloud.la/images/album/photo-3.jpg?sign=d71bb290f896e14bb800d0fb807f6764&t=1590025427',
+      'https://656e-env-9eb476-1258886794.tcb.qcloud.la/images/album/photo-4.jpg?sign=37d3fc32fe841a137e56b54cec2807c8&t=1590025434',
+      'https://656e-env-9eb476-1258886794.tcb.qcloud.la/images/album/photo-5.jpg?sign=785abbd12c4fa70454ef4bd7c3961536&t=1590025441'
+    ],
     urls4: [{
-      newurl: 'http://img2.imgtn.bdimg.com/it/u=1944156091,814818697&fm=26&gp=0.jpg',
+      newurl: 'https://656e-env-9eb476-1258886794.tcb.qcloud.la/images/album/photo-6.jpg?sign=6ba5b48f6766201a5458725defff47c7&t=1590025956',
       index: 0
     }, {
-      newurl: 'http://pic1.win4000.com/wallpaper/2/596470aa0a9d3.jpg'
+      newurl: 'https://656e-env-9eb476-1258886794.tcb.qcloud.la/images/album/photo-7.jpg?sign=a09608b13d13402e657a8a37118f3190&t=1590025970'
     }, {
-      newurl: 'http://img2.imgtn.bdimg.com/it/u=1944156091,814818697&fm=26&gp=0.jpg',
+      newurl: 'https://656e-env-9eb476-1258886794.tcb.qcloud.la/images/album/photo-8.jpg?sign=a984d69b221dee6ce1da7f213c9593be&t=1590025977',
       index: 0
     }, {
-      newurl: 'http://pic1.win4000.com/wallpaper/2/596470aa0a9d3.jpg'
-    }]
+      newurl: 'https://656e-env-9eb476-1258886794.tcb.qcloud.la/images/album/photo-9.jpg?sign=d63aa68ca5c4e65598c781cac161981c&t=1590026002'
+    }],
+    avatarUrl:'https://656e-env-9eb476-1258886794.tcb.qcloud.la/images/album/avatar.jpg?sign=21809a2654e7a6fdd438166e83a35484&t=1590025376'
   },
 
   /**

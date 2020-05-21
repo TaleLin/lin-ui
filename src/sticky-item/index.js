@@ -1,4 +1,4 @@
-import nodeUtil from '../utils/node-util';
+import nodeUtil from '../core/utils/node-util';
 Component({
   externalClasses: ['l-class', 'l-header-wrapper-class', 'l-header-class', 'l-header-sticky-class', 'l-body-class'],
   options: {

@@ -21,6 +21,13 @@
       <text class='address'>https://github.com/Talelin/lin-ui</text>
     </view>
   </view>
+  <view class='address-container'>
+    <view class='dot' />
+    <view class='doc-container' bindtap='copyLink' data-link="https://gitee.com/talelin/lin-ui">
+      <text class='doc-txt'>码云</text>
+      <text class='address'>https://gitee.com/talelin/lin-ui</text>
+    </view>
+  </view>
   <view class='attribute-container'>
     <view class='attribute-title'>贡献人员</view>
     <view class='attribute-item'>
@@ -38,6 +45,7 @@
         <view class='coder'>洪晨</view>
         <view class='coder'>句号</view>
         <view class='coder'>桔子</view>
+        <view class='coder'>木荣</view>
       </view>
       <view class='attribute-code-container'>
         <view class='code-circle'></view>

@@ -1,42 +1,16 @@
 <wxs src="util.wxs" module="util"></wxs>
-
-<view class="segment-wrapper">
-  <l-segment bind:linchange="onChangeSegement">
-    <l-segment-item tab="地区选择" key="1"></l-segment-item>
-    <l-segment-item tab="通讯录" key="2"></l-segment-item>
-  </l-segment>
-</view>
-
-<view class="index-list-container">
-  <view wx:if="{{showAreaChoose}}">
-    <l-index-list
-      is-stick="{{true}}"
-      stickOffsetTop="80"
-      scroll-top="{{scrollTop}}"
-      sidebar-data="{{sideBarData}}">
-      <block wx:for="{{cityData}}" wx:key="index">
-        <view>
-          <l-index-anchor/>
-          <block wx:for="{{item.lists}}" wx:key="index">
-            <view class="city-item-wrapper">
-              <view class="city-item">{{item}}</view>
-            </view>
-          </block>
-        </view>
-      </block>
-    </l-index-list>
-  </view>
-
-  <view wx:if="{{!showAreaChoose}}">
+<view class='container'>
+  <content-title name="IndexList" describe="索引列表">
     <l-index-list
       scroll-top="{{scrollTop}}"
-      stickOffsetTop="80"
       l-selected-class="l-selected-class"
       l-tip-class="l-tip-class"
+      style="width:100%"
+      sidebar-data="{{sideBarData}}"
       l-tip-text-class="l-tip-text-class">
-      <block wx:for="{{26}}" wx:key="index" wx:for-index="anchorIndex">
+      <block wx:for="{{sideBarData.length}}" wx:key="index" wx:for-index="anchorIndex">
         <l-index-anchor/>
-        <block wx:for="{{5}}" wx:key="index" wx:for-index="itemIndex">
+        <block wx:for="{{2}}" wx:key="index" wx:for-index="itemIndex">
           <view class="person-item">
             <image lazy-load="{{true}}" class="person-avatar"
                    src="{{util.getApi(anchorIndex%3)}}&xxx={{anchorIndex*10+itemIndex}}"></image>
@@ -45,5 +19,5 @@
         </block>
       </block>
     </l-index-list>
-  </view>
+  </content-title>
 </view>

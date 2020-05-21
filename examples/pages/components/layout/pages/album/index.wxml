@@ -4,9 +4,9 @@
         <content-card class="content" name="基本案例">
             <view>
                 <view class="album">
-                    <l-avatar class="avatar" size='80' shape="square" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1574067618442&di=b8474bcfaea4c13487e6aac9c3f66c84&imgtype=0&src=http%3A%2F%2Fimg14.360buyimg.com%2Fn1%2Fjfs%2Ft21772%2F172%2F702988837%2F107053%2F5e0f9964%2F5b1619e2N9a2189a8.jpg" />
+                    <l-avatar class="avatar" size='80' shape="square" src="{{avatarUrl}}" />
                     <view class="right">
-                        <view class="name">Lin-UI-27315</view>
+                        <view class="name">LinUI@27315</view>
                         <l-album urls='{{urls1_1}}'></l-album>
                     </view>
                 </view>
@@ -15,9 +15,9 @@
         <content-card class="content" name="多图展示">
             <view>
                 <view class="album">
-                    <l-avatar class="avatar" size='80' shape="square" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1574067618442&di=b8474bcfaea4c13487e6aac9c3f66c84&imgtype=0&src=http%3A%2F%2Fimg14.360buyimg.com%2Fn1%2Fjfs%2Ft21772%2F172%2F702988837%2F107053%2F5e0f9964%2F5b1619e2N9a2189a8.jpg" />
+                    <l-avatar class="avatar" size='80' shape="square" src="{{avatarUrl}}" />
                     <view class="right">
-                        <view class="name">Lin-UI-27315</view>
+                        <view class="name">LinUI@27315</view>
                         <l-album urls='{{urls5}}'></l-album>
                     </view>
                 </view>
@@ -26,18 +26,18 @@
         <content-card class="content" name="更改裁剪模式">
             <view>
                 <view class="album">
-                    <l-avatar class="avatar" size='80' shape="square" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1574067618442&di=b8474bcfaea4c13487e6aac9c3f66c84&imgtype=0&src=http%3A%2F%2Fimg14.360buyimg.com%2Fn1%2Fjfs%2Ft21772%2F172%2F702988837%2F107053%2F5e0f9964%2F5b1619e2N9a2189a8.jpg" />
+                    <l-avatar class="avatar" size='80' shape="square" src="{{avatarUrl}}" />
                     <view class="right">
-                        <view class="name">Lin-UI-27315</view>
+                        <view class="name">LinUI@27315</view>
                         <l-album urls='{{urls1_1}}' single-mode='center'></l-album>
                     </view>
                 </view>
             </view>
             <view>
                 <view class="album">
-                    <l-avatar class="avatar" size='80' shape="square" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1574067618442&di=b8474bcfaea4c13487e6aac9c3f66c84&imgtype=0&src=http%3A%2F%2Fimg14.360buyimg.com%2Fn1%2Fjfs%2Ft21772%2F172%2F702988837%2F107053%2F5e0f9964%2F5b1619e2N9a2189a8.jpg" />
+                    <l-avatar class="avatar" size='80' shape="square" src="{{avatarUrl}}" />
                     <view class="right">
-                        <view class="name">Lin-UI-27315</view>
+                        <view class="name">LinUI@27315</view>
                         <l-album urls='{{urls4}}' key='newurl' multiple-mode='scaleToFill'></l-album>
                     </view>
                 </view>
@@ -46,9 +46,9 @@
         <content-card class="content" name="更改图片大小">
             <view>
                 <view class="album">
-                    <l-avatar class="avatar" size='80' shape="square" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1574067618442&di=b8474bcfaea4c13487e6aac9c3f66c84&imgtype=0&src=http%3A%2F%2Fimg14.360buyimg.com%2Fn1%2Fjfs%2Ft21772%2F172%2F702988837%2F107053%2F5e0f9964%2F5b1619e2N9a2189a8.jpg" />
+                    <l-avatar class="avatar" size='80' shape="square" src="{{avatarUrl}}" />
                     <view class="right">
-                        <view class="name">Lin-UI-27315</view>
+                        <view class="name">LinUI@27315</view>
                         <l-album urls='{{urls4}}' key='newurl' multipleSize='100'></l-album>
                     </view>
                 </view>
@@ -57,9 +57,9 @@
         <content-card class="content" name="更改图片间隔">
             <view>
                 <view class="album">
-                    <l-avatar class="avatar" size='80' shape="square" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1574067618442&di=b8474bcfaea4c13487e6aac9c3f66c84&imgtype=0&src=http%3A%2F%2Fimg14.360buyimg.com%2Fn1%2Fjfs%2Ft21772%2F172%2F702988837%2F107053%2F5e0f9964%2F5b1619e2N9a2189a8.jpg" />
+                    <l-avatar class="avatar" size='80' shape="square" src="{{avatarUrl}}" />
                     <view class="right">
-                        <view class="name">Lin-UI-27315</view>
+                        <view class="name">LinUI@27315</view>
                         <l-album urls='{{urls4}}' key='newurl' gapRow='{{25}}' gapColumn='{{25}}'></l-album>
                     </view>
                 </view>

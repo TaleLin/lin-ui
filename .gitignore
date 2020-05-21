@@ -20,3 +20,4 @@ yarn-error.log
 package-lock.json
 examples/project.config.json
 /.run
+yarn.lock
