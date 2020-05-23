@@ -1,5 +1,5 @@
 // input/input.js
-import eventBus from '../utils/eventBus.js';
+import eventBus from '../core/utils/event-bus.js';
 import validator from '../behaviors/validator';
 import rules from '../behaviors/rules';
 Component({
