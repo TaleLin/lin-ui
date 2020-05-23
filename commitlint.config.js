@@ -17,7 +17,6 @@ module.exports = {
         '.editorconfig',
         '.gitignore',
         'commitlint',
-        'Behaviors',
         'Example',
         'Button',
         'Icon',
