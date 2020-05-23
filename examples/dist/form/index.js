@@ -1,4 +1,4 @@
-import eventBus from '../utils/eventBus.js';
+import eventBus from '../core/utils/event-bus.js';
 Component({
   /**
      * 组件的属性列表

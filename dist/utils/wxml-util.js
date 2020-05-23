@@ -1,0 +1,1 @@
+class WxmlUtil{async getNodeRectFromComponent(e,t){return await new Promise(l=>{e.createSelectorQuery().select(t).boundingClientRect(e=>{l(e)}).exec()})}async getNodesRectFromComponent(e,t){return await new Promise(l=>{e.createSelectorQuery().selectAll(t).boundingClientRect(e=>{l(e)}).exec()})}}const wxmlUtil=new WxmlUtil;export default wxmlUtil;
