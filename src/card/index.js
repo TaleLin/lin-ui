@@ -23,7 +23,7 @@ Component({
     type: {
       type: String,
       value: 'primary',
-      options: ['primary', 'avatar', 'cover']
+      options: ['primary', 'avatar']
     },
     imageMode: {
       type: String,

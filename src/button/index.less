@@ -1,8 +1,7 @@
 @import "../../config/styles/_base.less";
-@import "../../config/styles/_mixins.less";
 
-.btn-hover::before{
-    .active();
+.btn-hover{
+    opacity: 0.8;
 }
 
 .special-container{
@@ -155,6 +154,7 @@
     // Disabled
     &-disabled{
         opacity: 0.8;
+        background-color: @disabled-color;
     }
 }
 
