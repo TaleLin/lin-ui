@@ -3,7 +3,7 @@
   <content-card name="{{item.title}}" wx:for="{{tagNaviConfigs}}" wx:key="type">
     <view class="container">
       <block wx:for="{{item.config}}" wx:for-item="tag" wx:key="tag">
-        <l-tag l-class="tag" bg-color="{{tag.bgColor}}" font-color="{{tag.fontColor}}" size="{{tag.size}}" shape="{{tag.shape}}" plain="{{tag.plain}}" icon-name="{{tag.iconName}}" location="{{tag.location}}" icon-size="{{tag.iconSize}}" icon-color="{{tag.iconColor}}" disable="{{tag.disable}}">{{tag.content}}</l-tag>
+        <l-tag l-class="tag" bg-color="{{tag.bgColor}}" font-color="{{tag.fontColor}}" size="{{tag.size}}" shape="{{tag.shape}}" plain="{{tag.plain}}" icon-name="{{tag.iconName}}" location="{{tag.location?tag.location:'left'}}" icon-size="{{tag.iconSize}}" icon-color="{{tag.iconColor}}" disable="{{tag.disable}}">{{tag.content}}</l-tag>
       </block>
     </view>
 
