@@ -11,7 +11,7 @@ const tagNaviConfigs = [{
     iconName: '',
     iconSize: '20',
     iconColor: '#fff',
-    location: 'r'
+    location: 'right'
   }, {
     content: '欺负我小',
     size: 'mini',
@@ -23,7 +23,7 @@ const tagNaviConfigs = [{
     iconName: '',
     iconSize: '20',
     iconColor: '#fff',
-    location: 'r'
+    location: 'right'
   },
   {
     content: '唉 我也不大',
