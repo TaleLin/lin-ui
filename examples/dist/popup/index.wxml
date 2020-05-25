@@ -1,6 +1,6 @@
 <!-- popup.wxml -->
-  <view class='l-class container-popup {{ show ? "popup-show" : "" }} {{contentAlign ? contentAlign : direction}}' style="z-index:{{zIndex}};" >
-    <view class='container-bg l-bg-class'  style="opacity: {{opacity}}" catchtap='onPupopTap' catchtouchmove="doNothingMove"></view>
+  <view class='l-class container-popup {{ show ? "popup-show" : "" }} {{contentAlign ? contentAlign : direction}}' style="z-index:{{zIndex}};" catchtouchmove="doNothingMove">
+    <view class='container-bg l-bg-class'  style="opacity: {{opacity}}" catchtap='onPupopTap'></view>
     <l-transition
         wx:if="{{animation && transition}}"
         show="{{ show }}"
@@ -14,12 +14,12 @@
         l-leave-active-class='{{(contentAlign ? contentAlign : direction) + "-lin-leave-active-class"}}'
         l-leave-to-class='{{(contentAlign ? contentAlign : direction) + "-lin-leave-to-class"}}'
     >
-        <view class='{{"popup-content-"+ (contentAlign ? contentAlign : direction)}} l-panel-class' >
+        <view class='{{"popup-content-"+ (contentAlign ? contentAlign : direction)}} l-panel-class' catchtap="doNothingTap">
           <slot></slot>
         </view>
     </l-transition>
     <view wx:if="{{!(animation && transition) && show}}" class="popup-content" style="z-index:100">
-        <view class='test {{"popup-content-"+ (contentAlign ? contentAlign : direction)}} l-panel-class'>
+        <view class='{{"popup-content-"+ (contentAlign ? contentAlign : direction)}} l-panel-class' catchtap="doNothingTap">
             <slot></slot>
         </view>
     </view>
