@@ -290,7 +290,7 @@ Component({
       }
     },
     initRect() {
-      if (this.contentObserver != null) {
+      if (!this.contentObserver !== null && this.contentObserver !== undefined) {
         this.contentObserver.disconnect();
       }
       const contentObserver = this.createIntersectionObserver({
