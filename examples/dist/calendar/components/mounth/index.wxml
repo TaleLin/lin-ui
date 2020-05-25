@@ -1,7 +1,7 @@
 <wxs src="./index.wxs" module="computed"></wxs>
 
 <view class="calendar-mounth-container">
-  <view class="title">
+  <view class="title" wx:if="{{ showMonthTitle }}">
     {{ computed.formatMonthTitle(date) }}
   </view>
   <view class="calendar-day-container">

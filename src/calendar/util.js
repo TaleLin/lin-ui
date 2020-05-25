@@ -62,3 +62,52 @@ export function compareDay(date1, date2) {
 
   return compareMonthResult;
 }
+
+export function calcDateNum(date) {
+  const day1 = new Date(date[0]).getTime();
+  const day2 = new Date(date[1]).getTime();
+  return (day2 - day1) / (1000 * 60 * 60 * 24) + 1;
+}
+
+export function copyDates(dates) {
+  if (Array.isArray(dates)) {
+    return dates.map(date => {
+      if (date === null) {
+        return date;
+      }
+      return new Date(date);
+    });
+  }
+  return new Date(dates);
+}
+
+export function getTime (dates) {
+  if (Array.isArray(dates)) {
+    return dates.map(date => {
+      if (date instanceof Date) {
+        return date.getTime();
+      }
+      return date;
+    });
+  }
+  return (dates instanceof Date ? dates.getTime() : dates);
+}
+
+export function formatMonthTitle(date) {
+  if (!(date instanceof Date)) {
+    date = new Date(date);
+  }
+  return `${date.getFullYear()}年${date.getMonth() + 1}月`;
+}
+
+export function getMonths(minDate, maxDate) {
+  const months = [];
+  const cursor = new Date(minDate);
+  cursor.setDate(1);
+  do {
+    months.push(cursor.getTime());
+    cursor.setMonth(cursor.getMonth() + 1);
+  } while (compareMonth(cursor, maxDate) !== 1);
+  return months;
+}
+

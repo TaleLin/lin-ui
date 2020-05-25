@@ -24,7 +24,8 @@ Component({
     type: {
       type: String,
       observer: 'setDays'
-    }
+    },
+    showMonthTitle: Boolean
   },
   methods: {
 
@@ -80,7 +81,7 @@ Component({
 
     isDateInCurrent(date) {
       const { currentDate } = this.data;
-      currentDate.some(item => {
+      return currentDate.some(item => {
         return compareDay(item, date) === 0
       })
     },

@@ -5,7 +5,8 @@ Page({
    * 页面的初始数据
    */
   data: { 
-    defaultDate: [1589524969397]
+    defaultDate: 1589524969397,
+    show: false
   },
 
   
@@ -16,5 +17,10 @@ Page({
   onLoad: function (options) {
   
   },
+  changeType() {
+    this.setData({
+      show: true
+    })
+  }
 
 })

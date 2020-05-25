@@ -1,18 +1,19 @@
+@import "../../../../config/styles/_base.less";
 .calendar-day-container{
   display: flex;
   flex-direction: column;
   height: 100%;
   align-items: center;
   &.selected{
-    background-color: #58bd6b;
+    background-color: @success-color;
     color: #ffffff;
   }
   &.start{
-    background-color: #58bd6b;
+    background-color: @success-color;
     color: #ffffff;
   }
   &.end{
-    background-color: #58bd6b;
+    background-color: @success-color;
     color: #ffffff;
   }
   &.disabled{
@@ -22,7 +23,7 @@
   }
   &.middle{
     background-color: #eff9f0;
-    color: #58bd6b;
+    color: @success-color;
   }
   // background-color: red;
   // color: #eff9f0;

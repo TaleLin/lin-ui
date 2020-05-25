@@ -1,15 +1,15 @@
 <view class="calendar-header-container">
   <block wx:if="{{ showTitle }}">
-    <view class="calendar-header-container_title">
+    <!-- <view class="calendar-header-container_title">
       <slot name="title"></slot>
-    </view>
+    </view> -->
    <view class="calendar-header-container_title">
       {{ title }}
     </view>
   </block>
 
   <view wx:if="{{ showSubtitle }}" class="calendar-header-container_subtitle">
-    {{ subtitle }}
+    {{ subTitle }}
   </view>
 
   <view class="calendar-header__weekdays">

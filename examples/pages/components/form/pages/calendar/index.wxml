@@ -1,13 +1,23 @@
 <!--pages/view/pages/dialog/index.wxml-->
 <view class='container'>
-  <content-title name="Input" describe="输入框">
-    <content-card
-      class="content"
-      name="基本案例"
-    >
-      <view style="height: 700rpx">
-        <l-calendar multiple defaultDate="{{ defaultDate }}"></l-calendar>
-      </view>
-    </content-card>    
+  <content-title name="Transition" describe="日历">
+
+    <content-card class="content" name="日历">
+      <l-list title="单个日期" bind:lintap="changeType" />
+      <!-- <l-list title="fade-up 上滑淡入" data-name="fade-up" bind:lintap="changeType" />
+      <l-list title="fade-down 下滑淡入" data-name="fade-down" bind:lintap="changeType" />
+      <l-list title="fade-left 左滑淡入" data-name="fade-left" bind:lintap="changeType" />
+      <l-list title="fade-right 右滑淡入" data-name="fade-right" bind:lintap="changeType" />
+      <l-list title="slide-up 上滑进入" data-name="slide-up" bind:lintap="changeType" />
+      <l-list title="slide-down 下滑进入" data-name="slide-down" bind:lintap="changeType" />
+      <l-list title="slide-left 左滑进入" data-name="slide-left" bind:lintap="changeType" />
+      <l-list title="slide-right 右滑进入" data-name="slide-right" bind:lintap="changeType" />
+      <l-list title="案例一" data-name="0" bind:lintap="openCase" />
+      <l-list title="案例二" data-name="1" bind:lintap="openCase" />
+      <l-list title="案例三" data-name="2" bind:lintap="openCase" /> -->
+    </content-card>
+
   </content-title>
+  
+   <l-calendar title="日历" show="{{ show }}" minSelect="{{ 3 }}" maxSelect="{{ 5 }}" defaultDate="{{ defaultDate }}" type="single"></l-calendar>
 </view>

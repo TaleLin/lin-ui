@@ -2,6 +2,9 @@
   "component": true,
   "usingComponents": {
     "header":"../components/header/index",
-    "mounth":"../components/mounth/index"
+    "mounth":"../components/mounth/index",
+    "l-toast": "/dist/toast/index",
+    "l-popup": "/dist/popup/index",
+    "l-button": "/dist/button/index"
   }
 }

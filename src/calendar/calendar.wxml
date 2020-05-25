@@ -2,19 +2,26 @@
 
 <template name="calendar">
   <view class="calendar-container">
-    <header></header>
-    <scroll-view class="calendar-body-wrap" scroll-y>
+    <header showTitle="{{ showTitle }}" showSubtitle="{{ showSubtitle }}" title="{{ title }}" subTitle="{{ subTitle }}"></header>
+    <scroll-view class="calendar-body-wrap" scroll-y scroll-into-view="{{ scrollIntoViewIndex }}">
       <mounth 
         wx:for="{{ computed.getMonths(minDate, maxDate) }}"
         wx:key="index"
+        id="month{{ index }}"
+        class="month"
+        data-date="{{ item }}"
         date="{{ item }}"
         minDate="{{ minDate }}"
         maxDate="{{ maxDate }}"
         currentDate="{{ currentDate }}"
         type="{{ type }}"
         bind:clickDay="clickDay"
+        showMonthTitle="{{ index !== 0 }}"
       >
       </mounth>
     </scroll-view>
+    <view>
+      <l-button type="success" size="long" bind:lintap="onClickConfirm">确定</l-button>
+    </view>
   </view>
 </template>
