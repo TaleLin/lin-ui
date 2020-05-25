@@ -19,5 +19,5 @@
 
   </content-title>
   
-   <l-calendar title="日历" show="{{ show }}" minSelect="{{ 3 }}" maxSelect="{{ 5 }}" defaultDate="{{ defaultDate }}" type="single"></l-calendar>
+   <l-calendar title="日历" show="{{ show }}" minSelect="{{ 3 }}" maxSelect="{{ 5 }}" defaultDate="{{ defaultDate }}" type="range"></l-calendar>
 </view>

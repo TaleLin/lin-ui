@@ -1,12 +1,15 @@
+import eventBus from '../utils/eventBus.js';
 import validator from '../behaviors/validator';
+import rules from '../behaviors/rules';
 import * as config from './config'
+
 import { getDayByOffset, getDate, compareDay, calcDateNum, copyDates, getTime, formatMonthTitle, compareMonth, getMonths } from './util'
 
 Component({
   externalClasses: [
     'l-class'
   ],
-  behaviors: [validator],
+  behaviors: ['wx://form-field', validator, rules],
   properties: {
     show: {
       type: Boolean,
@@ -287,7 +290,7 @@ Component({
       }
     },
     initRect() {
-      if (this.contentObserver != null) {
+      if (!this.contentObserver !== null && this.contentObserver !== undefined) {
         this.contentObserver.disconnect();
       }
       const contentObserver = this.createIntersectionObserver({
@@ -314,7 +317,6 @@ Component({
         const months = getMonths(minDate, maxDate);
         months.some((month, index) => {
           if (compareMonth(month, targetDate) === 0) {
-            console.log(index)
             this.setData({ scrollIntoViewIndex: `month${index}` });
             return true;
           }
@@ -328,6 +330,16 @@ Component({
       })
     },
     onClickConfirm() {
+      eventBus.emit(`lin-form-blur-${this.id}`, this.id);
+      console.log(this.data.currentDate)
+    },
+    getValues() {
+      return this.data.currentDate;
+    },
+    reset() {
+      this.setData({
+        currentDate: null
+      });
     }
   }
 });
