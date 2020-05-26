@@ -1,7 +1,9 @@
+import eventUtil from '../core/utils/event-util'
+
 Component({
   /**
-  * 组件的属性列表
-  */
+   * 组件的属性列表
+   */
   properties: {
     columnGap: {
       type: String,
@@ -10,8 +12,8 @@ Component({
   },
 
   /**
-  * 组件的初始数据
-  */
+   * 组件的初始数据
+   */
   data: {
     data: [],
     leftData: [],
@@ -79,6 +81,14 @@ Component({
       } else {
         success && success();
       }
+    },
+
+    /**
+     * 监听：点击 water-flow-item
+     * @param e 事件对象
+     */
+    onTapItem(e) {
+      eventUtil.emit(this, 'linitemtap', e.detail)
     }
   }
 });
