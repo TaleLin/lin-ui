@@ -18,7 +18,7 @@
       <detail-navi-card
         wx:for="{{filterNaviConfigs}}"
         wx:for-item="filterNaviConfigs"
-        wx:key="{{index}}"
+        wx:key="index"
         icon="{{filterNaviConfigs.icon}}"
         title="{{filterNaviConfigs.title}}"
         componentsPath="{{filterNaviConfigs.componentsPath}}"
