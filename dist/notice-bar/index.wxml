@@ -1,5 +1,5 @@
 <view wx:if="{{ show }}" class="l-class l-noticebar" style="color: {{ color }}; background-color: {{ backgroundcolor }}">
-  <l-icon wx:if="{{ frontIconName }}" size="{{frontIconSize}}" color="{{frontIconColor}}" name="{{ frontIconName }}" class="l-noticebar-icon"/>
+  <l-icon wx:if="{{ frontIconName }}" size="{{frontIconSize}}" color="{{frontIconColor}}" name="{{ frontIconName }}" class="l-noticebar-icon" l-class="l-icon-class"/>
   <swiper autoplay vertical interval="{{4*speed}}" class="l-noticebar-content-wrap" wx:if="{{type=='swip'}}">
     <block wx:for="{{swipArr}}" wx:key="swip">
       <swiper-item data-index="{{index}}" bindtap="onSwip">
