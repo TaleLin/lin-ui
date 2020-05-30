@@ -1,4 +1,3 @@
-<wxs src="util.wxs" module="util"></wxs>
 <view class='container'>
   <content-title name="IndexList" describe="索引列表">
     <l-index-list
@@ -12,9 +11,9 @@
         <l-index-anchor/>
         <block wx:for="{{2}}" wx:key="index" wx:for-index="itemIndex">
           <view class="person-item">
-            <image lazy-load="{{true}}" class="person-avatar"
-                   src="{{util.getApi(anchorIndex%3)}}&xxx={{anchorIndex*10+itemIndex}}"></image>
-            <view class="person-name">{{util.assignName(anchorIndex*10+itemIndex)}}</view>
+            <image lazy-load="{{true}}" data-avatar-id="{{anchorIndex*2+itemIndex+1}}" catch:tap="onTapAvatar" class="person-avatar"
+                   src="cloud://env-9eb476.656e-env-9eb476-1258886794/images/index-list/avatar/{{anchorIndex*2+itemIndex+1}}.jpg"></image>
+            <view class="person-name">{{nameData[anchorIndex][itemIndex]}}</view>
           </view>
         </block>
       </block>
