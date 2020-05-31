@@ -75,7 +75,16 @@ const basicNaviConfigs = [
     icon: '/images/component/skeleton.png',
     title: 'Skeleton',
     desc: '骨架屏',
-    componentsPath: '/pages/components/view/pages/skeleton/index'
+    componentsPath: '/pages/components/view/pages/skeleton/index',
+    icon: "/images/component/progress.png",
+    title: "Progress",
+    desc: "进度条",
+    componentsPath: "/pages/components/view/pages/progress/index"
+  },  {
+    icon: "/images/component/progress.png",
+    title: "Circle",
+    desc: "圆形进度条",
+    componentsPath: "/pages/components/view/pages/circle/index"
   },
   {
     icon: '/images/component/progress.png',

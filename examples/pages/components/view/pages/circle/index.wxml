@@ -18,12 +18,12 @@
         </content-card>
         <content-card l-content="content" name="更改数值颜色">
             <view class="circle-container">
-                <l-circle percent='50' show-info='{{true}}' text-color='red' text-size='30'></l-circle>
+                <l-circle percent='50' show-info='{{true}}' value-color='red' value-size='30'></l-circle>
             </view>
         </content-card>
         <content-card l-content="content" name="更改内外直径">
             <view class="circle-container">
-                <l-circle percent='50' out-diameter='150' inner-diameter='80'></l-circle>
+                <l-circle percent='50' outer-diameter='150' inner-diameter='80'></l-circle>
             </view>
         </content-card>
         <content-card l-content="content" name="更改已选进度条颜色">
@@ -39,6 +39,13 @@
         <content-card l-content="content" name="更改中间颜色">
             <view class="circle-container">
                 <l-circle percent='50' active-color='red' background-color='green' inner-color='yellow'></l-circle>
+            </view>
+        </content-card>
+        <content-card l-content="content" name="自定义背景">
+            <view class="circle-container">
+                <l-circle percent='50'>
+                    <image src="timg.jpeg" slot='header' style="width:90rpx;height:90rpx;border-radius:50%;display:block;" />
+                </l-circle>
             </view>
         </content-card>
     </content-title>

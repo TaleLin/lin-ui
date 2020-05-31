@@ -3,13 +3,13 @@ Component({
   /**
    * 组件的属性列表
    */
-  externalClasses: ['l-text-class'],
+  externalClasses: ['l-value-class'],
   properties: {
     percent: {
       type: Number,
       value: 0
     },
-    outDiameter: {
+    outerDiameter: {
       type: Number,
       value: 100
     },
@@ -40,13 +40,17 @@ Component({
       type: Boolean,
       value: false
     },
-    textColor: {
+    valueColor: {
       type: String,
     },
-    textSize: {
+    valueSize: {
       type: Number,
       value: 25
     }
+  },
+
+  options: {
+    multipleSlots: true,
   },
 
   /**

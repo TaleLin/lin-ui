@@ -1,7 +1,10 @@
-<view class="sector {{((percent < 50 && percent != 0) || percent == 100) ? 'sector1' : 'sector2'}}" style="height:{{outDiameter}}rpx;width:{{outDiameter}}rpx;{{((percent < 50 && percent != 0) || percent == 100) ?activeColor?'background:'+activeColor:'':'background:'+backgroundColor}}">
-    <view wx:if="{{percent != 0 && percent != 100}}" class="sx1" style="height:{{outDiameter}}rpx;width:{{outDiameter}}rpx;clip: rect(0rpx, {{outDiameter/2}}rpx, {{outDiameter}}rpx, 0rpx);background:{{((percent < 50 && percent != 0) || percent == 100) ?backgroundColor:activeColor?activeColor:''}}"></view>
-    <view wx:if="{{percent != 50 && percent != 0 && percent != 100}}" class="sx2" style="transform: rotate({{percent < 50 ? ((360 * percent / 100) - 180):(360 * (percent - 100) / 100)}}deg);height:{{outDiameter}}rpx;width:{{outDiameter}}rpx;clip: rect(0rpx, {{outDiameter/2}}rpx, {{outDiameter}}rpx, 0rpx);background:{{((percent < 50 && percent != 0) || percent == 100) ?backgroundColor:activeColor}}"></view>
+<view class="sector {{((percent < 50 && percent != 0) || percent == 100) ? 'sector1' : 'sector2'}}" style="height:{{outerDiameter}}rpx;width:{{outerDiameter}}rpx;{{((percent < 50 && percent != 0) || percent == 100) ?activeColor?'background:'+activeColor:'':'background:'+backgroundColor}}">
+    <view wx:if="{{percent != 0 && percent != 100}}" class="sx1" style="height:{{outerDiameter}}rpx;width:{{outerDiameter}}rpx;clip: rect(0rpx, {{outerDiameter/2}}rpx, {{outerDiameter}}rpx, 0rpx);background:{{((percent < 50 && percent != 0) || percent == 100) ?backgroundColor:activeColor?activeColor:''}}"></view>
+    <view wx:if="{{percent != 50 && percent != 0 && percent != 100}}" class="sx2" style="transform: rotate({{percent < 50 ? ((360 * percent / 100) - 180):(360 * (percent - 100) / 100)}}deg);height:{{outerDiameter}}rpx;width:{{outerDiameter}}rpx;clip: rect(0rpx, {{outerDiameter/2}}rpx, {{outerDiameter}}rpx, 0rpx);background:{{((percent < 50 && percent != 0) || percent == 100) ?backgroundColor:activeColor}}"></view>
     <view class="sx_t" style="width:{{innerDiameter}}rpx;height:{{innerDiameter}}rpx;background:{{innerColor}}">
-        <view wx:if="{{showInfo}}" class="l-text-class" style="color:{{textColor?textColor:''}};font-size:{{textSize}}rpx">{{percent}}%</view>
+        <view wx:if="{{showInfo}}" class="l-value-class" style="color:{{valueColor?valueColor:''}};font-size:{{valueSize}}rpx">
+            {{percent}}%
+        </view>
+        <slot name="header"></slot>
     </view>
 </view>
