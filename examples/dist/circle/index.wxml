@@ -5,6 +5,6 @@
         <view wx:if="{{showInfo}}" class="l-value-class" style="color:{{valueColor?valueColor:''}};font-size:{{valueSize}}rpx">
             {{percent}}%
         </view>
-        <slot name="header"></slot>
+        <slot name="background"></slot>
     </view>
 </view>
