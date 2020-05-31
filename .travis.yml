@@ -1,0 +1,26 @@
+# 指定运行环境
+language: node_js
+node_js:
+  - lts/*
+
+# 仅监控 master 分支
+branches:
+  except:
+    - master
+
+jobs:
+  include:
+    - name: "推送编译"
+      if: type = push AND branch = develop
+      install: yarn install
+      script:
+        - yarn build
+        - git config --global user.name "Juzi"
+        - git config --global user.email "juzi214032@qq.com"
+        - git add -A
+        - "git commit -m 'build: Travis CI automatic compilation.'"
+        - git push "https://juzi214032:${GITHUB_TOKEN}@github.com/TaleLin/lin-ui"
+    - name: "检测编译"
+      if: type = pull_request
+      install: yarn install
+      script: yarn build
