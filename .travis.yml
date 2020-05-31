@@ -10,17 +10,18 @@ branches:
 
 jobs:
   include:
-    - name: "推送编译"
+    - name: "Push Compile"
       if: type = push AND branch = develop
       install: yarn install
       script:
         - yarn build
+        - yarn dev
         - git config --global user.name "Juzi"
         - git config --global user.email "juzi214032@qq.com"
         - git add -A
         - "git commit -m 'build: Travis CI automatic compilation.'"
-        - git push "https://juzi214032:${GITHUB_TOKEN}@github.com/TaleLin/lin-ui"
-    - name: "检测编译"
+        - git push "https://juzi214032:${GITHUB_TOKEN}@github.com/TaleLin/lin-ui" develop
+    - name: "Check Compile"
       if: type = pull_request
       install: yarn install
       script: yarn build
