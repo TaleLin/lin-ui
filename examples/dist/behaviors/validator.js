@@ -11,7 +11,7 @@ export default Behavior({
       } = properties[name];
       if (options) {
         properties[name].observer = function (newValue) {
-          if (!options.includes(newValue)) {
+          if (!options.includes(newValue) && newValue) {
             console.error(`${name}: ${newValue} must be in the [${options}]`);
           }
         };
