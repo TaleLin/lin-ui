@@ -6,41 +6,39 @@ Component({
    * 组件的属性列表
    */
   behaviors: [zIndex, validator],
-  externalClasses: ['l-bg-class', 'l-panel-class', '1-class'],
+  externalClasses: ['l-bg-class', 'l-panel-class', 'l-class'],
   properties: {
     // 显示与隐藏
     show: {
       type: Boolean,
       value: false
     },
-    // 动画效果的显示和隐藏 --- 该属性更名为 transition
+    // 动画效果的显示和隐藏
     animation: {
       type: Boolean,
       value: true
     },
+    // 替代 animation
     transition: {
       type: Boolean,
-      value: true
+      value: null
     },
-    // slot的位置 --- 该属性更名为 direction
+    // slot的位置
     contentAlign: {
       type: String,
-      value: '',
-      options: ['', 'top', 'right', 'left', 'bottom', 'center']
+      value: 'center',
+      options: ['top', 'right', 'left', 'bottom', 'center']
     },
+    // 替代 contentAlign
     direction: {
       type: String,
-      value: 'center',
+      value: null,
       options: ['top', 'right', 'left', 'bottom', 'center']
     },
     // 锁定
     locked: {
       type: Boolean,
       value: false
-    },
-    opacity: {
-      type: Number,
-      value: 0.4
     }
   },
 
@@ -72,7 +70,7 @@ Component({
           animation = true,
           contentAlign = 'center',
           locked = false
-        } = { ...options };
+        } = {...options};
         this.setData({
           zIndex,
           animation,
@@ -85,11 +83,11 @@ Component({
         this.setData({
           status: 'hide'
         });
-        setTimeout(()=>{
+        setTimeout(() => {
           this.setData({
             show: false
           });
-        },300);
+        }, 300);
       };
     },
     // 阻止滑动
@@ -103,9 +101,9 @@ Component({
     // 点击事件
     onPupopTap() {
       let detail = true;
-      let option = { bubbles: true, composed: true };
+      let option = {bubbles: true, composed: true};
       if (this.data.locked !== true) {
-        if(!this.data.show) {
+        if (!this.data.show) {
           this.setData({
             show: true,
             status: 'show'
@@ -114,16 +112,13 @@ Component({
           this.setData({
             status: 'hide'
           });
-          setTimeout(()=>{
+          setTimeout(() => {
             this.setData({
               show: false,
               status: 'show'
             });
-          },300);
+          }, 300);
         }
-        // this.setData({
-        //   show: !this.data.show
-        // });
       }
 
       this.triggerEvent('lintap', detail, option);
