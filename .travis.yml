@@ -13,6 +13,9 @@ jobs:
     - name: "Push Compile"
       if: type = push AND branch = develop
       install: yarn install
+      before_script:
+        - rm -rf dist
+        - rm -rf examples/dist
       script:
         - yarn dev
         - yarn build
@@ -20,7 +23,7 @@ jobs:
         - git config --global user.name "Deployment Bot"
         - git config --global user.email "deploy@travis-ci.org"
         - git add -A
-        - "git commit -m 'build: Travis CI automatic compilation.'"
+        - "git commit -m 'build: Travis CI automatic compilation'"
         - git push "https://juzi214032:${GITHUB_TOKEN}@github.com/TaleLin/lin-ui" HEAD:develop
     - name: "Check Compile"
       if: type = pull_request
