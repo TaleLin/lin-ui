@@ -48,8 +48,8 @@ Component({
     },
     // 表单项的宽度，单位rpx
     width: {
-      type: Number,
-      value: 750
+      type: String,
+      value: 'auto'
     },
     // 表单项标题部分的宽度，单位rpx
     labelWidth: {
