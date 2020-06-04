@@ -61,7 +61,8 @@ module.exports = {
         'Price',
         'Counter',
         'SearchBar',
-        'IndexList'
+        'IndexList',
+        'Behavior'
       ]
     ]
   }

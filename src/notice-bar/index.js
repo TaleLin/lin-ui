@@ -1,5 +1,5 @@
 Component({
-  externalClasses: ['l-class'],
+  externalClasses: ['l-class','l-icon-class'],
 
   properties: {
     type: {

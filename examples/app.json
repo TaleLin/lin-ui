@@ -11,9 +11,6 @@
     "navigationBarTitleText": "Lin UI",
     "navigationBarTextStyle": "black"
   },
-  "navigateToMiniProgramAppIdList": [
-    "wxb05fa7b69aa7e5b7"
-  ],
   "tabBar": {
     "color": "#bbbbbb",
     "selectedColor": "#3963BC",

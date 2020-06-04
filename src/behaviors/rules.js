@@ -1,5 +1,6 @@
 import Schema from '../common/async-validator/index';
 import validator from '../behaviors/validator';
+
 /**
  * @param tipType String [toast , message , text]
  */
@@ -40,16 +41,16 @@ export default Behavior({
       } = this.data;
       if (!rules) return;
       // 如果rule 是单个object
-      if(Object.prototype.toString.call(rules) === '[object Object]') {
+      if (Object.prototype.toString.call(rules) === '[object Object]') {
         this.data.rules = [rules];
       }
 
       this.data.rules.forEach(item => {
-        if(!item.trigger) {
+        if (!item.trigger) {
           item.trigger = [];
           return;
         }
-        if(typeof item.trigger === 'string') {
+        if (typeof item.trigger === 'string') {
           item.trigger = [item.trigger];
           return;
         }
@@ -69,7 +70,7 @@ export default Behavior({
 
       const list = type ? rules.filter(item => {
         return item.trigger.indexOf(type) > -1;
-      }): rules;
+      }) : rules;
       const schema = new Schema({
         [rulesName]: list,
       });
@@ -87,6 +88,14 @@ export default Behavior({
       const rules = this.getNeedValidateRule(type);
 
       if (!rules) return;
+
+      // 把空字符串设置为 undefined ,见 issue 856
+      // async-validator 对空字符串会进行类型检查，与required会冲突
+      Object.getOwnPropertyNames(value).forEach((key) => {
+        if (value[key] === '') {
+          value[key] = undefined
+        }
+      })
 
       this.data.schema.validate(value, (errors) => {
         this.setData({
