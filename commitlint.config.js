@@ -12,6 +12,7 @@ module.exports = {
         'EsLint',
         'VuePress',
         'package.json',
+        'TravisCI',
         'README',
         'util',
         '.editorconfig',
