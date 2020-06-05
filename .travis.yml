@@ -1,12 +1,8 @@
 # 指定运行环境
 language: node_js
+
 node_js:
   - lts/*
-
-# 仅监控 master 分支
-branches:
-  except:
-    - master
 
 jobs:
   include:
@@ -14,6 +10,7 @@ jobs:
       if: type = push AND branch = develop
       install: yarn install
       before_script:
+        - export TZ='Asia/Shanghai'
         - rm -rf dist
         - rm -rf examples/dist
       script:
@@ -26,7 +23,8 @@ jobs:
         - "git commit -m 'build: Travis CI automatic compilation'"
         - git push "https://juzi214032:${GITHUB_TOKEN}@github.com/TaleLin/lin-ui" HEAD:develop
     - name: "Check Compile"
-      if: type = pull_request
+      if: type = pull_request OR (type = push AND branch = master)
+      before_install: export TZ='Asia/Shanghai'
       install: yarn install
       script:
         - yarn dev
