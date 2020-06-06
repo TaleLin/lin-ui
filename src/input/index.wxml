@@ -13,7 +13,7 @@
   </view>
   <!-- 小程序表单组件 -->
   <input
-    class="input {{hideLabel?'hideLabel':''}}"
+    class="input {{hideLabel?'hideLabel':''}} l-input-class"
     value="{{ value }}"
     type="{{type}}"
     password="{{type==='password'}}"
