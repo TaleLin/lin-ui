@@ -57,15 +57,18 @@ Component({
     placeholderStyle: {
       type: String,
       value: ''
+    },
+    // 光标与键盘的距离
+    cursorSpacing: {
+      type: Number,
+      value: 0
     }
   },
 
   /**
    * 组件的初始数据
    */
-  data: {
-
-  },
+  data: {},
 
   attached() {
     this.initRules();
@@ -86,7 +89,7 @@ Component({
       this.setData({
         value
       });
-      eventBus.emit(`lin-form-change-${this.id}`,this.id);
+      eventBus.emit(`lin-form-change-${this.id}`, this.id);
       this.triggerEvent('lininput', event.detail);
     },
 
@@ -98,7 +101,7 @@ Component({
       this.validatorData({
         [this.data.name]: event.detail.value
       });
-      eventBus.emit(`lin-form-blur-${this.id}`,this.id);
+      eventBus.emit(`lin-form-blur-${this.id}`, this.id);
       this.triggerEvent('linblur', event.detail);
     },
     handleInputConfirm(event) {
@@ -110,8 +113,5 @@ Component({
     reset() {
       this.data.value = '';
     }
-    // onClearTap(e) {
-    //   this.setData({ value: '' })
-    // },
   }
 });
