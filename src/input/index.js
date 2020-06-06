@@ -2,6 +2,7 @@
 import eventBus from '../core/utils/event-bus.js';
 import validator from '../behaviors/validator';
 import rules from '../behaviors/rules';
+
 Component({
   /**
    * 组件的属性列表
@@ -66,14 +67,17 @@ Component({
     disabled: Boolean,
     // 占位文字的样式
     placeholderStyle: String,
+    // 是否显示显隐密码图标
+    showEye: {
+      type: Boolean,
+      value: false
+    }
   },
 
   /**
    * 组件的初始数据
    */
-  data: {
-
-  },
+  data: {},
   attached() {
     // this.initRules();
   },
@@ -135,6 +139,22 @@ Component({
       this.setData({
         value: ''
       });
+    },
+
+    /**
+     * 监听：点击输入框右侧显隐密码图标
+     */
+    onTapEyeIcon() {
+      const type = this.data.type
+      if (type === 'text') {
+        this.setData({
+          type: 'password'
+        })
+      } else if (type === 'password') {
+        this.setData({
+          type: 'text'
+        })
+      }
     }
   }
 });
