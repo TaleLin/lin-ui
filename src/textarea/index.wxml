@@ -15,6 +15,7 @@
       disabled="{{disabled}}"
       focus="{{focus}}"
       auto-height="{{autoHeight}}"
+      cursor-spacing="{{cursorSpacing}}"
       bindinput="handleInputChange"
       bindfocus="handleInputFocus"
       bindblur="handleInputBlur"
