@@ -1,14 +1,14 @@
-/* input/input.wxss */
+@import "../../config/styles/_base.less";
 
 .form-item{
   position: relative;
-  font-size: 28rpx;
+  font-size: 28 rpx;
   color: #333;
-  height: 88rpx;
+  height: 88 rpx;
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding-right: 25rpx;
+  padding-right: 25 rpx;
   box-sizing: border-box;
 }
 
@@ -16,8 +16,8 @@
   position: absolute;
   bottom: 0;
   right: 0;
-  height: 2rpx;
-  width: 730rpx;
+  height: 2 rpx;
+  width: 730 rpx;
   background: #f3f3f3;
 }
 
@@ -30,9 +30,9 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  height: 88rpx;
-  padding-left: 25rpx;
-  padding-right: 15rpx;
+  height: 88 rpx;
+  padding-left: 25 rpx;
+  padding-right: 15 rpx;
   box-sizing: border-box;
 }
 
@@ -46,25 +46,6 @@
   height: 100%;
   width: 100%;
 }
-
-/* labelLayout */
-// .form-item-top{
-  // display: flex;
-  // flex-direction: column;
-// }
-
-// .form-item-left{
-//   display: flex;
-//   flex-direction: row;
-//   align-items: center;
-// }
-
-// .form-item-right{
-//   display: flex;
-//   flex-direction: row;
-// }
-
-/* form-label */
 
 .form-label-right{
   justify-content: flex-end
@@ -80,16 +61,16 @@
   flex: 1;
 }
 
-.close {
-  height: 36rpx;
-  width: 36rpx;
+.close{
+  height: 36 rpx;
+  width: 36 rpx;
   background: #ddd;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  margin-right: 20rpx;
+  margin-right: 20 rpx;
 }
 
 .pls-class{
@@ -97,5 +78,17 @@
 }
 
 .hideLabel{
-  padding-left: 25rpx;
+  padding-left: 25 rpx;
+}
+
+.l-eye{
+  padding: 10 rpx;
+
+  &-text{
+    color: @default-color !important;
+  }
+
+  &-password{
+    color: fadeout(@default-color, 40%) !important;
+  }
 }

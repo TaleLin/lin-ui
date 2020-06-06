@@ -27,6 +27,7 @@
     bindfocus="handleInputFocus"
     bindblur="handleInputBlur"
     bindconfirm="handleInputConfirm" />
+  <l-icon wx:if="{{showEye&&value}}" name="eye" catch:tap="onTapEyeIcon" size="40" l-class="l-eye l-eye-{{type}}"/>
   <view class="close" wx:if="{{clear&&value}}" bindtap="onClearTap">
     <view  class="close-icon">
       <l-icon  name="close" color="#fff" size="16" />
