@@ -28,6 +28,7 @@
     title="{{currentConf.title}}"
     show-title="{{currentConf.showTitle}}"
     content="{{currentConf.content}}"
+    locked="{{currentConf.locked}}"
     cancel-text="{{currentConf.cancelText}}"
     cancel-color="{{currentConf.cancelColor}}"
     confirm-text="{{currentConf.confirmText}}"
