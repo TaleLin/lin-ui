@@ -5,7 +5,7 @@
   <view
     wx:if="{{show}}"
     class="popup-content {{ show ? ((direction===null)?contentAlign:direction) : ''}} popup-fade-{{direction===null?contentAlign:direction}}-active-{{(transition===null?animation:transition) ? status:''}} l-panel-class"
-    catchtap='onPupopTap'>
+    catchtap='onPopupTap'>
     <view catchtap="doNothingTap">
       <slot></slot>
     </view>
