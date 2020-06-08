@@ -3,6 +3,12 @@
     "content-title": "/components/content-title/index",
     "content-card": "/components/content-card/index",
     "l-arc-popup": "/dist/arc-popup/index",
-    "l-button": "/dist/button/index"
+    "l-button": "/dist/button/index",
+    "l-list": "/dist/list/index",
+    "l-icon": "/dist/icon/index",
+    "l-rate": "/dist/rate/index",
+    "l-tag": "/dist/tag/index",
+    "l-price": "/dist/price/index",
+    "l-count-selector": "/dist/count-selector/index"
   }
 }
