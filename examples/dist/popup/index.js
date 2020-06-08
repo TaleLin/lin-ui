@@ -99,7 +99,7 @@ Component({
     },
 
     // 点击事件
-    onPupopTap() {
+    onPopupTap() {
       let detail = true;
       let option = {bubbles: true, composed: true};
       if (this.data.locked !== true) {
