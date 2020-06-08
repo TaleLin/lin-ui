@@ -1,9 +1,25 @@
 .container-arc-popup {
   width: 100%;
 }
-.content-arc-popup {
+
+.arc-popup {
+  overflow: hidden;
   width: 100%;
   background: #fff;
-  padding: 20rpx;
+}
+
+.content-arc-popup {
+  padding: 30rpx;
   box-sizing: border-box;
+}
+
+.header-popup {
+  width: 100%;
+  z-index: 999;
+
+  &.fixed {
+    position: sticky;
+    top: 0;
+    background-color: #fff;
+  }
 }
