@@ -1,5 +1,5 @@
 const priceNaviConfigs = [{
-  title: "基础用法（max=10,min=1,count=1）",
+  title: '基础用法（max=10,min=1,count=1）',
   config: [{
     count: 1,
     min: 1,
@@ -8,7 +8,7 @@ const priceNaviConfigs = [{
     disabled: false
   }]
 }, {
-  title: "设置步长（step=2）",
+  title: '设置步长（step=2）',
   config: [{
     count: 1,
     min: 1,
@@ -17,7 +17,7 @@ const priceNaviConfigs = [{
     disabled: false
   }]
 }, {
-  title: "禁用状态",
+  title: '禁用状态',
   config: [{
     count: 1,
     min: 1,
@@ -25,6 +25,6 @@ const priceNaviConfigs = [{
     step: 1,
     disabled: true
   }]
-}]
+}];
 
 export default priceNaviConfigs;

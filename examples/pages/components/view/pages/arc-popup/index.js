@@ -21,7 +21,7 @@ Page({
       transition: true,
       zIndex: 99,
       locked: false,
-      direction: "bottom",
+      direction: 'bottom',
       arcRadius: 18,
       maxHeight: 600,
       minHeight: 200,
@@ -32,43 +32,43 @@ Page({
 
   // 显示Popup
   onShowPopupTap(e) {
-    const type = e.currentTarget.dataset.type
+    const type = e.currentTarget.dataset.type;
     this.setData({
       panelClass: `l-panel-class-demo${type}`
-    })
-    const config = this.data.navConfig[type].config
-    config.show = true
+    });
+    const config = this.data.navConfig[type].config;
+    config.show = true;
     this.setData({
       currentConfig: config,
       type
-    })
+    });
   },
 
   // 隐藏Popup
   onHidePopupTap() {
-    const type = this.data.type
-    this.data.currentConfig.show = false
+    const type = this.data.type;
+    this.data.currentConfig.show = false;
     this.setData({
       currentConfig: this.data.currentConfig
-    })
+    });
 
     if (type === 3) {
       wx.showToast({
         title: '已取消~',
         icon: 'none'
-      })
+      });
     }
   },
 
   // tag事件
   ontaglintap(event) {
-   const index = event.currentTarget.dataset.index
-   const type = event.currentTarget.dataset.type
-   let advancedDemo = this.data.advancedDemo
-   advancedDemo[type][index].active = !advancedDemo[type][index].active 
-   this.setData({
-    advancedDemo
-   })
+    const index = event.currentTarget.dataset.index;
+    const type = event.currentTarget.dataset.type;
+    let advancedDemo = this.data.advancedDemo;
+    advancedDemo[type][index].active = !advancedDemo[type][index].active;
+    this.setData({
+      advancedDemo
+    });
   },
 
   // 阻止冒泡
@@ -76,7 +76,7 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onLoad: function () {
 
   },
 
@@ -128,4 +128,4 @@ Page({
   onShareAppMessage: function () {
 
   }
-})
+});

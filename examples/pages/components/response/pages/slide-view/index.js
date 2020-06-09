@@ -14,52 +14,47 @@ Page({
     }
   },
 
-  // 点击左边
-  onSlideTap(e) {
-    console.log(e)
-  },
-
   // 关闭slide
-  onCloseTap(e) {
+  onCloseTap() {
     wx.showToast({
       title: 'handle close',
       icon: 'none'
-    })
+    });
   },
 
   // 打开slide
-  onOpenTap(e) {
+  onOpenTap() {
     wx.showToast({
       title: 'handle open',
       icon: 'none'
-    })
+    });
   },
 
   // 关闭第五个slide
-  onCloseFiveTap(e) {
+  onCloseFiveTap() {
     this.setData({
       close: true
-    })
+    });
   },
 
   // 打开购物车菜单栏
   onSlideOpenTap(e) {
-    const id = e.currentTarget.dataset.id
-    if(id == 1) {
+    const id = e.currentTarget.dataset.id;
+    if(id === 1) {
       this.setData({
         close2: true,
         close3: true,
-      })
-    } else if(id == 2) {
+      });
+    } else if(id === 2) {
       this.setData({
         close1: true,
         close3: true,
-      })
+      });
     } else {
       this.setData({
         close1: true,
         close2: true,
-      })
+      });
     }
 
   },
@@ -67,7 +62,7 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onLoad: function () {
 
   },
 
@@ -119,4 +114,4 @@ Page({
   onShareAppMessage: function () {
 
   }
-})
+});

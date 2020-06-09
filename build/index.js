@@ -17,7 +17,7 @@ const path = require('path');
 
 const componentData = require('./until');
 const result = `{common/*,behaviors,utils,${componentData()}}`;
-const isCustom = (result !== `{common/*,behaviors,utils,}`);
+const isCustom = (result !== '{common/*,behaviors,utils,}');
 
 const distPath = path.resolve(__dirname, '../dist');
 const examplePath = path.resolve(__dirname, '../examples/dist');
@@ -74,11 +74,11 @@ module.exports = {
   ),
   watch: parallel(
     () => {
-      watch("../src/**/*.less", buildWxss(`${srcDevPath}/*.less`, `!${srcDevPath}/_*.less`, examplePath));
-      watch("../src/**/*.wxml", copy(srcDevPath, examplePath, 'wxml'));
-      watch("../src/**/*.wxs", copy(srcDevPath, examplePath, 'wxs'));
-      watch("../src/**/*.json", copy(srcDevPath, examplePath, 'json'));
-      watch("../src/**/*.js", copy(srcDevPath, examplePath, 'js'));
+      watch('../src/**/*.less', buildWxss(`${srcDevPath}/*.less`, `!${srcDevPath}/_*.less`, examplePath));
+      watch('../src/**/*.wxml', copy(srcDevPath, examplePath, 'wxml'));
+      watch('../src/**/*.wxs', copy(srcDevPath, examplePath, 'wxs'));
+      watch('../src/**/*.json', copy(srcDevPath, examplePath, 'json'));
+      watch('../src/**/*.js', copy(srcDevPath, examplePath, 'js'));
     }
   )
 };

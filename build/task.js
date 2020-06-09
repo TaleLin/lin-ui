@@ -64,7 +64,7 @@ const copyStatic = (srcPath, distPath, env = 'build') => {
       copy(srcPath, distPath, 'png')
     );
   }
-}
+};
 
 const clean = (cleanPath) => () =>
   del([cleanPath], {

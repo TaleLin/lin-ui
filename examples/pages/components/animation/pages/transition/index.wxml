@@ -22,12 +22,7 @@
       show="{{ show }}"
       duration="{{ { enter: 300, leave: 1000 } }}"
       l-class="lin-custom-class"
-      bind:linbeforeenter="beforeEnter"
-      bind:linenter="entering"
       bind:linafterenter="afterEnter"
-      bind:linbeforeleave="beforeLeave"
-      bind:linleave="leaving"
-      bind:linafterleave="afterLeave"
       name="{{transitionName}}"
 >
   <label>林间有风</label>

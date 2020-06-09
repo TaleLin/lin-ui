@@ -6,7 +6,7 @@ Page({
   /**
    * 页面的初始数据
    */
-  data: { 
+  data: {
     navConfig: navConfig,
     form:{
       username:{
@@ -18,42 +18,37 @@ Page({
     }
   },
 
-  formSubmit(e){
-    console.log(e)
-  },
-
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
-  
+  onLoad: function () {
+
   },
 
   // 显示 toast
   onShowToastTap(e) {
 
-    const type = e.currentTarget.dataset.type
-    const config = JSON.parse(JSON.stringify(this.data.navConfig[type].config))
+    const type = e.currentTarget.dataset.type;
+    const config = JSON.parse(JSON.stringify(this.data.navConfig[type].config));
     this.setData({
       currentConf: config,
       type
-    })
+    });
   },
 
   // 隐藏 toast
   onHideToastTap() {
-    const type = this.data.type
-    this.data.currentConf.status = false
+    this.data.currentConf.status = false;
     this.setData({
       currentConf: this.data.currentConf
-    })
+    });
   },
 
   onYzmTap() {
     wx.showToast({
       title: '更换验证码成功~',
       icon:'none'
-    })
+    });
   },
 
   /**
@@ -104,4 +99,4 @@ Page({
   onShareAppMessage: function () {
 
   }
-})
+});

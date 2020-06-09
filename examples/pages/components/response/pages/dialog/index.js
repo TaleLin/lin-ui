@@ -16,7 +16,7 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onLoad: function () {
 
   },
 
@@ -24,52 +24,49 @@ Page({
     wx.showModal({
       title: '提示',
       content: '这是一个模态弹窗'
-    })
+    });
   },
 
   // 确定按钮
-  onConfirmTap(e){
-    console.log(e)
+  onConfirmTap(){
     setTimeout(() => {
       wx.showToast({
         title: '点击了确定～',
         icon: 'none'
-      })
-    }, 100)
+      });
+    }, 100);
 
   },
 
   // 取消按钮
-  onCancelTap(e) {
+  onCancelTap() {
     setTimeout(()=> {
       wx.showToast({
         title: '点击了取消～',
         icon: 'none'
-      })
-    },100)
+      });
+    },100);
   },
 
   // dio 点击事件
   onDialogTap() {
-    const type = this.data.type
+    const type = this.data.type;
     if (type === 4) {
       wx.showToast({
         title: '请点击按钮取消！',
         icon: 'none'
-      })
+      });
     }
   },
 
   // 显示 dio
   onShowDioTap(e) {
-    console.log(e)
-    const type = e.currentTarget.dataset.type
-    const config = JSON.parse(JSON.stringify(this.data.navConfig[type].config))
-    console.log(type)
+    const type = e.currentTarget.dataset.type;
+    const config = JSON.parse(JSON.stringify(this.data.navConfig[type].config));
     this.setData({
       currentConf: config,
       type
-    })
+    });
   },
 
 
@@ -121,4 +118,4 @@ Page({
   onShareAppMessage: function () {
 
   }
-})
+});

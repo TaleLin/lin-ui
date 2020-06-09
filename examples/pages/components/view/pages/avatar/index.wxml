@@ -2,8 +2,8 @@
 <view class='container'>
   <content-title name="Avatar" describe="头像">
     <content-card l-content="content" name="头像形状">
-      <view class="content-item" bindtap="clickview">
-        <l-avatar shape="circle" src="/images/view/default-image.jpg" bind:lintapcatch="test" />
+      <view class="content-item">
+        <l-avatar shape="circle" src="/images/view/default-image.jpg"/>
       </view>
       <view class="content-item">
         <l-avatar shape="square" src="/images/view/default-image.jpg" />

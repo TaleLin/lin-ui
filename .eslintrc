@@ -14,18 +14,21 @@
   "globals": {
     "Component": true,
     "Page": true,
-    "wx": true
+    "wx": true,
+    "App": true
   },
   "ignorePatterns": [
-    "build/*",
-    "config/*",
-    "examples/*",
     "dist/*",
-    "src/common/async-validator/*"
+    "examples/dist/*",
+    "src/common/async-validator/*",
+    "examples/pages/filter/components/wemark"
   ],
   "rules": {
+    // 函数大括号前不允许加空格（已关闭）
     "space-before-function-paren": "off",
+    // 缩进 2 个空格
     "indent": ["error", 2],
+    // 必须使用单引号
     "quotes": [
       "error", "single", {
         "allowTemplateLiterals": false
@@ -33,13 +36,17 @@
     ],
     // 行尾必须添加分号
     "semi": ["error"],
+    // 不允许使用 console.log()
     "no-console": [
       "warn", {
         "allow": ["info", "warn", "error"]
       }
     ],
+    // 禁止使用未声明的变量
     "no-undef": "error",
+    // 禁止不必要的转义使用（已关闭）
     "no-useless-escape": "off",
+    // 必须使用严格等于
     "eqeqeq": ["error","always"]
   }
 }

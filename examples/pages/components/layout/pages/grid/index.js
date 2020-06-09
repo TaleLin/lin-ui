@@ -58,20 +58,20 @@ Page({
     wx.showToast({
       title: e.detail.cell.text,
       icon: 'none'
-    })
+    });
   },
 
   clickGrids(e) {
     wx.showToast({
       title: `点击的Grid的索引是${e.detail.index}`,
       icon: 'none'
-    })
+    });
   },
 
   /**
    * Lifecycle function--Called when page load
    */
-  onLoad: function(options) {
+  onLoad: function() {
 
   },
 
@@ -123,4 +123,4 @@ Page({
   onShareAppMessage: function() {
 
   }
-})
+});

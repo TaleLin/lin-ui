@@ -43,47 +43,41 @@ Page({
   clear() {
     this.setData({
       clear: true
-    })
+    });
   },
   onClearTap(e) {
-    console.log(e)
     if(e.detail) {
       wx.lin.showToast({
-        title: `清除图片成功`,
+        title: '清除图片成功',
         icon: 'success',
         duration: 2000,
         iconStyle: 'color:#7ec699; size: 60'
-      })
+      });
     }
   },
   onChangeTap(e) {
-    console.log(e)
-    const count = e.detail.current.length
+    const count = e.detail.current.length;
     wx.lin.showToast({
       title: `添加${count}张图片~`,
       icon: 'picture',
       duration: 2000,
       iconStyle: 'color:#7ec699; size: 60'
-    })
+    });
   },
   onRemoveTap(e) {
-    console.log(e)
-    const index = e.detail.index
+    const index = e.detail.index;
     wx.lin.showMessage({
       type: 'error',
       content: `删除下标为${index}图片~`,
       duration: 1500,
       icon: 'warning'
-    })
-  },
-  onPreviewTap(e) {
-    console.log(e.detail)
+    });
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function(options) {
+  onLoad: function() {
 
   },
 
@@ -135,4 +129,4 @@ Page({
   onShareAppMessage: function() {
 
   }
-})
+});

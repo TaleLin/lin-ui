@@ -1,4 +1,4 @@
-import badgeNaviConfigs from './badge-nav.js'
+import badgeNaviConfigs from './badge-nav.js';
 
 Page({
 
@@ -6,8 +6,8 @@ Page({
     badgeNaviConfigs: badgeNaviConfigs
   },
 
-  onLoad: function(options) {
+  onLoad: function() {
 
   },
 
-})
+});

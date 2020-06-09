@@ -6,48 +6,48 @@ Page({
   data: {
     dynamicCard: [
       {
-        title: "动态插入数据示例",
-        content: "点击下面按钮动态插入一条数据，模拟上拉加载更多的业务场景"
+        title: '动态插入数据示例',
+        content: '点击下面按钮动态插入一条数据，模拟上拉加载更多的业务场景'
       },
       {
-        title: "动态插入数据示例",
-        content: "点击下面按钮动态插入一条数据，模拟上拉加载更多的业务场景"
+        title: '动态插入数据示例',
+        content: '点击下面按钮动态插入一条数据，模拟上拉加载更多的业务场景'
       },
       {
-        title: "动态插入数据示例",
-        content: "点击下面按钮动态插入一条数据，模拟上拉加载更多的业务场景"
+        title: '动态插入数据示例',
+        content: '点击下面按钮动态插入一条数据，模拟上拉加载更多的业务场景'
       },
       {
-        title: "动态插入数据示例",
-        content: "点击下面按钮动态插入一条数据，模拟上拉加载更多的业务场景"
+        title: '动态插入数据示例',
+        content: '点击下面按钮动态插入一条数据，模拟上拉加载更多的业务场景'
       },
       {
-        title: "动态插入数据示例",
-        content: "点击下面按钮动态插入一条数据，模拟上拉加载更多的业务场景"
+        title: '动态插入数据示例',
+        content: '点击下面按钮动态插入一条数据，模拟上拉加载更多的业务场景'
       },
       {
-        title: "动态插入数据示例",
-        content: "点击下面按钮动态插入一条数据，模拟上拉加载更多的业务场景"
+        title: '动态插入数据示例',
+        content: '点击下面按钮动态插入一条数据，模拟上拉加载更多的业务场景'
       },
       {
-        title: "动态插入数据示例",
-        content: "点击下面按钮动态插入一条数据，模拟上拉加载更多的业务场景"
+        title: '动态插入数据示例',
+        content: '点击下面按钮动态插入一条数据，模拟上拉加载更多的业务场景'
       },
       {
-        title: "动态插入数据示例",
-        content: "点击下面按钮动态插入一条数据，模拟上拉加载更多的业务场景"
+        title: '动态插入数据示例',
+        content: '点击下面按钮动态插入一条数据，模拟上拉加载更多的业务场景'
       },
       {
-        title: "动态插入数据示例",
-        content: "点击下面按钮动态插入一条数据，模拟上拉加载更多的业务场景"
+        title: '动态插入数据示例',
+        content: '点击下面按钮动态插入一条数据，模拟上拉加载更多的业务场景'
       },
       {
-        title: "动态插入数据示例",
-        content: "点击下面按钮动态插入一条数据，模拟上拉加载更多的业务场景"
+        title: '动态插入数据示例',
+        content: '点击下面按钮动态插入一条数据，模拟上拉加载更多的业务场景'
       },
       {
-        title: "动态插入数据示例",
-        content: "点击下面按钮动态插入一条数据，模拟上拉加载更多的业务场景"
+        title: '动态插入数据示例',
+        content: '点击下面按钮动态插入一条数据，模拟上拉加载更多的业务场景'
       }
     ]
   },
@@ -55,7 +55,7 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function(options) {},
+  onLoad: function() {},
 
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -85,7 +85,7 @@ Page({
   onPageScroll(e) {
     this.setData({
       scrollTop: e.scrollTop
-    })
+    });
   },
 
   /**
@@ -97,21 +97,21 @@ Page({
         dynamicCard: this.data.dynamicCard.concat(
           this.data.dynamicCard.slice(0, 10)
         )
-      })
-      wx.lin.flushSticky()
-    }, 600)
+      });
+      wx.lin.flushSticky();
+    }, 600);
   },
 
   linunsticky(){
-    wx.showToast({title:"容器脱落！"})
+    wx.showToast({title:'容器脱落！'});
   },
 
   linsticky(){
-    wx.showToast({title:"容器吸附！"})
+    wx.showToast({title:'容器吸附！'});
   },
 
   /**
    * 用户点击右上角分享
    */
   onShareAppMessage: function() {}
-})
+});

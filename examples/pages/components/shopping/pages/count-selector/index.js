@@ -1,5 +1,5 @@
 // pages/shopping/pages/count/index.js
-import countConfig from '../count-selector/count-nav.js'
+import countConfig from '../count-selector/count-nav.js';
 
 Page({
 
@@ -16,15 +16,13 @@ Page({
   onLoad: function () {
 
   },
-  onA(e){
-    console.log(e)
-  },
-  onOut(e){
+
+  onOut(){
     wx.showToast({
       title: '超出限制',
-    })
+    });
   },
-  
+
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -73,4 +71,4 @@ Page({
   onShareAppMessage: function () {
 
   }
-})
+});

@@ -39,7 +39,7 @@
       class="content"
       name="自定义增加图片的按钮"
     >
-    <l-image-picker 
+    <l-image-picker
       urls="{{arr4}}"
       count="9"
       size="4"
@@ -55,12 +55,11 @@
       class="content"
       name="事件监听"
     >
-    <l-image-picker 
+    <l-image-picker
       urls="{{arr5}}"
       count="9"
       custom="{{true}}"
       bind:linchange="onChangeTap"
-      bind:linpreview="onPreviewTap"
       bind:linremove="onRemoveTap">
       <view class='add'>
         <image class='add-icon' src='/images/static/camera_add.png'></image>
@@ -69,12 +68,12 @@
     </l-image-picker>
     </content-card>
 
-   
+
     <content-card
       class="content"
       name="清除图片"
     >
-    <l-image-picker 
+    <l-image-picker
       urls="{{arr6}}"
       count="9"
       custom="{{true}}"

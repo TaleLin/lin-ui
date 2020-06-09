@@ -3,8 +3,8 @@
   <content-title name="Rules" describe="校验">
     <content-card class="content" name="基本案例">
       <view class='buttun-wrapper'>
-        <form bindsubmit="formSubmit" bindreset="formReset">
-          <l-input label="邮箱" placeholder="请输入邮箱" label-width="170" name="email" rules="{{emailRules}}" tipType="message" bind:linvalidate="linvalidate"/>
+        <form bindreset="formReset">
+          <l-input label="邮箱" placeholder="请输入邮箱" label-width="170" name="email" rules="{{emailRules}}" tipType="message"/>
           <l-input label="用户名" placeholder="长度需要在12个字以内" label-width="170" name="user" rules="{{userRules}}" tipType="text" clear="{{true}}" l-error-text="error-text"/>
           <l-input label="密码" label-width="170" placeholder="请输入密码" name="password" rules="{{passwordRules}}" tipType="toast"/>
           <l-input label="手机号" label-width="170" placeholder="请输入手机号" name="phone" rules="{{phoneRules}}" tipType="toast"/>
