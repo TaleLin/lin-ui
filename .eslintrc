@@ -31,7 +31,8 @@
         "allowTemplateLiterals": false
       }
     ],
-    "semi": ["off"],
+    // 行尾必须添加分号
+    "semi": ["error"],
     "no-console": [
       "warn", {
         "allow": ["info", "warn", "error"]

@@ -87,9 +87,9 @@ Component({
     },
     'arcRadius': function (arcRadius) {
       if (this.properties.direction === 'top') {
-        this.data._arcRadiusTop = arcRadius
+        this.data._arcRadiusTop = arcRadius;
       } else {
-        this.data._ardRadiusBottom = arcRadius
+        this.data._ardRadiusBottom = arcRadius;
       }
       this.getArcPopupStyle();
     }
@@ -131,11 +131,11 @@ Component({
       };
     },
     getArcPopupStyle() {
-      const direction = this.properties.direction
-      const arcRadiusTop = this.data._arcRadiusTop
-      const ardRadiusBottom = this.data._ardRadiusBottom
-      const maxHeight = this.properties.maxHeight
-      const minHeight = this.properties.minHeight
+      const direction = this.properties.direction;
+      const arcRadiusTop = this.data._arcRadiusTop;
+      const ardRadiusBottom = this.data._ardRadiusBottom;
+      const maxHeight = this.properties.maxHeight;
+      const minHeight = this.properties.minHeight;
       const arcStyle = `
         border-bottom-left-radius:${direction === 'top' ? arcRadiusTop : 0}rpx;
         border-bottom-right-radius:${direction === 'top' ? arcRadiusTop : 0}rpx;
@@ -143,19 +143,19 @@ Component({
         border-top-right-radius:${direction === 'bottom' ? ardRadiusBottom : 0}rpx;
         max-height:${maxHeight}rpx;
         min-height:${minHeight}rpx;
-      `
+      `;
       this.setData({
         arcStyle,
-      })
+      });
     },
     onArcPopupTap() {
       if (this.data.locked) {
-        return
+        return;
       }
       if (this.properties.show) {
         this.setData({
           show: false
-        })
+        });
       }
     }
   },
@@ -163,4 +163,4 @@ Component({
   ready() {
     this.getArcPopupStyle();
   }
-})
+});
