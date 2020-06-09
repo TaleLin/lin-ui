@@ -1,5 +1,0 @@
-build/*.js
-config/*.js
-examples/**/*.js
-dist
-src/bahaviors/*.js
