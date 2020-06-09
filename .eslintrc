@@ -16,6 +16,13 @@
     "Page": true,
     "wx": true
   },
+  "ignorePatterns": [
+    "build/*",
+    "config/*",
+    "examples/*",
+    "dist/*",
+    "src/common/async-validator/*"
+  ],
   "rules": {
     "space-before-function-paren": "off",
     "indent": ["error", 2],
