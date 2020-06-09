@@ -48,7 +48,7 @@
             </l-progress>
             <view style="margin-top:40rpx;">
                 <l-progress percent="50">
-                    <image src="imoji.jpg" slot='header' style="width:30rpx;height:30rpx;border-radius:50%;display:block;" />
+                    <image src="cloud://env-9eb476.656e-env-9eb476-1258886794/images/components/progress/imoji.jpg" slot='header' style="width:30rpx;height:30rpx;border-radius:50%;display:block;" />
                 </l-progress>
             </view>
             <view style="margin-top:40rpx;">
