@@ -56,7 +56,7 @@ Component({
   methods: {
     handleTap() {
       if(this.data.disable){
-        return
+        return;
       }
 
       let options = {

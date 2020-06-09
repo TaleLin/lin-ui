@@ -149,7 +149,7 @@ Component({
      * @param event
      */
     handleTapFrontText(event){
-      this.triggerEvent('linfronttap',event.detail)
+      this.triggerEvent('linfronttap',event.detail);
     }
   }
 });

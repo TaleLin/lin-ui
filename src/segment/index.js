@@ -101,7 +101,7 @@ Component({
    */
   methods: {
     initTabs(segmentItemInstance) {
-      const val = this.data.activeKey
+      const val = this.data.activeKey;
       let items = this.getRelationNodes('../segment-item/index');
       if (items.length > 0) {
         if (items.length === this.data.tabList.length && this.data._segmentItemInstances.indexOf(segmentItemInstance) > 0) return;

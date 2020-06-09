@@ -11,9 +11,9 @@ class NodeUtil {
         .createSelectorQuery()
         .select(selector)
         .boundingClientRect((res) => {
-          resolve(res)
-        }).exec()
-    })
+          resolve(res);
+        }).exec();
+    });
   }
 
   /**
@@ -28,9 +28,9 @@ class NodeUtil {
         .createSelectorQuery()
         .selectAll(selector)
         .boundingClientRect((res) => {
-          resolve(res)
-        }).exec()
-    })
+          resolve(res);
+        }).exec();
+    });
   }
 
   async getNodeFieldsFromComponent(component, selector, fields) {
@@ -39,11 +39,11 @@ class NodeUtil {
         .createSelectorQuery()
         .select(selector)
         .fields(fields, (res) => {
-          resolve(res)
-        }).exec()
-    })
+          resolve(res);
+        }).exec();
+    });
   }
 }
 
-const nodeUtil = new NodeUtil()
-export default nodeUtil
+const nodeUtil = new NodeUtil();
+export default nodeUtil;
