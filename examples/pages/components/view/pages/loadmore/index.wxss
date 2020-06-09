@@ -6,8 +6,8 @@
 }
 
 .custom-img{
-  width: 30rpx;
-  height: 30rpx;
+  width: 120rpx;
+  height: 120rpx;
   margin-right: 20rpx
 }
 

@@ -37,7 +37,7 @@
     bind:lincancel="onCancelTap"
     bind:linconfirm="onConfirmTap"
   >
-    <image class='dio-img' wx:if="{{type===5}}" src='/images/static/loading.gif'></image>
+    <image class='dio-img' wx:if="{{type===5}}" src='cloud://env-9eb476.656e-env-9eb476-1258886794/images/components/loading/loading.gif'></image>
   </l-dialog>
 
 </view>

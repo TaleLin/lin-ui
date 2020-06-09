@@ -80,7 +80,7 @@ const loadingNaviConfigs = [{
   type: 3,
   config: [{
     type: '',
-    image: '/images/static/loading.gif',
+    image: 'cloud://env-9eb476.656e-env-9eb476-1258886794/images/components/loading/loading.gif',
     show: true,
     size: '',
     color: '',
