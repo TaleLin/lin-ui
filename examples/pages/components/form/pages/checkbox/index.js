@@ -194,7 +194,7 @@ Page({
     let index = e.currentTarget.dataset['index'];
     let items = this.data[`items${index}`];
     items.forEach(item => {
-      if(item.id == e.detail.key) {
+      if(item.id === e.detail.key) {
         item.checked = e.detail.checked;
       }
     });

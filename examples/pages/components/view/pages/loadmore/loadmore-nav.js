@@ -1,21 +1,21 @@
 const loadmoreNaviConfigs = [{
-  title: "提示类型",
+  title: '提示类型',
   config: [{
-      type: 'loading',
-      custom: false,
-      line: false,
-      color: '',
-      loadingText: '加载中...(loading)',
-      endText: '我是有底线的~'
-    },
-    {
-      type: 'end',
-      line: false,
-      custom: false,
-      color: '',
-      loadingText: '加载中...',
-      endText: '我是有底线的~(end)'
-    }
+    type: 'loading',
+    custom: false,
+    line: false,
+    color: '',
+    loadingText: '加载中...(loading)',
+    endText: '我是有底线的~'
+  },
+  {
+    type: 'end',
+    line: false,
+    custom: false,
+    color: '',
+    loadingText: '加载中...',
+    endText: '我是有底线的~(end)'
+  }
   ]
 }, {
   title: '分割线',
@@ -54,6 +54,6 @@ const loadmoreNaviConfigs = [{
     loadingText: '加载中...',
     endText: '我是有底线的~'
   }]
-}]
+}];
 
 export default loadmoreNaviConfigs;

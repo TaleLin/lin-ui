@@ -1,4 +1,4 @@
-import config from './config.js'
+import config from './config.js';
 
 Page({
 
@@ -13,11 +13,11 @@ Page({
     let {
       title,
       navigatemark
-    } = options
+    } = options;
     this.setData({
       title,
       config: config[navigatemark]
-    })
+    });
   },
 
   /**
@@ -61,4 +61,4 @@ Page({
   onShareAppMessage: function() {
 
   }
-})
+});

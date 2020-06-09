@@ -63,10 +63,6 @@ Page({
     brageCount:5
   },
 
-  changeTabs(e) {
-    console.log(e)
-  },
-
   toggleTabPlacement() {
     const {
       placementArr
@@ -76,18 +72,18 @@ Page({
       success: (res) => {
         this.setData({
           placement: placementArr[res.tapIndex]
-        })
+        });
       },
       fail(res) {
-        console.log(res.errMsg)
+        console.error(res.errMsg);
       }
-    })
+    });
   },
 
   /**
    * Lifecycle function--Called when page load
    */
-  onLoad: function (options) {
+  onLoad: function () {
 
   },
 
@@ -138,4 +134,4 @@ Page({
   onShareAppMessage: function () {
 
   }
-})
+});

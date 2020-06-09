@@ -41,6 +41,6 @@ const layoutNaviConfigs = [
     desc: '折叠面板',
     componentsPath: '/pages/components/layout/pages/collapse/index'
   }
-]
+];
 
 export default layoutNaviConfigs;

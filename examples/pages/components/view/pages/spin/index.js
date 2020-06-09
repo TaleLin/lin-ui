@@ -1,4 +1,4 @@
-import spinNaviConfigs from './spin-nav.js'
+import spinNaviConfigs from './spin-nav.js';
 
 Page({
 
@@ -6,8 +6,8 @@ Page({
     spinNaviConfigs: spinNaviConfigs
   },
 
-  onLoad: function(options) {
+  onLoad: function() {
 
   },
 
-})
+});

@@ -3,7 +3,7 @@
 <view class='container'>
   <content-title name="CombinedTabs" describe="组合标签">
     <content-card l-content="content" name="基本使用">
-      <l-combined-tabs bind:linchange="changeTabs" swipeable="{{false}}">
+      <l-combined-tabs swipeable="{{false}}">
         <l-tabpanel wx:for="{{dubbleTabs}}" tab="{{item.tab}}" key="{{item.key}}" sub-key="{{item.subKey}}" sub-tab="{{item.subTab}}" slot="{{item.subKey||item.key}}" wx:key="key">
           <view class="tab-content">{{item.subTab||item.tab}}</view>
         </l-tabpanel>
@@ -12,7 +12,7 @@
 
 
     <content-card l-content="content" name="滚动标签">
-       <l-combined-tabs bind:linchange="changeTabs" scrollable>
+       <l-combined-tabs scrollable>
         <l-tabpanel wx:for="{{dubbleTabs}}" tab="{{item.tab}}" key="{{item.key}}" sub-key="{{item.subKey}}" sub-tab="{{item.subTab}}" slot="{{item.subKey||item.key}}" wx:key="key">
           <view class="tab-content">{{item.subTab||item.tab}}</view>
         </l-tabpanel>

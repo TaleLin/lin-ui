@@ -1,5 +1,4 @@
 // pages/form/pages/rules/index.js
-const pattern = /^1(3|4|5|7|8)\d{9}$/;
 Component({
 
   /**
@@ -13,13 +12,13 @@ Component({
       message: '长度需要在140个字符之间'
     },
     userRules: [{
-        required: true,
-        message: '请输入用户名'
-      },
-      {
-        max: 12,
-        message: '用户名需在12个字以内'
-      }
+      required: true,
+      message: '请输入用户名'
+    },
+    {
+      max: 12,
+      message: '用户名需在12个字以内'
+    }
     ],
 
     emailRules: {
@@ -37,14 +36,14 @@ Component({
       message: '至少选择一个兴趣爱好'
     },
     phoneRules: [{
-      type: "string",
+      type: 'string',
       required: true,
     }, {
-      pattern: "^1(3|4|5|7|8)\\d{9}$",
+      pattern: '^1(3|4|5|7|8)\\d{9}$',
       message: '手机号不正确，请重新输入'
     }],
     passwordRules: {
-      type: "number",
+      type: 'number',
       required: true,
       message: '请重新输入数字'
     },
@@ -52,24 +51,16 @@ Component({
 
   },
   methods: {
-    formSubmit(e) {
-      console.log(e)
-    },
-
-    linvalidate(e) {
-      console.log('linvalidate', e)
-    },
-
     changeCheckbox(e){
-      const key = e.detail.key
-      const checked = e.detail.checked
-      let likes = this.data.likes
+      const key = e.detail.key;
+      const checked = e.detail.checked;
+      let likes = this.data.likes;
       if (checked) {
-        likes.push(key)
+        likes.push(key);
       } else {
         likes = likes.filter(item => {
-          return item !== key
-        })
+          return item !== key;
+        });
       }
       this.setData({
         likes: likes
@@ -79,7 +70,7 @@ Component({
     /**
      * Lifecycle function--Called when page load
      */
-    onLoad: function(options) {
+    onLoad: function() {
 
     },
 
@@ -130,4 +121,4 @@ Component({
 
     }
   }
-})
+});

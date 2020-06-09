@@ -11,7 +11,7 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function(options) {
+  onLoad: function() {
 
   },
 
@@ -19,11 +19,11 @@ Page({
     if (this.data.activeIndex < 2) {
       this.setData({
         activeIndex: this.data.activeIndex + 1
-      })
+      });
     } else {
       wx.lin.showToast({
         title: '已经到最后一步了哦'
-      })
+      });
     }
   },
 
@@ -31,11 +31,11 @@ Page({
     if (this.data.activeIndex > 0) {
       this.setData({
         activeIndex: this.data.activeIndex - 1
-      })
+      });
     } else {
       wx.lin.showToast({
         title: '已经到第一步了哦'
-      })
+      });
     }
   },
   /**
@@ -86,4 +86,4 @@ Page({
   onShareAppMessage: function() {
 
   }
-})
+});

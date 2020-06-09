@@ -1,4 +1,4 @@
-import caseData from "data.js";
+import caseData from 'data.js';
 
 Page({
 
@@ -16,7 +16,7 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function(options) {
+  onLoad: function() {
 
   },
 
@@ -25,31 +25,31 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function() {
-    if (this.data.loading && this.data.index == 0) {
+    if (this.data.loading && this.data.index === 0) {
       this.setData({
         show: true,
         type: 'loading'
-      })
+      });
       setTimeout(() => {
         this.setData({
           show: false,
           caseData:caseData,
           index: 1
-        })
-      }, 800)
+        });
+      }, 800);
     }
-    if (this.data.loading && this.data.index == 1) {
+    if (this.data.loading && this.data.index === 1) {
       this.setData({
         show: true,
         type: 'loading'
-      })
+      });
       setTimeout(() => {
         this.setData({
           show: true,
           type: 'end',
           loading: false
-        })
-      }, 800)
+        });
+      }, 800);
     }
   }
-})
+});

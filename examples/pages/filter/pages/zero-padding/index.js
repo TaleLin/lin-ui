@@ -5,13 +5,13 @@ Page({
    * Page initial data
    */
   data: {
-    code: "```wxml\n <view> \n {{ zeroPadding(3) }} \n {{ zeroPadding(3,4) }} \n </view>\n```"
+    code: '```wxml\n <view> \n {{ zeroPadding(3) }} \n {{ zeroPadding(3,4) }} \n </view>\n```'
   },
 
   /**
    * Lifecycle function--Called when page load
    */
-  onLoad: function (options) {
+  onLoad: function () {
 
   },
 
@@ -63,4 +63,4 @@ Page({
   onShareAppMessage: function () {
 
   }
-})
+});

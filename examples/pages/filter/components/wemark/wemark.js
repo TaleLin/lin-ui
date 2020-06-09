@@ -2,54 +2,54 @@ const parser = require('./parser');
 const getRichTextNodes = require('./richtext').getRichTextNodes;
 
 Component({
-    properties: {
-        md: {
-            type: String,
-            value: '',
-            observer(){
-                this.parseMd();
-            }
-        },
-		type: {
-			type: String,
-			value: 'wemark'
-		},
-		link: {
-			type: Boolean,
-			value: false
-		},
-		highlight: {
-			type: Boolean,
-			value: false
-		}
+  properties: {
+    md: {
+      type: String,
+      value: '',
+      observer(){
+        this.parseMd();
+      }
     },
-    data: {
-        parsedData: {},
-		richTextNodes: []
+    type: {
+      type: String,
+      value: 'wemark'
     },
-    methods: {
-        parseMd(){
-			if (this.data.md) {
-				var parsedData = parser.parse(this.data.md, {
-					link: this.data.link,
-					highlight: this.data.highlight
-				});
-				// console.log('parsedData:', parsedData);
-				if(this.data.type === 'wemark'){
-					this.setData({
-						parsedData
-					});
-				}else{
-					// var inTable = false;
-					var richTextNodes = getRichTextNodes(parsedData);
+    link: {
+      type: Boolean,
+      value: false
+    },
+    highlight: {
+      type: Boolean,
+      value: false
+    }
+  },
+  data: {
+    parsedData: {},
+    richTextNodes: []
+  },
+  methods: {
+    parseMd(){
+      if (this.data.md) {
+        var parsedData = parser.parse(this.data.md, {
+          link: this.data.link,
+          highlight: this.data.highlight
+        });
+        // console.log('parsedData:', parsedData);
+        if(this.data.type === 'wemark'){
+          this.setData({
+            parsedData
+          });
+        }else{
+          // var inTable = false;
+          var richTextNodes = getRichTextNodes(parsedData);
 
-					// console.log('richTextNodes:', richTextNodes);
+          // console.log('richTextNodes:', richTextNodes);
 
-					this.setData({
-						richTextNodes
-					});
+          this.setData({
+            richTextNodes
+          });
 
-					/* // 分批更新
+          /* // 分批更新
 					var update = {};
 					var batchLength = 1000;
 					console.log(batchLength);
@@ -63,9 +63,9 @@ Component({
 					}
 					this.setData(update);
 					update = {}; */
-				}
-
-            }
         }
+
+      }
     }
+  }
 });

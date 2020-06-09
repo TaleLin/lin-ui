@@ -16,30 +16,29 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function(options) {
+  onLoad: function() {
 
   },
 
   // 显示 toast
   onShowToastTap(e) {
 
-    const type = e.currentTarget.dataset.type
-    const config = JSON.parse(JSON.stringify(this.data.navConfig[type].config))
+    const type = e.currentTarget.dataset.type;
+    const config = JSON.parse(JSON.stringify(this.data.navConfig[type].config));
     this.setData({
       currentConf: config,
       type
-    })
+    });
 
 
   },
 
   // 隐藏 toast
   onHideToastTap() {
-    const type = this.data.type
-    this.data.currentConf.status = false
+    this.data.currentConf.status = false;
     this.setData({
       currentConf: this.data.currentConf
-    })
+    });
   },
 
   /**
@@ -90,4 +89,4 @@ Page({
   onShareAppMessage: function() {
 
   }
-})
+});
