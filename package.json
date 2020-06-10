@@ -10,7 +10,7 @@
     "dev": "gulp -f build/index.js dev",
     "build": "gulp -f build/index.js build",
     "watch": "gulp -f build/index.js watch",
-    "lint": "eslint ./src/**/*.js",
+    "lint": "eslint .",
     "test": "jest",
     "release": "sh build/release.sh",
     "changelog": "conventional-changelog -p conventionalcommits -i CHANGELOG.md -s -n .convention-changelog-config.js"
