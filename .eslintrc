@@ -5,12 +5,15 @@
     "plugin:import/warnings",
     "plugin:promise/recommended"
   ],
+  "plugins": [
+    "import",
+    "promise"
+  ],
   "env": {
-    "browser": true,
-    "commonjs": true,
-    "es6": true,
     "node": true,
-    "jest": true
+    "es2017": true,
+    "browser": true,
+    "commonjs": true
   },
   "parserOptions": {
     "ecmaVersion": 2018,
@@ -52,7 +55,7 @@
     // 禁止不必要的转义使用（已关闭）
     "no-useless-escape": "off",
     // 必须使用严格等于
-    "eqeqeq": ["error","always"],
+    "eqeqeq": ["error", "always"],
     // promise 中必须要 return 语句（已关闭）
     "promise/always-return": "off"
   }
