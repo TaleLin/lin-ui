@@ -12,10 +12,10 @@ export default Behavior({
       });
     },
     queryScrollNode(res, currentIndex, type = 'width') {
-      if(currentIndex<0) return;
+      if (currentIndex < 0) return;
       const currentRect = res[currentIndex];
       this.getRect('.l-tabsscroll').then(_ => {
-        if(!_) return console.error('找不到元素');
+        if (!_) return console.error('找不到元素');
         const scrollWidth = _[type];
         let transformDistance = res
           .slice(0, currentIndex)
@@ -33,6 +33,8 @@ export default Behavior({
             transformY: transformDistance
           });
         }
+      }).catch(err => {
+        console.error(err);
       });
     },
     queryMultipleNodes() {
@@ -47,6 +49,8 @@ export default Behavior({
           } else {
             this.queryScrollNode(res, currentIndex, 'height');
           }
+        }).catch(err => {
+          console.error(err);
         });
     }
   }

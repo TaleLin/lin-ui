@@ -1,4 +1,4 @@
-import caseData from 'data.js';
+import caseData from './data.js';
 
 Page({
 

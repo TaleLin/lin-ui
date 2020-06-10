@@ -1,5 +1,10 @@
 {
-  "extends": "eslint:recommended",
+  "extends": [
+    "eslint:recommended",
+    "plugin:import/errors",
+    "plugin:import/warnings",
+    "plugin:promise/recommended"
+  ],
   "env": {
     "browser": true,
     "commonjs": true,
@@ -47,6 +52,8 @@
     // 禁止不必要的转义使用（已关闭）
     "no-useless-escape": "off",
     // 必须使用严格等于
-    "eqeqeq": ["error","always"]
+    "eqeqeq": ["error","always"],
+    // promise 中必须要 return 语句（已关闭）
+    "promise/always-return": "off"
   }
 }
