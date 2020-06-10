@@ -46,6 +46,8 @@ Component({
         }
         this._select(data, refresh).then(() => {
           success && success();
+        }).catch(err=>{
+          console.error(err);
         });
       };
     },

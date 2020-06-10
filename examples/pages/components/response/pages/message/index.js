@@ -1,4 +1,4 @@
-import navConfig from 'message-nav.js';
+import navConfig from './message-nav.js';
 
 Page({
 

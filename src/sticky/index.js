@@ -1,4 +1,5 @@
 import validator from '../behaviors/validator';
+
 Component({
   externalClasses: ['l-class'],
   behaviors: [validator],
@@ -10,6 +11,8 @@ Component({
           if (!isSupportCssSticky) {
             this.updateStickyItemsSizeData();
           }
+        }).catch(err => {
+          console.error(err);
         });
       },
       linkChanged() {
@@ -17,6 +20,8 @@ Component({
           if (!isSupportCssSticky) {
             this.updateStickyItemsSizeData();
           }
+        }).catch(err => {
+          console.error(err);
         });
       },
       unlinked() {
@@ -24,6 +29,8 @@ Component({
           if (!isSupportCssSticky) {
             this.updateStickyItemsSizeData();
           }
+        }).catch(err => {
+          console.error(err);
         });
       }
     }
@@ -56,6 +63,8 @@ Component({
         if (!isSupportCssSticky) {
           this.updateStickyItemsPosition();
         }
+      }).catch(err => {
+        console.error(err);
       });
     }
   },
@@ -66,6 +75,8 @@ Component({
         if (!isSupportCssSticky) {
           this.initSticky();
         }
+      }).catch(err=>{
+        console.error(err);
       });
     }
   },
@@ -88,6 +99,8 @@ Component({
           if (!isSupportCssSticky) {
             this.updateStickyItemsPosition();
           }
+        }).catch(err=>{
+          console.error(err);
         });
       };
     },

@@ -25,6 +25,8 @@ Page({
       this.setData({
         version: data[0].version
       });
+    }).catch(err=>{
+      console.error(err);
     });
   },
 
