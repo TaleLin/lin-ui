@@ -246,8 +246,12 @@ Component({
                   transformX: 0,
                   transformY: transformY
                 });
+              }).catch(err=>{
+                console.error(err);
               });
           }
+        }).catch(err=>{
+          console.error(err);
         });
     },
 

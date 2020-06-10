@@ -1,4 +1,4 @@
-import eventUtil from '../core/utils/event-util'
+import eventUtil from '../core/utils/event-util';
 
 Component({
   /**
@@ -46,6 +46,8 @@ Component({
         }
         this._select(data, refresh).then(() => {
           success && success();
+        }).catch(err=>{
+          console.error(err);
         });
       };
     },
@@ -88,7 +90,7 @@ Component({
      * @param e 事件对象
      */
     onTapItem(e) {
-      eventUtil.emit(this, 'linitemtap', e.detail)
+      eventUtil.emit(this, 'linitemtap', e.detail);
     }
   }
 });

@@ -145,15 +145,15 @@ Component({
      * 监听：点击输入框右侧显隐密码图标
      */
     onTapEyeIcon() {
-      const type = this.data.type
+      const type = this.data.type;
       if (type === 'text') {
         this.setData({
           type: 'password'
-        })
+        });
       } else if (type === 'password') {
         this.setData({
           type: 'text'
-        })
+        });
       }
     }
   }
