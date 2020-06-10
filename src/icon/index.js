@@ -7,7 +7,7 @@ Component({
     name: String,
     color: {
       type: String,
-      value: '#45526B'
+      value: '#3963bc'
     },
     size: {
       type: String,
