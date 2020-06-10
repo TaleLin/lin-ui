@@ -26,45 +26,41 @@ Page({
       picPlacement: 'left'
     }],
     imagesTabs: [{
-        tab: '客厅',
-        key: 'dining',
-        picPlacement: 'top',
-        image: {
-          activeImage: '/pages/components/nav/images/tab-icon/dining-active.png',
-          defaultImage: '/pages/components/nav/images/tab-icon/dining.png',
-        }
-      },
-      {
-        tab: '卧室',
-        key: 'badroom',
-        picPlacement: 'top',
-        image: {
-          activeImage: '/pages/components/nav/images/tab-icon/badroom-active.png',
-          defaultImage: '/pages/components/nav/images/tab-icon/badroom.png',
-        }
-      }, {
-        tab: '厨房',
-        key: 'kichten',
-        picPlacement: 'top',
-        image: {
-          activeImage: '/pages/components/nav/images/tab-icon/kichten-active.png',
-          defaultImage: '/pages/components/nav/images/tab-icon/kichten.png',
-        }
-      },
-      {
-        tab: '浴室',
-        key: 'bathroom',
-        picPlacement: 'top',
-        image: {
-          activeImage: '/pages/components/nav/images/tab-icon/bathroom-active.png',
-          defaultImage: '/pages/components/nav/images/tab-icon/bathroom.png',
-        }
+      tab: '客厅',
+      key: 'dining',
+      picPlacement: 'top',
+      image: {
+        activeImage: '/pages/components/nav/images/tab-icon/dining-active.png',
+        defaultImage: '/pages/components/nav/images/tab-icon/dining.png',
       }
+    },
+    {
+      tab: '卧室',
+      key: 'badroom',
+      picPlacement: 'top',
+      image: {
+        activeImage: '/pages/components/nav/images/tab-icon/badroom-active.png',
+        defaultImage: '/pages/components/nav/images/tab-icon/badroom.png',
+      }
+    }, {
+      tab: '厨房',
+      key: 'kichten',
+      picPlacement: 'top',
+      image: {
+        activeImage: '/pages/components/nav/images/tab-icon/kichten-active.png',
+        defaultImage: '/pages/components/nav/images/tab-icon/kichten.png',
+      }
+    },
+    {
+      tab: '浴室',
+      key: 'bathroom',
+      picPlacement: 'top',
+      image: {
+        activeImage: '/pages/components/nav/images/tab-icon/bathroom-active.png',
+        defaultImage: '/pages/components/nav/images/tab-icon/bathroom.png',
+      }
+    }
     ]
-  },
-
-  changeTabs(e) {
-    console.log(e)
   },
 
   toggleTabPlacement() {
@@ -76,12 +72,12 @@ Page({
       success: (res) => {
         this.setData({
           placement: placementArr[res.tapIndex]
-        })
+        });
       },
       fail(res) {
-        console.log(res.errMsg)
+        console.error(res.errMsg);
       }
-    })
+    });
   },
 
   _asyncData() {
@@ -109,14 +105,14 @@ Page({
         tab:'运动女装',
         key:'sport'
       }],
-    })
+    });
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function(options) {
-    setTimeout(this._asyncData, 5000)
+  onLoad: function() {
+    setTimeout(this._asyncData, 5000);
   },
 
   /**
@@ -167,4 +163,4 @@ Page({
   onShareAppMessage: function() {
 
   }
-})
+});

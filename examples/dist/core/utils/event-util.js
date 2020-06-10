@@ -4,9 +4,9 @@ class EventUtil {
       bubbles: true,
       composed: true,
       capturePhase: true
-    })
+    });
   }
 }
 
-const eventUtil = new EventUtil()
-export default eventUtil
+const eventUtil = new EventUtil();
+export default eventUtil;

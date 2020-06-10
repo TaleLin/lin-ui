@@ -13,7 +13,7 @@ Page({
   /**
    * Lifecycle function--Called when page load
    */
-  onLoad: function(options) {
+  onLoad: function() {
 
   },
 
@@ -65,4 +65,4 @@ Page({
   onShareAppMessage: function() {
 
   }
-})
+});

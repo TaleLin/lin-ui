@@ -7,7 +7,7 @@ class PixelUtil {
    * @param systemInfo 设备信息
    */
   constructor(systemInfo) {
-    this.systemInfo = systemInfo
+    this.systemInfo = systemInfo;
   }
 
   /**
@@ -16,7 +16,7 @@ class PixelUtil {
    * @returns {number} rpx数值
    */
   px2rpx(pxNumber) {
-    return (750 /  this.systemInfo.screenWidth) * pxNumber
+    return (750 /  this.systemInfo.screenWidth) * pxNumber;
   }
 
   /**
@@ -25,9 +25,9 @@ class PixelUtil {
    * @returns {number} px数值
    */
   rpx2px(rpxNumber){
-    return (rpxNumber / 750) * this.systemInfo.screenWidth
+    return (rpxNumber / 750) * this.systemInfo.screenWidth;
   }
 }
 
-const pixelUtil = new PixelUtil(wx.getSystemInfoSync())
-export default pixelUtil
+const pixelUtil = new PixelUtil(wx.getSystemInfoSync());
+export default pixelUtil;

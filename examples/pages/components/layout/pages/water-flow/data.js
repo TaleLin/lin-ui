@@ -26,22 +26,22 @@ const product = [{
   count: '888',
   delCount: '666'
 },
-  {
-    image: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1559895182707&di=afd7d89ebcb21e0dd2f0517336ce8d25&imgtype=0&src=http%3A%2F%2Fimg2.ph.126.net%2FZIrNMh3jc-oib-qFmdyYUQ%3D%3D%2F5717519838063213749.jpg',
-    title: '显瘦中长款系带风衣',
-    describe: '柔软顺滑、上身挺括显瘦，垂坠飘逸、不易皱好打理。不易皱好打理。',
-    count: '888',
-    delCount: '666'
-  },
-  {
-    image: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1559895137091&di=c7db1a52ecbe3886bf79b39e3da162a4&imgtype=0&src=http%3A%2F%2Fphotocdn.sohu.com%2F20160204%2FImg436843528.jpg',
-    title: '酵素洗纯棉四件套',
-    describe: '100%新疆精梳棉，柔软、厚实、光泽度好，颜色高级，2色可选,100%新疆精梳棉，柔软、厚实、光泽度好，颜色高级，2色可选',
-    count: '459',
-    delCount: '359'
-  }
-]
+{
+  image: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1559895182707&di=afd7d89ebcb21e0dd2f0517336ce8d25&imgtype=0&src=http%3A%2F%2Fimg2.ph.126.net%2FZIrNMh3jc-oib-qFmdyYUQ%3D%3D%2F5717519838063213749.jpg',
+  title: '显瘦中长款系带风衣',
+  describe: '柔软顺滑、上身挺括显瘦，垂坠飘逸、不易皱好打理。不易皱好打理。',
+  count: '888',
+  delCount: '666'
+},
+{
+  image: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1559895137091&di=c7db1a52ecbe3886bf79b39e3da162a4&imgtype=0&src=http%3A%2F%2Fphotocdn.sohu.com%2F20160204%2FImg436843528.jpg',
+  title: '酵素洗纯棉四件套',
+  describe: '100%新疆精梳棉，柔软、厚实、光泽度好，颜色高级，2色可选,100%新疆精梳棉，柔软、厚实、光泽度好，颜色高级，2色可选',
+  count: '459',
+  delCount: '359'
+}
+];
 
 export {
   product
-}
+};

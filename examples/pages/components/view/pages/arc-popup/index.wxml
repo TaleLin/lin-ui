@@ -1,45 +1,148 @@
 <!--pages/components/view/pages/arc-popup/index.wxml-->
 <view class='container'>
-  <content-title name="ArcPopup" describe="弧形滚动弹出层">
-    <content-card class="content" name="{{item.title}}" wx:for="{{navConfig}}" wx:key="type">
-      <view class='buttun-wrapper'>
-        <l-button l-class="button" size="large" data-type="{{item.type}}" bind:lintap="onShowPopupTap">
-          显示弹出层
-        </l-button>
-      </view>
-    </content-card>
-  </content-title>
+	<content-title name="ArcPopup" describe="弧形滚动弹出层">
+		<content-card class="content" name="{{item.title}}" wx:for="{{navConfig}}" wx:key="type">
+			<view class='buttun-wrapper'>
+				<l-button l-class="button" size="large" data-type="{{item.type}}" bind:lintap="onShowPopupTap">
+					显示弹出层
+				</l-button>
+			</view>
+		</content-card>
+	</content-title>
 
-  <!-- popup -->
-  <l-arc-popup show="{{currentConf.show}}" transition="{{currentConf.transition}}" direction="{{currentConf.direction}}" locked="{{currentConf.locked}}" maxHeight="{{currentConf.maxHeight}}" minHeight="{{currentConf.minHeight}}" arcRadius="{{currentConf.arcRadius}}" opacity="{{currentConf.opacity}}">
-    <view wx:if="{{type == 0 }}">
-      基础案例
-    </view>
-    <view class='popup-mask' catchtap='onHidePopupTap' wx:if="{{type == 2}}">
-      关闭弹出层
-    </view>
-    <view wx:if="{{type == 1 }}">
-      无动画案例
-    </view>
-    <view wx:if="{{type == 3 }}">
-      从上方弹出
-    </view>
-    <view wx:if="{{type == 4 }}" style="height: 800rpx;">
-      超出高度可滚动
-    </view>
+	<!-- popup -->
+	<l-arc-popup show="{{currentConfig.show}}" transition="{{currentConfig.transition}}" direction="{{currentConfig.direction}}" locked="{{currentConfig.locked}}" maxHeight="{{currentConfig.maxHeight}}" minHeight="{{currentConfig.minHeight}}" arcRadius="{{currentConfig.arcRadius}}" opacity="{{currentConfig.opacity}}" l-panel-class="{{panelClass}}">
+		<view wx:if="{{type == 0 }}" class="popup-demo0">
+			<view class="popup-demo0-item" wx:for="{{demo0List}}" wx:for-item="item" wx:key="index">
+				<view class="popup-demo0-icon">
+					<l-icon name="{{item.icon}}" size="40" color="#838383"></l-icon>
+				</view>
+				<text>{{item.name}}</text>
+			</view>
+		</view>
+		<view class='popup-mask' catchtap='onHidePopupTap' wx:if="{{type == 2}}">
+			关闭弹出层
+		</view>
+		<view wx:if="{{type == 1 }}" class="popup-demo1">
+			<view class="popup-demo0-item" wx:for="{{demo0List}}" wx:for-item="item" wx:key="index">
+				<view class="popup-demo0-icon">
+					<l-icon name="{{item.icon}}" size="40" color="#838383"></l-icon>
+				</view>
+				<text>{{item.name}}</text>
+			</view>
+		</view>
+		<view wx:if="{{type == 3 }}" class="popup-demo3">
+			<view class="popup-demo3-item" wx:for="{{demo0List}}" wx:for-item="item" wx:key="index">
+				<view class="popup-demo3-icon">
+					<l-icon name="{{item.icon}}" size="40" color="#838383"></l-icon>
+				</view>
+				<text>{{item.name}}</text>
+			</view>
+		</view>
+		<view wx:if="{{type == 4 }}" style="height: 800rpx;">
+			<l-list title="生成我的海报" catch:lintap="doNothing" />
+			<l-list title="常见问题" catch:lintap="doNothing" />
+			<l-list title="设置" catch:lintap="doNothing" />
+			<l-list title="客服中心" desc="工作时间：8:00-18:00" catch:lintap="doNothing" />
+			<l-list title="生成我的海报" catch:lintap="doNothing" />
+			<l-list title="常见问题" catch:lintap="doNothing" />
+			<l-list title="设置" catch:lintap="doNothing" />
+			<l-list title="客服中心" desc="工作时间：8:00-18:00" catch:lintap="doNothing" />
+		</view>
 
-    <view wx:if="{{type == 5 }}">
-      设置最小高度
-    </view>
+		<view wx:if="{{type == 5 }}">
+			<l-list title="客服中心" desc="工作时间：8:00-18:00" catch:lintap="doNothing" />
+		</view>
 
-    <view wx:if="{{type == 6 }}">
-      设置组件弧度
-    </view>
+		<view wx:if="{{type == 6 }}">
+			<view class='popup-mask' catchtap='onHidePopupTap'>
+				设置组件弧度
+			</view>
+		</view>
 
-     <view wx:if="{{type == 7 }}">
-      设置遮罩区域透明度
-    </view>
+		<view wx:if="{{type == 7 }}">
+			<view class='popup-mask' catchtap='onHidePopupTap'>
+				设置遮罩区域透明度
+			</view>
+		</view>
 
-  </l-arc-popup>
+
+		<view slot="header" wx:if="{{type == 8}}" class="header-content">
+			<text>一出好戏 (2018)</text>
+			<l-icon name="down" size="30" color="#ccc" bindtap="onHidePopupTap"></l-icon>
+		</view>
+		<view wx:if="{{type == 8}}" class="popup-demo8-demo">
+			<l-rate score="3.6" disabled />
+			<text class="popup-demo8-desc">类型: 剧情 / 喜剧</text>
+			<text class="popup-demo8-desc">上映日期: 2018-08-10(中国大陆)</text>
+			<text class="popup-demo8-desc">片长: 134分钟</text>
+			<text class="popup-demo8-desc">语言: 汉语普通话</text>
+			<scroll-view class="popup-scroll-view" scroll-x>
+				<view class="popup-scroll-list">
+					<view class="popup-avatar-item" wx:for="{{avartarList}}" wx:for-item="item" wx:key="index">
+						<image src="{{item.imageUrl}}" class="popup-avatar-image" mode="aspectFill"></image>
+						<text class="popup-avatar-name">{{item.name}}</text>
+					</view>
+				</view>
+			</scroll-view>
+			<view class="popup-demo8-line"></view>
+			<view class="popup-demo8-title">简介</view>
+			<view class="popup-demo8-contet-desc">马进欠下债务，与远房表弟小兴在底层社会摸爬滚打，习惯性的买彩票，企图一夜暴富，并迎娶自己的同事姗姗。一日，公司全体员工出海团建，途中，马进收到了彩票中头奖的信息，六千万！就在马进狂喜自己翻身的日子终于到来之际，一场突如其来的滔天巨浪打破了一切。苏醒过来的众人发现身处荒岛 ，丧失了一切与外界的联系……</view>
+		</view>
+
+		<view wx:if="{{type == 9 }}" class="popup-demo9">
+			<view class="popup-demo9-top">
+				<image src="/images/view/default-image.jpg" class="popup-demo9-top-image"></image>
+				<text style="margin-left:20rpx;font-weight: 550;">LinUI</text>
+				<text style="margin-left:20rpx;font-weight: 550;">申请</text>
+			</view>
+			<view class="popup-demo9-desc">获取你的昵称、头像、地区及性别</view>
+			<view class="popup-demo9-info">
+				<view class="popup-demo9-info-avatar">
+					<open-data type="userAvatarUrl"></open-data>
+				</view>
+				<view class="popup-demo9-info-detail">
+					<view class="popup-demo9-info-name">
+						<open-data type="userNickName"></open-data>
+					</view>
+					<view class="popup-demo9-info-desc">微信个人信息</view>
+				</view>
+			</view>
+			<view class="popup-demo9-button">
+				<l-button style='margin-right:50rpx' bg-color="#ccc" catch:lintap="doNothing">取消</l-button>
+				<l-button type="success" style='margin-right:50rpx' catch:lintap="doNothing">允许</l-button>
+			</view>
+		</view>
+		<view slot="header" wx:if="{{type == 10}}" class="header-content-demo10">
+			<image class="header-demo10-thumbnail" src="{{advancedDemo.thumbnail}}"></image>
+			<view class="header-demo10-main">
+				<text class="header-demo10-price">¥ {{advancedDemo.price}} - {{advancedDemo.originPrice}} 折后 ¥ {{advancedDemo.discountPrice}} 起</text>
+				<text class="header-demo10-total">库存{{advancedDemo.total}}</text>
+			</view>
+			<l-icon name="close" size="30" color="#ccc" bindtap="onHidePopupTap"></l-icon>
+		</view>
+		<view wx:if="{{type == 10 }}" class="popup-demo10">
+			<view class="popup-demo10-type">
+				<view class="popup-demo10-type-title">吉他尺寸</view>
+				<view class="popup-demo10-tags">
+					<l-tag size="medium" shape="circle" catch:lintap="doNothing" plain="{{!item.active}}" l-class="popup-demo10-tag" wx:for="{{advancedDemo.size}}" wx:for-item="item" wx:key="index" catchtap="ontaglintap" data-type="size" data-index="{{index}}">{{item.name}}</l-tag>
+				</view>
+				<view class="popup-demo10-type-title">颜色</view>
+				<view class="popup-demo10-tags">
+					<l-tag size="medium" shape="circle" catch:lintap="doNothing" plain="{{!item.active}}" l-class="popup-demo10-tag" wx:for="{{advancedDemo.color}}" wx:for-item="item" wx:key="index" catchtap="ontaglintap" data-type="color" data-index="{{index}}">{{item.name}}</l-tag>
+				</view>
+				<view class="popup-demo10-type-title">类型</view>
+				<view class="popup-demo10-tags">
+					<l-tag size="medium" shape="circle" catch:lintap="doNothing" plain="{{!item.active}}" l-class="popup-demo10-tag" wx:for="{{advancedDemo.type}}" wx:for-item="item" wx:key="index" catchtap="ontaglintap" data-type="type" data-index="{{index}}">{{item.name}}</l-tag>
+				</view>
+				<view class="popup-demo10-type-title">购买数量
+					<l-count-selector count="1" min="1" max="10" catch:lintap="doNothing"></l-count-selector>
+				</view>
+			</view>
+			<view class="popup-demo10-bottom">
+				<l-button size="large" shape="semicircle" catch:lintap="doNothing">购买</l-button>
+			</view>
+		</view>
+	</l-arc-popup>
 
 </view>

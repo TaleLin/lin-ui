@@ -1,0 +1,6 @@
+{
+  "hooks": {
+    "pre-commit": "npm run lint && git restore -W -S dist examples/dist",
+    "commit-msg": "commitlint -e $GIT_PARAMS"
+  }
+}

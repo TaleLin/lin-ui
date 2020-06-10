@@ -8,7 +8,7 @@ Page({
   data: {
     extend: false,
     isOverHeight: false,
-    code: "```html\n<text class='{{classnames('content',{unextend:isOverHeight && !extend})}}'>定风波...</text>\n```"
+    code: '```html\n<text class=\'{{classnames(\'content\',{unextend:isOverHeight && !extend})}}\'>定风波...</text>\n```'
   },
 
   extend() {
@@ -17,13 +17,13 @@ Page({
     }, () => {
       this.triggerEvent('extendText', {
         extend: this.data.extend
-      })
+      });
     });
 
   },
   queryMultipleNodes() {
     let $this = this;
-    const query = wx.createSelectorQuery().in($this)
+    const query = wx.createSelectorQuery().in($this);
     query.select('.content').fields({
       computedStyle: ['lineHeight'],
       size: true,
@@ -33,7 +33,7 @@ Page({
         if (lineHeight && res.height) {
           $this.setData({
             isOverHeight: (res.height / lineHeight) > MAX_LINE_COUNT,
-          })
+          });
         }
 
       }
@@ -43,7 +43,7 @@ Page({
   /**
    * Lifecycle function--Called when page load
    */
-  onLoad: function (options) {
+  onLoad: function () {
 
   },
 
@@ -95,4 +95,4 @@ Page({
   onShareAppMessage: function () {
 
   }
-})
+});

@@ -1,7 +1,7 @@
 <!-- pages/about/index.wxml -->
 <view class='container'>
   <view class='logo-container'>
-    <image class='logo-img' src='/images/logo.png'></image>
+    <image class='logo-img' src='cloud://env-9eb476.656e-env-9eb476-1258886794/images/other/logo.png'></image>
     <view class="version-container">
       <image src="https://img.shields.io/npm/v/lin-ui.svg" class="version-img"></image>
       <image src="https://img.shields.io/npm/dt/lin-ui.svg" class="download-img"></image>
@@ -38,14 +38,18 @@
       </view>
       <view class='attribute-code-container'>
         <view class='code-circle'></view>
-        <view class='code-name'>研发</view>
-        <view class='coder'>宁缺</view>
+        <view class='code-name'>团队成员</view>
         <view class='coder'>娜娜</view>
         <view class='coder'>寸起</view>
         <view class='coder'>洪晨</view>
         <view class='coder'>句号</view>
         <view class='coder'>桔子</view>
         <view class='coder'>木荣</view>
+      </view>
+            <view class='attribute-code-container'>
+        <view class='code-circle'></view>
+        <view class='code-name'>贡献人员</view>
+        <view class='coder'>宁缺</view>
       </view>
       <view class='attribute-code-container'>
         <view class='code-circle'></view>
@@ -54,7 +58,7 @@
       </view>
     </view>
   </view>
-  <image bindtap='onImage' src='/images/code.jpg' class='code'></image>
+  <image bindtap='onImage' src='cloud://env-9eb476.656e-env-9eb476-1258886794/images/other/wechat-official-accounts-qr-code.jpg' class='code'></image>
   <text class='desc'>关注林间有风公众号</text>
   <text class='desc'>点击图片可保存二维码识别</text>
   <official-account class="account"></official-account>

@@ -1,8 +1,8 @@
 // pages/about/index.js
 wx.cloud.init({
   env: 'env-9eb476'
-})
-const db = wx.cloud.database()
+});
+const db = wx.cloud.database();
 
 Page({
 
@@ -17,15 +17,17 @@ Page({
    * 生命周期函数--监听页面加载
    */
 
-  onLoad: function(options) {
+  onLoad: function() {
     db.collection('version').get().then(_ => {
       const {
         data
-      } = _
+      } = _;
       this.setData({
         version: data[0].version
-      })
-    })
+      });
+    }).catch(err=>{
+      console.error(err);
+    });
   },
 
   copyLink(e) {
@@ -35,9 +37,9 @@ Page({
         wx.showToast({
           title: '已复制',
           duration: 1000,
-        })
+        });
       }
-    })
+    });
   },
 
   onImage() {
@@ -52,4 +54,4 @@ Page({
   onShareAppMessage: function() {
 
   }
-})
+});

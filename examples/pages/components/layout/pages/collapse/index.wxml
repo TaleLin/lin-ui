@@ -1,7 +1,7 @@
 <view class="container">
   <content-title name="Collapse" describe="折叠面板">
     <content-card name="基本案例">
-      <l-collapse bind:linfold="fold" bind:linexpand="expand">
+      <l-collapse>
         <l-collapse-item title="Lin UI">
           Lin UI 是基于微信小程序原生语法实现的组件库。遵循简洁，易用的设计规范。
         </l-collapse-item>

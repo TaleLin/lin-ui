@@ -9,22 +9,21 @@ Page({
   },
 
   onTapBase(){
-    console.log("进入")
     wx.navigateTo({
-      url:"/pages/components/layout/pages/sticky/pages/sticky-base/index"
-    })
+      url:'/pages/components/layout/pages/sticky/pages/sticky-base/index'
+    });
   },
 
   onTapAppoint(){
     wx.navigateTo({
-      url:"/pages/components/layout/pages/sticky/pages/sticky-appoint/index"
-    })
+      url:'/pages/components/layout/pages/sticky/pages/sticky-appoint/index'
+    });
   },
 
   onTapDynamic(){
     wx.navigateTo({
-      url:"/pages/components/layout/pages/sticky/pages/sticky-dynamic/index"
-    })
+      url:'/pages/components/layout/pages/sticky/pages/sticky-dynamic/index'
+    });
   }
 
-})
+});

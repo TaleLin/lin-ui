@@ -1,0 +1,35 @@
+
+
+<view class="container" style="padding-top: {{hasPadding?titleBarHeight+statusBarHeight:'0'}}rpx">
+  
+  <cover-view class="capsule-bar" style="background-color: {{bgColor}};">
+    
+    
+    <cover-view class="status-bar" style="height: {{statusBarHeight+4}}rpx;background-color: {{statusBarColor}};"></cover-view>
+
+    
+    <cover-view class="title-bar" style="height: {{titleBarHeight}}rpx;background-color: {{titleBarColor}};">
+      <cover-view class="title l-title-class" style="color: {{titleColor}};">{{title}}</cover-view>
+    </cover-view>
+
+    
+    <cover-view wx:if="{{!hiddenCapsule}}" class="capsule-button" style="border-color: rgba({{capsuleColor==='black'?'0,0,0,0.1':'255,255,255,0.25'}});background-color: rgba({{capsuleColor==='black'?'255,255,255,0.6':'0,0,0,0.15'}});width: {{capsuleButtonInfo.width}}px;height: {{capsuleButtonInfo.height}}px;left: {{capsuleButtonInfo.left}}px;top: {{capsuleButtonInfo.top}}px;">
+      
+      <cover-view catch:tap="onTapLeftButton" catch:longpress="onLongPressLeftButton" hover-class="icon-wrapper-hover-{{capsuleColor}}" class="icon-wrapper" style="width: {{capsuleButtonInfo.width/2}}px;height: {{capsuleButtonInfo.height}}px;">
+        <cover-image class="icon-left" src="icons/capsule-left-{{capsuleColor}}.png"></cover-image>
+      </cover-view>
+
+      
+      <cover-view class="line"></cover-view>
+
+      
+      <cover-view catch:tap="onTapRightButton" catch:longpress="onLongPressRightButton" hover-class="icon-wrapper-hover-{{capsuleColor}}" class="icon-wrapper" style="width: {{capsuleButtonInfo.width/2}}px;height: {{capsuleButtonInfo.height}}px;">
+        <cover-image class="icon-right" src="icons/capsule-right-{{capsuleColor}}.png"></cover-image>
+      </cover-view>
+    </cover-view>
+  </cover-view>
+
+  <view class="content-container">
+    <slot></slot>
+  </view>
+</view>

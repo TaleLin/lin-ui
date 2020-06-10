@@ -12,6 +12,8 @@ module.exports = {
         'EsLint',
         'VuePress',
         'package.json',
+        'TravisCI',
+        'Husky',
         'README',
         'util',
         '.editorconfig',
@@ -62,7 +64,8 @@ module.exports = {
         'Counter',
         'SearchBar',
         'IndexList',
-        'Behavior'
+        'Behavior',
+        'CapsuleBar'
       ]
     ]
   }

@@ -16,43 +16,43 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function(options) {
+  onLoad: function() {
 
   },
 
   onMaskTap() {
-    const type = this.data.type
+    const type = this.data.type;
     if (type === 4) {
       wx.showToast({
         title: '请点击按钮取消！',
         icon: 'none'
-      })
+      });
     }
   },
 
   // 显示mask
   onShowMaskTap(e) {
-    const type = e.currentTarget.dataset.type
-    const config = JSON.parse(JSON.stringify(this.data.navConfig[type].config))
+    const type = e.currentTarget.dataset.type;
+    const config = JSON.parse(JSON.stringify(this.data.navConfig[type].config));
     this.setData({
       currentConf: config,
       type
-    })
+    });
   },
 
   // 隐藏mask
   onHideMaskTap() {
-    const type = this.data.type
-    this.data.currentConf.show = false
+    const type = this.data.type;
+    this.data.currentConf.show = false;
     this.setData({
       currentConf: this.data.currentConf
-    })
+    });
 
     if (type === 3) {
       wx.showToast({
         title: '已取消~',
         icon: 'none'
-      })
+      });
     }
   },
 
@@ -104,4 +104,4 @@ Page({
   onShareAppMessage: function() {
 
   }
-})
+});

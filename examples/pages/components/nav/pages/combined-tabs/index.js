@@ -54,10 +54,6 @@ Page({
     ],
   },
 
-  changeTabs(e) {
-    console.log(e)
-  },
-
   toggleTabPlacement() {
     const {
       placementArr
@@ -67,18 +63,18 @@ Page({
       success: (res) => {
         this.setData({
           placement: placementArr[res.tapIndex]
-        })
+        });
       },
       fail(res) {
-        console.log(res.errMsg)
+        console.error(res.errMsg);
       }
-    })
+    });
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onLoad: function () {
   },
 
   /**
@@ -129,4 +125,4 @@ Page({
   onShareAppMessage: function () {
 
   }
-})
+});

@@ -12,13 +12,13 @@ Page({
     wx.showToast({
       title: `点击了${e.currentTarget.dataset.key}`,
       icon:'none'
-    })
+    });
   },
 
   /**
    * Lifecycle function--Called when page load
    */
-  onLoad: function (options) {
+  onLoad: function () {
 
   },
 
@@ -70,4 +70,4 @@ Page({
   onShareAppMessage: function () {
 
   }
-})
+});

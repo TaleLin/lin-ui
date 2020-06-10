@@ -1,7 +1,7 @@
 // pages/filter/pages/is/index.js
 import {
   arrayAPI, stringAPI, isAPI
-} from './api.js'
+} from './api.js';
 Page({
 
   /**
@@ -26,7 +26,7 @@ Page({
     this.setData({
       type: type,
       detail: apiType[type]
-    })
+    });
   },
 
   /**
@@ -77,4 +77,4 @@ Page({
   onShareAppMessage: function() {
 
   }
-})
+});

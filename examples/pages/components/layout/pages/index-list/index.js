@@ -1,6 +1,6 @@
 const sideBarData = [
   'A','B','C','D','E','F','G','H','J','K','L','M','N','P','O','P','Q','R','S','T','W','X','Y','Z'
-]
+];
 
 const nameData = [
   ['安冉','艾浩宇'],
@@ -27,7 +27,7 @@ const nameData = [
   ['杨思远','尤庭亮'],
   ['赵容','周承瑶'],
   ['安冉','艾浩宇'],
-]
+];
 
 Page({
   data: {
@@ -39,9 +39,9 @@ Page({
    * 点击头像
    */
   onTapAvatar(e){
-    const avatarId = e.currentTarget.dataset.avatarId
+    const avatarId = e.currentTarget.dataset.avatarId;
     wx.previewImage({
       urls:[`cloud://env-9eb476.656e-env-9eb476-1258886794/images/index-list/avatar/${avatarId}.jpg`]
-    })
+    });
   }
 });

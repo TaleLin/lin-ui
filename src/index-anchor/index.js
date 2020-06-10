@@ -1,4 +1,4 @@
-import nodeUtil from '../core/utils/node-util'
+import nodeUtil from '../core/utils/node-util';
 
 Component({
 
@@ -35,7 +35,7 @@ Component({
 
   lifetimes: {
     attached() {
-      this.parseAnchorSlotRect()
+      this.parseAnchorSlotRect();
     },
   },
 
@@ -44,15 +44,15 @@ Component({
      * 把 Anchor 锚点 Slot位置信息放入 data
      */
     async parseAnchorSlotRect() {
-      const anchorSlotRect = await nodeUtil.getNodeRectFromComponent(this, '.anchor-slot')
+      const anchorSlotRect = await nodeUtil.getNodeRectFromComponent(this, '.anchor-slot');
       if (anchorSlotRect) {
         this.setData({
           ['anchorSlot.height']: anchorSlotRect.height
-        })
+        });
       } else {
         this.setData({
           ['anchorSlot.height']: 0
-        })
+        });
       }
     },
 
@@ -61,11 +61,11 @@ Component({
      * @returns {Promise<void>}
      */
     async parseAnchorRect() {
-      const anchorRect = await nodeUtil.getNodeRectFromComponent(this, '.anchor')
+      const anchorRect = await nodeUtil.getNodeRectFromComponent(this, '.anchor');
       if (anchorRect) {
         this.setData({
           ['anchor.height']: anchorRect.height
-        })
+        });
       }
     },
 
@@ -76,9 +76,9 @@ Component({
       const anchorStyle = `
         position:fixed;
         top:${stickOffsetTop}rpx;
-      `
-      const anchorWrapperStyle = `height:${anchorHeight}px;`
-      this.setData({anchorStyle, anchorWrapperStyle})
+      `;
+      const anchorWrapperStyle = `height:${anchorHeight}px;`;
+      this.setData({anchorStyle, anchorWrapperStyle});
     },
 
     /**
@@ -89,8 +89,8 @@ Component({
       const anchorStyle = `
         position:relative;
         transform: translate3d(0, ${translateY}px, 0);
-       `
-      this.setData({anchorStyle})
+       `;
+      this.setData({anchorStyle});
     },
 
 
@@ -98,18 +98,18 @@ Component({
      * 把 Anchor 样式复原
      */
     clearStyle() {
-      this.setData({anchorStyle: '', anchorWrapperStyle: ''})
+      this.setData({anchorStyle: '', anchorWrapperStyle: ''});
     },
 
     /**
      * 当前 Anchor 是否是 relative 布局
      */
     isRelative() {
-      return this.data.anchorStyle.indexOf('relative') > 0
+      return this.data.anchorStyle.indexOf('relative') > 0;
     },
 
     isFixed(){
-      return this.data.anchorStyle.indexOf('fixed') > 0
+      return this.data.anchorStyle.indexOf('fixed') > 0;
     }
   }
 });

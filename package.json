@@ -1,6 +1,6 @@
 {
   "name": "lin-ui",
-  "version": "0.8.2",
+  "version": "0.8.3",
   "description": "A high quality UI components library with MiniProgram",
   "main": "app.js",
   "directories": {
@@ -10,8 +10,8 @@
     "dev": "gulp -f build/index.js dev",
     "build": "gulp -f build/index.js build",
     "watch": "gulp -f build/index.js watch",
-    "lint": "eslint ./src/**/*.js",
-    "test": "jest",
+    "lint": "eslint .",
+    "fix": "eslint . --fix",
     "release": "sh build/release.sh",
     "changelog": "conventional-changelog -p conventionalcommits -i CHANGELOG.md -s -n .convention-changelog-config.js"
   },
@@ -28,24 +28,15 @@
   "files": [
     "dist"
   ],
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run lint",
-      "commit-msg": "commitlint -e $GIT_PARAMS"
-    }
-  },
   "homepage": "http://doc.mini.7yue.pro",
   "devDependencies": {
     "@commitlint/cli": "^8.3.5",
     "@commitlint/config-conventional": "^8.3.4",
     "child_process": "^1.0.2",
     "del": "^5.0.0",
-    "eslint": "^5.0.1",
-    "eslint-config-standard": "^11.0.0",
-    "eslint-plugin-import": "^2.13.0",
-    "eslint-plugin-node": "^6.0.1",
-    "eslint-plugin-promise": "^3.8.0",
-    "eslint-plugin-standard": "^3.1.0",
+    "eslint": "^7.2.0",
+    "eslint-plugin-import": "^2.21.2",
+    "eslint-plugin-promise": "^4.2.1",
     "gulp": "^4.0.2",
     "gulp-clean-css": "^3.9.3",
     "gulp-htmlmin": "^5.0.1",
@@ -55,7 +46,7 @@
     "gulp-rename": "^1.2.2",
     "gulp-uglify-es": "^2.0.0",
     "gulp-util": "^3.0.8",
-    "husky": "^1.0.0-rc.6",
+    "husky": "^4.2.5",
     "jest": "^24.8.0",
     "less": "^2.7.3",
     "lodash": "^4.17.15",

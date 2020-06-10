@@ -84,25 +84,25 @@ Component({
     async foldContent() {
       // 获取 container-body-wrapper 的 css 属性信息
       const containerBodyWrapperRect =
-        await nodeUtil.getNodeRectFromComponent(this, '.container-body-wrapper')
+        await nodeUtil.getNodeRectFromComponent(this, '.container-body-wrapper');
 
       // 这里很重要，先把高度改为固定高度，transition 才会生效
       if (this.data.isExpandContent) {
         this.setData({
           bodyHeight: containerBodyWrapperRect.height + 'px'
-        })
+        });
 
         setTimeout(() => {
           this.setData({
             isExpandContent: false,
             bodyHeight: '0px'
-          })
-        }, 20)
+          });
+        }, 20);
       } else {
         this.setData({
           isExpandContent: false,
           bodyHeight: '0px'
-        })
+        });
       }
 
 
@@ -114,12 +114,12 @@ Component({
     async expandContent() {
       // 获取 container-body-wrapper 的 css 属性信息
       const containerBodyWrapperRect =
-        await nodeUtil.getNodeRectFromComponent(this, '.container-body-wrapper')
+        await nodeUtil.getNodeRectFromComponent(this, '.container-body-wrapper');
 
       this.setData({
         isExpandContent: true,
         bodyHeight: containerBodyWrapperRect.height + 'px'
-      })
+      });
     },
 
     /**
@@ -130,7 +130,7 @@ Component({
       if (this.data.isExpandContent) {
         this.setData({
           bodyHeight: 'auto'
-        })
+        });
       }
     }
   }

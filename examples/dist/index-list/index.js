@@ -1,13 +1,13 @@
-import nodeUtil from '../core/utils/node-util'
-import dataUtil from '../core/utils/data-util'
-import eventUtil from '../core/utils/event-util'
-import pixelUtil from '../core/utils/pixel-util'
+import nodeUtil from '../core/utils/node-util';
+import dataUtil from '../core/utils/data-util';
+import eventUtil from '../core/utils/event-util';
+import pixelUtil from '../core/utils/pixel-util';
 
 // 默认的 Sidebar 数据
 const defaultSidebarData = [
   'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M',
   'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'
-]
+];
 
 
 Component({
@@ -29,7 +29,7 @@ Component({
 
   lifetimes: {
     attached() {
-      this.init()
+      this.init();
     }
   },
 
@@ -104,12 +104,12 @@ Component({
 
   observers: {
     'scrollTop': function (scrollTop) {
-      this.setIndexListStyle(scrollTop)
+      this.setIndexListStyle(scrollTop);
     },
     'stickOffsetTop': function (stickOffsetTop) {
       this.setData({
         _stickOffsetTopPx: pixelUtil.rpx2px(stickOffsetTop)
-      })
+      });
     }
   },
 
@@ -124,19 +124,19 @@ Component({
      */
     async init() {
       // 解析 Sidebar Rect 信息
-      await this.parseSidebarRect()
+      await this.parseSidebarRect();
       // 解析 SidebarItem Rect 信息
-      await this.parseSidebarItemRect()
+      await this.parseSidebarItemRect();
       // 获取 index-anchor 所有组件实例
-      await this.parseIndexAnchors()
+      await this.parseIndexAnchors();
       // 解析 Anchor Rect 信息
-      this.parseAnchorRect()
+      this.parseAnchorRect();
 
-      wx.lin = wx.lin || {}
+      wx.lin = wx.lin || {};
       // 传入scrollTop的值的函数
       wx.lin.setScrollTop = (scrollTop) => {
-        dataUtil.setDiffData(this, {scrollTop})
-      }
+        dataUtil.setDiffData(this, {scrollTop});
+      };
     },
 
     // ================================== 节点信息获取函数 ==================================
@@ -145,11 +145,11 @@ Component({
      * 把 Sidebar 在页面中的位置信息存到 data 中
      */
     async parseSidebarRect() {
-      const sidebarRect = await nodeUtil.getNodeRectFromComponent(this, '.sidebar')
+      const sidebarRect = await nodeUtil.getNodeRectFromComponent(this, '.sidebar');
       this.setData({
         ['_sidebar.height']: sidebarRect.height,
         ['_sidebar.top']: sidebarRect.top
-      })
+      });
     },
 
     /**
@@ -158,30 +158,30 @@ Component({
      */
     async parseSidebarItemRect() {
       // Sidebar 索引个数
-      const sidebarLength = this.data.sidebarData.length
+      const sidebarLength = this.data.sidebarData.length;
       // 获取 sidebar-item 节点
-      const sidebarItemRect = await nodeUtil.getNodeRectFromComponent(this, '.sidebar-item')
+      const sidebarItemRect = await nodeUtil.getNodeRectFromComponent(this, '.sidebar-item');
       // Sidebar 单个索引高度(包含了 margin 空隙)
-      const sidebarItemHeight = this.data._sidebar.height / sidebarLength
+      const sidebarItemHeight = this.data._sidebar.height / sidebarLength;
       // Sidebar 单个索引真实高度
-      const sidebarItemRealHeight = sidebarItemRect.height
+      const sidebarItemRealHeight = sidebarItemRect.height;
       // 获取 sidebar-item margin-top 属性
       const sidebarItemFields = await nodeUtil.getNodeFieldsFromComponent(this, '.sidebar-item', {
         computedStyle: ['margin-top']
-      })
+      });
       // 获取 tip height 属性
       // 只能用 height 获取高度，因为 tip 旋转后，rect的宽高发生了变化
       const tipFields = await nodeUtil.getNodeFieldsFromComponent(this, '.tip', {
         computedStyle: ['height']
-      })
-      const sidebarItemCenterPoints = []
-      const sidebarItemMarginTop = sidebarItemFields['margin-top'].replace('px', '')
+      });
+      const sidebarItemCenterPoints = [];
+      const sidebarItemMarginTop = sidebarItemFields['margin-top'].replace('px', '');
 
       for (let i = 1; i <= sidebarLength; i++) {
-        sidebarItemCenterPoints.push((i * 2 - 1) * sidebarItemRealHeight / 2 + i * parseInt(sidebarItemMarginTop))
+        sidebarItemCenterPoints.push((i * 2 - 1) * sidebarItemRealHeight / 2 + i * parseInt(sidebarItemMarginTop));
       }
 
-      const tipHeight = parseInt(tipFields.height.replace('px', ''))
+      const tipHeight = parseInt(tipFields.height.replace('px', ''));
       this.setData({
         tipHeight,
         // tip 旋转后，中线位置下移了 20.5%
@@ -190,7 +190,7 @@ Component({
         ['_sidebar.sidebarItemHeight']: sidebarItemHeight,
         ['_sidebar.sidebarItemRealHeight']: sidebarItemRealHeight,
         ['_sidebar.sidebarItemCenterPoints']: sidebarItemCenterPoints
-      })
+      });
     },
 
     /**
@@ -198,23 +198,23 @@ Component({
      */
     parseIndexAnchors() {
       // 获取该 index-list 内部所有的 index-anchor
-      const indexAnchors = this.getRelationNodes('../index-anchor/index')
+      const indexAnchors = this.getRelationNodes('../index-anchor/index');
 
       // 没获取到节点实例的异常情况
       if (!indexAnchors) {
-        console.error('获取 index-anchor 节点实例失败，请参考文档检查您的代码是否书写正确')
-        return
+        console.error('获取 index-anchor 节点实例失败，请参考文档检查您的代码是否书写正确');
+        return;
       }
 
       // 存入 data
       this.setData({
         ['_anchor.indexAnchorComponents']: indexAnchors
-      })
+      });
 
       for (let i = 0; i < indexAnchors.length; i++) {
         indexAnchors[i].setData({
           anchorText: this.data.sidebarData[i]
-        })
+        });
       }
     },
 
@@ -223,20 +223,20 @@ Component({
      */
     async parseAnchorRect() {
       // 每个 Anchor 距离页面顶部的像素
-      const anchorTopLocations = []
+      const anchorTopLocations = [];
       // 每个 Anchor 的高度
-      const anchorItemsHeight = []
+      const anchorItemsHeight = [];
       // index-anchor 组件实例
-      const indexAnchorComponents = this.data._anchor.indexAnchorComponents
+      const indexAnchorComponents = this.data._anchor.indexAnchorComponents;
 
       for (const indexAnchorComponent of indexAnchorComponents) {
         // todo 此处获取 .anchor 节点，不知为什么在 index-anchor 组件中获取到的为空，后期再调研修改
-        const anchorRect = await nodeUtil.getNodeRectFromComponent(indexAnchorComponent, '.anchor')
+        const anchorRect = await nodeUtil.getNodeRectFromComponent(indexAnchorComponent, '.anchor');
         if (anchorRect === null) {
-          continue
+          continue;
         }
-        anchorTopLocations.push(anchorRect.top)
-        anchorItemsHeight.push(anchorRect.height)
+        anchorTopLocations.push(anchorRect.top);
+        anchorItemsHeight.push(anchorRect.height);
       }
 
       this.setData({
@@ -244,7 +244,7 @@ Component({
         ['_anchor.anchorTopLocations']: anchorTopLocations,
         // 每个 Anchor 的高度
         ['_anchor.anchorItemsHeight']: anchorItemsHeight
-      })
+      });
 
     },
 
@@ -256,7 +256,7 @@ Component({
     switchTipShow(isShow) {
       dataUtil.setDiffData(this, {
         showTip: isShow
-      })
+      });
     },
 
     /**
@@ -266,7 +266,7 @@ Component({
     switchSidebarIndex(index) {
       dataUtil.setDiffData(this, {
         activeSidebarItem: index,
-      })
+      });
     },
 
     /**
@@ -275,7 +275,7 @@ Component({
     switchIsMovingSidebar(isMoving) {
       dataUtil.setDiffData(this, {
         ['_sidebar.isMoving']: isMoving
-      })
+      });
     },
 
     /**
@@ -284,16 +284,16 @@ Component({
      */
     setIndexListStyle(scrollTop) {
       // 当前应该激活的索引
-      const currentShouldActiveIndex = this.countCurrentActiveIndex(scrollTop)
+      const currentShouldActiveIndex = this.countCurrentActiveIndex(scrollTop);
       if (currentShouldActiveIndex === undefined) {
-        return
+        return;
       }
 
       // 设置 Anchor 的样式
-      this.data.isStick && this.setAnchorStyle(scrollTop)
+      this.data.isStick && this.setAnchorStyle(scrollTop);
       // 激活 Sidebar 选项
       if (this.data.showSidebar && !this.data._sidebar.isMoving) {
-        this.switchSidebarIndex(currentShouldActiveIndex)
+        this.switchSidebarIndex(currentShouldActiveIndex);
       }
     },
 
@@ -309,43 +309,43 @@ Component({
         anchorItemsHeight,
         // 所有 index-anchor 组件实例
         indexAnchorComponents
-      } = this.data._anchor
+      } = this.data._anchor;
 
       // 当前应该激活的索引
-      const currentShouldActiveIndex = this.countCurrentActiveIndex(scrollTop)
+      const currentShouldActiveIndex = this.countCurrentActiveIndex(scrollTop);
 
       // 当前应该激活的 index-anchor 组件实例
-      const currentIndexAnchorComponent = indexAnchorComponents[currentShouldActiveIndex]
+      const currentIndexAnchorComponent = indexAnchorComponents[currentShouldActiveIndex];
       // 当前应该激活的 Anchor top 值
-      const currentIndexAnchorTop = anchorTopLocations[currentShouldActiveIndex]
+      const currentIndexAnchorTop = anchorTopLocations[currentShouldActiveIndex];
       // 当前应该激活的 Anchor 高度
-      const currentIndexAnchorHeight = anchorItemsHeight[currentShouldActiveIndex]
+      const currentIndexAnchorHeight = anchorItemsHeight[currentShouldActiveIndex];
 
       // 下一个应该激活的 Anchor top 值
-      const nextIndexAnchorTop = anchorTopLocations[currentShouldActiveIndex + 1]
+      const nextIndexAnchorTop = anchorTopLocations[currentShouldActiveIndex + 1];
 
       // stickOffsetTop px值
-      const stickOffsetTop = this.data._stickOffsetTopPx
+      const stickOffsetTop = this.data._stickOffsetTopPx;
       if (scrollTop + stickOffsetTop >= currentIndexAnchorTop && scrollTop + stickOffsetTop <= nextIndexAnchorTop - currentIndexAnchorHeight && !currentIndexAnchorComponent.isFixed()) {
         // 该条件下，当前 Anchor 应该设置为 fixed 布局，并把其他 Anchor 样式清空
-        currentIndexAnchorComponent.setFixed(this.data.stickOffsetTop, currentIndexAnchorHeight)
+        currentIndexAnchorComponent.setFixed(this.data.stickOffsetTop, currentIndexAnchorHeight);
         for (let i = 0; i < indexAnchorComponents.length; i++) {
           if (i !== currentShouldActiveIndex) {
-            indexAnchorComponents[i].clearStyle()
+            indexAnchorComponents[i].clearStyle();
           }
         }
       } else if (scrollTop + stickOffsetTop > nextIndexAnchorTop - currentIndexAnchorHeight && scrollTop + stickOffsetTop < nextIndexAnchorTop && !currentIndexAnchorComponent.isRelative()) {
         // 该条件下，当前 Anchor 应该设置为 relative 布局，并把其他 Anchor 样式清空
-        currentIndexAnchorComponent.setRelative(nextIndexAnchorTop - currentIndexAnchorTop - currentIndexAnchorHeight)
+        currentIndexAnchorComponent.setRelative(nextIndexAnchorTop - currentIndexAnchorTop - currentIndexAnchorHeight);
         for (let i = 0; i < indexAnchorComponents.length; i++) {
           if (i !== currentShouldActiveIndex) {
-            indexAnchorComponents[i].clearStyle()
+            indexAnchorComponents[i].clearStyle();
           }
         }
       } else if (scrollTop + stickOffsetTop < currentIndexAnchorTop) {
         // 该条件下，清空所有 Anchor 样式
         for (let i = 0; i < indexAnchorComponents.length; i++) {
-          indexAnchorComponents[i].clearStyle()
+          indexAnchorComponents[i].clearStyle();
         }
       }
     },
@@ -355,20 +355,20 @@ Component({
      * @param scrollTop onScrollTop() 函数监听得到的值
      */
     countCurrentActiveIndex(scrollTop) {
-      let result = 0
+      let result = 0;
       // 每个 Anchor 距离页面顶部的 px 值
-      const {anchorTopLocations} = this.data._anchor
+      const {anchorTopLocations} = this.data._anchor;
 
       for (let i = 0; i < anchorTopLocations.length; i++) {
         if (scrollTop + this.data._stickOffsetTopPx < anchorTopLocations[i]) {
-          result = i - 1
-          break
+          result = i - 1;
+          break;
         }
       }
       if (result < 0) {
-        result = 0
+        result = 0;
       }
-      return result
+      return result;
     },
 
     // ================================== 事件监听函数 ==================================
@@ -380,45 +380,45 @@ Component({
     onTouchMove(event) {
 
       // 显示 Tip
-      this.switchTipShow(true)
+      this.switchTipShow(true);
       // 标识正在滑动 Sidebar
-      this.switchIsMovingSidebar(true)
+      this.switchIsMovingSidebar(true);
 
       // 取出 Sidebar 位置信息
-      const {top: sidebarTop, sidebarItemHeight} = this.data._sidebar
+      const {top: sidebarTop, sidebarItemHeight} = this.data._sidebar;
       // Sidebar 索引个数
-      const sidebarLength = this.data.sidebarData.length
+      const sidebarLength = this.data.sidebarData.length;
       // 触摸点 Y 坐标
-      const touchY = event.touches[0].clientY
+      const touchY = event.touches[0].clientY;
       // 计算当前触摸点在第几个索引除
-      let index = Math.floor((touchY - sidebarTop) / sidebarItemHeight)
+      let index = Math.floor((touchY - sidebarTop) / sidebarItemHeight);
 
       // 滑动超过范围时限制索引边界值
       if (index < 0) {
-        index = 0
+        index = 0;
       } else if (index > sidebarLength - 1) {
-        index = sidebarLength - 1
+        index = sidebarLength - 1;
       }
 
       // 选中的索引文字
-      const tipText = this.data.sidebarData[index]
+      const tipText = this.data.sidebarData[index];
       dataUtil.setDiffData(this, {
         tipText,
         activeSidebarItem: index,
         tipTop: this.data._sidebar.sidebarItemCenterPoints[index]
-      })
+      });
 
       // 页面应该滚动到的位置
-      let scrollPageToLocation = this.data._anchor.anchorTopLocations[index] - this.data._stickOffsetTopPx
+      let scrollPageToLocation = this.data._anchor.anchorTopLocations[index] - this.data._stickOffsetTopPx;
 
       // 滚动页面到对应索引处
       wx.pageScrollTo({
         duration: 0,
         scrollTop: scrollPageToLocation
-      })
+      });
 
       // 触发 linselected 事件
-      eventUtil.emit(this, 'linselected', {index, tipText})
+      eventUtil.emit(this, 'linselected', {index, tipText});
     },
 
     /**
@@ -427,9 +427,9 @@ Component({
     onTouchend() {
       // 300 毫秒后隐藏 Tip
       setTimeout(() => {
-        this.switchTipShow(false)
-      }, 500)
-      this.switchIsMovingSidebar(false)
+        this.switchTipShow(false);
+      }, 500);
+      this.switchIsMovingSidebar(false);
     },
 
     /**
@@ -437,7 +437,7 @@ Component({
      */
     onTapSidebar(event) {
       // 把事件对象传入触摸滑动监听函数即可
-      this.onTouchMove(event)
+      this.onTouchMove(event);
     }
   }
-})
+});

@@ -1,0 +1,41 @@
+<l-capsule-bar catch:linrightlongpress="onLongPressRight"
+                  catch:linleftlongpress="onLongPressLeft"
+                  capsule-color="white"
+                  title-color="white"
+                  bg-color="#3963bc"
+                  home-page='/pages/navigator/index/index'
+                  title="林间有风">
+  <image src="bg.png" class="background-head"></image>
+  <view class="text-head">
+    <view>顶部左侧胶囊按钮可返回上一页和首页</view>
+    <view>长按胶囊按钮可以触发相应事件</view>
+  </view>
+
+  <view class="body-container">
+    <view class="navigation-bar-text">胶囊栏组件适合页面顶部有背景图片的情况下使用，同时会在左侧添加用于返回上一页面和首页的按钮。</view>
+    <view class="center-container">
+      <view class="center-card" catch:tap="onTapStarCard">
+        <view class="center-card-icon-wrapper">
+          <image style="width: 44rpx;height: 42rpx" src="star.png"></image>
+          <view>1.6 K</view>
+        </view>
+        <view class="center-card-detail">
+          你的每一颗 Star 都是我们持续更新的动力，点击复制 Github 链接，为我们点亮那颗支撑我们前行的星星！
+        </view>
+      </view>
+      <view class="center-card">
+        <view class="center-card-icon-wrapper">
+          <image style="width: 44rpx;height: 44rpx" src="download.png"></image>
+          <view>14 K</view>
+        </view>
+        <view class="center-card-detail">
+          Lin UI 迄今为止已拥有 14 K 的下载量，并经过长达 2 年时间的打磨，稳定性和易用性都已达到前所未有的水平。
+        </view>
+      </view>
+    </view>
+
+    <view catch:tap="onTapPublicCard" class="bottom-container">
+      <image style="width: 538rpx;height: 278rpx" src="qrcode.png"></image>
+    </view>
+  </view>
+</l-capsule-bar>

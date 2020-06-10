@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "l-capsule-bar":"/dist/capsule-bar/index"
+  },
+  "navigationStyle":"custom",
+  "navigationBarTextStyle":"white"
+}

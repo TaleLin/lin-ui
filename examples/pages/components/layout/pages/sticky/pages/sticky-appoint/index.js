@@ -6,24 +6,24 @@ Page({
   data: {
     grids2: [
       {
-        image: "cart",
-        text: "我的购物车"
+        image: 'cart',
+        text: '我的购物车'
       },
       {
-        image: "help",
-        text: "帮助中心"
+        image: 'help',
+        text: '帮助中心'
       },
       {
-        image: "address",
-        text: "地址管理"
+        image: 'address',
+        text: '地址管理'
       },
       {
-        image: "order",
-        text: "我的订单"
+        image: 'order',
+        text: '我的订单'
       },
       {
-        image: "customer-service",
-        text: "联系客服"
+        image: 'customer-service',
+        text: '联系客服'
       }
     ]
   },
@@ -31,7 +31,7 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function(options) {},
+  onLoad: function() {},
 
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -67,4 +67,4 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function() {}
-})
+});

@@ -32,7 +32,7 @@
 
 
     <content-card class="content" name="自定义元素个数">
-      <l-rate score="3" count="10" bind:linChange="changeScore" />
+      <l-rate score="3" count="10"/>
     </content-card>
 
     <content-card class="content" name="禁用组件">

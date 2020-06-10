@@ -1,7 +1,7 @@
 <!--  input/input.wxml -->
 <label
   class='form-item {{disabled? "disabled": ""}} l-class form-item-{{labelLayout}}'
-  style="width:{{width}}rpx">
+  style="width:{{width===null?'auto':width+'rpx'}}">
   <view class='mask' wx:if="{{disabled}}"></view>
   <view class='row' hidden="{{ showRow ? '' : 'hidden' }}" style="width:{{width}}rpx;"></view>
   <view wx:if="{{label && !labelCustom}}" hidden="{{hideLabel}}" class='form-label l-label-class form-label-{{labelLayout}}' style='{{labelLayout !== "top" ? "width:"+ labelWidth+ "rpx;" : "" }} height:{{labelLayout=== "top" ? labelWidth + "rpx" : "" }}'>
@@ -13,7 +13,7 @@
   </view>
   <!-- 小程序表单组件 -->
   <input
-    class="input {{hideLabel?'hideLabel':''}}"
+    class="input {{hideLabel?'hideLabel':''}} l-input-class"
     value="{{ value }}"
     type="{{type}}"
     password="{{type==='password'}}"
@@ -27,6 +27,7 @@
     bindfocus="handleInputFocus"
     bindblur="handleInputBlur"
     bindconfirm="handleInputConfirm" />
+  <l-icon wx:if="{{showEye&&value}}" name="eye" catch:tap="onTapEyeIcon" size="40" l-class="l-eye l-eye-{{type}}"/>
   <view class="close" wx:if="{{clear&&value}}" bindtap="onClearTap">
     <view  class="close-icon">
       <l-icon  name="close" color="#fff" size="16" />

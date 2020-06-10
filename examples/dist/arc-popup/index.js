@@ -1,14 +1,20 @@
 import validator from '../behaviors/validator';
 import zIndex from '../behaviors/zIndex';
 const detail = true;
-const option = { bubbles: true, composed: true };
+const option = {
+  bubbles: true,
+  composed: true
+};
 
 Component({
   /**
    * 组件的属性列表
    */
   behaviors: [zIndex, validator],
-  externalClasses: ['l-class', 'l-panel-class', 'l-bg-class'],
+  externalClasses: ['l-class', 'l-panel-class', 'l-bg-class', 'l-header-class'],
+  options: {
+    multipleSlots: true // 在组件定义时的选项中启用多slot支持
+  },
   properties: {
     // 显示与隐藏
     show: {
@@ -50,6 +56,11 @@ Component({
       type: String,
       options: ['top', 'bottom'],
       value: 'bottom'
+    },
+    // header是否吸顶
+    headerFixed: {
+      type: Boolean,
+      value: true
     }
   },
 
@@ -76,9 +87,9 @@ Component({
     },
     'arcRadius': function (arcRadius) {
       if (this.properties.direction === 'top') {
-        this.data._arcRadiusTop = arcRadius
+        this.data._arcRadiusTop = arcRadius;
       } else {
-        this.data._ardRadiusBottom = arcRadius
+        this.data._ardRadiusBottom = arcRadius;
       }
       this.getArcPopupStyle();
     }
@@ -102,7 +113,9 @@ Component({
           tranistion = true,
           direction = 'bottom',
           locked = false
-        } = { ...options };
+        } = {
+          ...options
+        };
         this.setData({
           zIndex,
           tranistion,
@@ -118,31 +131,31 @@ Component({
       };
     },
     getArcPopupStyle() {
-      const direction = this.properties.direction
-      const arcRadiusTop = this.data._arcRadiusTop
-      const ardRadiusBottom = this.data._ardRadiusBottom
-      const maxHeight = this.properties.maxHeight
-      const minHeight = this.properties.minHeight
-      const style = `
+      const direction = this.properties.direction;
+      const arcRadiusTop = this.data._arcRadiusTop;
+      const ardRadiusBottom = this.data._ardRadiusBottom;
+      const maxHeight = this.properties.maxHeight;
+      const minHeight = this.properties.minHeight;
+      const arcStyle = `
         border-bottom-left-radius:${direction === 'top' ? arcRadiusTop : 0}rpx;
         border-bottom-right-radius:${direction === 'top' ? arcRadiusTop : 0}rpx;
         border-top-left-radius:${direction === 'bottom' ? ardRadiusBottom : 0}rpx;
         border-top-right-radius:${direction === 'bottom' ? ardRadiusBottom : 0}rpx;
         max-height:${maxHeight}rpx;
         min-height:${minHeight}rpx;
-      `
+      `;
       this.setData({
-        arcStyle: style
-      })
+        arcStyle,
+      });
     },
     onArcPopupTap() {
       if (this.data.locked) {
-        return
+        return;
       }
       if (this.properties.show) {
         this.setData({
           show: false
-        })
+        });
       }
     }
   },
@@ -150,4 +163,4 @@ Component({
   ready() {
     this.getArcPopupStyle();
   }
-})
+});

@@ -41,18 +41,18 @@ Page({
     },
     items: [
       {
-      id: 1,
-      name: '青瓷',
-      checked: false
-    }, {
-      id: 2,
-      name: '双棍',
-      checked: false
-    }, {
-      id: 3,
-      name: '明天',
-      checked: false
-    }],
+        id: 1,
+        name: '青瓷',
+        checked: false
+      }, {
+        id: 2,
+        name: '双棍',
+        checked: false
+      }, {
+        id: 3,
+        name: '明天',
+        checked: false
+      }],
     items2: [
       {
         id: 1,
@@ -88,7 +88,7 @@ Page({
           if(value < 3) {
             callback(false);
           } else {
-            callback()
+            callback();
           }
         },
         message: '评分必须大于等于3分',
@@ -118,7 +118,7 @@ Page({
           if(password !== confirm) {
             callback(false);
           }
-          callback()
+          callback();
         },
         message: '两次密码输入不一致',
         trigger: 'change'
@@ -130,7 +130,7 @@ Page({
   change(e) {
     let items = this.data.items;
     items.forEach(item => {
-      if(item.name == e.detail.key) {
+      if(item.name === e.detail.key) {
         item.checked = e.detail.checked;
       }
     });
@@ -142,7 +142,7 @@ Page({
   change2(e) {
     let items = this.data.items2;
     items.forEach(item => {
-      if(item.name == e.detail.key) {
+      if(item.name === e.detail.key) {
         item.checked = e.detail.checked;
       }
     });
@@ -155,7 +155,7 @@ Page({
     this.setData({
       tipType: e.currentTarget.dataset.type
     });
-    wx.lin.resetForm('ruleForm')
+    wx.lin.resetForm('ruleForm');
   },
 
   changeSubmitValidate(e) {
@@ -174,15 +174,11 @@ Page({
     });
   },
 
-  submit(data){
-    console.log(JSON.stringify(data.detail))
-  },
-
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function () {
-    wx.lin.initValidateForm(this)
+    wx.lin.initValidateForm(this);
   },
 
   /**
@@ -233,4 +229,4 @@ Page({
   onShareAppMessage: function () {
 
   }
-})
+});

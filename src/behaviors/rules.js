@@ -93,9 +93,9 @@ export default Behavior({
       // async-validator 对空字符串会进行类型检查，与required会冲突
       Object.getOwnPropertyNames(value).forEach((key) => {
         if (value[key] === '') {
-          value[key] = undefined
+          value[key] = undefined;
         }
-      })
+      });
 
       this.data.schema.validate(value, (errors) => {
         this.setData({

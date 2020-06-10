@@ -22,12 +22,7 @@
       show="{{ show }}"
       duration="{{ { enter: 300, leave: 1000 } }}"
       l-class="lin-custom-class"
-      bind:linbeforeenter="beforeEnter"
-      bind:linenter="entering"
       bind:linafterenter="afterEnter"
-      bind:linbeforeleave="beforeLeave"
-      bind:linleave="leaving"
-      bind:linafterleave="afterLeave"
       name="{{transitionName}}"
 >
   <label>林间有风</label>
@@ -43,7 +38,7 @@
 >
   <view class="case-container-0">
     <view>
-      <image style="width:100%" widthFix src="/images/animation/transition/test.png"/>
+      <image style="width:100%" widthFix src="cloud://env-9eb476.656e-env-9eb476-1258886794/images/components/transition/test1.png"/>
     </view>
     <view class="case-close-0">
       <l-icon color="#fff" l-class="case-icon-class-0" name="close" bind:tap="closeCase" data-name="0"/>

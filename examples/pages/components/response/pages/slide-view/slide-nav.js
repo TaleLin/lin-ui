@@ -1,13 +1,13 @@
 const slideNaviConfigs = [
   {
-    title: "基本案例",
+    title: '基本案例',
     type: 0,
     config: {
       slideWidth: 200,
     }
   },
   {
-    title: "禁止滑动",
+    title: '禁止滑动',
     type: 1,
     config: {
       slideWidth: 200
@@ -15,7 +15,7 @@ const slideNaviConfigs = [
   },
 
   {
-    title: "自定义阈值",
+    title: '自定义阈值',
     type: 2,
     config: {
       slideWidth: 200,
@@ -24,7 +24,7 @@ const slideNaviConfigs = [
   },
 
   {
-    title: "点击后自动关闭",
+    title: '点击后自动关闭',
     type: 3,
     config: {
       slideWidth: 200
@@ -33,14 +33,14 @@ const slideNaviConfigs = [
 
 
   {
-    title: "开启和关闭事件",
+    title: '开启和关闭事件',
     type: 4,
     config: {
       slideWidth: 200
     }
   },
   {
-    title: "通过按钮关闭",
+    title: '通过按钮关闭',
     type: 5,
     config: {
       slideWidth: 200
@@ -48,7 +48,7 @@ const slideNaviConfigs = [
   },
 
   {
-    title: "经典案例",
+    title: '经典案例',
     type: 6,
     config: {
       slideWidth: 200
@@ -56,6 +56,6 @@ const slideNaviConfigs = [
   }
 
 
-]
+];
 
 export default slideNaviConfigs;

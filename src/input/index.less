@@ -1,4 +1,4 @@
-/* input/input.wxss */
+@import "../../config/styles/_base.less";
 
 .form-item{
   position: relative;
@@ -47,25 +47,6 @@
   width: 100%;
 }
 
-/* labelLayout */
-// .form-item-top{
-  // display: flex;
-  // flex-direction: column;
-// }
-
-// .form-item-left{
-//   display: flex;
-//   flex-direction: row;
-//   align-items: center;
-// }
-
-// .form-item-right{
-//   display: flex;
-//   flex-direction: row;
-// }
-
-/* form-label */
-
 .form-label-right{
   justify-content: flex-end
 }
@@ -80,7 +61,7 @@
   flex: 1;
 }
 
-.close {
+.close{
   height: 36rpx;
   width: 36rpx;
   background: #ddd;
@@ -98,4 +79,16 @@
 
 .hideLabel{
   padding-left: 25rpx;
+}
+
+.l-eye{
+  padding: 10rpx;
+
+  &-text{
+    color: @default-color !important;
+  }
+
+  &-password{
+    color: fadeout(@default-color, 40%) !important;
+  }
 }

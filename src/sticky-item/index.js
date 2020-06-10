@@ -106,14 +106,14 @@ Component({
        * 设置sticky-item组件距页面顶部的距离
        * 和sticky-item组件的高度
        */
-      const stickyItemNodeRect = await nodeUtil.getNodeRectFromComponent(this,'.l-sticky-item')
+      const stickyItemNodeRect = await nodeUtil.getNodeRectFromComponent(this,'.l-sticky-item');
       this.setData({
         stickyItemTop: stickyItemNodeRect.top + scrollTop,
         stickyItemHeight: stickyItemNodeRect.height
-      })
+      });
 
       // 设置sticky-item-header外层容器高度
-      const stickyItemHeaderNodeRect = await nodeUtil.getNodeRectFromComponent(this,'.l-sticky-item-header')
+      const stickyItemHeaderNodeRect = await nodeUtil.getNodeRectFromComponent(this,'.l-sticky-item-header');
       this.setData({
         stickyItemWrapperHeight: stickyItemHeaderNodeRect.height
       });

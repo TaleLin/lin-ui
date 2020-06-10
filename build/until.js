@@ -2,7 +2,7 @@ const fs = require('fs');
 let componentArr = [];
 
 function componentData() {
-  let data = fs.readFileSync(`../config/component.json`, 'utf-8');
+  let data = fs.readFileSync('../config/component.json', 'utf-8');
   let params = JSON.parse(data).components;
   componentArr.push(...params);
   forParams(params);
