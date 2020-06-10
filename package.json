@@ -11,7 +11,7 @@
     "build": "gulp -f build/index.js build",
     "watch": "gulp -f build/index.js watch",
     "lint": "eslint .",
-    "test": "jest",
+    "fix": "eslint . --fix",
     "release": "sh build/release.sh",
     "changelog": "conventional-changelog -p conventionalcommits -i CHANGELOG.md -s -n .convention-changelog-config.js"
   },
@@ -28,12 +28,6 @@
   "files": [
     "dist"
   ],
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run lint",
-      "commit-msg": "commitlint -e $GIT_PARAMS"
-    }
-  },
   "homepage": "http://doc.mini.7yue.pro",
   "devDependencies": {
     "@commitlint/cli": "^8.3.5",
@@ -52,7 +46,7 @@
     "gulp-rename": "^1.2.2",
     "gulp-uglify-es": "^2.0.0",
     "gulp-util": "^3.0.8",
-    "husky": "^1.0.0-rc.6",
+    "husky": "^4.2.5",
     "jest": "^24.8.0",
     "less": "^2.7.3",
     "lodash": "^4.17.15",
