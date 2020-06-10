@@ -64,7 +64,8 @@ module.exports = {
         'Counter',
         'SearchBar',
         'IndexList',
-        'Behavior'
+        'Behavior',
+        'CapsuleBar'
       ]
     ]
   }

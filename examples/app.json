@@ -83,7 +83,8 @@
         "pages/tabs/index",
         "pages/tabbar/index",
         "pages/combined-tabs/index",
-        "pages/segment/index"
+        "pages/segment/index",
+        "pages/capsule-bar/index"
       ]
     },
     {
