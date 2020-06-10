@@ -5,7 +5,7 @@ const layoutNaviConfigs = [
     desc: '列表',
     componentsPath: '/pages/components/layout/pages/list/index'
   }, {
-    icon: '/images/component/list.jpg',
+    icon: '/images/component/index-list.png',
     title: 'IndexList',
     desc: '索引列表',
     componentsPath: '/pages/components/layout/pages/index-list/index'
@@ -36,7 +36,7 @@ const layoutNaviConfigs = [
     desc: '吸顶容器',
     componentsPath: '/pages/components/layout/pages/sticky/index'
   }, {
-    icon: '/images/component/album.png',
+    icon: '/images/component/collapse.png',
     title: 'Collapse',
     desc: '折叠面板',
     componentsPath: '/pages/components/layout/pages/collapse/index'
