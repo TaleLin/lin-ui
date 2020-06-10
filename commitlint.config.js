@@ -13,6 +13,7 @@ module.exports = {
         'VuePress',
         'package.json',
         'TravisCI',
+        'Husky',
         'README',
         'util',
         '.editorconfig',
