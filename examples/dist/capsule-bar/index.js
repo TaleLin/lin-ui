@@ -1,6 +1,6 @@
-import deviceUtil from '../utils/device-util'
-import validator from '../behaviors/validator'
-import eventUtil from '../core/utils/event-util'
+import deviceUtil from '../utils/device-util';
+import validator from '../behaviors/validator';
+import eventUtil from '../core/utils/event-util';
 
 Component({
   behaviors: [validator],
@@ -77,7 +77,7 @@ Component({
     ready:function () {
       this.setData({
         capsuleButtonInfo: this.getCapsuleButtonInfo()
-      })
+      });
     }
   },
 
@@ -87,21 +87,21 @@ Component({
      * 获取左侧胶囊按钮信息
      */
     getCapsuleButtonInfo() {
-      const screenWidth = wx.getSystemInfoSync().screenWidth
-      const capsuleButtonInfo = wx.getMenuButtonBoundingClientRect()
-      capsuleButtonInfo.left = screenWidth - capsuleButtonInfo.right
-      capsuleButtonInfo.right = capsuleButtonInfo.left + capsuleButtonInfo.width
-      return capsuleButtonInfo
+      const screenWidth = wx.getSystemInfoSync().screenWidth;
+      const capsuleButtonInfo = wx.getMenuButtonBoundingClientRect();
+      capsuleButtonInfo.left = screenWidth - capsuleButtonInfo.right;
+      capsuleButtonInfo.right = capsuleButtonInfo.left + capsuleButtonInfo.width;
+      return capsuleButtonInfo;
     },
 
     /**
      * 监听：点击左侧按钮
      */
     onTapLeftButton() {
-      eventUtil.emit(this, 'linlefttap')
+      eventUtil.emit(this, 'linlefttap');
 
       if (!this.data.disableBack) {
-        wx.navigateBack()
+        wx.navigateBack();
       }
     },
 
@@ -109,25 +109,25 @@ Component({
      * 监听：长按左侧按钮
      */
     onLongPressLeftButton() {
-      eventUtil.emit(this, 'linleftlongpress')
+      eventUtil.emit(this, 'linleftlongpress');
     },
 
     /**
      * 监听：点击右侧按钮
      */
     async onTapRightButton() {
-      eventUtil.emit(this, 'linrighttap')
+      eventUtil.emit(this, 'linrighttap');
 
-      const homePage = this.data.homePage
+      const homePage = this.data.homePage;
       if (!this.data.disableHome) {
         wx.switchTab({
           url: homePage,
           fail() {
             wx.navigateTo({
               url: homePage
-            })
+            });
           }
-        })
+        });
       }
     },
 
@@ -135,7 +135,7 @@ Component({
      * 监听：长按右侧按钮
      */
     onLongPressRightButton() {
-      eventUtil.emit(this, 'linrightlongpress')
+      eventUtil.emit(this, 'linrightlongpress');
     }
   }
-})
+});
