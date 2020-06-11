@@ -10,6 +10,7 @@ module.exports = {
       'always',
       [
         'EsLint',
+        'Github',
         'VuePress',
         'package.json',
         'TravisCI',
