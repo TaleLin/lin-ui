@@ -17,15 +17,8 @@ jobs:
         - yarn dev
         - yarn build
       after_success:
-        - git config --global user.name "Deployment Bot"
-        - git config --global user.email "deploy@travis-ci.org"
+        - git config --global user.name "Juzi"
+        - git config --global user.email "juzi214032@qq.com"
         - git add -A
         - "git commit -m 'build: Travis CI automatic compilation'"
         - git push "https://juzi214032:${GITHUB_TOKEN}@github.com/TaleLin/lin-ui" HEAD:develop
-    - name: "Check Compile"
-      if: type = pull_request OR (type = push AND branch = master)
-      before_install: export TZ='Asia/Shanghai'
-      install: yarn install
-      script:
-        - yarn dev
-        - yarn build
