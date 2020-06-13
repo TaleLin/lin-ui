@@ -13,6 +13,7 @@ module.exports = {
         'Github',
         'VuePress',
         'package.json',
+        'License',
         'TravisCI',
         'GithubAction',
         'Husky',
