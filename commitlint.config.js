@@ -14,6 +14,7 @@ module.exports = {
         'VuePress',
         'package.json',
         'TravisCI',
+        'GithubAction',
         'Husky',
         'README',
         'util',
