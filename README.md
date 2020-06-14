@@ -25,7 +25,7 @@
 
 <div align="center">
 
-⚡️ 文档网站: http://doc.mini.7yue.pro/
+⚡️ 文档网站: http://doc.mini.talelin.com
 <br/>
 🔥 教程地址: [https://talelin.com](https://talelin.com/#course)
 
