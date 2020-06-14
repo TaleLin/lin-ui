@@ -6,6 +6,7 @@
       l-tip-class="l-tip-class"
       style="width:100%"
       sidebar-data="{{sideBarData}}"
+      l-sidebar-class="sidebar-class"
       l-tip-text-class="l-tip-text-class">
       <block wx:for="{{sideBarData.length}}" wx:key="index" wx:for-index="anchorIndex">
         <l-index-anchor/>
