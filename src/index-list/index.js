@@ -13,7 +13,7 @@ const defaultSidebarData = [
 Component({
 
   externalClasses: [
-    'l-tip-class', 'l-tip-text-class', 'l-sidebar-class', 'l-selected-class', 'l-unselected-class'
+    'l-tip-class', 'l-tip-text-class', 'l-sidebar-class', 'l-selected-class', 'l-unselected-class','l-sidebar-item-class'
   ],
 
   relations: {
