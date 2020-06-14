@@ -44,7 +44,7 @@
         <content-card l-content="content" name="自定义背景">
             <view class="circle-container">
                 <l-circle percent='50'>
-                    <image src="timg.jpeg" slot='background' style="width:90rpx;height:90rpx;border-radius:50%;display:block;" />
+                    <image src="timg.jpeg" style="width:90rpx;height:90rpx;border-radius:50%;display:block;" />
                 </l-circle>
             </view>
         </content-card>
