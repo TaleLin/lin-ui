@@ -11,21 +11,32 @@ jobs:
   git:
     name: Git CI
     runs-on: ubuntu-latest
-    env:
-      JUZI_TOKEN: ${{secrets.JUZI_TOKEN}}
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
         with:
           node-version: 12
-      - run: export TZ='Asia/Shanghai'
-      - run: rm -rf dist
-      - run: rm -rf examples/dist
-      - run: npm i
-      - run: npm run build
-      - run: npm run dev
-      - run: git config --global user.name "桔子"
-      - run: git config --global user.email "juzi214032@qq.com"
-      - run: git add -A
-      - run: "git commit -m 'build: Github Action automatic compilation'"
-      - run: git push "https://juzi214032:$JUZI_TOKEN@github.com/TaleLin/lin-ui" HEAD:develop
+      - name: 准备目录
+        run: |
+          export TZ='Asia/Shanghai'
+          rm -rf dist
+          rm -rf examples/dist
+      - name: 安装依赖
+        run: npm i
+      - name: 编译文件
+        run: |
+          npm run dev
+          npm run build
+      - name: 设置 Git 信息
+        run: |
+          git config --global user.name "桔子"
+          git config --global user.email "juzi214032@qq.com"
+      - name: PUSH 文件
+        continue-on-error: true
+        env:
+          JUZI_TOKEN: ${{secrets.JUZI_TOKEN}}
+        run: |
+          git add -A
+          git commit -m 'build: Github Action automatic compilation'
+          git pull --rebase
+          git push "https://juzi214032:$JUZI_TOKEN@github.com/TaleLin/lin-ui" develop
