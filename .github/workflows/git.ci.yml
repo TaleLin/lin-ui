@@ -33,10 +33,8 @@ jobs:
           git config --global user.email "juzi214032@qq.com"
       - name: PUSH 文件
         continue-on-error: true
-        env:
-          JUZI_TOKEN: ${{secrets.JUZI_TOKEN}}
         run: |
           git add -A
           git commit -m 'build: Github Action automatic compilation'
           git pull --rebase
-          git push "https://juzi214032:${JUZI_TOKEN}@github.com/TaleLin/lin-ui" develop
+          git push "https://juzi214032:${{secrets.juzi_token}}@github.com/TaleLin/lin-ui" develop
