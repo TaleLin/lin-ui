@@ -11,6 +11,8 @@ jobs:
   git:
     name: Git CI
     runs-on: ubuntu-latest
+    env:
+      JUZI_TOKEN: ${{secrets.JUZI_TOKEN}}
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
@@ -26,4 +28,4 @@ jobs:
       - run: git config --global user.email "juzi214032@qq.com"
       - run: git add -A
       - run: "git commit -m 'build: Github Action automatic compilation'"
-      - run: git push "https://juzi214032:${{secrets.JUZI_TOKEN}}@github.com/TaleLin/lin-ui" HEAD:develop
+      - run: git push "https://juzi214032:$JUZI_TOKEN@github.com/TaleLin/lin-ui" HEAD:develop
