@@ -1,0 +1,29 @@
+# 指定运行环境
+language: node_js
+
+node_js:
+  - lts/*
+
+branches:
+  only:
+  - develop
+
+jobs:
+  include:
+    - name: "Push Compile"
+      if: type = push
+      install: yarn install
+      before_script:
+        - export TZ='Asia/Shanghai'
+        - rm -rf dist
+        - rm -rf examples/dist
+      script:
+        - yarn dev
+        - yarn build
+      after_success:
+        - git config --global user.name "桔子"
+        - git config --global user.email "juzi214032@qq.com"
+        - git add -A
+        - "git commit -m 'build: Travis CI automatic compilation'"
+        - git pull --rebase
+        - git push "https://juzi214032:${GITHUB_TOKEN}@github.com/TaleLin/lin-ui" HEAD:develop
