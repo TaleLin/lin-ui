@@ -39,4 +39,4 @@ jobs:
           git add -A
           git commit -m 'build: Github Action automatic compilation'
           git pull --rebase
-          git push "https://juzi214032:$JUZI_TOKEN@github.com/TaleLin/lin-ui" develop
+          git push "https://juzi214032:${JUZI_TOKEN}@github.com/TaleLin/lin-ui" develop
