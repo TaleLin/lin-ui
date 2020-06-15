@@ -1,0 +1,30 @@
+# 把编译后的文件 push 到 github
+
+name: Git CI
+
+on:
+  push:
+    branches:
+      - develop
+
+jobs:
+  git:
+    name: Git CI
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12
+      - run: export TZ='Asia/Shanghai'
+      - run: rm -rf dist
+      - run: rm -rf examples/dist
+      - run: npm i
+      - run: npm run build
+      - run: npm run dev
+      - run: git config --global user.name "桔子"
+      - run: git config --global user.email "juzi214032@qq.com"
+      - run: git add -A
+      - run: "git commit -m 'build: Github Action automatic compilation'"
+      - run: git push "https://juzi214032:${JUZI_TOKEN}@github.com/TaleLin/lin-ui" HEAD:develop
+
