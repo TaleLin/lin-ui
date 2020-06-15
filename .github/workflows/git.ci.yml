@@ -26,5 +26,4 @@ jobs:
       - run: git config --global user.email "juzi214032@qq.com"
       - run: git add -A
       - run: "git commit -m 'build: Github Action automatic compilation'"
-      - run: git push "https://juzi214032:${JUZI_TOKEN}@github.com/TaleLin/lin-ui" HEAD:develop
-
+      - run: git push "https://juzi214032:${{secrets.JUZI_TOKEN}}@github.com/TaleLin/lin-ui" HEAD:develop
