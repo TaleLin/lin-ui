@@ -36,7 +36,7 @@ Component({
       type: Number,
       value: 30
     },
-    showInfo: {
+    showValue: {
       type: Boolean,
       value: false
     },

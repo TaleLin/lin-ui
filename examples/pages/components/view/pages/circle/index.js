@@ -62,5 +62,11 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+
+  openCloseActive() {
+    wx.redirectTo({
+      url: '../circle/index',
+    })
   }
 })

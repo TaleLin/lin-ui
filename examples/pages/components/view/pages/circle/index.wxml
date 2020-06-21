@@ -8,17 +8,18 @@
         </content-card>
         <content-card l-content="content" name="动画">
             <view class="circle-container">
-                <l-circle percent='100' active='{{true}}'></l-circle>
+                <l-circle percent='{{percent}}' active='{{openActive}}'></l-circle>
             </view>
+            <l-button bind:tap="openCloseActive">再看一遍</l-button>
         </content-card>
         <content-card l-content="content" name="显示数值">
             <view class="circle-container">
-                <l-circle percent='50' show-info='{{true}}'></l-circle>
+                <l-circle percent='50' show-value='{{true}}'></l-circle>
             </view>
         </content-card>
         <content-card l-content="content" name="更改数值颜色">
             <view class="circle-container">
-                <l-circle percent='50' show-info='{{true}}' value-color='red' value-size='30'></l-circle>
+                <l-circle percent='50' show-value='{{true}}' value-color='red' value-size='30'></l-circle>
             </view>
         </content-card>
         <content-card l-content="content" name="更改内外直径">
@@ -43,7 +44,7 @@
         </content-card>
         <content-card l-content="content" name="自定义背景">
             <view class="circle-container">
-                <l-circle percent='50'>
+                <l-circle percent='50' active-color='black'>
                     <image src="timg.jpeg" style="width:90rpx;height:90rpx;border-radius:50%;display:block;" />
                 </l-circle>
             </view>

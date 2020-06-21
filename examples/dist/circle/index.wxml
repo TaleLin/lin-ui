@@ -2,7 +2,7 @@
     <view wx:if="{{percent !== 0 && percent !== 100}}" class="sx1" style="height:{{outerDiameter}}rpx;width:{{outerDiameter}}rpx;clip: rect(0rpx, {{outerDiameter/2}}rpx, {{outerDiameter}}rpx, 0rpx);background:{{((percent < 50 && percent !== 0) || percent === 100) ?backgroundColor:activeColor?activeColor:''}}"></view>
     <view wx:if="{{percent !== 50 && percent !== 0 && percent !== 100}}" class="sx2" style="transform: rotate({{percent < 50 ? ((360 * percent / 100) - 180):(360 * (percent - 100) / 100)}}deg);height:{{outerDiameter}}rpx;width:{{outerDiameter}}rpx;clip: rect(0rpx, {{outerDiameter/2}}rpx, {{outerDiameter}}rpx, 0rpx);background:{{((percent < 50 && percent !== 0) || percent === 100) ?backgroundColor:activeColor}}"></view>
     <view class="sx_t" style="width:{{innerDiameter}}rpx;height:{{innerDiameter}}rpx;background:{{innerColor}}">
-        <view wx:if="{{showInfo}}" class="l-value-class" style="color:{{valueColor?valueColor:''}};font-size:{{valueSize}}rpx">
+        <view wx:if="{{showValue}}" class="l-value-class" style="color:{{valueColor?valueColor:''}};font-size:{{valueSize}}rpx">
             {{percent}}%
         </view>
         <slot></slot>
