@@ -82,6 +82,12 @@ Component({
     },
   },
 
+  observers: {
+    'urls': function () {
+      this.preview();
+    }
+  },
+
   /**
    * 组件的方法列表
    */
