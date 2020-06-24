@@ -1,5 +1,5 @@
 Component({
-  externalClasses: ['l-class', 'l-class-self', 'l-self-class'],
+  externalClasses: ['l-class'],
   options: {
     addGlobalClass: true
   },

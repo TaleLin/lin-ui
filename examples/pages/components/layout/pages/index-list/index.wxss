@@ -36,3 +36,9 @@ l-index-list{
 .person-name{
   margin-left: 20rpx;
 }
+
+.sidebar-class{
+  right: 0 !important;
+  padding-left: 10rpx !important;
+  padding-right: 20rpx !important;
+}

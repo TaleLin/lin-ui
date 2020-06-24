@@ -1,1 +1,1 @@
-<view class="l-class l-class-self l-self-class l-icon {{ name === '' ? '' : 'l-icon-' + name }}" style="{{ size ? 'font-size:'+size+'rpx;':''}}{{ color ? 'color:' + color+';' : '' }}"/>
+<view class="l-class l-icon {{ name === '' ? '' : 'l-icon-' + name }}" style="{{ size ? 'font-size:'+size+'rpx;':''}}{{ color ? 'color:' + color+';' : '' }}"/>

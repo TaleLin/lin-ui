@@ -13,7 +13,7 @@ const defaultSidebarData = [
 Component({
 
   externalClasses: [
-    'l-tip-class', 'l-tip-text-class', 'l-sidebar-class', 'l-selected-class', 'l-unselected-class'
+    'l-tip-class', 'l-tip-text-class', 'l-sidebar-class', 'l-selected-class', 'l-unselected-class','l-sidebar-item-class'
   ],
 
   relations: {
@@ -72,7 +72,7 @@ Component({
       top: 0,
       height: 0,
       sidebarItemCenterPoints: [],
-      // 改变量用于标识是否正在滑动 Sidebar
+      // 该变量用于标识是否正在滑动 Sidebar
       // 滑动侧栏的时候需要禁止页面滚动去改变 Sidebar 激活项
       // 不然会出现 Sidebar 激活项乱跳动的问题
       isMoving: false,

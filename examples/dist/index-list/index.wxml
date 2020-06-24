@@ -1,8 +1,8 @@
 <view class="index-list">
   <!--Sidebar 侧栏-->
-  <view wx:if="{{showSidebar}}" class="sidebar" catch:tap="onTapSidebar" catch:touchmove="onTouchMove" catch:touchend="onTouchend">
+  <view wx:if="{{showSidebar}}" class="sidebar l-sidebar-class" catch:tap="onTapSidebar" catch:touchmove="onTouchMove" catch:touchend="onTouchend">
     <block wx:for="{{sidebarData}}" wx:for-item="sidebarItem" wx:key="index">
-      <view class="sidebar-item l-sidebar-class {{activeSidebarItem===index?'sidebar-item-active l-selected-class':'l-unselected-class'}}">{{sidebarItem}}</view>
+      <view class="sidebar-item l-sidebar-item-class {{activeSidebarItem===index?'sidebar-item-active l-selected-class':'l-unselected-class'}}">{{sidebarItem}}</view>
     </block>
 
     <!--Tip 提示-->

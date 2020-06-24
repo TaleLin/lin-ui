@@ -10,9 +10,12 @@ module.exports = {
       'always',
       [
         'EsLint',
+        'Github',
         'VuePress',
         'package.json',
+        'License',
         'TravisCI',
+        'GithubAction',
         'Husky',
         'README',
         'util',

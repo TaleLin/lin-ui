@@ -1,5 +1,6 @@
+import nodeUtil from '../core/utils/node-util';
 Component({
-  externalClasses: ['l-class','l-icon-class'],
+  externalClasses: ['l-class', 'l-icon-class'],
 
   properties: {
     type: {
@@ -77,25 +78,22 @@ Component({
   },
 
   methods: {
-    initAnimation() {
-      wx.createSelectorQuery().in(this).select('.l-noticebar-content-wrap').boundingClientRect((wrapRect) => {
-        wx.createSelectorQuery().in(this).select('.l-noticebar-content').boundingClientRect((rect) => {
-          const duration = rect.width / 40 * this.data.speed;
-          const animation = wx.createAnimation({
-            duration: duration,
-            timingFunction: 'linear',
-          });
-          this.setData({
-            wrapWidth: wrapRect.width,
-            width: rect.width,
-            duration: duration,
-            animation: animation
-          }, () => {
-            this.startAnimation();
-          });
-        }).exec();
-
-      }).exec();
+    async initAnimation() {
+      const rect = await nodeUtil.getNodeRectFromComponent(this, '.l-noticebar-content');
+      const wrapRect = await nodeUtil.getNodeRectFromComponent(this, '.l-noticebar-content-wrap');
+      const duration = rect.width / 40 * this.data.speed;
+      const animation = wx.createAnimation({
+        duration: duration,
+        timingFunction: 'linear',
+      });
+      this.setData({
+        wrapWidth: wrapRect.width,
+        width: rect.width,
+        duration: duration,
+        animation: animation
+      }, () => {
+        this.startAnimation();
+      });
     },
     startAnimation() {
       //reset
@@ -126,7 +124,7 @@ Component({
       }
     },
     handleTap() {
-      this.triggerEvent('lintap',{},{ bubbles: true, composed: true });
+      this.triggerEvent('lintap', {}, { bubbles: true, composed: true });
       this.setData({
         timer: null
       });
@@ -134,10 +132,10 @@ Component({
     onSwip(e) {
       this.triggerEvent('lintap', {
         ...e.currentTarget.dataset
-      },{ bubbles: true, composed: true });
+      }, { bubbles: true, composed: true });
     },
-    onIconTap(){
-      this.triggerEvent('linicontap',{},{ bubbles: true, composed: true });
+    onIconTap() {
+      this.triggerEvent('linicontap', {}, { bubbles: true, composed: true });
       this.setData({
         timer: null
       });

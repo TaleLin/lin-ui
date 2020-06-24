@@ -19,7 +19,7 @@ jobs:
         with:
           node-version: 12
       - run: npm i
-      - run: npm lint
+      - run: npm run lint
       - run: npm run build
       - run: npm run dev
 

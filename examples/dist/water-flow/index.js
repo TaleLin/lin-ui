@@ -40,13 +40,15 @@ Component({
           console.error('[data]参数类型错误，渲染失败');
           return false;
         }
+        // 绑定data，判断data是否为[]
+        this.setData({ data });
         if (refresh) {
           this.data.leftData = [];
           this.data.rightData = [];
         }
         this._select(data, refresh).then(() => {
           success && success();
-        }).catch(err=>{
+        }).catch(err => {
           console.error(err);
         });
       };
@@ -54,7 +56,6 @@ Component({
     _select(data, refresh) {
       const query = wx.createSelectorQuery().in(this);
       this.columnNodes = query.selectAll('#left, #right');
-
       return new Promise((resolve) => {
         this._render(data, 0, refresh, () => {
           resolve();
@@ -62,7 +63,7 @@ Component({
       });
     },
     _render(data, i, refresh, success) {
-      if (data.length > i) {
+      if ((data.length > i || refresh) && this.data.data.length !== 0) {
         this.columnNodes.boundingClientRect().exec(res => {
           const rects = res[0];
           this.data.leftHeight = rects[0].height;
@@ -90,7 +91,7 @@ Component({
      * @param e 事件对象
      */
     onTapItem(e) {
-      eventUtil.emit(this, 'linitemtap', e.detail);
+      eventUtil.emit(this, 'linitemtap', { item: e.currentTarget.dataset.item });
     }
   }
 });

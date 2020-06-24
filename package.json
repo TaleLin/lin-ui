@@ -1,6 +1,6 @@
 {
   "name": "lin-ui",
-  "version": "0.8.3",
+  "version": "0.8.4",
   "description": "A high quality UI components library with MiniProgram",
   "main": "app.js",
   "directories": {
@@ -28,7 +28,7 @@
   "files": [
     "dist"
   ],
-  "homepage": "http://doc.mini.7yue.pro",
+  "homepage": "http://doc.mini.talelin.com",
   "devDependencies": {
     "@commitlint/cli": "^8.3.5",
     "@commitlint/config-conventional": "^8.3.4",
