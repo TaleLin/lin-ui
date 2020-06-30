@@ -4,6 +4,7 @@
   flex-direction: column;
   height: 100%;
   align-items: center;
+  position: relative;
   &.selected{
     background-color: @success-color;
     color: #ffffff;
@@ -22,8 +23,17 @@
     background: #ffffff;
   }
   &.middle{
-    background-color: #eff9f0;
     color: @success-color;
+    &::after{
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-color: currentColor;
+      opacity: 0.1;
+      content: '';
+    }
   }
   // background-color: red;
   // color: #eff9f0;

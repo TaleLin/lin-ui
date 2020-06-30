@@ -2,6 +2,7 @@ import eventBus from '../utils/eventBus.js';
 import validator from '../behaviors/validator';
 import rules from '../behaviors/rules';
 import * as config from './config'
+import formatFlags from './dete'
 
 import { getDayByOffset, getDate, compareDay, calcDateNum, copyDates, getTime, formatMonthTitle, compareMonth, getMonths } from './util'
 
@@ -24,7 +25,10 @@ Component({
     type: {
       type: String,
       value: config.TYPE_SINGLE,
-      options: [config.TYPE_SINGLE, config.TYPE_MULTIPLE, config.TYPE_RANGE]
+      options: [config.TYPE_SINGLE, config.TYPE_MULTIPLE, config.TYPE_RANGE],
+      observer() {
+        this.setData({ currentDate: this.initCurrentDate() });
+      }
     },
     color: {
       type: String,
@@ -39,7 +43,8 @@ Component({
     },
     format: {
       type: String,
-      value: 'yyyy-MM-dd'
+      value: 'timestamp'
+      // value: 'yyyy-MM-dd',
     },
     formatter: {
       type: [Function, null],
@@ -92,7 +97,7 @@ Component({
       type: String,
       value: '日期选择'
     }
-    
+
   },
   lifetimes: {
     attached() {
@@ -189,28 +194,11 @@ Component({
         }
       }
     },
-    selectDay(date, isComplete) {
-      const { type } = this.data
-      if(type === config.TYPE_RANGE && isComplete) {
-        const isValidate = this.checkSelectNumber(date)
-        if(isValidate) {
-          // this.emit(date);
-        }
-      }
-
-      if(type === config.TYPE_MULTIPLE) {
-        const isValidate = this.checkSelectNumber(date)
-        if(isValidate) {
-          // this.emit(date);
-        }
-      }
-
-    },
 
     checkSelectRange(date) {
       const { maxSelect, maxLimitMessage, minSelect, minLimitMessage } = this.data;
       if (maxSelect && calcDateNum(date) > maxSelect) {
-        
+
         wx.lin.showToast({
           title: maxLimitMessage || `选择天数不能超过 ${ maxSelect } 天`
         })
@@ -226,10 +214,10 @@ Component({
 
       return true;
     },
-    
-    initCurrentDate() {
-      const { type, minDate, defaultDate, maxDate } = this.data
 
+    initCurrentDate() {
+
+      const { type, minDate, defaultDate, maxDate } = this.data
       const defaultDateIsArr = Array.isArray(defaultDate)
 
       if (type === config.TYPE_SINGLE) {
@@ -330,7 +318,17 @@ Component({
       })
     },
     onClickConfirm() {
+      const {format, type, currentDate} = this.data
       eventBus.emit(`lin-form-blur-${this.id}`, this.id);
+      let value = null
+      if(type === 'single') {
+        value = format !== 'timestamp' ? formatFlags.format('yyyy-MM-dd', currentDate) : currentDate
+      } else {
+        value = currentDate.map(item => {
+          return format !== 'timestamp' ? formatFlags.format('yyyy-MM-dd', item) : item
+        })
+      }
+      this.triggerEvent('linconfirm', value)
     },
     getValues() {
       return this.data.currentDate;

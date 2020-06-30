@@ -1,6 +1,6 @@
 {
   "component": true,
   "usingComponents": {
-    "day":"../components/day/index"
+    "day":"../day/index"
   }
 }
