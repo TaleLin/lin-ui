@@ -36,6 +36,7 @@ module.exports = {
         'Avatar',
         'Badge',
         'Countdown',
+        'Circle',
         'Loading',
         'LoadMore',
         'Mask',

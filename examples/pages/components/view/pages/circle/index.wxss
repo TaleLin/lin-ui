@@ -1,0 +1,22 @@
+/* pages/components/view/pages/circle/index.wxss */
+
+.circle-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.button_list {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 700rpx;
+  margin-bottom: 30rpx;
+  margin-top: 60rpx;
+}
+
+.button_class {
+  min-width: 10rpx !important;
+  height: 60rpx !important;
+  font-size: 20rpx !important;
+}
