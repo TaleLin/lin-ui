@@ -65,7 +65,10 @@ Component({
       let children = this.getRelationNodes('../collapse-item/index');
       for (let i = 0; i < children.length; i++) {
         let item = children[i];
-        let id = item.id ? item.id : i;
+        let id = item.data.itemId === 'default' ? i : item.data.itemId;
+        console.log('item',item);
+        console.log('id', item.data.itemId);
+        console.log('expandItemId',expandItemId);
         if (expandItemId.indexOf(id) > -1 && !item.isExpandContent) {
           await this.setCollapseItemStatus(item, true);
         } else if (item.isExpandContent || this.data.type === 'accordion') {
@@ -85,9 +88,9 @@ Component({
       this.setCollapseItemStatus(collapseItem, !collapseItem.data.isExpandContent);
 
       if (!collapseItem.data.isExpandContent) {
-        this.triggerEvent('linexpand', {id: collapseItem.data.itemId ? collapseItem.data.itemId : collapseItem.data._idDefault});
+        this.triggerEvent('linexpand', { id: collapseItem.data.itemId ? collapseItem.data.itemId : collapseItem.data._idDefault });
       } else {
-        this.triggerEvent('linfold', {id: collapseItem.data.itemId ? collapseItem.data.itemId : collapseItem.data._idDefault});
+        this.triggerEvent('linfold', { id: collapseItem.data.itemId ? collapseItem.data.itemId : collapseItem.data._idDefault });
       }
     },
 
