@@ -66,9 +66,6 @@ Component({
       for (let i = 0; i < children.length; i++) {
         let item = children[i];
         let id = item.data.itemId === 'default' ? i : item.data.itemId;
-        console.log('item',item);
-        console.log('id', item.data.itemId);
-        console.log('expandItemId',expandItemId);
         if (expandItemId.indexOf(id) > -1 && !item.isExpandContent) {
           await this.setCollapseItemStatus(item, true);
         } else if (item.isExpandContent || this.data.type === 'accordion') {
