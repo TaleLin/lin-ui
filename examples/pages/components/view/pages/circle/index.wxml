@@ -1,0 +1,61 @@
+<!-- pages/components/view/pages/circle/index.wxml -->
+<view class='container'>
+    <content-title name="Circle" describe="圆形进度条">
+        <content-card l-content="content" name="动画">
+            <view class="circle-container">
+                <l-circle duration="{{duration}}" percent='{{percent}}' active='{{openActive}}'></l-circle>
+            </view>
+        </content-card>
+        <content-card l-content="content" name="基本使用">
+            <view class="circle-container">
+                <l-circle percent='{{percent}}' show-value='{{true}}'></l-circle>
+            </view>
+            <view class="button_list">
+                <l-button l-class="button_class" plain="{{true}}" bind:tap="add">增加进度</l-button>
+                <l-button l-class="button_class" plain="{{true}}" bind:tap="min">减少进度</l-button>
+            </view>
+        </content-card>
+        <content-card l-content="content" name="更改内外直径">
+            <view class="circle-container">
+                <l-circle percent='60' outer-diameter='{{outerDiameter}}' inner-diameter='{{innerDiameter}}'></l-circle>
+            </view>
+            <view class="button_list" style="margin-top:30rpx">
+                <l-button l-class="button_class" plain="{{true}}" bind:tap="addOuter">
+                    增加外径
+                </l-button>
+                <l-button l-class="button_class" plain="{{true}}" bind:tap="minOuter">
+                    减少外径
+                </l-button>
+            </view>
+            <view class="button_list">
+                <l-button l-class="button_class" plain="{{true}}" bind:tap="addInner">
+                    增加内经
+                </l-button>
+                <l-button l-class="button_class" plain="{{true}}" bind:tap="minInner">
+                    减少内经
+                </l-button>
+            </view>
+        </content-card>
+        <content-card l-content="content" name="更改颜色">
+            <view class="circle-container">
+                <l-circle percent='60' show-value='{{true}}' active-color='{{activeColor}}' background-color='{{backgroundColor}}' inner-color='{{innerColor}}' value-color='{{valueColor}}'></l-circle>
+            </view>
+            <view class="button_list">
+                <l-button l-class="button_class" plain="{{true}}" bind:tap="random">随机颜色</l-button>
+                <l-button l-class="button_class" plain="{{true}}" bind:tap="openCloseActive">
+                    刷新页面
+                </l-button>
+            </view>
+        </content-card>
+        <content-card l-content="content" name="自定义中间背景区域">
+            <view class="circle-container">
+                <l-circle percent='60' active-color='black'>
+                    <image src="{{backgroundImage}}" style="width:140rpx;height:140rpx;border-radius:50%;display:block;" />
+                </l-circle>
+            </view>
+            <view class="button_list">
+                <l-button l-class="button_class" plain="{{true}}" bind:tap="change">换一张背景</l-button>
+            </view>
+        </content-card>
+    </content-title>
+</view>

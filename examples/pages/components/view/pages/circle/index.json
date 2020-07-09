@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "content-title": "/components/content-title/index",
+    "content-card": "/components/content-card/index",
+    "l-progress": "/dist/progress/index",
+    "l-circle": "/dist/circle/index",
+    "l-button": "/dist/button/index"
+  }
+}
