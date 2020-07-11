@@ -4,7 +4,7 @@ Component({
   /**
    * 组件的属性列表
    */
-  externalClasses: ['l-deleted-class', 'l-unit-class', 'l-value-class', 'l-class'],
+  externalClasses: ['l-deleted-class', 'l-unit-class', 'l-value-class', 'l-class', 'l-decimal-class', 'l-dot-class'],
   behaviors: [validator],
   properties: {
     unit: {
@@ -51,7 +51,16 @@ Component({
    * 组件的初始数据
    */
   data: {
-
+    // 价格整数部分
+    priceInteger: {
+      type: String,
+      value: '0'
+    },
+    // 价格小数部分
+    priceDecimal: {
+      type: String,
+      value: '00'
+    }
   },
 
   observers: {
@@ -65,17 +74,34 @@ Component({
    */
   methods: {
     reserveNumber() {
+      this.setData({
+        priceInteger: null,
+        priceDecimal: null
+      });
       const countToNumber = Number(this.data.value);
       const isText = isNaN(Number(countToNumber)) || (this.data.mode === 'text');
       if (!isText && this.data.autofix) {
         const result = countToNumber.toFixed(this.data.reserveDigit);
-        this.setData({
-          result
-        });
+        const price = result.toString().split('.');
+        this._setPrice(price);
       } else {
+        const price = this.data.value.split('.');
+        this._setPrice(price);
+      }
+    },
+
+    _setPrice(price) {
+      if (price.length === 1) {
         this.setData({
-          result: this.data.value
+          priceInteger: price[0]
         });
+      }else if(price.length === 2){
+        this.setData({
+          priceInteger: price[0],
+          priceDecimal: price[1]
+        });
+      }else{
+        throw 'price 格式有误，请仔细检查！';
       }
     }
   }
