@@ -68,7 +68,8 @@ module.exports = {
         'SearchBar',
         'IndexList',
         'Behavior',
-        'CapsuleBar'
+        'CapsuleBar',
+        'Circle'
       ]
     ]
   }

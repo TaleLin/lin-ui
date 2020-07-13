@@ -83,6 +83,12 @@ const basicNaviConfigs = [
     desc: '进度条',
     componentsPath: '/pages/components/view/pages/progress/index'
   },
+  {
+    icon: '/images/component/circle.png',
+    title: 'Circle',
+    desc: '圆形进度条',
+    componentsPath: '/pages/components/view/pages/circle/index'
+  },
 ];
 
 export default basicNaviConfigs;
