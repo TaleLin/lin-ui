@@ -64,7 +64,8 @@
         "pages/steps/index",
         "pages/skeleton/index",
         "pages/progress/index",
-        "pages/arc-popup/index"
+        "pages/arc-popup/index",
+        "pages/circle/index"
       ]
     },
     {
