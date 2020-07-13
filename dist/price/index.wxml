@@ -2,5 +2,5 @@
   
   <text class="l-unit-class" style="color: {{unitColor?unitColor:color}}; font-size: {{unitSize?unitSize:size}}rpx; font-weight: {{unitBold?unitBold:bold}}">{{unit}}</text>
   
-  <text class="l-value-class" style="color: {{valueColor?valueColor:color}}; font-size: {{valueSize?valueSize:size}}rpx; font-weight: {{valueBold?valueBold:bold}}">{{result}}</text>
+  <text class="l-value-class" style="color: {{valueColor?valueColor:color}}; font-size: {{valueSize?valueSize:size}}rpx; font-weight: {{valueBold?valueBold:bold}}">{{priceInteger}}<text class="l-dot-class">{{priceDecimal?'.':''}}</text><text class="l-decimal-class">{{priceDecimal?priceDecimal:''}}</text></text>
 </view>
