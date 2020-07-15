@@ -1,0 +1,10 @@
+<view class="sector {{((displayPercent < 50 && displayPercent !== 0) || displayPercent === 100) ? 'sector1' : 'sector2'}}" style="height:{{outerDiameter}}rpx;width:{{outerDiameter}}rpx;{{((displayPercent < 50 && displayPercent !== 0) || displayPercent === 100) ?activeColor?'background:'+activeColor:'':'background:'+backgroundColor}}">
+    <view wx:if="{{displayPercent !== 0 && displayPercent !== 100}}" class="sx1" style="height:{{outerDiameter}}rpx;width:{{outerDiameter}}rpx;clip: rect(0rpx, {{outerDiameter/2}}rpx, {{outerDiameter}}rpx, 0rpx);background:{{((displayPercent < 50 && displayPercent !== 0) || displayPercent === 100) ?backgroundColor:activeColor?activeColor:''}}"></view>
+    <view wx:if="{{displayPercent !== 50 && displayPercent !== 0 && displayPercent !== 100}}" class="sx2" style="transform: rotate({{displayPercent < 50 ? ((360 * displayPercent / 100) - 180):(360 * (displayPercent - 100) / 100)}}deg);height:{{outerDiameter}}rpx;width:{{outerDiameter}}rpx;clip: rect(0rpx, {{outerDiameter/2}}rpx, {{outerDiameter}}rpx, 0rpx);background:{{((displayPercent < 50 && displayPercent !== 0) || displayPercent === 100) ?backgroundColor:activeColor}}"></view>
+    <view class="sx_t" style="width:{{innerDiameter}}rpx;height:{{innerDiameter}}rpx;background:{{innerColor}}">
+        <view wx:if="{{showValue}}" class="l-value-class" style="color:{{valueColor?valueColor:''}};font-size:{{valueSize}}rpx">
+            {{displayPercent}}%
+        </view>
+        <slot></slot>
+    </view>
+</view>
