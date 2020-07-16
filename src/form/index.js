@@ -34,6 +34,14 @@ Component({
   attached() {
     this._init();
   },
+  detached() {
+    for(let key in this._keys) {
+      if (Object.prototype.hasOwnProperty.call(this._keys, key)) {
+        eventBus.off(`lin-form-blur-${key}`);
+        eventBus.off(`lin-form-change-${key}`);
+      }
+    }
+  },
 
   /**
      * 组件的初始数据
