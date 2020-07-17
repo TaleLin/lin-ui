@@ -1,4 +1,5 @@
 import eventBus from '../core/utils/event-bus.js';
+import eventUtil from '../core/utils/event-util';
 Component({
   /**
      * 组件的属性列表
@@ -10,12 +11,12 @@ Component({
   relations: {
     '../form-item/index': {
       type: 'child',
-      linked: function(target) {
+      linked: function (target) {
         this._initItem(target);
       },
-      linkChanged: function() {
+      linkChanged: function () {
       },
-      unlinked: function() {
+      unlinked: function () {
       }
     }
   },
@@ -35,7 +36,7 @@ Component({
     this._init();
   },
   detached() {
-    for(let key in this._keys) {
+    for (let key in this._keys) {
       if (Object.prototype.hasOwnProperty.call(this._keys, key)) {
         eventBus.off(`lin-form-blur-${key}`);
         eventBus.off(`lin-form-change-${key}`);
@@ -83,11 +84,11 @@ Component({
       });
       eventBus.on(`lin-form-change-${key}`, (id) => {
         clearTimeout(this.change_time);
-        this.change_time = setTimeout(()=>{
+        this.change_time = setTimeout(() => {
           this._validateItem(id, 'change');
         }, 200);
       });
-      if(this._keys[key]) {
+      if (this._keys[key]) {
         throw new Error(`表单项存在重复的name：${key}`);
       }
       this._keys[key] = '';
@@ -100,9 +101,9 @@ Component({
       let params = this._getValues();
 
       const items = this.getRelationNodes('../form-item/index');
-      const currentTarget =  items.find(item => item.properties.name === id);
+      const currentTarget = items.find(item => item.properties.name === id);
       const formItem = _this.selectComponent(`#${id}`);
-      if(formItem) {
+      if (formItem) {
         currentTarget.validatorData(params, type);
       } else {
         throw new Error(`表单项不存在name：${id}`);
@@ -129,7 +130,7 @@ Component({
       this._forEachNodes(item => {
         const id = item.properties.name;
         const formItem = _this.selectComponent(`#${id}`);
-        if(formItem) {
+        if (formItem) {
           item.validatorData(params);
         } else {
           throw new Error(`表单项不存在name：${id}`);
@@ -147,7 +148,7 @@ Component({
       this._forEachNodes(item => {
         const _id = item.properties.name;
         const formItem = _this.selectComponent(`#${_id}`);
-        if(formItem) {
+        if (formItem) {
           params[_id] = formItem.getValues();
         }
       });
@@ -155,10 +156,10 @@ Component({
     },
 
     submit() {
-      let errors = this.data.isSubmitValidate ? this._validateForm(): [];
+      let errors = this.data.isSubmitValidate ? this._validateForm() : [];
       this.triggerEvent('linsubmit', {
         values: this._getValues(),
-        errors: this.data.isSubmitValidate ? this._errors: {},
+        errors: this.data.isSubmitValidate ? this._errors : {},
         isValidate: errors.length === 0
       });
     },
@@ -170,10 +171,11 @@ Component({
         });
         const _id = item.properties.name;
         const formItem = _this.selectComponent(`#${_id}`);
-        if(formItem) {
+        if (formItem) {
           formItem.reset();
         }
       });
+      eventUtil.emit(this, 'linreset');
     }
   }
 });
