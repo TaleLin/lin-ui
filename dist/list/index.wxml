@@ -13,7 +13,7 @@
 <template name="cell-left-main">
     <view class="left-section">
         <image wx:if="{{image}}" class="l-image l-class-image l-image-class" src="{{image}}" mode="aspectFit|aspectFill|widthFix"/>
-        <l-icon wx:elif="{{icon}}" l-self-class="l-icon" l-class="l-class-icon l-icon-class" name="{{icon}}" size="{{iconSize}}" color="{{iconColor}}"/>
+        <l-icon wx:elif="{{icon}}" l-class="l-icon l-class-icon l-icon-class" name="{{icon}}" size="{{iconSize}}" color="{{iconColor}}"/>
         <view class="l-text">
             <view class="l-content l-class-content l-content-class">{{title}}</view>
             <view class="l-desc l-class-desc l-desc-class" wx:if="{{desc}}">{{desc}}</view>
