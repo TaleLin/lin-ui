@@ -1,5 +1,6 @@
 import zIndex from '../behaviors/zIndex';
 import validator from '../behaviors/validator';
+import eventUtil from '../core/utils/event-util';
 
 Component({
   /**
@@ -101,7 +102,6 @@ Component({
     // 点击事件
     onPopupTap() {
       let detail = true;
-      let option = {bubbles: true, composed: true};
       if (this.data.locked !== true) {
         if (!this.data.show) {
           this.setData({
@@ -121,7 +121,7 @@ Component({
         }
       }
 
-      this.triggerEvent('lintap', detail, option);
+      eventUtil.emit(this,'lintap', detail);
     }
   }
 });
