@@ -58,6 +58,11 @@ Component({
     maxImageSize: {
       type: Number,
       value: 10000000,
+    },
+    // 以对象方式传入图片链接
+    cells: {
+      type: Array,
+      value: null
     }
   },
 
@@ -72,12 +77,19 @@ Component({
   lifetimes: {
     attached: function () {
       // 在组件实例进入页面节点树时执行
-      const newOrOld = this.judgeNewOrOld();
-      this.setData({
-        newOrOld
-      });
-      if (newOrOld === 'old') {
-        console.warn('image-picker组件已经升级，建议使用最新版本，当前用法会在后续版本中暂停支持');
+      let newOrOld = this.judgeNewOrOld();
+
+      // 对 cells 的兼容处理
+      if (this.data.cells !== null) {
+        newOrOld = 'new';
+        this.setData({
+          newOrOld,
+          urls: this.data.cells
+        });
+      } else {
+        this.setData({
+          newOrOld
+        });
       }
     },
   },
@@ -110,7 +122,14 @@ Component({
       let previewImageList = [];
       const newOrOld = this.data.newOrOld;
 
-      if (newOrOld === 'old') {
+      // 第一个 if 是对 cells 的兼容处理
+      if (typeof (this.data.cells) !== 'undefined') {
+        const cells = this.data.cells;
+        tempFilePath = cells[index].url;
+        for (let i = 0; i < cells.length; i++) {
+          previewImageList.push(cells[i].url);
+        }
+      } else if (newOrOld === 'old') {
         tempFilePath = this.data.urls[index];
         previewImageList = this.data.urls;
 
