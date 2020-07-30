@@ -19,6 +19,6 @@
 </view>
 <template name="tab-item">
     <image wx:if="{{ item.image.activeImage || item.image.defaultImage }}" src="{{item.key===activeKey? item.image.activeImage:item.image.defaultImage}}" class="l-tab-image l-class-tabimage l-tab-image-class"/>
-    <l-icon wx:if="{{item.icon}}" l-class="l-class-icon l-icon-class" l-self-class="{{item.key===activeKey ? 'l-icon-active':'l-icon-inactive'}}" name="{{item.icon}}" color="{{item.key===activeKey?activeColor:inactiveColor}}" size="{{item.iconSize}}"/>
+    <l-icon wx:if="{{item.icon}}" l-class="l-class-icon l-icon-class {{item.key===activeKey ? 'l-icon-active':'l-icon-inactive'}}" name="{{item.icon}}" color="{{item.key===activeKey?activeColor:inactiveColor}}" size="{{item.iconSize}}"/>
     {{item.tab}}
 </template>

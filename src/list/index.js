@@ -31,7 +31,8 @@ Component({
     'l-class-content',
     'l-content-class',
     'l-class-desc',
-    'l-desc-class'
+    'l-desc-class',
+    'l-link-icon-class'
   ],
   properties: {
     icon: String,

@@ -91,6 +91,8 @@ Component({
    * 组件的初始数据
    */
   data: {
+    // segment-item 绑定的 data-cell 数据
+    _cells:[],
     tabList: [],
     currentIndex: 0,
     _segmentItemInstances: []
@@ -107,16 +109,20 @@ Component({
         if (items.length === this.data.tabList.length && this.data._segmentItemInstances.indexOf(segmentItemInstance) > 0) return;
         let activeKey = val,
           currentIndex = this.data.currentIndex;
+        let _cells = [];
         const tab = items.map((item, index) => {
           activeKey = !val && index === 0 ? item.data.key : activeKey;
           currentIndex = item.data.key === activeKey ? index : currentIndex;
+          // 存储 segment-item 绑定的 data-cell 数据
+          _cells[index] = item.dataset.cell;
           return {
             ...item.data
           };
         });
         this.setData({
-          tabList: tab,
+          _cells,
           activeKey,
+          tabList: tab,
           currentIndex,
           _segmentItemInstances: items
         }, () => {
@@ -150,7 +156,8 @@ Component({
       });
       this.triggerEvent('linchange', {
         activeKey,
-        currentIndex
+        currentIndex,
+        cell:this.data._cells[currentIndex]
       });
     }
   }
