@@ -122,7 +122,7 @@
       "root": "pages/components/shopping",
       "pages": [
         "pages/price/index",
-        "pages/count-selector/index",
+        "pages/counter/index",
         "pages/search-bar/index"
       ]
     },

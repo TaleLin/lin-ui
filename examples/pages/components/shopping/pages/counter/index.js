@@ -1,5 +1,5 @@
 // pages/shopping/pages/count/index.js
-import countConfig from '../count-selector/count-nav.js';
+import countConfig from './count-nav.js';
 
 Page({
 

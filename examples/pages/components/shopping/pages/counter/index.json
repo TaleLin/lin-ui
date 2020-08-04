@@ -2,6 +2,6 @@
   "usingComponents": {
     "content-title": "/components/content-title/index",
     "content-card": "/components/content-card/index",
-    "l-count-selector": "/dist/count-selector/index"
+    "l-counter": "/dist/counter/index"
   }
 }
