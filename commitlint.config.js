@@ -70,7 +70,8 @@ module.exports = {
         'Behavior',
         'CapsuleBar',
         'Circle',
-        'ImageClipper'
+        'ImageClipper',
+        'CustomTabBar'
       ]
     ]
   }
