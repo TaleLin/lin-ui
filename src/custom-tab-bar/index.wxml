@@ -11,7 +11,7 @@
     class="tab-bar-item {{item.style === 'circle' ? 'circle': ''}}"
     data-path="{{item.pagePath}}"
     data-index="{{idx}}"
-    bindtap="switchTab">
+    mut-bind:tap="switchTab">
     <view  wx:if="{{item.style === 'circle'}}" class='item-circle'></view>
     <image
       class='tab-bar-item-image'
