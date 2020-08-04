@@ -1,4 +1,5 @@
 import hover from '../behaviors/hover';
+import eventUtil from '../core/utils/event-util';
 
 Component({
   behaviors: [hover],
@@ -39,9 +40,12 @@ Component({
   },
 
   observers: {
+    'result': function (count) {
+      eventUtil.emit(this, 'linchange', { value: count });
+    },
     'count,min,max': function () {
       this.valueRange(this.data.count, 'parameter');
-    }
+    },
   },
 
   /**
