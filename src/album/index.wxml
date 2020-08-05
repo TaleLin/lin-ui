@@ -1,6 +1,9 @@
 <wxs src="index.wxs" module="album"></wxs>
-<view class="container l-class" style="{{album.containerStyle(urls, multipleSize, gapRow, gapColumn)}}">
-    <block wx:for="{{urls}}" wx:key="index">
-        <image id='{{index}}' mut-bind:tap="onPreviewTap" class="{{album.blockClass(urls, horizontalScreen)}}" style="{{album.blockStyle(urls, horizontalScreen, shortSideValue, singleSize, multipleSize)}}" src="{{newType?item[key]:item}}" mode="{{urls.length === 1?singleMode:multipleMode}}" />
+<view style="{{album.gridStyle(gapRow, gapColumn, multipleSize, everyRowNumber)}}">
+    <block wx:for="{{showUrls}}" wx:key="index" class="child">
+        <view class="imageContainer {{album.dimBack(isLong, index, maxNumber, previewFullImage)}}" style="{{album.blockStyle(urls, horizontalScreen, shortSideValue, singleSize, multipleSize)}}">
+            <image class="{{album.dim(isLong, index, maxNumber, previewFullImage)}}}" id='{{index}}' bind:tap="onPreviewTap" style="{{album.blockStyle(urls, horizontalScreen, shortSideValue, singleSize, multipleSize)}}" src="{{newType?item[key]:item}}" mode="{{urls.length === 1?singleMode:multipleMode}}" />
+            <view wx:if="{{album.image(isLong, index, maxNumber, previewFullImage)}}" class="text">+{{urls.length-maxNumber}}</view>
+        </view>
     </block>
 </view>
