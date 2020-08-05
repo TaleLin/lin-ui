@@ -1,7 +1,7 @@
 
 <view wx:if="{{show}}" class="tab-bar tab-bar-{{position}}" style='background: {{backgroundImg? "url("+ backgroundImg+ ")" : backgroundColor}}'>
   <view class="tab-bar-border" style="background: {{borderStyle}}"></view>
-  <view wx:for="{{list}}" wx:for-index="idx" wx:key="index" class="tab-bar-item {{item.style === 'circle' ? 'circle': ''}}" data-path="{{item.pagePath}}" data-index="{{idx}}" bindtap="switchTab">
+  <view wx:for="{{list}}" wx:for-index="idx" wx:key="index" class="tab-bar-item {{item.style === 'circle' ? 'circle': ''}}" data-path="{{item.pagePath}}" data-index="{{idx}}" mut-bind:tap="switchTab">
     <view wx:if="{{item.style === 'circle'}}" class="item-circle"></view>
     <image class="tab-bar-item-image" wx:if="{{item.style !== 'circle'}}" style="height: {{item.iconSize}}rpx; width: {{item.iconSize}}rpx" src="{{selected === idx ? item.selectedIconPath : item.iconPath}}"></image>
       <image wx:else class="tab-bar-item-image"></image>

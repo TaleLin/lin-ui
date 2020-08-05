@@ -1,4 +1,4 @@
-<view wx:if="{{show}}" class="l-status-container l-class {{fullScreen ? 'content': ''}}" style="{{'background:'+bgColor}};{{fullScreen ?'align-items:center;':''}}" bind:tap="tapStatusShow">
+<view wx:if="{{show}}" class="l-status-container l-class {{fullScreen ? 'content': ''}}" style="{{'background:'+bgColor}};{{fullScreen ?'align-items:center;':''}}" mut-bind:tap="tapStatusShow">
   <block wx:if="{{custom}}">
     <slot />
   </block>

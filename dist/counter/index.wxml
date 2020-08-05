@@ -3,7 +3,7 @@
     <view class="l-icon l-icon-reduce" style="font-size:{{iconSize}};color:{{iconColor}}"></view>
   </view>
   <input wx:if="{{focus}}" class="l-count-class count" disabled="{{disabled}}" type="number" focus="{{focus}}" value="{{result}}" bindblur="onBlur"/>
-  <view wx:else class="l-count-class count" bindtap="onCount">{{result}}</view>        
+  <view wx:else class="l-count-class count" mut-bind:tap="onCount">{{result}}</view>
   <view class="l-symbol-class symbol {{result>=max|| disabled?'disabled l-disabled-class':'abled l-symbol-class'}}" catchtap="{{result>=max|| disabled?'doNothing':'addTap'}}" data-type="overflow_max" hover-class="{{isHover?'count-hover':''}}">
        <view class="l-icon l-icon-add" style="font-size:{{iconSize}};color:{{iconColor}}"></view>
   </view>
