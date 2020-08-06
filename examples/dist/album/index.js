@@ -44,6 +44,22 @@ Component({
     key: {
       type: String,
       value: 'url'
+    },
+    maxNumber: {
+      type: Number,
+      value: 9
+    },
+    customRowNumber: {
+      type: Boolean,
+      value: false
+    },
+    everyRowNumber: {
+      type: Number,
+      value: 3
+    },
+    previewFullImage: {
+      type: Boolean,
+      value: true,
     }
   },
 
@@ -59,6 +75,10 @@ Component({
     row: 0,
     // 图片排列几列
     colum: 0,
+    // 用于显示的图片列表
+    showUrls: [],
+    // 传入的url长度是否大于maxNumber指定的数量
+    isLong: false,
   },
 
   /**
@@ -69,12 +89,29 @@ Component({
       // 在组件实例进入页面节点树时执行
 
       //判断传入urls长度
-      if (this.data.urls.length > 9) {
-        const urls = this.data.urls.slice(0, 9);
+      let urls = [];
+      if (this.data.urls.length > this.data.maxNumber) {
+        urls = this.data.urls.slice(0, this.data.maxNumber);
         this.setData({
-          urls
+          isLong: true,
         });
-        console.warn('超过9张图片！');
+        console.warn('图片数量超过maxNumber指定数量');
+      } else {
+        urls = this.data.urls;
+      }
+      this.setData({
+        showUrls: urls
+      });
+
+      if (!this.data.customRowNumber) {
+        let urlLength = this.data.showUrls.length;
+        if (urlLength > 1 && urlLength < 5) {
+          this.setData({
+            everyRowNumber: 2
+          });
+        } else(this.setData({
+          everyRowNumber: 3
+        }));
       }
 
       this.preview();
@@ -137,7 +174,13 @@ Component({
 
     onPreviewTap(e) {
       const index = e.currentTarget.id;
-      const urls = this.data.urls;
+      let urls;
+      if (this.data.previewFullImage) {
+        urls = this.data.urls;
+      } else {
+        urls = this.data.showUrls;
+      }
+
       let tempFilePath = '';
       let previewImageList = [];
       const newType = this.data.newType;

@@ -1,5 +1,4 @@
 var containerStyle = function (urls, multipleSize, gapRow, gapColumn) {
-    urls.length === 2 || urls.length === 4 ? 'width:' + (2 * multipleSize + gapRow) + 'rpx;' : 'width:' + (3 * multipleSize + 2 * gapRow) + 'rpx;'
     if (urls.length === 2 || urls.length === 4) {
         return 'width:' + (2 * multipleSize + gapRow) + 'rpx; grid-row-gap:' + gapColumn + 'rpx; grid-column-gap:' + gapRow + 'rpx;grid-template-columns:repeat(auto-fit, ' + multipleSize + 'rpx);'
     } else {
@@ -32,8 +31,49 @@ var blockStyle = function (urls, horizontalScreen, shortSideValue, singleSize, m
     }
 }
 
+var gridStyle = function (gapRow, gapColumn, multipleSize, everyRowNumber) {
+    return 'display:inline-grid;grid-template-columns: repeat(' + everyRowNumber + ',' + multipleSize + 'rpx);grid-row-gap:' + gapRow + 'rpx;grid-column-gap:' + gapColumn + 'rpx;'
+}
+
+var dimBack = function (isLong, index, maxNumber, previewFullImage) {
+    if (previewFullImage) {
+        if (isLong) {
+            if (index == maxNumber - 1) {
+                return 'dimback'
+            }
+        }
+    }
+    return ''
+}
+
+var dim = function (isLong, index, maxNumber, previewFullImage) {
+    if (previewFullImage) {
+        if (isLong) {
+            if (index == maxNumber - 1) {
+                return 'dim'
+            }
+        }
+    }
+    return ''
+}
+
+var image = function (isLong, index, maxNumber, previewFullImage) {
+    if (previewFullImage) {
+        if (isLong) {
+            if (index == maxNumber - 1) {
+                return true
+            }
+        }
+    }
+    return false
+}
+
 module.exports = {
     containerStyle: containerStyle,
     blockClass: blockClass,
-    blockStyle: blockStyle
+    blockStyle: blockStyle,
+    gridStyle: gridStyle,
+    dimBack: dimBack,
+    dim: dim,
+    image: image,
 }
