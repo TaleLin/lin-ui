@@ -69,7 +69,9 @@ module.exports = {
         'IndexList',
         'Behavior',
         'CapsuleBar',
-        'Circle'
+        'Circle',
+        'ImageClipper',
+        'CustomTabBar'
       ]
     ]
   }

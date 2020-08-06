@@ -5,7 +5,7 @@
     <view class="left" style="width: {{width}}rpx; height: {{height}}rpx;">
       <slot name="left"></slot>
     </view>
-    <view class="right" bindtap="onRightTap" style="width: {{slideWidth}}rpx; height: {{height}}rpx;">
+    <view class="right" mut-bind:tap="onRightTap" style="width: {{slideWidth}}rpx; height: {{height}}rpx;">
       <slot name="right"></slot>
     </view>
   </movable-view>

@@ -1,0 +1,14 @@
+
+.image-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 20rpx;
+  padding: 20rpx;
+  box-sizing: border-box;
+}
+
+.image-wrapper image {
+  width: 100%;
+  height: 100%;
+}

@@ -1,4 +1,5 @@
 import hover from '../behaviors/hover';
+import eventUtil from '../core/utils/event-util';
 
 Component({
   behaviors: [hover],
@@ -39,9 +40,12 @@ Component({
   },
 
   observers: {
+    'result': function (count) {
+      eventUtil.emit(this, 'linchange', { count });
+    },
     'count,min,max': function () {
       this.valueRange(this.data.count, 'parameter');
-    }
+    },
   },
 
   /**
@@ -50,10 +54,7 @@ Component({
   methods: {
     doNothing(e) {
       const { type } = e.currentTarget.dataset;
-      this.triggerEvent('linout', { type, way: 'icon' }, {
-        bubbles: true,
-        composed: true
-      });
+      eventUtil.emit(this, 'linout', { type, way: 'icon' });
     },
 
     onCount() {
@@ -72,13 +73,7 @@ Component({
       setTimeout(() => {
         this.blurCount(Number(value), () => {
           this.data.count = this.data.result;
-          this.triggerEvent('lintap', {
-            count: this.data.result,
-            type: 'blur'
-          }, {
-            bubbles: true,
-            composed: true
-          });
+          eventUtil.emit(this, 'lintap', { count: this.data.result, type: 'blur' });
         });
       }, 50);
     },
@@ -99,19 +94,13 @@ Component({
         this.setData({
           result: this.properties.max
         }, () => {
-          this.triggerEvent('linout', { type: 'overflow_max', way }, {
-            bubbles: true,
-            composed: true
-          });
+          eventUtil.emit(this, 'linout', { type: 'overflow_max', way });
         });
       } else if (value < this.properties.min) {
         this.setData({
           result: this.properties.min
         }, () => {
-          this.triggerEvent('linout', { type: 'overflow_min', way }, {
-            bubbles: true,
-            composed: true
-          });
+          eventUtil.emit(this, 'linout', { type: 'overflow_min', way });
         });
       } else {
         this.setData({

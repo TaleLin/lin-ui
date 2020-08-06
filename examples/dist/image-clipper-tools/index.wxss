@@ -1,0 +1,1 @@
+.tools-container{width:100%;padding:20rpx 40rpx;box-sizing:border-box}.tools-container .tools-form{margin-top:20rpx;display:flex;flex-wrap:wrap;color:#fff}.tools-container .tools-form .slider-wrapper{display:flex;align-items:center}.tools-container .tools-form switch{transform:scale(.7)}

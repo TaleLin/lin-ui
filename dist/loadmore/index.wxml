@@ -1,6 +1,6 @@
 
 <slot name="content"/>
-<view bindtap="onLoadmore" wx:if="{{show}}">
+<view mut-bind:tap="onLoadmore" wx:if="{{show}}">
   <view wx:if="{{custom && type==='end'}}">
     <slot name="end"/>
   </view>

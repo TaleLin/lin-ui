@@ -1,11 +1,11 @@
-<label for="{{name}}" bindtap="handleTap" class="l-label-class">
+<label for="{{name}}" mut-bind:tap="handleTap" class="l-label-class">
   <block wx:if="{{special}}">
     <view class="special-container l-class">
       <slot/>
     </view>
   </block>
   <block wx:else>
-    <view class="l-btn {{ 'l-btn-' + size }} {{ 'l-btn-' + type }} {{ 'l-btn-' + shape }} {{plain?'l-btn-plain':''}} {{ disabled ? 'l-btn-disabled' : ''}} l-class " 
+    <view class="l-btn {{ 'l-btn-' + size }} {{ 'l-btn-' + type }} {{ 'l-btn-' + shape }} {{plain?'l-btn-plain':''}} {{ disabled ? 'l-btn-disabled' : ''}} l-class "
           hover-class="{{disabled?'':'btn-hover l-hover-class'}}"
           hover-stop-propagation="{{hoverStopPropagation}}"
           hover-start-time="{{hoverStartTime}}"
@@ -19,21 +19,21 @@
 </label>
 <button style="position: absolute;top: -999px;left: -999px;"
         wx:if="{{openType}}"
-        id="{{name}}" 
-        lang="{{lang}}" 
-        form-type="{{formType}}" 
-        open-type="{{openType}}" 
-        app-parameter="{{ appParameter }}" 
-        hover-stop-propagation="{{ hoverStopPropagation }}" 
-        hover-start-time="{{ hoverStartTime }}" 
+        id="{{name}}"
+        lang="{{lang}}"
+        form-type="{{formType}}"
+        open-type="{{openType}}"
+        app-parameter="{{ appParameter }}"
+        hover-stop-propagation="{{ hoverStopPropagation }}"
+        hover-start-time="{{ hoverStartTime }}"
         hover-stay-time="{{ hoverStayTime }}"
-        session-from="{{ sessionFrom }}" 
-        send-message-title="{{ sendMessageTitle }}" 
-        send-message-path="{{ sendMessagePath }}" 
-        send-message-img="{{ sendMessageImg }}" 
-        show-message-card="{{ showMessageCard }}" 
-        bindcontact="openTypeEvent" 
+        session-from="{{ sessionFrom }}"
+        send-message-title="{{ sendMessageTitle }}"
+        send-message-path="{{ sendMessagePath }}"
+        send-message-img="{{ sendMessageImg }}"
+        show-message-card="{{ showMessageCard }}"
+        bindcontact="openTypeEvent"
         bindgetuserinfo="openTypeEvent"
-        bindgetphonenumber="openTypeEvent" 
+        bindgetphonenumber="openTypeEvent"
         bindopensetting="openTypeEvent">
 </button>

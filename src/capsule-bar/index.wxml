@@ -25,7 +25,7 @@
       style="border-color: rgba({{capsuleColor==='black'?'0,0,0,0.1':'255,255,255,0.25'}});background-color: rgba({{capsuleColor==='black'?'255,255,255,0.6':'0,0,0,0.15'}});width: {{capsuleButtonInfo.width}}px;height: {{capsuleButtonInfo.height}}px;left: {{capsuleButtonInfo.left}}px;top: {{capsuleButtonInfo.top}}px;"
     >
       <!--左侧按钮-->
-      <cover-view catch:tap="onTapLeftButton"
+      <cover-view mut-bind:tap="onTapLeftButton"
                   catch:longpress="onLongPressLeftButton"
                   hover-class="icon-wrapper-hover-{{capsuleColor}}"
                   class="icon-wrapper"
@@ -37,7 +37,7 @@
       <cover-view class="line"></cover-view>
 
       <!--右侧按钮-->
-      <cover-view catch:tap="onTapRightButton"
+      <cover-view mut-bind:tap="onTapRightButton"
                   catch:longpress="onLongPressRightButton"
                   hover-class="icon-wrapper-hover-{{capsuleColor}}"
                   class="icon-wrapper"

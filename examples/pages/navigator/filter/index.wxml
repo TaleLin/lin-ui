@@ -6,7 +6,7 @@
       <detail-navi-card
         wx:for="{{baseNaviConfigs}}"
         wx:for-item="baseNaviConfigs"
-        wx:key="{{index}}"
+        wx:key="index"
         icon="{{baseNaviConfigs.icon}}"
         title="{{baseNaviConfigs.title}}"
         componentsPath="{{baseNaviConfigs.componentsPath}}"

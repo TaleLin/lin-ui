@@ -30,6 +30,12 @@ const formNaviConfigs = [
     componentsPath: '/pages/components/form/pages/image-picker/index'
   },
   {
+    icon: '/images/component/progress.png',
+    title: 'ImageClipper',
+    desc: '图片裁剪',
+    componentsPath: '/pages/components/form/pages/image-clipper/index'
+  },
+  {
     icon: '/images/component/rate.png',
     title: 'Rate',
     desc: '评分',

@@ -96,6 +96,7 @@
         "pages/checkbox/index",
         "pages/textarea/index",
         "pages/image-picker/index",
+        "pages/image-clipper/index",
         "pages/rules/index",
         "pages/rate/index",
         "pages/form/index"
@@ -121,7 +122,7 @@
       "root": "pages/components/shopping",
       "pages": [
         "pages/price/index",
-        "pages/count-selector/index",
+        "pages/counter/index",
         "pages/search-bar/index"
       ]
     },

@@ -1,5 +1,5 @@
-<view class="l-grid l-class" bindtap="tapGrid">
-    <view bindtap="tapGridItem" hover-class="{{isHover?'l-gird-hover':''}}" hover-start-time="20" hover-stay-time="50" data-grid-index="{{item.index}}" class="l-grid-item l-class-grid l-grid-class {{index%rowNum !== rowNum-1 &&(showBorder||showColBorder) ? 'side-grid':''}} {{(index<gridItems.length-(gridItems.length%rowNum||rowNum)) &&(showBorder||showRowBorder)? 'center-grid':''}}" wx:for="{{gridItems}}" wx:key="key" style="min-width:{{100/rowNum}}%;">
+<view class="l-grid l-class" mut-bind:tap="tapGrid">
+    <view mut-bind:tap="tapGridItem" hover-class="{{isHover?'l-gird-hover':''}}" hover-start-time="20" hover-stay-time="50" data-grid-index="{{item.index}}" class="l-grid-item l-class-grid l-grid-class {{index%rowNum !== rowNum-1 &&(showBorder||showColBorder) ? 'side-grid':''}} {{(index<gridItems.length-(gridItems.length%rowNum||rowNum)) &&(showBorder||showRowBorder)? 'center-grid':''}}" wx:for="{{gridItems}}" wx:key="key" style="min-width:{{100/rowNum}}%;">
         <slot name="{{item.key}}"></slot>
     </view>
 </view>

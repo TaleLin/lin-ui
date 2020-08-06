@@ -18,7 +18,7 @@
                     <l-avatar class="avatar" size='80' shape="square" src="{{avatarUrl}}" />
                     <view class="right">
                         <view class="name">LinUI@27315</view>
-                        <l-album urls='{{urls5}}'></l-album>
+                        <l-album max-number='{{4}}' urls='{{urls5}}'  custom-row-number='{{false}}' preview-full-image='{{true}}'></l-album>
                     </view>
                 </view>
             </view>
@@ -33,7 +33,7 @@
                     </view>
                 </view>
             </view>
-            <view>
+            <view style="margin-top:20rpx">
                 <view class="album">
                     <l-avatar class="avatar" size='80' shape="square" src="{{avatarUrl}}" />
                     <view class="right">
@@ -60,7 +60,7 @@
                     <l-avatar class="avatar" size='80' shape="square" src="{{avatarUrl}}" />
                     <view class="right">
                         <view class="name">LinUI@27315</view>
-                        <l-album urls='{{urls4}}' key='newurl' gapRow='{{25}}' gapColumn='{{25}}'></l-album>
+                        <l-album urls='{{urls4}}' key='newurl' gap-row='{{25}}' gap-column='{{25}}' every-row-number="{{3}}"></l-album>
                     </view>
                 </view>
             </view>
