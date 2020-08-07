@@ -136,7 +136,7 @@
 					<l-tag size="medium" shape="circle" catch:lintap="doNothing" plain="{{!item.active}}" l-class="popup-demo10-tag" wx:for="{{advancedDemo.type}}" wx:for-item="item" wx:key="index" catchtap="ontaglintap" data-type="type" data-index="{{index}}">{{item.name}}</l-tag>
 				</view>
 				<view class="popup-demo10-type-title">购买数量
-					<l-count-selector count="1" min="1" max="10" catch:lintap="doNothing"></l-count-selector>
+					<l-counter count="1" min="1" max="10" catch:lintap="doNothing"></l-counter>
 				</view>
 			</view>
 			<view class="popup-demo10-bottom">
