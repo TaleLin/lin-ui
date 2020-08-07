@@ -146,5 +146,9 @@ Component({
         composed: true
       });
     },
+
+    onInput(e){
+      eventUtil.emit(this,'lininput',e.detail);
+    }
   }
 });
