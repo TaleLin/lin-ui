@@ -9,6 +9,6 @@
     "l-rate": "/dist/rate/index",
     "l-tag": "/dist/tag/index",
     "l-price": "/dist/price/index",
-    "l-count-selector": "/dist/count-selector/index"
+    "l-counter": "/dist/counter/index"
   }
 }
