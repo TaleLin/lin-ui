@@ -1,164 +1,116 @@
-
 <p align="center">
-  <!-- <a href="http://doc.mini.7yue.pro/"> -->
-    <img
-      class="QR-img" src="https://doc.mini.talelin.com/screenshots/readme/lin-ui小程序.jpg">
-  <!-- </a> -->
+    <img width="150" class="QR-img" src="https://doc.mini.talelin.com/screenshots/readme/lin-ui小程序.jpg">
 </p>
 
-<div align="center"> <span class="logo" > Lin UI </span> </div>
-
-<div class="row" />
 
 <div align="center">
-  <span class="desc" >Fantastic native based Mini-Programe components</span>
+    <span><a target="_blank" href="https://doc.mini.talelin.com">:memo: 中文文档</a></span>
+    <span>|</span>
+    <span><a target="_blank" href="https://talelin.com/">:computer: 官方教程</a></span>
 </div>
 
 <div align="center">
-
-![](https://img.shields.io/badge/build-passing-00d508.svg)
-![](https://img.shields.io/npm/v/lin-ui.svg)
-![](https://img.shields.io/npm/dt/lin-ui.svg)
-![](https://img.shields.io/badge/license-MIT-3963bc.svg)
-
+    <span>Lin UI, not just an UI component library!</span><br/>
+    <strong>一套基于微信小程序原生语法实现的高质量 UI 组件库</strong>
 </div>
 
 <div align="center">
-
-⚡️ 文档网站: http://doc.mini.talelin.com
-<br/>
-🔥 教程地址: [https://talelin.com](https://talelin.com/#course)
-
+    <a href="https://github.com/TaleLin/lin-ui/actions">
+        <img alt="持续集成" src="https://img.shields.io/github/workflow/status/talelin/lin-ui/Node.js%20CI/develop?label=%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90&logo=github" />
+    </a>
+    <a href="https://www.npmjs.com/package/lin-ui">
+        <img alt="最新版本" src="https://img.shields.io/npm/v/lin-ui?color=%233a63bd&label=%E6%9C%80%E6%96%B0%E7%89%88%E6%9C%AC&logo=graphcool&logoColor=white" />
+    </a>
+    <a href="https://www.npmjs.com/package/lin-ui">
+        <img alt="周下载量" src="https://img.shields.io/npm/dw/lin-ui?color=%233c973c&label=%E5%91%A8%E4%B8%8B%E8%BD%BD%E9%87%8F&logo=node.js&logoColor=white" />
+    </a>
 </div>
 
-# 简介
 
-Lin UI 是基于 **微信小程序原生语法** 实现的组件库。遵循简洁，易用的设计规范。
 
-## 讨论交流
+## 目录
 
-<table>
-  <tbody>
-    <tr>
-      <td align="center" valign="middle">
-        <img class="QR-img" style="height: 60px; width:60px" src="https://doc.mini.talelin.com/screenshots/readme/qq新群.png">
-        <p style="font-size:12px;">QQ群号：643205479</p>
-      </td>
-      <td align="center" valign="middle">
-        <img class="QR-img" style="height: 60px; width:60px"  src="https://doc.mini.talelin.com/screenshots/readme/公众号.jpg">
-        <p style="font-size:12px;">微信公众号：林间有风</p>
-      </td>
-    </tr>
-  </tbody>
-</table>
+- [简介](#简介)
+- [快速上手](#快速上手)
+  - [安装](#安装)
+  - [引入](#引入)
+- [讨论交流](#讨论交流)
+- [贡献代码](#贡献代码)
+- [开源协议](#开源协议)
 
-## Lin UI商业案例
 
-<table>
-  <tbody>
-    <tr>
-      <td align="center" valign="middle">
-         <img class="QR-img" style="height: 60px; width:60px"  src="https://doc.mini.talelin.com/screenshots/readme/风袖.jpg" alt="风袖">
-        <p style="font-size:12px;">风袖</p>
-      </td>
-    </tr>
-  </tbody>
-</table>
+
+## 简介
+
+Lin UI 是一套基于 **微信小程序原生语法** 实现的高质量 UI 组件库。遵循简洁、易用、美观的设计规范。
+
+
 
 ## 快速上手
 
-Lin UI 致力于给小程序开发者提供愉悦的开发体验。
-> 在开始之前，推荐先学习微信官方的[小程序开发文档](https://developers.weixin.qq.com/miniprogram/dev/index.html?t=18101612)，并正确安装和配置了 Node.js v12或以上。 同时，我们假设你已了解关于 HTML、CSS 和 JavaScript 的初级知识，并且已经熟悉并阅读了[小程序自定义组件](https://developers.weixin.qq.com/miniprogram/dev/framework/custom-component/)。
+### 安装
+1. 初始化你的项目为一个 NPM 项目
 
-## 安装
+   ```
+   npm init -y
+   ```
 
-Lin UI提供两种安装方法，满足不同开发者的需求。如果您需要使用`npm`安装，请确保您已经在本机安装了`npm`。
+   > 若项目根目录已包含 package.json 文件，则可跳过该步骤
 
-### 方式一： 使用npm安装 （推荐）
+2. 安装 Lin UI
 
-打开小程序的项目根目录，执行下面的命令。
+   ```
+   npm i lin-ui
+   ```
 
-```sh
-npm install lin-ui --production
-```
+3. 配置微信开发者工具
+   要正确安装 Lin UI，需将微信开发者工具的 `使用 npm 模块` 选项勾选上
 
-执行成功后，会在根目录里生成项目依赖文件夹 `node_modules/lin-ui` （小程序IDE的目录结构里不会显示此文件夹）。
-<br/>
-然后用小程序官方IDE打开我们的小程序项目，找到 `工具` 选项，点击下拉选中 `构建npm` ，等待构建完成即可。
+   > 设置路径：微信开发者工具右上角 -> 详情 -> 本地设置
 
-出现上图所示的结果后，可以看到小程序IDE工具的目录结构里多出了一个文件夹 `miniprogram_npm`（之后所有通过 `npm ` 引入的组件和 `js` 库都会出现在这里），打开后可以看到 `lin-ui` 文件夹，也就是我们所需要的组件。
+4. 构建 NPM 模块
+   微信开发者工具配置完成以后，还需进行一次 NPM 模块的构建
+   
+   > 按钮位置：微信开发者工具顶部 -> 工具 -> 构建 npm
 
-### 方式二：下载代码
+> **若你本地没有 Node.js 环境，无法使用 NPM 安装，则可以采用[源码方式安装](https://doc.mini.talelin.com/start/#方式二：下载代码)**
+### 引入
 
-直接通过git下载  `Lin UI`  源代码，并将 `dist` 目录（Lin UI 组件库）拷贝到自己的项目中。
+1. 配置微信开发者工具
 
-```sh
-git clone https://github.com/TaleLin/lin-ui.git
-```
+   要正确使用 Lin UI，需将微信开发者工具的 `Es6 转 ES5` 和 `增强编译` 选项勾选上
+   
+   > 设置路径：微信开发者工具右上角 -> 详情 -> 本地设置
+2. 在页面中引入
+   ```json
+   {
+     "usingComponents":{
+       "l-button":"/miniprogram_npm/lin-ui/button/index"
+     }
+   }
+   ```
+3. 在页面中使用
+   ```html
+    <l-button type="default">默认按钮</l-button>
+   ```
+   > 我们建议你在引入 Lin UI 组件时，都统一命名为 `l-{组件名}` 格式，遵循此规范将使你的项目代码更加清晰
 
-## 使用组件
+   **至此，Lin UI 已成功引入至你的项目中了！**
 
-> 下文会简单介绍一个`Lin UI` 组件的引入和使用。
+## 讨论交流
 
-使用前，确保该组件已经在你的项目目录结构里。
-<br />
-以icon组件为例，只需要在使用页面的json文件中引入icon对应的自定义组件即可。
-<br />
-组件路径：`path/to/${组件名称}/index`
-```json
-{
-  "usingComponents": {
-    "l-icon": "path/to/icon/index"
-  }
-}
-```
-
-然后在wxml中直接使用该组件。
-```html
-<l-icon name="add"> </l-icon>
-```
-
-## 自定义配置
-
-> 考虑到开发者在面临不同到项目时，需求和行业的不同。Lin UI 设计规范上支持一定程度上的样式定制，以满足业务和品牌上多样化的视觉需求。
-
-同时，可以通过对 `components.json` 进行配置，来编译生成相对应的组件。
-<br />
-为满足自定义的需求，首先我们要去下载 `Lin UI` 源码。
-
-```sh
-git clone https://github.com/TaleLin/lin-ui.git
-```
-安装相关依赖
-
-```sh
-npm install
-```
-
-完成以上两步是对 `Lin UI` 进行自定义配置的基础要求。
-
-### 全局样式更改
-> Lin UI 的样式使用了 Less 作为开发语言，并定义了一系列全局/组件的样式变量，你可以根据需求进行相应调整。
-
-以下是一些最常用的通用变量，所有样式变量可以在这里找到。
-
- - 组件样式变量
-找到根目录，打开`config/style/_base.less`文件，进行修改即可。
+![](https://img.juzibiji.top/20200807155013.png)
 
 
-- 主题色更改
 
-同样打开根目录，打开`config/style/_theme.less`文件，看到文件中定义了一个变量 `@theme-color` ，如果有主题色修改的需求，更改它即可。
-```less
-// 主题色
-@theme-color: #2c61b4;
-```
+## 贡献代码
 
-其他
-更改完成后，在 `Lin UI` 下的根目录里打开终端执行如下所示命令
+我们的代码基于 develop 分支开发，欢迎提交 Pull Request 进行代码贡献。
 
-```sh
-npm run build
-```
+在提交 Pull Request 之前，请详细阅读我们的[开发规范](https://github.com/TaleLin/lin-ui/wiki)，否则可能因为 Commit 信息不规范等原因被关闭 Pull Request。
 
-根目录下的 `dist` 文件夹即是编译后的自定义组件。
+
+
+## 开源协议
+
+[MIT](LICENSE) © 2020  林间有风
