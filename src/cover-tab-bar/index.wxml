@@ -1,0 +1,18 @@
+<cover-view class="cover-tab-bar-container" style="background-color:{{bgColor}};">
+  <cover-view class="cover-tab-bar-item-wrapper" data-index="{{index}}" mut-bind:tap="onTapItem" style="width:{{750/list.length}}rpx" wx:for="{{list}}" wx:key="index">
+    <cover-view class="cover-tab-bar-item-container">
+      <!-- image-wrapper 作用是让红点正常显示，因为 cover-view 不支持 overflow:visible -->
+      <cover-view class="cover-tab-bar-item-image-wrapper {{item.redDotValue?'cover-tab-bar-item-image-wrapper-value':''}}">
+        <!-- 红点 -->
+        <!-- 带值红点与不带值红点样式不同 -->
+        <cover-view wx:if="{{item.showRedDot}}" class="{{item.redDotValue?'cover-tab-bar-red-dot-value-container':'cover-tab-bar-red-dot-container'}}">
+          <cover-view class="cover-tab-bar-red-dot-text">{{item.redDotValue}}</cover-view>
+        </cover-view>
+        <!-- 标签图标 -->
+        <cover-image class="cover-tab-bar-item-image {{selectedIndex===index?'cover-tab-bar-item-selected-image':''}}" src="{{selectedIndex===index?item.selectedIconPath:item.iconPath}}"></cover-image>
+      </cover-view>
+      <!-- 标签文字 -->
+      <cover-view wx:if="{{item.text!==undefined}}" class="cover-tab-bar-item-text {{selectedIndex===index?'cover-tab-bar-item-selected-text':''}}" style="color:{{selectedIndex===index?textSelectedColor:textColor}}">{{item.text}}</cover-view>
+    </cover-view>
+  </cover-view>
+</cover-view>

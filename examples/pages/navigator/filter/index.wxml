@@ -1,4 +1,5 @@
-<!--pages/navigator/filter/index.wxml-->
+<l-cover-tab-bar text-color="#bbbbbb" list="{{list}}" />
+
 <view class="container">
   <view class="section">
     <navi-title title="基础过滤器" count="{{baseNaviConfigs.length}}"/>

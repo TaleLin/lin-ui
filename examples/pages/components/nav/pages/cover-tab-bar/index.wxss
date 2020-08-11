@@ -1,0 +1,44 @@
+.content {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+.content:last-child{
+  position: relative !important;
+}
+
+/* 方便演示，修改标签栏定位 */
+l-cover-tab-bar .cover-tab-bar-container {
+  position: static !important;
+}
+
+/* 淘宝标签栏 */
+.taobao-tab-bar .cover-tab-bar-red-dot-value-container {
+  border: none !important;
+  border-radius: 50% !important;
+  width: 28rpx !important;
+  height: 28rpx !important;
+  padding: 0 !important;
+  background-color: #ff5001 !important;
+}
+
+.taobao-tab-bar .cover-tab-bar-red-dot-text{
+  font-size: 14rpx !important;
+  font-weight: bold !important;
+  line-height: 1 !important;
+  color: white !important;
+}
+
+.taobao-tab-bar .cover-tab-bar-item-wrapper[data-index="0"] .cover-tab-bar-item-selected-text{
+  display: none !important;
+}
+
+.taobao-tab-bar .cover-tab-bar-item-wrapper[data-index="0"] .cover-tab-bar-item-selected-image{
+  width: 80rpx !important;
+  height: 80rpx !important;
+}
+
+/* 微信标签栏 */
+.weixin-tab-bar .cover-tab-bar-red-dot-value-container {
+  background-color: #fb524e !important;
+}

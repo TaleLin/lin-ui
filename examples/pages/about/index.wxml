@@ -1,4 +1,5 @@
-<!-- pages/about/index.wxml -->
+<l-cover-tab-bar text-color="#bbbbbb" style="margin-top:100rpx" list="{{list}}" />
+
 <view class='container'>
   <view class='logo-container'>
     <image class='logo-img' src='cloud://env-9eb476.656e-env-9eb476-1258886794/images/other/logo.png'></image>

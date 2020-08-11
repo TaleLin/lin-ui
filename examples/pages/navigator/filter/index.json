@@ -1,6 +1,7 @@
 {
   "usingComponents": {
     "detail-navi-card": "/components/detail-navi-card/index",
-    "navi-title": "/components/navi-title/index"
+    "navi-title": "/components/navi-title/index",
+    "l-cover-tab-bar": "/dist/cover-tab-bar/index"
   }
 }

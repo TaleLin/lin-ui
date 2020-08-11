@@ -1,0 +1,91 @@
+// 红点颜色
+@red-dot-color: #ff474b;
+@component: cover-tab-bar-;
+
+.@{component}container {
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: fixed;
+  z-index: 999;
+
+  width: 750rpx;
+  height: 96rpx;
+  display: flex;
+
+  .@{component}item {
+    &-wrapper {
+      display: flex;
+      justify-content: center;
+    }
+    &-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    &-image-wrapper {
+      padding: 8rpx 14rpx 0 14rpx;
+      position: relative;
+
+      .@{component}red-dot-container {
+        z-index: 9999;
+        position: absolute;
+        top: 4rpx;
+        right: 4rpx;
+        width: 18rpx;
+        height: 18rpx;
+        border-radius: 50%;
+        background-color: @red-dot-color;
+      }
+
+      @height: 26rpx;
+      .@{component}red-dot-value-container {
+        z-index: 9999;
+        position: absolute;
+        top: 4rpx;
+        right: 4rpx;
+        width: 18rpx;
+        height: 18rpx;
+        background-color: @red-dot-color;
+
+        width: auto;
+        padding: 0 6rpx;
+        border: 1px solid @red-dot-color;
+        background-color: white;
+        border-radius: 9999px;
+        height: @height;
+        color: @red-dot-color;
+        font-size: 18rpx;
+        font-weight: bold;
+        text-align: center;
+        line-height: @height;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .@{component}red-dot-text{
+        color: @red-dot-color;
+        font-size: 16rpx;
+        font-weight: bold;
+        line-height: 1;
+      }
+    }
+
+    &-image-wrapper-value {
+      padding: 14rpx 20rpx 0 20rpx;
+    }
+
+    &-image {
+      width: 48rpx;
+      height: 48rpx;
+    }
+
+    &-text {
+      margin-top: 6rpx;
+      font-size: 20rpx;
+    }
+  }
+}
