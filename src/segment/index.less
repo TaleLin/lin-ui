@@ -2,6 +2,8 @@
 .l-tabs {
     overflow: auto;
     width: 100%;
+    // IOS 下开启惯性滚动
+    -webkit-overflow-scrolling: touch
 }
 .l-tabs-header {
     display: flex;
@@ -106,8 +108,8 @@
 
     .l-tabs-header {
         width: 100%;
-        
-        flex-direction: column;   
+
+        flex-direction: column;
         -webkit-overflow-scrolling: touch;
         white-space: nowrap;
         overflow-x: hidden;
@@ -130,7 +132,7 @@
             width: 100%;
         }
 
-        
+
     }
 }
 
