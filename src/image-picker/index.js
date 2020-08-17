@@ -121,9 +121,10 @@ Component({
       let tempFilePath = '';
       let previewImageList = [];
       const newOrOld = this.data.newOrOld;
+      const cellsIsObject = Object.prototype.toString.call(this.data.cells) === '[object Object]';
 
       // 第一个 if 是对 cells 的兼容处理
-      if (typeof (this.data.cells) !== 'undefined') {
+      if (cellsIsObject) {
         const cells = this.data.cells;
         tempFilePath = cells[index].url;
         for (let i = 0; i < cells.length; i++) {
