@@ -1,2 +1,11 @@
-
+// 该变量废弃
 @theme-color            : #3963BC;                      // 主题色
+
+// =============== 主题色重构 =================
+@import "./_var.less";
+
+// 生成 CSS 自定义属性
+.theme(@property, @imp) {
+  @{property}: e(replace(@imp, '@([^() ]+)', '@{$1}', 'ig'));
+  @{property}: e(replace(@imp, '@([^() ]+)', 'var(--$1, @{$1})', 'ig'));
+}
