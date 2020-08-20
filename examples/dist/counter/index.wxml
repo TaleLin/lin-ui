@@ -11,6 +11,7 @@
           type="number"
           focus="{{focus}}"
           value="{{result}}"
+          bind:input="onInput"
           bindblur="onBlur"/>
   <view wx:else class="l-count-class count" mut-bind:tap="onCount">{{result}}</view>
   <view class="l-symbol-class symbol {{result>=max|| disabled?'disabled l-disabled-class':'abled l-symbol-class'}}"

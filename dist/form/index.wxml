@@ -2,10 +2,10 @@
     <slot/>
 </view>
 <view class="l-form-btn-class">
-    <view class="l-form-submit-class" mut-bind:tap="submit">
+    <view class="l-form-submit-class" capture-bind:tap="submit">
         <slot name="submit"/>
     </view>
-    <view class="l-form-reset-class" mut-bind:tap="reset">
+    <view class="l-form-reset-class" capture-bind:tap="reset">
         <slot name="reset"/>
     </view>
 </view>

@@ -1,3 +1,5 @@
+import dataUtil from '../core/utils/data-util';
+
 Component({
   relations: {
     '../grid/index': {
@@ -14,6 +16,7 @@ Component({
   },
   data: {
     index:0,
+    isHover: true
   },
   attached() {
 
@@ -32,8 +35,11 @@ Component({
   },
 
   lifetimes: {
-    show() {
-
+    ready() {
+      const parent = this.getRelationNodes('../grid/index')[0];
+      if(parent) {
+        dataUtil.setDiffData(this, { isHover: parent.data.isHover });
+      }
     },
   },
   methods: {

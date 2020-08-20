@@ -11,7 +11,7 @@ Component({
     multipleSlots: true,
   },
   behaviors: ['wx://form-field', validator, rules],
-  externalClasses: ['l-class', 'l-label-class', 'l-error-text', 'l-error-text-class','l-input-class'],
+  externalClasses: ['l-class', 'l-label-class', 'l-error-text', 'l-error-text-class','l-input-class','l-row-class'],
   properties: {
     // 表单标题（label）的文本
     label: String,
