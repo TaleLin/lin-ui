@@ -19,7 +19,8 @@ Component({
     'l-line-class',
     'l-tabimage-class',
     'l-header-line-class',
-    'l-icon-class'
+    'l-icon-class',
+    'l-tabpanel-class'
   ],
   relations: {
     '../tabpanel/index': {
