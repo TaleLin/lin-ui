@@ -78,26 +78,37 @@ Component({
     attached: function () {
       // 在组件实例进入页面节点树时执行
       let newOrOld = this.judgeNewOrOld();
-
       // 对 cells 的兼容处理
       if (this.data.cells !== null) {
         newOrOld = 'new';
         this.setData({
-          newOrOld,
           urls: this.data.cells
         });
-      } else {
+      }
+      this.setData({
+        newOrOld
+      });
+    },
+  },
+
+  observers: {
+    // fix #1075 urls属性更新以后，图片不显示
+    // solution urls 更新时重新判断
+    urls() {
+      if (this.data.cells === null) {
+        let newOrOld = this.judgeNewOrOld();
         this.setData({
           newOrOld
         });
       }
-    },
+    }
   },
 
   /**
    * 组件的方法列表
    */
   methods: {
+
     handleClear() {
       let urls = this.data.urls;
       this.setData({
