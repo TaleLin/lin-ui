@@ -13,10 +13,25 @@
   </view>
   <!-- 小程序表单组件 -->
   <input
+    wx:if="{{type !== 'password'}}"
     class="input {{hideLabel?'hideLabel':''}} l-input-class"
     value="{{ value }}"
     type="{{type}}"
-    password="{{type==='password'}}"
+    placeholder="{{placeholder}}"
+    maxlength="{{maxlength}}"
+    placeholder-class="pls-class"
+    placeholder-style="{{placeholderStyle}}"
+    disabled="{{disabled}}"
+    focus="{{focus}}"
+    bindinput="handleInputChange"
+    bindfocus="handleInputFocus"
+    bindblur="handleInputBlur"
+    bindconfirm="handleInputConfirm" />
+  <input
+    wx:else
+    class="input {{hideLabel?'hideLabel':''}} l-input-class"
+    value="{{ value }}"
+    password="{{true}}"
     placeholder="{{placeholder}}"
     maxlength="{{maxlength}}"
     placeholder-class="pls-class"
