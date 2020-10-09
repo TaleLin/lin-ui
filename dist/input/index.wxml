@@ -10,7 +10,8 @@
     <slot name="left"/>
   </view>
   
-  <input class="input {{hideLabel?'hideLabel':''}} l-input-class" value="{{ value }}" type="{{type}}" password="{{type==='password'}}" placeholder="{{placeholder}}" maxlength="{{maxlength}}" placeholder-class="pls-class" placeholder-style="{{placeholderStyle}}" disabled="{{disabled}}" focus="{{focus}}" bindinput="handleInputChange" bindfocus="handleInputFocus" bindblur="handleInputBlur" bindconfirm="handleInputConfirm"/>
+  <input wx:if="{{type !== 'password'}}" class="input {{hideLabel?'hideLabel':''}} l-input-class" value="{{ value }}" type="{{type}}" placeholder="{{placeholder}}" maxlength="{{maxlength}}" placeholder-class="pls-class" placeholder-style="{{placeholderStyle}}" disabled="{{disabled}}" focus="{{focus}}" bindinput="handleInputChange" bindfocus="handleInputFocus" bindblur="handleInputBlur" bindconfirm="handleInputConfirm"/>
+  <input wx:else class="input {{hideLabel?'hideLabel':''}} l-input-class" value="{{ value }}" password="{{true}}" placeholder="{{placeholder}}" maxlength="{{maxlength}}" placeholder-class="pls-class" placeholder-style="{{placeholderStyle}}" disabled="{{disabled}}" focus="{{focus}}" bindinput="handleInputChange" bindfocus="handleInputFocus" bindblur="handleInputBlur" bindconfirm="handleInputConfirm"/>
   <l-icon wx:if="{{showEye&&value}}" name="eye" catch:tap="onTapEyeIcon" size="40" l-class="l-eye l-eye-{{type}}"/>
   <view class="close" wx:if="{{clear&&value}}" mut-bind:tap="onClearTap">
     <view class="close-icon">
