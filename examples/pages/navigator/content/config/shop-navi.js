@@ -7,9 +7,9 @@ const shopNaviConfigs = [
   },
   {
     icon: '/images/shopping/count.png',
-    title: 'CountSelector',
+    title: 'Counter',
     desc: '数量选择器',
-    componentsPath: '/pages/components/shopping/pages/count-selector/index'
+    componentsPath: '/pages/components/shopping/pages/counter/index'
   },
   {
     icon: '/images/shopping/count.png',
