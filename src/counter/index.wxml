@@ -1,7 +1,8 @@
 <view class="l-class container-count">
-  <view class="symbol {{result<=min|| disabled?'disabled  l-disabled-class':'abled l-symbol-class'}}"
-        catchtap="{{result<=min|| disabled?'doNothing':'reduceTap'}}"
+  <view class="symbol {{count<=min|| disabled?'disabled  l-disabled-class':'abled l-symbol-class'}}"
+        catchtap="{{count<=min|| disabled?'doNothing':'onTapChange'}}"
         data-type="overflow_min"
+        data-change-type="reduce"
         hover-class="{{isHover?'count-hover':''}}">
     <view class="l-icon l-icon-reduce" style="font-size:{{iconSize}};color:{{iconColor}}"></view>
   </view>
@@ -10,13 +11,14 @@
           disabled="{{disabled}}"
           type="number"
           focus="{{focus}}"
-          value="{{result}}"
+          value="{{count}}"
           bind:input="onInput"
           bindblur="onBlur"/>
-  <view wx:else class="l-count-class count" mut-bind:tap="onCount">{{result}}</view>
-  <view class="l-symbol-class symbol {{result>=max|| disabled?'disabled l-disabled-class':'abled l-symbol-class'}}"
-        catchtap="{{result>=max|| disabled?'doNothing':'addTap'}}"
+  <view wx:else class="l-count-class count" mut-bind:tap="onCount">{{count}}</view>
+  <view class="l-symbol-class symbol {{count>=max|| disabled?'disabled l-disabled-class':'abled l-symbol-class'}}"
+        catchtap="{{count>=max|| disabled?'doNothing':'onTapChange'}}"
         data-type="overflow_max"
+        data-change-type="add"
         hover-class="{{isHover?'count-hover':''}}">
        <view class="l-icon l-icon-add" style="font-size:{{iconSize}};color:{{iconColor}}"></view>
   </view>
