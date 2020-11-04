@@ -6,7 +6,7 @@
         hover-class="{{isHover?'count-hover':''}}">
     <view class="l-icon l-icon-reduce" style="font-size:{{iconSize}};color:{{iconColor}}"></view>
   </view>
-  <input  wx:if="{{focus}}"
+  <input  hidden="{{!focus}}"
           class="l-count-class count"
           disabled="{{disabled}}"
           type="number"
@@ -14,7 +14,7 @@
           value="{{count}}"
           bind:input="onInput"
           bindblur="onBlur"/>
-  <view wx:else class="l-count-class count" mut-bind:tap="onCount">{{count}}</view>
+  <view hidden="{{focus}}" class="l-count-class count" mut-bind:tap="onCount">{{count}}</view>
   <view class="l-symbol-class symbol {{count>=max|| disabled?'disabled l-disabled-class':'abled l-symbol-class'}}"
         catchtap="{{count>=max|| disabled?'doNothing':'onTapChange'}}"
         data-type="overflow_max"
