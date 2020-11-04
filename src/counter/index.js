@@ -1,8 +1,6 @@
-import hover from '../behaviors/hover';
 import eventUtil from '../core/utils/event-util';
 
 Component({
-  behaviors: [hover],
   externalClasses: [
     'l-class',
     'l-symbol-class',
