@@ -4,7 +4,7 @@
   <view class="calendar-container">
     <header showTitle="{{ showTitle }}" showSubtitle="{{ showSubtitle }}" title="{{ title }}" subTitle="{{ subTitle }}"></header>
     <scroll-view class="calendar-body-wrap" scroll-y scroll-into-view="{{ scrollIntoViewIndex }}">
-      <mounth 
+      <mounth
         wx:for="{{ computed.getMonths(minDate, maxDate) }}"
         wx:key="index"
         id="month{{ index }}"
@@ -17,11 +17,13 @@
         type="{{ type }}"
         bind:clickDay="clickDay"
         showMonthTitle="{{ index !== 0 }}"
+        formatter="{{ formatter }}"
+        color="{{ color }}"
       >
       </mounth>
     </scroll-view>
     <view>
-      <l-button type="success" size="long" bind:lintap="onClickConfirm">确定</l-button>
+      <l-button type="success" size="long" bind:lintap="onClickConfirm" bg-color="{{ color }}">{{confirmText}}</l-button>
     </view>
   </view>
 </template>

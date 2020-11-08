@@ -13,19 +13,29 @@ Component({
       type: [Date,String,null],
       // observer: 'setDays'
     },
+    formatter: {
+      type: null,
+      observer: 'setDays'
+    },
     date: {
       type: null,
       observer: 'setDays'
     },
     currentDate: {
       type: [null, Array],
-      observer: 'setDays'
+      observer() {
+        this.setDays()
+      }
     },
     type: {
       type: String,
       observer: 'setDays'
     },
-    showMonthTitle: Boolean
+    showMonthTitle: Boolean,
+    color: {
+      type: String,
+      value: ''
+    }
   },
   methods: {
 
@@ -38,10 +48,24 @@ Component({
         this.triggerEvent('clickDay', item)
       }
     },
+    debounce(fn) {
+      let timer
+      return () => {
+        let that = this
+        let args =  arguments
+        if(timer) clearTimeout(timer)
+        timer = setTimeout(function() {
+          fn.apply(that, args)
+        }, 300)
+      }
+    },
+    setDays() {
+      this.debounce(this.setDay)()
+    },
     /**
      * 设置某月分的天数
      */
-    setDays() {
+    setDay() {
       let days = []
       const startDate = new Date(this.data.date)
       const year = startDate.getFullYear()
@@ -53,6 +77,7 @@ Component({
       for (let day = 1; day <= totalDay; day++) {
         const date = new Date(year, month, day).getTime();
         const type = this.getDayType(date);
+        
 
         let config = {
           date,
@@ -111,7 +136,6 @@ Component({
       if (!startDay) {
         return;
       }
-
       const compareToStart = compareDay(day, startDay);
 
       if (!endDay) {

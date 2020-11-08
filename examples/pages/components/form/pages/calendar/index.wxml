@@ -1,23 +1,34 @@
 <!--pages/view/pages/dialog/index.wxml-->
 <view class='container'>
-  <content-title name="Transition" describe="日历">
+  <content-title name="Calendar" describe="日历">
 
-    <content-card class="content" name="日历">
-      <l-list title="单个日期" bind:lintap="changeType" />
-      <!-- <l-list title="fade-up 上滑淡入" data-name="fade-up" bind:lintap="changeType" />
-      <l-list title="fade-down 下滑淡入" data-name="fade-down" bind:lintap="changeType" />
-      <l-list title="fade-left 左滑淡入" data-name="fade-left" bind:lintap="changeType" />
-      <l-list title="fade-right 右滑淡入" data-name="fade-right" bind:lintap="changeType" />
-      <l-list title="slide-up 上滑进入" data-name="slide-up" bind:lintap="changeType" />
-      <l-list title="slide-down 下滑进入" data-name="slide-down" bind:lintap="changeType" />
-      <l-list title="slide-left 左滑进入" data-name="slide-left" bind:lintap="changeType" />
-      <l-list title="slide-right 右滑进入" data-name="slide-right" bind:lintap="changeType" />
-      <l-list title="案例一" data-name="0" bind:lintap="openCase" />
-      <l-list title="案例二" data-name="1" bind:lintap="openCase" />
-      <l-list title="案例三" data-name="2" bind:lintap="openCase" /> -->
+    <content-card class="content" name="基础用法">
+      <l-list title="选择单个日期" data-id="base_single" bind:lintap="changeType" />
+      <l-list title="选择多个日期" data-id="base_multiple" bind:lintap="changeType" />
+      <l-list title="选择日期范围" data-id="base_range" bind:lintap="changeType" />
+    </content-card>
+
+    <content-card class="content" name="自定义日历">
+      <l-list title="自定义颜色" data-id="custom_color" bind:lintap="changeType" />
+      <!-- <l-list title="自定义日期范围" data-id="custom_range" bind:lintap="changeType" /> -->
+      <l-list title="自定义按钮文字" data-id="custom_confirmtext" bind:lintap="changeType" />
+      <l-list title="自定义日期文案" data-id="custom_date" bind:lintap="changeType" />
+       <l-list title="自定义可选数量" data-id="custom_count" bind:lintap="changeType" />
     </content-card>
 
   </content-title>
-  
-   <l-calendar title="日历" show="{{ show }}" minSelect="{{ 3 }}" maxSelect="{{ 5 }}" defaultDate="{{ defaultDate }}" type="range"></l-calendar>
+
+   <l-calendar 
+    title="{{ title }}" 
+    show="{{ show }}" 
+    minSelect="{{ minSelect }}" 
+    maxSelect="{{ maxSelect }}" 
+    defaultDate="{{ defaultDate }}" 
+    type="{{ type }}"
+    color="{{ color }}"
+    confirmText="{{ confirmText }}"
+    formatter="{{ formatter }}"
+  >
+  </l-calendar>
+
 </view>

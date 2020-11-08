@@ -17,6 +17,7 @@
         topInfo="{{ item.topInfo }}" 
         bottomInfo="{{ item.bottomInfo }}"
         type="{{ item.type }}"
+        color=" {{ color }}"
       />
     </view>
   </view>
