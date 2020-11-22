@@ -13,7 +13,7 @@ const defaultSidebarData = [
 Component({
 
   externalClasses: [
-    'l-tip-class', 'l-tip-text-class', 'l-sidebar-class', 'l-selected-class', 'l-unselected-class','l-sidebar-item-class'
+    'l-tip-class', 'l-tip-text-class', 'l-sidebar-class', 'l-selected-class', 'l-unselected-class', 'l-sidebar-item-class'
   ],
 
   relations: {
@@ -135,7 +135,7 @@ Component({
       wx.lin = wx.lin || {};
       // 传入scrollTop的值的函数
       wx.lin.setScrollTop = (scrollTop) => {
-        dataUtil.setDiffData(this, {scrollTop});
+        dataUtil.setDiffData(this, { scrollTop });
       };
     },
 
@@ -357,7 +357,7 @@ Component({
     countCurrentActiveIndex(scrollTop) {
       let result = 0;
       // 每个 Anchor 距离页面顶部的 px 值
-      const {anchorTopLocations} = this.data._anchor;
+      const { anchorTopLocations } = this.data._anchor;
 
       for (let i = 0; i < anchorTopLocations.length; i++) {
         if (scrollTop + this.data._stickOffsetTopPx < anchorTopLocations[i]) {
@@ -378,19 +378,18 @@ Component({
      * @param event 事件对象
      */
     onTouchMove(event) {
-
       // 显示 Tip
       this.switchTipShow(true);
       // 标识正在滑动 Sidebar
       this.switchIsMovingSidebar(true);
 
       // 取出 Sidebar 位置信息
-      const {top: sidebarTop, sidebarItemHeight} = this.data._sidebar;
+      const { top: sidebarTop, sidebarItemHeight } = this.data._sidebar;
       // Sidebar 索引个数
       const sidebarLength = this.data.sidebarData.length;
       // 触摸点 Y 坐标
       const touchY = event.touches[0].clientY;
-      // 计算当前触摸点在第几个索引除
+      // 计算当前触摸点在第几个索引处
       let index = Math.floor((touchY - sidebarTop) / sidebarItemHeight);
 
       // 滑动超过范围时限制索引边界值
@@ -417,15 +416,24 @@ Component({
         scrollTop: scrollPageToLocation
       });
 
+      /**
+       * fix issue1078
+       * 当点击 sidebar 时，onTouchend 会先于 onTouchMove 执行
+       * 导致滑动状态无法正常关闭，固此处添加一个延时状态修改（页面滚动需要一定时间）
+       */
+      event.type === 'tap' && setTimeout(() => {
+        this.switchIsMovingSidebar(false);
+      }, 100);
+
       // 触发 linselected 事件
-      eventUtil.emit(this, 'linselected', {index, tipText});
+      eventUtil.emit(this, 'linselected', { index, tipText });
     },
 
     /**
      * 监听 手指触摸动作结束 事件
      */
     onTouchend() {
-      // 300 毫秒后隐藏 Tip
+      // 500 毫秒后隐藏 Tip
       setTimeout(() => {
         this.switchTipShow(false);
       }, 500);
