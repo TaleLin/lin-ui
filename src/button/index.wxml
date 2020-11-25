@@ -6,7 +6,7 @@
   </block>
   <block wx:else>
     <view class="l-btn {{ 'l-btn-' + size }} {{ 'l-btn-' + type }} {{ 'l-btn-' + shape }} {{plain?'l-btn-plain':''}} {{ disabled ? 'l-btn-disabled' : ''}} l-class "
-          hover-class="{{disabled?'':'btn-hover l-hover-class'}}"
+          hover-class="{{disabled?'':disabledHover?'':'btn-hover l-hover-class'}}"
           hover-stop-propagation="{{hoverStopPropagation}}"
           hover-start-time="{{hoverStartTime}}"
           hover-stay-time="{{hoverStayTime}}"
