@@ -40,7 +40,8 @@ Component({
       value: 'process',
       options: ['process', 'error']
     },
-    dot: Boolean
+    dot: Boolean,
+    reverse: Boolean
   },
 
   observers: {
