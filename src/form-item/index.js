@@ -36,7 +36,7 @@ Component({
     // label宽度
     labelWidth: {
       type: String,
-      value: '200rpx'
+      value: 'auto'
     },
     labelSlot: {
       type: Boolean,
