@@ -71,7 +71,11 @@ Component({
     sendMessagePath: String,
     sendMessageImg: String,
     showMessageCard: Boolean,
-    formType: String
+    formType: String,
+    disabledHover: {
+      type: Boolean,
+      value: false
+    }
   },
   methods: {
     // button点击事件
