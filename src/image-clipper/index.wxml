@@ -46,7 +46,13 @@
             style="width: {{imageWidth ? imageWidth + 'px' : 'auto'}};height: {{imageHeight ? imageHeight + 'px' : 'auto'}};transform: translate3d({{imageLeft - imageWidth / 2}}px, {{imageTop - imageHeight / 2}}px,0) scale({{scale}}) rotate({{angle}}deg); transition-duration: {{cutAnimation ? 0.35 : 0}}s;" 
         />
         <!-- 图片绘制容器 -->
+        <!-- 
+            refactor: 
+                canvas 2d 接口支持同层渲染且性能更佳，建议切换使用。
+                详见文档：https://developers.weixin.qq.com/miniprogram/dev/component/canvas.html#Canvas-2D-%E7%A4%BA%E4%BE%8B%E4%BB%A3%E7%A0%81 
+        -->
         <canvas
+            type="2d"
             canvas-id="image-clipper"
             id="image-clipper"
             :disable-scroll="true"
