@@ -56,11 +56,11 @@
         <!-- 底部工具栏容器 -->
         <view class="footer-tools">
             <view class="tools-icon">
-                <image src="{{checkImageIcon}}" mut-bind:tap="uploadImage" wx:if="{{checkImage}}" />
-                <image src="{{rotateAlongIcon}}" mut-bind:tap="rotate" data-type="along" wx:if="{{rotateAlong}}" />
-                <image src="{{rotateInverseIcon}}" mut-bind:tap="rotate" data-type="inverse" wx:if="{{rotateInverse}}" />
-                <image src="{{sureIcon}}" mut-bind:tap="getImageData" wx:if="{{sure}}" />
-                <image src="{{closeIcon}}" mut-bind:tap="close" wx:if="{{close}}" />
+                <image src="{{checkImageIcon}}" mut-bind:tap="uploadImage" wx:if="{{checkImage}}" class="tools-icon-image" />
+                <image src="{{rotateAlongIcon}}" mut-bind:tap="rotate" data-type="along" wx:if="{{rotateAlong}}" class="tools-icon-image" />
+                <image src="{{rotateInverseIcon}}" mut-bind:tap="rotate" data-type="inverse" wx:if="{{rotateInverse}}" class="tools-icon-image" />
+                <image src="{{sureIcon}}" mut-bind:tap="getImageData" wx:if="{{sure}}" class="tools-icon-image" />
+                <image src="{{closeIcon}}" mut-bind:tap="close" wx:if="{{close}}" class="tools-icon-image" />
             </view>
             <slot></slot>
         </view>
