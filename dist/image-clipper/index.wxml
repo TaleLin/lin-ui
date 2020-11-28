@@ -29,7 +29,8 @@
         
         <image class="cropper-image" binderror="imageLoad" bindload="imageLoad" bind:touchstart="imageTouchStart" bind:touchmove="imageTouchMove" bind:touchend="imageTouchEnd" src="{{imageUrl}}" mode="widthFix" wx:if="{{imageUrl}}" style="width: {{imageWidth ? imageWidth + 'px' : 'auto'}};height: {{imageHeight ? imageHeight + 'px' : 'auto'}};transform: translate3d({{imageLeft - imageWidth / 2}}px, {{imageTop - imageHeight / 2}}px,0) scale({{scale}}) rotate({{angle}}deg); transition-duration: {{cutAnimation ? 0.35 : 0}}s;"/>
         
-        <canvas canvas-id="image-clipper" id="image-clipper" :disable-scroll="true" style="width: {{CANVAS_WIDTH * scaleRatio}}px; height:{{CANVAS_HEIGHT * scaleRatio}}px;" class="clipper-canvas"></canvas>
+        
+        <canvas type="2d" canvas-id="image-clipper" id="image-clipper" :disable-scroll="true" style="width: {{CANVAS_WIDTH * scaleRatio}}px; height:{{CANVAS_HEIGHT * scaleRatio}}px;" class="clipper-canvas"></canvas>
         
         <view class="footer-tools">
             <view class="tools-icon">
