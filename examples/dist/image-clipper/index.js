@@ -784,6 +784,10 @@ Component({
     close() {
       this.setData({ show: false });
     },
+    /**
+     * 空方法，占位用
+     */
+    doNothing() {}
   },
 
   /**
