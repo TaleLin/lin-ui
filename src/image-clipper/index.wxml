@@ -1,5 +1,5 @@
 <view wx:if="{{show}}">
-    <view class="container l-class" catchtouchmove="{{true}}" style="z-index: {{zIndex}};">
+    <view class="container l-class" catchtouchmove="doNothing" style="z-index: {{zIndex}};">
         <!-- 图片裁剪容器 -->
         <view class="clip-wrapper" bind:touchstart="clipTouchStart" bind:touchmove="clipTouchMove" bind:touchend="clipTouchEnd">
             <!-- 裁剪区域容器 -->
