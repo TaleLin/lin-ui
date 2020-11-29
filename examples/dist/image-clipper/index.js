@@ -389,22 +389,31 @@ Component({
         });
         return;
       }
-
+      // fix & optimize #1129
+      // 只针对单指点击做处理
+      if (event.touches.length !== 1) {
+        return;
+      }
       const { _flagCutTouch, _MOVE_THROTTLE_FLAG } = this.data;
       if (_flagCutTouch && _MOVE_THROTTLE_FLAG) {
         const { lockRatio, lockHeight, lockWidth } = this.properties;
         if (lockRatio && (lockWidth || lockHeight)) return;
         dataUtil.setDiffData(this, { _MOVE_THROTTLE_FLAG: false });
         this.moveThrottle();
-        const { width, height, cutX, cutY } = clipTouchMoveOfCalculate(this.data, event);
-        if (!lockWidth && !lockHeight) {
-          dataUtil.setDiffData(this, { clipWidth: width, clipHeight: height, cutX, cutY });
-        } else if (!lockWidth) {
-          dataUtil.setDiffData(this, { clipWidth: width, cutX });
-        } else if (!lockHeight) {
-          dataUtil.setDiffData(this, { clipHeight: height, cutY });
+        const clipData = clipTouchMoveOfCalculate(this.data, event);
+        // fix #1129
+        // 原因：未做 clipTouchMoveOfCalculate 方法返回 undefined 值处理
+        if(clipData) {
+          const { width, height, cutX, cutY } = clipData;
+          if (!lockWidth && !lockHeight) {
+            dataUtil.setDiffData(this, { clipWidth: width, clipHeight: height, cutX, cutY });
+          } else if (!lockWidth) {
+            dataUtil.setDiffData(this, { clipWidth: width, cutX });
+          } else if (!lockHeight) {
+            dataUtil.setDiffData(this, { clipHeight: height, cutY });
+          }
+          this.imgMarginDetectionScale();
         }
-        this.imgMarginDetectionScale();
       }
     },
     /**
