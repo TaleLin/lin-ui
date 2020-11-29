@@ -3,7 +3,7 @@ Component({
   relations: {
     '../tabs/index': {
       type: 'parent',
-      linked: function(target) {
+      linked: function (target) {
         !this.data.parent && this.setData({
           parent: target
         });
@@ -12,7 +12,7 @@ Component({
     },
     '../combined-tabs/index': {
       type: 'parent',
-      linked: function(target) {
+      linked: function (target) {
         !this.data.parent && this.setData({
           parent: target
         });
@@ -37,11 +37,26 @@ Component({
     picPlacement: {
       type: String,
       value: 'top'
-    }
+    },
+    dotBadge: {
+      type: Boolean,
+      value: false
+    },
+    badgeCount: {
+      type: Number,
+    },
+    badgeMaxCount: {
+      type: Number,
+      value: 99
+    },
+    badgeCountType: {
+      type: String,
+      value: 'overflow'
+    },
   },
 
   observers: {
-    '**': function(filed) {
+    '**': function (filed) {
       this.updateData(filed);
     }
   },
