@@ -61,6 +61,11 @@ Component({
     hasPadding: {
       type: Boolean,
       value: true
+    },
+    // 隐藏标题
+    hiddenTitle: {
+      type: Boolean,
+      value: false
     }
   },
 
@@ -73,8 +78,8 @@ Component({
     capsuleButtonInfo: null
   },
 
-  lifetimes:{
-    ready:function () {
+  lifetimes: {
+    ready: function () {
       this.setData({
         capsuleButtonInfo: this.getCapsuleButtonInfo()
       });
