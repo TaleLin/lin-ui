@@ -9,7 +9,7 @@
 
     
     <cover-view class="title-bar" style="height: {{titleBarHeight}}rpx;background-color: {{titleBarColor}};">
-      <cover-view class="title l-title-class" style="color: {{titleColor}};">{{title}}</cover-view>
+      <cover-view wx:if="{{!hiddenTitle}}" class="title l-title-class" style="color: {{titleColor}};">{{title}}</cover-view>
     </cover-view>
 
     
