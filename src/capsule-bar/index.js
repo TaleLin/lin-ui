@@ -3,6 +3,9 @@ import validator from '../behaviors/validator';
 import eventUtil from '../core/utils/event-util';
 
 Component({
+  options: {
+    multipleSlots: true
+  },
   behaviors: [validator],
   externalClasses: ['l-title-class'],
   properties: {
