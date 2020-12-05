@@ -16,6 +16,7 @@
       style="height: {{titleBarHeight}}rpx;background-color: {{titleBarColor}};"
     >
       <cover-view wx:if="{{!hiddenTitle}}" class="title l-title-class" style="color: {{titleColor}};">{{title}}</cover-view>
+      <slot name="title"/>
     </cover-view>
 
     <!--胶囊按钮-->
