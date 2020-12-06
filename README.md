@@ -32,7 +32,7 @@
 :collision::collision::collision:**林间有风团队招人啦**:collision::collision::collision:
 
 林间有风是一个致力于让 Web 开发变得简单而优雅的开源团队。
-目前团队的两款产品 Lin CMS 和 Lin UI 在 Github Star 均为 2000+，团队成员大多就职于各互联网大厂，团队 Leader 七月有着十年研发及团队管理经验，目前为慕课网知名讲师。
+目前团队的两款产品 Lin CMS 和 Lin UI 在 Github Star 均为 2000+
 
 我们希望你：
 1. 真正热爱开源，热爱编程，对开源有自己的理解
