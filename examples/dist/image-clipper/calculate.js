@@ -12,45 +12,31 @@
 export function determineDirection(cutX, cutY, clipWidth, clipHeight, currentX, currentY) {
   /*
    * (右下>>1 右上>>2 左上>>3 左下>>4)
-   * left_x：  裁剪框左边线距离视口最左侧两点位置 [3,4]
-   * right_x： 裁剪框右边线距离视口最右侧两点位置 [1,2]
-   * top_y：   裁剪框顶部线距离视口最顶部两点位置 [2,3]
-   * bottom_y：裁剪框底部线距离视口最底部两点位置 [1,4]
    */
-  // 用户体验优化，增加裁剪框四角可触摸区域
-  const EXPAND_SIZE = 24;
 
-  let left_x1 = cutX - EXPAND_SIZE;
-  let left_x2 = cutX + EXPAND_SIZE;
-
-  let top_y1 = cutY - EXPAND_SIZE;
-  let top_y2 = cutY + EXPAND_SIZE;
-
-  let right_x1 = cutX + clipWidth - EXPAND_SIZE;
-  let right_x2 = cutX + clipWidth + EXPAND_SIZE;
-
-  let bottom_y1 = cutY + clipHeight - EXPAND_SIZE;
-  let bottom_y2 = cutY + clipHeight + EXPAND_SIZE;
-  /*
-   * 四角
-   * (右下>>1 右上>>2 左上>>3 左下>>4)
-   */
   let corner;
 
-  const isRight = currentX > right_x1 && currentX < right_x2;
-  const isLeft = currentX > left_x1 && currentX < left_x2;
-  const isBottom = currentY > bottom_y1 && currentY < bottom_y2;
-  const isTop = currentY > top_y1 && currentY < top_y2;
+  /**
+   * fix & optimize #1129
+   * 思路：（利用直角坐标系）
+   *  1.找出裁剪框中心点
+   *  2.如点击坐标在上方点与左方点区域内，则点击为左上角
+   *  3.如点击坐标在下方点与右方点区域内，则点击为右下角
+   *  4.其他角同理
+   */
+  const mainPoint = [cutX + clipWidth / 2, cutY + clipHeight / 2]; // 中心点
+  const currentPoint = [currentX, currentY]; // 触摸点
 
-  if (isRight && isBottom) {
-    corner = 1;
-  } else if (isRight && isTop) {
-    corner = 2;
-  } else if (isLeft && isTop) {
-    corner = 3;
-  } else if (isLeft && isBottom) {
-    corner = 4;
+  if (currentPoint[0] <= mainPoint[0] && currentPoint[1] <= mainPoint[1]) {
+    corner = 3; // 左上
+  } else if (currentPoint[0] >= mainPoint[0] && currentPoint[1] <= mainPoint[1]) {
+    corner = 2; // 右上
+  } else if (currentPoint[0] <= mainPoint[0] && currentPoint[1] >= mainPoint[1]) {
+    corner = 4; // 左下
+  } else if (currentPoint[0] >= mainPoint[0] && currentPoint[1] >= mainPoint[1]) {
+    corner = 1; // 右下
   }
+
   return corner;
 }
 
@@ -65,7 +51,7 @@ export function calcImageOffset(data, scale) {
   let left = data.imageLeft;
   let top = data.imageTop;
   scale = scale || data.scale;
-  
+
   let imageWidth = data.imageWidth;
   let imageHeight = data.imageHeight;
   if ((data.angle / 90) % 2) {
@@ -191,7 +177,6 @@ export function clipTouchMoveOfCalculate(data, event) {
   minWidth = minWidth / 2;
   minHeight = minHeight / 2;
   maxHeight = maxHeight / 2;
-
   let width = clipWidth,
     height = clipHeight,
     cutY = oldCutY,
@@ -249,6 +234,7 @@ export function clipTouchMoveOfCalculate(data, event) {
   default:
     break;
   }
+
   return {
     width,
     height,

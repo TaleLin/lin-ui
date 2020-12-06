@@ -3,6 +3,9 @@ import validator from '../behaviors/validator';
 import eventUtil from '../core/utils/event-util';
 
 Component({
+  options: {
+    multipleSlots: true
+  },
   behaviors: [validator],
   externalClasses: ['l-title-class'],
   properties: {
@@ -61,6 +64,11 @@ Component({
     hasPadding: {
       type: Boolean,
       value: true
+    },
+    // 隐藏标题
+    hiddenTitle: {
+      type: Boolean,
+      value: false
     }
   },
 
@@ -73,8 +81,8 @@ Component({
     capsuleButtonInfo: null
   },
 
-  lifetimes:{
-    ready:function () {
+  lifetimes: {
+    ready: function () {
       this.setData({
         capsuleButtonInfo: this.getCapsuleButtonInfo()
       });

@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "l-icon":"/dist/icon/index",
+    "l-tab-bar": "/dist/tab-bar/index"
+  }
+}

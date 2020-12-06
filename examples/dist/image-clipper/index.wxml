@@ -1,5 +1,5 @@
 <view wx:if="{{show}}">
-    <view class="container l-class" catchtouchmove="{{true}}" style="z-index: {{zIndex}};">
+    <view class="container l-class" catchtouchmove="doNothing" style="z-index: {{zIndex}};">
         <!-- 图片裁剪容器 -->
         <view class="clip-wrapper" bind:touchstart="clipTouchStart" bind:touchmove="clipTouchMove" bind:touchend="clipTouchEnd">
             <!-- 裁剪区域容器 -->
@@ -46,7 +46,13 @@
             style="width: {{imageWidth ? imageWidth + 'px' : 'auto'}};height: {{imageHeight ? imageHeight + 'px' : 'auto'}};transform: translate3d({{imageLeft - imageWidth / 2}}px, {{imageTop - imageHeight / 2}}px,0) scale({{scale}}) rotate({{angle}}deg); transition-duration: {{cutAnimation ? 0.35 : 0}}s;" 
         />
         <!-- 图片绘制容器 -->
+        <!-- 
+            refactor: 
+                canvas 2d 接口支持同层渲染且性能更佳，建议切换使用。
+                详见文档：https://developers.weixin.qq.com/miniprogram/dev/component/canvas.html#Canvas-2D-%E7%A4%BA%E4%BE%8B%E4%BB%A3%E7%A0%81 
+        -->
         <canvas
+            type="2d"
             canvas-id="image-clipper"
             id="image-clipper"
             :disable-scroll="true"
@@ -56,11 +62,11 @@
         <!-- 底部工具栏容器 -->
         <view class="footer-tools">
             <view class="tools-icon">
-                <image src="{{checkImageIcon}}" mut-bind:tap="uploadImage" wx:if="{{checkImage}}" />
-                <image src="{{rotateAlongIcon}}" mut-bind:tap="rotate" data-type="along" wx:if="{{rotateAlong}}" />
-                <image src="{{rotateInverseIcon}}" mut-bind:tap="rotate" data-type="inverse" wx:if="{{rotateInverse}}" />
-                <image src="{{sureIcon}}" mut-bind:tap="getImageData" wx:if="{{sure}}" />
-                <image src="{{closeIcon}}" mut-bind:tap="close" wx:if="{{close}}" />
+                <image src="{{checkImageIcon}}" mut-bind:tap="uploadImage" wx:if="{{checkImage}}" class="tools-icon-image" />
+                <image src="{{rotateAlongIcon}}" mut-bind:tap="rotate" data-type="along" wx:if="{{rotateAlong}}" class="tools-icon-image" />
+                <image src="{{rotateInverseIcon}}" mut-bind:tap="rotate" data-type="inverse" wx:if="{{rotateInverse}}" class="tools-icon-image" />
+                <image src="{{sureIcon}}" mut-bind:tap="getImageData" wx:if="{{sure}}" class="tools-icon-image" />
+                <image src="{{closeIcon}}" mut-bind:tap="close" wx:if="{{close}}" class="tools-icon-image" />
             </view>
             <slot></slot>
         </view>

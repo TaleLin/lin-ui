@@ -20,7 +20,7 @@
       <slot name="describe"/>
     </view>
   </view>
-  <view class="step-line l-line-class {{'step-line-'+ direction}} {{activeIndex>index?'step-line-finish':'step-line-wait'}}" style="{{activeIndex>index?('background-color:'+color):''}}" wx:if="{{length !== index+1}}">
+  <view class="step-line l-line-class {{'step-line-'+ direction}} {{currentStatus.isReverse(reverse,activeIndex,index)?'step-line-finish':'step-line-wait'}}" style="{{activeIndex>index?('background-color:'+color):''}}" wx:if="{{reverse?(index!==0):(length!==index+1)}}">
   </view>
 </view>
 
@@ -53,9 +53,17 @@ var dotStyle = function(activeIndex,index,color){
   }
 }
 
+var isReverse = function(reverse,activeIndex,index) {
+  if(reverse){
+    return (activeIndex>=index)
+  }
+  return (activeIndex>index)
+}
+
 module.exports = {
   setStatus:setStatus,
   statusStyle:statusStyle,
-  dotStyle:dotStyle
+  dotStyle:dotStyle,
+  isReverse:isReverse
 }
 </wxs>

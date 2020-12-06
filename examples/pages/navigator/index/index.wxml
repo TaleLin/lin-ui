@@ -1,9 +1,12 @@
-<!--index.wxml-->
+<l-tab-bar text-color="#bbbbbb" list="{{list}}" />
+
 <view class="container">
   <view class="header">
     <image class='header-bg' src='/images/static/index_bg.png'></image>
     <text class='header-desc'><text class='header-name'>Lin UI </text>原生小程序组件库</text>
   </view>
+
+
 
   <view class="main">
     <navi-card

@@ -63,6 +63,7 @@ module.exports = {
         'Rules',
         'Rate',
         'Form',
+        'FormItem',
         'Price',
         'Counter',
         'SearchBar',
@@ -71,7 +72,7 @@ module.exports = {
         'CapsuleBar',
         'Circle',
         'ImageClipper',
-        'CustomTabBar'
+        'TabBar'
       ]
     ]
   }

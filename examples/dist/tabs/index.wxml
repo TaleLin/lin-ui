@@ -1,4 +1,16 @@
-<!-- components/tabs/index.wxml -->
+<template name="tab-item">
+  <image wx:if="{{ item.image.activeImage || item.image.defaultImage }}"
+      src="{{item.key===activeKey? item.image.activeImage:item.image.defaultImage}}"
+      class="l-tab-image l-class-tabimage l-tabimage-class"/>
+  <l-icon wx:if="{{item.icon}}"
+        l-class="l-class-icon l-icon-class {{item.key===activeKey ? 'l-icon-active':'l-icon-inactive'}}"
+        name="{{item.icon}}"
+        color="{{item.key===activeKey?activeColor:inactiveColor}}" size="{{item.iconSize}}"/>
+  {{item.tab}}
+  <slot wx:if="{{!item.tab}}" name="{{item.key+'.tab'}}"></slot>
+</template>
+
+
 <view
   class="l-tabs l-class-tabs l-tabs-class {{'l-placement-'+placement}} {{animated ? 'l-aminmated' :''}} {{placement==='left'||placement==='right'?'l-tabs-vertical':'l-tabs-horizontal'}} {{scrollable ? 'l-tabs-scroll':''}}">
   <scroll-view
@@ -16,16 +28,12 @@
         wx:key="key"
         data-key="{{item.key}}"
         data-index="{{index}}"
+        data-class="{{item.badgeCount}}"
         mut-bind:tap="handleChange">
-        <image wx:if="{{ item.image.activeImage || item.image.defaultImage }}"
-               src="{{item.key===activeKey? item.image.activeImage:item.image.defaultImage}}"
-               class="l-tab-image l-class-tabimage l-tabimage-class"/>
-        <l-icon wx:if="{{item.icon}}"
-                l-class="l-class-icon l-icon-class {{item.key===activeKey ? 'l-icon-active':'l-icon-inactive'}}"
-                name="{{item.icon}}"
-                color="{{item.key===activeKey?activeColor:inactiveColor}}" size="{{item.iconSize}}"/>
-        {{item.tab}}
-        <slot wx:if="{{!item.tab}}" name="{{item.key+'.tab'}}"></slot>
+        <l-badge l-self-class="badge-view" l-class="l-badge-class" wx:if="{{(item.badgeCount > 0 || item.dotBadge )}}" value="{{item.badgeCount}}" dot="{{item.dotBadge}}" max-count="{{item.badgeMaxCount}}" number-type="{{item.badgeCountType}}">
+          <template is="tab-item" data="{{item,activeKey,activeColor,inactiveColor}}" />
+        </l-badge>
+        <template wx:else is="tab-item" data="{{item,activeKey,activeColor,inactiveColor}}" />
         <view
           class="l-tab-line {{item.key===activeKey?'l-class-line l-line-class':''}} {{animatedForLine?'l-line-aminmated':''}}"
           wx:if="{{hasLine}}" style="background:{{item.key===activeKey?activeColor:inactiveColor}}"></view>

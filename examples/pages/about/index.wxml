@@ -1,4 +1,5 @@
-<!-- pages/about/index.wxml -->
+<l-tab-bar text-color="#bbbbbb" list="{{list}}" />
+
 <view class='container'>
   <view class='logo-container'>
     <image class='logo-img' src='cloud://env-9eb476.656e-env-9eb476-1258886794/images/other/logo.png'></image>

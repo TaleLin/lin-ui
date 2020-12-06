@@ -2,7 +2,6 @@
 
 .form-item-container{
   display: flex;
-  align-items: center;
   border-bottom: 1px solid #eeeeee;
   color: #777;
   padding: 0 20rpx ;
@@ -11,12 +10,14 @@
     margin-bottom: 44rpx;
   }
   &.label-column{
+    align-items: left;
     flex-direction: column;
     .label-text{
       line-height: 44rpx;
     }
   }
   &.label-row{
+    align-items: center;
     flex-direction: row;
     .label-text{
       line-height: 88rpx;
