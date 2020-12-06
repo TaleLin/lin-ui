@@ -1,5 +1,8 @@
 // components/cotent-title/index.js
 Component({
+  options:{
+    multipleSlots:true
+  },
   externalClasses: ['l-content'],
   /**
    * 组件的属性列表

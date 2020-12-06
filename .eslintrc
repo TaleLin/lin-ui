@@ -23,7 +23,8 @@
     "Component": true,
     "Page": true,
     "wx": true,
-    "App": true
+    "App": true,
+    "getCurrentPages":true
   },
   "ignorePatterns": [
     "dist/*",

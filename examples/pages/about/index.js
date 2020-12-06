@@ -1,4 +1,5 @@
 // pages/about/index.js
+import tabbar from '../tabbar';
 wx.cloud.init({
   env: 'env-9eb476'
 });
@@ -10,7 +11,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    version: '....'
+    version: '....',
+    list:tabbar
   },
 
   /**

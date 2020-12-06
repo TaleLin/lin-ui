@@ -12,6 +12,7 @@
     "navigationBarTextStyle": "black"
   },
   "tabBar": {
+    "custom":true,
     "color": "#bbbbbb",
     "selectedColor": "#3963BC",
     "backgroundColor": "#ffffff",
@@ -85,7 +86,8 @@
         "pages/tabbar/index",
         "pages/combined-tabs/index",
         "pages/segment/index",
-        "pages/capsule-bar/index"
+        "pages/capsule-bar/index",
+        "pages/tab-bar/index"
       ]
     },
     {

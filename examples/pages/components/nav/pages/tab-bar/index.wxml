@@ -1,0 +1,15 @@
+<view class='container'>
+	<content-title name="TabBar" describe="导航栏">
+		<content-card l-content="content" name="京东">
+			<l-tab-bar class="jd-tab-bar" selected-index="{{jdSelectedIndex}}" bind:lintap="onTapJdTabBar" text-selected-color="#f92c19" text-color="#191919" list="{{jdTabBar}}" />
+		</content-card>
+		<content-card l-content="content" name="淘宝">
+			<l-icon bind:tap="onTapTaobaoTips" size="30" name="help" slot="top-right" />
+			<l-tab-bar bg-img="https://img.juzibiji.top/20201206200539.png" class="taobao-tab-bar" selected-index="{{taobaoSelectedIndex}}" bind:lintap="onTapTaobaoTabBar" text-selected-color="#ff7400" text-color="#7e7e7e" list="{{taobaoTabBar}}" />
+		</content-card>
+		<content-card l-content="content" name="微信">
+			<l-icon bind:tap="onTapWeixinTips" size="30" name="setting" slot="top-right" />
+			<l-tab-bar bg-color="#f7f7f7" class="weixin-tab-bar" selected-index="{{weixinSelectedIndex}}" bind:lintap="onTapWeixinTabBar" text-selected-color="#37b171" text-color="#181818" list="{{weixinTabBar}}" />
+		</content-card>
+	</content-title>
+</view>

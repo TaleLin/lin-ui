@@ -72,7 +72,7 @@ module.exports = {
         'CapsuleBar',
         'Circle',
         'ImageClipper',
-        'CustomTabBar'
+        'TabBar'
       ]
     ]
   }
