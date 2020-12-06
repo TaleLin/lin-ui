@@ -3,6 +3,7 @@
   "navigationBarTextStyle": "white",
   "usingComponents": {
     "navi-card": "/components/navi-card/index",
-    "l-card":"/dist/card/index"
+    "l-card":"/dist/card/index",
+    "l-tab-bar": "/dist/tab-bar/index"
   }
 }

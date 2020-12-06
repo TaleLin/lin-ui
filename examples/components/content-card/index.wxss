@@ -16,12 +16,20 @@
   margin-left: 26rpx;
 }
 
+.card-top-left{
+  display: flex;
+  align-items: center;
+}
+
 .card-top {
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: space-between;
   width: 750rpx;
   height: 100rpx;
+  padding-right: 26rpx;
+  box-sizing: border-box;
 }
 
 .content-name {

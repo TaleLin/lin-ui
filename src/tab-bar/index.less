@@ -1,0 +1,43 @@
+// 红点颜色
+@red-dot-color: #ff474b;
+@component: lu-tab-bar;
+
+.@{component} {
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: fixed;
+  z-index: 9999;
+
+  width: 750rpx;
+  height: 106rpx;
+  display: flex;
+  background-color: white;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+.@{component}__item-wrapper {
+  display: flex;
+  height: 100%;
+  justify-content: center;
+}
+
+.@{component}__item-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.@{component}__item-image {
+  display: block;
+  width: 52rpx;
+  height: 52rpx;
+}
+
+.@{component}__item-text {
+  margin-top: 4rpx;
+  font-size: 24rpx;
+  line-height: 1;
+}

@@ -1,0 +1,18 @@
+.content {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+.content:last-child{
+  position: relative !important;
+}
+
+/* 方便演示，修改标签栏定位 */
+.lu-tab-bar {
+  box-shadow: 0px 0px 32rpx 0px rgba(221,224,227,0.6);
+  position: static !important;
+}
+
+.weixin-tab-bar .lu-tab-bar{
+  box-shadow:none;
+}
