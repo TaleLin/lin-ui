@@ -16,3 +16,11 @@
 .l-input-container-class {
     width: 100% !important;
 }
+
+.photoContentClass{
+    margin: 30rpx 0rpx !important;
+}
+
+.photoImagePicker{
+    margin-left: 20rpx !important;
+}

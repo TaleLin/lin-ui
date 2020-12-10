@@ -278,7 +278,14 @@ Component({
         return 'new';
       }
       return 'new';
-    }
+    },
 
-  },
+    /**
+     * 供 Form 组件取值的方法
+     * 返回所有图片 url
+     */
+    getValues() {
+      return this.data.urls;
+    }
+  }
 });

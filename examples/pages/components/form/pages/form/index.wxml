@@ -5,7 +5,7 @@
             name="基本案例"
         >
             <view class='buttun-wrapper'>
-                <l-form name="student" l-form-btn-class="l-form-btn-class">
+                <l-form bind:linsubmit="linsubmit" name="student" l-form-btn-class="l-form-btn-class">
                     <l-form-item label="姓名:" name="studentName">
                         <l-input l-class="l-input-container-class" id="studentName" value="{{student.name}}" hide-label show-row="{{false}}"/>
                     </l-form-item>
@@ -17,7 +17,9 @@
                     <l-form-item label="地址:" name="studentAddress">
                         <l-input l-class="l-input-container-class"  id="studentAddress" value="{{student.address}}" hide-label show-row="{{false}}"/>
                     </l-form-item>
-
+                    <l-form-item l-form-content-class="photoContentClass" label="照片:" name="photoSelect">
+                        <l-image-picker l-item-class="photoImagePicker" count="4" id="photoSelect" />
+                    </l-form-item>
 
                     <view slot="submit">
                         <l-button>提交</l-button>
@@ -34,7 +36,7 @@
             name="基本案例"
         >
             <view class='buttun-wrapper'>
-                <l-form name="form" l-form-btn-class="l-form-btn-class">
+                <l-form bind:linsubmit="linsubmit" name="form" l-form-btn-class="l-form-btn-class">
                     <l-form-item label="填写姓名:" name="name">
                         <l-input l-class="l-input-container-class"  id="name" value="{{form.name}}" hide-label show-row="{{false}}"/>
                     </l-form-item>
@@ -85,7 +87,7 @@
                 name="带验证的表单"
         >
             <view class='buttun-wrapper'>
-                <l-form name="loginForm" l-form-btn-class="l-form-btn-class">
+                <l-form name="loginForm" l-form-btn-class="l-form-btn-class" bind:linsubmit="linsubmit">
                     <l-form-item label="账号:" name="loginFormLoginId" rules="{{loginForm.loginIdRules}}">
                         <l-input l-class="l-input-container-class"  id="loginFormLoginId" value="{{loginForm.loginId}}" hide-label show-row="{{false}}"/>
                     </l-form-item>
@@ -132,7 +134,7 @@
                         </l-radio>
                     </l-radio-group>
                 </view>
-                <l-form is-submit-validate="{{isSubmitValidate == 1}}" name="ruleForm" l-form-btn-class="l-form-btn-class">
+                <l-form bind:linsubmit="linsubmit" is-submit-validate="{{isSubmitValidate == 1}}" name="ruleForm" l-form-btn-class="l-form-btn-class">
                     <l-form-item tip-type="{{tipType}}" align-items="{{alignType}}" label="填写姓名:" name="ruleName" rules="{{nameRules}}">
                         <l-input l-class="l-input-container-class"  id="ruleName" value="{{ruleForm.name}}" hide-label show-row="{{false}}"/>
                     </l-form-item>
@@ -182,7 +184,7 @@
             name="联合校验"
         >
             <view class='buttun-wrapper'>
-                <l-form name="register" l-form-btn-class="l-form-btn-class">
+                <l-form bind:linsubmit="linsubmit" name="register" l-form-btn-class="l-form-btn-class">
                     <l-form-item tip-type="text" label="登录账号:" name="loginId" rules="{{loginIdRules}}">
                         <l-input l-class="l-input-container-class"  id="loginId" value="{{register.loginId}}" hide-label show-row="{{false}}"/>
                     </l-form-item>

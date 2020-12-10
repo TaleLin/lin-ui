@@ -20,7 +20,7 @@ Page({
     loginForm: {
       loginId: '',
       password: '',
-      loginIdRules:{
+      loginIdRules: {
         type: 'email',
         required: true,
         message: '邮箱地址不合法',
@@ -29,7 +29,7 @@ Page({
       passwordRules: [
         { required: true, message: '请输入登录密码', trigger: 'blur' },
         { min: 8, max: 20, message: '密码长度在8-20个字符之间', trigger: 'blur' },
-        { pattern: '^[A-Za-z0-9]+$', message: '密码必须由数字字母组成',trigger: 'blur'}
+        { pattern: '^[A-Za-z0-9]+$', message: '密码必须由数字字母组成', trigger: 'blur' }
       ],
     },
     ruleForm: {
@@ -79,13 +79,13 @@ Page({
     ],
     descRules: { min: 10, max: 50, message: '请输入10到50个字符的自我描述', trigger: 'change' },
     musicRules: [
-      { type:'array', required: true, message: '歌曲必选', trigger: 'change' },
+      { type: 'array', required: true, message: '歌曲必选', trigger: 'change' },
     ],
     scoreRules: [
-      { type:'number',required: true, message: '请选择评分', trigger: 'blur' },
+      { type: 'number', required: true, message: '请选择评分', trigger: 'blur' },
       {
         validator(rule, value, callback) {
-          if(value < 3) {
+          if (value < 3) {
             callback(false);
           } else {
             callback();
@@ -109,13 +109,13 @@ Page({
     passwordRules: [
       { required: true, message: '请输入登录密码', trigger: 'blur' },
       { min: 8, max: 20, message: '密码长度在8-20个字符之间', trigger: 'blur' },
-      { pattern: '^[A-Za-z0-9]+$', message: '密码必须由数字字母组成',trigger: 'blur'}
+      { pattern: '^[A-Za-z0-9]+$', message: '密码必须由数字字母组成', trigger: 'blur' }
     ],
     confirmRules: [
       {
-        validator(rule, value, callback,source) {
-          const {password,confirm} = source;
-          if(password !== confirm) {
+        validator(rule, value, callback, source) {
+          const { password, confirm } = source;
+          if (password !== confirm) {
             callback(false);
           }
           callback();
@@ -130,7 +130,7 @@ Page({
   change(e) {
     let items = this.data.items;
     items.forEach(item => {
-      if(item.name === e.detail.key) {
+      if (item.name === e.detail.key) {
         item.checked = e.detail.checked;
       }
     });
@@ -142,7 +142,7 @@ Page({
   change2(e) {
     let items = this.data.items2;
     items.forEach(item => {
-      if(item.name === e.detail.key) {
+      if (item.name === e.detail.key) {
         item.checked = e.detail.checked;
       }
     });
@@ -151,7 +151,7 @@ Page({
     });
   },
 
-  changeTipType(e){
+  changeTipType(e) {
     this.setData({
       tipType: e.currentTarget.dataset.type
     });
@@ -161,7 +161,8 @@ Page({
   changeSubmitValidate(e) {
     const {
       currentKey
-    } = { ...e.detail
+    } = {
+      ...e.detail
     };
     this.setData({
       isSubmitValidate: currentKey
@@ -181,52 +182,16 @@ Page({
     wx.lin.initValidateForm(this);
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  linsubmit(e) {
+    const errors = e.detail.errors;
+    for (let key in errors) {
+      if (errors[key].length > 0) {
+        return;
+      }
+    }
+    wx.showModal({
+      title: '表单结果',
+      content: JSON.stringify(e.detail.values, null, 2)
+    });
   }
 });
