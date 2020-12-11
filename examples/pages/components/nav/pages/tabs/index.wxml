@@ -14,6 +14,20 @@
       </l-tabs>
     </content-card>
 
+    <content-card l-content="content" name="红点与徽标">
+      <l-tabs l-class-header-line="header-line" scrollable>
+        <l-tabpanel tab="客厅" key="1" slot="1">
+          <view class="tab-content">客厅</view>
+        </l-tabpanel>
+        <l-tabpanel badge-count="8" tab="卧室" key="2" slot="2">
+          <view class="tab-content">卧室</view>
+        </l-tabpanel>
+        <l-tabpanel tab="厨房" dot-badge="{{true}}" key="3" slot="3">
+          <view class="tab-content">厨房</view>
+        </l-tabpanel>
+      </l-tabs>
+    </content-card>
+
     <content-card l-content="content" name="非等宽标签">
       <l-tabs l-class-header-line="header-line" equal-width="{{false}}" scrollable animatedForLine="{{true}}">
         <l-tabpanel tab="精选" key="one" slot="one">
