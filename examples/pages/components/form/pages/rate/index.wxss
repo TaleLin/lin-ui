@@ -12,3 +12,19 @@
 .l-icon-shouye:before {
   content: "\e73d";
 }
+
+.rete-container{
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  margin-top: 6rpx;
+}
+
+.star{
+  width: 22rpx!important;
+  height: 22rpx!important;
+}
+.score{
+  margin-left: 20rpx !important;
+  font-size: 24rpx !important;
+}
