@@ -111,7 +111,9 @@ Component({
       return this.data.value;
     },
     reset() {
-      this.data.value = '';
+      this.setData({
+        value:''
+      });
     }
   }
 });

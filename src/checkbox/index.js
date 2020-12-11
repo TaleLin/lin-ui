@@ -79,6 +79,12 @@ Component({
         if(this.isOverflow('maxSelected')) return;
       }
 
+      this.setData({
+        checked:!this.data.checked
+      });
+
+      console.log('this.data.checked',this.data.checked);
+
       const item = {
         checked: !this.properties.checked,
         key: this.properties.key,

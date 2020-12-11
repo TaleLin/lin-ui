@@ -104,7 +104,9 @@ Component({
       return this.data.current;
     },
     reset() {
-      this.data.current = '';
+      this.setData({
+        current:''
+      });
     }
   },
   observers: {
