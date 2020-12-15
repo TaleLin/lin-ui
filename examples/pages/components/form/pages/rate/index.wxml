@@ -29,10 +29,12 @@
       <l-rate active-color="#FFDD55" inActive-color="#FFF5CE" />
     </content-card>
 
-
-
     <content-card class="content" name="自定义元素个数">
       <l-rate score="3" count="10"/>
+    </content-card>
+
+    <content-card class="content" name="自定义星星间隙大小">
+      <l-rate score="5" count="8"  item-gap="0"/>
     </content-card>
 
     <content-card class="content" name="禁用组件">
