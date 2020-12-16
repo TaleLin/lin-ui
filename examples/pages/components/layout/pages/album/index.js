@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    urls1_1: ['https://656e-env-9eb476-1258886794.tcb.qcloud.la/images/album/photo-3.jpg?sign=d71bb290f896e14bb800d0fb807f6764&t=1590025427'],
+    // urls1_1: ['https://656e-env-9eb476-1258886794.tcb.qcloud.la/images/album/photo-3.jpg?sign=d71bb290f896e14bb800d0fb807f6764&t=1590025427'],
     urls5: [
       'https://656e-env-9eb476-1258886794.tcb.qcloud.la/images/album/photo-1.jpg?sign=ff17b6597c5659186d54469e6122d153&t=1590025404',
       'https://656e-env-9eb476-1258886794.tcb.qcloud.la/images/album/photo-2.jpg?sign=7ccd10f793df154311f15a7b15d9ba57&t=1590025418',
@@ -31,14 +31,16 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function () {
-
+    this.setData({
+      urls1_1:['https://656e-env-9eb476-1258886794.tcb.qcloud.la/images/album/photo-3.jpg?sign=d71bb290f896e14bb800d0fb807f6764&t=1590025427']
+    });
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    
   },
 
   /**

@@ -1,8 +1,5 @@
 // miniprogram_npm/lin-ui/album/index.js
 Component({
-  /**
-   * 组件的属性列表
-   */
   externalClasses: ['l-class', 'l-single-image-class', 'l-multi-image-class'],
   properties: {
     urls: {
@@ -63,42 +60,40 @@ Component({
     }
   },
 
-  /**
-   * 组件的初始数据
-   */
   data: {
     // 传值方式是新方式还是旧方式
     newType: true,
     // 单图短边大小
     shortSideValue: 0,
-    // 图片排列几行
-    row: 0,
-    // 图片排列几列
-    colum: 0,
     // 用于显示的图片列表
     showUrls: [],
     // 传入的url长度是否大于maxNumber指定的数量
     isLong: false,
   },
 
-  /**
-   * 组件的生命周期
-   */
-  lifetimes: {
-    attached() {
-      // 在组件实例进入页面节点树时执行
+  observers: {
+    'urls': function () {
+      this.init();
+    }
+  },
 
-      //判断传入urls长度
-      let urls = [];
-      if (this.data.urls.length > this.data.maxNumber) {
-        urls = this.data.urls.slice(0, this.data.maxNumber);
+  methods: {
+
+    /**
+     * 在 urls 数据变化后进行初始化
+     */
+    init() {
+      // 取出参数
+      let {urls, maxNumber, key} = this.data;
+
+      // 如果 urls 长度超出指定图片数量，则将其截断
+      if (urls.length > maxNumber) {
+        urls = urls.slice(0, maxNumber);
         this.setData({
           isLong: true,
         });
-        console.warn('图片数量超过maxNumber指定数量');
-      } else {
-        urls = this.data.urls;
       }
+
       this.setData({
         showUrls: urls
       });
@@ -109,26 +104,22 @@ Component({
           this.setData({
             everyRowNumber: 2
           });
-        } else(this.setData({
+        } else (this.setData({
           everyRowNumber: 3
         }));
       }
 
-      this.preview();
+      // 判断传入模式
+      const newType = this.judgeType();
+      this.setData({
+        newType
+      });
 
+      if (urls.length === 1) {
+        this.horizontalOrVertical(newType ? urls[0][key] : urls[0]);
+      }
     },
-  },
 
-  observers: {
-    'urls': function () {
-      this.preview();
-    }
-  },
-
-  /**
-   * 组件的方法列表
-   */
-  methods: {
     // 判断传入的urls是字符串列表(old模式)还是对象列表(new模式)
     judgeType() {
       const urls = this.data.urls;
@@ -154,22 +145,6 @@ Component({
           });
         }
       });
-    },
-
-    // 显示图片
-    preview: function () {
-      // 判断传入模式
-      const newType = this.judgeType();
-      this.setData({
-        newType
-      });
-      //显示图片
-      const urls = this.data.urls;
-      const key = this.data.key;
-
-      if (urls.length === 1) {
-        this.horizontalOrVertical(newType ? urls[0][key] : urls[0]);
-      }
     },
 
     onPreviewTap(e) {
@@ -210,6 +185,5 @@ Component({
       }
       this.triggerEvent('lintap', detail, option);
     }
-
   }
 });
