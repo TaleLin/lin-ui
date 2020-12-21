@@ -1,0 +1,7 @@
+<view mut-bind:tap="onRadioChangeTap" class="label label-{{placement}} {{disabled?'label-disabled l-disabled-class':'l-class'}}">
+        <view class="radio" style="color:{{checked?selectColor:(disabled?disabledColor:color)}};font-size:{{size}}">
+            <slot wx:if="{{custom}}" name="icon"/>
+            <view wx:else class="iconfont {{checked?'icon-select':'icon-unselect'}}"></view>
+        </view>
+        <slot/>
+</view>

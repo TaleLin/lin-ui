@@ -1,0 +1,10 @@
+<view class="l-class container-count">
+  <view class="symbol {{count<=min|| disabled?'disabled l-disabled-class':'abled l-symbol-class'}}" catchtap="{{count<=min|| disabled?'doNothing':'onTapChange'}}" data-type="overflow_min" data-change-type="reduce" hover-class="{{isHover?'count-hover':''}}">
+    <view class="l-icon l-icon-reduce" style="font-size:{{iconSize}};color:{{iconColor}}"></view>
+  </view>
+  <input hidden="{{!focus}}" class="l-count-class count" disabled="{{disabled}}" type="number" focus="{{focus}}" value="{{count}}" bind:input="onInput" bindblur="onBlur"/>
+  <view hidden="{{focus}}" class="l-count-class count" mut-bind:tap="onCount">{{count}}</view>
+  <view class="l-symbol-class symbol {{count>=max|| disabled?'disabled l-disabled-class':'abled l-symbol-class'}}" catchtap="{{count>=max|| disabled?'doNothing':'onTapChange'}}" data-type="overflow_max" data-change-type="add" hover-class="{{isHover?'count-hover':''}}">
+       <view class="l-icon l-icon-add" style="font-size:{{iconSize}};color:{{iconColor}}"></view>
+  </view>
+</view>

@@ -1,0 +1,1 @@
+.container-arc-popup{width:100%}.arc-popup{overflow:hidden;width:100%;background:#fff}.content-arc-popup{padding:30rpx;box-sizing:border-box}.header-popup{width:100%;z-index:999}.header-popup.fixed{position:sticky;top:0;background-color:#fff}

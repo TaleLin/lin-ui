@@ -1,0 +1,174 @@
+var is = require("./is.wxs");
+
+function _isArray(targetArray, funName) {
+    if (!is.isArray(targetArray)) {
+        console.log('[WXS:Array]' + funName + ',targetArray must be array');
+        return false;
+    }
+    return true;
+}
+
+/**
+ * concat 合并数组
+ * @param {Array} targetArray 目标数组
+ */
+function concat() {
+    var length = arguments.length;
+    var result = [];
+    var validatorArray = _isArray(arguments[0], 'concat');
+    if (validatorArray) {
+        for (var i = 1; i < length; i++) {
+            result = arguments[0].concat(arguments[i])
+        }
+        return result
+    }
+}
+
+/**
+ * join 数组转成字符串
+ * @param {Array} targetArray 目标数组
+ * @param {String} spearator 连接符
+ */
+function join(targetArray, spearator) {
+    var validatorArray = _isArray(arguments[0], 'concat');
+    if (validatorArray) return targetArray.join(spearator);
+}
+
+/**
+ * pop 移除最后一个数组元素，并返回移除后的数组和溢出的值
+ * @param {Array} targetArray 目标数组
+ */
+function pop(targetArray) {
+    var validatorArray = _isArray(arguments[0], 'pop');
+    if (validatorArray) {
+        var result = targetArray.pop();
+        return {
+            newArray: targetArray,
+            item: result
+        }
+    }
+}
+
+/**
+ * shift 移除第一个数组元素，并返回移除后的数组和溢出的值
+ * @param {Array} targetArray 目标数组
+ */
+function shift(targetArray) {
+    var validatorArray = _isArray(arguments[0], 'shift');
+    if (validatorArray) {
+        var result = targetArray.shift();
+        return {
+            newArray: targetArray,
+            item: result
+        }
+    }
+}
+
+/**
+ * push 从后追加数组元素，并返回新的数组
+ * @param {Array} targetArray 目标数组
+ */
+function push() {
+    var length = arguments.length;
+    var validatorArray = _isArray(arguments[0], 'push');
+    if (validatorArray) {
+        for (var i = 1; i < length; i++) {
+            arguments[0].push(arguments[i])
+        }
+        return arguments[0]
+    }
+}
+
+/**
+ * unshift 从前追加数组元素，并返回新的数组
+ * @param {Array} targetArray 目标数组
+ */
+function unshift(targetArray) {
+    var length = arguments.length;
+    var validatorArray = _isArray(arguments[0], 'unshift');
+    if (validatorArray) {
+        for (var i = length - 1; i > 0; i--) {
+            arguments[0].unshift(arguments[i])
+        }
+        return arguments[0]
+    }
+}
+/**
+ * reverse 倒序
+ * @param {Array} targetArray 目标数组
+ */
+function reverse(targetArray) {
+    var validatorArray = _isArray(targetArray, 'reverse');
+    if (validatorArray) return targetArray.reverse();
+}
+
+/**
+ * slice 截取数组
+ * @param {Array} targetArray 目标数组
+ * @param {Number} beginSlice 从该索引（以 0 为基数）处开始提取目标数组中的元素
+ * @param {Number} endSlice 在该索引（以 0 为基数）处结束提取数组元素
+ */
+function slice(targetArray, beginSlice, endSlice) {
+    var validatorArray = _isArray(targetArray, 'slice');
+    if (validatorArray) return targetArray.slice(beginSlice, endSlice);
+}
+
+/**
+ * splice 截取数组
+ * @param {Array} targetArray 目标数组
+ * @param {Number} start
+ * @param {Number} deleteCount
+ */
+function splice(targetArray, start, deleteCount) {
+    var validatorArray = _isArray(targetArray, 'splice');
+    if (validatorArray) {
+        if (arguments.length < 4) {
+            targetArray.splice(start, deleteCount);
+        } else {
+            targetArray.splice(start, deleteCount, arguments[3]);
+            var length = arguments.length;
+            for (var i = 4; i < length; i++) {
+                arguments[i] && targetArray.splice(++start, 0, arguments[i])
+            }
+        }
+        return targetArray
+    }
+}
+
+/**
+ * indexOf 查找数组
+ * @param {Array} targetArray 目标数组
+ * @param {String} searchValue 被查找的值
+ * @param {Number} fromIndex 开始查找的位置
+ *
+ */
+function indexOf(targetArray, searchValue, fromIndex = 0) {
+    var validatorArray = _isArray(targetArray, 'indexOf');
+    if (validatorArray) return targetArray.indexOf(searchValue, fromIndex);
+}
+
+/**
+ * lastIndexOf 查找字符串最后出现的位置
+ * @param {Array} targetArray 目标数组
+ * @param {String} searchValue 被查找的值
+ * @param {Number} fromIndex 开始查找的位置，str.length
+ *
+ */
+function lastIndexOf(targetArray, searchValue, fromIndex = 0) {
+    var validatorArray = _isArray(targetArray, 'lastIndexOf');
+    if (validatorArray) return targetArray.lastIndexOf(searchValue, fromIndex || targetArray.length);
+}
+
+module.exports = {
+    concat: concat,
+    join: join,
+    pop: pop,
+    shift: shift,
+    push: push,
+    unshift: unshift,
+    reverse: reverse,
+    slice: slice,
+    splice: splice,
+    indexOf:indexOf,
+    lastIndexOf:lastIndexOf
+}

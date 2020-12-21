@@ -1,0 +1,6 @@
+<wxs src="./index.wxs" module="computed"></wxs>
+<view class="calendar-day-container {{ type }}" style="{{ computed.getDayStyle(type, color) }}">
+  <view class="top">{{ topInfo }}</view>
+  <view class="text">{{ text }}</view>
+  <view class="bottom">{{ bottomInfo }}</view>
+</view>

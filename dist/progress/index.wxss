@@ -1,0 +1,1 @@
+.container{display:flex;flex-direction:row;align-items:center}.progress{position:relative;width:100%;transition:all .25s ease-in-out}.percent{position:absolute;z-index:1}.active{background-color:#3963bc}.text{color:#3963bc;font-size:30rpx}.background{position:absolute;width:100%}.header{position:absolute!important;z-index:2}.slot{position:absolute;z-index:2}

@@ -1,0 +1,11 @@
+<view class="anchor-wrapper" style="{{anchorWrapperStyle}}">
+  <view class="anchor" style="{{anchorStyle}}">
+    <view wx:if="{{anchorSlot.height!==0}}" class="anchor-slot">
+      <slot></slot>
+    </view>
+
+    <view wx:if="{{anchorSlot.height===0}}" class="anchor-default l-anchor-class">
+      {{anchorText}}
+    </view>
+  </view>
+</view>

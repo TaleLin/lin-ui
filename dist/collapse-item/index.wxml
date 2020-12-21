@@ -1,0 +1,12 @@
+<view class="container l-class">
+  <view mut-bind:tap="onTapTitle" class="container-title l-title-class">
+    <view style="{{disable?'color:#DEE2E6':''}}" wx:if="{{!customTitle}}">{{title}}</view>
+    <l-icon class="container-title-icon" wx:if="{{!customTitle}}" style="{{isExpandContent?'transform:rotate(-180deg);':''}}" name="down" size="28" color="{{disable?'#DEE2E6':'#333'}}"></l-icon>
+    <slot name="title"></slot>
+  </view>
+  <view catch:transitionend="onTransitionend" class="container-body" style="height:{{bodyHeight}};transition-duration:{{animationTime}}s">
+    <view class="container-body-wrapper l-body-class">
+      <slot></slot>
+    </view>
+  </view>
+</view>

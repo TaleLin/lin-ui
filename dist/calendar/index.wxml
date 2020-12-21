@@ -1,0 +1,7 @@
+<import src="./calendar.wxml"/>
+
+<l-popup content-align="bottom" show="{{ show }}" bind:lintap="closePicker">
+  <template is="calendar" data="{{ currentDate, type, color, defaultDate, format, formatter, minDate, maxDate, minSelect, maxSelect, showConfirm, confirmText, maxLimitMessage, minLimitMessage, showTitle, showSubtitle, title, subTitle, scrollIntoViewIndex, color }}"/>
+</l-popup>
+
+<l-toast></l-toast>

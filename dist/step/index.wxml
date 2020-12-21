@@ -1,0 +1,69 @@
+<view class="step {{'step-'+direction}} l-class" style="{{direction==='row'?'width:'+(1/length)*stepsWidth+'px':'min-height:'+stepMinHeight+'rpx'}}">
+  <view class="step-container l-step-class {{'step-container-'+direction}}">
+    <view wx:if="{{custom}}" class="step-custom">
+      <slot name="dot"/>
+    </view>
+    <view wx:else class="l-step-class {{dot && !icon?'step-dot-'+currentStatus.setStatus(activeIndex,index,status)+' step-dot':'step-'+currentStatus.setStatus(activeIndex,index,status)+' step-icon'}}" style="{{dot?currentStatus.dotStyle(activeIndex,index,color):currentStatus.statusStyle(activeIndex,index,color,status)}}">
+      <l-icon wx:if="{{icon}}" name="{{icon}}" size="{{iconSize}}" color="{{(currentStatus.setStatus(activeIndex,index,status))==='process'?'#3963BC':iconColor}}"/>
+      <block wx:if="{{!dot && !icon}}">
+        <view wx:if="{{currentStatus.setStatus(activeIndex,index,status)==='error' || currentStatus.setStatus(activeIndex,index,status)==='finish'}}" class="iconfont icon-{{currentStatus.setStatus(activeIndex,index,status)}}"></view>
+        <block wx:else>{{index+1}}</block>
+      </block>
+    </view>
+  </view>
+  <view class="step-content {{'step-content-'+direction}}">
+    <view class="l-title-class {{activeIndex===index?'step-title-process':'step-title'}}">
+      {{title}}
+    </view>
+    <view class="l-describe-class step-describe">
+      {{describe}}
+      <slot name="describe"/>
+    </view>
+  </view>
+  <view class="step-line l-line-class {{'step-line-'+ direction}} {{currentStatus.isReverse(reverse,activeIndex,index)?'step-line-finish':'step-line-wait'}}" style="{{activeIndex>index?('background-color:'+color):''}}" wx:if="{{reverse?(index!==0):(length!==index+1)}}">
+  </view>
+</view>
+
+<wxs module="currentStatus">
+var setStatus = function(activeIndex,index,status){
+  if(activeIndex===index){
+    return status || 'process'
+  } else if(activeIndex>index){
+    return 'finish'
+  }else{
+    return 'wait'
+  }
+}
+
+var statusStyle = function(activeIndex,index,color,status){
+  if(activeIndex===index){
+    return status==='error'?'':('background-color:' + color)
+  } else if(activeIndex>index){
+    return ('border-color:' + color + ';color:' + color)
+  }else{
+    return ''
+  }
+}
+
+var dotStyle = function(activeIndex,index,color){
+  if(activeIndex>=index){
+    return ('background-color:' + color)
+  } else{
+    return ''
+  }
+}
+
+var isReverse = function(reverse,activeIndex,index) {
+  if(reverse){
+    return (activeIndex>=index)
+  }
+  return (activeIndex>index)
+}
+
+module.exports = {
+  setStatus:setStatus,
+  statusStyle:statusStyle,
+  dotStyle:dotStyle,
+  isReverse:isReverse
+}
+</wxs>

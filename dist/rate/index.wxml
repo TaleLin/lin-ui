@@ -1,0 +1,10 @@
+<view class="l-rate l-class">
+    <view style="{{itemGap&&index!=0?'margin-left:'+itemGap+'rpx':''}}" wx:for="{{count}}" wx:key="item" class="l-rate-star" data-index="{{index}}" mut-bind:tap="handleClick">
+        <view class="icon-checked" wx:if="{{score > index}}" hover-class="none" hover-stop-propagation="false" data-rate="{{score-index}}" style="width:{{score-index<1?(score-index)*100:100}}%">
+            <image wx:if="{{activeImage &&  inActiveImage}}" class="image-item l-class-image l-image-class" src="{{activeImage}}" mode="aspectFit|aspectFill|widthFix" lazy-load="false"></image>
+            <l-icon wx:else name="{{name}}" l-class="l-class-icon l-icon-class" size="{{size}}" color="{{activeColor}}"/>
+        </view>
+        <image wx:if="{{activeImage &&  inActiveImage}}" class="image-item l-class-image l-image-class" src="{{inActiveImage}}" mode="aspectFit|aspectFill|widthFix" lazy-load="false"></image>
+        <l-icon wx:else name="{{name}}" l-class="l-class-icon l-icon-class" size="{{size}}" color="{{inActiveColor}}"></l-icon>
+    </view>
+</view>

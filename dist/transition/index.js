@@ -1,0 +1,1 @@
+import transition from"../behaviors/transition";Component({behaviors:[transition(!0)],externalClasses:["l-class","l-enter-class","l-enter-active-class","l-enter-to-class","l-leave-class","l-leave-active-class","l-leave-to-class"],methods:{}});

@@ -1,0 +1,3 @@
+<view class="l-class steps-container {{reverse?'steps-container-'+direction+'-reverse':'steps-container-'+direction}}">
+    <slot/>
+</view>

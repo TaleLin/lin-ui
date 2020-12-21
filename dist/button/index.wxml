@@ -1,0 +1,16 @@
+<label for="{{name}}" mut-bind:tap="handleTap" class="l-label-class">
+  <block wx:if="{{special}}">
+    <view class="special-container l-class">
+      <slot/>
+    </view>
+  </block>
+  <block wx:else>
+    <view class="l-btn {{ 'l-btn-' + size }} {{ 'l-btn-' + type }} {{ 'l-btn-' + shape }} {{plain?'l-btn-plain':''}} {{ disabled ? 'l-btn-disabled' : ''}} l-class" hover-class="{{disabled?'':disabledHover?'':'btn-hover l-hover-class'}}" hover-stop-propagation="{{hoverStopPropagation}}" hover-start-time="{{hoverStartTime}}" hover-stay-time="{{hoverStayTime}}" style="{{width?'min-width:'+width+'rpx;':''}} {{height?'height:'+height+'rpx;'+'line-height:'+height+'rpx;':''}} {{size=='long'?'border-radius:0;':''}} {{'background-color:'+bgColor}}">
+      <view wx:if="{{loading}}" class="l-btn-loading {{'margin-' + size}} {{ plain ?'l-btn-loading-' + type : '' }}"></view>
+      <l-icon l-class="l-icon-class" class="{{'margin-' + size}}" wx:if="{{icon}}" name="{{icon}}" color="{{iconColor}}" size="{{iconSize}}"/>
+      <slot/>
+    </view>
+  </block>
+</label>
+<button style="position: absolute;top: -999px;left: -999px;" wx:if="{{openType}}" id="{{name}}" lang="{{lang}}" form-type="{{formType}}" open-type="{{openType}}" app-parameter="{{ appParameter }}" hover-stop-propagation="{{ hoverStopPropagation }}" hover-start-time="{{ hoverStartTime }}" hover-stay-time="{{ hoverStayTime }}" session-from="{{ sessionFrom }}" send-message-title="{{ sendMessageTitle }}" send-message-path="{{ sendMessagePath }}" send-message-img="{{ sendMessageImg }}" show-message-card="{{ showMessageCard }}" bindcontact="openTypeEvent" bindgetuserinfo="openTypeEvent" bindgetphonenumber="openTypeEvent" bindopensetting="openTypeEvent">
+</button>

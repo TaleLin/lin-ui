@@ -1,0 +1,17 @@
+<view wx:if="{{ show }}" class="l-class l-noticebar" style="color: {{ color }}; background-color: {{ backgroundcolor }}">
+  <l-icon wx:if="{{ frontIconName }}" size="{{frontIconSize}}" color="{{frontIconColor}}" name="{{ frontIconName }}" class="l-noticebar-icon" l-class="l-icon-class"/>
+  <swiper autoplay vertical interval="{{4*speed}}" class="l-noticebar-content-wrap" wx:if="{{type=='swip'}}">
+    <block wx:for="{{swipArr}}" wx:key="swip">
+      <swiper-item data-index="{{index}}" mut-bind:tap="onSwip">
+        {{item}}
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class="l-noticebar-content-wrap l-noticebar-content-wrap-view" wx:else>
+    <view class="l-noticebar-content" mut-bind:tap="handleTap" animation="{{ animationData }}">
+      <slot></slot>
+    </view>
+  </view>
+  <l-icon wx:if="{{ endIconName && !close }}" size="{{endIconSize}}" color="{{endIconColor}}" class="l-noticebar-operation" name="{{ endIconName }}" mut-bind:tap="onIconTap"/>
+  <l-icon wx:if="{{close}}" class="l-noticebar-operation" name="close" size="{{endIconSize}}" color="{{endIconColor}}" mut-bind:tap="onClose"/>
+</view>

@@ -1,0 +1,10 @@
+
+<label class='form-item {{disabled? "disabled": ""}}'>
+  <view class='default-border {{border? "border": ""}} l-class'>
+    <view class="mask" wx:if="{{disabled}}"></view>
+    
+    <textarea class="{{autoHeight ? 'textarea-auto-height': 'textarea'}} l-inner-class" type="{{type}}" value="{{ value }}" password="{{type==='password'}}" placeholder="{{placeholder}}" maxlength="{{maxlength}}" placeholder-class="pls-class" placeholder-style="{{placeholderStyle}}" disabled="{{disabled}}" focus="{{focus}}" auto-height="{{autoHeight}}" cursor-spacing="{{cursorSpacing}}" bindinput="handleInputChange" bindfocus="handleInputFocus" bindblur="handleInputBlur" bindconfirm="handleInputConfirm"/>
+      <view class="indicator" wx:if="{{indicator}}">{{value.length + '/' +  maxlength}}</view>
+  </view>
+</label>
+  <l-error-tip l-error-text-class="l-error-text l-error-text-class" errorText="{{errorText}}" wx:if="{{errorText}}"/>

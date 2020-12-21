@@ -1,0 +1,14 @@
+<view class="lu-tab-bar" style="{{bgColor?'background-color:'+bgColor+';':''}} {{bgImg?'background-image: url('+bgImg+');':''}}">
+  <view class="lu-tab-bar__item-wrapper" data-index="{{index}}" mut-bind:tap="onTapItem" style="width:{{750/list.length}}rpx" wx:for="{{list}}" wx:key="index">
+    <view class="lu-tab-bar__item-container">
+      
+      <l-badge show="{{item.redDot}}" dot="{{item.redDot===true}}" value="{{item.redDot}}" data-index="{{index}}" mut-bind:lintap="onTapItem">
+        <image class="lu-tab-bar__item-image {{selectedIndex===index?'lu-tab-bar__item-image--selected':''}}" src="{{selectedIndex===index?item.selectedIconPath:item.iconPath}}"></image>
+      </l-badge>
+      
+      <view wx:if="{{item.text!==undefined}}" class="lu-tab-bar__item-text {{selectedIndex===index?'lu-tab-bar__item-text--selected':''}}" style="color:{{selectedIndex===index?textSelectedColor:textColor}}">
+        {{item.text}}
+      </view>
+    </view>
+  </view>
+</view>

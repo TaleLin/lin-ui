@@ -1,0 +1,79 @@
+var containerStyle = function (urls, multipleSize, gapRow, gapColumn) {
+    if (urls.length === 2 || urls.length === 4) {
+        return 'width:' + (2 * multipleSize + gapRow) + 'rpx; grid-row-gap:' + gapColumn + 'rpx; grid-column-gap:' + gapRow + 'rpx;grid-template-columns:repeat(auto-fit, ' + multipleSize + 'rpx);'
+    } else {
+        return 'width:' + (3 * multipleSize + 2 * gapRow) + 'rpx; grid-row-gap:' + gapColumn + 'rpx; grid-column-gap:' + gapRow + 'rpx;grid-template-columns:repeat(auto-fit, ' + multipleSize + 'rpx);'
+    }
+
+}
+
+var blockClass = function (urls, horizontalScreen) {
+    if (urls.length === 1) {
+        if (horizontalScreen) {
+            return 'l-single-image-class'
+        } else {
+            return 'vertical l-single-image-class'
+        }
+    } else {
+        return 'l-multi-image-class'
+    }
+}
+
+var blockStyle = function (urls, horizontalScreen, shortSideValue, singleSize, multipleSize) {
+    if (urls.length === 1) {
+        if (horizontalScreen) {
+            return 'height:' + shortSideValue + 'rpx;width:' + singleSize + 'rpx;'
+        } else {
+            return 'width:' + shortSideValue + 'rpx;height:' + singleSize + 'rpx;'
+        }
+    } else {
+        return 'height:' + multipleSize + 'rpx;width:' + multipleSize + 'rpx;'
+    }
+}
+
+var gridStyle = function (gapRow, gapColumn, multipleSize, everyRowNumber) {
+    return 'display:inline-grid;grid-template-columns: repeat(' + everyRowNumber + ',' + multipleSize + 'rpx);grid-row-gap:' + gapRow + 'rpx;grid-column-gap:' + gapColumn + 'rpx;'
+}
+
+var dimBack = function (isLong, index, maxNumber, previewFullImage) {
+    if (previewFullImage) {
+        if (isLong) {
+            if (index == maxNumber - 1) {
+                return 'dimback'
+            }
+        }
+    }
+    return ''
+}
+
+var dim = function (isLong, index, maxNumber, previewFullImage) {
+    if (previewFullImage) {
+        if (isLong) {
+            if (index == maxNumber - 1) {
+                return 'dim'
+            }
+        }
+    }
+    return ''
+}
+
+var image = function (isLong, index, maxNumber, previewFullImage) {
+    if (previewFullImage) {
+        if (isLong) {
+            if (index == maxNumber - 1) {
+                return true
+            }
+        }
+    }
+    return false
+}
+
+module.exports = {
+    containerStyle: containerStyle,
+    blockClass: blockClass,
+    blockStyle: blockStyle,
+    gridStyle: gridStyle,
+    dimBack: dimBack,
+    dim: dim,
+    image: image,
+}

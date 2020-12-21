@@ -1,0 +1,9 @@
+<view style="display:flex">
+  <view class="l-tag {{type==='touch'?'l-tag-touch':''}} {{plain?'l-tag-plain-'+ size:'l-tag-'+size}} {{disable?'l-tag-disable':''}} {{select?'select l-select-class':'l-class'}} {{plain?'l-tag-plain':''}} {{'l-tag-'+size+'-'+ shape}}" style="{{height?'line-height:'+height+'rpx;height:'+height+'rpx;':''}}{{plain?'color:'+fontColor+';border-color:'+fontColor:'background-color:'+bgColor+';color:'+fontColor}}" mut-bind:tap="handleTap">
+    <view class="{{location==='left'?'content':'content-l'}}" style="{{iconName?'line-height:0':''}}">
+      <l-icon wx:if="{{icon}}" style="{{location==='left'?'margin-right:5rpx':'margin-left:5rpx'}}" name="{{icon}}" size="{{iconSize}}" color="{{iconColor}}"/>
+      <image style="{{location==='left'?'margin-right:5rpx':'margin-left:5rpx'}}" wx:if="{{image}}" src="{{image}}" class="{{'tag-image-'+size}} l-image-class"></image>
+      <slot/>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,17 @@
+
+<slot name="content"/>
+<view mut-bind:tap="onLoadmore" wx:if="{{show}}">
+  <view wx:if="{{custom && type==='end'}}">
+    <slot name="end"/>
+  </view>
+  <view wx:elif="{{custom && type==='loading'}}">
+    <slot name="loading"/>
+  </view>
+  <view class="loading l-class" wx:else>
+    <view class="line loading-view" style="{{'background-color:'+color}}" wx:if="{{line}}"></view>
+    <view class="rotate loading-view" style="border-color: {{color}};width:{{size}}rpx;height:{{size}}rpx" wx:if="{{type=='loading'}}"></view>
+    <view class="loading-text l-loading-class loading-view" style="color:{{color}};font-size:{{size}}rpx" wx:if="{{type=='loading'}}">{{loadingText}}</view>
+    <view class="loading-text l-end-class loading-view" style="{{'color:'+color}};font-size:{{size}}rpx" wx:if="{{type=='end'}}">{{endText}}</view>
+    <view class="line l-line-class loading-view" style="{{'background-color:'+color}}" wx:if="{{line}}"></view>
+  </view>
+</view>

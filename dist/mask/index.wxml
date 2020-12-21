@@ -1,0 +1,7 @@
+
+<view class="container-mask {{center? 'center' : ''}} l-class" hidden="{{ show? '' :  'hidden'}}" catchtouchmove="doNothingMove" catchtap="onMaskTap" style="z-index:{{zIndex}}; {{show? 'background: rgba(0,0,0,' + opacity+ ')' :  ''}}">
+  
+  <view class="mask-content l-mask-class">
+    <slot></slot>
+  </view>
+</view>

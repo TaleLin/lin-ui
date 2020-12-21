@@ -1,0 +1,8 @@
+<view class='container-popup {{ show ? "popup-show" : "" }} {{ "l-popup-" + direction===null?contentAlign:direction }} l-class' style="z-index:{{zIndex}};" catchtouchmove="doNothingMove">
+  <view class="container-bg l-bg-class"></view>
+  <view wx:if="{{show}}" class="popup-content {{ show ? ((direction===null)?contentAlign:direction) : ''}} popup-fade-{{direction===null?contentAlign:direction}}-active-{{(transition===null?animation:transition) ? status:''}} l-panel-class" catchtap="onPopupTap">
+    <view catchtap="doNothingTap">
+      <slot></slot>
+    </view>
+  </view>
+</view>
