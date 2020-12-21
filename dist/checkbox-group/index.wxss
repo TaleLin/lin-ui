@@ -1,0 +1,1 @@
+.checkbox-group{flex-wrap:wrap}.checkbox-group-row{display:flex;flex-direction:row}.checkbox-group-column{display:flex;flex-direction:column}

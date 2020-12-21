@@ -1,0 +1,45 @@
+<view wx:if="{{show}}">
+    <view class="container l-class" catchtouchmove="doNothing" style="z-index: {{zIndex}};">
+        
+        <view class="clip-wrapper" bind:touchstart="clipTouchStart" bind:touchmove="clipTouchMove" bind:touchend="clipTouchEnd">
+            
+            
+            
+            
+            
+            
+            <view class="clip-content">
+                <view class="clip-content-top bg-transparent" style="height: {{cutY}}px;transition-property: {{cutAnimation ? '' : 'background'}}"></view>
+                <view class="clip-content-middle" style="height: {{clipHeight}}px;">
+                    
+                    
+                    
+                    
+                    
+                    
+                    <view class="clip-content-middle-left bg-transparent" style="width: {{cutX}}px;transition-property: {{cutAnimation ? '' : 'background'}}"></view>
+                    <view class="clip-content-middle-center" style="width: {{clipWidth}}px;height: {{clipHeight}}px;transition-property: {{cutAnimation ? '' : 'background'}}">
+                        <view class="clip-edge clip-edge-{{index < 2 ? 'top' : 'bottom'}}-{{index === 0 || index === 2 ? 'left' : 'right'}}" wx:for="{{4}}" wx:for-index="index" wx:key="index" style="left: {{index === 0 || index === 2 ? 0 : 'auto'}};right: {{index === 1 || index === 3 ? 0 : 'auto'}};top: {{index < 2 ? 0 : 'auto'}};bottom: {{index > 1 ? 0 : 'auto'}}"></view>
+                    </view>
+                    <view class="clip-content-middle-right flex-auto bg-transparent" style="transition-property: {{cutAnimation ? '' : 'background'}}"></view>
+                </view>
+                <view class="clip-content-footer flex-auto bg-transparent" style="transition-property: {{cutAnimation ? '' : 'background'}}"></view>
+            </view>
+        </view>
+        
+        <image class="cropper-image" binderror="imageLoad" bindload="imageLoad" bind:touchstart="imageTouchStart" bind:touchmove="imageTouchMove" bind:touchend="imageTouchEnd" src="{{imageUrl}}" mode="widthFix" wx:if="{{imageUrl}}" style="width: {{imageWidth ? imageWidth + 'px' : 'auto'}};height: {{imageHeight ? imageHeight + 'px' : 'auto'}};transform: translate3d({{imageLeft - imageWidth / 2}}px, {{imageTop - imageHeight / 2}}px,0) scale({{scale}}) rotate({{angle}}deg); transition-duration: {{cutAnimation ? 0.35 : 0}}s;"/>
+        
+        <canvas canvas-id="image-clipper" id="image-clipper" :disable-scroll="true" style="width: {{CANVAS_WIDTH * scaleRatio}}px; height:{{CANVAS_HEIGHT * scaleRatio}}px;" class="clipper-canvas"></canvas>
+        
+        <view class="footer-tools">
+            <view class="tools-icon">
+                <image src="{{checkImageIcon}}" mut-bind:tap="uploadImage" wx:if="{{checkImage}}" class="tools-icon-image"/>
+                <image src="{{rotateAlongIcon}}" mut-bind:tap="rotate" data-type="along" wx:if="{{rotateAlong}}" class="tools-icon-image"/>
+                <image src="{{rotateInverseIcon}}" mut-bind:tap="rotate" data-type="inverse" wx:if="{{rotateInverse}}" class="tools-icon-image"/>
+                <image src="{{sureIcon}}" mut-bind:tap="getImageData" wx:if="{{sure}}" class="tools-icon-image"/>
+                <image src="{{closeIcon}}" mut-bind:tap="close" wx:if="{{close}}" class="tools-icon-image"/>
+            </view>
+            <slot></slot>
+        </view>
+    </view>
+</view>

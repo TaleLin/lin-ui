@@ -1,0 +1,12 @@
+<wxs src="./index.wxs" module="computed"></wxs>
+
+<view class="calendar-mounth-container">
+  <view class="title" wx:if="{{ showMonthTitle }}">
+    {{ computed.formatMonthTitle(date) }}
+  </view>
+  <view class="calendar-day-container">
+    <view class="calendar-day-wrap" wx:for="{{ days }}" wx:key="index">
+      <day bind:tap="onClick" data-item="{{ item }}" wx:if="{{ item.type !== 'empty' }}" text="{{ item.text }}" topInfo="{{ item.topInfo }}" bottomInfo="{{ item.bottomInfo }}" type="{{ item.type }}" color=" {{ color }}"/>
+    </view>
+  </view>
+</view>

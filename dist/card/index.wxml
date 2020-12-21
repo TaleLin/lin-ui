@@ -1,0 +1,22 @@
+<view class="l-class card-container {{'card-container-' + type}} {{'card-container-' + type + '-' + position}} {{full?'card-container-full':'card-container-unfull'}}">
+  <block wx:if="{{type ==='primary' || type ==='cover'}}">
+    <image wx:if="{{!plaintext}}" class="l-img-class {{full?'cover-img-full':'cover-img-unfull'}} {{ 'card-img-' + type }} {{ 'card-img-' + type + '-' + position }}" mode="{{imageMode}}" lazy-load src="{{image}}"></image>
+    <view class="card-content">
+      <text class="l-title-class card-title {{'card-title-' + type}}">{{title}}</text>
+      <slot/>
+    </view>
+  </block>
+  <block wx:if="{{type ==='avatar'}}">
+    <view class="card-avatar-top">
+      <view class="card-avatar-left">
+        <image mode="aspectFill" class="l-img-class {{ 'card-img-' + type }}" src="{{image}}" mode="{{imageMode}}" lazy-load></image>
+        <view class="card-avatar">
+          <text class="l-title-class card-title {{'card-title-' + type}}">{{title}}</text>
+          <text class="describe">{{describe}}</text>
+        </view>
+      </view>
+      <slot name="more"/>
+    </view>
+    <slot/>
+  </block>
+</view>

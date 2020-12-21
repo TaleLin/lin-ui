@@ -1,0 +1,12 @@
+/* eslint-disable */
+
+function formatMonthTitle(date) {
+  date = getDate(date);
+  return date.getFullYear() + '年' + (date.getMonth() + 1) + '月';
+}
+
+
+
+module.exports = {
+  formatMonthTitle: formatMonthTitle
+};

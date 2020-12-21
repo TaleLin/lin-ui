@@ -1,0 +1,27 @@
+function getDayStyle(type, color) {
+  var style = [];
+
+  if (color) {
+    if (
+      type === 'start' ||
+      type === 'end' ||
+      type === 'selected'
+    ) {
+      style.push(['background', color]);
+    } else if (type === 'middle') {
+      style.push(['color', color]);
+      // style.push(['background', color]);
+      // style.push(['opacity', '0.1']);
+    }
+  }
+
+  return style
+    .map(function(item) {
+      return item.join(':');
+    })
+    .join(';');
+}
+
+module.exports = {
+  getDayStyle: getDayStyle,
+};

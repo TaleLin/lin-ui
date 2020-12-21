@@ -1,0 +1,1 @@
+.grid-item{display:flex;justify-content:center;align-items:center;flex-direction:column;padding:32rpx 16rpx;box-sizing:border-box}.l-gird-item-hover{opacity:.8}

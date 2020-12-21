@@ -1,0 +1,15 @@
+<view wx:if="{{loading}}" class="l-skeleton-container l-class">
+
+  <view wx:if="{{avatar}}" class="l-avatar-class l-skeleton-avatar bg {{active?'active':''}} l-skeleton-avatar-{{avatarShape}}" style="width:{{avatarSize}};height:{{avatarSize}}"></view>
+
+  <view class="l-skeleton-right">
+    <view wx:if="{{title}}" class="l-skeleton-title-container" style="height:{{avatarSize}}">
+      <view class="l-skeleton-title bg {{active?'active':''}}" style="height:{{titleHeight}}"></view>
+    </view>
+
+    <view wx:if="{{paragraph}}" wx:for="{{r}}" wx:key="index" class="l-row-class l-skeleton-rows bg {{active?'active':''}}" style="height:{{item.height}};width:{{item.width}}"></view>
+  </view>
+
+</view>
+
+<slot wx:else/>

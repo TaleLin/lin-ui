@@ -1,0 +1,21 @@
+<view class="search-bar l-container-class">
+  <slot name="before"/>
+  <view wx:if="{{frontText}}" class="icon-container" mut-bind:tap="handleTapFrontText">
+    <text class="city">{{frontText}}</text>
+    <l-icon name="down" color="#333" size="22"/>
+  </view>
+  <view class="search-input l-class {{'search-input-'+ shape}}" style="{{'background-color:'+bgColor}}">
+    <slot wx:if="{{custom}}" name="icon"/>
+    <l-icon wx:else name="{{icon}}" size="{{iconSize}}" color="{{iconColor}}" l-class="l-icon-class"/>
+    <input confirm-type="{{confirmType}}" class="input l-input-class {{'input'+ TextAlign}}" value="{{ value }}" type="{{type}}" password="{{type==='password'}}" placeholder="{{placeholder}}" maxlength="{{maxlength}}" placeholder-class="pls-class l-placeholder-class" placeholder-style="{{placeholderStyle}}" disabled="{{disabled}}" focus="{{focus}}" bindinput="handleInputChange" bindfocus="handleInputFocus" bindblur="handleInputBlur" bindconfirm="handleInputConfirm"/>
+    <view class="close-wrap" wx:if="{{clear&&value}}" mut-bind:tap="onClearTap">
+        <view class="close">
+            <l-icon name="close" color="#fff" size="15"/>
+        </view>
+    </view>
+  </view>
+  <view wx:if="{{showCancel}}" class="cancel l-cancel-class" mut-bind:tap="onCancel">
+        {{cancelText}}
+  </view>
+  <slot name="after"/>
+</view>

@@ -1,0 +1,15 @@
+<view class="index-list">
+  
+  <view wx:if="{{showSidebar}}" class="sidebar l-sidebar-class" catch:tap="onTapSidebar" catch:touchmove="onTouchMove" catch:touchend="onTouchend">
+    <block wx:for="{{sidebarData}}" wx:for-item="sidebarItem" wx:key="index">
+      <view class="sidebar-item l-sidebar-item-class {{activeSidebarItem===index?'sidebar-item-active l-selected-class':'l-unselected-class'}}">{{sidebarItem}}</view>
+    </block>
+
+    
+    <view class="tip l-tip-class" style="top:{{tipTop}}px;{{showTip?'':'opacity:0;'}}transform: rotate(-45deg) translateY({{-tipHeight/2-tipHeightOverflow}}px);">
+      <view class="tip-text l-tip-text-class">{{tipText}}</view>
+    </view>
+  </view>
+
+  <slot></slot>
+</view>

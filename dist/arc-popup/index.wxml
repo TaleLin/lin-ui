@@ -1,0 +1,10 @@
+<l-popup show="{{show}}" direction="{{direction}}" transition="{{transition}}" opacity="{{opacity}}" locked="{{locked}}" z-index="{{zIndex}}" l-class="l-class" l-bg-class="l-bg-class" bind:lintap="onArcPopupTap">
+  <scroll-view scroll-y="true" class="arc-popup l-panel-class" style="{{arcStyle}}">
+    <view class="header-popup {{headerFixed ? 'fixed' : ''}} l-header-class">
+      <slot name="header"/>
+    </view>
+    <view class="content-arc-popup">
+      <slot/>
+    </view>
+  </scroll-view>
+</l-popup>
