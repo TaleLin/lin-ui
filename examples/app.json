@@ -101,7 +101,8 @@
         "pages/image-clipper/index",
         "pages/rules/index",
         "pages/rate/index",
-        "pages/form/index"
+        "pages/form/index",
+        "pages/calendar/index"
       ]
     },
     {

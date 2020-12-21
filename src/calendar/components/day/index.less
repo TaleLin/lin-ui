@@ -1,0 +1,58 @@
+@import "../../../../config/styles/_base.less";
+.calendar-day-container{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  align-items: center;
+  position: relative;
+  color: #666;
+  &.selected{
+    background-color: @default-color;
+    color: #ffffff;
+    border-radius: 8rpx;
+  }
+  &.start{
+    background-color: @default-color;
+    color: #ffffff;
+    border-radius: 8rpx;
+  }
+  &.end{
+    background-color: @default-color;
+    color: #ffffff;
+    border-radius: 8rpx;
+  }
+  &.disabled{
+    color: #c8c9cc;
+    cursor: default;
+    background: #ffffff;
+  }
+  &.middle{
+    color: @default-color;
+    &::after{
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-color: currentColor;
+      opacity: 0.1;
+      content: '';
+    }
+  }
+  // background-color: red;
+  // color: #eff9f0;
+  .top{
+    height: 24rpx;
+    line-height: 24rpx;
+    font-size: 16rpx;
+  }
+  .text{
+    flex: 1;
+    font-size: 32rpx;
+  }
+  .bottom{
+    height: 24rpx;
+    line-height: 24rpx;
+    font-size: 16rpx;
+  }
+}
