@@ -1,0 +1,20 @@
+<view class="calendar-header-container">
+  <block wx:if="{{ showTitle }}">
+    <!-- <view class="calendar-header-container_title">
+      <slot name="title"></slot>
+    </view> -->
+   <view class="calendar-header-container_title">
+      {{ title }}
+    </view>
+  </block>
+
+  <view wx:if="{{ showSubtitle }}" class="calendar-header-container_subtitle">
+    {{ subTitle }}
+  </view>
+
+  <view class="calendar-header__weekdays">
+    <view wx:for="{{ weekdays }}" wx:key="index" class="calendar-header__weekday">
+      {{ item }}
+    </view>
+  </view>
+</view>

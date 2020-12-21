@@ -72,7 +72,9 @@ module.exports = {
         'CapsuleBar',
         'Circle',
         'ImageClipper',
-        'TabBar'
+        'TabBar',
+        'DynamicBuild',
+        'Calendar'
       ]
     ]
   }

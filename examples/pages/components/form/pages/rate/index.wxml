@@ -1,12 +1,29 @@
 <!--pages/components/form/pages/rate/index.wxml-->
 <view class='container'>
+
+   <!-- 这行没有问题 -->
+   <view class="rete-container">
+    <l-rate score="3" size="22" disabled/>
+    <text class="score">3</text>
+  </view>
+
+  <!-- 这行有问题 -->
+  <view class="rete-container">
+    <l-rate inActive-image="https://i.loli.net/2020/12/11/7KfVXNFEakHio3m.png" active-image="https://i.loli.net/2020/12/11/EbGrIn2iglChmwR.png"
+    score="3"
+    disabled
+    l-image-class="star"/>
+    <text class="score">7</text>
+  </view>
   <content-title name="Rate" describe="评分">
-    <content-card class="content" name="基本案例">
-      <l-rate/>
-    </content-card>
+ 
 
     <content-card class="content" name="设置默认选中的个数">
-      <l-rate score="3" />
+      <l-rate inActive-image="https://i.loli.net/2020/12/11/7KfVXNFEakHio3m.png" active-image="https://i.loli.net/2020/12/11/EbGrIn2iglChmwR.png"
+    score="3"
+    disabled
+    l-image-class="star"/>
+    <text class="score">7</text>
     </content-card>
 
     <content-card class="content" name="设置默认选中的个数(小数类型)">
@@ -29,10 +46,12 @@
       <l-rate active-color="#FFDD55" inActive-color="#FFF5CE" />
     </content-card>
 
-
-
     <content-card class="content" name="自定义元素个数">
       <l-rate score="3" count="10"/>
+    </content-card>
+
+    <content-card class="content" name="自定义星星间隙大小">
+      <l-rate score="5" count="8"  item-gap="0"/>
     </content-card>
 
     <content-card class="content" name="禁用组件">

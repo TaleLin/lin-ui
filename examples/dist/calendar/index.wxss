@@ -1,0 +1,1 @@
+.calendar-container{display:flex;height:1000rpx;flex-direction:column;background-color:#fff}.calendar-container .calendar-body-wrap{flex:1;overflow:auto;padding:0 20rpx;width:auto}

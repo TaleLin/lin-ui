@@ -28,9 +28,8 @@
         wx:key="key"
         data-key="{{item.key}}"
         data-index="{{index}}"
-        data-class="{{item.badgeCount}}"
         mut-bind:tap="handleChange">
-        <l-badge l-self-class="badge-view" l-class="l-badge-class" wx:if="{{(item.badgeCount > 0 || item.dotBadge )}}" value="{{item.badgeCount}}" dot="{{item.dotBadge}}" max-count="{{item.badgeMaxCount}}" number-type="{{item.badgeCountType}}">
+        <l-badge data-key="{{item.key}}" data-index="{{index}}" mut-bind:lintap="handleChange" l-self-class="badge-view" l-class="l-badge-class" wx:if="{{(item.badgeCount > 0 || item.dotBadge )}}" value="{{item.badgeCount}}" dot="{{item.dotBadge}}" max-count="{{item.badgeMaxCount}}" number-type="{{item.badgeCountType}}">
           <template is="tab-item" data="{{item,activeKey,activeColor,inactiveColor}}" />
         </l-badge>
         <template wx:else is="tab-item" data="{{item,activeKey,activeColor,inactiveColor}}" />

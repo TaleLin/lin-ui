@@ -1,0 +1,35 @@
+<!--pages/view/pages/dialog/index.wxml-->
+<view class='container'>
+  <content-title name="Calendar" describe="日历">
+
+    <content-card class="content" name="基础用法">
+      <l-list title="选择单个日期" data-id="base_single" bind:lintap="changeType" />
+      <l-list title="选择多个日期" data-id="base_multiple" bind:lintap="changeType" />
+      <l-list title="选择日期范围" data-id="base_range" bind:lintap="changeType" />
+    </content-card>
+
+    <content-card class="content" name="自定义日历">
+      <l-list title="自定义颜色" data-id="custom_color" bind:lintap="changeType" />
+      <!-- <l-list title="自定义日期范围" data-id="custom_range" bind:lintap="changeType" /> -->
+      <l-list title="自定义按钮文字" data-id="custom_confirmtext" bind:lintap="changeType" />
+      <l-list title="自定义日期文案" data-id="custom_date" bind:lintap="changeType" />
+       <l-list title="自定义可选数量" data-id="custom_count" bind:lintap="changeType" />
+    </content-card>
+
+  </content-title>
+
+   <l-calendar 
+    bind:linselect="selectCalender"
+    title="{{ title }}" 
+    show="{{ show }}" 
+    minSelect="{{ minSelect }}" 
+    maxSelect="{{ maxSelect }}" 
+    defaultDate="{{ defaultDate }}" 
+    type="{{ type }}"
+    color="{{ color }}"
+    confirmText="{{ confirmText }}"
+    formatter="{{ formatter }}"
+  >
+  </l-calendar>
+
+</view>
