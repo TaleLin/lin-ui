@@ -24,6 +24,9 @@
     <a href="https://www.npmjs.com/package/lin-ui">
         <img alt="周下载量" src="https://img.shields.io/npm/dw/lin-ui?color=%233c973c&label=%E5%91%A8%E4%B8%8B%E8%BD%BD%E9%87%8F&logo=node.js&logoColor=white" />
     </a>
+    <a href="https://www.npmjs.com/package/lin-ui">
+        <img alt="基础库版本" src="https://img.shields.io/badge/%E5%9F%BA%E7%A1%80%E5%BA%93%E7%89%88%E6%9C%AC-%3E%3D2.8.2-brightgreen" />
+    </a>
 </div>
 
 ---
@@ -100,9 +103,12 @@ Lin UI 是一套基于 **微信小程序原生语法** 实现的高质量 UI 组
 
 1. 配置微信开发者工具
 
-   要正确使用 Lin UI，需将微信开发者工具的 `Es6 转 ES5` 和 `增强编译` 选项勾选上
+     - 要正确使用 Lin UI，需将微信开发者工具的 `Es6 转 ES5` 和 `增强编译` 选项勾选上
 
-   > 设置路径：微信开发者工具右上角 -> 详情 -> 本地设置
+       > 设置路径：微信开发者工具右上角 -> 详情 -> 本地设置
+
+     - **将基础库版本设置到 `>=2.8.2`**
+
 2. 在页面中引入
    ```json
    {
