@@ -2,185 +2,206 @@
 @import "../../config/styles/_mixins.less";
 
 .btn-hover::before{
-    .active();
+  .active();
 }
 
 .special-container{
-    display: flex;
+  display: flex;
 }
 
 .l-btn{
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    white-space: nowrap;
-    font-size: 28rpx;
-    position: relative;
-    color: #fff;
-    padding: 0 12rpx;
-    box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  font-size: 28rpx;
+  position: relative;
+  color: #fff;
+  padding: 0 12rpx;
+  box-sizing: border-box;
 
-    // img-size
-    &-img{
-        &-mini{
-            width: @btn-height-mini/2;
-            height: @btn-height-mini/2;
-        }
-        &-medium{
-            width: @btn-height/2;
-            height: @btn-height/2;
-        }
-        &-large{
-            height: @btn-height-large/2;
-            width: @btn-height-large/2;
-        }
+  // img-size
+  &-img{
+    &-mini{
+      width: @btn-height-mini/2;
+      height: @btn-height-mini/2;
     }
 
-    // Size
-    &-long{
-        border-radius: 0;
-        height: 88rpx;
-        width: 100%;
-    }
     &-medium{
-        height: @btn-height;
-        min-width: @btn-width;
-    }
-    &-large {
-        height: @btn-height-large;
-        min-width: @btn-width-large;
-    }
-    &-mini {
-        height: @btn-height-mini;
-        min-width: @btn-width-mini;
-        font-size: @size-font-mini;
+      width: @btn-height/2;
+      height: @btn-height/2;
     }
 
-    //Type
+    &-large{
+      height: @btn-height-large/2;
+      width: @btn-height-large/2;
+    }
+  }
+
+  // Size
+  &-long{
+    border-radius: 0;
+    height: 88rpx;
+    width: 100%;
+  }
+
+  &-medium{
+    height: @btn-height;
+    min-width: @btn-width;
+  }
+
+  &-large{
+    height: @btn-height-large;
+    min-width: @btn-width-large;
+  }
+
+  &-mini{
+    height: @btn-height-mini;
+    min-width: @btn-width-mini;
+    font-size: @size-font-mini;
+  }
+
+  //Type
+  &-default{
+    .theme(background-color, @main-color);
+  }
+
+  &-success{
+    .theme(background-color, @success-color);
+  }
+
+  &-warning{
+    .theme(background-color, @warning-color);
+    color: #333333;
+  }
+
+  &-error{
+    .theme(background-color, @error-color);
+  }
+
+
+  // Shape
+  &-square{
+    border-radius: 0;
+  }
+
+  &-semicircle{
+    border-radius: @btn-circle-size;
+  }
+
+  &-large&-semicircle{
+    border-radius: @btn-circle-size-large;
+  }
+
+  &-mini&-semicircle{
+    border-radius: @btn-circle-size-mini;
+  }
+
+  &-circle{
+    border-radius: @btn-circle-size/5;
+  }
+
+  &-large&-circle{
+    border-radius: @btn-circle-size-large/5;
+  }
+
+  &-mini&-circle{
+    border-radius: @btn-circle-size-mini/5;
+  }
+
+  // Plain
+  &-plain{
+    background-color: #fff;
+    color: @default-color;
+    border: 2rpx solid @default-color;
+  }
+
+  &-success&-plain{
+    background-color: #fff;
+    color: @success-color;
+    border: 2rpx solid @success-color;
+  }
+
+  &-error&-plain{
+    background-color: #fff;
+    color: @error-color;
+    border: 2rpx solid @error-color;
+  }
+
+  &-warning&-plain{
+    background-color: #fff;
+    color: @warning-color;
+    border: 2rpx solid @warning-color;
+  }
+
+  // Loading
+  &-loading{
+    opacity: 0.6;
+    display: inline-block;
+    vertical-align: middle;
+    width: 24rpx;
+    height: 24rpx;
+    background: transparent;
+    border-radius: 50%;
+    border: 4rpx solid @btn-loading-color;
+    border-color: @btn-loading-color @btn-loading-color @btn-loading-color transparent;
+    animation: btn-spin 0.6s linear;
+    animation-iteration-count: infinite;
+
     &-default{
-        background-color: @default-color;
+      border: 4rpx solid @default-color;
+      border-color: @default-color @default-color @default-color transparent;
     }
 
-    &-success {
-        background-color: @success-color;
+    &-success{
+      border: 4rpx solid @success-color;
+      border-color: @success-color @success-color @success-color transparent;
     }
 
-    &-warning {
-        background-color: @warning-color;
-        color: #333333;
+    &-error{
+      border: 4rpx solid @error-color;
+      border-color: @error-color @error-color @error-color transparent;
     }
 
-    &-error {
-        background-color: @error-color;
+    &-warning{
+      border: 4rpx solid @warning-color;
+      border-color: @warning-color @warning-color @warning-color transparent;
     }
+  }
 
-
-    // Shape
-    &-square{
-        border-radius: 0;
-    }
-    &-semicircle{
-        border-radius: @btn-circle-size;
-    }
-    &-large&-semicircle{
-        border-radius: @btn-circle-size-large;
-    }
-    &-mini&-semicircle{
-        border-radius: @btn-circle-size-mini;
-    }
-    &-circle{
-        border-radius: @btn-circle-size/5;
-    }
-    &-large&-circle{
-        border-radius: @btn-circle-size-large/5;
-    }
-    &-mini&-circle{
-        border-radius: @btn-circle-size-mini/5;
-    }
-
-    // Plain
-    &-plain{
-        background-color: #fff;
-        color: @default-color;
-        border: 2rpx solid @default-color;
-    }
-    &-success&-plain{
-        background-color: #fff;
-        color: @success-color;
-        border: 2rpx solid @success-color;
-    }
-    &-error&-plain{
-        background-color: #fff;
-        color: @error-color;
-        border: 2rpx solid @error-color;
-    }
-    &-warning&-plain{
-        background-color: #fff;
-        color:  @warning-color;
-        border: 2rpx solid @warning-color;
-    }
-
-    // Loading
-    &-loading{
-        opacity: 0.6;
-        display: inline-block;
-        vertical-align: middle;
-        width: 24rpx;
-        height: 24rpx;
-        background: transparent;
-        border-radius: 50%;
-        border: 4rpx solid @btn-loading-color;
-        border-color: @btn-loading-color @btn-loading-color @btn-loading-color transparent;
-        animation: btn-spin 0.6s linear;
-        animation-iteration-count: infinite;
-        &-default{
-            border: 4rpx solid @default-color;
-            border-color:@default-color @default-color @default-color transparent;
-        }
-        &-success{
-            border: 4rpx solid @success-color;
-            border-color:@success-color @success-color @success-color transparent;
-        }
-        &-error{
-            border: 4rpx solid @error-color;
-            border-color:@error-color @error-color @error-color transparent;
-        }
-        &-warning{
-            border: 4rpx solid @warning-color;
-            border-color:@warning-color @warning-color @warning-color transparent;
-        }
-    }
-
-    // Disabled
-    &-disabled{
-        opacity: 0.8;
-    }
+  // Disabled
+  &-disabled{
+    opacity: 0.8;
+  }
 }
 
 .icon{
-    display: flex !important;
+  display: flex !important;
 }
 
 .margin{
-    &-mini{
-        margin-right: 10rpx
-    }
-    &-medium{
-        margin-right: 18rpx
-    }
-    &-large{
-        margin-right: 24rpx
-    }
-    &-long{
-        margin-right: 24rpx
-    }
+  &-mini{
+    margin-right: 10rpx
+  }
+
+  &-medium{
+    margin-right: 18rpx
+  }
+
+  &-large{
+    margin-right: 24rpx
+  }
+
+  &-long{
+    margin-right: 24rpx
+  }
 }
 
-@keyframes btn-spin {
-    0% {
-        transform: rotate(0);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
+@keyframes btn-spin{
+  0%{
+    transform: rotate(0);
+  }
+  100%{
+    transform: rotate(360deg);
+  }
 }
