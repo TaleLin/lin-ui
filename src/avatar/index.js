@@ -1,14 +1,13 @@
 Component({
   externalClasses: [
     'l-class',
-    'l-class-text',
     'l-text-class'
   ],
   properties: {
     icon: String,
     iconColor: {
       type: String,
-      value: '#3963BC'
+      value: null
     },
     iconSize: {
       type: String,
