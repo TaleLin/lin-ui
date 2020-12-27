@@ -1,6 +1,14 @@
 @import "../../config/styles/_base.less";
 @import "../../config/styles/_mixins.less";
 
+// 按钮类型
+@types:{
+  error: error;
+  default: main;
+  success: success;
+  warning: warning;
+}
+
 .btn-hover::before{
   .active();
 }
@@ -10,7 +18,6 @@
 }
 
 .l-btn{
-  display: inline-flex;
   align-items: center;
   justify-content: center;
   white-space: nowrap;
@@ -18,6 +25,7 @@
   position: relative;
   color: #fff;
   padding: 0 12rpx;
+  display: inline-flex;
   box-sizing: border-box;
 
   // img-size
@@ -63,20 +71,20 @@
 
   //Type
   &-default{
-    .theme(background-color, @main-color);
+    .theme(background-color, @t-main-color);
   }
 
   &-success{
-    .theme(background-color, @success-color);
+    .theme(background-color, @t-success-color);
   }
 
   &-warning{
-    .theme(background-color, @warning-color);
+    .theme(background-color, @t-warning-color);
     color: #333333;
   }
 
   &-error{
-    .theme(background-color, @error-color);
+    .theme(background-color, @t-error-color);
   }
 
 
@@ -110,29 +118,14 @@
   }
 
   // Plain
-  &-plain{
-    background-color: #fff;
-    color: @default-color;
-    border: 2rpx solid @default-color;
-  }
 
-  &-success&-plain{
-    background-color: #fff;
-    color: @success-color;
-    border: 2rpx solid @success-color;
-  }
-
-  &-error&-plain{
-    background-color: #fff;
-    color: @error-color;
-    border: 2rpx solid @error-color;
-  }
-
-  &-warning&-plain{
-    background-color: #fff;
-    color: @warning-color;
-    border: 2rpx solid @warning-color;
-  }
+  each(@types, {
+    &-@{key}&-plain{
+      background-color: #fff;
+      .theme(color, '@{t-@{value}-color}');
+      .theme(border, '2rpx solid @{t-@{value}-color}');
+    }
+  })
 
   // Loading
   &-loading{
@@ -148,25 +141,12 @@
     animation: btn-spin 0.6s linear;
     animation-iteration-count: infinite;
 
-    &-default{
-      border: 4rpx solid @default-color;
-      border-color: @default-color @default-color @default-color transparent;
-    }
-
-    &-success{
-      border: 4rpx solid @success-color;
-      border-color: @success-color @success-color @success-color transparent;
-    }
-
-    &-error{
-      border: 4rpx solid @error-color;
-      border-color: @error-color @error-color @error-color transparent;
-    }
-
-    &-warning{
-      border: 4rpx solid @warning-color;
-      border-color: @warning-color @warning-color @warning-color transparent;
-    }
+    each(@types, {
+      &-@{key}{
+        .theme(border, '4rpx solid @{t-@{value}-color}');
+        .theme(border-color, '@{t-@{value}-color} @{t-@{value}-color} @{t-@{value}-color} transparent');
+      }
+    })
   }
 
   // Disabled
