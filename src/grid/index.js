@@ -18,7 +18,7 @@ Component({
     },
 
   },
-  externalClasses: ['l-class', 'l-class-grid', 'l-grid-class'],
+  externalClasses: ['l-class', 'l-grid-class'],
   properties: {
     rowNum: {
       type: String,
