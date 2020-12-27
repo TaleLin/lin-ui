@@ -14,9 +14,9 @@
     </content-card>
 
     <content-card class="content" name="自定义图标的列表">
-      <l-list title="药品" icon="yaopin" l-class-icon="iconfont" />
-      <l-list title="用药" icon="yongyao" l-class-icon="iconfont" />
-      <l-list title="首页" icon="shouye" l-class-icon="iconfont" />
+      <l-list title="药品" icon="yaopin" l-icon-class="iconfont" />
+      <l-list title="用药" icon="yongyao" l-icon-class="iconfont" />
+      <l-list title="首页" icon="shouye" l-icon-class="iconfont" />
     </content-card>
 
     <content-card class="content" name="有标签元素的列表">

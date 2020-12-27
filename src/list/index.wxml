@@ -12,11 +12,11 @@
 </view>
 <template name="cell-left-main">
     <view class="left-section ">
-        <image wx:if="{{image}}" class="l-image l-class-image l-image-class" src="{{image}}" mode="aspectFit|aspectFill|widthFix" />
-        <l-icon wx:elif="{{icon}}" l-class="l-icon l-class-icon l-icon-class" name="{{icon}}" size="{{iconSize}}" color="{{iconColor}}" />
+        <image wx:if="{{image}}" class="l-image l-image-class" src="{{image}}" mode="aspectFit|aspectFill|widthFix" />
+        <l-icon wx:elif="{{icon}}" l-class="l-icon l-icon-class" name="{{icon}}" size="{{iconSize}}" color="{{iconColor?iconColor:''}}" />
         <view class="l-text">
-            <view class="l-class-content l-content-class">{{title}}</view>
-            <view class="l-desc l-class-desc l-desc-class" wx:if="{{desc}}">{{desc}}</view>
+            <view class="l-content-class">{{title}}</view>
+            <view class="l-desc l-desc-class" wx:if="{{desc}}">{{desc}}</view>
         </view>
         <l-tag size="mini"  shape="{{tagShape}}" bg-color="{{tagColor}}" l-class="cell-tag" wx:if="{{tagContent && tagPosition ==='left' && !tagPlain}}">{{tagContent}}</l-tag>
         <l-tag size="mini" shape="{{tagShape}}" plain="{{tagPlain}}" font-color="{{tagColor}}" l-class="cell-tag" wx:elif="{{tagContent && tagPosition ==='left' && tagPlain}}">{{tagContent}}</l-tag>
@@ -24,7 +24,7 @@
     </view>
 </template>
 <template name="cell-right-main">
-    <view class="right-section l-class-right l-right-class">
+    <view class="right-section l-right-class">
         <slot name="right-section"></slot>
         <l-tag size="mini" shape="{{tagShape}}" bg-color="{{tagColor}}" l-class="cell-tag" wx:if="{{tagContent && tagPosition ==='right' && !tagPlain }}">{{tagContent}}</l-tag>
         <l-tag size="mini" shape="{{tagShape}}" plain="{{tagPlain}}" font-color="{{tagColor}}" l-class="cell-tag" wx:if="{{tagContent && tagPosition ==='right' && tagPlain }}">{{tagContent}}</l-tag>
