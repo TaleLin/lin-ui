@@ -1,8 +1,8 @@
 <view class="l-grid l-class" bind:tap="tapGrid">
-    <view 
+    <view
         bind:tap="tapGridItem"
         data-grid-index="{{item.index}}"
-        class="l-grid-item l-class-grid l-grid-class {{index%rowNum !== rowNum-1 &&(showBorder||showColBorder) ? 'side-grid':''}} {{(index<gridItems.length-(gridItems.length%rowNum||rowNum)) &&(showBorder||showRowBorder)? 'center-grid':''}}" wx:for="{{gridItems}}" wx:key="key"
+        class="l-grid-item l-grid-class {{index%rowNum !== rowNum-1 &&(showBorder||showColBorder) ? 'side-grid':''}} {{(index<gridItems.length-(gridItems.length%rowNum||rowNum)) &&(showBorder||showRowBorder)? 'center-grid':''}}" wx:for="{{gridItems}}" wx:key="key"
         style="min-width:{{100/rowNum}}%;"
     >
         <slot name="{{item.key}}"></slot>
