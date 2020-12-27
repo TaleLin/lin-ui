@@ -7,7 +7,7 @@ Component({
     name: String,
     color: {
       type: String,
-      value: '#3963bc'
+      value: null
     },
     size: {
       type: String,
