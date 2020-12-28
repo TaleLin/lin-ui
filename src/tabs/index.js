@@ -2,15 +2,6 @@ import scrollCenter from '../behaviors/scrollCenter';
 Component({
   behaviors: [scrollCenter],
   externalClasses: [
-    'l-class-tabs',
-    'l-class-header',
-    'l-class-active',
-    'l-class-content',
-    'l-class-inactive',
-    'l-class-line',
-    'l-class-tabimage',
-    'l-class-header-line',
-    'l-class-icon',
     'l-tabs-class',
     'l-header-class',
     'l-active-class',
