@@ -1,3 +1,4 @@
+@import '../../config/styles/_base';
 // 红点颜色
 @red-dot-color: #ff474b;
 @component: lu-tab-bar;
@@ -40,4 +41,9 @@
   margin-top: 4rpx;
   font-size: 24rpx;
   line-height: 1;
+  color: #666;
+  
+  &--selected {
+    .theme(color, @t-main-color);
+  }
 }
