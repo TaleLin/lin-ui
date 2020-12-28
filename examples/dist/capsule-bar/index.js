@@ -69,6 +69,36 @@ Component({
     hiddenTitle: {
       type: Boolean,
       value: false
+    },
+    // 左侧胶囊按钮左侧图标路径
+    capsuleLeftIconPath: {
+      type: String,
+      value: null
+    },
+    // 左侧胶囊按钮左侧图标宽度，单位：rpx
+    capsuleLeftIconWidth: {
+      type: Number,
+      value: null
+    },
+    // 左侧胶囊按钮左侧图标高度，单位：rpx
+    capsuleLeftIconHeight: {
+      type: Number,
+      value: null
+    },
+    // 左侧胶囊按钮右侧图标路径
+    capsuleRightIconPath: {
+      type: String,
+      value: null
+    },
+    // 左侧胶囊按钮右侧图标宽度，单位：rpx
+    capsuleRightIconWidth: {
+      type: Number,
+      value: null
+    },
+    // 左侧胶囊按钮右侧图标高度，单位：rpx
+    capsuleRightIconHeight: {
+      type: Number,
+      value: null
     }
   },
 
