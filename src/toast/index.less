@@ -1,3 +1,5 @@
+@import '../../config/styles/_base';
+
 .container {
   position: fixed;
 }
@@ -64,11 +66,20 @@
 
 .container .toast .toast-icon {
   margin-top: 20rpx;
-  margin-bottom: 20rpx
+  margin-bottom: 20rpx;
+  color: #ffffff;
 }
 
 .container .toast .toast-icon-loading {
   animation: loading-fadein 1.5s linear 0s infinite
+}
+
+.container .toast .toast-icon-success {
+  .theme(color, @t-success-color);
+}
+
+.container .toast .toast-icon-error {
+  .theme(color, @t-error-color);
 }
 
 .container .toast .toast-text {
