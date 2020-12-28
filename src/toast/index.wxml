@@ -9,7 +9,7 @@
       src="{{image}}"
     />
     <l-icon
-      class="l-icon-class toast-icon toast-icon-{{icon === 'loading'?'loading':''}}"
+      l-class="l-icon-class toast-icon toast-icon-{{icon === 'loading'?'loading':''}}"
       wx:elif="{{icon && !image}}"
       size="{{iconSize? iconSize : 60}}"
       color="{{iconColor? iconColor: icon === 'success'? '#00C292' :  icon === 'error' ? '#F4516C' : '#ffffff'}}"
