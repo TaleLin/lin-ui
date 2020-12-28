@@ -10,7 +10,7 @@
     </content-card>
 
     <content-card l-content="content" name="非等宽选项卡">
-      <l-segment l-class-header-line="header-line" even="{{false}}" scrollable animated-for-line="{{true}}">
+      <l-segment l-header-line-class="header-line" even="{{false}}" scrollable animated-for-line="{{true}}">
         <l-segment-item tab="精选" key="one">
           <view class="tab-content">精选</view>
         </l-segment-item>
@@ -63,13 +63,13 @@
     </content-card>
 
     <content-card l-content="content" name="图标选项卡">
-      <l-segment active-color="#FF783C" inactive-color="#333333" l-class-icon="icon-style">
+      <l-segment active-color="#FF783C" inactive-color="#333333" l-icon-class="icon-style">
         <l-segment-item wx:for="{{iconTabs}}" tab="{{item.tab}}" key="{{item.key}}" wx:key="key" icon="{{item.icon}}" pic-placement="{{item.picPlacement}}" />
       </l-segment>
     </content-card>
 
     <content-card l-content="content" name="图片标签">
-      <l-segment l-class-tabimage="tab-image" has-line="{{false}}">
+      <l-segment l-tab-image-class="tab-image" has-line="{{false}}">
         <l-segment-item wx:for="{{imagesTabs}}" tab="{{item.tab}}" key="{{item.key}}" wx:key="key" image="{{item.image}}" pic-placement="{{item.picPlacement}}" />
       </l-segment>
     </content-card>
@@ -84,7 +84,7 @@
     </content-card>
 
     <content-card l-content="content" name="自定义选项卡">
-      <l-segment l-class-tabimage="tab-image" has-line="{{false}}" l-class="segment-view" l-class-active="segment-active" activeKey="two">
+      <l-segment l-tab-image-class="tab-image" has-line="{{false}}" l-class="segment-view" l-active-class="segment-active" activeKey="two">
         <l-segment-item key="one" slot="one">
           <view class="tab-item">
             <view>2月12日 10：00</view>
