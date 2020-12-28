@@ -8,19 +8,12 @@ Component({
   externalClasses: [
     'l-class',
     'l-header-class',
-    'l-class-active',
     'l-active-class',
-    'l-class-inactive',
     'l-inactive-class',
-    'l-class-tabimage',
     'l-tab-image-class',
-    'l-class-header-line',
     'l-header-line-class',
-    'l-class-line',
     'l-line-class',
-    'l-class-icon',
     'l-icon-class',
-    'l-class-badge',
     'l-badge-class'
   ],
   options: {
