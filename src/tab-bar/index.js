@@ -24,12 +24,12 @@ Component({
     // 文字选中颜色
     textSelectedColor: {
       type: String,
-      value: '#3963bc'
+      value: null
     },
     // 文字未选中颜色
     textColor: {
       type: String,
-      value: '#666'
+      value: null
     }
   },
 
