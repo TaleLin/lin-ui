@@ -2,11 +2,6 @@ import nodeUtil from '../core/utils/node-util';
 
 Component({
   externalClasses: [
-    'l-class-header',
-    'l-class-active',
-    'l-class-inactive',
-    'l-class-line',
-    'l-class-tabimage',
     'l-header-class',
     'l-active-class',
     'l-inactive-class',
