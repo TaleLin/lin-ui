@@ -48,7 +48,7 @@ Component({
     // 确定按钮的颜色
     confirmColor: {
       type: String,
-      value: '#3683d6'
+      value: null
     },
     // 取消按钮的文本
     cancelText: {
@@ -57,12 +57,12 @@ Component({
     },
     cancelColor: {
       type: String,
-      value: '#45526b'
+      value: null
     },
     titleColor: String,
     contentColor: {
       type: String,
-      value: 'rgba(89,108,142,1)'
+      value: null
     },
     openApi: {
       type: Boolean,
@@ -104,10 +104,10 @@ Component({
           content = '',
           locked = true,
           confirmText = '确定',
-          contentColor = 'rgba(89,108,142,1)',
-          cancelColor = '#45526b',
+          contentColor = null,
+          cancelColor = null,
           cancelText = '取消',
-          confirmColor = '#3683d6',
+          confirmColor = null,
           success = null,
           fail = null,
         } = options;
