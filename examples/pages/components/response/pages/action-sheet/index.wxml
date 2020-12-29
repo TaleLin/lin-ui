@@ -52,4 +52,4 @@
   </content-title>
 </view>
 
-<l-action-sheet l-class-title="action-title" />
+<l-action-sheet l-title-class="action-title" />
