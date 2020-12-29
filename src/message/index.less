@@ -17,20 +17,20 @@
   transition: all 0.4s ease-in-out;
 
   &-success{
-    background-color: @success-color;
+    .theme(background-color, @t-success-color);
   }
 
   &-error{
-    background-color: @error-color;
+    .theme(background-color, @t-error-color);
   }
 
   &-warning{
-    background-color: @warning-color;
+    .theme(background-color, @t-warning-color);
     color: #333;
   }
 
   &-primary{
-    background-color: @theme-color;
+    .theme(background-color, @t-main-color);
   }
 }
 
