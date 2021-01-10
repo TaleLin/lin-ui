@@ -83,7 +83,11 @@ Component({
     },
 
     _changeStatus() {
-      switch (this.properties.type) {
+      const type = this.data.type;
+      if(!type){
+        return;
+      }
+      switch (type) {
       case 'success':
         this.setData({
           typeImage: 'image/success.png',
@@ -134,7 +138,7 @@ Component({
         break;
       default:
         console.warn(
-          `${this.data.type} is not a valid value`
+          `${type} is not a valid value`
         );
       }
     },
