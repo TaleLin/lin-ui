@@ -4,7 +4,7 @@ import validator from '../behaviors/validator';
 
 Component({
   behaviors: [zIndex, watchShow, validator],
-  externalClasses: ['l-class', 'l-image-class'],
+  externalClasses: ['l-class', 'l-image-class','l-class-image'],
   properties: {
     show: Boolean,
     icon: String,
