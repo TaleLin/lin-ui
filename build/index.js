@@ -16,8 +16,8 @@ const {
 const path = require('path');
 
 const componentData = require('./until');
-const result = `{common/*,core/*,behaviors,utils,${componentData()}}`;
-const isCustom = (result !== '{common/*,core/*,behaviors,utils,}');
+const result = `{common/**,core/**,behaviors,utils,${componentData()}}`;
+const isCustom = (result !== '{common/**,core/**,behaviors,utils,}');
 
 const distPath = path.resolve(__dirname, '../dist');
 const examplePath = path.resolve(__dirname, '../examples/dist');
