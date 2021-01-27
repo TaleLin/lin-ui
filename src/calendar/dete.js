@@ -1,5 +1,5 @@
 const formatFlags = {
-  format: function(format, date) {
+  format: function (format, date) {
     date = new Date(date);
     let ret;
     const opt = {
@@ -10,10 +10,23 @@ const formatFlags = {
     for (let k in opt) {
       ret = new RegExp('(' + k + ')').exec(format);
       if (ret) {
-        format = format.replace(ret[1], (ret[1].length === 1) ? (opt[k]) : (opt[k].padStart(ret[1].length, '0')));
+        format = format.replace(ret[1], (ret[1].length === 1) ? opt[k] : this.padZero(opt[k], ret[1].length));
       }
     }
     return format;
+  },
+
+  /**
+   * PC 端微信不支持 padStart，这里写一个补 0 函数
+   * 如果测试已兼容，则可使用原生 padStart
+   * issue #1277
+   */
+  padZero(str, length) {
+    let res = str;
+    for (let i = 0; i < length - str; i++) {
+      res = '0' + res;
+    }
+    return res;
   }
 };
 
