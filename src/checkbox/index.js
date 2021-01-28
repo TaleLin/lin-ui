@@ -1,6 +1,6 @@
 Component({
   behaviors: ['wx://form-field'],
-  externalClasses: ['l-class', 'l-disabled-class'],
+  externalClasses: ['l-class', 'l-disabled-class', 'l-icon-class'],
   relations: {
     '../checkbox-group/index': {
       type: 'parent'
@@ -61,7 +61,7 @@ Component({
   },
   ready() {
     const parent = this.getRelationNodes('../checkbox-group/index')[0];
-    let {placement:parentPlacement} = parent.properties;
+    let {placement: parentPlacement} = parent.properties;
     this.setData({parentPlacement});
   },
   methods: {
@@ -73,10 +73,10 @@ Component({
 
       const parent = this.getRelationNodes('../checkbox-group/index')[0];
 
-      if(this.properties.checked) {
-        if(this.isOverflow('minSelected')) return;
+      if (this.properties.checked) {
+        if (this.isOverflow('minSelected')) return;
       } else {
-        if(this.isOverflow('maxSelected')) return;
+        if (this.isOverflow('maxSelected')) return;
       }
 
       const item = {
@@ -102,7 +102,11 @@ Component({
       let isOverflow = type === 'minSelected' ? selectedLength <= limit : selectedLength >= limit;
       if (isOverflow) {
         let backType = type === 'minSelected' ? 'min_selected' : 'max_selected';
-        parent.onEmitOverflowHandle && parent.onEmitOverflowHandle({key: this.properties.key, limitNumber: limit, type: `overflow_${backType}`});
+        parent.onEmitOverflowHandle && parent.onEmitOverflowHandle({
+          key: this.properties.key,
+          limitNumber: limit,
+          type: `overflow_${backType}`
+        });
       }
       return isOverflow;
     }
