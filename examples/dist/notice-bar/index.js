@@ -146,5 +146,16 @@ Component({
         show: false
       });
     },
+
+
+    // ============ 开放函数 =============
+
+    /**
+     * 动态设置通告栏内容后刷新动画
+     */
+    linFlush(){
+      this.destroyTimer();
+      this.initAnimation();
+    },
   }
 });
