@@ -12,7 +12,6 @@
     "watch": "gulp -f build/index.js watch",
     "lint": "eslint .",
     "fix": "eslint . --fix",
-    "release": "sh build/release.sh",
     "changelog": "conventional-changelog -p conventionalcommits -i CHANGELOG.md -s -n .convention-changelog-config.js"
   },
   "repository": {
