@@ -74,7 +74,8 @@ module.exports = {
         'ImageClipper',
         'TabBar',
         'DynamicBuild',
-        'Calendar'
+        'Calendar',
+        'Script'
       ]
     ]
   }
