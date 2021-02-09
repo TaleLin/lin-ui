@@ -49,10 +49,11 @@ Component({
     },
     sizeType: {
       // 该写法经测试有效
-      type: Array|String,
+      type: Array | String,
       value: ['original', 'compressed']
     },
     // 所选图片最大限制，单位字节
+    // 0 为无限制
     maxImageSize: {
       type: Number,
       value: 0,
@@ -69,13 +70,20 @@ Component({
       type: Boolean,
       value: false
     },
+    // 存放图片 url 的数组
+    // 放在 properties 中是因为引入了 behaviors: ['wx://form-field'],
+    // wx://form-field 中的 value 为 null，会引起很多报错
+    // value 放在 data 中没有 properties 优先级高，覆盖不了
+    // 所以只能放在此处
+    value: {
+      type: Array,
+      value: []
+    }
   },
 
   data: {
     // 根据 size 不同，计算的图片显示大小不同
-    itemSizePercentage: null,
-    // 存放图片 url 的数组
-    value: null
+    itemSizePercentage: null
   },
 
   observers: {
@@ -207,7 +215,7 @@ Component({
      * @returns {Promise<void>}
      */
     async onTapAdd() {
-      let {value, count, sizeType} = this.data;
+      let {value, count, sizeType, maxImageSize} = this.data;
       const remainCount = count - value.length;
       if (value.length >= count || remainCount <= 0) {
         return;
@@ -227,7 +235,7 @@ Component({
 
       chooseImageRes.tempFiles.forEach((tempFile) => {
         const {path, size} = tempFile;
-        if (size > this.data.maxImageSize) {
+        if (size > maxImageSize && maxImageSize > 0) {
           oversizeImageUrlArray.push(path);
         } else {
           addImageUrlArray.push(path);
@@ -255,7 +263,7 @@ Component({
      * 供 Form 组件调用的取值方法
      * @returns {*}
      */
-    getValue() {
+    getValues() {
       return this.data.value;
     },
 
