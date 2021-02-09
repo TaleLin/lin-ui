@@ -2,12 +2,15 @@ import computeOffset from '../behaviors/computeOffset';
 import zIndex from '../behaviors/zIndex';
 import hover from '../behaviors/hover';
 import validator from '../behaviors/validator';
+
 Component({
   /**
    * 组件的属性列表
    */
   behaviors: [computeOffset, zIndex, hover, validator],
-  externalClasses: ['l-class', 'l-title-class', 'l-content-class', 'l-confirm-class', 'l-cancel-class', 'l-bg-class'],
+  externalClasses: [
+    'l-class', 'l-title-class', 'l-content-class', 'l-confirm-class', 'l-cancel-class', 'l-bg-class'
+  ],
   properties: {
     // 显示与隐藏
     show: {
@@ -97,43 +100,15 @@ Component({
     initDialog() {
       wx.lin = wx.lin || {};
       wx.lin.showDialog = (options) => {
-        const {
-          type = 'alert',
-          title = '提示',
-          showTitle = true,
-          content = '',
-          locked = true,
-          confirmText = '确定',
-          contentColor = 'rgba(89,108,142,1)',
-          cancelColor = '#45526b',
-          cancelText = '取消',
-          confirmColor = '#3683d6',
-          success = null,
-          fail = null,
-        } = options;
-        this.setData({
-          type,
-          title,
-          showTitle,
-          content,
-          locked,
-          confirmText,
-          cancelColor,
-          cancelText,
-          confirmColor,
-          contentColor,
-          show: true,
-          fail,
-          success
-        });
-        return this;
+        console.warn('wx.lin 方法已废弃，请使用开放函数代替 https://doc.mini.talelin.com/start/open-function.html');
+        this.linShow(options);
       };
     },
 
     // 确定按钮
     onConfirmTap() {
       let detail = 'confirm';
-      let option = { bubbles: true, composed: true };
+      let option = {bubbles: true, composed: true};
 
       const {
         success
@@ -154,7 +129,7 @@ Component({
     onCancelTap() {
 
       let detail = 'cancel';
-      let option = { bubbles: true, composed: true };
+      let option = {bubbles: true, composed: true};
 
       const {
         success
@@ -174,7 +149,7 @@ Component({
     // 背景点击事件
     onDialogTap() {
       let detail = true;
-      let option = { bubbles: true, composed: true };
+      let option = {bubbles: true, composed: true};
 
       if (this.data.locked !== true) {
         this.setData({
@@ -183,6 +158,53 @@ Component({
       }
 
       this.triggerEvent('lintap', detail, option);
+    },
+
+    // ====================== 开放函数 ========================
+
+    /**
+     * 显示 Dialog
+     * @param options Dialog 所有属性
+     */
+    linShow(options) {
+      const {
+        type = 'alert',
+        title = '提示',
+        showTitle = true,
+        content = '',
+        locked = true,
+        confirmText = '确定',
+        contentColor = 'rgba(89,108,142,1)',
+        cancelColor = '#45526b',
+        cancelText = '取消',
+        confirmColor = '#3683d6',
+        success = null,
+        fail = null,
+      } = options;
+      this.setData({
+        type,
+        title,
+        showTitle,
+        content,
+        locked,
+        confirmText,
+        cancelColor,
+        cancelText,
+        confirmColor,
+        contentColor,
+        show: true,
+        fail,
+        success
+      });
+    },
+
+    /**
+     * 隐藏 Dialog
+     */
+    linHide() {
+      this.setData({
+        show: true
+      });
     }
   }
 });
