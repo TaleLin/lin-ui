@@ -3,7 +3,7 @@
     <view style="margin-right:15rpx">
       <l-icon name="{{icon?icon:type}}" size="{{iconSize}}" color="{{type==='warning'?'#333':iconColor}}"/>
     </view>
-    <image wx:if="{{image}}" src="{{image}}" class="l-message-image l-class-image"/>
+    <image wx:if="{{image}}" src="{{image}}" class="l-message-image l-class-image l-image-class"/>
     {{content}}
     <slot/>
   </block>

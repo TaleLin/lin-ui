@@ -1,58 +1,90 @@
-
-.item {
-  position: relative;
-}
-.close {
-  position: absolute;
-  right: 10rpx;
-  top: 10rpx;
-  height: 40rpx;
-  width: 40rpx;
-  border-radius: 50%;
-  background: rgba(0, 0, 0, .4);
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  box-sizing: border-box;
-  z-index: 99;
+.lin-image-picker__container {
+  position  : relative;
+  display   : flex;
+  flex-wrap : wrap;
 }
 
-.add {
-  height: 220rpx;
-  width: 220rpx;
-  .flex
+.lin-image-picker__item {
+  position       : relative;
+  width          : 220rpx;
+  padding-bottom : 220rpx;
+  height         : 0;
 }
 
-.add-icon {
-  height: 100rpx;
-  width: 100rpx;
+// size 不同时，对应的图片间距设置
+// size 仅支持 1-10
+each(range(2, 10), {
+  @valuePlusOne : @value+1;
+  .lin-image-picker__item--@{value}:nth-of-type(n+@{valuePlusOne}) {
+    margin-top : 20rpx;
+  }
+
+  .lin-image-picker__item--@{value}:not(:nth-of-type(@{value}n+1)) {
+    margin-left : 20rpx;
+  }
+})
+
+// 当 size 为 null，每行会显示 3 张图片
+.lin-image-picker__item--null:nth-of-type(n+4) {
+  margin-top : 20rpx;
 }
 
-.img {
-  height: 220rpx;
-  width: 220rpx;
-  margin-bottom: 10rpx;
-  .flex;
+.lin-image-picker__item--null:not(:nth-of-type(3n+1)) {
+  margin-left : 20rpx;
 }
 
-.min-img {
-  height: 160rpx;
-  width: 160rpx;
-  margin-bottom: 10rpx;
-
-  .flex
+.lin-image-picker__image {
+  position      : absolute;
+  left          : 0;
+  top           : 0;
+  width         : 100%;
+  height        : 100%;
+  border        : 1rpx solid #EEEEEE;
+  border-radius : 4rpx;
 }
 
-.flex {
-  border: 1rpx solid #eeeeee;
-  border-radius: 4rpx;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
+.lin-image-picker__remove {
+  position        : absolute;
+  right           : 10rpx;
+  top             : 10rpx;
+  height          : 40rpx;
+  width           : 40rpx;
+  border-radius   : 50%;
+  background      : rgba(0, 0, 0, .4);
+  display         : flex;
+  flex-direction  : row;
+  align-items     : center;
+  justify-content : center;
+  box-sizing      : border-box;
 }
 
-.l-grid-item {
-  padding: 0 !important;
+.lin-image-picker__item--add {
+  border           : 1rpx solid #EEEEEE;
+  border-radius    : 4rpx;
+  background-color : white;
+}
+
+.lin-image-picker__image--add {
+  visibility : hidden;
+  position   : absolute;
+  width      : 50%;
+  height     : 50%;
+  top        : 50%;
+  left       : 50%;
+  transform  : translate(-50%, -50%);
+}
+
+.lin-image-picker__item-slot-wrapper {
+  display         : flex;
+  justify-content : center;
+  align-items     : center;
+  position        : absolute;
+  width           : 100%;
+  height          : 100%;
+  top             : 0;
+  left            : 0;
+}
+
+.lin-image-picker__item-slot-wrapper:empty + .lin-image-picker__image--add {
+  visibility : visible;
 }

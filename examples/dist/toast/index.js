@@ -1,6 +1,7 @@
 import computeOffset from '../behaviors/computeOffset';
 import zIndex from '../behaviors/zIndex';
 import watchShow from '../behaviors/watchShow';
+
 Component({
   /**
    * 组件的属性列表
@@ -91,43 +92,13 @@ Component({
     initToast() {
       wx.lin = wx.lin || {};
       wx.lin.showToast = (options = {}) => {
-        const {
-          title = '',
-          icon = '',
-          image = '',
-          placement = 'bottom',
-          duration = 1500,
-          center = true,
-          mask = false,
-          success = null,
-          complete = null,
-          offsetX = 0,
-          offsetY = 0,
-          iconSize = '60',
-          iconColor = ''
-        } = options;
-        this.setData({
-          title,
-          icon,
-          image,
-          placement,
-          duration,
-          center,
-          mask,
-          success,
-          complete,
-          offsetY,
-          offsetX,
-          iconSize,
-          iconColor
-        });
-        this.changeStatus();
+        console.warn('wx.lin 已废弃，请使用开放函数代替：https://doc.mini.talelin.com//start/open-function.html');
+        this.linShow(options);
         return this;
       };
       wx.lin.hideToast = () => {
-        this.setData({
-          status: false
-        });
+        console.warn('wx.lin 已废弃，请使用开放函数代替：https://doc.mini.talelin.com//start/open-function.html');
+        this.linHide();
       };
     },
 
@@ -165,6 +136,58 @@ Component({
       }
 
       this.triggerEvent('lintap', detail, option);
+    },
+
+    // ========== 开放函数 =============
+
+    /**
+     * 显示 toast
+     * @param options toast 参数
+     */
+    linShow(options) {
+      if(!options){
+        options={};
+      }
+      const {
+        title = '',
+        icon = '',
+        image = '',
+        placement = 'bottom',
+        duration = 1500,
+        center = true,
+        mask = false,
+        success = null,
+        complete = null,
+        offsetX = 0,
+        offsetY = 0,
+        iconSize = '60',
+        iconColor = ''
+      } = options;
+      this.setData({
+        title,
+        icon,
+        image,
+        placement,
+        duration,
+        center,
+        mask,
+        success,
+        complete,
+        offsetY,
+        offsetX,
+        iconSize,
+        iconColor
+      });
+      this.changeStatus();
+    },
+
+    /**
+     * 隐藏 toast
+     */
+    linHide() {
+      this.setData({
+        status: false
+      });
     }
   }
 });

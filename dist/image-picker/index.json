@@ -1,1 +1,1 @@
-{"component":true,"usingComponents":{"l-icon":"../icon/index","l-grid-item":"../grid-item/index","l-grid":"../grid/index"}}
+{"component":true,"styleIsolation":"apply-shared","usingComponents":{"l-icon":"../icon/index"}}

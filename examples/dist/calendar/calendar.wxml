@@ -23,7 +23,7 @@
       </mounth>
     </scroll-view>
     <view>
-      <l-button type="default" size="long" bind:lintap="onClickConfirm" bg-color="{{ color }}">{{confirmText}}</l-button>
+      <l-button type="default" l-class="bottom-button" size="long" bind:lintap="onClickConfirm" bg-color="{{ color }}">{{confirmText}}</l-button>
     </view>
   </view>
 </template>

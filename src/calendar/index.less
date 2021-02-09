@@ -1,3 +1,6 @@
+@import "../../config/styles/_theme.less";
+@import "../../config/styles/_mixins.less";
+
 .calendar-container{
   display: flex;
   height: 1000rpx;
@@ -23,3 +26,9 @@
 //   border-top-left-radius: 12rpx;
 //   border-top-right-radius: 12rpx;
 // }
+
+.bottom-button {
+  padding: 0 !important;
+  .safe-area-inset-bottom();
+  box-sizing: content-box !important;
+}

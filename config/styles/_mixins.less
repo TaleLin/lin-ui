@@ -28,3 +28,9 @@
     background-color: @active-color;
     border-color: @active-color;
 }
+
+// 解决全屏幕机型底部适配问题
+.safe-area-inset-bottom() {
+    padding-bottom: constant(safe-area-inset-bottom) !important; /* 兼容 iOS < 11.2 */
+    padding-bottom: env(safe-area-inset-bottom) !important; /* 兼容 iOS >= 11.2 */
+}

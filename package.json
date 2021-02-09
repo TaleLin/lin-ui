@@ -1,6 +1,6 @@
 {
   "name": "lin-ui",
-  "version": "0.9.2",
+  "version": "0.9.3",
   "description": "A high quality UI components library with MiniProgram",
   "main": "app.js",
   "directories": {
@@ -12,7 +12,6 @@
     "watch": "gulp -f build/index.js watch",
     "lint": "eslint .",
     "fix": "eslint . --fix",
-    "release": "sh build/release.sh",
     "changelog": "conventional-changelog -p conventionalcommits -i CHANGELOG.md -s -n .convention-changelog-config.js"
   },
   "repository": {
