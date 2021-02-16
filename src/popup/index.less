@@ -77,6 +77,26 @@ each(@animationPostions,{
   }
 }
 
+@keyframes bg-fadein {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes bg-fadeout {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
 .container-popup {
   position: fixed;
   top: 0;
@@ -86,11 +106,11 @@ each(@animationPostions,{
 }
 
 .container-bg-show {
-  opacity: 1;
+  animation: bg-fadein 0.3s forwards;
 }
 
 .container-bg-hide {
-  opacity: 0;
+  animation: bg-fadeout 0.3s forwards;
 }
 
 .container-bg {
@@ -102,7 +122,6 @@ each(@animationPostions,{
   bottom: 0;
   z-index: 6;
   background: rgba(0, 0, 0, 0.4);
-  transition: all 0.3s ease-in-out;
 }
 
 .popup-content {
