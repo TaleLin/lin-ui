@@ -1,7 +1,7 @@
 <view wx:if="{{show}}" class='container-popup l-class'
       style="z-index:{{zIndex}}; "
       catchtouchmove="doNothing">
-  <view class='container-bg container-bg-{{status}} l-bg-class'></view>
+  <view class='container-bg container-bg-{{animation ? status:""}} l-bg-class'></view>
   <view
     class="popup-content {{ show ? contentAlign : ''}} popup-fade-{{contentAlign}}-active-{{animation ? status:''}} l-panel-class"
     catchtap='onPopupTap'>
