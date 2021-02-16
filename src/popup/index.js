@@ -1,12 +1,13 @@
 import zIndex from '../behaviors/zIndex';
 import validator from '../behaviors/validator';
 import eventUtil from '../core/utils/event-util';
+import doNothing from '../core/behaviors/doNothingBehavior';
 
 Component({
   /**
    * 组件的属性列表
    */
-  behaviors: [zIndex, validator],
+  behaviors: [zIndex, validator, doNothing],
   externalClasses: ['l-bg-class', 'l-panel-class', 'l-class'],
   properties: {
     // 显示与隐藏
@@ -101,13 +102,6 @@ Component({
           });
         }, 300);
       };
-    },
-    // 阻止滑动
-    doNothingMove() {
-      // do nothing……
-    },
-    doNothingTap() {
-      // do nathing
     },
 
     // 点击事件

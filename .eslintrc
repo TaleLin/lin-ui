@@ -24,7 +24,8 @@
     "Page": true,
     "wx": true,
     "App": true,
-    "getCurrentPages":true
+    "getCurrentPages":true,
+    "Behavior": true
   },
   "ignorePatterns": [
     "dist/*",
