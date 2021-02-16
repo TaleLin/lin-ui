@@ -89,17 +89,29 @@ Component({
     // 点击事件
     onPopupTap() {
       if (this.data.locked !== true) {
+        this._hidePopup();
+      }
+
+      eventUtil.emit(this, 'lintap');
+    },
+
+    _hidePopup(){
+      if(this.data.animation){
         this.setData({
           status: 'hide'
         });
+        // 延迟 300ms 等动画结束再去掉节点
         setTimeout(() => {
           this.setData({
             show: false
           });
         }, 300);
+      }else{
+        this.setData({
+          show: false,
+          status: 'hide'
+        });
       }
-
-      eventUtil.emit(this, 'lintap');
     },
 
     // ================= 开放函数 ========================
@@ -127,14 +139,7 @@ Component({
      * 会忽略 locked 属性
      */
     linHide() {
-      this.setData({
-        status: 'hide'
-      });
-      setTimeout(() => {
-        this.setData({
-          show: false
-        });
-      }, 300);
+      this._hidePopup();
     }
   }
 });
