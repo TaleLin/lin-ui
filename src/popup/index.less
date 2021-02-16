@@ -78,7 +78,6 @@ each(@animationPostions,{
 }
 
 .container-popup {
-  visibility: hidden;
   position: fixed;
   top: 0;
   left: 0;
@@ -86,17 +85,16 @@ each(@animationPostions,{
   bottom: 0;
 }
 
-.popup-show {
-  visibility: visible;
-}
-
-.popup-show .container-bg {
-  display: block;
+.container-bg-show {
   opacity: 1;
 }
 
-.container-bg {
+.container-bg-hide {
   opacity: 0;
+}
+
+.container-bg {
+  display: block;
   position: fixed;
   top: 0;
   left: 0;
@@ -105,13 +103,6 @@ each(@animationPostions,{
   z-index: 6;
   background: rgba(0, 0, 0, 0.4);
   transition: all 0.3s ease-in-out;
-}
-
-.popup-bg {
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  z-index: 90;
 }
 
 .popup-content {

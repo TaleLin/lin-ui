@@ -56,7 +56,18 @@ Component({
    * 组件的初始数据
    */
   data: {
-    status: 'show'
+    status: 'hide'
+  },
+
+  observers: {
+    show(show) {
+      if (show) {
+        this.setData({
+          status: 'show'
+        });
+      }
+
+    }
   },
 
   /**
@@ -101,27 +112,18 @@ Component({
 
     // 点击事件
     onPopupTap() {
-      let detail = true;
       if (this.data.locked !== true) {
-        if (!this.data.show) {
+        this.setData({
+          status: 'hide'
+        });
+        setTimeout(() => {
           this.setData({
-            show: true,
-            status: 'show'
+            show: false
           });
-        } else {
-          this.setData({
-            status: 'hide'
-          });
-          setTimeout(() => {
-            this.setData({
-              show: false,
-              status: 'show'
-            });
-          }, 300);
-        }
+        }, 300);
       }
 
-      eventUtil.emit(this,'lintap', detail);
+      eventUtil.emit(this, 'lintap');
     }
   }
 });
