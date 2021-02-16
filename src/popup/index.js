@@ -78,29 +78,12 @@ Component({
     _init() {
       wx.lin = wx.lin || {};
       wx.lin.showPopup = (options) => {
-        const {
-          zIndex = 99,
-          animation = true,
-          contentAlign = 'center',
-          locked = false
-        } = {...options};
-        this.setData({
-          zIndex,
-          animation,
-          contentAlign,
-          locked,
-          show: true
-        });
+        console.warn('wx.lin 方法已废弃，请使用开放函数代替 https://doc.mini.talelin.com/start/open-function.html');
+        this.linShow(options);
       };
       wx.lin.hidePopup = () => {
-        this.setData({
-          status: 'hide'
-        });
-        setTimeout(() => {
-          this.setData({
-            show: false
-          });
-        }, 300);
+        console.warn('wx.lin 方法已废弃，请使用开放函数代替 https://doc.mini.talelin.com/start/open-function.html');
+        this.linHide();
       };
     },
 
@@ -118,6 +101,41 @@ Component({
       }
 
       eventUtil.emit(this, 'lintap');
+    },
+
+    // ================= 开放函数 ========================
+    /**
+     * 显示 Popup
+     */
+    linShow(options) {
+      const {
+        zIndex = 99,
+        animation = true,
+        contentAlign = 'center',
+        locked = false
+      } = {...options};
+      this.setData({
+        zIndex,
+        animation,
+        contentAlign,
+        locked,
+        show: true
+      });
+    },
+
+    /**
+     * 隐藏 Popup
+     * 会忽略 locked 属性
+     */
+    linHide() {
+      this.setData({
+        status: 'hide'
+      });
+      setTimeout(() => {
+        this.setData({
+          show: false
+        });
+      }, 300);
     }
   }
 });
