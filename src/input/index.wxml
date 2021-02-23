@@ -14,6 +14,7 @@
   <!-- 小程序表单组件 -->
   <input
     wx:if="{{type !== 'password'}}"
+    adjust-position="{{adjustPosition}}"
     class="input {{hideLabel?'hideLabel':''}} l-input-class"
     value="{{ value }}"
     type="{{type}}"
@@ -29,6 +30,7 @@
     bindconfirm="handleInputConfirm" />
   <input
     wx:else
+    adjust-position="{{adjustPosition}}"
     class="input {{hideLabel?'hideLabel':''}} l-input-class"
     value="{{ value }}"
     password="{{true}}"
