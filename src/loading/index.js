@@ -14,9 +14,12 @@ Component({
       type: String,
       value: '1'
     },
-    bgColor: String,
-    zIndex:{
-      type:String,
+    bgColor: {
+      type: String,
+      value: ''
+    },
+    zIndex: {
+      type: String,
       value: '776'
     },
     // 类型
@@ -36,9 +39,15 @@ Component({
       value: 'medium',
     },
     // 自定义
-    custom: Boolean,
+    custom: {
+      type: Boolean,
+      value: false
+    },
     // 全屏模式
-    fullScreen: Boolean
+    fullScreen: {
+      type: Boolean,
+      value: false
+    }
   },
 
   attached() {
@@ -55,15 +64,24 @@ Component({
     _init() {
       wx.lin = wx.lin || {};
       wx.lin.showLoading = (options) => {
+        console.warn('wx.lin 已废弃，请使用开放函数代替：https://doc.mini.talelin.com//start/open-function.html');
+        if (!options) {
+          options = {};
+        }
+  
         const {
           custom = false,
           fullScreen = false,
           color = '',
           type = 'rotate',
           size = 'medium',
-          opacity = '1'
+          opacity = '1',
+          bgColor = '',
+          zIndex = '776',
         } = { ...options };
         this.setData({
+          bgColor,
+          zIndex,
           custom,
           fullScreen,
           color,
@@ -74,6 +92,7 @@ Component({
         });
       };
       wx.lin.hideLoading = () => {
+        console.warn('wx.lin 已废弃，请使用开放函数代替：https://doc.mini.talelin.com//start/open-function.html');
         this.setData({
           show: false
         });
@@ -83,5 +102,48 @@ Component({
     doNothingMove() {
       // do nothing……
     },
+
+    // ========== 开放函数 =============
+
+    /**
+     * 显示 Loading
+     * @param {*} options Loading 组件参数
+     */
+    linShow(options) {
+      if (!options) {
+        options = {};
+      }
+
+      const {
+        custom = false,
+        fullScreen = false,
+        color = '',
+        type = 'rotate',
+        size = 'medium',
+        opacity = '1',
+        bgColor = '',
+        zIndex = '776',
+      } = { ...options };
+      this.setData({
+        bgColor,
+        zIndex,
+        custom,
+        fullScreen,
+        color,
+        type,
+        size,
+        opacity,
+        show: true
+      });
+    },
+
+    /**
+     * 隐藏 Loading
+     */
+    linHide() {
+      this.setData({
+        show: false
+      });
+    }
   }
 });
