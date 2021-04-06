@@ -1,4 +1,5 @@
-<!--  input/input.wxml -->
+<wxs src="../core/wxs/math.wxs" module="Math" />
+
 <label class='form-item {{disabled? "disabled": ""}}'>
   <view class='default-border {{border? "border": ""}} l-class'>
     <view class='mask' wx:if="{{disabled}}"></view>
@@ -21,9 +22,8 @@
       bindblur="handleInputBlur"
       bindconfirm="handleInputConfirm"
       />
-      <view
-        class="indicator"
-        wx:if="{{indicator}}">{{value.length + '/' +  maxlength}}</view>
+      <!-- 使用 Math.min 的原因：在安卓平台上，由于微信的 bug，value.length 会超过 maxlength，导致显示不准确 -->
+      <view class="indicator" wx:if="{{indicator}}">{{Math.min(value.length,maxlength) + '/' +  maxlength}}</view>
   </view>
 </label>
   <l-error-tip l-error-text-class="l-error-text l-error-text-class" errorText="{{errorText}}" wx:if="{{errorText}}"/>
