@@ -1,10 +1,31 @@
-<import src="./calendar.wxml" />
+<wxs src="./index.wxs" module="computed"></wxs>
 
 <l-popup content-align="bottom" show="{{ show }}" bind:lintap="closePicker">
-  <template
-    is="calendar"
-    data="{{ currentDate, type, color, defaultDate, format, formatter, minDate, maxDate, minSelect, maxSelect, showConfirm, confirmText, maxLimitMessage, minLimitMessage, showTitle, showSubtitle, title, subTitle, scrollIntoViewIndex, color }}"
-  />
+  <view class="calendar-container">
+    <header showTitle="{{ showTitle }}" showSubtitle="{{ showSubtitle }}" title="{{ title }}" subTitle="{{ subTitle }}"></header>
+    <scroll-view class="calendar-body-wrap" scroll-y scroll-into-view="{{ scrollIntoViewIndex }}">
+      <mounth
+        wx:for="{{ computed.getMonths(minDate, maxDate) }}"
+        wx:key="index"
+        id="month{{ index }}"
+        class="month"
+        data-date="{{ item }}"
+        date="{{ item }}"
+        minDate="{{ minDate }}"
+        maxDate="{{ maxDate }}"
+        currentDate="{{ currentDate }}"
+        type="{{ type }}"
+        bind:clickDay="onTapDay"
+        showMonthTitle="{{ index !== 0 }}"
+        formatter="{{ formatter }}"
+        color="{{ color }}"
+      >
+      </mounth>
+    </scroll-view>
+    <view wx:if="{{showConfirm}}">
+      <l-button type="default" l-class="bottom-button" size="long" bind:lintap="onClickConfirm" bg-color="{{ color }}">{{confirmText}}</l-button>
+    </view>
+  </view>
 </l-popup>
 
 <l-toast></l-toast>
