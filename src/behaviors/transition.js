@@ -13,7 +13,10 @@ export default (showDefaultValue) => {
   // eslint-disable-next-line no-undef
   return Behavior({
     properties: {
-      customStyle: String,
+      customStyle: {
+        type: String,
+        value: ''
+      },
       show: {
         type: Boolean,
         value: showDefaultValue,
