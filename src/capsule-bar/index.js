@@ -41,6 +41,7 @@ Component({
       value: false
     },
     // 禁用右侧按钮返回主页
+    // 现在禁用返回会直接隐藏该按钮
     disableHome: {
       type: Boolean,
       value: false
@@ -107,9 +108,15 @@ Component({
      */
     onTapLeftButton() {
       eventUtil.emit(this, 'linlefttap');
-
+      const {homePage} = this.data;
       if (!this.data.disableBack) {
-        wx.navigateBack();
+        wx.navigateBack({
+          fail:()=>{
+            wx.redirectTo({
+              url: homePage,
+            })
+          }
+        });
       }
     },
 
@@ -126,7 +133,7 @@ Component({
     async onTapRightButton() {
       eventUtil.emit(this, 'linrighttap');
 
-      const homePage = this.data.homePage;
+      const {homePage} = this.data;
       if (!this.data.disableHome) {
         wx.switchTab({
           url: homePage,
