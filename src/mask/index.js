@@ -13,7 +13,7 @@ Component({
     },
     // 不透明度
     opacity: {
-      type: [String, Number],
+      optionalTypes: [String, Number],
       value: .4
     },
     // mask的z-index值
