@@ -10,7 +10,7 @@ export default Behavior({
   properties: {
     // 校验
     rules: {
-      type: [Object, Array],
+      optionalTypes: [Object, Array],
       value: []
     },
     tipType: {
