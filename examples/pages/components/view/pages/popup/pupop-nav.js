@@ -3,7 +3,7 @@ const pupopNaviConfigs = [{
   type: 0,
   config: {
     show: true,
-    animation: 'show',
+    animation: true,
     zIndex: 99,
     contentAlign: 'center',
     locked: false,
@@ -14,7 +14,7 @@ const pupopNaviConfigs = [{
   type: 1,
   config: {
     show: true,
-    animation: 'hide',
+    animation: false,
     zIndex: 99,
     contentAlign: 'center',
     locked: false,
@@ -26,7 +26,7 @@ const pupopNaviConfigs = [{
   type: 2,
   config: {
     show: true,
-    animation: 'show',
+    animation: true,
     zIndex: 99,
     contentAlign: 'top',
     locked: false,
@@ -37,7 +37,7 @@ const pupopNaviConfigs = [{
   type: 3,
   config: {
     show: true,
-    animation: 'show',
+    animation: true,
     zIndex: 99,
     contentAlign: 'right',
     locked: false,
@@ -48,7 +48,7 @@ const pupopNaviConfigs = [{
   type: 4,
   config: {
     show: true,
-    animation: 'show',
+    animation: true,
     zIndex: 99,
     contentAlign: 'bottom',
     locked: false,
@@ -59,7 +59,7 @@ const pupopNaviConfigs = [{
   type: 5,
   config: {
     show: true,
-    animation: 'show',
+    animation: true,
     zIndex: 99,
     contentAlign: 'left',
     locked: false,
@@ -70,7 +70,7 @@ const pupopNaviConfigs = [{
   type: 6,
   config: {
     show: true,
-    animation: 'show',
+    animation: true,
     zIndex: 99,
     contentAlign: 'bottom',
     locked: true,

@@ -3,7 +3,7 @@
   class='form-item {{disabled? "disabled": ""}} l-class form-item-{{labelLayout}}'
   style="width:{{width===null?'auto':width+'rpx'}}">
   <view class='mask' wx:if="{{disabled}}"></view>
-  <view class='row l-row-class' hidden="{{ showRow ? '' : 'hidden' }}" style="width:{{width}}rpx;"></view>
+  <view class='row l-row-class' hidden="{{ showRow ? '' : 'hidden' }}" style="width:{{width===null?'100%':width+'rpx'}}"></view>
   <view wx:if="{{label && !labelCustom}}" hidden="{{hideLabel}}" class='form-label l-label-class form-label-{{labelLayout}}' style='{{labelLayout !== "top" ? "width:"+ labelWidth+ "rpx;" : "" }} height:{{labelLayout=== "top" ? labelWidth + "rpx" : "" }}'>
     <text><text class='text-require' wx:if="{{required}}">* </text>{{label}}<text wx:if="{{colon}}">：</text>
     </text>
@@ -14,6 +14,7 @@
   <!-- 小程序表单组件 -->
   <input
     wx:if="{{type !== 'password'}}"
+    adjust-position="{{adjustPosition}}"
     class="input {{hideLabel?'hideLabel':''}} l-input-class"
     value="{{ value }}"
     type="{{type}}"
@@ -29,6 +30,7 @@
     bindconfirm="handleInputConfirm" />
   <input
     wx:else
+    adjust-position="{{adjustPosition}}"
     class="input {{hideLabel?'hideLabel':''}} l-input-class"
     value="{{ value }}"
     password="{{true}}"

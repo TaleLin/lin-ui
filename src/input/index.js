@@ -71,6 +71,11 @@ Component({
     showEye: {
       type: Boolean,
       value: false
+    },
+    // 键盘弹起时，是否自动上推页面
+    adjustPosition:{
+      type: Boolean,
+      value: true
     }
   },
 
