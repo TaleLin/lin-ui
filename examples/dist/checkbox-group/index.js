@@ -26,13 +26,13 @@ Component({
     },
     // 最多选中值
     maxSelected: {
-      type: [Number,null],
+      type: Number,
       value: null
     },
     minSelected: {
-      type: [Number,null],
+      type: Number,
       value: null
-    }
+    },
   },
   data: {
   },

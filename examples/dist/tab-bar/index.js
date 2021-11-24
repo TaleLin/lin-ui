@@ -33,11 +33,6 @@ Component({
     }
   },
 
-  data: {
-    // 当前选中项索引
-    selectedIndex: 0
-  },
-
   pageLifetimes: {
     show: function () {
       // 切换 tab 选中项

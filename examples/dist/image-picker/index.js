@@ -49,7 +49,7 @@ Component({
     },
     sizeType: {
       // 该写法经测试有效
-      type: Array | String,
+      optionalTypes: [Array, String],
       value: ['original', 'compressed']
     },
     // 所选图片最大限制，单位字节
