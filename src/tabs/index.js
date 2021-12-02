@@ -69,7 +69,11 @@ Component({
       value: true
     },
     // 内容区域高度
-    contentHeight: Number
+    contentHeight: Number,
+    disabled: {
+      type: Boolean,
+      value: false
+    }
   },
 
   data: {
@@ -150,14 +154,16 @@ Component({
       activeKey,
       currentIndex
     }) {
-      this.setData({
-        activeKey,
-        currentIndex
-      }, () => {
-        if (this.data.scrollable) {
-          this.queryMultipleNodes();
-        }
-      });
+      if (!this.data.disabled) {
+        this.setData({
+          activeKey,
+          currentIndex
+        }, () => {
+          if (this.data.scrollable) {
+            this.queryMultipleNodes();
+          }
+        });
+      }
       this.triggerEvent('linchange', {
         activeKey,
         currentIndex

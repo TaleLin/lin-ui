@@ -21,3 +21,4 @@ package-lock.json
 examples/project.config.json
 /.run
 yarn.lock
+.history
