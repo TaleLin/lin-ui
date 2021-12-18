@@ -3,7 +3,7 @@ export default Behavior({
   behaviors: [],
   properties: {
     time: {
-      type: Object,
+      optionalTypes: [String, Object],
       value: new Date().getTime() + 86400000,
       observer: function (newVal, oldVal) {
         if (newVal && !oldVal) {

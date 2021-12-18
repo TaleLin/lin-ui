@@ -6,10 +6,12 @@ Component({
   },
   properties: {
     minDate: {
-      optionalTypes: [Object,String],
+      type: Object,
+      optionalTypes: [String, null],
     },
     maxDate: {
-      optionalTypes: [Object,String],
+      type: Object,
+      optionalTypes: [String, null],
     },
     formatter: {
       type: null,
@@ -20,7 +22,8 @@ Component({
       observer: 'setDays'
     },
     currentDate: {
-      optionalTypes: [Array],
+      type: Array,
+      optionalTypes: [null],
       observer() {
         this.setDays();
       }

@@ -36,6 +36,7 @@ Component({
     },
     defaultDate: {
       optionalTypes: [String, Number, Date, Array],
+      value: '',
       observer() {
         this.setData({ currentDate: this.initCurrentDate() });
       }
@@ -45,15 +46,18 @@ Component({
       value: 'timestamp'
     },
     formatter: {
-      type: Object,
+      type: Function,
+      optionalTypes: [null],
       value: null
     },
     minDate: {
-      optionalTypes: [String, Number],
+      type: String,
+      optionalTypes: [null, Number],
       value: Date.now()
     },
     maxDate: {
-      optionalTypes: [String, Number],
+      type: String,
+      optionalTypes: [null, Number],
       value: new Date(
         new Date().getFullYear(),
         new Date().getMonth() + 6,
@@ -62,10 +66,12 @@ Component({
     },
     minSelect: {
       type: Number,
+      optionalTypes: [null],
       value: null
     },
     maxSelect: {
       type: Number,
+      optionalTypes: [null],
       value: null
     },
     allowSameDay: Boolean,
