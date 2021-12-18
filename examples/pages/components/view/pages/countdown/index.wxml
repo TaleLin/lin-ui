@@ -3,7 +3,7 @@
   <content-title name="Countdown" describe="倒计时">
     <content-card l-content="content" name="基本倒计时">
       <l-countdown />
-      <l-countdown time="2020-5-1 18:30"/>
+      <l-countdown time="2022-5-1 18:30"/>
     </content-card>
 
     <content-card l-content="content" name="传入时间为秒">
