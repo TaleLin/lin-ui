@@ -69,12 +69,7 @@ Component({
       value: true
     },
     // 内容区域高度
-    contentHeight: Number,
-    // 禁用 tab 切换
-    disabled: {
-      type: Boolean,
-      value: false
-    },
+    contentHeight: Number
   },
 
   data: {
@@ -155,16 +150,14 @@ Component({
       activeKey,
       currentIndex
     }) {
-      if (!this.data.disabled) {
-        this.setData({
-          activeKey,
-          currentIndex
-        }, () => {
-          if (this.data.scrollable) {
-            this.queryMultipleNodes();
-          }
-        });
-      }
+      this.setData({
+        activeKey,
+        currentIndex
+      }, () => {
+        if (this.data.scrollable) {
+          this.queryMultipleNodes();
+        }
+      });
       this.triggerEvent('linchange', {
         activeKey,
         currentIndex
