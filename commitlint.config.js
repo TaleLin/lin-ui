@@ -75,7 +75,8 @@ module.exports = {
         'TabBar',
         'DynamicBuild',
         'Calendar',
-        'Script'
+        'Script',
+        'Switch'
       ]
     ]
   }

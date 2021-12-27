@@ -48,6 +48,12 @@ const formNaviConfigs = [
     componentsPath: '/pages/components/form/pages/calendar/index'
   },
   {
+    icon: '/images/component/switch.png',
+    title: 'Switch',
+    desc: '开关',
+    componentsPath: '/pages/components/form/pages/switch/index'
+  },
+  {
     icon: '/images/component/rules.png',
     title: 'Rules',
     desc: '校验',

@@ -37,7 +37,8 @@ Page({
       music: '',
       sex: '',
       desc: '',
-      score: ''
+      score: '',
+      status: false
     },
     items: [
       {
@@ -92,6 +93,19 @@ Page({
           }
         },
         message: '评分必须大于等于3分',
+        trigger: 'change'
+      }
+    ],
+    statusRules: [
+      {
+        validator(rule, value, callback) {
+          if (value !== true) {
+            callback(false);
+          } else {
+            callback();
+          }
+        },
+        message: '必须启用',
         trigger: 'change'
       }
     ],
