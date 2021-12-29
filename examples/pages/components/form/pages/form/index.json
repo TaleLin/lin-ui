@@ -13,6 +13,7 @@
     "l-radio-group": "/dist/radio-group/index",
     "l-radio": "/dist/radio/index",
     "l-rate": "/dist/rate/index",
+    "l-switch": "/dist/switch/index",
     "l-button": "/dist/button/index"
   }
 }

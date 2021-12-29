@@ -19,5 +19,6 @@ yarn-error.log
 .vscode
 package-lock.json
 examples/project.config.json
+examples/project.private.config.json
 /.run
 yarn.lock

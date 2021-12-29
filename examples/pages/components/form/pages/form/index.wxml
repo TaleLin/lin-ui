@@ -166,6 +166,9 @@
                     <l-form-item tip-type="{{tipType}}" align-items="{{alignType}}" rules="{{descRules}}" label="性格描述:" name="ruleDesc">
                         <l-textarea l-class="l-input-container-class" border="{{false}}" id="ruleDesc" value="{{ruleForm.desc}}" />
                     </l-form-item>
+                    <l-form-item tip-type="{{tipType}}" align-items="{{alignType}}" rules="{{statusRules}}" label="是否启用:" name="ruleStatus">
+                        <l-switch id="ruleStatus" value="{{ruleForm.status}}" />
+                    </l-form-item>
 
                     <view slot="submit">
                         <l-button>提交验证</l-button>

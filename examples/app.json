@@ -93,6 +93,7 @@
     {
       "root": "pages/components/form",
       "pages": [
+        "pages/switch/index",
         "pages/input/index",
         "pages/radio/index",
         "pages/checkbox/index",

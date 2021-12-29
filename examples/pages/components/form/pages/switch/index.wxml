@@ -1,0 +1,42 @@
+<!--pages/components/form/pages/switch/index.wxml-->
+<view class='container'>
+  <content-title name="Switch" describe="开关">
+    <content-card
+      class="content"
+      name="基本案例"
+    >
+      <l-switch />
+
+    </content-card>
+
+    <!-- 设置禁用 -->
+    <content-card
+      class="content"
+      name="设置禁用"
+    >
+      <l-switch disabled />
+    </content-card>
+
+    <content-card
+      class="content"
+      name="自定义大小"
+    >
+      <l-switch size="50rpx" />
+    </content-card>
+
+    <content-card
+      class="content"
+      name="自定义颜色"
+    >
+      <l-switch color="#ccc" select-color="#34BFA3"/>
+    </content-card>
+
+    <content-card
+      class="content"
+      name="自定义打开或关闭的值"
+    >
+      <l-switch checked="{{ customValue }}" active-value="{{ 1 }}" inactive-value="{{ 0 }}" bind:linchange="onChange"/>
+      <view>当前选中的值：{{ customValue }}</view>
+    </content-card>
+  </content-title>
+</view>
