@@ -1,0 +1,3 @@
+<view class="switch {{disabled ? 'switch-disabled l-disabled-class' : 'l-class'}} {{ checked === activeValue ? 'switch-on' : '' }}" style="background-color:{{checked === activeValue ? selectColor : color}};font-size:{{size}};" bind:tap="onClick">
+  <view class="switch-node"></view>
+</view>
