@@ -100,7 +100,7 @@ Component({
 
       if (!this.data.customRowNumber) {
         let urlLength = this.data.showUrls.length;
-        if (urlLength > 1 && urlLength < 5) {
+        if (urlLength > 1 && urlLength < 5 && urlLength !== 3) {
           this.setData({
             everyRowNumber: 2
           });
