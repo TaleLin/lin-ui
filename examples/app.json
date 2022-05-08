@@ -46,6 +46,12 @@
         "pages/icon/index"
       ]
     },
+  {
+    "root": "pages/components/animation",
+    "pages": [
+      "pages/transition/index"
+    ]
+  },
     {
       "root": "pages/components/view",
       "pages": [
