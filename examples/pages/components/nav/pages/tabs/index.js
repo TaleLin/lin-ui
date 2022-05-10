@@ -60,7 +60,13 @@ Page({
         defaultImage: '/pages/components/nav/images/tab-icon/bathroom.png',
       }
     }
-    ]
+    ],
+    activeKey: 'dining',
+  },
+
+  handleTabChange(event) {
+    const activeKey = event.detail.activeKey;
+    this.setData({ activeKey});
   },
 
   toggleTabPlacement() {

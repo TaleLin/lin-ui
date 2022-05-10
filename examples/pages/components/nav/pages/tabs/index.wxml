@@ -133,5 +133,13 @@
       </l-tabs>
     </content-card>
 
+    <content-card l-content="content" name="禁用标签">
+      <l-tabs animated l-class-tabimage="tab-image" has-line="{{false}}" bindlinchange="handleTabChange" disabled>
+        <l-tabpanel wx:for="{{imagesTabs}}" tab="{{item.tab}}" key="{{item.key}}" slot="{{item.key}}" wx:key="key" image="{{item.image}}" pic-placement="{{item.picPlacement}}">
+          <view class="tab-content">{{activeKey}}</view>
+        </l-tabpanel>
+      </l-tabs>
+    </content-card>
+
   </content-title>
 </view>
