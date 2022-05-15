@@ -70,7 +70,7 @@ Component({
     },
 
     blurCount(value, callback) {
-      if (value) {
+      if (value !== undefined) {
         this.valueRange(value);
       }
       callback && callback();
