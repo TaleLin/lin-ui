@@ -1,6 +1,6 @@
 <l-popup 
   show="{{show}}" 
-  direction="{{direction}}" 
+  contentAlign="{{direction}}" 
   transition="{{transition}}" 
   opacity="{{opacity}}" 
   locked="{{locked}}" 
