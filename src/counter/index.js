@@ -24,6 +24,10 @@ Component({
       type: Number,
       value: 1
     },
+    roundFloat: {
+      type: Boolean,
+      value: false
+    },
     disabled: Boolean,
     iconSize: String,
     iconColor: String
@@ -62,6 +66,7 @@ Component({
       let {
         value
       } = e.detail;
+      // setTimeout留出修改count的时间，保证调整一些不合适的数值
       setTimeout(() => {
         this.blurCount(Number(value), () => {
           eventUtil.emit(this, 'lintap', { count: this.data.count, type: 'blur' });
@@ -91,6 +96,10 @@ Component({
       value = value > max ? max : value;
       value = value < min ? min : value;
 
+      // 4舍5入
+      if (this.data.roundFloat) {
+        value = Math.round(value);
+      }
       // 更新页面显示数值
       value === this.data.count && this.setData({ focus: false });
       value !== this.data.count && this.setData({ count: value }, () => {
