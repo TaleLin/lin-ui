@@ -114,6 +114,9 @@ Component({
       } else if (type === 'reduce') {
         result = count - step < min ? min : count - step;
       }
+      // 浮点数运算会有精确度问题，保留两位小数
+      result = result.toFixed(2);
+      result = parseFloat(result);
 
       this.setData({ count: result });
       eventUtil.emit(this, 'lintap', {
