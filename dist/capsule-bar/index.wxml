@@ -25,7 +25,7 @@
 
       
       <cover-view mut-bind:tap="onTapRightButton" catch:longpress="onLongPressRightButton" hover-class="icon-wrapper-hover-{{capsuleColor}}" class="icon-wrapper" style="width: {{capsuleButtonInfo.width/2}}px;height: {{capsuleButtonInfo.height}}px;">
-        <cover-image class="icon-right" style="width：{{capsuleRightIconWidth?capsuleRightIconWidth+'rpx':''}};height:{{capsuleRightIconHeight?capsuleRightIconHeight+'rpx':''}}" src="{{capsuleRightIconPath?capsuleRightIconPath:'icons/capsule-right-'+capsuleColor+'.png'}}"></cover-image>
+        <cover-image class="icon-right" style="width:{{capsuleRightIconWidth?capsuleRightIconWidth+'rpx':''}};height:{{capsuleRightIconHeight?capsuleRightIconHeight+'rpx':''}}" src="{{capsuleRightIconPath?capsuleRightIconPath:'icons/capsule-right-'+capsuleColor+'.png'}}"></cover-image>
       </cover-view>
     </cover-view>
   </cover-view>

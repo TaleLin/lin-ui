@@ -48,7 +48,7 @@
                   style="width: {{capsuleButtonInfo.width/2}}px;height: {{capsuleButtonInfo.height}}px;">
         <cover-image
           class="icon-right"
-          style="width：{{capsuleRightIconWidth?capsuleRightIconWidth+'rpx':''}};height:{{capsuleRightIconHeight?capsuleRightIconHeight+'rpx':''}}"
+          style="width:{{capsuleRightIconWidth?capsuleRightIconWidth+'rpx':''}};height:{{capsuleRightIconHeight?capsuleRightIconHeight+'rpx':''}}"
           src="{{capsuleRightIconPath?capsuleRightIconPath:'icons/capsule-right-'+capsuleColor+'.png'}}"></cover-image>
       </cover-view>
     </cover-view>

@@ -5,7 +5,7 @@
     <view>1 在
       <text class="code">wxml</text>文件中使用
       <text class="code">wxs</text>：</view>
-    <l-wemark md="```html\n<wxs src='../../../dist/filter/classnames.wxs' module='classnames'/>\n```" highlight="{{true}}" />
+    <l-wemark md="```html\n<wxs src='../../../../dist/filter/classnames.wxs' module='classnames'/>\n```" highlight="{{true}}" />
     <view>注意事项:</view>
     <view>1
       <text class="code">src</text>是相对路径</view>
