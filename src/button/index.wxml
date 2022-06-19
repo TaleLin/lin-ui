@@ -35,5 +35,6 @@
         bindcontact="openTypeEvent"
         bindgetuserinfo="openTypeEvent"
         bindgetphonenumber="openTypeEvent"
-        bindopensetting="openTypeEvent">
+        bindopensetting="openTypeEvent"
+        bindchooseavatar="openTypeEvent">
 </button>
