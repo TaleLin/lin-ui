@@ -24,7 +24,7 @@ Component({
     // 文字选中颜色
     textSelectedColor: {
       type: String,
-      value: '#3963bc'
+      value: ''
     },
     // 文字未选中颜色
     textColor: {
