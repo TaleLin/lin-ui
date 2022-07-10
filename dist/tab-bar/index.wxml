@@ -6,7 +6,7 @@
         <image class="lu-tab-bar__item-image {{selectedIndex===index?'lu-tab-bar__item-image--selected':''}}" src="{{selectedIndex===index?item.selectedIconPath:item.iconPath}}"></image>
       </l-badge>
       
-      <view wx:if="{{item.text!==undefined}}" class="lu-tab-bar__item-text {{selectedIndex===index?'lu-tab-bar__item-text--selected':''}}" style="color:{{selectedIndex===index?textSelectedColor:textColor}}">
+      <view wx:if="{{item.text!==undefined}}" class="lu-tab-bar__item-text {{selectedIndex===index?'lu-tab-bar__item-text--selected':''}}" style="{{selectedIndex===index?textSelectedColor?'color:'+textSelectedColor:'':'color:'+textColor}}">
         {{item.text}}
       </view>
     </view>
