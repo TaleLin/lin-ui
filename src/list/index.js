@@ -60,7 +60,7 @@ Component({
     tagPlain: Boolean,
     badgePosition: {
       type: String,
-      value: 'left'
+      value: 'right'
     },
     dotBadge: Boolean,
     badgeCount: Number,
