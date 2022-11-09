@@ -63,7 +63,7 @@ Component({
       type: Number,
       value: 0
     },
-    //
+    // 是否显示键盘上方带有“完成”按钮那一栏
     showConfirmBar:{
       type:Boolean,
       value:true
