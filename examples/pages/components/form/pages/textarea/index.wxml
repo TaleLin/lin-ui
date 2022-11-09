@@ -45,5 +45,14 @@
         <l-textarea border="{{false}}"  placeholder="说说你的想法吧..."/>
       </view>
     </content-card>
+
+    <content-card
+      class="content"
+      name="不显示键盘上方带有“完成”按钮那一栏"
+    >
+      <view class='buttun-wrapper'>
+        <l-textarea showConfirmBar="{{false}}"  placeholder="说说你的想法吧..."/>
+      </view>
+    </content-card>
   </content-title>
 </view>
