@@ -62,6 +62,11 @@ Component({
     cursorSpacing: {
       type: Number,
       value: 0
+    },
+    //
+    showConfirmBar:{
+      type:Boolean,
+      value:true
     }
   },
 
@@ -105,6 +110,7 @@ Component({
       this.triggerEvent('linblur', event.detail);
     },
     handleInputConfirm(event) {
+      if (!this.data.showConfirmBar) return;
       this.triggerEvent('linconfirm', event.detail);
     },
     getValues() {

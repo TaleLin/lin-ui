@@ -16,6 +16,7 @@
       focus="{{focus}}"
       auto-height="{{autoHeight}}"
       cursor-spacing="{{cursorSpacing}}"
+      show-confirm-bar="{{showConfirmBar}}"
       bindinput="handleInputChange"
       bindfocus="handleInputFocus"
       bindblur="handleInputBlur"
