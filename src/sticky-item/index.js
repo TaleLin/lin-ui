@@ -1,4 +1,6 @@
 import nodeUtil from '../core/utils/node-util';
+import pixelUtil from '../core/utils/pixel-util';
+
 Component({
   externalClasses: ['l-class', 'l-header-wrapper-class', 'l-header-class', 'l-header-sticky-class', 'l-body-class'],
   options: {
@@ -71,7 +73,8 @@ Component({
     updateStickyItemPosition(scrollTop) {
       const parent = this.getParentComponent();
       const {index, stickyItemTop, stickyItemHeight, top} = this.data;
-      const isFixedTop = scrollTop > stickyItemTop - top && scrollTop < stickyItemHeight + stickyItemTop - top;
+      const topPx = pixelUtil.rpx2px(top);
+      const isFixedTop = scrollTop > stickyItemTop - topPx && scrollTop < stickyItemHeight + stickyItemTop - topPx;
 
       // 避免频繁setData
       if (this.data.isFixedTop === isFixedTop) {

@@ -15,7 +15,7 @@ Component({
       options: ['horn', 'circle']
     },
     value: {
-      type: String,
+      type: [String, null],
       value: '0'
     },
     mode: {
