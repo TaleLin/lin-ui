@@ -46,7 +46,7 @@ Component({
      * 根据当前页 path，切换 tab 选中项
      */
     parseCurrentPage() {
-      const currentPagePath = '/' + getCurrentPages()[0].route;
+      const currentPagePath = '/' + getCurrentPages()[getCurrentPages().length-1].route;
       const list = this.data.list;
 
       let index;
