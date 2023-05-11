@@ -1,7 +1,7 @@
 import nodeUtil from '../core/utils/node-util';
 import deviceUtil from '../utils/device-util';
 import eventUtil from '../core/utils/event-util';
-import {promisic} from '../utils/util';
+import { promisic } from '../utils/util';
 
 Component({
 
@@ -135,7 +135,7 @@ Component({
      */
     async size(size) {
       if (!size) {
-        this.setData({itemSizePercentage: null});
+        this.setData({ itemSizePercentage: null });
         return;
       }
 
@@ -145,7 +145,7 @@ Component({
 
       // 根据容器宽度计算单张图片宽度百分比
       const itemSizePercentage = ((10 / size * 10) - 20 / widthRpx * 100) + '%;';
-      this.setData({itemSizePercentage});
+      this.setData({ itemSizePercentage });
     },
 
     custom(custom) {
@@ -215,7 +215,7 @@ Component({
      * @returns {Promise<void>}
      */
     async onTapAdd() {
-      let {value, count, sizeType, maxImageSize} = this.data;
+      let { value, count, sizeType, maxImageSize } = this.data;
       const remainCount = count - value.length;
       if (value.length >= count || remainCount <= 0) {
         return;
@@ -234,7 +234,7 @@ Component({
       const oversizeImageUrlArray = [];
 
       chooseImageRes.tempFiles.forEach((tempFile) => {
-        const {path, size} = tempFile;
+        const { path, size } = tempFile;
         if (size > maxImageSize && maxImageSize > 0) {
           oversizeImageUrlArray.push(path);
         } else {
@@ -255,7 +255,9 @@ Component({
         // todo 1.0.0 版本去除 linchange 事件
         eventUtil.emit(this, 'linchange', detail);
         // todo 1.0.0 版本去除 linoversize 事件
-        eventUtil.emit(this, 'linoversize', detail);
+        if (oversizeImageUrlArray.length > 0) {
+          eventUtil.emit(this, 'linoversize', detail);
+        }
       });
     },
 
@@ -283,7 +285,7 @@ Component({
         current,
         all: value
       };
-      this.setData({value}, () => {
+      this.setData({ value }, () => {
         eventUtil.emit(this, 'linremove', detail);
       });
     },
