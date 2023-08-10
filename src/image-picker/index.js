@@ -1,7 +1,6 @@
 import nodeUtil from '../core/utils/node-util';
 import deviceUtil from '../utils/device-util';
 import eventUtil from '../core/utils/event-util';
-import {promisic} from '../utils/util';
 
 Component({
 
