@@ -227,21 +227,16 @@ Component({
       }
 
       // 调用微信 api 选择图片
-      let chooseImageRes;
-      if (wx.chooseMedia) {
-        chooseImageRes = await promisic(wx.chooseMedia)({
-          count: remainCount,
-          mediaType: ['image'],
-          sizeType,
-          sourceType,
-        });
-      } else {
-        chooseImageRes = await promisic(wx.chooseImage)({
-          count: remainCount,
-          sizeType,
-          sourceType,
-        });
-      }
+      const chooseImageRes = wx.chooseMedia ? await wx.chooseMedia({
+        count: remainCount,
+        mediaType: ['image'],
+        sizeType,
+        sourceType,
+      }) : await wx.chooseImage({
+        count: remainCount,
+        sizeType,
+        sourceType,
+      });
 
       // 即将被添加的图片的 url 数组
       const addImageUrlArray = [];
@@ -249,15 +244,8 @@ Component({
       const oversizeImageUrlArray = [];
 
       chooseImageRes.tempFiles.forEach((tempFile) => {
-        let path, size;
-        if (wx.chooseMedia) {
-          path = tempFile.tempFilePath;
-          size = tempFile.size;
-        } else {
-          path = tempFile.path;
-          size = tempFile.size;
-        }
-        
+        const path = wx.chooseMedia ? tempFile.tempFilePath : tempFile.path;
+        const size = tempFile.size;
         if (size > maxImageSize && maxImageSize > 0) {
           oversizeImageUrlArray.push(path);
         } else {
