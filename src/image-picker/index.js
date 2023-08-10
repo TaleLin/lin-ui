@@ -47,6 +47,11 @@ Component({
       type: Number,
       value: 9
     },
+    sourceType: {
+      // 图片和视频选择的来源
+      optionalTypes: [Array, String],
+      value: ['album', 'camera']
+    },
     sizeType: {
       // 该写法经测试有效
       optionalTypes: [Array, String],
@@ -222,11 +227,21 @@ Component({
       }
 
       // 调用微信 api 选择图片
-      const chooseImageRes = await promisic(wx.chooseImage)({
-        count: remainCount,
-        sizeType,
-        sourceType: ['album', 'camera'],
-      });
+      let chooseImageRes
+      if (wx.chooseMedia) {
+        chooseImageRes = await promisic(wx.chooseMedia)({
+          count: remainCount,
+          mediaType: ['image'],
+          sizeType,
+          sourceType,
+        });
+      } else {
+        chooseImageRes = await promisic(wx.chooseImage)({
+          count: remainCount,
+          sizeType,
+          sourceType,
+        });
+      }
 
       // 即将被添加的图片的 url 数组
       const addImageUrlArray = [];
