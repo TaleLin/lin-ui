@@ -227,7 +227,7 @@ Component({
       }
 
       // 调用微信 api 选择图片
-      let chooseImageRes
+      let chooseImageRes;
       if (wx.chooseMedia) {
         chooseImageRes = await promisic(wx.chooseMedia)({
           count: remainCount,
@@ -249,7 +249,15 @@ Component({
       const oversizeImageUrlArray = [];
 
       chooseImageRes.tempFiles.forEach((tempFile) => {
-        const {path, size} = tempFile;
+        let path, size;
+        if (wx.chooseMedia) {
+          path = tempFile.tempFilePath;
+          size = tempFile.size;
+        } else {
+          path = tempFile.path;
+          size = tempFile.size;
+        }
+        
         if (size > maxImageSize && maxImageSize > 0) {
           oversizeImageUrlArray.push(path);
         } else {
