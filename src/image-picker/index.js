@@ -227,13 +227,10 @@ Component({
       }
 
       // 调用微信 api 选择图片
-      const chooseImageRes = wx.chooseMedia ? await wx.chooseMedia({
+      const chooseImage = wx.chooseMedia || wx.chooseImage;
+      const chooseImageRes = await chooseImage({
         count: remainCount,
         mediaType: ['image'],
-        sizeType,
-        sourceType,
-      }) : await wx.chooseImage({
-        count: remainCount,
         sizeType,
         sourceType,
       });
