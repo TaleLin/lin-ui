@@ -220,7 +220,7 @@ Component({
      * @returns {Promise<void>}
      */
     async onTapAdd() {
-      let {value, count, sizeType, maxImageSize} = this.data;
+      let {value, count, sizeType, sourceType, maxImageSize} = this.data;
       const remainCount = count - value.length;
       if (value.length >= count || remainCount <= 0) {
         return;
