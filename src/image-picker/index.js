@@ -1,7 +1,6 @@
 import nodeUtil from '../core/utils/node-util';
 import deviceUtil from '../utils/device-util';
 import eventUtil from '../core/utils/event-util';
-import {promisic} from '../utils/util';
 
 Component({
 
@@ -46,6 +45,11 @@ Component({
     count: {
       type: Number,
       value: 9
+    },
+    sourceType: {
+      // 图片和视频选择的来源
+      optionalTypes: [Array, String],
+      value: ['album', 'camera']
     },
     sizeType: {
       // 该写法经测试有效
@@ -215,17 +219,19 @@ Component({
      * @returns {Promise<void>}
      */
     async onTapAdd() {
-      let {value, count, sizeType, maxImageSize} = this.data;
+      let {value, count, sizeType, sourceType, maxImageSize} = this.data;
       const remainCount = count - value.length;
       if (value.length >= count || remainCount <= 0) {
         return;
       }
 
       // 调用微信 api 选择图片
-      const chooseImageRes = await promisic(wx.chooseImage)({
+      const chooseImage = wx.chooseMedia || wx.chooseImage;
+      const chooseImageRes = await chooseImage({
         count: remainCount,
+        mediaType: ['image'],
         sizeType,
-        sourceType: ['album', 'camera'],
+        sourceType,
       });
 
       // 即将被添加的图片的 url 数组
@@ -234,7 +240,8 @@ Component({
       const oversizeImageUrlArray = [];
 
       chooseImageRes.tempFiles.forEach((tempFile) => {
-        const {path, size} = tempFile;
+        const path = wx.chooseMedia ? tempFile.tempFilePath : tempFile.path;
+        const size = tempFile.size;
         if (size > maxImageSize && maxImageSize > 0) {
           oversizeImageUrlArray.push(path);
         } else {

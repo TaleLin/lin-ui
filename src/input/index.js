@@ -32,7 +32,7 @@ Component({
     type: {
       type: String,
       value: 'text',
-      options: ['text', 'idcard', 'digit', 'password', 'number']
+      options: ['text', 'idcard', 'digit', 'password', 'number', 'nickname']
     },
     // 输入框的值
     value: String,
