@@ -139,6 +139,32 @@ export default Behavior({
             console.error('time传值错误');
           }
         }
+
+      } else if (countdownType === 'holiday') {  //  当countdownType === holiday时，节假日模式
+        if (timeType === 'second') {  //  纪念日模式不能设置timeType === second
+          console.error(`countdownType为${countdownType}类型时，不可设置timeType值为second`);
+        } else {
+          countDownTime = typeof time === 'string' ? countDownTime.replace(/-/g, '/') : countDownTime;
+          var fullYear = new Date().getFullYear();
+          countDownTime = fullYear + '-' + countDownTime;
+          countDownTime = Math.ceil((new Date(countDownTime).getTime() - new Date().getTime()) / 1000);
+          if (countDownTime < 0) {  //  countDownTime为负数时候 添加一年时间戳
+            countDownTime += 31536000;
+          }
+          if (countDownTime - initAddTime > 0) {
+            this.getLatestForCountDown(countDownTime);
+          } else if (countDownTime - initAddTime < 0) {
+            this.getLatestForAddTime(countDownTime);
+          } else if (countDownTime - initAddTime === 0) {
+            if (initAddTime <= 0) {
+              this._getTimeValue(countDownTime);
+            }
+            this.CountdownEnd();
+          }
+          if (status && countDownTime - initAddTime !== 0) {
+            this.init.call(this);
+          }
+        }
       } else { //  countdownType 不能设置为 normal，anniversary 以外的值
         console.error('错误的countdownType类型');
       }
