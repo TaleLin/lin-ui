@@ -15,16 +15,27 @@ const forParams = (arr) => {
   arr.map(item => {
     let data = fs.readFileSync(`../src/${item}/index.json`, 'utf-8');
     const params = JSON.parse(data);
-    const { usingComponents } = params;
+    const {
+      usingComponents
+    } = params;
     if (usingComponents && !isEmptyObj(usingComponents)) {
-      for (let key in usingComponents) {
-        let keyComponent = key.substring(2, key.length);
-        finishArr.push(keyComponent);
+      for (let [key, path] of Object.entries(usingComponents)) {
+        if (key.startsWith('l-')) {
+          key = key.substring(2, key.length);
+        } else {
+          key = formatKeyByPath(path, item);
+        }
+        finishArr.push(key);
       }
       componentArr.push(...finishArr);
       forParams(finishArr);
     }
   });
+};
+
+const formatKeyByPath = (path, parent) => {
+  path = path.startsWith('./') ? path.replace('./', '').replace('/index', '') : path.replace('/index', '');
+  return parent + '/' + path;
 };
 
 const isEmptyObj = (obj) => {
